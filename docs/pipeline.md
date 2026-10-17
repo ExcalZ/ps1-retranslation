@@ -445,9 +445,39 @@ in bank 12 (stock 3,796), and the build moves nothing: the encoder fits the stoc
 None yet. Each will be a `.define NAME 0|1` tested with `.IF` in `ps1.asm`, with hooks the
 exact size of the stock code they replace and new code in `PSI_Disasm/ext/`.
 
-## 7. Emulator harness (*planned*)
+## 7. Emulator harness
 
-Mesen 2.1.1: its `--testRunner script.lua rom.sms` mode runs a Lua script headless at full
-speed and exits through `emu.stop(code)`, which is how the scenarios stay bounded; the Lua
-API reads and writes RAM, sets the joypad and saves screenshots, and the debugger imports
-`ps1built.sym`. Emulicious is the second opinion for accuracy questions.
+Mesen 2.1.1 (`Mesen_2.1.1/`, git-ignored, or `$MESEN`), driven by `tools/ps1emu.py`:
+
+```bash
+python tools/ps1emu.py opening --expect=B49B,B4FC,B5D5
+```
+
+* **How it runs.** The runner writes one Lua file to `work/analysis/run/`: a `PS1` table (run
+  name, output folder, frame cap, every bank 0/1 label of `ps1built.sym`, the `key=value`
+  params), then `work/scripts/lib.lua`, then the scenario. Mesen runs it with `--testRunner`:
+  no window, full speed (the opening's 1,800 frames take about 2 s). The log and screenshots go
+  to `work/analysis/` (`NAME.log`, `NAME_NNN_shot.png`). The default ROM is `ps1en.sms`;
+  `--rom=PSI_Disasm/ps1original.sms` runs the stock game (the code labels are the same:
+  `checkbuild.py`).
+* **Portable Mesen.** `ps1emu.py` keeps `Mesen_2.1.1/settings.json` with three things a fresh
+  Mesen lacks: the file itself (without one Mesen opens its first-run wizard and the test runner
+  never starts), Lua I/O access (`Debug.ScriptWindow.AllowIoOsAccess`, off by default: no log,
+  no screenshots), and an SMS pad in port 1 (`Sms.Port1.Type`; the wizard sets it, so without
+  it `emu.setInput` reaches nothing). Portable mode also keeps Mesen's data out of Documents.
+* **Bounded.** Every wait in `lib.lua` has a frame limit and raises when it runs out;
+  the run stops at `--frames` (default 30,000); Mesen stops at `--timeout` (default 120 s) and
+  the runner kills it 30 s later. Exit codes: 0 done, 1 the scenario raised, 2 the frame cap.
+* **What a scenario sees** (`lib.lua`): `ram(addr)` (work RAM by CPU address),
+  `game_mode()` (`$C202`; `MODE.intro` 3, `map` 9, `dungeon` 11, `interaction` 13, `road` 15),
+  `wait`, `wait_until(pred, max, what)`, `press(buttons, n, gap)` (`one`, `two`, `up`, `down`,
+  `left`, `right`, `pause`; button 1 shows as `$10` in `Ctrl_1_held` `$C204`),
+  `at_button_wait()` (an exec callback on `WaitForButton1Or2`, which runs once a frame while the
+  game waits), `dialogue_text()` and `cutscene_text()` (the text read back from the VRAM
+  nametable through the font's tiles: no OCR), `shot(name)`, `log(msg)`.
+* **Checking against the JSON.** `--expect=ID,...` compares the cut-scene pages a scenario
+  logged with those entries' `en`, page by page.
+* **Scenarios** (`work/scripts/`): `boot` (the title; the pad reaches the game), `opening` (a new
+  game: every page of the intro logged, filmed and paged, to the field in Camineet).
+
+Emulicious stays the second opinion for accuracy questions.

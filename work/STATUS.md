@@ -44,6 +44,13 @@ every `en` equals its `us`.
   sets en = us. With every entry re-encoded instead of copied, the script still fits (bank 2
   14,221 of 14,478 bytes, bank 12 3,811 of 3,836) and nothing moves. JP `$4E` is ァ
   (ダークファルス); the cut-scene budget is 20 cells (the JP's).
+* **Emulator harness (2026-10-16).** Mesen 2.1.1 in `Mesen_2.1.1/` (portable, git-ignored),
+  driven headless by `tools/ps1emu.py` with `work/scripts/lib.lua` (bounded waits, button-wait
+  detection on `WaitForButton1Or2`, text read back from the VRAM nametable, screenshots).
+  `boot` and `opening` pass on the stock ROM and on `ps1en.sms`: the intro's 8 pages read
+  back exactly as `dialogue.json` has them (`--expect=B49B,B4FC,B5D5`), then the field in
+  Camineet. Not yet seen in the emulator: any text the encoder wrote (every `en` still equals
+  its `us`), the dialogue window's scrolled pages, battles, shops, menus.
 
 ## Next, in order
 
@@ -53,7 +60,9 @@ every `en` equals its `us`.
 2. **The rest of script.json:** the menu and status tilemaps, the spell lists, the naming
    screen, the intro caption, the spaceport menu and (the owner's call) the credits -
    tilemaps through the glyph table (`docs/pipeline.md` 3.7-3.9).
-3. **The emulator harness**: Mesen 2.1.1 `--testRunner` with Lua, every scenario bounded.
+3. **More scenarios:** an encoder-written line seen in game (a test edit of an intro line, run
+   `opening --expect`); talking to a townsperson with `--expect` for window text (scrolled
+   pages need the window's two-line model); a battle; a shop; the menus; save and continue.
 4. **Engine options**: lower case, a proportional dialogue face, longer names, a text scheme
    with room for the new script (the stock banks have 183 and 40 bytes to spare).
 5. **Translation**, then proofreading in play, then release packaging (BPS + Patcher.html).

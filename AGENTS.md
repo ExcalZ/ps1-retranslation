@@ -56,8 +56,9 @@ failed build (chain commands with `&&` and `test ! -f PSI_Disasm/ps1.log`).
 4. **Bash heredocs eat backslashes** - and the disassembly's includes are `"banks\bank03.asm"`.
    Use a file editor or a script file for anything with escapes.
 5. **Emulator scenarios must be bounded.** Every loop has a limit, checks RAM before pressing
-   on and raises instead of guessing; a Mesen `--testRunner` script ends in `emu.stop(code)`
-   and runs under `--timeout=`. Never type blindly into the naming screen.
+   on and raises instead of guessing: use `lib.lua`'s `wait_until(pred, max, what)` and
+   `at_button_wait()`, never a bare loop. `ps1emu.py` adds a frame cap and a process timeout.
+   Never type blindly into the naming screen.
 6. **Extraction (`extract_text.py`) runs only on a stock build** and refuses to overwrite the
    JSON (it would drop the translation). You should not need to run it again.
 7. **Never commit game data** (ROMs, savestates, SRAM, `work/analysis/`); `.gitignore` covers
@@ -92,10 +93,12 @@ quotes.
 
 * WLA-DX 10.7: `$WLADX` or `wla_dx_v10.7_Win64/` (git-ignored). Not the 2006 build in
   `PSI_Disasm/binaries/`.
-* Emulator: **Mesen 2.1.1** (git-ignored, `Mesen*/` in the repo root or `$MESEN`). Headless:
-  `Mesen.exe --testRunner --timeout=60 script.lua rom.sms`; Lua `emu.read`/`emu.write`/
-  `emu.setInput`/`emu.takeScreenshot`/`emu.addEventCallback`/`emu.stop`. Its debugger imports
-  `PSI_Disasm/ps1built.sym`. Emulicious is the second opinion on accuracy.
+* Emulator: **Mesen 2.1.1** (`Mesen_2.1.1/`, git-ignored, or `$MESEN`), run only through
+  `python tools/ps1emu.py SCENARIO [--rom=] [--expect=ID,...]`: headless, bounded, log and
+  screenshots in `work/analysis/` (`docs/pipeline.md` section 7). Scenarios in
+  `work/scripts/` on top of `lib.lua`: `boot`, `opening`. Never run Mesen.exe directly without a
+  `settings.json` beside it (its first-run wizard blocks the test runner). The GUI debugger
+  imports `PSI_Disasm/ps1built.sym`. Emulicious is the second opinion on accuracy.
 
 ## Decisions that belong to the owner - do not settle them yourself
 
