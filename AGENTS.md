@@ -15,21 +15,30 @@ complete model: copy its structure and tool names when building the pipeline her
 Unlike the siblings this is a **Z80 / Master System** game: the Mega Drive tools
 (`tools/md/`, BlastEm, the 68000 interpreter) do not apply.
 
-**State:** see `work/STATUS.md`. The build reproduces the US/EU v3 ROM byte for byte; nothing
-has been extracted or translated yet.
+**State:** see `work/STATUS.md`. The script is extracted (`work/dialogue.json`,
+`work/script.json`) and the generator writes it back bit-exact; nothing is translated yet.
 
 ## Rebuild rule
 
-Every ROM build must include the current JSON (once `gentext.py` exists):
+Every ROM build must include the current JSON:
 
 ```bash
 python tools/sourcebuild.py ps1en.sms
 ```
 
-then, before any commit that touches the engine, the generator or the tables:
+(runs `gentext.py`; never pass `--no-gen` for a real build). Then always:
 
 ```bash
-python tools/checkstock.py      # options at 0: byte-identical to US/EU v3
+python tools/checkbuild.py      # must print "nothing moved"
+python tools/linecheck.py       # must print "0 problems"
+python tools/gentext.py --check # must rewrite nothing after a build
+```
+
+and before any commit that touches the engine, the generator or the tables:
+
+```bash
+python tools/checkstock.py      # options at 0, en = us: byte-identical to US/EU v3
+python tools/test_text.py       # codecs, JSON vs both ROMs, the encoder's round trip
 ```
 
 `PSI_Disasm/ps1.log` existing after a build means WLA-DX failed: never test a ROM from a
@@ -39,7 +48,7 @@ failed build (chain commands with `&&` and `test ! -f PSI_Disasm/ps1.log`).
 
 1. **Nothing in the stock image moves.** A hook in `ps1.asm` sits under `.IF option ... .ELSE
    <stock code> .ENDIF` and must be exactly the size of the code it replaces; new code goes in
-   `PSI_Disasm/ext/`. (A `checkbuild.py` that proves it is still to be written.)
+   `PSI_Disasm/ext/`. `checkbuild.py` proves it: only the text regions may move.
 2. **Every option at 0 must reproduce US/EU v3 byte for byte** - `checkstock.py`.
 3. **Line endings.** The disassembly is CRLF throughout. Python text-mode I/O on Windows and
    Git Bash `sed -i` change endings silently: edit bytes or open with `newline=''`; check with
@@ -49,12 +58,29 @@ failed build (chain commands with `&&` and `test ! -f PSI_Disasm/ps1.log`).
 5. **Emulator scenarios must be bounded.** Every loop has a limit, checks RAM before pressing
    on and raises instead of guessing; a Mesen `--testRunner` script ends in `emu.stop(code)`
    and runs under `--timeout=`. Never type blindly into the naming screen.
-6. **Extraction runs only on a stock build** and must not overwrite hand-made layout in the
-   JSON once it exists.
+6. **Extraction (`extract_text.py`) runs only on a stock build** and refuses to overwrite the
+   JSON (it would drop the translation). You should not need to run it again.
 7. **Never commit game data** (ROMs, savestates, SRAM, `work/analysis/`); `.gitignore` covers
    it. `PSI_Disasm/ps1original.sms` ships with the disassembly and is ignored.
 8. **Maxim's PSRP** (`maxim-zhao/psrp`) states no license: read it as a reference, copy no code
    or text from it, and credit any finding taken from its docs in `NOTICE.md`.
+9. **The generated regions** (between `; ==== BEGIN GENERATED TEXT` and `END` in `ps1.asm` and
+   `sound/sound_driver.asm`) and the name lines are written by `gentext.py`: edit the JSON,
+   not the source.
+
+## How to work on the text
+
+* `work/dialogue.json` - edit only `en`. Controls: `{BR}` next line, `{PAGE}` wait then next
+  line, `{CLR}` clear; inserts `{NAME}` `{ENEMY}` `{ITEM}` `{NUMBER}`; end codes `{END}`,
+  `{NOWAIT}`, `{TIMED}`, `{PAUSE}` - keep the stock entry's. An entry with `falls_through` must
+  not end in an end code (it runs on into the next entry); `jp_cont` entries carry part of the
+  JP of the entry before - keep the split. `us` and `jp` show the window's auto-wrap as `{BR}`.
+* Budgets: dialogue and messages 18 cells a line (the window scrolls, no line limit);
+  cut-scenes 20 cells, 4 lines a page; inserts count at their widest ({NAME} 4, {ENEMY} and
+  {ITEM} 8, {NUMBER} 5). Names: party 4, items 8, enemies 8.
+* Until the text-scheme engine option exists the encoder is the stock engine's: upper case,
+  digits, `, ; . ! ? - " '` only, and 183 bytes to spare in bank 2, 40 in bank 12
+  (`linecheck.py` prints the count).
 
 ## Style
 

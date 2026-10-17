@@ -7,8 +7,9 @@ the ROM - the same shape as the
 [III](https://github.com/ExcalZ/ps3-retranslation) and
 [IV](https://github.com/ExcalZ/ps4-retranslation) retranslations.
 
-**Status: just started.** The disassembly assembles the US/EU release byte for byte; the
-script has not been extracted yet. See `work/STATUS.md`.
+**Status: early.** The disassembly assembles the US/EU release byte for byte, and the whole
+script is extracted into JSON with the Japanese beside the 1987 English; nothing is translated
+yet. See `work/STATUS.md`.
 
 No ROM is included here. To build you need WLA-DX 10.7 (`wla_dx_v10.7_Win64/` in the
 repository root, or `$WLADX`) and the stock US/EU v3 ROM (CRC32 `00BEF1D7`) at
@@ -23,10 +24,12 @@ AGENTS.md                handoff for anyone (or any agent) picking the work up
 docs/pipeline.md         how a build works, the ROMs, the stock text engine
 work/STATUS.md           current state, what is done, what is next - read first
 work/glossary.md         naming decisions
-PSI_Disasm/              lory90's disassembly (the translation will be written into ps1.asm)
+work/dialogue.json       the script: 538 strings, JP / US / EN
+work/script.json         party, item and enemy names, JP / US / EN
+work/pairing.json        the JP / US alignment of the strings without ids
+PSI_Disasm/              lory90's disassembly (the translation is written into ps1.asm)
 PSI_Disasm/ps1.options.asm  the engine options (none yet)
-tools/sourcebuild.py     assembles the ROM, fixes the header checksum
-tools/checkstock.py      proves the options-at-0 build is the stock ROM
+tools/                   the toolchain (Python 3.10+, standard library only)
 ```
 
 ## Building
@@ -35,9 +38,14 @@ tools/checkstock.py      proves the options-at-0 build is the stock ROM
 python tools/sourcebuild.py ps1en.sms
 ```
 
-```bash
-python tools/checkstock.py
-```
+writes the JSON into the source (`gentext.py`), assembles with WLA-DX, fixes the header
+checksum and copies the ROM. Checks: `checkbuild.py`, `linecheck.py`, `gentext.py --check`,
+`checkstock.py`, `test_text.py` (`AGENTS.md`).
+
+## Editing the translation
+
+Edit only the `en` fields of `work/dialogue.json` and `work/script.json`; `AGENTS.md` lists the
+controls and the budgets, `docs/pipeline.md` section 4 the format.
 
 ## Credits and legal
 

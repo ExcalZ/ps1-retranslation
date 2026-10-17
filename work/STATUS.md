@@ -5,8 +5,10 @@ Updated: 2026-10-16
 ## State
 
 Project started. The disassembly is in place and assembles the US/EU release v3 bit-exact
-with WLA-DX 10.7 (`python tools/checkstock.py`), and the stock text engine is mapped
-(`docs/pipeline.md` section 3); nothing has been extracted or translated.
+with WLA-DX 10.7 (`python tools/checkstock.py`), the stock text engine is mapped
+(`docs/pipeline.md` section 3), and the script is extracted into JSON with the JP beside the
+US and written back by a generator whose round trip is bit-exact. Nothing is translated yet:
+every `en` equals its `us`.
 
 ## Done
 
@@ -32,19 +34,26 @@ with WLA-DX 10.7 (`python tools/checkstock.py`), and the stock text engine is ma
   in section 3.12: everything in bank 2, with the glyph table at `$8000`, the same 341 ids,
   no dictionary, one byte per katakana, and controls `$4F`-`$58`.
 
+* **Extraction and generation (2026-10-16).** `tools/ps1text.py` (both codecs, the rendered
+  text form, the US encoder), `tools/textsrc.py` (the text regions), `tools/extract_text.py`
+  -> `work/dialogue.json` (538 entries: 341 dialogue, 174 messages, 23 cut-scenes; JP paired
+  by id and by `work/pairing.json`; one JP-only message, "wrong password") and
+  `work/script.json` (party 4, items 65, enemies 74, with their JP). `tools/gentext.py` writes
+  them back between marker comments (bit-exact, idempotent); `checkbuild.py` (nothing moved,
+  2,008 fixed labels), `linecheck.py`, `test_text.py` (0 failures), and `checkstock.py` now
+  sets en = us. With every entry re-encoded instead of copied, the script still fits (bank 2
+  14,221 of 14,478 bytes, bank 12 3,811 of 3,836) and nothing moves. JP `$4E` is ァ
+  (ダークファルス); the cut-scene budget is 20 cells (the JP's).
+
 ## Next, in order
 
-1. **The JP ROM**: supplied (see Done), and its layout and encoding are mapped
-   (`docs/pipeline.md` 3.12). Left: the decoder `tools/ps1text.py` for the JP and US codecs;
-   placing the JP spaceport menu and code `$4E`; a check against Maxim's JP disassembly
-   (`maxim-zhao/psrp`, `disassembly/`).
-2. ~~The stock text engine~~: done (see Done and `docs/pipeline.md` section 3). Still to
-   confirm in Mesen when the harness exists: that tiles `$EC`-`$FF` are free in every mode,
-   and that the title-screen words are graphics.
-3. **Extraction** into `work/dialogue.json` and `work/script.json` (JP / US / EN), and
-   `gentext.py` with a bit-exact round trip; then `checkbuild.py`, `linecheck.py`,
-   `test_text.py`, as PS II.
-4. **The emulator harness**: Mesen 2.1.1 `--testRunner` with Lua, every scenario bounded.
-5. **Engine options**: lower case, a proportional dialogue face, longer names, a text scheme
-   with room for the new script.
-6. **Translation**, then proofreading in play, then release packaging (BPS + Patcher.html).
+1. **Left from the survey:** the JP spaceport-destination menu; a cross-check against Maxim's
+   JP disassembly (`maxim-zhao/psrp`, `disassembly/`); in Mesen, that tiles `$EC`-`$FF` are
+   free in every mode and that the title-screen words are graphics.
+2. **The rest of script.json:** the menu and status tilemaps, the spell lists, the naming
+   screen, the intro caption, the spaceport menu and (the owner's call) the credits -
+   tilemaps through the glyph table (`docs/pipeline.md` 3.7-3.9).
+3. **The emulator harness**: Mesen 2.1.1 `--testRunner` with Lua, every scenario bounded.
+4. **Engine options**: lower case, a proportional dialogue face, longer names, a text scheme
+   with room for the new script (the stock banks have 183 and 40 bytes to spare).
+5. **Translation**, then proofreading in play, then release packaging (BPS + Patcher.html).

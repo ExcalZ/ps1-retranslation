@@ -2898,6 +2898,8 @@ LABEL_B12_A969:
 ; $63 terminator
 ; $65 terminator
 
+; ==== BEGIN GENERATED TEXT: tools/gentext.py writes this from work/dialogue.json ====
+
 LABEL_B12_B108:
 .db Dialogue_EnemyName, " DODGES", Dialogue_NewLine
 .db Dialogue_CurrentCharacter, Dialogue_Apostrophe, "S ", Word_Attack, ".", Dialogue_Terminator63
@@ -2918,19 +2920,18 @@ LABEL_B12_B13D:
 .db "EACH OTHER.", Dialogue_Terminator63
 
 LABEL_B12_B15E:
-.db	Dialogue_EnemyName, " BLOCKS", Dialogue_NewLine
+.db Dialogue_EnemyName, " BLOCKS", Dialogue_NewLine
 .db Word_Any, " RETREAT.", Dialogue_Terminator63
 
 LABEL_B12_B172:
 .db Dialogue_CurrentCharacter, Dialogue_Apostrophe, "S ", Word_Magic_84, "IS", Dialogue_NewLine
 .db Word_Not, Word_Effective, ".", Dialogue_Terminator63
-
-;LABEL_B12_????
+; LABEL_B12_B172.1: read on from the string above
 .db Dialogue_EnemyName, Dialogue_Apostrophe, "S ", Word_Magic_EF, Dialogue_NewLine
 .db "IS ", Word_Not, Word_Effective, ".", Dialogue_Terminator63
 
 LABEL_B12_B18B:
-.db	"AN INVISIBLE ", Word_Magic_EF, Word_Wall, " ARISES.", Dialogue_Terminator63
+.db "AN INVISIBLE ", Word_Magic_EF, Word_Wall, " ARISES.", Dialogue_Terminator63
 
 LABEL_B12_B1A3:
 .db Word_The, Word_Magic_84, Word_Wall, Dialogue_NewLine
@@ -2961,8 +2962,7 @@ LABEL_B12_B1EE:
 .db Dialogue_CurrentCharacter, " IS TIED UP.", Dialogue_Terminator63
 
 LABEL_B12_B1FC:
-.db Dialogue_CurrentCharacter, " ", Word_Cannot, " "
-.db Word_Move, ".", Dialogue_Terminator63
+.db Dialogue_CurrentCharacter, " ", Word_Cannot, " ", Word_Move, ".", Dialogue_Terminator63
 
 LABEL_B12_B203:
 .db Dialogue_EnemyName, " ", Word_Cannot, Dialogue_NewLine
@@ -3035,8 +3035,7 @@ LABEL_B12_B322:
 .db Dialogue_EnemyName, " HEARS THE", Dialogue_NewLine
 .db "FLUTE AND FALLS", Dialogue_NewPage
 .db "ASLEEP.", Dialogue_Terminator63
-
-;LABEL_B12_B???:
+; LABEL_B12_B322.1: read on from the string above
 .db Dialogue_EnemyName, Dialogue_Apostrophe, "S EYES", Dialogue_NewLine
 .db "LOOK VACANT.", Dialogue_Terminator63
 
@@ -3247,8 +3246,7 @@ LABEL_B12_B790:
 
 LABEL_B12_B799:
 .db Word_We_Are, "AT ", Word_Gothic, ".", Dialogue_Terminator62
-
-;LABEL_B12_B???
+; LABEL_B12_B799.1: read on from the string above
 .db "LET", Dialogue_Apostrophe, "S GO!", Dialogue_Terminator63
 
 LABEL_B12_B7AA:
@@ -3337,8 +3335,7 @@ LABEL_B12_B97F:
 .db Word_This, "IS A CHURCH.", Dialogue_NewLine
 .db Word_Do_You, " ", Word_Wish, " TO", Dialogue_NewPage
 .db Word_Resurrect, " ", Word_Some, Word_One, "?", Dialogue_Terminator62
-
-;LABEL_B12_B???
+; LABEL_B12_B97F.1: read on from the string above
 .db "I SHALL PRAY FOR", Dialogue_NewLine
 .db "YOU.", Dialogue_Terminator65
 
@@ -3612,3 +3609,4 @@ LABEL_B12_BF64:
 LABEL_B12_BFC4:
 .db Word_The, "SOUND IS", Dialogue_NewLine
 .db "HEARTWARMING.", Dialogue_Terminator65
+; ==== END GENERATED TEXT ====

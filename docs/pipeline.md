@@ -7,18 +7,21 @@ the shape the PS II and PS III projects have and this one will follow; they are 
 ## 1. Shape of the build
 
 There is no ROM patching. The game is assembled from source (`PSI_Disasm/ps1.asm` and
-`banks/*.asm`) by WLA-DX, and the translation will reach the source through one generator,
-`tools/gentext.py` (*planned*), which rewrites the text of the assembly in place from the JSON.
+`banks/*.asm`) by WLA-DX, and the translation reaches the source through one generator,
+`tools/gentext.py`, which rewrites the text of the assembly in place from the JSON.
 Engine changes are build options in `PSI_Disasm/ps1.options.asm` (section 6): with every
 option at 0 and every `en` equal to its `us`, the ROM is byte-identical to the US/EU release
 v3 (`checkstock.py`).
 
 ```
-work/dialogue.json --gentext.py--> the Dialogue_Index_* blocks of ps1.asm      (planned)
-work/script.json   --gentext.py--> items, enemies, spells, names, menus         (planned)
+work/dialogue.json --gentext.py--> ps1.asm: the dialogue blocks and cut-scene strings
+                                   sound/sound_driver.asm: the bank-12 messages
+work/script.json   --gentext.py--> ps1.asm: CharacterNames, ItemNames
+                                   banks/bank03.asm: the enemy names
+                                   (menus, spell lists, naming screen, credits: planned)
 ```
 
-`tools/sourcebuild.py [out.sms] [--no-gen]` runs `gentext.py` (once it exists), then
+`tools/sourcebuild.py [out.sms] [--no-gen]` runs `gentext.py`, then
 `wla-z80 -o ps1.o ps1.asm` and `wlalink -r -s link.txt ps1built.sms` in `PSI_Disasm/`
 (the same steps as `build.bat`), fixes the SMS header checksum and copies the ROM
 (default `ps1en.sms`). It writes `PSI_Disasm/ps1.log` when the assembler or the linker
@@ -359,7 +362,7 @@ room.
     above;
   * `$47`-`$4B` パ ... ポ: handakuten `$FE` above;
   * `$4C` 。 (tile `$FE` in the lower row, attribute `$12`), `$4D` ー (`$FF`);
-  * `$4E` lower tile `$A4`, outside the font (its use is still to be found).
+  * `$4E` ァ, lower tile `$A4` (outside the 64 font tiles), used once: ダークファルス.
 
   Digits are written by the number printer as tiles `$C1`-`$CA`, as in the US. There is no
   dictionary: no high-bit test in the printer.
@@ -370,6 +373,9 @@ room.
   name fields end in `$58`.
 * **Window.** The JP printer (00:333A) uses the same window, the same 18-cell lines, the same
   wrap rule (no wrap when the next byte is `>= $53`) and the same scroll.
+* **Cut-scenes.** The JP cut-scene printer (00:34A5) starts at the same VRAM `$7C0C`
+  (column 6) with no auto-wrap, and its lines run to **20 cells** (columns 6-25, the
+  picture's width); the US kept to 18. The budget is 20.
 * **Alignment.** The ids line up one for one. JP id `$0002` is Suelo's line (ワタシハ スエロ。...),
   as in the US, and the same 68 blocks run on into the next. The messages and cut-scenes are
   in the same order as the US's bank 12 and bank 2 strings. The last message is ココロガ
@@ -377,20 +383,62 @@ room.
   slightly (171 vs 174, 22 vs 23), so align those two by order and content, not index.
 * **Menus.** JP menu words use both tile rows (マジック is シ with ゛ above). The US reuses the
   same tilemaps and leaves the upper row blank.
+* **Messages and cut-scenes, paired** (`work/pairing.json`): US message n is JP n up to 105;
+  the US split JP 105 (the hospital's "sorry") over two strings and so runs one ahead from
+  107 to 158; JP 158, "wrong password", has no US string (`jp_only` in `dialogue.json`); from
+  159 they pair again; the US split each of the three ending-narration strings (JP 165-167)
+  in two `$64` pages; the last three pair one for one. The 23rd US cut-scene string continues
+  the JP's 22nd.
 * **Not yet placed:** the JP spaceport-destination menu (the US one is in bank 18, where JP
-  bank 18 differs at `$BE84-$BFBB`), and the use of code `$4E`.
+  bank 18 differs at `$BE84-$BFBB`).
 
-## 4. Extraction (*planned*: done once, on a stock build only)
+## 4. The script files and the generator
 
-`extract_dialogue.py` / `extract_tables.py` read the stock text out of the source, decode
-the JP script from the JP ROM and align the two into `work/dialogue.json` /
-`work/script.json` (`jp`, `us`, `en`, address, window), as PS II's.
+**Extraction** (`tools/extract_text.py`, done once on the stock build; it refuses to overwrite
+the JSON without `--force`, which would drop the translation). It reads the US text from the
+source (`tools/textsrc.py`: the two regions, split after each end code), checks every string
+against the stock ROM at its symbol address, decodes the JP from `work/ps1jp_stock.sms`, pairs
+them (dialogue by id, the rest by `work/pairing.json`) and writes:
+
+* `work/dialogue.json`: 538 entries (341 `dialogue` by id `0002`-`02AA`, 174 `message` by
+  label, 23 `cutscene` by label), each with `kind`, `label` (null for the four strings the
+  game reaches by reading on: their id is `LABEL.1`), `addr`, `hex` (the stock bytes), `us`,
+  `jp`, `jp_addr`, `en`; `falls_through` on the 69 with no end code, `jp_cont` on the 5 whose
+  JP is part of the entry before. `jp_only`: the JP strings with no US string.
+* `work/script.json`: `segments` `party` (4, width 4), `items` (65, width 8) and `enemies` (74,
+  width 8, with the record label), each run `id`, `hex`, `us`, `jp`, `en`.
+
+**The text form** (`tools/ps1text.py`): `{BR}` new line, `{PAGE}` wait then new line (the
+window scrolls; a cut-scene clears), `{CLR}` clear, `{NAME}` `{ENEMY}` `{ITEM}` `{NUMBER}`
+inserts, end codes `{END}` (after a button), `{NOWAIT}` (window stays open: a YES/NO or another
+string follows), `{TIMED}` (a short wait; in a cut-scene 208 frames), `{PAUSE}` (208 frames,
+the ending), `{$xx}` any other byte. `us` and `jp` are rendered as the window shows them: the
+18-cell auto-wrap is written as an explicit `{BR}` (so "GOVERNORAND" reads "GOVERNOR{BR}AND"),
+and the dictionary words are spelled out. JP spaces are U+3000.
+
+**Generation** (`tools/gentext.py`). The two text regions are regenerated whole between
+`; ==== BEGIN GENERATED TEXT ...` and `; ==== END GENERATED TEXT ====`, one label per entry in
+JSON order (an unlabelled entry follows its predecessor, with a comment naming its id). The
+name fields are rewritten line by line where the bytes change, padded with `$65` and spaces.
+An `en` equal to its `us` is written from `hex`; any other is encoded for the stock engine
+(`encode_us`: upper case and the font's punctuation, the 128 words packed greedily, explicit
+`$60`s). `--check` fails if a file would change; `--encode-all` encodes the stock entries too.
+Encoded that way the whole stock script takes 14,221 bytes in bank 2 (stock 14,295) and 3,811
+in bank 12 (stock 3,796), and the build moves nothing: the encoder fits the stock engine.
 
 ## 5. Verification
 
-* `python tools/checkstock.py` - options at 0: byte-identical to v3. **Works now.**
-* *planned*: `checkbuild.py` (nothing in the stock image moved), `linecheck.py` (every line
-  in budget), `gentext.py --check` (idempotent), `test_text.py` (codecs, JSON vs both ROMs).
+* `python tools/checkstock.py` - options at 0 and en = us: byte-identical to v3.
+* `python tools/checkbuild.py` - "nothing moved": every label outside the two text regions
+  (02:82AA-BFFF, 0C:B108-BFFF) at its stock address (`work/stock_labels.json`, 2,008 labels;
+  `--snapshot` rewrites it, on a stock build only).
+* `python tools/gentext.py --check` - must rewrite nothing after a build.
+* `python tools/linecheck.py` - each changed `en`: encodable, 18 cells a line (cut-scenes 20,
+  4 lines a page), inserts at their widest, the stock end code; name widths; and the bytes
+  used in banks 2 and 12 against the room (stock + 183 / + 40). `--all` checks the stock
+  text too (one stock line fails only because `{NUMBER}` is counted at 5 digits).
+* `python tools/test_text.py` - the JP glyph table, every `hex` against the ROM, `us` and `jp`
+  re-rendered from both ROMs, the encoder's round trip on every entry, the name tables.
 
 ## 6. Engine options (`PSI_Disasm/ps1.options.asm`)
 

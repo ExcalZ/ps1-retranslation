@@ -17541,6 +17541,8 @@ DialogueBlock:
 .dw Dialogue_Index_0292, Dialogue_Index_0294, Dialogue_Index_0296, Dialogue_Index_0298, Dialogue_Index_029A, Dialogue_Index_029C, Dialogue_Index_029E, Dialogue_Index_02A0
 .dw Dialogue_Index_02A2, Dialogue_Index_02A4, Dialogue_Index_02A6, Dialogue_Index_02A8, Dialogue_Index_02AA
 
+; ==== BEGIN GENERATED TEXT: tools/gentext.py writes this from work/dialogue.json ====
+
 Dialogue_Index_0002:
 .db "I", Dialogue_Apostrophe, "M SUELO. I ", Word_Know, Dialogue_NewLine
 .db "HOW ", Word_You_Must, " FEEL,", Dialogue_NewPage
@@ -19415,6 +19417,7 @@ LABEL_BA54:
 .db $5F, "IN ", Word_The, "HEARTS OF", Dialogue_NewLine
 .db Word_The, "PEOPLE OF ", Word_The, Dialogue_NewLine
 .db "ALGOL FOREVER!!!", Dialogue_Terminator63
+; ==== END GENERATED TEXT ====
 
 
 ; This is a pointer table for the strings below

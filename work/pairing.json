@@ -1,0 +1,100 @@
+{
+ "about": "Manual JP / US alignment for the strings that have no id (docs/pipeline.md 3.12). Each rule pairs US strings us[0]..us[1] (indexes in source order within the kind) with JP strings from jp onwards, one for one; jp null with cont true marks US strings that continue the JP string paired before them (the US split one JP string over several). JP strings no rule reaches are listed in dialogue.json's jp_only.",
+ "message": [
+  {
+   "us": [
+    0,
+    105
+   ],
+   "jp": 0
+  },
+  {
+   "us": [
+    106,
+    106
+   ],
+   "jp": null,
+   "cont": true,
+   "note": "the US split the hospital's 'sorry' over two strings"
+  },
+  {
+   "us": [
+    107,
+    158
+   ],
+   "jp": 106
+  },
+  {
+   "us": [
+    159,
+    165
+   ],
+   "jp": 159,
+   "note": "JP 158 (the password message) has no US string"
+  },
+  {
+   "us": [
+    166,
+    166
+   ],
+   "jp": null,
+   "cont": true
+  },
+  {
+   "us": [
+    167,
+    167
+   ],
+   "jp": 166
+  },
+  {
+   "us": [
+    168,
+    168
+   ],
+   "jp": null,
+   "cont": true
+  },
+  {
+   "us": [
+    169,
+    169
+   ],
+   "jp": 167
+  },
+  {
+   "us": [
+    170,
+    170
+   ],
+   "jp": null,
+   "cont": true,
+   "note": "the ending narration: the US split each JP string in two, $64 pages"
+  },
+  {
+   "us": [
+    171,
+    173
+   ],
+   "jp": 168
+  }
+ ],
+ "cutscene": [
+  {
+   "us": [
+    0,
+    21
+   ],
+   "jp": 0
+  },
+  {
+   "us": [
+    22,
+    22
+   ],
+   "jp": null,
+   "cont": true,
+   "note": "the US split the last JP line over two strings"
+  }
+ ]
+}
