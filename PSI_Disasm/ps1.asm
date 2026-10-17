@@ -6984,6 +6984,14 @@ LABEL_30ED:
 	ld	hl, LongEnemyBoxSave
 	call	FarCall
 	jp	LABEL_3105
+.IF vwf_windows == 1
+; vwf_windows: the money line (LABEL_35C9), drawn by WinMoney; the stock puts its right frame
+WinMoneyHook:
+	ld	a, :WinMoney
+	ld	hl, WinMoney
+	call	FarCall
+	jp	LABEL_3620
+.ENDIF
 .ORGA $3105
 .ELSE
 LABEL_30ED:
@@ -6999,7 +7007,7 @@ LABEL_30ED:
 
 LABEL_3105:
 .IF long_item_names == 1
-	ld	a, :LongEnemyBox	; long_item_names: the name box 16 cells wide at $7810
+	ld	a, :LongEnemyBox	; long_item_names: the name box LONG_X cells wider
 	ld	hl, LongEnemyBox
 	call	FarCall
 .DSB 26, $00		; nops: the stock name part was 34 bytes
@@ -7814,7 +7822,7 @@ LABEL_34D5:
 	add a, l
 	ld (Option_total_num), a
 .IF long_item_names == 1
-	ld	hl, $7960	; long_item_names: the inventory starts at c16
+	ld	hl, $796C - 2 * LONG_X	; long_item_names: the inventory starts LONG_X cells left
 .ELSE
 	ld hl, $796C
 .ENDIF
@@ -7852,7 +7860,7 @@ LABEL_3521:
 .ENDIF
 
 .IF long_item_names == 1
-; long_item_names: the inventory 16 cells wide at $78A0
+; long_item_names: the inventory LONG_X cells wider
 LABEL_352D:
 	ld	a, :LongInventory
 	ld	hl, LongInventory
@@ -7993,8 +8001,13 @@ LABEL_35C4:
 	rst $08
 	ld b, $08
 
+.IF vwf_windows == 1
+LABEL_35C9:
+	jp	WinMoneyHook	; vwf_windows: the label and the amount in the face
+.ELSE
 LABEL_35C9:
 	ld	hl, LABEL_3639
+.ENDIF
 LABEL_35CC:
 	ld	a, (hl)
 	out	(Port_VDPData), a
@@ -8224,7 +8237,7 @@ LABEL_36FB:
 	jp LABEL_3A57
 
 .IF long_item_names == 1
-; long_item_names: party member a's equipment, 16 cells wide at $7A80
+; long_item_names: party member a's equipment, LONG_X cells wider
 LABEL_3707:
 	push	af
 	ld	c, a
@@ -8481,7 +8494,7 @@ LABEL_38CD:
 
 LABEL_38D9:
 .IF long_item_names == 1
-	ld	a, :LongShopTop	; long_item_names: the top border, 22 cells from $7800
+	ld	a, :LongShopTop	; long_item_names: the top border, LONG_X cells wider
 	ld	hl, LongShopTop
 	call	FarCall
 .DSB 4, $00
@@ -8536,7 +8549,7 @@ LABEL_38D9:
 	call LABEL_3A57
 .ENDIF
 .IF long_item_names == 1
-	ld	hl, $7880	; long_item_names: the list starts at c0
+	ld	hl, $788C - 2 * LONG_X	; long_item_names: the list starts LONG_X cells left
 .ELSE
 	ld hl, $788C
 .ENDIF
@@ -8566,7 +8579,7 @@ LABEL_38D9:
 	ld c, $00
 +:
 .IF long_item_names == 1
-	ld	b, a		; long_item_names: the frame and 14 name cells from c0
+	ld	b, a		; long_item_names: the frame and LONG_W name cells
 	ld	a, :LongShopName
 	ld	hl, LongShopName
 	call	FarCall

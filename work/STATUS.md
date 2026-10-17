@@ -156,6 +156,17 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
   in the face: the status window's labels, MST, the save slots, the intro caption. Not yet
   seen: the battle's spell list (MAGC with spells), the spaceport, the second-hand shop's
   selling list, the hospital and church, a dungeon's menus read back.
+* **Meseta (2026-10-17).** The owner: MST becomes "Meseta", in the face. The money line (the
+  money box, the inventory, the status window) is drawn as one run, "Meseta 2000", the amount
+  in the face too: the money box's 8 cells hold "Meseta 65535" (55 px). The battle's pool now
+  takes all the font's letters.
+
+* **The name windows narrowed (2026-10-17).** With the names in the face, `long_item_names`'
+  windows need 10 name cells (80 px), not 14: their width is now `LONG_W` / `LONG_X`
+  (`ext/vwf_ram.asm`; 10 / 2 with `vwf_windows`, 14 / 6 without). The inventory, shop list,
+  equipment box and battle name box are 2 cells wider than the stock's; the second extra
+  buffers (`$C790`, `$DFE8`) are used only without `vwf_windows`. linecheck: an item or enemy at
+  most 80 px. Both widths seen in game (trial builds); every scenario passes.
 
 ## Next, in order
 

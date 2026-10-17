@@ -268,6 +268,7 @@ transliterations. Only Heal fits the 4-cell lists: **question 5**.
 | マッドドクター | the Mad Doctor | the mad doctor |
 | アルテムハムラム アルテムハムハムストラトポン | the church's spell, kept as the JP's sounds | SABRUS CABRUS SEBRUS BASS |
 | カイゲンレイ | martial law | martial law |
+| メセタ (the money line) | Meseta (the owner, 2026-10-17: the label in the face, "Meseta 2000") | MST |
 
 ## PS I and PS IV: the same things, different katakana
 

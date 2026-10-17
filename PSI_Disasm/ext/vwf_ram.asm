@@ -12,14 +12,32 @@
 .define VwfRow		$DF08	; 8 bytes: the tile under the pen, 1 bpp
 .define VwfSpill	$DF10	; 8 bytes: what crosses into the next tile (VwfRow + 8)
 .define VwfDigits	$DF18	; 5 bytes: {NUMBER}'s digits
+.define WinCont		$DF1D	; 2 bytes, vwf_windows: a run's second part (the money line's amount)
+.define WinContN	$DF1F	; its codes (0: none)
 ; long_names: the two columns its wider boxes cover beyond the stock 6 (ext/longnames.asm)
 .define LongPartyExtraA	$DEA0	; 36 bytes: the party menu at $7A44 (9 rows x 2 cells)
 .define LongPartyExtraB	$DEC4	; 36 bytes: the party menu at $7A54
 .define LongBoxExtra	$DEE8	; 12 bytes: the name box (3 rows x 2 cells)
-; long_item_names: the six columns its wider windows cover beyond the stock ones, in two parts
-.define LongSharedExtra	$DF20	; up to 168 bytes: the 4 columns beside the stock ones of the
-				; equipment box, the shop list or the inventory (never open together)
-.define LongEnemyBoxExtra	$DFC8	; 32 bytes: the battle's enemy name box (4 rows x 4 cells)
+; long_item_names: how wide its windows are. Each lists names in LONG_W cells, LONG_X more than
+; the stock's 8, gained to the left (the right edge stays): with vwf_windows the names are in
+; the face, at most 80 px; without it a cell a letter, 14. The LONG_X columns beyond the stock
+; ones are saved in two parts: LONG_XA beside them, LONG_XB at the left edge.
+.IF vwf_windows == 1
+.define LONG_W	10
+.define LONG_X	2
+.define LONG_XA	2
+.define LONG_XB	0
+.ELSE
+.define LONG_W	14
+.define LONG_X	6
+.define LONG_XA	4
+.define LONG_XB	2
+.ENDIF
+; long_item_names: the columns its wider windows cover beyond the stock ones
+.define LongSharedExtra	$DF20	; up to 168 bytes: the LONG_XA columns beside the stock ones of
+				; the equipment box, the shop list or the inventory (never open together)
+.define LongEnemyBoxExtra	$DFC8	; 32 bytes: the battle's enemy name box (4 rows x LONG_XA cells)
+; without vwf_windows only (LONG_XB = 2):
 .define LongEnemyBoxExtra2	$DFE8	; 16 bytes: its 2 columns at the left edge (4 rows x 2 cells)
 ; $C790-$C7FF: no stock code reads or writes it (the naming screen's RAM ends at $C789)
 .define LongSharedExtra2	$C790	; up to 84 bytes: the 2 columns at the left edge of the equipment

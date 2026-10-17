@@ -83,7 +83,8 @@ failed build (chain commands with `&&` and `test ! -f PSI_Disasm/ps1.log`).
   character `tools/diafont.py` has; with `vwf_cutscene` too, cut-scenes are **120 px** a line,
   4 lines a page. With `long_names`: party names up to 6 letters (mixed case in `{NAME}`,
   capitals in the menus; the `status_boxes` runs must match them in capitals); with
-  `long_item_names`: item and enemy names up to 14 characters; with `vwf_windows` (on): the
+  `long_item_names`: item and enemy names up to 14 characters (with `vwf_windows` also at most
+  80 px in the face: the windows list them in 10 cells); with `vwf_windows` (on): the
   menus too, mixed case, each run at most its cells x 8 px (`linecheck.py`). Without them:
 * Budgets: dialogue and messages 18 cells a line (the window scrolls, no line limit);
   cut-scenes 20 cells, 4 lines a page; inserts count at their widest ({NAME} 4, {ENEMY} and

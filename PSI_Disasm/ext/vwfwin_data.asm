@@ -113,3 +113,5 @@ WinString36:	; UZO
 .db $55, $5A, $4F, $65
 WinString37:	; SKURE
 .db $53, $4B, $55, $52, $45, $65
+WinMoneyString:	; Meseta
+.db $4D, $6A, $78, $6A, $79, $66, $20, $65

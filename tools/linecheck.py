@@ -121,6 +121,18 @@ def main():
     for name, seg in script['segments'].items():
         if seg.get('kind') == 'readonly':
             continue
+        if seg.get('kind') == 'tilemap' and win and name == 'money':
+            # vwf_windows: "label 65535" in the money box's 8 cells (WinMoney)
+            for r in seg['runs']:
+                text = r['en'].strip() + ' 65535'
+                try:
+                    T.encode_us(text, dictionary=False, charset=T.vwf_charset())
+                except ValueError as x:
+                    problems.append('money %s: %s' % (r['id'], x))
+                    continue
+                if F.width(text) - 1 > 64:
+                    problems.append('money %s: %r is %d px (64)' % (r['id'], text, F.width(text) - 1))
+            continue
         if seg.get('kind') == 'tilemap' and win and name in gentext.WIN_SEGMENTS:
             # vwf_windows: the run in the face, within its cells (a party name: LongNames)
             for r in seg['runs']:
@@ -151,6 +163,9 @@ def main():
             if r['en'] != r['us'] or check_all:
                 if len(r['en']) > width:
                     problems.append('%s %s: %r is %d cells (%d)' % (name, r['id'], r['en'], len(r['en']), width))
+                if long_party and win and name in ('items', 'enemies') and F.width(r['en']) - 1 > 80:
+                    # vwf_windows: the windows list them in the face, 10 cells (ext/vwf_ram.asm LONG_W)
+                    problems.append('%s %s: %r is %d px in the face (80)' % (name, r['id'], r['en'], F.width(r['en']) - 1))
                 try:
                     if long_party:      # the inserts in the face; the windows in the menus' capitals
                         T.encode_us(r['en'], dictionary=False, charset=T.vwf_charset())

@@ -10,9 +10,8 @@
 ; $F0-$F3 the party's names (LongNames).
 ;
 ; The pool: tiles the screen leaves free while windows are up (WinPools), in order. In a battle
-; the font's letters (all but M S T, which the money line still writes) and the tiles above
-; the enemy's graphics to $19F, none of which a round touches ($1FF is no use: the sprite
-; table's upload writes it every frame), then the effects' $1A0-$1BF
+; the font's letters and the tiles above the enemy's graphics to $19F, none of which a round
+; touches ($1FF is no use: the sprite table's upload writes it every frame), then the effects' $1A0-$1BF
 ; and the dialogue's $EC-$FF, which only a list open between rounds reaches. On the interaction
 ; screen the tiles above the person's graphics to $1A9, then $1B0-$1BF, then the letters. In a
 ; dungeon $101-$1BF (the still view shows none of them; a step draws them anew), then the
@@ -148,11 +147,7 @@ WinPoolNone:
 .dw	0
 WinPoolBattle:
 .dw	$00CB
-.db	$D6			; A-L
-.dw	$00D8
-.db	$DC			; N-R
-.dw	$00DF
-.db	$EB			; U-Z and the marks
+.db	$EB			; the letters and marks
 .dw	$FFFF
 .db	$9F			; above the enemy
 .dw	$01A0
@@ -166,20 +161,12 @@ WinPoolField:
 .dw	$01B0
 .db	$BF
 .dw	$00CB
-.db	$D6
-.dw	$00D8
-.db	$DC
-.dw	$00DF
 .db	$EB
 .dw	0
 WinPoolDungeon:
 .dw	$0101
 .db	$BF
 .dw	$00CB
-.db	$D6
-.dw	$00D8
-.db	$DC
-.dw	$00DF
 .db	$EB
 .dw	0
 
@@ -338,6 +325,64 @@ WinToTopMark:
 	add	hl, de
 	ld	a, (hl)
 	ld	(WinPos), a
+	ret
+
+; ---------------------------------------------------------------- the money line
+
+; LABEL_35C4 (the money box, the inventory: b = 8) and LABEL_35BC (the status window: b = 12)
+; via WinMoneyHook, the VDP at the line's first cell (de), interrupts off: the left frame, then
+; the label and the amount ("Meseta 2000", WinMoneyString then the digits without leading
+; zeros) in the face over the 8 or 10 cells the stock gives the label and the digits. Returns
+; with the VDP at the right frame's cell, interrupts off, as the stock's digits leave it.
+WinMoney:
+	ld	a, b
+	cp	8
+	ld	b, 8
+	jr	z, +
+	ld	b, 10
++:	push	bc
+	ld	a, $F3			; the left frame
+	out	(Port_VDPData), a
+	push	af
+	pop	af
+	ld	a, $11
+	out	(Port_VDPData), a
+	ei
+	push	de
+	ld	hl, (Current_money)
+	ld	de, VwfDigits
+	ld	bc, 10000
+	call	VwfDigit
+	ld	bc, 1000
+	call	VwfDigit
+	ld	bc, 100
+	call	VwfDigit
+	ld	bc, 10
+	call	VwfDigit
+	ld	a, l
+	add	a, $30
+	ld	(de), a
+	pop	de
+	ld	hl, VwfDigits		; from the first digit that is not 0 (the last always)
+	ld	b, 5
+-:	ld	a, (hl)
+	cp	$30
+	jr	nz, +
+	inc	hl
+	djnz	-
+	dec	hl
+	inc	b
++:	ld	(WinCont), hl
+	ld	a, b
+	ld	(WinContN), a
+	pop	bc
+	inc	de
+	inc	de			; past the frame
+	ld	hl, WinMoneyString
+	ld	c, $FF
+	call	WinRun
+	di
+	rst	$08			; the right frame's cell
 	ret
 
 ; ---------------------------------------------------------------- map rows
@@ -540,12 +585,12 @@ WinRun:
 WinRun_Char:
 	ld	a, (WinJ)
 	or	a
-	jr	z, WinRun_Write
+	jr	z, WinRun_Next
 	dec	a
 	ld	(WinJ), a
 	ld	a, (hl)
 	cp	Dialogue_Terminator65
-	jr	z, WinRun_Write
+	jr	z, WinRun_Next
 	push	hl
 	push	de
 	call	WinDraw
@@ -553,6 +598,15 @@ WinRun_Char:
 	pop	hl
 	jr	c, WinRun_Fallback
 	inc	hl
+	jr	WinRun_Char
+WinRun_Next:			; a second part (WinContN codes at WinCont) goes on at the pen
+	ld	a, (WinContN)
+	or	a
+	jr	z, WinRun_Write
+	ld	(WinJ), a
+	xor	a
+	ld	(WinContN), a
+	ld	hl, (WinCont)
 	jr	WinRun_Char
 WinRun_Write:
 	; the tiles the ink took: (pen - 1) / 8 + 1, none for an empty run

@@ -105,6 +105,7 @@ class WinStrings:
     """The string table of vwf_windows, in the face's codes; id 0 is never a string."""
     def __init__(self):
         self.texts = []
+        self.money = 'MST'                  # the money line's label (WinMoneyString)
 
     def add(self, text):
         if text not in self.texts:
@@ -121,6 +122,9 @@ class WinStrings:
             codes = [charset[c] for c in t] + [0x65]
             lines.append('WinString%d:\t; %s' % (i + 1, t))
             lines.append('.db ' + ', '.join('$%02X' % c for c in codes))
+        # the money line: the label and a space; WinMoney draws the amount after it
+        lines.append('WinMoneyString:\t; %s' % self.money)
+        lines.append('.db ' + ', '.join('$%02X' % c for c in [charset[c] for c in self.money + ' '] + [0x65]))
         return '\r\n'.join(lines) + '\r\n'
 
 
@@ -226,6 +230,9 @@ def generate(dialogue, script):
         for run in seg['runs']:
             if LONG and seg is segs.get('name_boxes') or LONG and seg is segs.get('party_menu'):
                 run = dict(run, en=run['us'])       # long_names draws its own, wider maps
+            if WIN and name == 'money':     # drawn by WinMoney: the stock cells stay
+                strings.money = run['en'].strip()
+                continue
             if WIN and name in WIN_SEGMENTS and run['en'].strip():
                 text = run['en'].strip()
                 sid = WIN_PARTY + int(run['id']) if name == 'status_boxes' else strings.add(text)
@@ -329,8 +336,8 @@ def long_items_data(script, strings=None):
              '; long_item_names: the item and enemy names (the face\'s codes, $65-padded).']
     lines += rows('LongItems', segs['items']['runs'], 65)
     lines += rows('LongEnemies', segs['enemies']['runs'], 75)
-    # the inventory's NEXT rows (bank 27's, 10 cells) six cells wider before the right frame,
-    # so NEXT lines up with the names
+    # the inventory's NEXT rows (bank 27's, 10 cells) LONG_X cells wider before the right frame
+    # (ext/vwf_ram.asm: 2 with vwf_windows, 6 without), so NEXT lines up with the names
     defs = T.defines()
     bank27 = T.read(os.path.join(T.DISASM, 'banks', 'bank27.asm')).split('\r\n')
     stock = bytearray(b''.join(b for _, b in M.label_bytes(bank27, 'LABEL_B27_BAF7', 40, defs))[:40])
@@ -344,7 +351,7 @@ def long_items_data(script, strings=None):
         stock[o - 20:o - 20 + n] = bytes.fromhex(nxt['upper_hex'])
     lines.append('LongNextRows:')
     for r in (stock[:20], stock[20:]):
-        wide = r[:-2] + bytes([M.BLANK, 0x10]) * 6 + r[-2:]
+        wide = r[:-2] + bytes([M.BLANK, 0x10]) * (2 if WIN else 6) + r[-2:]
         lines.append('.db ' + ', '.join('$%02X' % b for b in wide))
     return '\r\n'.join(lines) + '\r\n'
 
