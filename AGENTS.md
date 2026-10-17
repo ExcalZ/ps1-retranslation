@@ -96,7 +96,9 @@ quotes.
 * Emulator: **Mesen 2.1.1** (`Mesen_2.1.1/`, git-ignored, or `$MESEN`), run only through
   `python tools/ps1emu.py SCENARIO [--rom=] [--expect=ID,...]`: headless, bounded, log and
   screenshots in `work/analysis/` (`docs/pipeline.md` section 7). Scenarios in
-  `work/scripts/` on top of `lib.lua`: `boot`, `opening`. Never run Mesen.exe directly without a
+  `work/scripts/` on top of `lib.lua`: `boot`, `opening`, `fieldmenu`. To see a line in the game
+  before committing it: `python tools/trybuild.py EDITS.json OUT.sms`, then a scenario with
+  `--rom=OUT.sms --dialogue=OUT.sms.dialogue.json --expect=...`. Never run Mesen.exe directly without a
   `settings.json` beside it (its first-run wizard blocks the test runner). The GUI debugger
   imports `PSI_Disasm/ps1built.sym`. Emulicious is the second opinion on accuracy.
 

@@ -1,7 +1,7 @@
 """Run a bounded emulator scenario in Mesen 2 (headless test runner).
 
     python tools/ps1emu.py SCENARIO [--rom=PATH] [--timeout=SECONDS] [--frames=N]
-                                    [--expect=ID,ID,...] [key=value ...]
+                                    [--expect=ID,ID,...] [--dialogue=PATH] [key=value ...]
 
 SCENARIO is work/scripts/SCENARIO.lua (or a path). The runner writes one Lua file to
 work/analysis/run/: a PS1 table (the run's name, the output folder, the frame cap, the bank 0/1
@@ -14,7 +14,8 @@ Bounded three ways: every wait in lib.lua has a frame limit, the run stops at --
 plus a process kill 30 s after that.
 
 --expect compares the cut-scene pages the scenario logged with the `en` of those
-dialogue.json entries (ids, or labels without LABEL_): e.g. opening --expect=B49B,B4FC,B5D5.
+dialogue.json entries (ids, or labels without LABEL_): e.g. opening --expect=B49B,B4FC,B5D5;
+--dialogue=PATH takes the expected text from another copy (trybuild.py writes one).
 
 Mesen is found via $MESEN (the exe or its folder) or ./Mesen_2.1.1/. It runs portable: the
 runner keeps a settings.json beside Mesen.exe with Lua I/O access on (the scenarios write their
@@ -135,9 +136,9 @@ def seen_pages(lines):
     return out
 
 
-def expected_pages(ids):
+def expected_pages(ids, path=None):
     """The pages the cut-scene entries `ids` should show, from their `en`."""
-    doc = json.load(open(os.path.join(ROOT, 'work', 'dialogue.json'), encoding='utf-8'))
+    doc = json.load(open(path or os.path.join(ROOT, 'work', 'dialogue.json'), encoding='utf-8'))
     by_id = {e['id']: e for e in doc['entries']}
     out = []
     for i in ids:
@@ -168,7 +169,7 @@ def main():
     if code != 0:
         raise SystemExit(1)
     if 'expect' in opts:
-        want, seen = expected_pages(opts['expect'].split(',')), seen_pages(lines)
+        want, seen = expected_pages(opts['expect'].split(','), opts.get('dialogue')), seen_pages(lines)
         bad = [n for n in range(max(len(want), len(seen)))
                if n >= len(want) or n >= len(seen) or want[n] != seen[n]]
         for n in bad[:10]:

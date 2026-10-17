@@ -49,15 +49,21 @@ every `en` equals its `us`.
   detection on `WaitForButton1Or2`, text read back from the VRAM nametable, screenshots).
   `boot` and `opening` pass on the stock ROM and on `ps1en.sms`: the intro's 8 pages read
   back exactly as `dialogue.json` has them (`--expect=B49B,B4FC,B5D5`), then the field in
-  Camineet. Not yet seen in the emulator: any text the encoder wrote (every `en` still equals
-  its `us`), the dialogue window's scrolled pages, battles, shops, menus.
+  Camineet. Not yet seen in the emulator: the dialogue window's scrolled pages, battles,
+  shops, the other menus.
+* **Seen in game (2026-10-16).** `tools/trybuild.py` builds a test ROM from a few `en` edits
+  without touching the JSON or the source. A trial with the soldier's intro speech rewritten
+  in 20-cell lines and the field menu's STAS / SRCH as STAT / LOOK: `opening --expect` read
+  all 8 pages back as the edited JSON has them, `fieldmenu` read STAT / MAGC / ITEM / LOOK /
+  SAVE, and the screenshots agree. So the encoder's dialogue and the tilemap writer both show
+  correctly, and 20-cell cut-scene lines fit under the picture in the US printer.
 
 * **Tilemap text (2026-10-16).** `tools/tilemaps.py`; `extract_text.py --tilemaps` added 15
   tilemap segments (75 runs: menus, status boxes, spell lists, status labels, meseta, save
   slots, spaceport, intro caption) with JP decoded through the JP glyph table, dakuten from
   the row above, plus read-only `naming_screen` and `credits`. The JP spaceport is 03:BEB2.
   gentext writes the runs back; checkstock byte-identical, nothing moved, test_text 0
-  failures. Not yet tried: a changed tilemap `en` in the emulator. Open: three JP caption
+  failures. A changed tilemap `en` is now seen in the emulator (above). Open: three JP caption
   kanji ($BB $BD $BE) unread; the save-slot names' cells not traced (runs are the digit only).
 
 ## Next, in order
@@ -67,9 +73,9 @@ every `en` equals its `us`.
    free in every mode and that the title-screen words are graphics.
 2. **The rest of script.json:** done but for writing the naming screen and (the owner's
    call) the credits, both read-only for now.
-3. **More scenarios:** an encoder-written line seen in game (a test edit of an intro line, run
-   `opening --expect`); talking to a townsperson with `--expect` for window text (scrolled
-   pages need the window's two-line model); a battle; a shop; the menus; save and continue.
+3. **More scenarios:** talking to a townsperson with `--expect` for window text (scrolled
+   pages need the window's two-line model); a battle; a shop; the other menus (status, magic,
+   items); save and continue.
 4. **Engine options**: lower case, a proportional dialogue face, longer names, a text scheme
    with room for the new script (the stock banks have 183 and 40 bytes to spare).
 5. **Translation**, then proofreading in play, then release packaging (BPS + Patcher.html).

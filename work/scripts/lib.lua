@@ -111,6 +111,44 @@ function cutscene_text()
   return { text_line(17, 6, 25), text_line(19, 6, 25), text_line(21, 6, 25), text_line(23, 6, 25) }
 end
 
+-- the text of a screen area: one line per lower tile row in rows r0..r1 (step 2 from r0)
+function area_text(r0, r1, c0, c1)
+  local out = {}
+  for r = r0, r1, 2 do
+    local s = text_line(r, c0, c1)
+    if s:match("[^%s~]") then out[#out + 1] = s:gsub("^[%s~]+", "") end
+  end
+  return out
+end
+
+function on_field()
+  local m = game_mode()
+  return m == MODE.map or m == MODE.road or m == MODE.dungeon
+end
+
+-- a new game from power-on to the field, paging every button wait with button 1;
+-- on_page(n, lines, in_window) is called at each wait if given. Bounded: 900 frames to the
+-- title, 1500 to each wait, max_pages waits.
+function new_game_to_field(max_pages, on_page)
+  wait_until(function() return game_mode() == MODE.intro end, 900, "the title")
+  wait(120)
+  press("one", 4, 30)                    -- START
+  for page = 1, max_pages do
+    wait_until(function() return at_button_wait() or on_field() end, 1500, "a button wait or the field")
+    if not at_button_wait() then
+      wait(60)
+      return page - 1
+    end
+    wait(2)
+    if on_page then
+      local window = ram(0xC2D3) == 0xFF
+      on_page(page, window and dialogue_text() or cutscene_text(), window)
+    end
+    press("one", 4, 6)
+  end
+  error("still no field after " .. max_pages .. " pages")
+end
+
 local shots = 0
 function shot(name)
   shots = shots + 1

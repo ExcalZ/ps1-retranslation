@@ -491,8 +491,19 @@ python tools/ps1emu.py opening --expect=B49B,B4FC,B5D5
   game waits), `dialogue_text()` and `cutscene_text()` (the text read back from the VRAM
   nametable through the font's tiles: no OCR), `shot(name)`, `log(msg)`.
 * **Checking against the JSON.** `--expect=ID,...` compares the cut-scene pages a scenario
-  logged with those entries' `en`, page by page.
+  logged with those entries' `en`, page by page; `--dialogue=PATH` takes them from another copy.
+* **Trying a line before committing it.** `tools/trybuild.py EDITS.json OUT.sms` applies a few
+  `en` edits (`{"dialogue": {id: en}, "script": {segment: {run id: en}}}`) to copies of the
+  JSON, builds `OUT.sms` from them, checks nothing moved, and puts the source back. Then run a
+  scenario with `--rom=OUT.sms --dialogue=OUT.sms.dialogue.json`. Tried on 2026-10-16: the
+  soldier's intro speech rewritten with 20-cell lines and the field menu's STAS / SRCH as STAT
+  / LOOK: the game showed both exactly (the encoder's output and the tilemap writer, seen).
 * **Scenarios** (`work/scripts/`): `boot` (the title; the pad reaches the game), `opening` (a new
-  game: every page of the intro logged, filmed and paged, to the field in Camineet).
+  game: every page of the intro logged, filmed and paged, to the field in Camineet),
+  `fieldmenu` (on the field, button 1 switches to the interaction screen, game mode 13, which
+  draws the command menu; its five words read back from rows 2-10, columns 1-6). `lib.lua`'s
+  `new_game_to_field(max_pages, on_page)` gets any scenario to the field, and
+  `area_text(r0, r1, c0, c1)` reads a menu (one line per row, step 2: a US menu word is one
+  tile row; a dialogue or cut-scene line is two, read on its lower row).
 
 Emulicious stays the second opinion for accuracy questions.
