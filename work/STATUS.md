@@ -66,6 +66,13 @@ every `en` equals its `us`.
   (`--keep-sram`) loads it after a power-on. Each run now starts with a blank battery. Found on
   the way: `emu.reset()` stops a test-runner script, and the naming screen ignores the pad for
   over a second after it appears.
+* **Battle and shop (2026-10-16).** `shop` opens a shop by interaction type and shop id
+  (`$C29E`, `$C2DB`), buys the first item and checks it against the stock data in the ROM:
+  the armory and the First Food Shop pass, pages and stock as the JSON has them. `battle`
+  forces an encounter (`$C2E6`, `$C29D` `$FF`, game mode `$0C`): the battle menu, the enemy
+  name box, the victory, experience and chest messages, and (unboosted, against a Green Slime)
+  the game over, every window line a line of `dialogue.json` (`--known`). The timed wait
+  (`LABEL_2D39`) is detected like the button wait.
 
 * **Tilemap text (2026-10-16).** `tools/tilemaps.py`; `extract_text.py --tilemaps` added 15
   tilemap segments (75 runs: menus, status boxes, spell lists, status labels, meseta, save
@@ -82,8 +89,8 @@ every `en` equals its `us`.
    free in every mode and that the title-screen words are graphics.
 2. **The rest of script.json:** done but for writing the naming screen and (the owner's
    call) the credits, both read-only for now.
-3. **More scenarios:** a battle (forced, as PS II's: the battle messages and the enemy name
-   box); a shop (forcetalk to a shopkeeper's talk id); a dungeon.
+3. **More scenarios** (as the translation needs them): the second-hand shop (selling), the
+   hospital and church (`$C29E` `$12` / `$14`), a dungeon, the ending.
 4. **Engine options**: lower case, a proportional dialogue face, longer names, a text scheme
    with room for the new script (the stock banks have 183 and 40 bytes to spare).
 5. **Translation**, then proofreading in play, then release packaging (BPS + Patcher.html).

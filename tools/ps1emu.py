@@ -7,7 +7,8 @@
 
 SCENARIO is work/scripts/SCENARIO.lua (or a path). The runner writes one Lua file to
 work/analysis/run/: a PS1 table (the run's name, the output folder, the frame cap, the bank 0/1
-labels of PSI_Disasm/ps1built.sym, the key=value params), then work/scripts/lib.lua, then the
+labels of PSI_Disasm/ps1built.sym as CPU addresses, every label as a ROM offset in PS1.rom,
+the key=value params), then work/scripts/lib.lua, then the
 scenario. Mesen runs it with --testRunner at full speed, no window. The log and the screenshots
 land in work/analysis/ (git-ignored) as SCENARIO.log and SCENARIO_NNN_name.png.
 
@@ -100,6 +101,9 @@ def compose(name, scenario, params, frames):
             '  params = {%s},' % ', '.join('[%s] = %s' % (lua_str(k), lua_value(v)) for k, v in params.items()),
             '  labels = {']
     head += ['    %s = 0x%04X,' % (k, a) for k, a in sorted(labels.items())]
+    head += ['  },', '  rom = {']           # every label's ROM offset (for data in any bank)
+    head += ['    %s = 0x%05X,' % (k, T.rom_offset(b, a)) for k, (b, a) in sorted(syms.items())
+             if re.match(r'^[A-Za-z_]\w*$', k)]
     head += ['  },', '}', '']
     lib = open(os.path.join(SCRIPTS, 'lib.lua'), encoding='utf-8').read()
     body = open(scenario, encoding='utf-8').read()
@@ -230,16 +234,17 @@ def expected_pages(ids, path=None):
 
 
 def expected_words(spec, path=None):
-    """The `en` of script.json runs: spec 'segment[:a-b|:n],...' -> [(label, word)]."""
+    """The `en` of script.json runs: spec 'segment[:ids],...', ids 'n', 'a-b' or several joined
+    with '+' (items:25+27+28) -> [(label, word)]."""
     doc = json.load(open(path or os.path.join(ROOT, 'work', 'script.json'), encoding='utf-8'))
     out = []
     for part in spec.split(','):
         seg, _, ids = part.partition(':')
         if seg not in doc['segments']:
             raise SystemExit('no segment %s in script.json' % seg)
-        lo, _, hi = ids.partition('-')
+        ranges = [(int(a), int(b or a)) for a, _, b in (x.partition('-') for x in ids.split('+'))] if ids else []
         for r in doc['segments'][seg]['runs']:
-            if ids and not int(lo) <= int(r['id']) <= int(hi or lo):
+            if ranges and not any(a <= int(r['id']) <= b for a, b in ranges):
                 continue
             if r['en'].strip():
                 out.append(('%s %s' % (seg, r['id']), r['en'].strip()))
@@ -283,6 +288,20 @@ def main():
             print('         on screen %s' % (str(seen[n]) if n < len(seen) else '-'))
         print('%d of %d pages as dialogue.json has them' % (len(want) - len(bad), len(want)))
         if bad:
+            raise SystemExit(1)
+    if '--known' in sys.argv:
+        doc = json.load(open(opts.get('dialogue') or os.path.join(ROOT, 'work', 'dialogue.json'), encoding='utf-8'))
+        known = set()
+        for e in doc['entries']:
+            text = T.TAG.sub(lambda m: '\n' if m.group(1) in ('BR', 'PAGE', 'CLR') else
+                             ('' if m.group(1) in T.TERMINATORS else m.group(0)), e['en'])
+            known.update(x.rstrip() for x in text.split('\n') if x.strip())
+        seen = [l for kind, page in seen_pages(lines) if kind == 'window' for l in page if l.strip()]
+        unknown = [l for l in seen if not any(same_page(('window', [k]), ('window', [l])) for k in known)]
+        for l in unknown:
+            print('not a line of dialogue.json: %r' % l)
+        print('%d of %d window lines are lines of dialogue.json' % (len(seen) - len(unknown), len(seen)))
+        if unknown:
             raise SystemExit(1)
     if 'words' in opts:
         screen = '\n'.join(l.split('|', 1)[1] for l in lines if '|' in l)

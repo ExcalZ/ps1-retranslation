@@ -470,7 +470,8 @@ python tools/ps1emu.py opening --expect=B49B,B4FC,B5D5
 
 * **How it runs.** The runner writes one Lua file to `work/analysis/run/`: a `PS1` table (run
   name, output folder, frame cap, every bank 0/1 label of `ps1built.sym`, the `key=value`
-  params), then `work/scripts/lib.lua`, then the scenario. Mesen runs it with `--testRunner`:
+  params; `PS1.rom`, every label's ROM offset, for reading data in any bank), then
+  `work/scripts/lib.lua`, then the scenario. Mesen runs it with `--testRunner`:
   no window, full speed (the opening's 1,800 frames take about 2 s). The log and screenshots go
   to `work/analysis/` (`NAME.log`, `NAME_NNN_shot.png`). The default ROM is `ps1en.sms`;
   `--rom=PSI_Disasm/ps1original.sms` runs the stock game (the code labels are the same:
@@ -494,7 +495,7 @@ python tools/ps1emu.py opening --expect=B49B,B4FC,B5D5
   `wait`, `wait_until(pred, max, what)`, `press(buttons, n, gap)` (`one`, `two`, `up`, `down`,
   `left`, `right`, `pause`; button 1 shows as `$10` in `Ctrl_1_held` `$C204`),
   `at_button_wait()` (an exec callback on `WaitForButton1Or2`, which runs once a frame while the
-  game waits), `dialogue_text()` and `cutscene_text()` (the text read back from the VRAM
+  game waits), `at_timed_wait()` (the same on `LABEL_2D39`, the `{TIMED}` wait), `dialogue_text()` and `cutscene_text()` (the text read back from the VRAM
   nametable through the font's tiles: no OCR), `shot(name)`, `log(msg)`; `window_open()`
   (`$C2D3`), `page_window(max, tag)` (pages a conversation with button 1, logging each page),
   `yes_no_shown()` (the YES / NO box, by its words), `dump_screen(tag)` (every row with text),
@@ -509,8 +510,10 @@ python tools/ps1emu.py opening --expect=B49B,B4FC,B5D5
   (`window_pages`: two lines; `{BR}` and `{PAGE}` move to the next line, scrolling; `{PAGE}` and
   `{END}` wait; a string that starts in the open window starts on a new line; at each wait the
   last two lines show). Inserts match any value they can hold. `--dialogue=PATH` takes the
-  text from another copy. `--words=SEGMENT[:a-b],...` checks that those `script.json` runs'
-  `en` are on the rows a scenario dumped.
+  text from another copy. `--words=SEGMENT[:ids],...` (ids `n`, `a-b`, or several joined with
+  `+`) checks that those `script.json` runs' `en` are on the rows a scenario dumped. `--known`
+  checks that every window line a scenario logged is a line of some `dialogue.json` entry (for
+  scenes whose order is random, such as a battle).
 * **Trying a line before committing it.** `tools/trybuild.py EDITS.json OUT.sms` applies a few
   `en` edits (`{"dialogue": {id: en}, "script": {segment: {run id: en}}}`) to copies of the
   JSON, builds `OUT.sms` from them, checks nothing moved, and puts the source back. Then run a
@@ -529,7 +532,13 @@ python tools/ps1emu.py opening --expect=B49B,B4FC,B5D5
   | `menus` | STAS, MAGC (two field spells given: `$C40F`), ITEM (nine items given: `$C4C0`, count `$C4E2`; the list's NEXT row) and the item actions; button 2 chooses, button 1 cancels | `--words=field_menu,status_labels,spells:15-16,items:33-40,item_menu` (22 words) |
   | `savegame` | SAVE: the slot list, YES, the naming screen (`type_name`), then the name in the cartridge RAM's slot list (a tilemap of tile, attribute pairs at `$0100`) | the name found |
   | `continue` | run after `savegame` with `--keep-sram`: CONTINUE, "CONTINUE GAME- YES", the slot list showing the name, the field | slot 1 shows the name |
+  | `shop shop=N type=armory\|food` | a shop without walking: `Interaction_Type` `$C29E` = `$16` (armory, `LABEL_2BC0`) or `$18` (food, `LABEL_2C8F`) and the shop `$C2DB` (`B03_ShopData`: 1 Camineet Armory, 3 Camineet First Food Shop, 4 / 6 Parolit, 7 Scion) before the button; 2000 meseta given; YES, the stock list, the first item bought, NO, "WELL, COME AGAIN."; the item and the price checked against the stock data in the ROM (its count byte is the last index) | `--expect=B12_B7C7,B12_B7F5,B12_B807,B12_B7E3 --words=items:25+27+28` (the run logs the stock) |
+  | `battle enemy=N` | a forced battle: `$C2E6` the enemy, `$C29D` `$FF`, game mode `$0C`, what a random encounter leaves; Alisa boosted (attack 255, 99 HP; `strong=0` not); ATTK each round; every message logged at its wait; a chest opened (`chest=no`) | `--known --words=enemies:N,battle_menu` |
 
-  Not yet: a battle, a shop, the dungeons.
+  `battle enemy=1`: the menu, the name box SWORM, "SWORM / IS KILLED.", "YOU GAINED 2 /
+  EXPERIENCE POINTS.", the chest and "THERE ARE 3 / MESETAS INSIDE." (10 of 10 lines known);
+  `battle enemy=2 strong=0` (a Green Slime against a level-1 Alisa): "ALIS DIED." and the game
+  over's three pages. Not yet: the second-hand shop (selling), the hospital and church, a
+  dungeon.
 
 Emulicious stays the second opinion for accuracy questions.

@@ -11,6 +11,7 @@ local held = {}
 local co
 local logf = io.open(PS1.out .. "/" .. PS1.name .. ".log", "w")
 local button_wait_frame = -10
+local timed_wait_frame = -10
 
 function log(msg)
   logf:write(string.format("[%6d] %s\n", frame, msg))
@@ -73,6 +74,10 @@ end
 
 -- the game is in WaitForButton1Or2 (the label runs once a frame while it waits)
 function at_button_wait() return button_wait_frame >= frame - 1 end
+
+-- the game is in the timed wait of an end code {TIMED} ($63: LABEL_2D33 / LABEL_2D39, up to
+-- 30 frames or a button; the battle messages)
+function at_timed_wait() return timed_wait_frame >= frame - 1 end
 
 function wait_for_button_wait(max, what)
   return wait_until(at_button_wait, max, what or "a button wait")
@@ -272,6 +277,10 @@ end, emu.eventType.inputPolled)
 if PS1.labels.WaitForButton1Or2 then
   emu.addMemoryCallback(function() button_wait_frame = frame end, emu.callbackType.exec,
                         PS1.labels.WaitForButton1Or2)
+end
+if PS1.labels.LABEL_2D39 then
+  emu.addMemoryCallback(function() timed_wait_frame = frame end, emu.callbackType.exec,
+                        PS1.labels.LABEL_2D39)
 end
 
 emu.addEventCallback(function()

@@ -97,8 +97,8 @@ quotes.
   `python tools/ps1emu.py SCENARIO [--rom=] [--expect=ID,...]`: headless, bounded, log and
   screenshots in `work/analysis/` (`docs/pipeline.md` section 7). Scenarios in
   `work/scripts/` on top of `lib.lua`: `boot`, `opening`, `talk`, `forcetalk talk=N`, `fieldmenu`,
-  `menus`, `savegame`, then `continue --keep-sram` (`docs/pipeline.md` section 7 has the table
-  and each one's check). To see a line in the game
+  `menus`, `savegame`, then `continue --keep-sram`, `shop shop=N`, `battle enemy=N`
+  (`docs/pipeline.md` section 7 has the table and each one's check). To see a line in the game
   before committing it: `python tools/trybuild.py EDITS.json OUT.sms`, then a scenario with
   `--rom=OUT.sms --dialogue=OUT.sms.dialogue.json --expect=...`. Never run Mesen.exe directly without a
   `settings.json` beside it (its first-run wizard blocks the test runner). The GUI debugger
