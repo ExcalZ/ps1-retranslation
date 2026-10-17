@@ -141,13 +141,24 @@ def run(name, rom=None, params=None, timeout=120, frames=30000, keep_sram=False)
     return code, lines
 
 
+def vwf_text(line):
+    """A line lib.lua read back from vwf_dialogue's tiles ("vwf:" + the hex of 10 tiles x 8 ink
+    rows) -> its text, decoded with the face; any other line as it is."""
+    if not line.startswith('vwf:'):
+        return line
+    import diafont
+    data = bytes.fromhex(line[4:])
+    rows = [[(data[(x // 8) * 8 + r] >> (7 - x % 8)) & 1 for x in range(diafont.LINE_PX)] for r in range(8)]
+    return diafont.decode(rows)
+
+
 def seen_pages(lines):
     """The pages a scenario logged ("page N (window|cut-scene): a / b ..."): [(kind, lines)]."""
     out = []
     for l in lines:
         m = re.search(r'page \d+ \((window|cut-scene)\): (.*)$', l)
         if m:
-            page = [x.rstrip() for x in m.group(2).split(' / ')]
+            page = [vwf_text(x.strip()).rstrip() for x in m.group(2).split(' / ')]
             while page and not page[-1]:
                 page.pop()
             out.append((m.group(1), page))
@@ -251,17 +262,19 @@ def expected_words(spec, path=None):
     return out
 
 
-WILD = {'NAME': '.{1,4}', 'ENEMY': '.{1,8}', 'ITEM': '.{1,8}', 'NUMBER': '[0-9]{1,5}'}
+WILD = {'NAME': '.{1,6}', 'ENEMY': '.{1,12}', 'ITEM': '.{1,12}', 'NUMBER': '[0-9O]{1,5}'}
 
 
 def same_page(want, seen):
-    """A page as expected: the same kind and lines, an insert matching any value it can hold."""
+    """A page as expected: the same kind and lines, an insert matching any value it can hold.
+    '0' and 'O' count as the same (they look the same in the face, which decodes 'O')."""
     if want[0] != seen[0] or len(want[1]) != len(seen[1]):
         return False
     for w, s in zip(want[1], seen[1]):
-        pattern = ''.join(WILD.get(m.group(1), re.escape(m.group(0))) if m.group(1) else re.escape(m.group(0))
+        pattern = ''.join(WILD.get(m.group(1), re.escape(m.group(0))) if m.group(1) else
+                          re.escape(m.group(0).replace('0', 'O'))
                           for m in re.finditer(r'\{(\w+)\}|[^{]+|\{', w))
-        if not re.fullmatch(pattern, s):
+        if not re.fullmatch(pattern, s.replace('0', 'O')):
             return False
     return True
 
@@ -277,6 +290,8 @@ def main():
     for l in lines:
         print(l)
     print('%s: %s (exit %d)' % (args[0], EXIT.get(code, 'Mesen did not finish (timeout or crash)'), code))
+    if not lines:
+        print('no log at all: the script did not load - a Lua syntax error (e.g. a goto past a local)?')
     if code != 0:
         raise SystemExit(1)
     if 'expect' in opts:

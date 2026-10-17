@@ -469,11 +469,24 @@ replace; new code and data go in `PSI_Disasm/ext/`. The plan for the rest is
 |---|---|---|
 | `expand_rom` | a 1 MB ROM: the bank map grows to 64 banks; banks 32-63 are new (`$FF` where unused). The first 512 KB stay the stock ROM; the header is unchanged (its checksum covers the first 256 KB) | `ps1.asm` (the bank map), `ext/banks.asm` |
 | `far_calls` | `FarCall` (call the routine at `hl` in bank `a` through slot 2, then page the caller's bank back; 22 bytes) and `FarRead` (`a` = the byte at `hl` in bank `a`; 18 bytes) in the unused RST slots `$10-$37`, exactly 40 bytes, so the interrupt handler stays at `$38`. A self-test routine in bank 63; `work/scripts/farcall.lua` runs both at runtime (the CPU is sent into each stub at a `WaitForVInt` call and checked when it comes back). Not yet used by the game: the proportional printer will be its first caller | `ps1.asm` (bank 0), `ext/banks.asm` |
+| `vwf_dialogue` | the dialogue window in the series' proportional face, mixed case, **80 px a line** (10 tiles; off in the working build until the translation fills the window: the stock upper-case lines are wider and would clip). `LABEL_33D6`'s first 4 bytes jump to `VwfGate`, which sits with a new `{NUMBER}` call in the stock number printer's 160 bytes (`LABEL_3292`-`LABEL_3331`): a character for the window's text rows (the cell `de` on row 19 or 21) goes through `FarCall` to `VwfChar` in bank 35, any other (the cut-scene printer, the lists) to the stock code. `VwfChar` composes the glyph into the tile under the pen and the next (1 bpp in RAM, uploaded as the stock font draws: plane 0 background, plane 1 ink) and gives each new line a set of 10 tiles - `$EC-$F5` or `$F6-$FF`, the one the line above does not show (the stock scroll moves the nametable entries, so the old line keeps its tiles). The stock still does the controls, waits, scroll, inserts and dictionary words; the line state `b` ($12 at a new line, then $11) keeps its 18-cell wrap from firing. The printer ends only on `$65` (`jp z` for `jp nc`), so `$66-$7F` are a-z. RAM `$DF00-$DF1F` (`ext/vwf_ram.asm`; the stock never touches `$DE96-$DFFB`). The face: `tools/diafont.py` from `tools/vwfmixed.py` writes `ext/vwffont.asm` on every build | `ps1.asm`, `ext/vwf.asm`, `ext/vwf_ram.asm`, `ext/vwffont.asm` |
 | `relocate_script` | the dialogue (with `DialogueBlock`) to bank 32, the messages to bank 33, the cut-scenes to bank 34, a whole bank each. The three printers page the bank of their own text: `ShowDialogue_B2` `ld a, :DialogueBlock`, `ShowDialogue_B12` `ld a, :LABEL_B12_B108`, the cut-scene printer `LABEL_337D` `ld a, :LABEL_B49B` - the stock bytes (2, 12, 2) when the text stays, so the code needs no `.IF`. The dictionary stays in bank 2 (the word expander still pages bank 2) | `ps1.asm`, `sound/sound_driver.asm`, `ext/banks.asm` |
 
 Room with `relocate_script`: dialogue 15,702 bytes (12,785 stock), messages 16,384 (3,796), cut-scenes
 16,384 (1,510). The dialogue bank is the tight one: an English from the Japanese may outgrow it,
 and splitting it over two banks needs a bank per id (a job for the far calls).
+
+**The tiles**: `work/scripts/vramaudit.lua` records the tiles every screen shows (town, menus,
+a conversation, a shop, battles with small and large monsters, a dungeon with its menu and a
+battle, the intro) and the RAM the CPU never touches. Free everywhere the dialogue window can
+appear: only `$EC-$FF` (the title screen uses them; the JP's kana font filled `$C0-$FF` on every
+text screen). A dungeon shows `$1B0-$1BF` and `$B5-$BF`; battles `$100-$19F`.
+
+**Seeing vwf_dialogue**: `python tools/trybuild.py EDITS.json OUT.sms --option vwf_dialogue=1`,
+then any scenario with `--rom=OUT.sms --dialogue=OUT.sms.dialogue.json`. On 2026-10-16 Suelo's
+conversation in mixed case (7 of 7 window pages) and a battle's messages with `{ENEMY}` and
+`{NUMBER}` (10 of 10 lines) read back exactly; opening, menus, shop, save / continue and the far
+calls passed on the same build (the cut-scenes and lists keep the stock font).
 
 Every scenario passes on the relocated build with the same checks as on the stock game
 (2026-10-16): opening, talk, forcetalk (`--expect`), menus (`--words`), save / continue, both

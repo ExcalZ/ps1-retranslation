@@ -23,7 +23,11 @@ import ps1text as T
 SNAPSHOT = os.path.join(T.ROOT, 'work', 'stock_labels.json')
 MOVABLE = [(2, 0x8000, 0xC000), (12, 0xB108, 0xC000)]
 # labels an option removes on purpose (its code takes their place)
-REPLACED = {'far_calls': ['_RST_10H', '_RST_18H', '_RST_20H', '_RST_28H', '_RST_30H']}
+REPLACED = {'far_calls': ['_RST_10H', '_RST_18H', '_RST_20H', '_RST_28H', '_RST_30H'],
+            # the number printer's insides (only it refers to them); LABEL_3292 and LABEL_3332,
+            # its entry and the code after it, stay put
+            'vwf_dialogue': ['LABEL_32A2', 'LABEL_32B2', 'LABEL_32C2', 'LABEL_32D0', 'LABEL_32E1',
+                             'LABEL_32F5', 'LABEL_32FB', 'LABEL_3302']}
 
 
 def options():

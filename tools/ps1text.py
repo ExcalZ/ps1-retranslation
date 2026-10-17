@@ -172,9 +172,23 @@ for _b in (0x23, 0x24, 0x25, 0x26, 0x28, 0x29, 0x2A, 0x2B, 0x2F, 0x3A, 0x3C, 0x3
     del US_TEXT[chr(_b)]
 
 
-def encode_us(text, words=None, dictionary=True):
+def options():
+    """The engine options of PSI_Disasm/ps1.options.asm: name -> 0/1."""
+    text = read(os.path.join(DISASM, 'ps1.options.asm'))
+    return {m.group(1): int(m.group(2)) for m in re.finditer(r'(?m)^\.define\s+(\w+)\s+(\d+)', text)}
+
+
+def vwf_charset():
+    """character -> code for vwf_dialogue (tools/diafont.py: ASCII, a-z at $66-$7F)."""
+    import diafont
+    return diafont.CHAR_CODE
+
+
+def encode_us(text, words=None, dictionary=True, charset=None):
     """The text form -> bytes for the stock US engine. Raises ValueError on a character the
-    font lacks. With `dictionary`, runs of text are packed greedily with the 128 words."""
+    font lacks. With `dictionary`, runs of text are packed greedily with the 128 words.
+    charset: character -> code (default the stock font's; vwf_charset() for vwf_dialogue)."""
+    charset = charset or US_TEXT
     out = bytearray()
     plain = []
 
@@ -194,9 +208,9 @@ def encode_us(text, words=None, dictionary=True):
                 i += len(words[best])
                 continue
             c = s[i]
-            if c not in US_TEXT:
+            if c not in charset:
                 raise ValueError('no glyph for %r in %r' % (c, text))
-            out.append(US_TEXT[c])
+            out.append(charset[c])
             i += 1
 
     pos = 0

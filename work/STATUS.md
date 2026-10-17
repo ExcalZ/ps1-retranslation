@@ -90,6 +90,15 @@ every `en` equals its `us`.
   byte-identical with the options at 0. Found on the way: checkstock and trybuild did not put
   the text files back (fixed).
 
+* **Engine milestone 2: vwf_dialogue (2026-10-16).** The dungeon audit found the plan's second
+  tile set (`$1B0-$1BF`) in use there, so the window's lines are **80 px** (10 tiles each, the
+  20 tiles `$EC-$FF`), not 144 - about 16-17 mixed-case characters a line. Built: the gate in
+  the stock number printer's bytes, the renderer in bank 35, the series face
+  (`tools/vwfmixed.py`, `tools/diafont.py`), the mixed-case encoder, linecheck in pixels, the
+  harness reading the window's pixels back. Mixed-case lines and inserts read back exactly in
+  game (trial build). **Off in the working build** until translated lines fill the window.
+  Cut-scenes have more room (64 tiles while one is up): `vwf_cutscene` can give 128 px lines.
+
 ## Next, in order
 
 1. **Left from the survey:** a cross-check against Maxim's
@@ -99,7 +108,7 @@ every `en` equals its `us`.
    call) the credits, both read-only for now.
 3. **More scenarios** (as the translation needs them): the second-hand shop (selling), the
    hospital and church (`$C29E` `$12` / `$14`), a dungeon, the ending.
-4. **Engine options**, milestone 2 (`docs/engine-plan.md`): the dungeon VRAM audit, then
-   `vwf_dialogue` with the series face; then the cut-scene audit and `vwf_cutscene`;
-   `long_names`; the window RAM map and `long_item_names`.
+4. **Engine options** (`docs/engine-plan.md`): `vwf_cutscene` (128 px lines in the font area);
+   `long_names`; the window RAM map and `long_item_names`. Then a dictionary generated from the
+   new script, if bank 32 gets tight.
 5. **Translation**, then proofreading in play, then release packaging (BPS + Patcher.html).

@@ -6,7 +6,10 @@ Checks each `en` that differs from its `us` (--all: every entry, the stock text 
 
 * it encodes for the stock engine (upper case, the font's punctuation: tools/ps1text.py);
 * dialogue and messages: each line at most 18 cells, inserts at their widest ({NAME} 4,
-  {ENEMY} and {ITEM} 8, {NUMBER} 5); the window scrolls, so a message has no line limit;
+  {ENEMY} and {ITEM} 8, {NUMBER} 5); the window scrolls, so a message has no line limit.
+  With vwf_dialogue: each line at most 80 px in the face (tools/diafont.py), an insert at its
+  widest value (the widest party, item or enemy name; {NUMBER} as 99999), any character the
+  face has (mixed case);
 * cut-scenes: each line at most 20 cells (the picture's width; the JP uses all 20, the US
   18), at most 4 lines a page; the cut-scene printer has no auto-wrap;
 * the end code: the same as the stock entry's, or none where the entry falls through;
@@ -29,6 +32,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import ps1text as T
 import tilemaps as M
+import diafont as F
 
 WORK = os.path.join(T.ROOT, 'work')
 FREE = {'02': 183, '0C': 40}           # bytes free after the stock text in banks 2 and 12
@@ -70,11 +74,20 @@ def main():
         room = None
     used = {g: 0 for g in group.values()}
     stock = {g: 0 for g in group.values()}
+    vwf = options().get('vwf_dialogue') == 1
+    if vwf:                                # the window in pixels; an insert at its widest value
+        segs = script['segments']
+        insert_px = {'NAME': max(F.width(r['en']) for r in segs['party']['runs']),
+                     'ITEM': max(F.width(r['en']) for r in segs['items']['runs']),
+                     'ENEMY': max(F.width(r['en']) for r in segs['enemies']['runs']),
+                     'NUMBER': F.width('99999')}
     for e in dialogue['entries']:
         bank = group[e['kind']]
         stock[bank] += len(e['hex']) // 2
+        window = vwf and e['kind'] != 'cutscene'
         try:
-            used[bank] += len(bytes.fromhex(e['hex']) if e['en'] == e['us'] else T.encode_us(e['en'], words))
+            used[bank] += len(bytes.fromhex(e['hex']) if e['en'] == e['us'] else
+                              T.encode_us(e['en'], words, charset=T.vwf_charset() if window else None))
         except ValueError as x:
             problems.append('%s: %s' % (e['id'], x))
             continue
@@ -83,7 +96,12 @@ def main():
         width, per_page = BUDGET[e['kind']]
         for page in pages(e['en']):
             for line in page:
-                if T.width(line) > width:
+                if window:
+                    px = sum(insert_px[m.group(1)] if m.group(1) else F.width(m.group(0))
+                             for m in re.finditer(r'\{(NAME|ITEM|ENEMY|NUMBER)\}|[^{]', line))
+                    if px > F.LINE_PX:
+                        problems.append('%s: %d px (%d): %s' % (e['id'], px, F.LINE_PX, line))
+                elif T.width(line) > width:
                     problems.append('%s: %d cells (%d): %s' % (e['id'], T.width(line), width, line))
             n = len(page) - (1 if len(page) > 1 and not page[-1] else 0)
             if per_page and n > per_page:

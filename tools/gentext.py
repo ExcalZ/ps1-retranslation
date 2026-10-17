@@ -72,9 +72,14 @@ def db_lines(data, names):
 ENCODE_ALL = '--encode-all' in sys.argv
 
 
+VWF = T.options().get('vwf_dialogue') == 1
+
+
 def entry_bytes(e, words):
     if e['en'] == e['us'] and not ENCODE_ALL:
         return bytes.fromhex(e['hex'])
+    if VWF and e['kind'] in ('dialogue', 'message'):    # the window: mixed case, the face
+        return T.encode_us(e['en'], words, charset=T.vwf_charset())
     return T.encode_us(e['en'], words)
 
 

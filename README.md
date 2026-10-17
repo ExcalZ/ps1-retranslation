@@ -33,6 +33,8 @@ PSI_Disasm/text/         the script as assembly, written by gentext.py
 PSI_Disasm/ext/          the new engine code and banks
 PSI_Disasm/ps1.options.asm  the engine options (1 MB ROM, far calls, relocated script)
 tools/                   the toolchain (Python 3.10+, standard library only)
+tools/ps1emu.py          runs the bounded emulator scenarios (work/scripts/) in Mesen 2
+tools/diafont.py         the proportional face (from tools/vwfmixed.py, the series' face)
 ```
 
 ## Building

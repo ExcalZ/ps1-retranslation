@@ -46,8 +46,8 @@ image moves" rule makes cheap.
 | 1 | `expand_rom` | the ROM to 1 MB | `checkstock.py` at 0; at 1 the first 512 KB unchanged |
 | 2 | `far_calls` | the bank-0 stubs | a test call from the harness |
 | 3 | `relocate_script` | built: each text group moves whole to a bank of its own (dialogue 32, messages 33, cut-scenes 34), and the three printers page the bank of their own first label - same-size operand changes, no new code. The dictionary stays. A (bank, address) table per id comes later, only if the dialogue outgrows bank 32 | **milestone 1**: with the US text, every scenario's `--expect`, `--words` and `--known` pass unchanged - the engine proven before anything visible changes |
-| 4 | `vwf_dialogue` | the dialogue window draws the mixed-case face proportionally into 36 work tiles: line A `$EC-$FD`, line B `$FE-$FF` + `$1B0-$1BF`. Scrolling swaps which set the top row points at (no pattern copy). Width 144 px a line, one character a frame as now | the harness renders the expected line in Python and compares the window's tile patterns pixel for pixel (the stock tile-lookup read-back no longer applies) |
-| 5 | `vwf_cutscene` | the cut-scene printer the same way: 4 lines of 20 cells (160 px). Needs up to 80 work tiles; free tiles under each cut-scene picture are still to be audited (the intro shows 393 tiles across its scenes). Fallback: a fixed-width mixed-case font swapped into `$C0-$FF` while a cut-scene is up | a per-picture VRAM audit first; then `opening --expect` |
+| 4 | `vwf_dialogue` | **built** (milestone 2). The dungeon audit took the plan's second line set away: a dungeon shows `$1B0-$1BF` (corridor floor, beside the window as well as under it) and `$B5-$BF`, so the only tiles free wherever the window can appear are the 20 at `$EC-$FF` (the title alone uses them; the JP, whose kana font filled `$C0-$FF`, proves the game's pictures avoid them). So each line owns 10 tiles: **80 px**, about 16-17 mixed-case characters - the stock line's count in characters, now proportional and mixed case. A new line takes the set the line above does not show; the stock scroll moves the nametable entries, so nothing is copied | the harness reads the window's tile pixels back and decodes them with the face; `forcetalk --expect` and `battle --known` pass on mixed-case lines |
+| 5 | `vwf_cutscene` | the cut-scene printer proportional. The audit has room here: a cut-scene screen shows no menu, status or list, so the whole font area `$C0-$FF` (64 tiles) is free while one is up - 4 lines of 16 tiles, **128 px** a line. The font must come back when the cut-scene ends (the next map, dungeon or battle load reloads it: to verify) | `opening --expect` |
 | 6 | `long_names` | party names to 6 letters (Alisa, Tyron): a new name table; the name boxes and status boxes are already 6 cells; the party menu widens from 4 cells to 6 | `menus`, `battle` with the new names |
 | 7 | `long_item_names` | items and enemies from a new table, up to an agreed width: the inventory, shop list, battle name box and item-action windows widen and move, and their RAM save areas are re-planned so windows open together never overlap | a RAM-map audit first (which windows are open together); then `menus`, `shop`, `battle --words` |
 | 8 | `menu_case` | mixed case in the menus (fixed width) | depends on decision C below |
@@ -75,8 +75,7 @@ proofreader (`proofread.html`, as PS II's) drawing lines in the game's face.
 
 ## 5. Risks, and what is verified before each step
 
-* **Dungeons** were not in the VRAM audit: they must not use `$EC-$FF` or `$1B0-$1BF` while a
-  window is open. Audit before option 4.
+* **Dungeons** (done 2026-10-16): a dungeon shows 426 tiles, `$1B0-$1BF` and `$B5-$BF` among them; only `$EC-$FF` stays free. Hence 80 px lines (option 4).
 * **The window RAM areas** (option 7): map which windows are open together before moving any.
 * **Read-on strings**: four bank-12 strings are reached by the printer reading past a
   terminator; option 3 keeps them adjacent in their text bank, and `--known` / `--expect` check

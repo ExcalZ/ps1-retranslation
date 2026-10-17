@@ -3,7 +3,8 @@
 -- and ITEM, a conversation, a shop and a battle; for each phase it records the tiles written
 -- (a write callback on VRAM $0000-$37FF, 448 tiles) and the tiles shown (the nametable and the
 -- sprite table, sampled every 10 frames). The result is written to work/analysis/vramaudit.json.
--- only=battle enemy=N: the intro and one battle only. (VDP writes do not reach Mesen's VRAM
+-- only=battle enemy=N: the intro and one battle only; only=dungeon: a dungeon (walking, the
+-- command menu, a battle there). (VDP writes do not reach Mesen's VRAM
 -- write callback, so "written" stays empty: "shown" is the measure.)
 -- Bounded: as the scenarios it borrows from.
 
@@ -16,6 +17,14 @@ end
 
 emu.addMemoryCallback(function(addr) mark(written, addr // 32) end, emu.callbackType.write,
                       0x0000, 0x37FF, emu.cpuType.sms, emu.memType.smsVideoRam)
+
+-- work RAM the CPU reads or writes, over every phase (for finding RAM a new routine can own)
+local ram_w, ram_r = {}, {}
+local track_ram = false          -- from the title on: power-on clears all of RAM
+emu.addMemoryCallback(function(addr) if track_ram then ram_w[addr] = true end end, emu.callbackType.write,
+                      0xC000, 0xDFFF, emu.cpuType.sms, emu.memType.smsMemory)
+emu.addMemoryCallback(function(addr) if track_ram then ram_r[addr] = true end end, emu.callbackType.read,
+                      0xC000, 0xDFFF, emu.cpuType.sms, emu.memType.smsMemory)
 
 local function sample()
   for cell = 0, 32 * 24 - 1 do
@@ -42,15 +51,47 @@ local function choose(n)
 end
 local function leave()
   for _ = 1, 6 do
-    if game_mode() ~= MODE.interaction then return end
+    if game_mode() ~= MODE.interaction and #area_text(2, 10, 1, 6) < 5 then return end
     press("one", 4, 30)
   end
 end
 
 function scenario()
+  wait_until(function() return game_mode() == MODE.intro end, 900, "the title")
+  track_ram = true
   set_phase("intro")
   new_game_to_field(40)
   if PS1.params.only == "battle" then goto battle end
+  if PS1.params.only == "dungeon" then
+    -- the dungeon a game event enters (Dungeon_position $159C: index $15, position $9C;
+    -- direction 1; LABEL_534B), then walk, turn, the command menu and a battle there
+    set_phase("dungeon")
+    wait(60)
+    poke(0xC30C, 0x9C) poke(0xC30D, 0x15) poke(0xC30A, 0x01) poke(0xC202, 0x0A)
+    wait_until(function() return game_mode() == MODE.dungeon end, 600, "the dungeon")
+    wait(60)
+    shot("dungeon")
+    for _, b in ipairs({ "up", "up", "left", "up", "right", "right", "up", "down" }) do
+      press(b, 4, 40)
+    end
+    shot("dungeon_walked")
+    open_command_menu()
+    choose(1) wait(30) leave()
+    poke(0xC408, 255) poke(0xC401, 99) poke(0xC406, 99)
+    poke(0xC2E6, 1) poke(0xC29D, 0xFF) poke(0xC202, 0x0C)
+    wait_until(function() return area_text(2, 10, 1, 6)[1] == "ATTK" end, 300, "the battle menu")
+    local start = now()
+    while game_mode() == MODE.interaction and now() - start < 3000 do
+      if at_button_wait() then press("one", 4, 6)
+      elseif yes_no_shown() then wait(20) press("two", 4, 20)
+      elseif area_text(2, 10, 1, 6)[1] == "ATTK" and not at_timed_wait() then press("two", 4, 20)
+      else wait(1) end
+    end
+    wait(60)
+    shot("after_battle")
+    log("back in game mode " .. game_mode())
+    goto done
+  end
   set_phase("town")
   set_held({ "left" }) wait(60) set_held({ "down" }) wait(60) set_held({}) wait(60)
   set_phase("menus")
@@ -88,6 +129,7 @@ function scenario()
     else press("one", 4, 30) end
   end
   ::battle::
+  do
   set_phase("battle")
   wait(60)
   poke(0xC408, 255) poke(0xC401, 99) poke(0xC406, 99)
@@ -100,6 +142,8 @@ function scenario()
     elseif area_text(2, 10, 1, 6)[1] == "ATTK" and not at_timed_wait() then press("two", 4, 20)
     else wait(1) end
   end
+  end
+  ::done::
   set_phase("end")
 
   local f = io.open(PS1.out .. "/vramaudit.json", "w")
@@ -116,6 +160,11 @@ function scenario()
       first = false
     end
   end
+  local untouched = {}
+  for a = 0xC000, 0xDFFF do
+    if not ram_w[a] and not ram_r[a] then untouched[#untouched + 1] = tostring(a) end
+  end
+  f:write(string.format(',"ram untouched": [%s]', table.concat(untouched, ",")))
   f:write("}")
   f:close()
   log("wrote vramaudit.json")

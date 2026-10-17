@@ -21,6 +21,13 @@ Bank34:
 .include "text\cutscenes.asm"	; the cut-scene strings, by label
 .ENDIF
 
+.BANK 35 SLOT 2
+.ORG $0000
+Bank35:
+.IF vwf_dialogue == 1
+.include "ext\vwf.asm"	; the proportional dialogue window
+.ENDIF
+
 .BANK 63 SLOT 2
 .ORG $0000
 Bank63:

@@ -1,13 +1,14 @@
 """Build a test ROM from a few `en` edits, leaving the JSON and the source as they were.
 
-    python tools/trybuild.py EDITS.json OUT.sms
+    python tools/trybuild.py EDITS.json OUT.sms [--option NAME=0|1 ...]
 
 EDITS.json: {"dialogue": {ID: en, ...}, "script": {SEGMENT: {RUN_ID: en, ...}, ...}}. The edits
 are applied to temporary copies of work/dialogue.json and work/script.json (written beside
 OUT as OUT.dialogue.json / OUT.script.json, for ps1emu.py --dialogue=), gentext.py writes them
 into the source, the ROM is assembled to OUT, and the source is put back and rebuilt.
 The edits must pass linecheck's rules; the build fails otherwise (the assembler on overflow,
-gentext on an unencodable line).
+gentext on an unencodable line). --option sets an engine option for this build only (e.g.
+--option vwf_dialogue=1 to see mixed-case lines in the proportional window).
 
 Use it to see a line in the game before committing it to the JSON:
     python tools/trybuild.py edits.json work/analysis/try.sms
@@ -15,6 +16,7 @@ Use it to see a line in the game before committing it to the JSON:
 """
 import json
 import os
+import re
 import subprocess
 import sys
 
@@ -27,10 +29,19 @@ DISASM = checkstock.DISASM
 
 
 def main():
-    if len(sys.argv) != 3:
+    args, overrides = [], {}
+    argv = sys.argv[1:]
+    while argv:
+        a = argv.pop(0)
+        if a == '--option':
+            name, _, value = argv.pop(0).partition('=')
+            overrides[name] = value
+        else:
+            args.append(a)
+    if len(args) != 2:
         raise SystemExit(__doc__)
-    edits = json.load(open(sys.argv[1], encoding='utf-8'))
-    out = os.path.abspath(sys.argv[2])
+    edits = json.load(open(args[0], encoding='utf-8'))
+    out = os.path.abspath(args[1])
     dialogue = json.load(open(os.path.join(ROOT, 'work', 'dialogue.json'), encoding='utf-8'))
     script = json.load(open(os.path.join(ROOT, 'work', 'script.json'), encoding='utf-8'))
     by_id = {e['id']: e for e in dialogue['entries']}
@@ -49,6 +60,13 @@ def main():
 
     saved = {f: open(os.path.join(DISASM, f), 'rb').read() for f in checkstock.SOURCES}
     try:
+        opts = os.path.join(DISASM, 'ps1.options.asm')
+        text = saved['ps1.options.asm']
+        for name, value in overrides.items():
+            text, n = re.subn(rb'(?m)^(\.define\s+' + name.encode() + rb')\s+\d+', rb'\1 ' + value.encode(), text)
+            if not n:
+                raise SystemExit('no option %s in ps1.options.asm' % name)
+        open(opts, 'wb').write(text)
         if subprocess.call([sys.executable, os.path.join(HERE, 'gentext.py'),
                             '--dialogue=' + paths['dialogue'], '--script=' + paths['script']]):
             raise SystemExit('gentext failed')

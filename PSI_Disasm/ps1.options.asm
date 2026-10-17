@@ -8,3 +8,4 @@
 .define expand_rom 1		; 1 MB: banks 32-63 for new code and text (ext/banks.asm)
 .define far_calls 1		; FarCall / FarRead in the unused RST slots $10-$37 (needs expand_rom)
 .define relocate_script 1	; the script to banks 32-34 (needs expand_rom)
+.define vwf_dialogue 0		; the dialogue window in the series face, 80 px lines (needs far_calls; ext/vwf.asm)

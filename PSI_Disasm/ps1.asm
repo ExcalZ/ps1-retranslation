@@ -36,6 +36,11 @@ BANKS 32
 .ENDRO
 .ENDIF
 
+.IF vwf_dialogue == 1
+.IF far_calls == 0
+.FAIL "vwf_dialogue needs far_calls"
+.ENDIF
+.ENDIF
 .IF expand_rom == 0
 .IF far_calls == 1
 .FAIL "far_calls needs expand_rom"
@@ -48,6 +53,7 @@ BANKS 32
 .EMPTYFILL $FF
 
 .include "ps1.constants.asm"
+.include "ext\vwf_ram.asm"
 
 .BANK 0 SLOT 0
 .ORG $0000
@@ -7080,7 +7086,11 @@ LABEL_31FA:
 	or	a
 	jp	m, LABEL_3332
 	cp	$65
+.IF vwf_dialogue == 1
+	jp	z, WaitForButton1Or2	; vwf_dialogue: $66-$7F are a-z
+.ELSE
 	jp	nc, WaitForButton1Or2
+.ENDIF
 	cp	$62
 	ret  z
 
@@ -7168,6 +7178,63 @@ LABEL_3274:
 	inc	hl
 	jp	LABEL_31FA
 
+.IF vwf_dialogue == 1
+; vwf_dialogue: the stock number printer's 160 bytes. {NUMBER} goes to the proportional
+; renderer (VwfNumber), and VwfGate sits in the rest.
+LABEL_3292:
+	cp	Dialogue_NumberFromC2C5
+	jr	nz, LABEL_32F5
+	push	hl
+	ld	a, :VwfNumber
+	ld	hl, VwfNumber
+	call	FarCall
+	pop	hl
+	inc	hl
+	jp	LABEL_31FA
+
+LABEL_32F5:
+	call	LABEL_33D6
+	jp	LABEL_31FA
+
+; LABEL_33D6 jumps here. A character for the dialogue window's text rows (de, the cell of
+; the line's upper row, on row 19: $7CC0-$7CFF, or row 21: $7D40-$7D7F) goes to VwfChar;
+; any other (the cut-scene printer on even rows, the lists) to the stock code.
+VwfGate:
+	ld	a, d
+	cp	$7C
+	jr	z, +
+	cp	$7D
+	jr	nz, VwfGate_Stock
+	ld	a, e
+	and	$C0
+	cp	$40
+	jr	z, VwfGate_Draw
+	jr	VwfGate_Stock
++:
+	ld	a, e
+	and	$C0
+	cp	$C0
+	jr	nz, VwfGate_Stock
+VwfGate_Draw:
+	ld	a, (hl)
+	ld	(VwfCharIn), a
+	push	hl
+	ld	a, :VwfChar
+	ld	hl, VwfChar
+	call	FarCall
+	pop	hl
+	inc	hl
+	ld	a, $0A
+	jp	WaitForVInt
+VwfGate_Stock:
+	di
+	push	bc
+	push	de
+	rst	$08
+	jp	LABEL_33D6_Stock
+
+.ORGA $3332
+.ELSE
 LABEL_3292:
 	cp	Dialogue_NumberFromC2C5
 	jr	nz, LABEL_32F5
@@ -7282,6 +7349,7 @@ LABEL_3302:
 	call	WaitForVInt
 	dec  b
 	ret
+.ENDIF
 
 LABEL_3332:
 	call	LABEL_333E
@@ -7400,10 +7468,16 @@ LABEL_33D1:
 	ret
 
 LABEL_33D6:
+.IF vwf_dialogue == 1
+	jp	VwfGate
+	nop
+.ELSE
 	di
 	push	bc
 	push	de
 	rst  $08
+.ENDIF
+LABEL_33D6_Stock:
 	ld	a, (hl)
 	sub	$20
 	add	a, a

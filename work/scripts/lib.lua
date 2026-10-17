@@ -111,9 +111,27 @@ function text_line(lower_row, c0, c1)
   return (table.concat(s):gsub("[%s~]+$", ""))   -- "~": a cell outside the font
 end
 
+-- a window line drawn by vwf_dialogue: its lower row's cells from column 7 show tiles $EC-$FF.
+-- It is read back as "vwf:" and the hex of the ink (tile plane 1) of its 10 tiles, 8 rows a
+-- tile; tools/ps1emu.py decodes it with the face (tools/diafont.py)
+local function vwf_line(lower_row)
+  local first = cell(lower_row, 7)
+  if first < 0xEC or first > 0xFF then return nil end
+  local hex = {}
+  for c = 7, 16 do
+    local t = cell(lower_row, c)
+    for r = 0, 7 do
+      local b = 0
+      if t >= 0xEC and t <= 0xFF then b = vram(t * 32 + r * 4 + 1) end
+      hex[#hex + 1] = string.format("%02X", b)
+    end
+  end
+  return "vwf:" .. table.concat(hex)
+end
+
 -- the dialogue window's two lines (rows 19-22, columns 7-24)
 function dialogue_text()
-  return { text_line(20, 7, 24), text_line(22, 7, 24) }
+  return { vwf_line(20) or text_line(20, 7, 24), vwf_line(22) or text_line(22, 7, 24) }
 end
 
 -- the cut-scene text: four lines (rows 16-23, columns 6-25)
@@ -140,12 +158,14 @@ function dump_screen(tag)
   end
 end
 
--- on the field: switch to the interaction screen and wait for the command menu.
+-- on the field (the map: a button switches to the interaction screen, mode 13) or in a
+-- dungeon (the menu opens over the corridor, mode 11): wait for the command menu.
 -- Bounded: 5 presses, 300 frames for the menu.
 function open_command_menu()
+  local function menu_up() return #area_text(2, 10, 1, 6) >= 5 end
   for try = 1, 5 do
     press("one", 4, 36)
-    if game_mode() == MODE.interaction then break end
+    if game_mode() == MODE.interaction or menu_up() then break end
     if try == 5 then error("the map did not take button 1 in 5 tries") end
   end
   wait_until(function() return #area_text(2, 10, 1, 6) >= 5 end, 300, "the command menu")

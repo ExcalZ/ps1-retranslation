@@ -78,6 +78,9 @@ failed build (chain commands with `&&` and `test ! -f PSI_Disasm/ps1.log`).
   `{NOWAIT}`, `{TIMED}`, `{PAUSE}` - keep the stock entry's. An entry with `falls_through` must
   not end in an end code (it runs on into the next entry); `jp_cont` entries carry part of the
   JP of the entry before - keep the split. `us` and `jp` show the window's auto-wrap as `{BR}`.
+* With `vwf_dialogue` (off until the translation fills the window): dialogue and messages
+  are mixed case in the series face, **80 px a line** (`linecheck.py` measures it), any
+  character `tools/diafont.py` has. Without it:
 * Budgets: dialogue and messages 18 cells a line (the window scrolls, no line limit);
   cut-scenes 20 cells, 4 lines a page; inserts count at their widest ({NAME} 4, {ENEMY} and
   {ITEM} 8, {NUMBER} 5). Names: party 4, items 8, enemies 8.

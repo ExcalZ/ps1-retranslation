@@ -3,7 +3,8 @@
     python tools/sourcebuild.py [out.sms] [--no-gen]
 
 1. gentext.py writes work/dialogue.json and work/script.json into PSI_Disasm/
-   (skipped with --no-gen, and until gentext.py exists);
+   (skipped with --no-gen), and diafont.py writes the proportional face's tables
+   (ext/vwffont.asm, vwf_dialogue);
 2. WLA-DX assembles and links PSI_Disasm/ps1.asm (wla-z80 + wlalink, as
    PSI_Disasm/build.bat does, but with WLA-DX 10.7 rather than the 2006 binaries
    the disassembly ships);
@@ -83,6 +84,8 @@ def main():
     if '--no-gen' not in sys.argv and os.path.exists(gentext):
         if subprocess.call([sys.executable, gentext]) != 0:
             raise SystemExit('gentext.py failed')
+    import diafont                     # the face's tables (ext/vwffont.asm; written if changed)
+    diafont.main()
     assemble()
     rom = open(BUILT, 'rb').read()
     if len(rom) not in (0x80000, 0x100000):     # 1 MB with expand_rom
