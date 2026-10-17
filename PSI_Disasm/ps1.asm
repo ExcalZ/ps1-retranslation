@@ -36,6 +36,11 @@ BANKS 32
 .ENDRO
 .ENDIF
 
+.IF vwf_cutscene == 1
+.IF vwf_dialogue == 0
+.FAIL "vwf_cutscene needs vwf_dialogue"
+.ENDIF
+.ENDIF
 .IF vwf_dialogue == 1
 .IF far_calls == 0
 .FAIL "vwf_dialogue needs far_calls"
@@ -7196,25 +7201,18 @@ LABEL_32F5:
 	call	LABEL_33D6
 	jp	LABEL_31FA
 
-; LABEL_33D6 jumps here. A character for the dialogue window's text rows (de, the cell of
-; the line's upper row, on row 19: $7CC0-$7CFF, or row 21: $7D40-$7D7F) goes to VwfChar;
-; any other (the cut-scene printer on even rows, the lists) to the stock code.
+; LABEL_33D6 jumps here. Its only callers are the dialogue printer and the cut-scene printer,
+; and de is the cell of the line's upper row: rows 16-23 ($7C00-$7DFF) go to VwfChar - rows
+; 19 and 21 (bit 6 of e set) the window's, 16, 18, 20, 22 the cut-scenes' (vwf_cutscene).
 VwfGate:
 	ld	a, d
+	and	$FE
 	cp	$7C
-	jr	z, +
-	cp	$7D
 	jr	nz, VwfGate_Stock
-	ld	a, e
-	and	$C0
-	cp	$40
-	jr	z, VwfGate_Draw
-	jr	VwfGate_Stock
-+:
-	ld	a, e
-	and	$C0
-	cp	$C0
-	jr	nz, VwfGate_Stock
+.IF vwf_cutscene == 0
+	bit	6, e
+	jr	z, VwfGate_Stock
+.ENDIF
 VwfGate_Draw:
 	ld	a, (hl)
 	ld	(VwfCharIn), a
@@ -7232,6 +7230,47 @@ VwfGate_Stock:
 	push	de
 	rst	$08
 	jp	LABEL_33D6_Stock
+
+.IF vwf_cutscene == 1
+; The stock font goes back to tiles $C0-$EB after a cut-scene used the font area: when a
+; fade-out ends (LABEL_7B0B calls VwfFadeWait for its frame wait), or, failing a fade, before
+; any menu or window is drawn (LABEL_3A57 and LABEL_3A83 call VwfMenuFont first).
+VwfFadeWait:
+	ld	a, $16
+	call	WaitForVInt
+	ld	a, (Fade_timer)
+	or	a
+	ret	nz
+	ld	a, (VwfCutDirty)
+	or	a
+	ret	z
+VwfFontBack:
+	push	bc
+	push	de
+	push	hl
+	xor	a
+	ld	(VwfCutDirty), a
+	ld	a, ($FFFF)
+	push	af
+	ld	a, :LABEL_B16_BAD8
+	ld	($FFFF), a
+	ld	hl, LABEL_B16_BAD8
+	ld	de, $5800
+	call	LABEL_3FA
+	pop	af
+	ld	($FFFF), a
+	pop	hl
+	pop	de
+	pop	bc
+	ret
+
+VwfMenuFont:
+	ld	a, (VwfCutDirty)
+	or	a
+	call	nz, VwfFontBack
+	ld	a, ($FFFF)	; the instruction the hook replaced
+	ret
+.ENDIF
 
 .ORGA $3332
 .ELSE
@@ -8393,7 +8432,11 @@ LABEL_3A21:
 	ret
 
 LABEL_3A57:
+.IF vwf_cutscene == 1
+	call	VwfMenuFont	; vwf_cutscene: the font back first
+.ELSE
 	ld	a, ($FFFF)
+.ENDIF
 	push	af
 	ld	a, :Bank27
 	ld	($FFFF), a
@@ -8423,7 +8466,11 @@ LABEL_3A6E:
 	ret
 
 LABEL_3A83:
+.IF vwf_cutscene == 1
+	call	VwfMenuFont	; vwf_cutscene: the font back first
+.ELSE
 	ld	a, ($FFFF)
+.ENDIF
 	push	af
 	ld	a, :Bank27
 	ld	($FFFF), a
@@ -17088,8 +17135,14 @@ FadeOut2:
 	ld	hl, $2009
 	ld	(Fade_timer), hl
 LABEL_7B0B:
+.IF vwf_cutscene == 1
+	call	VwfFadeWait	; vwf_cutscene: the font back after a cut-scene
+	nop
+	nop
+.ELSE
 	ld	a, $16
 	call	WaitForVInt
+.ENDIF
 	ld	a, (Fade_timer)
 	or	a
 	jp	nz, LABEL_7B0B

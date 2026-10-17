@@ -114,15 +114,15 @@ end
 -- a window line drawn by vwf_dialogue: its lower row's cells from column 7 show tiles $EC-$FF.
 -- It is read back as "vwf:" and the hex of the ink (tile plane 1) of its 10 tiles, 8 rows a
 -- tile; tools/ps1emu.py decodes it with the face (tools/diafont.py)
-local function vwf_line(lower_row)
-  local first = cell(lower_row, 7)
-  if first < 0xEC or first > 0xFF then return nil end
+local function vwf_line(lower_row, col, ntiles, lo, hi)
+  local first = cell(lower_row, col)
+  if first < lo or first > hi then return nil end
   local hex = {}
-  for c = 7, 16 do
+  for c = col, col + ntiles - 1 do
     local t = cell(lower_row, c)
     for r = 0, 7 do
       local b = 0
-      if t >= 0xEC and t <= 0xFF then b = vram(t * 32 + r * 4 + 1) end
+      if t >= lo and t <= hi then b = vram(t * 32 + r * 4 + 1) end
       hex[#hex + 1] = string.format("%02X", b)
     end
   end
@@ -131,12 +131,24 @@ end
 
 -- the dialogue window's two lines (rows 19-22, columns 7-24)
 function dialogue_text()
-  return { vwf_line(20) or text_line(20, 7, 24), vwf_line(22) or text_line(22, 7, 24) }
+  return { vwf_line(20, 7, 10, 0xEC, 0xFF) or text_line(20, 7, 24),
+           vwf_line(22, 7, 10, 0xEC, 0xFF) or text_line(22, 7, 24) }
+end
+
+-- a cut-scene line drawn by vwf_cutscene: 15 tiles from column 6 in $C1-$FC, and the upper
+-- row still the cleared tile 0 (the stock printer puts $C0 there with every character)
+local function cut_vwf_line(lower_row)
+  if cell(lower_row - 1, 6) ~= 0 then return nil end
+  return vwf_line(lower_row, 6, 15, 0xC1, 0xFC)
 end
 
 -- the cut-scene text: four lines (rows 16-23, columns 6-25)
 function cutscene_text()
-  return { text_line(17, 6, 25), text_line(19, 6, 25), text_line(21, 6, 25), text_line(23, 6, 25) }
+  local out = {}
+  for _, r in ipairs({ 17, 19, 21, 23 }) do
+    out[#out + 1] = cut_vwf_line(r) or text_line(r, 6, 25)
+  end
+  return out
 end
 
 -- the text of a screen area: one line per lower tile row in rows r0..r1 (step 2 from r0)

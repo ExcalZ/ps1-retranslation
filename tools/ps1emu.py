@@ -142,13 +142,15 @@ def run(name, rom=None, params=None, timeout=120, frames=30000, keep_sram=False)
 
 
 def vwf_text(line):
-    """A line lib.lua read back from vwf_dialogue's tiles ("vwf:" + the hex of 10 tiles x 8 ink
-    rows) -> its text, decoded with the face; any other line as it is."""
+    """A line lib.lua read back from the proportional tiles ("vwf:" + the hex of the line's tiles,
+    8 ink rows each: 10 in the window, 15 in a cut-scene) -> its text, decoded with the face;
+    any other line as it is."""
     if not line.startswith('vwf:'):
         return line
     import diafont
     data = bytes.fromhex(line[4:])
-    rows = [[(data[(x // 8) * 8 + r] >> (7 - x % 8)) & 1 for x in range(diafont.LINE_PX)] for r in range(8)]
+    px = len(data)                       # 8 rows a tile: a byte a pixel column of 8
+    rows = [[(data[(x // 8) * 8 + r] >> (7 - x % 8)) & 1 for x in range(px)] for r in range(8)]
     return diafont.decode(rows)
 
 

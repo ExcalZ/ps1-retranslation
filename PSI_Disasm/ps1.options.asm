@@ -9,3 +9,4 @@
 .define far_calls 1		; FarCall / FarRead in the unused RST slots $10-$37 (needs expand_rom)
 .define relocate_script 1	; the script to banks 32-34 (needs expand_rom)
 .define vwf_dialogue 0		; the dialogue window in the series face, 80 px lines (needs far_calls; ext/vwf.asm)
+.define vwf_cutscene 0		; the cut-scenes in the series face, 120 px lines in the font area (needs vwf_dialogue)

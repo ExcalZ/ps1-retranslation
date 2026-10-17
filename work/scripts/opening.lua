@@ -12,4 +12,6 @@ function scenario()
   end)
   shot("field")
   log(string.format("on the field after %d pages (game mode %d)", pages, game_mode()))
+  -- vwf_cutscene: VwfFadeWait clears this when it has put the stock font back (0 in a stock build)
+  log(string.format("VwfCutDirty $DF07 = %d", ram(0xDF07)))
 end

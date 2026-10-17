@@ -99,6 +99,11 @@ every `en` equals its `us`.
   game (trial build). **Off in the working build** until translated lines fill the window.
   Cut-scenes have more room (64 tiles while one is up): `vwf_cutscene` can give 128 px lines.
 
+* **Engine milestone 3: vwf_cutscene (2026-10-16).** The cut-scenes in the face, 4 lines of
+  120 px in the font area (`$C1-$FC`), the stock font reloaded at the next fade-out or before
+  the next menu or window. The intro in mixed case reads back exactly; every scenario passes
+  with both proportional options on. Off in the working build with `vwf_dialogue`.
+
 ## Next, in order
 
 1. **Left from the survey:** a cross-check against Maxim's
@@ -108,7 +113,8 @@ every `en` equals its `us`.
    call) the credits, both read-only for now.
 3. **More scenarios** (as the translation needs them): the second-hand shop (selling), the
    hospital and church (`$C29E` `$12` / `$14`), a dungeon, the ending.
-4. **Engine options** (`docs/engine-plan.md`): `vwf_cutscene` (128 px lines in the font area);
-   `long_names`; the window RAM map and `long_item_names`. Then a dictionary generated from the
+4. **Engine options** (`docs/engine-plan.md`): `long_names`; the window RAM map and
+   `long_item_names`. Not yet seen with `vwf_cutscene`: the Myau, governor and ending scenes
+   (no scenario reaches them yet). Then a dictionary generated from the
    new script, if bank 32 gets tight.
 5. **Translation**, then proofreading in play, then release packaging (BPS + Patcher.html).

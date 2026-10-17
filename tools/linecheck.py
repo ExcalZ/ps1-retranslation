@@ -9,7 +9,7 @@ Checks each `en` that differs from its `us` (--all: every entry, the stock text 
   {ENEMY} and {ITEM} 8, {NUMBER} 5); the window scrolls, so a message has no line limit.
   With vwf_dialogue: each line at most 80 px in the face (tools/diafont.py), an insert at its
   widest value (the widest party, item or enemy name; {NUMBER} as 99999), any character the
-  face has (mixed case);
+  face has (mixed case); with vwf_cutscene, cut-scene lines at most 120 px, 4 to a page;
 * cut-scenes: each line at most 20 cells (the picture's width; the JP uses all 20, the US
   18), at most 4 lines a page; the cut-scene printer has no auto-wrap;
 * the end code: the same as the stock entry's, or none where the entry falls through;
@@ -74,7 +74,11 @@ def main():
         room = None
     used = {g: 0 for g in group.values()}
     stock = {g: 0 for g in group.values()}
-    vwf = options().get('vwf_dialogue') == 1
+    opts = options()
+    vwf = opts.get('vwf_dialogue') == 1
+    vwf_px = {'dialogue': F.LINE_PX, 'message': F.LINE_PX, 'cutscene': 120}
+    vwf_kinds = (({'dialogue', 'message'} if vwf else set())
+                 | ({'cutscene'} if opts.get('vwf_cutscene') == 1 else set()))
     if vwf:                                # the window in pixels; an insert at its widest value
         segs = script['segments']
         insert_px = {'NAME': max(F.width(r['en']) for r in segs['party']['runs']),
@@ -84,7 +88,7 @@ def main():
     for e in dialogue['entries']:
         bank = group[e['kind']]
         stock[bank] += len(e['hex']) // 2
-        window = vwf and e['kind'] != 'cutscene'
+        window = e['kind'] in vwf_kinds    # drawn in the proportional face
         try:
             used[bank] += len(bytes.fromhex(e['hex']) if e['en'] == e['us'] else
                               T.encode_us(e['en'], words, charset=T.vwf_charset() if window else None))
@@ -99,8 +103,8 @@ def main():
                 if window:
                     px = sum(insert_px[m.group(1)] if m.group(1) else F.width(m.group(0))
                              for m in re.finditer(r'\{(NAME|ITEM|ENEMY|NUMBER)\}|[^{]', line))
-                    if px > F.LINE_PX:
-                        problems.append('%s: %d px (%d): %s' % (e['id'], px, F.LINE_PX, line))
+                    if px > vwf_px[e['kind']]:
+                        problems.append('%s: %d px (%d): %s' % (e['id'], px, vwf_px[e['kind']], line))
                 elif T.width(line) > width:
                     problems.append('%s: %d cells (%d): %s' % (e['id'], T.width(line), width, line))
             n = len(page) - (1 if len(page) > 1 and not page[-1] else 0)
