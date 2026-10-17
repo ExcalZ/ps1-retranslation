@@ -1,0 +1,50 @@
+# ---- Never commit game data ------------------------------------------
+*.sms
+*.SMS
+*.sg
+*.bin
+*.zip
+*.bps
+*.ips
+*.sram
+*.sav
+*.mss
+*.mst
+*.md
+!README.md
+!AGENTS.md
+!NOTICE.md
+!docs/*.md
+!work/*.md
+!PSI_Disasm/README.md
+
+# Emulator savestates and memory dumps contain the game's RAM/VRAM.
+*.state
+*.st?
+work/states/
+work/analysis/
+
+# ---- Third-party binaries: link to them, do not vendor them ------------
+# (the 2006 WLA-DX build that ships in the disassembly is not used: tools/sourcebuild.py
+# needs WLA-DX 10.7)
+wla_dx_v*/
+PSI_Disasm/binaries/
+Mesen*/
+Emulicious*/
+flips/
+
+# ---- Build products ---------------------------------------------------
+PSI_Disasm/ps1.o
+PSI_Disasm/ps1.log
+PSI_Disasm/ps1built*.sms
+PSI_Disasm/ps1built.sym
+PSI_Disasm/bank_info.txt
+release/PS1_Retranslation_v*/
+
+# ---- Editor and interpreter litter ------------------------------------
+__pycache__/
+*.pyc
+*.bak
+Thumbs.db
+.DS_Store
+.claude/

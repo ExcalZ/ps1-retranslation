@@ -1,0 +1,7 @@
+# No line-ending conversion anywhere: the generators will replace exact line
+# ranges of ps1.asm (CRLF, as lory90 ships it) and depend on files being byte-exact.
+* -text
+*.sms binary
+*.exe binary
+*.dll binary
+*.png binary
