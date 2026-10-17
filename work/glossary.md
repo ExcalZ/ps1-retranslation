@@ -14,6 +14,9 @@ script (`work/dialogue.json`, `work/script.json`). Rows marked **settled** follo
 translation's shipped text and need no decision; everything else is a proposal, and the
 numbered questions at the end are the decisions that block the translation.
 
+PS IV's shipped text (checked 2026-10-17) settles 30 more names; where PS I's own katakana
+differs from PS IV's for the same thing, see "PS I and PS IV" below.
+
 Widths: party names 6 letters (`long_names`); items and enemies 12 (`long_item_names`: the
 windows show them in capitals, one letter a cell); spells 4 cells (no option widens them yet).
 
@@ -22,7 +25,7 @@ windows show them in capitals, one letter a cell); spells 4 cells (no option wid
 | JP | proposed | US 1987 | note |
 |---|---|---|---|
 | アリサ | Alisa | Alis | **settled**: PS IV's shipped text ("Alisa's Sword", "Alisa the hero") and the PS II glossary. PS IV's own glossary table still says Alis; its text overrides it |
-| ミャウ | Myau | Myau | **settled** (PS IV, PS II). A ジャコウネコ, a musk cat (civet); the US "some cats" |
+| ミャウ | Myau | Myau | **settled** (PS IV, PS II). A ジャコウネコ, a musk cat (PS IV ships "musk cat"); the US "some cats" |
 | タイロン | Tyron | Odin | **settled** (PS II glossary) |
 | ルツ | Lutz | Noah | **settled** (PS IV, PS II). A man: the US made him "her" in one line (`00A8`) |
 | ネロ | Nero | Nero | Alisa's brother; she calls him ニイサン |
@@ -69,7 +72,7 @@ windows show them in capitals, one letter a cell); spells 4 cells (no option wid
 | グアラン | Guaran | Guaron | the morgue (シタイオキバ): question 2 |
 | コロナ (ノトウ) | Corona Tower | Corona Tower | |
 | メデューサノトウ | Medusa's Tower | Medusa's Tower | |
-| イアラ / ナウラ / マハル | Iala / Naula / Maharu | Iala / Naula / Maharu | caves. マハル could be Mahal; Maharu kept |
+| イアラ / ナウラ / マハル | Iala / Naura / Maharu | Iala / Naula / Maharu | caves. Naura **settled** (PS IV ships its cake shop as Naura). マハル could be Mahal; Maharu kept |
 | デゾリスノドウクツ | the Dezolis Cave | the Dezoris Cave | |
 | アルチプラノ | Altiplano | Altiplano | the plateau of the Laerma trees |
 | スペースポート | spaceport | spaceport | |
@@ -86,14 +89,14 @@ own menu abbreviations), only where the full form does not fit.
 
 | # | JP | full form | 12-letter form | US 1987 | note |
 |---|---|---|---|---|---|
-| 1 | ウッドケイン | Wood Cane | | WOODCANE | |
+| 1 | ウッドケイン | Wood Cane |  | WOODCANE | **settled** (PS IV ships it) |
 | 2 | ショートソード | Short Sword | | SHT. SWD | |
 | 3 | アイアンソード | Iron Sword | | IRN. SWD | |
 | 4 | サイコウオンド | Psycho Wand | | WAND | **settled** (PS IV) |
-| 5 | シルバータスク | Silver Tusk | | IRN.FANG | Myau's |
+| 5 | シルバータスク | Silver Tusk |  | IRN.FANG | **settled** (PS IV ships it). Myau's |
 | 6 | アイアンアクス | Iron Axe | | IRN. AXE | |
-| 7 | チタニウムソード | Titanium Sword | Titanium Swd | TIT. SWD | |
-| 8 | セラミックソード | Ceramic Sword | Ceramic Swd | CRC. SWD | |
+| 7 | チタニウムソード | Titanium Sword | Titanium Swd | TIT. SWD | **settled** (PS IV ships it) |
+| 8 | セラミックソード | Ceramic Sword | Ceramic Swd | CRC. SWD | **settled** (PS IV ships it) |
 | 9 | ニードルガン | Needle Gun | | NEEDLGUN | |
 | 10 | サーベルクロー | Saber Claw | | SIL.FANG | |
 | 11 | ヒートガン | Heat Gun | | HEAT.GUN | |
@@ -101,26 +104,26 @@ own menu abbreviations), only where the full form does not fit.
 | 13 | レーザーガン | Laser Gun | | LASR.GUN | |
 | 14 | ラコニアンソード | Laconian Sword | Laconian Swd | LAC. SWD | |
 | 15 | ラコニアンアクス | Laconian Axe | | LAC. AXE | |
-| 16 | レザークロス | Leather Cloth | LeatherCloth | LTH.ARMR | |
-| 17 | ホワイトマント | White Mantle | | WHT.MANT | |
+| 16 | レザークロス | Leather Cloth | LeatherCloth | LTH.ARMR | **settled** (PS IV ships it) |
+| 17 | ホワイトマント | White Cape |  | WHT.MANT | **settled** (PS IV ships it) (not Mantle, though マント) |
 | 18 | ライトスーツ | Light Suit | | LGT.SUIT | |
 | 19 | アイアンアーマー | Iron Armor | | IRN.ARMR | |
 | 20 | トゲリスノケガワ | Spiny Squirrel Pelt | Spiny Pelt | THCK.FUR | トゲリス, a thorn squirrel: a made-up beast |
 | 21 | ジルコニアメイル | Zirconia Mail | ZirconiaMail | ZIR.ARMR | |
 | 22 | ダイヤノヨロイ | Diamond Armor | Diamond Mail | DMD.ARMR | ヨロイ is armor; Mail as #21 |
-| 23 | ラコニアアーマー | Laconia Armor | Laconia Mail | LAC.ARMR | |
-| 24 | フラードマント | Frad Mantle | | FRD.MANT | フラード unexplained |
-| 25 | レザーシールド | Leather Shield | Leather Shld | LTH. SLD | |
+| 23 | ラコニアアーマー | Laconia Armor | Laconia Mail | LAC.ARMR | **settled** (PS IV ships it) |
+| 24 | フラードマント | Frad Mantle |  | FRD.MANT | **settled** (PS IV ships it) |
+| 25 | レザーシールド | Leather Shield | Leather Shld | LTH. SLD | **settled** (PS IV ships it) |
 | 26 | アイアンシールド | Iron Shield | | BRNZ.SLD | the US swapped 26 and 27's materials |
 | 27 | ボロンシールド | Boron Shield | | IRN. SLD | |
 | 28 | セラミックノタテ | Ceramic Shield | Ceramic Shld | CRC. SLD | |
 | 29 | アニマルグラブ | Animal Glove | | GLOVE | Myau's |
-| 30 | レーザーバリア | Laser Barrier | LaserBarrier | LASR.SLD | |
+| 30 | レーザーバリア | Laser Barrier | LaserBarrier | LASR.SLD | **settled** (PS IV ships it) |
 | 31 | ペルセウスノタテ | Perseus Shield | Perseus Shld | MIRR.SLD | the shield of Perseus |
-| 32 | ラコニアシールド | Laconia Shield | Laconia Shld | LAC. SLD | |
+| 32 | ラコニアシールド | Laconia Shield | Laconia Shld | LAC. SLD | **settled** (PS IV ships it) |
 | 33 | ランドマスター | Land Master | | LANDROVR | **settled** (PS IV) |
-| 34 | フロームーバー | Flow Mover | | HOVRCRFT | |
-| 35 | アイスデッカー | Ice Decker | | ICE DIGR | |
+| 34 | フロームーバー | Flow Mover |  | HOVRCRFT | **settled** (PS IV ships it) |
+| 35 | アイスデッカー | Ice Decker |  | ICE DIGR | **settled** (PS IV ships it) |
 | 36 | ペロリーメイト | PelorieMate | | COLA | **settled** (PS IV) |
 | 37 | ルオギニン | Ruoginin | | BURGER | |
 | 38 | スーズフルート | Soothe Flute | | FLUTE | スーズ, soothe |
@@ -131,15 +134,15 @@ own menu abbreviations), only where the full form does not fit.
 | 43 | アルシュリン | Alshlin | | ALSULIN | **settled** (PS IV chose Alshlin over Alsulin) |
 | 44 | ポリメテラール | Polymeteral | | POLYMTRL | |
 | 45 | ダンジョンキー | Dungeon Key | | DUGN KEY | |
-| 46 | テレパシーボール | Telepathy Ball | TelepathBall | SPHERE | |
+| 46 | テレパシーボール | Telepathy Ball | TelepathBall | SPHERE | **settled** (PS IV ships it) (in its dialogue) |
 | 47 | イクリプストーチ | Eclipse Torch | EclipseTorch | TORCH | the name **settled** (PS IV), the width not |
-| 48 | エアロプリズム | Aero Prism | | PRISM | **settled** (PS IV, PS II) |
+| 48 | エアロプリズム | Aeroprism |  | PRISM | PS IV ships Aeroprism, one word; the PS II glossary has Aero Prism: question 7 |
 | 49 | ラエルマベリー | Laerma Berry | | NUTS | from the ラエルマツリー |
 | 50 | ハプスビー | Hapsby | | HAPSBY | |
 | 51 | ロードパス | Road Pass | | ROADPASS | |
 | 52 | パスポート | Passport | | PASSPORT | |
 | 53 | コンパス | Compass | | COMPASS | |
-| 54 | ショートケーキ | Shortcake | | CAKE | |
+| 54 | ショートケーキ | Shortcake |  | CAKE | **settled** (PS IV ships it) |
 | 55 | ソウトクノテガミ | Governor's Letter | Gov's Letter | LETTER | or plain Letter |
 | 56 | ラコニアンポット | Laconian Pot | | LAC. POT | |
 | 57 | ライトペンダント | Light Pendant | LightPendant | MAG.LAMP | |
@@ -155,21 +158,21 @@ own menu abbreviations), only where the full form does not fit.
 
 | # | JP | full form | 12-letter form | US 1987 | note |
 |---|---|---|---|---|---|
-| 1 | モンスターフライ | Monster Fly | | SWORM | |
+| 1 | モンスターフライ | Monster Fly |  | SWORM | **settled** (PS IV ships it) |
 | 2 | グリーンスライム | Green Slime | | GR.SLIME | |
 | 3 | ウイングアイ | Wing Eye | | WING EYE | |
 | 4 | マンイーター | Man-Eater | | MANEATER | |
-| 5 | スコーピラス | Scorpilas | | SCORPION | transliterated; provisional |
+| 5 | スコーピラス | Scorpirus |  | SCORPION | **settled** (PS IV ships it) |
 | 6 | ラージヤーゴ | Large Nymph | | G.SCORPI | ヤゴ, a dragonfly nymph |
 | 7 | ブルースライム | Blue Slime | | BL.SLIME | |
 | 8 | モタビアンノーフ | Motavian Nof | | N.FARMER | ノーフ unexplained; provisional |
 | 9 | デビルバット | Devil Bat | | OWL BEAR | |
 | 10 | キラープラント | Killer Plant | | DEADTREE | |
-| 11 | バイターフライ | Biter Fly | | SCORPIUS | |
+| 11 | バイターフライ | Biter Fly |  | SCORPIUS | **settled** (PS IV ships it) |
 | 12 | モタビアンイビル | Motavian Evil | MotavianEvil | E.FARMER | |
 | 13 | ヘレックス | Herex | | GIANTFLY | |
-| 14 | サンドワーム | Sandworm | | CRAWLER | PS IV's "sand worm" in dialogue |
-| 15 | モタビアンマニア | Motavian Mania | MotavianMan. | BARBRIAN | the abbreviation reads badly: question 4 |
+| 14 | サンドワーム | Sand Worm |  | CRAWLER | **settled** (PS IV ships it), two words |
+| 15 | モタビアンマニア | Berserker |  | BARBRIAN | PS IV ships モタビアンマニア as Berserker (a translation, not Motavian Mania): question 8 |
 | 16 | ゴールドレンズ | Gold Lens | | GOLDLENS | |
 | 17 | レッドスライム | Red Slime | | RD.SLIME | |
 | 18 | バットマン | Bat Man | | WERE BAT | two words, not the trademark |
@@ -182,10 +185,10 @@ own menu abbreviations), only where the full form does not fit.
 | 25 | アリジゴク | Antlion | | ANT LION | |
 | 26 | マーシーズ | Marshes | | MARMAN | provisional |
 | 27 | デゾリアン | Dezolian | | DEZORIAN | **settled** (PS II) |
-| 28 | デザートリーチ | Desert Leech | | LEECH | |
+| 28 | デザートリーチ | Desert Leech |  | LEECH | **settled** (PS IV ships it) |
 | 29 | クライオン | Crion | | VAMPIRE | provisional |
 | 30 | ビッグノーズ | Big Nose | | ELEPHANT | |
-| 31 | グール | Ghoul | | GHOUL | |
+| 31 | グール | Ghoul |  | GHOUL | **settled** (PS IV ships it) |
 | 32 | アンモナイト | Ammonite | | SHELFISH | |
 | 33 | エグゼキュート | Execute | | EXECUTER | |
 | 34 | ワイト | Wight | | WIGHT | |
@@ -193,12 +196,12 @@ own menu abbreviations), only where the full form does not fit.
 | 36 | マイマイ | Snail | | AMMONITE | マイマイ is a snail |
 | 37 | マンチコート | Manticort | | SPHINX | provisional (a play on マンチコア) |
 | 38 | サーペント | Serpent | | SERPENT | |
-| 39 | リバイアサン | Leviathan | | SANDWORM | |
+| 39 | リバイアサン | Leviathan |  | SANDWORM | **settled** (PS IV ships it) (its JP リヴァイアサン; PS I has no ヴ) |
 | 40 | ドルージュ | Druj | | LICH | the Zoroastrian demon of the lie; provisional |
 | 41 | オクトパス | Octopus | | OCTOPUS | |
 | 42 | マッドストーカー | Mad Stalker | | STALKER | |
 | 43 | デゾリアンヘッド | Dezolian Head | DezolianHead | EVILHEAD | |
-| 44 | ゾンビ | Zombie | | ZOMBIE | |
+| 44 | ゾンビ | Zombie |  | ZOMBIE | **settled** (PS IV ships it) |
 | 45 | ビュート | Butte | | BATALION | provisional |
 | 46 | ロボットポリス | Robot Police | | ROBOTCOP | |
 | 47 | サイボーグメイジ | Cyborg Mage | | SORCERER | |
@@ -210,16 +213,16 @@ own menu abbreviations), only where the full form does not fit.
 | 53 | タロス | Talos | | GIANT | |
 | 54 | スネークロード | Snake Lord | | WYVERN | |
 | 55 | デスベアラー | Death Bearer | | REAPER | |
-| 56 | カオスソーサラー | Chaos Sorcerer | ChaosSorcer. | MAGICIAN | PS II ships Chaos Sorcerer: question 4 |
-| 57 | セントール | Centaur | | HORSEMAN | |
+| 56 | カオスソーサラー | Chaos Sorcerer | ChaosSorcer. | MAGICIAN | **settled** (PS IV ships it) and PS II |
+| 57 | セントール | Centaur |  | HORSEMAN | **settled** (PS IV ships it) |
 | 58 | アイスマン | Ice Man | | FROSTMAN | |
 | 59 | バルカン | Vulcan | | AMUNDSEN | |
 | 60 | レッドドラゴン | Red Dragon | | RD.DRAGN | |
 | 61 | グリーンドラゴン | Green Dragon | | GR.DRAGN | |
 | 62 | ラシーク | LaShiec | | SHADOW | his double (カゲムシャ, `0266`) |
 | 63 | マンモス | Mammoth | | MAMMOTH | |
-| 64 | キングセイバー | King Saber | | CENTAUR | |
-| 65 | ダークマローダー | Dark Marauder | DarkMarauder | MARAUDER | |
+| 64 | キングセイバー | King Saber |  | CENTAUR | **settled** (PS IV ships it) |
+| 65 | ダークマローダー | Dark Marauder | DarkMarauder | MARAUDER | **settled** (PS IV ships it) |
 | 66 | ゴーレム | Golem | | TITAN | |
 | 67 | メデューサ | Medusa | | MEDUSA | |
 | 68 | フロストドラゴン | Frost Dragon | | WT.DRAGN | |
@@ -228,7 +231,7 @@ own menu abbreviations), only where the full form does not fit.
 | 71 | マッドドクター | Mad Doctor | | DR.MAD | |
 | 72 | ラシーク | LaShiec | | LASSIC | |
 | 73 | ダークファルス | Dark Falz | | DARKFALZ | **settled** |
-| 74 | ナイトメア | Nightmare | | SACCUBUS | |
+| 74 | ナイトメア | Nightmare |  | SACCUBUS | **settled** (PS IV ships it) |
 
 ## Spells (4 cells today)
 
@@ -249,7 +252,7 @@ transliterations. Only Heal fits the 4-cell lists: **question 5**.
 | タンドレ | Tonndre | THUN | **settled** (PS IV ships Tonndre) |
 | パウマ | Pauma | HELP | |
 | テレパス | Telepath | TELE | |
-| ヒューン | Hyuun | WIND | the whoosh of wind |
+| ヒューン | Hyune | WIND | **settled** (PS IV ships Hyune) |
 | トルーパ | Trupa | FLY | provisional |
 | ラプット | Raputt | TRAP | provisional |
 | スルト | Surt | EXIT | |
@@ -266,6 +269,17 @@ transliterations. Only Heal fits the 4-cell lists: **question 5**.
 | アルテムハムラム アルテムハムハムストラトポン | the church's spell, kept as the JP's sounds | SABRUS CABRUS SEBRUS BASS |
 | カイゲンレイ | martial law | martial law |
 
+## PS I and PS IV: the same things, different katakana
+
+* **エアロキャッスル (PS I) / エアキャッスル (PS IV)**: LaShiec's castle (question 3).
+* **ラコニアンソード (PS I) / ラコニアソード (PS IV)**: PS IV drops the ン for the sword only.
+* **ラコニアンアクス (PS I) / ラコニアンアックス (PS IV)**: the same word, PS I without the ッ.
+* Font limits, not differences: PS I's kana have no ォ ィ ェ ヴ ・ (its only small vowel is ァ), so
+  サイコウオンド is PS IV's サイコウォンド (Psycho Wand), リバイアサン its リヴァイアサン (Leviathan) and
+  ダークファルス its ダーク・ファルス.
+* Within PS I: the item ガスクリア is ガスクリアー in the dialogue; ラエルマベリー grows on the
+  ラエルマツリー (PS IV's Laerma tree).
+
 ## Questions for the owner
 
 1. **ガシコ: Gashiko or Gothic?** The JP is plainly ガシコ; Gothic is the 1987 reading, and the
@@ -276,15 +290,21 @@ transliterations. Only Heal fits the 4-cell lists: **question 5**.
    listed.
 3. **エアロキャッスル: Aero Castle or Air Castle?** PS IV's Air Castle is the same castle but
    PS IV's katakana (エア); PS I's is エアロ, as the Aero Prism. Proposed: Aero Castle.
-4. **Item and enemy names over 12 letters (20 items, 8 enemies).** Either (a) the 12-letter forms
+4. **Answered (the owner, 2026-10-17): "Expand windows as necessary, but accommodate mixed-case"** - the
+   windows widen as the names need, and show them in mixed case (not yet built). The question was: **Item and enemy names over 12 letters (20 items, 8 enemies).** Either (a) the 12-letter forms
    above (a space dropped, Swd / Shld), or (b) widen `long_item_names` to 14 letters. By the
    window map (`docs/pipeline.md` 3.7) every window that lists them has 2 more free cells to its
    left (the inventory to c16, the shop list and the equipment box to c0, the enemy name box to
    c8); not built or tried yet. Then only three need a short form: Spiny Squirrel Pelt (Spiny
    Pelt), Governor's Letter (Gov's Letter) and Machine Guarder (MachineGuarder, 14). Proposed:
    (b), the 14-letter windows.
-5. **Spells:** the transliterations need 5-8 cells and the spell lists are 4 wide. Either (a) an
+5. **Answered with 4** (windows widen as necessary: the spell lists too). The question was: **Spells:** the transliterations need 5-8 cells and the spell lists are 4 wide. Either (a) an
    engine option for 8-cell spell lists (as PS II's `wide_techs`), or (b) keep 4-letter
    English spell words. Proposed: (a).
 6. **The Laconia names:** keep the JP's own split (Laconian Sword / Axe / Pot, Laconia Armor /
-   Shield), or one form for all (Laconia, as PS III ships)? Proposed: the JP's split.
+   Shield), or one form for all (Laconia, as PS III ships)? PS IV follows its own katakana the
+   same way (ラコニアソード Laconia Sword, ラコニアンアックス Laconian Axe). Proposed: the JP's split.
+7. **エアロプリズム:** Aeroprism (PS IV's shipped text) or Aero Prism (the PS II glossary and PS IV's
+   own glossary table)? Proposed: Aeroprism, by the rule that PS IV's shipped text wins.
+8. **モタビアンマニア:** Berserker (PS IV translates it) or Motavian Mania (the katakana)? By the rule,
+   Berserker.
