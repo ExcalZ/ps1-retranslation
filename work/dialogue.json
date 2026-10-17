@@ -5830,7 +5830,7 @@
    "us": "CONTINUE GAME- YES{BR}DELETE   GAME- NO{NOWAIT}",
    "jp_addr": "02:B74A",
    "jp": "ゲームノツヅキヲ　ヤル。ーー　ハイ{BR}ゲームヲ　ケス。ーーーーーー　イイエ{NOWAIT}",
-   "en": "CONTINUE GAME- YES{BR}DELETE   GAME- NO{NOWAIT}"
+   "en": "Continue: YES{BR}Delete:    NO{NOWAIT}"
   },
   {
    "id": "LABEL_B12_BE5E",

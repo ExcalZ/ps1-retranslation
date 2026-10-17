@@ -5,18 +5,21 @@ LABEL_B12_B108:
 
 LABEL_B12_B118:
 .db Dialogue_CurrentCharacter, " DODGES", Dialogue_NewLine
-.db Dialogue_EnemyName, Dialogue_Apostrophe, "S ", Word_Attack, ".", Dialogue_Terminator63
+.db Dialogue_EnemyName, Dialogue_Apostrophe, "S", Dialogue_NewPage
+.db Word_Attack, ".", Dialogue_Terminator63
 
 LABEL_B12_B128:
 .db Dialogue_CurrentCharacter, " SPEAKS.", Dialogue_Terminator62
 
 LABEL_B12_B132:
-.db Dialogue_EnemyName, " ANSWERS.", Dialogue_Terminator63
+.db Dialogue_EnemyName, Dialogue_NewLine
+.db "ANSWERS.", Dialogue_Terminator63
 
 LABEL_B12_B13D:
-.db Dialogue_CurrentCharacter, " AND ", Dialogue_EnemyName, Dialogue_NewLine
-.db Word_Cannot, " UNDERSTAND", Dialogue_NewPage
-.db "EACH OTHER.", Dialogue_Terminator63
+.db Dialogue_CurrentCharacter, " AND", Dialogue_NewLine
+.db Dialogue_EnemyName, " ", Word_Cannot, Dialogue_NewPage
+.db "UNDERSTAND EACH", Dialogue_NewLine
+.db "OTHER.", Dialogue_Terminator63
 
 LABEL_B12_B15E:
 .db Dialogue_EnemyName, " BLOCKS", Dialogue_NewLine
@@ -30,12 +33,15 @@ LABEL_B12_B172:
 .db "IS ", Word_Not, Word_Effective, ".", Dialogue_Terminator63
 
 LABEL_B12_B18B:
-.db "AN INVISIBLE ", Word_Magic_EF, Word_Wall, " ARISES.", Dialogue_Terminator63
+.db "AN INVISIBLE", Dialogue_NewLine
+.db Word_Magic_84, Word_Wall, Dialogue_NewPage
+.db "ARISES.", Dialogue_Terminator63
 
 LABEL_B12_B1A3:
 .db Word_The, Word_Magic_84, Word_Wall, Dialogue_NewLine
-.db Word_Deflects, " ", Word_The, Dialogue_NewPage
-.db Dialogue_EnemyName, Dialogue_Apostrophe, "S ", Word_Attack, ".", Dialogue_Terminator63
+.db Word_Deflects, " THE", Dialogue_NewPage
+.db Dialogue_EnemyName, Dialogue_Apostrophe, "S", Dialogue_NewLine
+.db Word_Attack, ".", Dialogue_Terminator63
 
 LABEL_B12_B1B2:
 .db Word_The, Word_Magic_84, Word_Wall, Dialogue_NewLine
@@ -61,19 +67,21 @@ LABEL_B12_B1EE:
 .db Dialogue_CurrentCharacter, " IS TIED UP.", Dialogue_Terminator63
 
 LABEL_B12_B1FC:
-.db Dialogue_CurrentCharacter, " ", Word_Cannot, " ", Word_Move, ".", Dialogue_Terminator63
+.db Dialogue_CurrentCharacter, " ", Word_Cannot, Dialogue_NewLine
+.db Word_Move, ".", Dialogue_Terminator63
 
 LABEL_B12_B203:
 .db Dialogue_EnemyName, " ", Word_Cannot, Dialogue_NewLine
 .db Word_Move, ".", Dialogue_Terminator63
 
 LABEL_B12_B20A:
-.db Dialogue_CurrentCharacter, " RE", Word_Move, "S ", Word_The, Dialogue_NewLine
+.db Dialogue_CurrentCharacter, " RE", Word_Move, "S THE", Dialogue_NewLine
 .db "BINDINGS.", Dialogue_Terminator63
 
 LABEL_B12_B21D:
-.db Dialogue_EnemyName, " RE", Word_Move, "S", Dialogue_NewLine
-.db Word_The, "BINDINGS.", Dialogue_Terminator63
+.db Dialogue_EnemyName, Dialogue_NewLine
+.db "RE", Word_Move, "S THE", Dialogue_NewPage
+.db "BINDINGS.", Dialogue_Terminator63
 
 LABEL_B12_B22F:
 .db Dialogue_CurrentCharacter, " IS BURSTING", Dialogue_NewLine
@@ -89,11 +97,13 @@ LABEL_B12_B25F:
 .db "QUICKLY.", Dialogue_Terminator63
 
 LABEL_B12_B27F:
-.db Word_There, " WAS NO TRAP.", Dialogue_Terminator65
+.db Word_There, " WAS NO", Dialogue_NewLine
+.db "TRAP.", Dialogue_Terminator65
 
 LABEL_B12_B28E:
 .db Dialogue_CurrentCharacter, " SPOTTED AND", Dialogue_NewLine
-.db "DISARMED ", Word_The, "TRAP.", Dialogue_Terminator65
+.db "DISARMED THE", Dialogue_NewPage
+.db "TRAP.", Dialogue_Terminator65
 
 LABEL_B12_B2AC:
 .db Dialogue_CurrentCharacter, " USES", Dialogue_NewLine
@@ -131,9 +141,9 @@ LABEL_B12_B312:
 .db Word_However, ".", Dialogue_Terminator63
 
 LABEL_B12_B322:
-.db Dialogue_EnemyName, " HEARS THE", Dialogue_NewLine
-.db "FLUTE AND FALLS", Dialogue_NewPage
-.db "ASLEEP.", Dialogue_Terminator63
+.db Dialogue_EnemyName, " HEARS", Dialogue_NewLine
+.db Word_The, "FLUTE AND", Dialogue_NewPage
+.db "FALLS ASLEEP.", Dialogue_Terminator63
 ; LABEL_B12_B322.1: read on from the string above
 .db Dialogue_EnemyName, Dialogue_Apostrophe, "S EYES", Dialogue_NewLine
 .db "LOOK VACANT.", Dialogue_Terminator63
@@ -147,10 +157,13 @@ LABEL_B12_B366:
 .db Dialogue_CurrentItem, ".", Dialogue_Terminator63
 
 LABEL_B12_B375:
-.db "IT DOESN", Dialogue_Apostrophe, "T SEEM TOBE BROKEN.", Dialogue_Terminator65
+.db "IT DOESN", Dialogue_Apostrophe, "T SEEM TO", Dialogue_NewLine
+.db "BE BROKEN.", Dialogue_Terminator65
 
 LABEL_B12_B392:
-.db Word_Cannot, " GO FORWARD,IT", Dialogue_Apostrophe, "S PITCH BLACK.", Dialogue_Terminator65
+.db Word_Cannot, " GO", Dialogue_NewLine
+.db "FORWARD, IT", Dialogue_Apostrophe, "S", Dialogue_NewPage
+.db "PITCH BLACK.", Dialogue_Terminator65
 
 LABEL_B12_B3B1:
 .db Word_The, "BOTTLECAP", Dialogue_NewLine
@@ -174,8 +187,8 @@ LABEL_B12_B424:
 .db "NO", Word_Thing, ".", Dialogue_Terminator65
 
 LABEL_B12_B431:
-.db Dialogue_EnemyName, " SEES ", Word_The, Dialogue_NewLine
-.db "RED FLAME AND", Dialogue_NewPage
+.db Dialogue_EnemyName, " SEES", Dialogue_NewLine
+.db Word_The, "RED FLAME AND", Dialogue_NewPage
 .db "BECOMES AFRAID.", Dialogue_Terminator63
 
 LABEL_B12_B458:
@@ -184,15 +197,17 @@ LABEL_B12_B458:
 .db Word_The, "SKY.", Dialogue_Terminator63
 
 LABEL_B12_B471:
-.db Dialogue_CurrentCharacter, " TAKES ", Word_The, "NUT", Dialogue_NewLine
-.db "OF ", Word_Laerma, " AND PUTS", Dialogue_NewPage
-.db "IT IN ", Word_The, Word_Laconia, "NPOT.", Dialogue_Terminator65
+.db Dialogue_CurrentCharacter, " TAKES THE", Dialogue_NewLine
+.db "NUT OF ", Word_Laerma, Dialogue_NewPage
+.db "AND PUTS IT IN THE", Dialogue_NewLine
+.db Word_Laconian_Pot, ".", Dialogue_Terminator65
 
 LABEL_B12_B49A:
-.db Dialogue_CurrentCharacter, " TAKES ", Word_The, "NUT", Dialogue_NewLine
-.db "OF ", Word_Laerma, ", BUT IT", Dialogue_NewPage
-.db "SHRIVELS UP AFTER", Dialogue_NewLine
-.db "A FEW MOMENTS.", Dialogue_Terminator65
+.db Dialogue_CurrentCharacter, " TAKES THE", Dialogue_NewLine
+.db "NUT OF ", Word_Laerma, ",", Dialogue_NewPage
+.db "BUT IT SHRIVELS", Dialogue_NewLine
+.db "UP AFTER A FEW", Dialogue_NewPage
+.db "MOMENTS.", Dialogue_Terminator65
 
 LABEL_B12_B4D5:
 .db "A VISION OF A", Dialogue_NewLine
@@ -201,13 +216,14 @@ LABEL_B12_B4D5:
 .db "SKY.", Dialogue_Terminator65
 
 LABEL_B12_B500:
-.db "MYAU ISN", Dialogue_Apostrophe, "T HUNGRY,", Dialogue_NewLine
-.db "SO SHE PUTS ", Word_The, Dialogue_NewPage
-.db "FOOD BACK.", Dialogue_Terminator65
+.db Word_Myau, " ISN", Dialogue_Apostrophe, "T", Dialogue_NewLine
+.db "HUNGRY, SO SHE", Dialogue_NewPage
+.db "PUTS ", Word_The, "FOOD", Dialogue_NewLine
+.db "BACK.", Dialogue_Terminator65
 
 LABEL_B12_B52C:
-.db Word_Hapsby, " SHAKES HIS", Dialogue_NewLine
-.db "HEAD \"NO\".", Dialogue_Terminator65
+.db Word_Hapsby, " SHAKES", Dialogue_NewLine
+.db "HIS HEAD \"NO\".", Dialogue_Terminator65
 
 LABEL_B12_B544:
 .db Word_Hapsby, " IS", Dialogue_NewLine
@@ -218,8 +234,10 @@ LABEL_B12_B555:
 .db "TO USE ", Word_That, ".", Dialogue_Terminator65
 
 LABEL_B12_B569:
-.db Word_There, " DOESN", Dialogue_Apostrophe, "T SEEMTO BE ", Word_Any, Word_Thing, Dialogue_NewPage
-.db "SPECIAL ABOUT IT.", Dialogue_Terminator65
+.db Word_There, " DOESN", Dialogue_Apostrophe, "T", Dialogue_NewLine
+.db "SEEM TO BE", Dialogue_NewPage
+.db Word_Any, Word_Thing, " SPECIAL", Dialogue_NewLine
+.db "ABOUT IT.", Dialogue_Terminator65
 
 LABEL_B12_B592:
 .db Word_You, "FOUND", Dialogue_NewLine
@@ -238,19 +256,22 @@ LABEL_B12_B5BA:
 .db Word_Magic_EF, ".", Dialogue_Terminator63
 
 LABEL_B12_B5C8:
-.db Dialogue_CurrentCharacter, " HAS ", Word_Not, Dialogue_NewLine
-.db "LEARNED ", Word_Magic_EF, " YET", Dialogue_Terminator63
+.db Dialogue_CurrentCharacter, " HAS NOT", Dialogue_NewLine
+.db "LEARNED ", Word_Magic_EF, Dialogue_NewPage
+.db "YET", Dialogue_Terminator63
 
 LABEL_B12_B5DE:
-.db Dialogue_CurrentCharacter, " ", Word_Cannot, " EQUIP", Dialogue_NewLine
-.db Word_That, " ITEM.", Dialogue_Terminator65
+.db Dialogue_CurrentCharacter, " ", Word_Cannot, Dialogue_NewLine
+.db "EQUIP ", Word_That, " ITEM.", Dialogue_Terminator65
 
 LABEL_B12_B5F0:
-.db Word_You, "NEED ", Word_Not, "EQUIP", Word_That, " ITEM.", Dialogue_Terminator65
+.db Word_You, "NEED NOT", Dialogue_NewLine
+.db "EQUIP ", Word_That, " ITEM.", Dialogue_Terminator65
 
 LABEL_B12_B604:
 .db Word_You, "GAINED ", Dialogue_NumberFromC2C5, Dialogue_NewLine
-.db "EXPERIENCE POINTS.", Dialogue_Terminator65
+.db "EXPERIENCE", Dialogue_NewPage
+.db "POINTS.", Dialogue_Terminator65
 
 LABEL_B12_B621:
 .db Dialogue_CurrentCharacter, " ADVANCED", Dialogue_NewLine
@@ -298,8 +319,9 @@ LABEL_B12_B6D0:
 .db "ABAND", Word_One, "D.", Dialogue_Terminator65
 
 LABEL_B12_B6DE:
-.db Dialogue_CurrentItem, " SH", Word_Ould, "N", Dialogue_Apostrophe, "T", Dialogue_NewLine
-.db "BE THROWN AWAY.", Dialogue_Terminator65
+.db Dialogue_CurrentItem, Dialogue_NewLine
+.db "SH", Word_Ould, "N", Dialogue_Apostrophe, "T BE", Dialogue_NewPage
+.db "THROWN AWAY.", Dialogue_Terminator65
 
 LABEL_B12_B6F7:
 .db Word_Not, "ENOUGH ", Word_Magic_EF, Dialogue_NewLine
@@ -329,13 +351,19 @@ LABEL_B12_B754:
 .db "GOING?", Dialogue_Terminator62
 
 LABEL_B12_B761:
-.db Word_We_Are, Word_Heading_For, "SKURE ON ", Word_Dezoris, "?", Dialogue_Terminator62
+.db Word_We_Are, "HEADING", Dialogue_NewLine
+.db "FOR SKURE ON", Dialogue_NewPage
+.db Word_Dezoris, "?", Dialogue_Terminator62
 
 LABEL_B12_B76F:
-.db Word_We_Are, Word_Heading_For, "UZO ON ", Word_Motavia, "?", Dialogue_Terminator62
+.db Word_We_Are, "HEADING", Dialogue_NewLine
+.db "FOR UZO ON", Dialogue_NewPage
+.db Word_Motavia, "?", Dialogue_Terminator62
 
 LABEL_B12_B77B:
-.db Word_We_Are, Word_Heading_For, Word_Gothic, " ON ", Word_Palma, "?", Dialogue_Terminator62
+.db Word_We_Are, "HEADING", Dialogue_NewLine
+.db "FOR ", Word_Gothic, " ON", Dialogue_NewPage
+.db Word_Palma, "?", Dialogue_Terminator62
 
 LABEL_B12_B785:
 .db Word_We_Are, "AT SKURE.", Dialogue_Terminator62
@@ -353,15 +381,17 @@ LABEL_B12_B7AA:
 .db "WOODS IS UNCLEAR.", Dialogue_Terminator65
 
 LABEL_B12_B7C7:
-.db Word_This, "IS AN ARMORY.", Word_Do_You, " ", Word_Want, "TO BUY", Dialogue_NewPage
+.db Word_This, "IS AN", Dialogue_NewLine
+.db "ARMORY. ", Word_Do_You, Dialogue_NewPage
+.db Word_Want, "TO BUY", Dialogue_NewLine
 .db Word_Some, Word_Thing, "?", Dialogue_Terminator62
 
 LABEL_B12_B7E3:
 .db "WELL, COME AGAIN.", Dialogue_Terminator65
 
 LABEL_B12_B7F5:
-.db "WHICH ", Word_Do_You, " ", Word_Want, Dialogue_NewLine
-.db "TO BUY?", Dialogue_Terminator62
+.db "WHICH ", Word_Do_You, Dialogue_NewLine
+.db Word_Want, "TO BUY?", Dialogue_Terminator62
 
 LABEL_B12_B807:
 .db Word_Thank_You, ".", Dialogue_NewLine
@@ -381,8 +411,9 @@ LABEL_B12_B832:
 
 LABEL_B12_B85D:
 .db Word_This, "IS A", Dialogue_NewLine
-.db "SECOND-HAND SHOP.", Dialogue_NewPage
-.db "CAN I ", Word_Help, " YOU?", Dialogue_Terminator62
+.db "SECOND-HAND", Dialogue_NewPage
+.db "SHOP. CAN I ", Word_Help, Dialogue_NewLine
+.db "YOU?", Dialogue_Terminator62
 
 LABEL_B12_B882:
 .db "WHAT W", Word_Ould, " ", Word_You, Dialogue_NewLine
@@ -399,7 +430,9 @@ LABEL_B12_B8BC:
 .db Word_Any, Word_Thing, " ELSE?", Dialogue_Terminator62
 
 LABEL_B12_B8C8:
-.db Word_This, "IS A HOSPITAL", Word_Do_You, " NEED ", Word_Help, "?", Dialogue_Terminator62
+.db Word_This, "IS A HOSPITAL", Dialogue_NewLine
+.db Word_Do_You, " NEED", Dialogue_NewPage
+.db Word_Help, "?", Dialogue_Terminator62
 
 LABEL_B12_B8E0:
 .db Word_The, "FEE FOR", Dialogue_NewLine
@@ -409,7 +442,8 @@ LABEL_B12_B8E0:
 
 LABEL_B12_B90A:
 .db "DOES ", Word_Any, Word_One, " ELSE", Dialogue_NewLine
-.db "NEED TO BE ", Word_Healed, "?", Dialogue_Terminator62
+.db "NEED TO BE", Dialogue_NewPage
+.db Word_Healed, "?", Dialogue_Terminator62
 
 LABEL_B12_B925:
 .db "WHO NEEDS TO BE", Dialogue_NewLine
@@ -421,10 +455,11 @@ LABEL_B12_B938:
 
 LABEL_B12_B951:
 .db "I", Dialogue_Apostrophe, "M SORRY I C", Word_Ould, Dialogue_NewLine
-.db Word_Not, Word_Help, ".", Dialogue_NewPage
+.db Word_Not, Word_Help, "."
 
 LABEL_B12_B964:
-.db Word_Please, "BE ", Word_Careful, ".", Dialogue_Terminator65
+.db " PLEASE", Dialogue_NewPage
+.db "BE ", Word_Careful, ".", Dialogue_Terminator65
 
 LABEL_B12_B96B:
 .db Dialogue_CurrentCharacter, " IS ", Word_Not, "NEED", Dialogue_NewLine
@@ -433,7 +468,8 @@ LABEL_B12_B96B:
 LABEL_B12_B97F:
 .db Word_This, "IS A CHURCH.", Dialogue_NewLine
 .db Word_Do_You, " ", Word_Wish, " TO", Dialogue_NewPage
-.db Word_Resurrect, " ", Word_Some, Word_One, "?", Dialogue_Terminator62
+.db Word_Resurrect, Dialogue_NewLine
+.db Word_Some, Word_One, "?", Dialogue_Terminator62
 ; LABEL_B12_B97F.1: read on from the string above
 .db "I SHALL PRAY FOR", Dialogue_NewLine
 .db "YOU.", Dialogue_Terminator65
@@ -455,7 +491,8 @@ LABEL_B12_B9E5:
 
 LABEL_B12_B9EE:
 .db Word_That, " REQUIRES", Dialogue_NewLine
-.db Dialogue_NumberFromC2C5, " ", Word_Mesetas, ". O.K.?", Dialogue_Terminator62
+.db Dialogue_NumberFromC2C5, " ", Word_Mesetas, ". O.K", Dialogue_NewPage
+.db ".?", Dialogue_Terminator62
 
 LABEL_B12_BA04:
 .db "TO ADVANCE TO", Dialogue_NewLine
@@ -463,7 +500,8 @@ LABEL_B12_BA04:
 
 LABEL_B12_BA1F:
 .db Dialogue_CurrentCharacter, " NEEDS ", Dialogue_NumberFromC2C5, Dialogue_NewLine
-.db "EXPERIENCE POINTS.", Dialogue_Terminator65
+.db "EXPERIENCE", Dialogue_NewPage
+.db "POINTS.", Dialogue_Terminator65
 
 LABEL_B12_BA3C:
 .db "MAY ", Word_The, "GODS", Dialogue_NewLine
@@ -473,16 +511,18 @@ LABEL_B12_BA56:
 .db Dialogue_CurrentCharacter, " IS ALIVE.", Dialogue_Terminator62
 
 LABEL_B12_BA62:
-.db Word_Will, " ", Word_Save, " ", Word_The, Word_Game, "IN PROGRESS.", Dialogue_NewPage
-.db Word_Please, Word_Select, Dialogue_NewLine
-.db "A NUMBER.", Dialogue_Terminator62
+.db Word_Will, " ", Word_Save, " THE", Dialogue_NewLine
+.db Word_Game, " IN PROGRESS.", Dialogue_NewPage
+.db Word_Please, Word_Select, " A", Dialogue_NewLine
+.db "NUMBER.", Dialogue_Terminator62
 
 LABEL_B12_BA82:
-.db Word_You, Word_Select, "ED ", Dialogue_NumberFromC2C5, Dialogue_NewLine
-.db "IS ", Word_That, " O.K.", Dialogue_Terminator62
+.db Word_You, Word_Select, "ED", Dialogue_NewLine
+.db Dialogue_NumberFromC2C5, " IS ", Word_That, " O.K.", Dialogue_Terminator62
 
 LABEL_B12_BA93:
-.db "WELL, SAVING ", Dialogue_NumberFromC2C5, ".", Dialogue_Terminator63
+.db "WELL, SAVING", Dialogue_NewLine
+.db Dialogue_NumberFromC2C5, " .", Dialogue_Terminator63
 
 LABEL_B12_BAA3:
 .db "COMPLETED.", Dialogue_Terminator65
@@ -490,7 +530,8 @@ LABEL_B12_BAA3:
 LABEL_B12_BAAE:
 .db "WE ", Word_Want, "TO BE", Dialogue_NewLine
 .db "FRIENDS WITH", Dialogue_NewPage
-.db "PEOPLE ", Word_From, Word_Palma, ".", Dialogue_Terminator65
+.db "PEOPLE FROM", Dialogue_NewLine
+.db Word_Palma, ".", Dialogue_Terminator65
 
 LABEL_B12_BAD0:
 .db "I ", Word_Want, "TO EAT A", Dialogue_NewLine
@@ -501,19 +542,22 @@ LABEL_B12_BAE6:
 .db Word_Lassic, ".", Dialogue_Terminator65
 
 LABEL_B12_BAF4:
-.db Word_You, "UNDERSTAND OUR", Word_Language, "?", Dialogue_Terminator65
+.db Word_You, "UNDERSTAND", Dialogue_NewLine
+.db "OUR ", Word_Language, "?", Dialogue_Terminator65
 
 LABEL_B12_BB06:
 .db "HELLO!", Dialogue_Terminator65
 
 LABEL_B12_BB0D:
-.db "BE ", Word_Careful, " OF PITSIN ", Word_The, Word_Dungeon, ".", Dialogue_Terminator65
+.db "BE ", Word_Careful, " OF", Dialogue_NewLine
+.db "PITS IN THE", Dialogue_NewPage
+.db Word_Dungeon, ".", Dialogue_Terminator65
 
 LABEL_B12_BB20:
-.db "M", Word_Any, " OF ", Word_The, Dialogue_NewLine
-.db Word_Treasure, Word_Chest, "S IN", Dialogue_NewPage
-.db Word_The, Word_Dungeon, " ", Word_Are, Dialogue_NewLine
-.db "TRAPPED.", Dialogue_Terminator65
+.db "M", Word_Any, " OF THE", Dialogue_NewLine
+.db Word_Treasure, Word_Chest, "S", Dialogue_NewPage
+.db "IN ", Word_The, Word_Dungeon, Dialogue_NewLine
+.db Word_Are, "TRAPPED.", Dialogue_Terminator65
 
 LABEL_B12_BB3D:
 .db Word_You, "THIEF!", Dialogue_Terminator65
@@ -529,13 +573,14 @@ LABEL_B12_BB5C:
 .db "EAR AND ", Word_The, "HEART.", Dialogue_Terminator65
 
 LABEL_B12_BB8D:
-.db Word_The, "VEHICLE ", Word_Know, "N", Dialogue_NewLine
-.db "AS \"ICE DIGGER\"", Dialogue_NewPage
-.db "LIVES UP TO ITS", Dialogue_NewLine
-.db "NAME.", Dialogue_Terminator65
+.db Word_The, "VEHICLE", Dialogue_NewLine
+.db Word_Know, "N AS \"ICE", Dialogue_NewPage
+.db "DIGGER\" LIVES UP", Dialogue_NewLine
+.db "TO ITS NAME.", Dialogue_Terminator65
 
 LABEL_B12_BBBF:
-.db Word_Lassic, " LIVES ABOVE", Word_The, "SKY.", Dialogue_Terminator65
+.db Word_Lassic, " LIVES", Dialogue_NewLine
+.db "ABOVE ", Word_The, "SKY.", Dialogue_Terminator65
 
 LABEL_B12_BBD2:
 .db Word_The, "MAD DOCTOR", Dialogue_NewLine
@@ -544,9 +589,9 @@ LABEL_B12_BBD2:
 
 LABEL_B12_BBF0:
 .db Word_There_Are, " PLACES", Dialogue_NewLine
-.db "IN ", Word_The, "SKY", Dialogue_NewPage
-.db Word_Where, " EVEN SPACE-", Dialogue_NewLine
-.db "SHIP ", Word_Cannot, " GO.", Dialogue_Terminator65
+.db "IN ", Word_The, "SKY ", Word_Where, Dialogue_NewPage
+.db "EVEN SPACE- SHIP", Dialogue_NewLine
+.db Word_Cannot, " GO.", Dialogue_Terminator65
 
 LABEL_B12_BC1A:
 .db "A NUT OF ", Word_Laerma, Dialogue_NewLine
@@ -574,8 +619,9 @@ LABEL_B12_BCAA:
 .db "APPROACH ME!", Dialogue_Terminator65
 
 LABEL_B12_BCC2:
-.db Dialogue_EnemyName, " IS BURST-", Dialogue_NewLine
-.db "ING WITH STRENGTH.", Dialogue_Terminator63
+.db Dialogue_EnemyName, " IS", Dialogue_NewLine
+.db "BURST- ING WITH", Dialogue_NewPage
+.db "STRENGTH.", Dialogue_Terminator63
 
 LABEL_B12_BCE1:
 .db Dialogue_EnemyName, " HAD A", Dialogue_NewLine
@@ -601,9 +647,11 @@ LABEL_B12_BD17:
 .db Word_You, Word_Are, "ALL DEAD.", Dialogue_Terminator65
 
 LABEL_B12_BD23:
-.db Word_Alis, Dialogue_Apostrophe, "S HOPE ", Word_Cannot, "OVERCOME ", Word_The, "POWER", Dialogue_NewPage
-.db "OF ", Word_Lassic, ".", Dialogue_NewLine
-.db Word_The, "ADVENTURE IS", Dialogue_NewPage
+.db Word_Alis, Dialogue_Apostrophe, "S HOPE", Dialogue_NewLine
+.db Word_Cannot, " OVERCOME", Dialogue_NewPage
+.db Word_The, "POWER OF", Dialogue_NewLine
+.db Word_Lassic, ". THE", Dialogue_NewPage
+.db "ADVENTURE IS", Dialogue_NewLine
 .db "OVER.", Dialogue_Terminator65
 
 LABEL_B12_BD57:
@@ -622,11 +670,13 @@ LABEL_B12_BD97:
 LABEL_B12_BD9F:
 .db Word_Sabrus_Cabrus, Dialogue_NewLine
 .db "SEB..B...HACK,HACK", Dialogue_NewPage
-.db "SORRY, I SEEM TO", Dialogue_NewLine
+.db "SORRY, ", Word_I_See, "M TO", Dialogue_NewLine
 .db Word_Have, "FAILED.", Dialogue_Terminator65
 
 LABEL_B12_BDCE:
-.db "BOUND FOR ", Word_Motavia, ".GETTING ON?", Dialogue_Terminator62
+.db "BOUND FOR", Dialogue_NewLine
+.db Word_Motavia, ". GETTING", Dialogue_NewPage
+.db "ON?", Dialogue_Terminator62
 
 LABEL_B12_BDE6:
 .db "BOUND FOR ", Word_Palma, ".", Dialogue_NewLine
@@ -641,10 +691,24 @@ LABEL_B12_BE1B:
 .db Word_Select, " A NUMBER.", Dialogue_Terminator62
 
 LABEL_B12_BE35:
-.db "CONTINUING ", Word_Game, " ", Dialogue_NumberFromC2C5, ".", Dialogue_Terminator63
+.db "CONTINUING ", Word_Game, Dialogue_NewLine
+.db Dialogue_NumberFromC2C5, " .", Dialogue_Terminator63
 
 LABEL_B12_BE45:
-.db "CONTINUE ", Word_Game, "- YES", Word_Delete, "   ", Word_Game, "- NO", Dialogue_Terminator62
+.db "C", $74
+.db $73
+.db $79
+.db $6E
+.db $73
+.db $7A
+.db $6A
+.db ": YES", Dialogue_NewLine
+.db "D", $6A
+.db $71
+.db $6A
+.db $79
+.db $6A
+.db ":    NO", Dialogue_Terminator62
 
 LABEL_B12_BE5E:
 .db Word_Will, " ", Word_Delete, " A", Dialogue_NewLine
@@ -655,8 +719,8 @@ LABEL_B12_BE6F:
 .db Word_Select, " A NUMBER.", Dialogue_Terminator62
 
 LABEL_B12_BE82:
-.db Word_Game, " ", Dialogue_NumberFromC2C5, " HAS BEEN", Dialogue_NewLine
-.db Word_Delete, "D.", Dialogue_Terminator65
+.db Word_Game, " ", Dialogue_NumberFromC2C5, " HAS", Dialogue_NewLine
+.db "BEE N ", Word_Delete, "D.", Dialogue_Terminator65
 
 LABEL_B12_BE93:
 .db Dialogue_CurrentCharacter, " HAS BEEN", Dialogue_NewLine
@@ -667,8 +731,9 @@ LABEL_B12_BEA1:
 .db "BY ", Word_Some, Word_One, " NOW.", Dialogue_Terminator65
 
 LABEL_B12_BEB6:
-.db Word_The, "SKY GRADUALLY", Dialogue_NewLine
-.db "CLEARS AND", Dialogue_Terminator64
+.db Word_The, "SKY", Dialogue_NewLine
+.db "GRADUALLY CLEARS", Dialogue_NewPage
+.db "AND", Dialogue_Terminator64
 
 LABEL_B12_BED0:
 .db Word_The, "PEACE IS", Dialogue_NewLine
@@ -687,7 +752,9 @@ LABEL_B12_BF09:
 .db "BREEZE ", Word_Know, "S OF", Dialogue_Terminator64
 
 LABEL_B12_BF21:
-.db Word_The, "HARDSHIPS ", Word_That, "THEY ENDURED?", Dialogue_Terminator64
+.db Word_The, "HARDSHIPS", Dialogue_NewLine
+.db Word_That, " THEY", Dialogue_NewPage
+.db "ENDURED?", Dialogue_Terminator64
 
 LABEL_B12_BF3B:
 .db Word_Alis, " AND HER", Dialogue_NewLine
@@ -697,11 +764,11 @@ LABEL_B12_BF3B:
 
 LABEL_B12_BF64:
 .db Word_Alis, " HEARS ", Word_Nero, Dialogue_Apostrophe, "S", Dialogue_NewLine
-.db "VOICE IN ", Word_The, "DEPTH", Dialogue_NewPage
-.db "OF HER SOUL;", Dialogue_NewLine
-.db "\"YOU", Dialogue_Apostrophe, "LL BE REBORN", Dialogue_NewPage
-.db "TO FIGHT FOR", Dialogue_NewLine
-.db "PEACE AGAIN.\"", Dialogue_NewPage
+.db "VOICE IN THE", Dialogue_NewPage
+.db "DEPTH OF HER", Dialogue_NewLine
+.db "SOUL; \"YOU", Dialogue_Apostrophe, "LL BE", Dialogue_NewPage
+.db "REBORN TO FIGHT", Dialogue_NewLine
+.db "FOR PEACE AGAIN.\"", Dialogue_NewPage
 .db Word_Alis, " IS", Dialogue_NewLine
 .db Word_Resurrect, "ED.", Dialogue_Terminator65
 

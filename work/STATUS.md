@@ -1,14 +1,17 @@
 # PS I Retranslation - Status
 
-Updated: 2026-10-16
+Updated: 2026-10-17
 
 ## State
 
 Project started. The disassembly is in place and assembles the US/EU release v3 bit-exact
 with WLA-DX 10.7 (`python tools/checkstock.py`), the stock text engine is mapped
 (`docs/pipeline.md` section 3), and the script is extracted into JSON with the JP beside the
-US and written back by a generator whose round trip is bit-exact. Nothing is translated yet:
-every `en` equals its `us`.
+US and written back by a generator whose round trip is bit-exact. Every engine option is on
+in the working build (1 MB, the series face in the window and cut-scenes, 6-letter party
+names, 12-letter items and enemies); the stock English is re-wrapped for the face until it is
+translated. One entry is translated (the CONTINUE prompt); the names glossary is a draft
+waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
 
 ## Done
 
@@ -116,8 +119,17 @@ every `en` equals its `us`.
   `{ENEMY}` in the face, the inventory, shop list, equipment box and enemy name box 4 cells
   wider to the left. With all five options on and every test edit at once, every scenario
   passes and every window restores the screen. New scenario: `inventory`. The engine plan's
-  options are all built; the proportional and long-name options stay off in the working build
-  until the translation fills them.
+  options are all built.
+
+* **The translation starts (2026-10-17).** Every option on in the working build. The face's
+  printer never auto-wraps, so the stock English is rebuilt with its breaks written out and
+  re-wrapped where it overflows the 80 px lines (`tools/stockwrap.py`, used by gentext,
+  linecheck and the harness: 225 of 538 stock texts change). The CONTINUE prompt, a two-column
+  table the re-wrap cannot keep, is the first translated entry ("Continue: YES / Delete:
+  NO"). Every scenario passes (`battle party=4` now allows 40 rounds: the dice changed and 20
+  was the stock build's exact count). The names glossary drafted from the JP script against
+  the PS II and PS IV translations' shipped text: people, worlds, places, 64 items, 74
+  enemies, 18 spells, with six questions for the owner.
 
 ## Next, in order
 
@@ -133,4 +145,7 @@ every `en` equals its `us`.
    them). Not yet seen with `vwf_cutscene`: the Myau, governor and ending scenes
    (no scenario reaches them yet). Then a dictionary generated from the
    new script, if bank 32 gets tight.
-5. **Translation**, then proofreading in play, then release packaging (BPS + Patcher.html).
+5. **Translation**: the owner's answers to the glossary's six questions (an engine change
+   if 14-letter items or 8-cell spells are chosen), the names into `script.json`, then the
+   script bank by bank; then proofreading in play, then release packaging (BPS +
+   Patcher.html).

@@ -20,6 +20,9 @@ Checks each `en` that differs from its `us` (--all: every entry, the stock text 
   apostrophe) only where the run owns the row above; the party names in the name boxes, the
   status boxes and the party menu the same as the party table's.
 
+An entry still in its stock English is measured as the build gives it (tools/stockwrap.py:
+with vwf_dialogue / vwf_cutscene, re-wrapped for the face).
+
 Then the space: the bytes the encoded text takes against the room it has: with
 relocate_script a bank each (32 the dialogue after its 682-byte table, 33 the messages, 34 the
 cut-scenes); without it, banks 2 and 12 with the bytes free after the stock text.
@@ -34,6 +37,7 @@ sys.path.insert(0, HERE)
 import ps1text as T
 import tilemaps as M
 import diafont as F
+import stockwrap as W
 
 WORK = os.path.join(T.ROOT, 'work')
 FREE = {'02': 183, '0C': 40}           # bytes free after the stock text in banks 2 and 12
@@ -81,25 +85,22 @@ def main():
     vwf_kinds = (({'dialogue', 'message'} if vwf else set())
                  | ({'cutscene'} if opts.get('vwf_cutscene') == 1 else set()))
     if vwf:                                # the window in pixels; an insert at its widest value
-        segs = script['segments']
-        insert_px = {'NAME': max(F.width(r['en']) for r in segs['party']['runs']),
-                     'ITEM': max(F.width(r['en']) for r in segs['items']['runs']),
-                     'ENEMY': max(F.width(r['en']) for r in segs['enemies']['runs']),
-                     'NUMBER': F.width('99999')}
+        insert_px = W.insert_px(script)
+    texts = W.texts(dialogue['entries'], script, opts)   # the stock text re-wrapped for the face
     for e in dialogue['entries']:
         bank = group[e['kind']]
         stock[bank] += len(e['hex']) // 2
         window = e['kind'] in vwf_kinds    # drawn in the proportional face
+        text = texts[e['id']]
         try:
-            used[bank] += len(bytes.fromhex(e['hex']) if e['en'] == e['us'] else
-                              T.encode_us(e['en'], words, charset=T.vwf_charset() if window else None))
+            used[bank] += len(W.entry_bytes(e, text, words, opts))
         except ValueError as x:
             problems.append('%s: %s' % (e['id'], x))
             continue
         if e['en'] == e['us'] and not check_all:
             continue
         width, per_page = BUDGET[e['kind']]
-        for page in pages(e['en']):
+        for page in pages(text):
             for line in page:
                 if window:
                     px = sum(insert_px[m.group(1)] if m.group(1) else F.width(m.group(0))
@@ -112,8 +113,8 @@ def main():
             if per_page and n > per_page:
                 problems.append('%s: %d lines on a page (%d)' % (e['id'], n, per_page))
         want = None if e.get('falls_through') else end_code(e['us'])
-        if end_code(e['en']) != want:
-            problems.append('%s: ends in %s, the stock entry in %s' % (e['id'], end_code(e['en']), want))
+        if end_code(text) != want:
+            problems.append('%s: ends in %s, the stock entry in %s' % (e['id'], end_code(text), want))
     glyphs = M.us_glyph_table()
     for name, seg in script['segments'].items():
         if seg.get('kind') == 'readonly':

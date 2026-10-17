@@ -46,17 +46,19 @@ DialogueBlock:
 
 Dialogue_Index_0002:
 .db "I", Dialogue_Apostrophe, "M SUELO. I ", Word_Know, Dialogue_NewLine
-.db "HOW ", Word_You_Must, " FEEL,", Dialogue_NewPage
-.db "DEAR,NO ", Word_One, " CAN", Dialogue_NewLine
-.db "STOP ", Word_You, Word_From, Dialogue_NewPage
-.db "DOING WHAT ", Word_You, Dialogue_NewLine
-.db Word_Know, " ", Word_You_Must, " DO.", Dialogue_NewPage
+.db "HOW ", Word_You_Must, Dialogue_NewPage
+.db "FEEL, DEAR, NO", Dialogue_NewLine
+.db Word_One, " CAN STOP YOU", Dialogue_NewPage
+.db Word_From, "DOING WHAT", Dialogue_NewLine
+.db Word_You, Word_Know, " YOU", Dialogue_NewPage
+.db Word_Must, " DO."
 
 Dialogue_Index_0004:
-.db "BUT IF ", Word_You, "SHOULD", Dialogue_NewLine
-.db "EVER BE WOUNDED", Dialogue_NewPage
-.db "IN BATTLE,COME", Dialogue_NewLine
-.db Word_Here, " TO ", Word_Rest, ".", Dialogue_Terminator65
+.db " BUT IF", Dialogue_NewLine
+.db Word_You, "SH", Word_Ould, " EVER", Dialogue_NewPage
+.db "BE WOUNDED IN", Dialogue_NewLine
+.db "BATTLE, COME ", Word_Here, Dialogue_NewPage
+.db "TO ", Word_Rest, ".", Dialogue_Terminator65
 
 Dialogue_Index_0006:
 .db Word_Please, Word_Rest, Dialogue_NewLine
@@ -69,23 +71,27 @@ Dialogue_Index_0008:
 .db "HEARS LOTS OF", Dialogue_NewPage
 
 Dialogue_Index_000A:
-.db "STORIES, ", Word_You, Word_Know, ",BUT ", Word_Some, " SAY ", Word_That, Dialogue_NewPage
-.db "A FIGHTER ", Word_Named, Dialogue_NewLine
-.db "ODIN LIVES IN A", Dialogue_NewPage
-.db Word_Town, " CALLED ", Word_Scion, ".", Dialogue_NewLine
+.db "STORIES, YOU", Dialogue_NewLine
+.db Word_Know, ", BUT ", Word_Some, Dialogue_NewPage
+.db "SAY ", Word_That, " A", Dialogue_NewLine
+.db "FIGHTER NAMED", Dialogue_NewPage
+.db "ODIN LIVES IN A", Dialogue_NewLine
+.db Word_Town, " CALLED", Dialogue_NewPage
+.db Word_Scion, "."
 
 Dialogue_Index_000C:
-.db "ALSO, I ", Word_Have, "A", Dialogue_NewPage
-.db Word_Laconian_Pot, " GIVEN", Dialogue_NewLine
+.db " ALSO, I", Dialogue_NewLine
+.db Word_Have, "A ", Word_Laconia, "N", Dialogue_NewPage
+.db "POT GIVEN"
 
 Dialogue_Index_000E:
-.db "BY ", Word_Nero, ". ", Word_That, Dialogue_NewPage
-.db "WOULD BE HELPFUL", Dialogue_NewLine
-.db "TO ", Word_You, "IN ", Word_Your, Dialogue_NewPage
-.db "TASK.", Dialogue_Terminator65
+.db " BY", Dialogue_NewLine
+.db Word_Nero, ". ", Word_That, " W", Word_Ould, Dialogue_NewPage
+.db "BE ", Word_Help, "FUL TO YOU", Dialogue_NewLine
+.db "IN ", Word_Your, "TASK.", Dialogue_Terminator65
 
 Dialogue_Index_0010:
-.db "I ", Word_Wish, " I COULD", Dialogue_NewLine
+.db "I ", Word_Wish, " I C", Word_Ould, Dialogue_NewLine
 .db Word_Help, " ", Word_You, "MORE.", Dialogue_NewPage
 .db "I PRAY FOR ", Word_Your, Dialogue_NewLine
 .db "SAFETY.", Dialogue_Terminator65
@@ -99,7 +105,8 @@ Dialogue_Index_0012:
 Dialogue_Index_0014:
 .db Word_You, "NEED A", Dialogue_NewLine
 .db Word_Dungeon, " KEY TO", Dialogue_NewPage
-.db "OPEN LOCKED DOORS.", Dialogue_Terminator65
+.db "OPEN LOCKED", Dialogue_NewLine
+.db "DOORS.", Dialogue_Terminator65
 
 Dialogue_Index_0016:
 .db "IN ", Word_Some, " ", Word_Dungeon, "S", Dialogue_NewLine
@@ -115,7 +122,7 @@ Dialogue_Index_0018:
 Dialogue_Index_001A:
 .db "IF ", Word_You, Word_Want, "TO", Dialogue_NewLine
 .db "MAKE A DEAL, ", Word_You, Dialogue_NewPage
-.db "SHOULD HEAD FOR", Dialogue_NewLine
+.db "SH", Word_Ould, " HEAD FOR", Dialogue_NewLine
 .db Word_The, "PORT ", Word_Town, ".", Dialogue_Terminator65
 
 Dialogue_Index_001C:
@@ -124,8 +131,9 @@ Dialogue_Index_001C:
 .db Word_Residential_Area, ".", Dialogue_Terminator65
 
 Dialogue_Index_001E:
-.db "UNLESS ", Word_You, "HOPE TODIE, ", Word_You, "HAD BEST", Dialogue_NewPage
-.db "STAY ", Word_Here, ".", Dialogue_Terminator65
+.db "UNLESS ", Word_You, "HOPE", Dialogue_NewLine
+.db "TO DIE, ", Word_You, "HAD", Dialogue_NewPage
+.db "BEST STAY ", Word_Here, ".", Dialogue_Terminator65
 
 Dialogue_Index_0020:
 .db Word_You, "MAY ", Word_Not, Word_Pass, ".", Dialogue_Terminator65
@@ -161,9 +169,10 @@ Dialogue_Index_002E:
 .db "CALLED ", Word_Scion, ".", Dialogue_Terminator65
 
 Dialogue_Index_0030:
-.db Word_From, Word_The, Word_Spaceport, Dialogue_NewLine
-.db Word_You, "CAN GO TO", Dialogue_NewPage
-.db "PASEO ON ", Word_Motavia, ".", Dialogue_Terminator65
+.db Word_From, "THE", Dialogue_NewLine
+.db Word_Spaceport, " YOU", Dialogue_NewPage
+.db "CAN GO TO PASEO", Dialogue_NewLine
+.db "ON ", Word_Motavia, ".", Dialogue_Terminator65
 
 Dialogue_Index_0032:
 .db Word_There_Is, " AN", Dialogue_NewLine
@@ -185,9 +194,9 @@ Dialogue_Index_0036:
 
 Dialogue_Index_0038:
 .db "MEDICINE HANGING", Dialogue_NewLine
-.db Word_From, "ITS NECK, BUT", Dialogue_NewPage
-.db "I DON", Dialogue_Apostrophe, "T ", Word_Know, " WHAT", Dialogue_NewLine
-.db Word_That, " IS FOR.", Dialogue_Terminator65
+.db Word_From, "ITS NECK,", Dialogue_NewPage
+.db "BUT I DON", Dialogue_Apostrophe, "T ", Word_Know, Dialogue_NewLine
+.db "WHAT ", Word_That, " IS FOR.", Dialogue_Terminator65
 
 Dialogue_Index_003A:
 .db "I HEAR ", Word_You, Word_Are, Dialogue_NewLine
@@ -196,26 +205,31 @@ Dialogue_Index_003A:
 .db "BEST OF LUCK!", Dialogue_Terminator65
 
 Dialogue_Index_003C:
-.db "I RECENTLY FOUND ATALKING BEAST IN", Dialogue_NewPage
-.db Word_The, "CAVE ", Word_Where, Dialogue_NewLine
-.db Word_Medusa, " LIVES.", Dialogue_NewPage
+.db "I RECENTLY FOUND", Dialogue_NewLine
+.db "A TAL", Word_King, " BEAST", Dialogue_NewPage
+.db "IN ", Word_The, "CAVE ", Word_Where, Dialogue_NewLine
+.db Word_Medusa, " LIVES."
 
 Dialogue_Index_003E:
-.db "I SOLD HIM FOR A", Dialogue_NewLine
+.db " I", Dialogue_NewPage
+.db "SOLD HIM FOR A", Dialogue_NewLine
 .db "GOOD PRICE TO A", Dialogue_NewPage
-.db "MERCHANT ", Word_From, Dialogue_NewLine
+.db "MERCHANT FROM", Dialogue_NewLine
 .db "PASEO!", Dialogue_Terminator65
 
 Dialogue_Index_0040:
-.db "TIMES ", Word_Are, "HARD.", Dialogue_NewLine
-.db Word_There, " DOESN", Dialogue_Apostrophe, "T SEEM", Dialogue_NewPage
-.db "TO BE ", Word_Any, "WAY TO", Dialogue_NewLine
-.db "MAKE M", Word_One, "Y.", Dialogue_Terminator65
+.db Word_Time, "S ", Word_Are, "HARD.", Dialogue_NewLine
+.db Word_There, " DOESN", Dialogue_Apostrophe, "T", Dialogue_NewPage
+.db "SEEM TO BE", Dialogue_NewLine
+.db Word_Any, "WAY TO MAKE", Dialogue_NewPage
+.db "M", Word_One, "Y.", Dialogue_Terminator65
 
 Dialogue_Index_0042:
-.db "A CAVE CALLED IALACAN BE FOUND ON", Dialogue_NewPage
-.db Word_The, "PENINSULA TO", Dialogue_NewLine
-.db Word_The, "SOUTH OF ", Word_Scion, Dialogue_Terminator65
+.db "A CAVE CALLED", Dialogue_NewLine
+.db "IALA CAN BE FOUND", Dialogue_NewPage
+.db "ON ", Word_The, "PENINSULA", Dialogue_NewLine
+.db "TO ", Word_The, "SOUTH OF", Dialogue_NewPage
+.db Word_Scion, Dialogue_Terminator65
 
 Dialogue_Index_0044:
 .db Word_This, "IS ", Word_The, "PORT", Dialogue_NewLine
@@ -224,61 +238,73 @@ Dialogue_Index_0044:
 .db "THRIVED ON TRADE.", Dialogue_Terminator65
 
 Dialogue_Index_0046:
-.db Word_You, "NEED A COMPASSTO ", Word_Pass, " ", Word_Through, Dialogue_NewPage
-.db Word_The, "EPPI ", Word_Forest, ".", Dialogue_Terminator65
+.db Word_You, "NEED A", Dialogue_NewLine
+.db "COM", Word_Pass, " TO ", Word_Pass, Dialogue_NewPage
+.db Word_Through, " ", Word_The, "EPPI", Dialogue_NewLine
+.db Word_Forest, ".", Dialogue_Terminator65
 
 Dialogue_Index_0048:
-.db "A DOOR LOCKED WITH", Word_Magic_84, "CAN ONLY BE", Dialogue_NewPage
-.db "OPENED WITH ", Word_Magic_EF, ".", Dialogue_Terminator65
+.db "A DOOR LOCKED", Dialogue_NewLine
+.db "WITH ", Word_Magic_84, "CAN", Dialogue_NewPage
+.db "ONLY BE OPENED", Dialogue_NewLine
+.db "WITH ", Word_Magic_EF, ".", Dialogue_Terminator65
 
 Dialogue_Index_004A:
 .db Word_There_Is, " A ", Word_Hill, Dialogue_NewLine
-.db Word_Named, Word_Baya_Malay, Dialogue_NewPage
-.db "TO ", Word_The, "NORTH OF", Dialogue_NewLine
-.db Word_This, Word_Town, ".", Dialogue_NewPage
-.db "BUT N", Word_One, " OF US", Dialogue_NewLine
-.db "D", Word_Are, "APPROACH IT.", Dialogue_Terminator65
+.db Word_Named, Word_Baya, Dialogue_NewPage
+.db Word_Malay, " TO THE", Dialogue_NewLine
+.db "NORTH OF THIS", Dialogue_NewPage
+.db Word_Town, ". BUT N", Word_One, " OF", Dialogue_NewLine
+.db "US D", Word_Are, "APPROACH", Dialogue_NewPage
+.db "IT.", Dialogue_Terminator65
 
 Dialogue_Index_004C:
 .db "A CAVE CALLED", Dialogue_NewLine
-.db "NAULA LIES ON ", Word_The, Dialogue_NewPage
+.db "NAULA LIES ON THE", Dialogue_NewPage
 .db "NORTH COAST OF", Dialogue_NewLine
 .db Word_Baya_Malay, ".", Dialogue_Terminator65
 
 Dialogue_Index_004E:
 .db Word_The, Word_Governor, " OF", Dialogue_NewLine
 .db Word_Motavia, " MIGHT", Dialogue_NewPage
-.db "POSSIBLY ", Word_Help, " ", Word_You, "WELL.", Dialogue_Terminator65
+.db "POSSIBLY ", Word_Help, Dialogue_NewLine
+.db Word_You, "WELL.", Dialogue_Terminator65
 
 Dialogue_Index_0050:
 .db "NOAH LIVES ON", Dialogue_NewLine
 .db Word_Motavia, ".", Dialogue_Terminator65
 
 Dialogue_Index_0052:
-.db "DR.", Word_Luveno, " HAD A", Dialogue_NewLine
-.db Word_Laboratory, " IN ", Word_The, Dialogue_NewPage
-.db Word_Gothic, " ", Word_Forest, " LONGAGO, IT IS SAID.", Dialogue_Terminator65
+.db "DR. ", Word_Luveno, " HAD A", Dialogue_NewLine
+.db Word_Laboratory, " IN THE", Dialogue_NewPage
+.db Word_Gothic, " ", Word_Forest, Dialogue_NewLine
+.db "LONG AGO, IT IS", Dialogue_NewPage
+.db "SAID.", Dialogue_Terminator65
 
 Dialogue_Index_0054:
 .db Word_Welcome, "TO EPPI.", Dialogue_Terminator65
 
 Dialogue_Index_0056:
-.db Word_Are, Word_You, "LOOKING", Dialogue_NewLine
-.db "FOR A ", Word_Dungeon, " KEY?", Dialogue_Terminator62
+.db Word_Are, Word_You, "LOO", Word_King, Dialogue_NewLine
+.db "FOR A ", Word_Dungeon, Dialogue_NewPage
+.db "KEY?", Dialogue_Terminator62
 
 Dialogue_Index_0058:
 .db "I", Dialogue_Apostrophe, "VE HIDDEN A", Dialogue_NewLine
-.db Word_Dungeon, " KEY IN THE", Dialogue_NewPage
+.db Word_Dungeon, " KEY IN", Dialogue_NewPage
+.db "THE"
 
 Dialogue_Index_005A:
-.db "WAREHOUSE IN ", Word_The, Dialogue_NewLine
-.db "OUTSKIRTS OF ", Word_The, Dialogue_NewPage
-.db "CAMINEET.", Dialogue_Terminator65
+.db " WAREHOUSE IN", Dialogue_NewLine
+.db Word_The, "OUTSKIRTS OF", Dialogue_NewPage
+.db Word_The, "CAMINEET.", Dialogue_Terminator65
 
 Dialogue_Index_005C:
 .db Word_Do_You_Know, " WHAT", Dialogue_NewLine
 .db Word_The, "HARDEST,", Dialogue_NewPage
-.db "STRONGEST MATERIALIN OUR ", Word_World, " IS?", Dialogue_Terminator62
+.db "STRONGEST", Dialogue_NewLine
+.db "MATERIAL IN OUR", Dialogue_NewPage
+.db Word_World, " IS?", Dialogue_Terminator62
 
 Dialogue_Index_005E:
 .db "IT", Dialogue_Apostrophe, "S ", Word_Laconia, "!", Dialogue_NewLine
@@ -290,77 +316,83 @@ Dialogue_Index_0060:
 .db "O.K. GOOD DAY.", Dialogue_Terminator65
 
 Dialogue_Index_0062:
-.db Word_Do_You_Know, " ABOUT", Dialogue_NewLine
-.db Word_The, Word_Planets, " OF", Dialogue_NewPage
-.db Word_The, Word_Algol, " STAR", Dialogue_NewLine
+.db Word_Do_You_Know, Dialogue_NewLine
+.db "ABOUT ", Word_The, Word_Planets, Dialogue_NewPage
+.db "OF ", Word_The, Word_Algol, " STAR", Dialogue_NewLine
 .db Word_System, "?", Dialogue_Terminator62
 
 Dialogue_Index_0064:
 .db Word_There_Are, " THREE", Dialogue_NewLine
 .db Word_Planets, "; ", Word_Palma, Dialogue_NewPage
 .db Word_Motavia, " AND", Dialogue_NewLine
-.db Word_Dezoris, ".", Dialogue_NewPage
+.db Word_Dezoris, "."
 
 Dialogue_Index_0066:
-.db Word_Palma, " IS A ", Word_World, Dialogue_NewLine
-.db "OF GREEN.", Dialogue_NewPage
-.db Word_Motavia, " IS A ", Word_World, Dialogue_NewLine
-.db "OF SAND.", Dialogue_NewPage
-.db Word_Dezoris, " IS A ", Word_World, Dialogue_NewLine
-.db "OF ICE.", Dialogue_NewPage
+.db " ", Word_Palma, " IS", Dialogue_NewPage
+.db "A ", Word_World, " OF GREEN.", Dialogue_NewLine
+.db Word_Motavia, " IS A", Dialogue_NewPage
+.db Word_World, " OF SAND.", Dialogue_NewLine
+.db Word_Dezoris, " IS A", Dialogue_NewPage
+.db Word_World, " OF ICE."
 
 Dialogue_Index_0068:
-.db Word_The, Word_Algol, " STAR", Dialogue_NewLine
-.db Word_System, " IS", Dialogue_NewPage
-.db Word_Currently, " ", Word_Facing, Dialogue_NewLine
+.db " THE", Dialogue_NewLine
+.db Word_Algol, " STAR", Dialogue_NewPage
+.db Word_System, " IS", Dialogue_NewLine
+.db Word_Currently, " FACING", Dialogue_NewPage
 .db "A ", Word_Great, "CRISIS.", Dialogue_Terminator65
 
 Dialogue_Index_006A:
-.db Word_This, "IS PALMA", Dialogue_Apostrophe, "S", Dialogue_NewLine
-.db Word_Spaceport, ".", Dialogue_NewPage
-.db Word_From, Word_The, Word_Spaceport, Dialogue_NewLine
-.db Word_You, "CAN GO TO", Dialogue_NewPage
-.db "PASEO ON ", Word_Motavia, ".", Dialogue_Terminator65
+.db Word_This, "IS ", Word_Palma, Dialogue_Apostrophe, "S", Dialogue_NewLine
+.db Word_Spaceport, ". FROM", Dialogue_NewPage
+.db Word_The, Word_Spaceport, " YOU", Dialogue_NewLine
+.db "CAN GO TO PASEO", Dialogue_NewPage
+.db "ON ", Word_Motavia, ".", Dialogue_Terminator65
 
 Dialogue_Index_006C:
-.db Word_The, Word_Governor, " IS INPASEO. HE RULES", Dialogue_NewPage
-.db "ALL OF ", Word_Motavia, ".", Dialogue_Terminator65
+.db Word_The, Word_Governor, " IS", Dialogue_NewLine
+.db "IN PASEO. HE", Dialogue_NewPage
+.db "RULES ALL OF", Dialogue_NewLine
+.db Word_Motavia, ".", Dialogue_Terminator65
 
 Dialogue_Index_006E:
 .db "LONG AGO, A", Dialogue_NewLine
 .db Word_Spaceship, " WAS", Dialogue_NewPage
-.db "BUILT IN ", Word_The, Dialogue_NewLine
-.db Word_Gothic, " ", Word_Laboratory, ".", Dialogue_Terminator65
+.db "BUILT IN THE", Dialogue_NewLine
+.db Word_Gothic, Dialogue_NewPage
+.db Word_Laboratory, ".", Dialogue_Terminator65
 
 Dialogue_Index_0070:
 .db Word_Do_You_Have, " ", Word_Your, Dialogue_NewLine
 .db Word_Passport, "?", Dialogue_Terminator62
 
 Dialogue_Index_0072:
-.db Word_You, "CAN FILE FOR A", Dialogue_NewLine
-.db Word_Passport, " ", Word_Here, ".", Dialogue_NewPage
+.db Word_You, "CAN FILE FOR", Dialogue_NewLine
+.db "A ", Word_Passport, " ", Word_Here, ".", Dialogue_NewPage
 .db Word_Do_You, " ", Word_Want, "A", Dialogue_NewLine
 .db Word_Passport, "?", Dialogue_Terminator62
 
 Dialogue_Index_0074:
-.db Word_Have, Word_You, "EVER D", Word_One, Dialogue_NewLine
-.db Word_Any, Word_Thing, " ILLEGAL? ", Dialogue_Terminator62
+.db Word_Have, Word_You, "EVER", Dialogue_NewLine
+.db "D", Word_One, " ", Word_Any, Word_Thing, Dialogue_NewPage
+.db "ILLEGAL?", Dialogue_Terminator62
 
 Dialogue_Index_0076:
-.db Word_Do_You, " CURRENTLY", Dialogue_NewLine
+.db Word_Do_You, " ", Word_Currently, Dialogue_NewLine
 .db Word_Have, "AN ILLNESS?", Dialogue_Terminator62
 
 Dialogue_Index_0078:
 .db Word_The, Word_Passport, " FEE", Dialogue_NewLine
 .db "IS 100 ", Word_Mesetas, ".", Dialogue_NewPage
-.db "WOULD ", Word_You, "PAY IT?", Dialogue_Terminator62
+.db "W", Word_Ould, " ", Word_You, "PAY IT?", Dialogue_Terminator62
 
 Dialogue_Index_007A:
 .db Word_Your, Word_Passport, " IS", Dialogue_NewLine
 .db "READY, ", Word_Here, ".", Dialogue_Terminator65
 
 Dialogue_Index_007C:
-.db Word_I_See, ". ", Word_Have, "A GOODDAY.", Dialogue_Terminator65
+.db Word_I_See, ". ", Word_Have, "A GOOD", Dialogue_NewLine
+.db "DAY.", Dialogue_Terminator65
 
 Dialogue_Index_007E:
 .db Word_That, Dialogue_Apostrophe, "S ", Word_Not, "GOOD.", Dialogue_NewLine
@@ -384,22 +416,26 @@ Dialogue_Index_0084:
 .db Word_Palma, "!", Dialogue_Terminator65
 
 Dialogue_Index_0086:
-.db Word_Motavia, Dialogue_Apostrophe, "S ", Word_Governor, "AND ", Word_Lassic, " ", Word_Are, "NOT", Dialogue_NewPage
-.db "ON GOOD TERMS, IT", Dialogue_NewLine
-.db "IS SAID.", Dialogue_Terminator65
+.db Word_Motavia, Dialogue_Apostrophe, "S", Dialogue_NewLine
+.db Word_Governor, " AND", Dialogue_NewPage
+.db Word_Lassic, " ", Word_Are, Word_Not, "ON", Dialogue_NewLine
+.db "GOOD TERMS, IT IS", Dialogue_NewPage
+.db "SAID.", Dialogue_Terminator65
 
 Dialogue_Index_0088:
 .db "A GIFT IS NEEDED", Dialogue_NewLine
-.db "IF ", Word_You, Word_Wish, " TO SEE", Dialogue_NewPage
-.db Word_The, Word_Governor, ".", Dialogue_Terminator65
+.db "IF ", Word_You, Word_Wish, " TO", Dialogue_NewPage
+.db "SEE ", Word_The, Word_Governor, ".", Dialogue_Terminator65
 
 Dialogue_Index_008A:
-.db Word_The, Word_Governor, " LOVESSWEETS, I HEAR.", Dialogue_Terminator65
+.db Word_The, Word_Governor, Dialogue_NewLine
+.db "LOVES SWEETS, I", Dialogue_NewPage
+.db "HEAR.", Dialogue_Terminator65
 
 Dialogue_Index_008C:
 .db Word_There_Is, " A CAVE", Dialogue_NewLine
 .db "CALLED ", Word_Maharu, " IN", Dialogue_NewPage
-.db "A ", Word_Mountain, " TO ", Word_The, Dialogue_NewLine
+.db "A ", Word_Mountain, " TO THE", Dialogue_NewLine
 .db "NORTH OF PASEO.", Dialogue_Terminator65
 
 Dialogue_Index_008E:
@@ -413,9 +449,10 @@ Dialogue_Index_0090:
 
 Dialogue_Index_0092:
 .db "I ", Word_Have, "AN RARE", Dialogue_NewLine
-.db "ANIMAL ", Word_Here, ". WOULD", Dialogue_NewPage
-.db Word_You, "PAY 1 BILLION", Dialogue_NewLine
-.db Word_Mesetas, " FOR IT?", Dialogue_Terminator62
+.db "ANIMAL ", Word_Here, ".", Dialogue_NewPage
+.db "W", Word_Ould, " ", Word_You, "PAY 1", Dialogue_NewLine
+.db "BILLION ", Word_Mesetas, Dialogue_NewPage
+.db "FOR IT?", Dialogue_Terminator62
 
 Dialogue_Index_0094:
 .db Word_You, Word_Are, "A LIAR!", Dialogue_Terminator65
@@ -434,8 +471,8 @@ Dialogue_Index_009A:
 
 Dialogue_Index_009C:
 .db Word_Do_You_Have, " A", Dialogue_NewLine
-.db Word_Present, " TO GIVE TO", Dialogue_NewPage
-.db Word_The, Word_Governor, "?", Dialogue_Terminator62
+.db Word_Present, " TO GIVE", Dialogue_NewPage
+.db "TO ", Word_The, Word_Governor, "?", Dialogue_Terminator62
 
 Dialogue_Index_009E:
 .db "I", Dialogue_Apostrophe, "LL TAKE ", Word_The, Dialogue_NewLine
@@ -452,33 +489,38 @@ Dialogue_Index_00A2:
 
 Dialogue_Index_00A4:
 .db "I", Dialogue_Apostrophe, "M ", Word_The, Word_Governor, ".", Dialogue_NewLine
-.db "I", Dialogue_Apostrophe, "M TOLD ", Word_That, " ", Word_You, Dialogue_NewPage
+.db "I", Dialogue_Apostrophe, "M TOLD ", Word_That, " YOU", Dialogue_NewPage
 .db "INTEND TO TRY TO", Dialogue_NewLine
-.db "KILL ", Word_Lassic, ".", Dialogue_NewPage
+.db "KILL ", Word_Lassic, "."
 
 Dialogue_Index_00A6:
-.db "I ADMIRE ", Word_Your, Dialogue_NewLine
-.db "COURAGE. IN ", Word_The, Dialogue_NewPage
-.db Word_Maharu, " CAVE LIVES", Dialogue_NewLine
-.db "AN ESPAR ", Word_Named, Dialogue_NewPage
+.db " I", Dialogue_NewPage
+.db "ADMIRE YOUR", Dialogue_NewLine
+.db "COURAGE. IN THE", Dialogue_NewPage
+.db Word_Maharu, " CAVE", Dialogue_NewLine
+.db "LIVES AN ESPAR", Dialogue_NewPage
+.db "NAMED"
 
 Dialogue_Index_00A8:
-.db "NOAH. ", Word_I_Will, " GIVE", Dialogue_NewLine
-.db Word_You, "A LETTER OF", Dialogue_NewPage
-.db "INTRODUCTION TO", Dialogue_NewLine
-.db Word_Present, " TO HER.", Dialogue_NewPage
+.db " NOAH. I", Dialogue_NewLine
+.db Word_Will, " GIVE ", Word_You, "A", Dialogue_NewPage
+.db "LETTER OF", Dialogue_NewLine
+.db "INTRODUCTION TO", Dialogue_NewPage
+.db Word_Present, " TO HER."
 
 Dialogue_Index_00AA:
-.db "I ", Word_Have, "FAITH ", Word_That, Dialogue_NewLine
-.db Word_You_Will, " KILL", Dialogue_NewPage
-.db Word_Lassic, " AND RETURN", Dialogue_NewLine
-.db Word_Here, " EVENTUALLY.", Dialogue_Terminator65
+.db " I", Dialogue_NewLine
+.db Word_Have, "FAITH ", Word_That, Dialogue_NewPage
+.db Word_You_Will, " KILL", Dialogue_NewLine
+.db Word_Lassic, " AND", Dialogue_NewPage
+.db "RETURN ", Word_Here, Dialogue_NewLine
+.db "EVENTUALLY.", Dialogue_Terminator65
 
 Dialogue_Index_00AC:
 .db "IF ", Word_The, Word_Governor, Dialogue_NewLine
 .db "ORDERS NOAH TO DO", Dialogue_NewPage
-.db Word_Some, Word_Thing, ",HE WILL", Dialogue_NewLine
-.db "LIKELY OBEY.", Dialogue_Terminator65
+.db Word_Some, Word_Thing, ", HE", Dialogue_NewLine
+.db Word_Will, " LIKELY OBEY.", Dialogue_Terminator65
 
 Dialogue_Index_00AE:
 .db "WHO ", Word_Are, "YOU? I", Dialogue_Apostrophe, "M", Dialogue_NewLine
@@ -486,7 +528,8 @@ Dialogue_Index_00AE:
 
 Dialogue_Index_00B0:
 .db "TRAINING NOW! DO", Dialogue_NewLine
-.db Word_Not, "BE A NUISANCE!", Dialogue_Terminator65
+.db Word_Not, "BE A", Dialogue_NewPage
+.db "NUISANCE!", Dialogue_Terminator65
 
 Dialogue_Index_00B2:
 .db "HELLO!", Dialogue_Terminator65
@@ -503,19 +546,22 @@ Dialogue_Index_00B8:
 .db Word_Your, "SAFETY.", Dialogue_Terminator65
 
 Dialogue_Index_00BA:
-.db "COULD YA SP", Word_Are, "ME", Dialogue_NewLine
-.db "A CUP OF COLA?", Dialogue_Terminator62
+.db "C", Word_Ould, " YA SPARE", Dialogue_NewLine
+.db "ME A CUP OF COLA?", Dialogue_Terminator62
 
 Dialogue_Index_00BC:
 .db Word_Thanks, "! ", Word_This, "WAS", Dialogue_NewLine
 .db "ONCE ", Word_The, "LAB. OF", Dialogue_NewPage
 
 Dialogue_Index_00BE:
-.db "DR.", Word_Luveno, ". HE WENTBONKERS, THOUGH", Dialogue_NewPage
+.db "DR. ", Word_Luveno, ". HE", Dialogue_NewLine
+.db "WENT BONKERS,", Dialogue_NewPage
+.db "THOUGH"
 
 Dialogue_Index_00C0:
-.db "AND BE INPRIS", Word_One, "D", Dialogue_NewLine
-.db "IN TRIADA TO ", Word_The, Dialogue_NewPage
+.db " AND BE", Dialogue_NewLine
+.db "INPRIS", Word_One, "D IN", Dialogue_NewPage
+.db "TRIADA TO THE", Dialogue_NewLine
 .db "SOUTH OF ", Word_Here, ".", Dialogue_Terminator65
 
 Dialogue_Index_00C2:
@@ -523,19 +569,22 @@ Dialogue_Index_00C2:
 .db "SAY T", Dialogue_Apostrophe, "YA!GET LOST!", Dialogue_Terminator65
 
 Dialogue_Index_00C4:
-.db "DON", Dialogue_Apostrophe, "T GO NEAR ", Word_The, Dialogue_NewLine
+.db "DON", Dialogue_Apostrophe, "T GO NEAR THE", Dialogue_NewLine
 .db Word_Tower, " AT ", Word_The, "FAR", Dialogue_NewPage
 
 Dialogue_Index_00C6:
-.db "END OF ", Word_The, "NARROW", Dialogue_NewLine
-.db "ROAD WHICH GOES", Dialogue_NewPage
-.db Word_From, Word_The, Word_Gothic, Dialogue_NewLine
-.db Word_Forest, " ", Word_Through, " THE", Dialogue_NewPage
+.db "END OF THE", Dialogue_NewLine
+.db "NARROW ROAD", Dialogue_NewPage
+.db "WHICH GOES FROM", Dialogue_NewLine
+.db Word_The, Word_Gothic, " ", Word_Forest, Dialogue_NewPage
+.db Word_Through, " THE", Dialogue_NewLine
 
 Dialogue_Index_00C8:
-.db Word_Mountain, "S. A ", Word_Magic_EF, "BEAST LIVES ", Word_There, ".", Dialogue_NewPage
-.db "LOOK AT IT AND YA", Dialogue_NewLine
-.db "TURN TO ST", Word_One, ".", Dialogue_Terminator65
+.db Word_Mountain, "S. A", Dialogue_NewPage
+.db Word_Magic_84, "BEAST LIVES", Dialogue_NewLine
+.db Word_There, ". LOOK AT IT", Dialogue_NewPage
+.db "AND YA TURN TO", Dialogue_NewLine
+.db "ST", Word_One, ".", Dialogue_Terminator65
 
 Dialogue_Index_00CA:
 .db "AH, IT", Dialogue_Apostrophe, "S GETTING", Dialogue_NewLine
@@ -543,37 +592,43 @@ Dialogue_Index_00CA:
 
 Dialogue_Index_00CC:
 .db "ASSISTANT. HE", Dialogue_Apostrophe, "S", Dialogue_NewLine
-.db "LIKELY HIDING", Dialogue_NewPage
-.db "IN ", Word_The, "UNDERGROUND", Word_Passage, ".", Dialogue_Terminator65
+.db "LIKELY HIDING IN", Dialogue_NewPage
+.db Word_The, "UNDERGROUND", Dialogue_NewLine
+.db Word_Passage, ".", Dialogue_Terminator65
 
 Dialogue_Index_00CE:
 .db Word_Dont_Be_A_Fool, Dialogue_Terminator65
 
 Dialogue_Index_00D0:
-.db Word_You, "DON", Dialogue_Apostrophe, "T ", Word_Have, Dialogue_NewLine
+.db Word_You, "DON", Dialogue_Apostrophe, "T HAVE", Dialogue_NewLine
 .db "ENOUGH. COME BACK", Dialogue_NewPage
-.db "AGAIN WHEN ", Word_You, Dialogue_NewLine
-.db Word_Have, "ENOUGH FUNDS.", Dialogue_Terminator65
+.db "AGAIN WHEN YOU", Dialogue_NewLine
+.db Word_Have, "ENOUGH", Dialogue_NewPage
+.db "FUNDS.", Dialogue_Terminator65
 
 Dialogue_Index_00D2:
-.db "SUCCESS! I ", Word_Present, "A SUPERB ", Word_Spaceship, Dialogue_NewPage
-.db Word_The, Word_Luveno, ".", Dialogue_Terminator65
+.db "SUCCESS! I", Dialogue_NewLine
+.db Word_Present, " A SUPERB", Dialogue_NewPage
+.db Word_Spaceship, " THE", Dialogue_NewLine
+.db Word_Luveno, ".", Dialogue_Terminator65
 
 Dialogue_Index_00D4:
 .db "IF ", Word_You, "DON", Dialogue_Apostrophe, "T OBEY", Dialogue_NewLine
 .db "ME, I ", Word_Cannot, " ", Word_Help, ".", Dialogue_Terminator65
 
 Dialogue_Index_00D6:
-.db "BUT ", Word_You, Word_Cannot, " FLY", Dialogue_NewLine
-.db "A ", Word_Spaceship, ".", Dialogue_Terminator65
+.db "BUT ", Word_You, Word_Cannot, Dialogue_NewLine
+.db "FLY A ", Word_Spaceship, ".", Dialogue_Terminator65
 
 Dialogue_Index_00D8:
-.db "HOW IS ", Word_The, Word_Luveno, "?USE IT WELL.", Dialogue_Terminator65
+.db "HOW IS THE", Dialogue_NewLine
+.db Word_Luveno, "? USE IT", Dialogue_NewPage
+.db "WELL.", Dialogue_Terminator65
 
 Dialogue_Index_00DA:
 .db Word_That, Dialogue_Apostrophe, "S TOO BAD.", Dialogue_NewLine
-.db "AND ", Word_You, Word_Have, "COME", Dialogue_NewPage
-.db "SO FAR, TOO.", Dialogue_Terminator65
+.db "AND ", Word_You, "HAVE", Dialogue_NewPage
+.db "COME SO FAR, TOO.", Dialogue_Terminator65
 
 Dialogue_Index_00DC:
 .db "I", Dialogue_Apostrophe, "M BUSY.DON", Dialogue_Apostrophe, "T", Dialogue_NewLine
@@ -582,7 +637,9 @@ Dialogue_Index_00DC:
 Dialogue_Index_00DE:
 .db "I", Dialogue_Apostrophe, "M ", Word_Luveno, ". IF", Dialogue_NewLine
 .db "YOU", Dialogue_Apostrophe, "VE COME FOR", Dialogue_NewPage
-.db Word_Help, ", ", Word_You, "HAD BESTFORGET IT. LEAVE!", Dialogue_Terminator65
+.db Word_Help, ", ", Word_You, "HAD", Dialogue_NewLine
+.db "BEST FORGET IT.", Dialogue_NewPage
+.db "LEAVE!", Dialogue_Terminator65
 
 Dialogue_Index_00E0:
 .db Word_You, Word_Want, "ME TO", Dialogue_NewLine
@@ -593,18 +650,22 @@ Dialogue_Index_00E0:
 .db "RESPONSIBILITY.", Dialogue_Terminator65
 
 Dialogue_Index_00E2:
-.db Word_You, Word_Are, "CERTAINLY", Dialogue_NewLine
-.db "PERSISITENT. WELL,", Dialogue_NewPage
-.db "IF ", Word_You_Will, " DO AS", Dialogue_NewLine
-.db "I SAY, ", Word_I_Will, " ", Word_Help, Dialogue_NewPage
-.db "YOU. IS IT A DEAL?", Dialogue_Terminator62
+.db Word_You, "ARE", Dialogue_NewLine
+.db "CERTAINLY", Dialogue_NewPage
+.db "PERSISITENT.", Dialogue_NewLine
+.db "WELL, IF ", Word_You_Will, Dialogue_NewPage
+.db "DO AS I SAY, I", Dialogue_NewLine
+.db Word_Will, " ", Word_Help, " YOU. IS", Dialogue_NewPage
+.db "IT A DEAL?", Dialogue_Terminator62
 
 Dialogue_Index_00E4:
 .db "O.K. ", Word_I_Will, " GO TO", Dialogue_NewLine
 .db Word_Gothic, " ", Word_Village, Dialogue_NewPage
 .db "NEARBY TO MAKE", Dialogue_NewLine
-.db "PREPARATIONS. COME", Dialogue_NewPage
-.db "THEN. DO ", Word_Not, "WASTEWORRY ON ME.", Dialogue_Terminator65
+.db "PREPARATIONS.", Dialogue_NewPage
+.db "COME THEN. DO NOT", Dialogue_NewLine
+.db "WASTE WORRY ON", Dialogue_NewPage
+.db "ME.", Dialogue_Terminator65
 
 Dialogue_Index_00E6:
 .db Word_Do_You_Have, " ", Word_Your, Dialogue_NewLine
@@ -624,21 +685,26 @@ Dialogue_Index_00EC:
 .db "ROBOT ", Word_Hapsby, "?", Dialogue_Terminator62
 
 Dialogue_Index_00EE:
-.db "ON ", Word_The, "FAR SIDE OF", Word_The, Word_Mountain, "S LIES", Dialogue_NewPage
-.db "A POOL OF MOLTEN", Dialogue_NewLine
-.db "LAVA CREATED BY A", Dialogue_NewPage
-.db "VOLCANIC ERUPTION.", Dialogue_Terminator65
+.db "ON ", Word_The, "FAR SIDE", Dialogue_NewLine
+.db "OF ", Word_The, Word_Mountain, "S", Dialogue_NewPage
+.db "LIES A POOL OF", Dialogue_NewLine
+.db "MOLTEN LAVA", Dialogue_NewPage
+.db "CREATED BY A", Dialogue_NewLine
+.db "VOLCANIC", Dialogue_NewPage
+.db "ERUPTION.", Dialogue_Terminator65
 
 Dialogue_Index_00F0:
 .db Word_The, Word_Tower, " DEEP IN", Dialogue_NewLine
 .db Word_The, Word_Gothic, Dialogue_NewPage
-.db Word_Mountain, "S IS KNOWNAS ", Word_Medusa, Dialogue_Apostrophe, "S ", Word_Tower, ".", Dialogue_Terminator65
+.db Word_Mountain, "S IS", Dialogue_NewLine
+.db Word_Know, "N AS", Dialogue_NewPage
+.db Word_Medusa, Dialogue_Apostrophe, "S ", Word_Tower, ".", Dialogue_Terminator65
 
 Dialogue_Index_00F2:
 .db "I HAVEN", Dialogue_Apostrophe, "T SEEN", Dialogue_NewLine
-.db Word_Any, Word_One, " FOR A LONG", Dialogue_NewPage
-.db Word_Time, ". ", Word_Will_You, Dialogue_NewLine
-.db "TALK WITH ME?", Dialogue_Terminator62
+.db Word_Any, Word_One, " FOR A", Dialogue_NewPage
+.db "LONG ", Word_Time, ". ", Word_Will, Dialogue_NewLine
+.db Word_You, "TALK WITH ME?", Dialogue_Terminator62
 
 Dialogue_Index_00F4:
 .db "POLYMETERAL ", Word_Will, Dialogue_NewLine
@@ -647,29 +713,34 @@ Dialogue_Index_00F4:
 .db "FOR ", Word_Laconia, ".", Dialogue_Terminator65
 
 Dialogue_Index_00F6:
-.db "WHAT? DR.", Word_Luveno, Dialogue_NewLine
-.db "HAS RETURNED?", Dialogue_NewPage
-.db "HE ", Word_Will, " BUILD", Dialogue_NewLine
-.db "ANOTHER ", Word_Spaceship, "?", Dialogue_NewPage
-.db "I ", Word_Will, " BE ", Word_There, Dialogue_NewLine
-.db "RIGHT AWAY.", Dialogue_Terminator65
+.db "WHAT? DR. ", Word_Luveno, Dialogue_NewLine
+.db "HAS RETURNED? HE", Dialogue_NewPage
+.db Word_Will, " BUILD", Dialogue_NewLine
+.db "ANOTHER", Dialogue_NewPage
+.db Word_Spaceship, "? ", Word_I_Will, Dialogue_NewLine
+.db "BE ", Word_There, " RIGHT", Dialogue_NewPage
+.db "AWAY.", Dialogue_Terminator65
 
 Dialogue_Index_00F8:
 .db "NO MAN ", Word_That, " GOES", Dialogue_NewLine
 .db "INTO ", Word_The, "ROOM IN", Dialogue_NewPage
-.db Word_The, "FAR CORNER HASEVER COME OUT", Dialogue_NewPage
+.db Word_The, "FAR CORNER", Dialogue_NewLine
+.db "HAS EVER COME OUT", Dialogue_NewPage
 .db "ALIVE! AHA-HA-HA!", Dialogue_Terminator65
 
 Dialogue_Index_00FA:
 .db "IT SEEMS TO BE A", Dialogue_NewLine
 .db "MAN WHO HAS BEEN", Dialogue_NewPage
-.db Word_Turned_To_Stone, "!", Dialogue_NewLine
-.db "I WONDER IF HE CAN", Dialogue_NewPage
-.db "BE RETURNED TO HISORIGINAL FORM?", Dialogue_Terminator65
+.db Word_Turned_To_Stone, "! I", Dialogue_NewLine
+.db "WONDER IF HE CAN", Dialogue_NewPage
+.db "BE RETURNED TO", Dialogue_NewLine
+.db "HIS ORIGINAL", Dialogue_NewPage
+.db "FORM?", Dialogue_Terminator65
 
 Dialogue_Index_00FC:
-.db Word_You_Will, " SOON FIND", Dialogue_NewLine
-.db "OUT ", Word_The, "TRUTH!", Dialogue_Terminator65
+.db Word_You_Will, " SOON", Dialogue_NewLine
+.db "FIND OUT THE", Dialogue_NewPage
+.db "TRUTH!", Dialogue_Terminator65
 
 Dialogue_Index_00FE:
 .db "HALT! GO BACK!", Dialogue_NewLine
@@ -687,8 +758,9 @@ Dialogue_Index_0102:
 
 Dialogue_Index_0104:
 .db Word_You_Must, " FIND A", Dialogue_NewLine
-.db "ROBOT ", Word_Named, Dialogue_NewPage
-.db Word_Hapsby, ". HE CAN FLYA ", Word_Spaceship, ".", Dialogue_Terminator65
+.db "ROBOT NAMED", Dialogue_NewPage
+.db Word_Hapsby, ". HE CAN", Dialogue_NewLine
+.db "FLY A ", Word_Spaceship, ".", Dialogue_Terminator65
 
 Dialogue_Index_0106:
 .db "IN ", Word_This, "PILE OF", Dialogue_NewLine
@@ -697,12 +769,14 @@ Dialogue_Index_0106:
 Dialogue_Index_0108:
 .db Word_There_Is, " S", Dialogue_Apostrophe, "PPOSED", Dialogue_NewLine
 .db "T", Dialogue_Apostrophe, "BE A USABLE", Dialogue_NewPage
-.db "ROBOT,BUT ", Word_You, Word_Know, Dialogue_NewLine
-.db "HOW RUMORS BE.", Dialogue_Terminator65
+.db "ROBOT, BUT YOU", Dialogue_NewLine
+.db Word_Know, " HOW RUMORS", Dialogue_NewPage
+.db "BE.", Dialogue_Terminator65
 
 Dialogue_Index_010A:
-.db "POLYMETERAL IS FOR", Dialogue_NewLine
-.db "SALE IN ABION.", Dialogue_Terminator65
+.db "POLYMETERAL IS", Dialogue_NewLine
+.db "FOR SALE IN", Dialogue_NewPage
+.db "ABION.", Dialogue_Terminator65
 
 Dialogue_Index_010C:
 .db Word_This, Word_Town, " IS", Dialogue_NewLine
@@ -713,40 +787,45 @@ Dialogue_Index_010C:
 .db Word_Lassic, ".", Dialogue_Terminator65
 
 Dialogue_Index_010E:
-.db Word_Have, Word_You, "HEARD OF", Dialogue_NewLine
-.db "A GEM CALLED \"", Word_The, Dialogue_NewPage
-.db "AMBER EYE\"?", Dialogue_NewLine
+.db Word_Have, Word_You, "HEARD", Dialogue_NewLine
+.db "OF A GEM CALLED", Dialogue_NewPage
+.db "\"", Word_The, "AMBER EYE\"?", Dialogue_NewLine
 
 Dialogue_Index_0110:
-.db Word_Some, " SAY ", Word_The, "CASBA", Dialogue_NewPage
-.db "DRAGON HAS ", Word_One, ".", Dialogue_Terminator65
+.db Word_Some, " SAY THE", Dialogue_NewPage
+.db "CASBA DRAGON HAS", Dialogue_NewLine
+.db Word_One, ".", Dialogue_Terminator65
 
 Dialogue_Index_0112:
-.db Word_There_Is, " A ", Word_Village, "CALLED ABION ON", Dialogue_NewPage
-.db Word_The, "WESTERN EDGE", Dialogue_NewLine
-.db "ON ", Word_This, "ISLAND.", Dialogue_Terminator65
+.db Word_There_Is, " A", Dialogue_NewLine
+.db Word_Village, " CALLED", Dialogue_NewPage
+.db "ABION ON THE", Dialogue_NewLine
+.db "WESTERN EDGE ON", Dialogue_NewPage
+.db Word_This, "ISLAND.", Dialogue_Terminator65
 
 Dialogue_Index_0114:
-.db Word_Do_You_Know, " ABOUT", Dialogue_NewLine
-.db Word_Laerma, " TREES?", Dialogue_Terminator62
+.db Word_Do_You_Know, Dialogue_NewLine
+.db "ABOUT ", Word_Laerma, Dialogue_NewPage
+.db "TREES?", Dialogue_Terminator62
 
 Dialogue_Index_0116:
-.db "THEY GROW ON ", Word_The, Dialogue_NewLine
-.db "ALTIPLANO PLATEAU", Dialogue_NewPage
-.db "ON ", Word_The, Word_Planet, Dialogue_NewLine
-.db Word_Dezoris, ".", Dialogue_Terminator65
+.db "THEY GROW ON THE", Dialogue_NewLine
+.db "ALTIPLANO", Dialogue_NewPage
+.db "PLATEAU ON THE", Dialogue_NewLine
+.db Word_Planet, " ", Word_Dezoris, ".", Dialogue_Terminator65
 
 Dialogue_Index_0118:
 .db Word_You, Word_Are, "GOING TO", Dialogue_NewLine
-.db "TRY TO KILL ", Word_Lassic, Dialogue_NewPage
-.db "I HEAR. ", Word_That, Dialogue_Apostrophe, "S", Dialogue_NewLine
-.db "GREAT!", Dialogue_NewPage
+.db "TRY TO KILL", Dialogue_NewPage
+.db Word_Lassic, " I HEAR.", Dialogue_NewLine
+.db Word_That, Dialogue_Apostrophe, "S GREAT!"
 
 Dialogue_Index_011A:
-.db "I ", Word_Have, "HEARD ", Word_That, Dialogue_NewLine
-.db "A CERTAIN", Dialogue_NewPage
-.db "CRYSTAL ", Word_Will, " BLOCK", Dialogue_NewLine
-.db "EVIL ", Word_Magic_EF, ".", Dialogue_Terminator65
+.db " I", Dialogue_NewPage
+.db Word_Have, "HEARD ", Word_That, " A", Dialogue_NewLine
+.db "CERTAIN CRYSTAL", Dialogue_NewPage
+.db Word_Will, " BLOCK EVIL", Dialogue_NewLine
+.db Word_Magic_EF, ".", Dialogue_Terminator65
 
 Dialogue_Index_011C:
 .db Word_Welcome, "TO ABION.", Dialogue_Terminator65
@@ -756,13 +835,15 @@ Dialogue_Index_011E:
 .db "COME TO ", Word_This, Word_Town, "!", Dialogue_Terminator65
 
 Dialogue_Index_0120:
-.db "A ", Word_Strange, " MAN CAMETO ", Word_This, Word_Town, ". HE", Dialogue_NewPage
-.db "SEEMS TO BE", Dialogue_NewLine
-.db "PERFORMING ANIMAL", Dialogue_NewPage
+.db "A ", Word_Strange, " MAN", Dialogue_NewLine
+.db "CAME TO ", Word_This, Word_Town, ".", Dialogue_NewPage
+.db "HE SEEMS TO BE", Dialogue_NewLine
+.db "PERFORMING", Dialogue_NewPage
+.db "ANIMAL", Dialogue_NewLine
 
 Dialogue_Index_0122:
-.db "EXPERIMENTS. HE", Dialogue_NewLine
-.db "BROUGHT A LARGE", Dialogue_NewPage
+.db "EXPERIMENTS. HE", Dialogue_NewPage
+.db "BROUGHT A LARGE", Dialogue_NewLine
 .db "POT OR ", Word_Some, Word_Thing, ".", Dialogue_Terminator65
 
 Dialogue_Index_0124:
@@ -774,21 +855,26 @@ Dialogue_Index_0124:
 .db "BEING USELESS.", Dialogue_Terminator65
 
 Dialogue_Index_0126:
-.db "I", Dialogue_Apostrophe, "D LIKE TO TRAVELIN OUTER SPACE.", Dialogue_Terminator65
+.db "I", Dialogue_Apostrophe, "D LIKE TO TRAVEL", Dialogue_NewLine
+.db "IN OUTER SPACE.", Dialogue_Terminator65
 
 Dialogue_Index_0128:
-.db Word_Some, " CATS, IF THEYEAT A CERTAIN TYPE", Dialogue_NewPage
-.db "OF NUT,THEY BECOMEHUGE AND CAN FLY.", Dialogue_NewPage
+.db Word_Some, " CATS, IF", Dialogue_NewLine
+.db "THEY EAT A", Dialogue_NewPage
+.db "CERTAIN TYPE OF", Dialogue_NewLine
+.db "NUT, THEY BECOME", Dialogue_NewPage
+.db "HUGE AND CAN FLY.", Dialogue_NewLine
 
 Dialogue_Index_012A:
-.db "IT", Dialogue_Apostrophe, "S REALLY VERY", Dialogue_NewLine
+.db "IT", Dialogue_Apostrophe, "S REALLY VERY", Dialogue_NewPage
 .db "WIERD.", Dialogue_Terminator65
 
 Dialogue_Index_012C:
 .db "I", Dialogue_Apostrophe, "M ", Word_Hapsby, ".", Dialogue_NewLine
-.db Word_Thanks, " FOR FINDING", Dialogue_NewPage
-.db "ME. I CAN FLY ", Word_The, Dialogue_NewLine
-.db Word_Luveno, " FOR YOU.", Dialogue_Terminator65
+.db Word_Thanks, " FOR", Dialogue_NewPage
+.db "FINDING ME. I CAN", Dialogue_NewLine
+.db "FLY ", Word_The, Word_Luveno, Dialogue_NewPage
+.db "FOR YOU.", Dialogue_Terminator65
 
 Dialogue_Index_012E:
 .db Word_This, Word_Town, " IS", Dialogue_NewLine
@@ -796,11 +882,11 @@ Dialogue_Index_012E:
 
 Dialogue_Index_0130:
 .db "IF ", Word_You, "USE A", Dialogue_NewLine
-.db "VEHICLE CALLED THE", Dialogue_NewPage
-.db "LAND ROVER, ", Word_The, Dialogue_NewLine
-.db Word_Ant_Lion, " ", Word_Will, " NOT", Dialogue_NewPage
-.db "BE ABLE TO HARM", Dialogue_NewLine
-.db "YOU.", Dialogue_Terminator65
+.db "VEHICLE CALLED", Dialogue_NewPage
+.db Word_The, "LAND ROVER,", Dialogue_NewLine
+.db Word_The, Word_Ant_Lion, " ", Word_Will, Dialogue_NewPage
+.db Word_Not, "BE ABLE TO", Dialogue_NewLine
+.db "HARM YOU.", Dialogue_Terminator65
 
 Dialogue_Index_0132:
 .db Word_There_Is, " A ", Word_Town, Dialogue_NewLine
@@ -808,20 +894,24 @@ Dialogue_Index_0132:
 .db Word_The, "SOUTH OF ", Word_Here, ".", Dialogue_Terminator65
 
 Dialogue_Index_0134:
-.db Word_There_Are, " DRAGONS", Dialogue_NewLine
-.db "LIVING IN ", Word_The, Dialogue_NewPage
-.db "CASBA CAVE. THESE", Dialogue_NewLine
-.db "DRAGONS ", Word_Have, "GEMS", Dialogue_NewPage
-.db "IN THEIR HEADS!", Dialogue_Terminator65
+.db Word_There_Are, Dialogue_NewLine
+.db "DRAGONS LIVING", Dialogue_NewPage
+.db "IN ", Word_The, "CASBA", Dialogue_NewLine
+.db "CAVE. THESE", Dialogue_NewPage
+.db "DRAGONS HAVE", Dialogue_NewLine
+.db "GEMS IN THEIR", Dialogue_NewPage
+.db "HEADS!", Dialogue_Terminator65
 
 Dialogue_Index_0136:
 .db Word_Have, Word_You, "HEARD", Dialogue_NewLine
-.db "ABOUT MANTLES MADE", Dialogue_NewPage
-.db "OF FRAD FIBERS?", Dialogue_NewLine
+.db "ABOUT MANTLES", Dialogue_NewPage
+.db "MADE OF FRAD", Dialogue_NewLine
+.db "FIBERS?"
 
 Dialogue_Index_0138:
-.db "THEY ", Word_Are, "LIGHT,", Dialogue_NewPage
-.db "BUT PROVIDE ", Word_Great, Dialogue_NewLine
+.db " THEY ARE", Dialogue_NewPage
+.db "LIGHT, BUT", Dialogue_NewLine
+.db "PROVIDE GREAT", Dialogue_NewPage
 .db "PROTECTION.", Dialogue_Terminator65
 
 Dialogue_Index_013A:
@@ -833,13 +923,16 @@ Dialogue_Index_013C:
 .db "OH, NEVER MIND.", Dialogue_Terminator65
 
 Dialogue_Index_013E:
-.db "IT", Dialogue_Apostrophe, "S A ", Word_Secret, ", BUTI BURIED ", Word_One, " AT", Dialogue_NewPage
+.db "IT", Dialogue_Apostrophe, "S A ", Word_Secret, ", BUT", Dialogue_NewLine
+.db "I BURIED ", Word_One, " AT", Dialogue_NewPage
 .db Word_The, "OUTSKIRTS OF", Dialogue_NewLine
-.db Word_The, Word_Town, " OF ", Word_Gothic, Dialogue_NewPage
+.db Word_The, Word_Town, " OF", Dialogue_NewPage
+.db Word_Gothic
 
 Dialogue_Index_0140:
-.db "ON ", Word_Palma, ". DON", Dialogue_Apostrophe, "T", Dialogue_NewLine
-.db "TELL ", Word_Any, Word_One, ".", Dialogue_Terminator65
+.db " ON ", Word_Palma, ".", Dialogue_NewLine
+.db "DON", Dialogue_Apostrophe, "T TELL", Dialogue_NewPage
+.db Word_Any, Word_One, ".", Dialogue_Terminator65
 
 Dialogue_Index_0142:
 .db "I DON", Dialogue_Apostrophe, "T ", Word_Know, " WHO", Dialogue_NewLine
@@ -850,31 +943,34 @@ Dialogue_Index_0142:
 Dialogue_Index_0144:
 .db "I TELL ", Word_You, "NO ", Word_One, Dialogue_NewLine
 .db "CAN DO.GO ON BACK", Dialogue_NewPage
-.db "TO WHEREVER ", Word_You, Dialogue_NewLine
+.db "TO ", Word_Where, "VER ", Word_You, Dialogue_NewLine
 .db "CAME FROM.", Dialogue_Terminator65
 
 Dialogue_Index_0146:
 .db "ALL RIGHT, ALL", Dialogue_NewLine
 .db "RIGHT. I GIVE UP.", Dialogue_NewPage
 .db "BUT DON", Dialogue_Apostrophe, "T TELL", Dialogue_NewLine
-.db Word_Any, Word_One, " ", Word_Where, " ", Word_You, Dialogue_NewPage
-.db "GOT THIS, O.K.?", Dialogue_Terminator65
+.db Word_Any, Word_One, " ", Word_Where, Dialogue_NewPage
+.db Word_You, "GOT THIS, O.K.?", Dialogue_Terminator65
 
 Dialogue_Index_0148:
-.db "I", Dialogue_Apostrophe, "M ", Word_The, Word_Great, Dialogue_NewLine
-.db "DAMOR, ", Word_Soothsayer, "!", Dialogue_NewPage
+.db "I", Dialogue_Apostrophe, "M ", Word_The, "GREAT", Dialogue_NewLine
+.db "DAMOR,", Dialogue_NewPage
+.db Word_Soothsayer, "!"
 
 Dialogue_Index_014A:
-.db Word_Do_You, " BELIEVE IN", Dialogue_NewLine
+.db " DO", Dialogue_NewLine
+.db Word_You, "BELIEVE IN", Dialogue_NewPage
 .db "MY PROPHECIES?", Dialogue_Terminator62
 
 Dialogue_Index_014C:
 .db "I", Dialogue_Apostrophe, "VE GOT A FRIEND", Dialogue_NewLine
 .db "IN ", Word_Bortevo, ". HE", Dialogue_Apostrophe, "S", Dialogue_NewPage
-.db "PROBABLY HAVING A", Dialogue_NewLine
-.db "HARD ", Word_Time, " BECAUSE", Dialogue_NewPage
-.db "OF ", Word_The, "LAVA. WHY", Dialogue_NewLine
-.db Word_Not, "VISIT HIM?", Dialogue_Terminator65
+.db "PROBABLY HAVING", Dialogue_NewLine
+.db "A HARD ", Word_Time, Dialogue_NewPage
+.db "BECAUSE OF THE", Dialogue_NewLine
+.db "LAVA. WHY NOT", Dialogue_NewPage
+.db "VISIT HIM?", Dialogue_Terminator65
 
 Dialogue_Index_014E:
 .db "GOOD!", Dialogue_Terminator65
@@ -888,8 +984,9 @@ Dialogue_Index_0152:
 .db "UNBELIEVER!", Dialogue_Terminator65
 
 Dialogue_Index_0154:
-.db Word_You, Word_Are, "SEARCHING", Dialogue_NewLine
-.db "FOR ALEX OSSALE?", Dialogue_Terminator62
+.db Word_You, "ARE", Dialogue_NewLine
+.db "SEARCHING FOR", Dialogue_NewPage
+.db "ALEX OSSALE?", Dialogue_Terminator62
 
 Dialogue_Index_0156:
 .db "EVERY", Word_Thing, " I", Dialogue_Apostrophe, "VE", Dialogue_NewLine
@@ -901,23 +998,26 @@ Dialogue_Index_0158:
 
 Dialogue_Index_015A:
 .db Word_Do_You, " CONTRADICT", Dialogue_NewLine
-.db Word_The, Word_Great, "DAMOR?!?", Dialogue_Terminator62
+.db Word_The, "GREAT", Dialogue_NewPage
+.db "DAMOR?!?", Dialogue_Terminator62
 
 Dialogue_Index_015C:
-.db "OF COURSE NOT!YOU", Dialogue_NewLine
-.db Word_Are, "A PROMISING", Dialogue_NewPage
-.db "YOUNG LASS! ", Word_I_Will
+.db "OF COURSE NOT!", Dialogue_NewLine
+.db Word_You, Word_Are, "A", Dialogue_NewPage
+.db "PROMISING YOUNG", Dialogue_NewLine
+.db "LASS! ", Word_I_Will
 
 Dialogue_Index_015E:
-.db "GIVE ", Word_You, "A ", Word_Magic_EF, Dialogue_NewPage
-.db "CRYSTAL FOR A", Dialogue_NewLine
+.db " GIVE", Dialogue_NewPage
+.db Word_You, "A ", Word_Magic_EF, Dialogue_NewLine
+.db "CRYSTAL FOR A", Dialogue_NewPage
 .db "REWARD.", Dialogue_Terminator65
 
 Dialogue_Index_0160:
 .db Word_Do_You, " COME IN", Dialogue_NewLine
-.db "FULL KNOWLEDGE OF", Dialogue_NewPage
-.db Word_The, Word_Tower, " OF ", Word_Baya, Dialogue_NewLine
-.db Word_Malay, "?", Dialogue_Terminator62
+.db "FULL ", Word_Know, "LEDGE", Dialogue_NewPage
+.db "OF ", Word_The, Word_Tower, " OF", Dialogue_NewLine
+.db Word_Baya_Malay, "?", Dialogue_Terminator62
 
 Dialogue_Index_0162:
 .db Word_You_Will, " SURELY", Dialogue_NewLine
@@ -939,34 +1039,39 @@ Dialogue_Index_0168:
 .db "SCARED OF THEM.", Dialogue_Terminator65
 
 Dialogue_Index_016A:
-.db "DON", Dialogue_Apostrophe, "T BELIEVE YOUR", Dialogue_NewLine
-.db "OWN EYES IN ", Word_The, Dialogue_NewPage
-.db "DEPTH OF ", Word_The, Dialogue_NewLine
+.db "DON", Dialogue_Apostrophe, "T BELIEVE", Dialogue_NewLine
+.db Word_Your, "OWN EYES IN", Dialogue_NewPage
+.db Word_The, "DEPTH OF THE", Dialogue_NewLine
 .db Word_Dungeon, "S.", Dialogue_Terminator65
 
 Dialogue_Index_016C:
-.db Word_There_Are, " LEGENDS", Dialogue_NewLine
-.db "OF A MYSTIC ", Word_Shield, Dialogue_NewPage
-.db "IN A ", Word_Village, Dialogue_NewLine
-.db "SURROUNDED IN MIST", Dialogue_NewPage
+.db Word_There_Are, Dialogue_NewLine
+.db "LEGENDS OF A", Dialogue_NewPage
+.db "MYSTIC ", Word_Shield, " IN", Dialogue_NewLine
+.db "A ", Word_Village, Dialogue_NewPage
+.db "SURROUNDED IN", Dialogue_NewLine
+.db "MIST"
 
 Dialogue_Index_016E:
-.db "IT IS ", Word_The, Word_Shield, Dialogue_NewLine
-.db "PERSEUS USED IN", Dialogue_NewPage
-.db "DAYS TO CONQUER", Dialogue_NewLine
-.db Word_Magic_84, "BEASTS.", Dialogue_Terminator65
+.db " IT IS THE", Dialogue_NewPage
+.db Word_Shield, " PERSEUS", Dialogue_NewLine
+.db "USED IN DAYS TO", Dialogue_NewPage
+.db "CONQUER ", Word_Magic_EF, Dialogue_NewLine
+.db "BEASTS.", Dialogue_Terminator65
 
 Dialogue_Index_0170:
 .db Word_There_Is, " POISON", Dialogue_NewLine
 .db "GAS ABOVE ", Word_The, "SEA", Dialogue_NewPage
 .db "TO ", Word_The, "WEST. NO", Dialogue_NewLine
 .db Word_One, " CAN GO NEAR", Dialogue_NewPage
-.db Word_There, " WITHOUT ", Word_Some, "PROTECTION.", Dialogue_Terminator65
+.db Word_There, " WITHOUT", Dialogue_NewLine
+.db Word_Some, " PROTECTION.", Dialogue_Terminator65
 
 Dialogue_Index_0172:
-.db Word_Have, Word_You, "HEARD OF", Dialogue_NewLine
-.db "VEHICLE CALLED", Dialogue_NewPage
-.db Word_The, "HOVERCRAFT?", Dialogue_Terminator62
+.db Word_Have, Word_You, "HEARD", Dialogue_NewLine
+.db "OF VEHICLE", Dialogue_NewPage
+.db "CALLED THE", Dialogue_NewLine
+.db "HOVERCRAFT?", Dialogue_Terminator62
 
 Dialogue_Index_0174:
 .db "I BOUGHT IT IN", Dialogue_NewLine
@@ -977,15 +1082,18 @@ Dialogue_Index_0174:
 
 Dialogue_Index_0176:
 .db Word_Bortevo, ". IT", Dialogue_NewPage
-.db "PROBABLY CAN STILLBE USED, THOUGH.", Dialogue_Terminator65
+.db "PROBABLY CAN", Dialogue_NewLine
+.db "STILL BE USED,", Dialogue_NewPage
+.db "THOUGH.", Dialogue_Terminator65
 
 Dialogue_Index_0178:
-.db Word_You, "FOUND ", Word_The, Dialogue_NewLine
-.db "HOVERCRAFT.", Word_Hapsby, Dialogue_NewPage
-.db "HAS RESTORED IT TO", Dialogue_NewLine
+.db Word_You, "FOUND THE", Dialogue_NewLine
+.db "HOVERCRAFT.", Dialogue_NewPage
+.db Word_Hapsby, " HAS", Dialogue_NewLine
+.db Word_Rest, "ORED IT TO", Dialogue_NewPage
 
 Dialogue_Index_017A:
-.db "WORKING ORDER.", Dialogue_Terminator65
+.db "WOR", Word_King, " ORDER.", Dialogue_Terminator65
 
 Dialogue_Index_017C:
 .db "IT", Dialogue_Apostrophe, "S A GOOD ", Word_Thing, Dialogue_NewLine
@@ -993,8 +1101,10 @@ Dialogue_Index_017C:
 .db "ACROSS WATER.", Dialogue_Terminator65
 
 Dialogue_Index_017E:
-.db Word_Welcome, "TO DRASGOW-- A SMALL ", Word_Town, Dialogue_NewPage
-.db "ON ", Word_The, "OCEAN.", Dialogue_Terminator65
+.db Word_Welcome, "TO", Dialogue_NewLine
+.db "DRASGOW -- A", Dialogue_NewPage
+.db "SMALL ", Word_Town, " ON", Dialogue_NewLine
+.db Word_The, "OCEAN.", Dialogue_Terminator65
 
 Dialogue_Index_0180:
 .db Word_You, Word_Are, "DARING TO", Dialogue_NewLine
@@ -1018,14 +1128,14 @@ Dialogue_Index_0186:
 .db Word_Through, " ", Word_The, "SKY.", Dialogue_Terminator65
 
 Dialogue_Index_0188:
-.db Word_The, "TOP OF ", Word_The, Dialogue_NewLine
+.db Word_The, "TOP OF THE", Dialogue_NewLine
 .db Word_Hill, " CALLED ", Word_Baya, Dialogue_NewPage
 .db Word_Malay, " IS ALWAYS", Dialogue_NewLine
 .db "HIDDEN BY CLOUDS.", Dialogue_NewPage
 
 Dialogue_Index_018A:
-.db Word_Some, Word_Thing, " ", Word_Must, " BE", Dialogue_NewLine
-.db "UP ", Word_There, "!", Dialogue_Terminator65
+.db Word_Some, Word_Thing, " ", Word_Must, Dialogue_NewLine
+.db "BE UP ", Word_There, "!", Dialogue_Terminator65
 
 Dialogue_Index_018C:
 .db "I HEARD ", Word_That, " THEY", Dialogue_NewLine
@@ -1040,23 +1150,28 @@ Dialogue_Index_018E:
 Dialogue_Index_0190:
 .db Word_Welcome, "TO OUR", Dialogue_NewLine
 .db "STORE. WHAT CAN I", Dialogue_NewPage
-.db Word_Help, " ", Word_You, "WITH?", Dialogue_NewPage
+.db Word_Help, " ", Word_You, "WITH?", Dialogue_NewLine
 
 Dialogue_Index_0192:
-.db "AHH, I WAS PULLING", Word_Your, "LEG! WHAT", Dialogue_Apostrophe, "S", Dialogue_NewPage
-.db "A MATTER, CAN", Dialogue_Apostrophe, "T", Dialogue_NewLine
-.db Word_You, "TAKE A JOKE?", Dialogue_Terminator65
+.db "AHH, I WAS", Dialogue_NewPage
+.db "PULLING ", Word_Your, "LEG!", Dialogue_NewLine
+.db "WHAT", Dialogue_Apostrophe, "S A MATTER,", Dialogue_NewPage
+.db "CAN", Dialogue_Apostrophe, "T ", Word_You, "TAKE A", Dialogue_NewLine
+.db "JOKE?", Dialogue_Terminator65
 
 Dialogue_Index_0194:
-.db "I BET ", Word_You, Word_Are, Dialogue_NewLine
-.db "SURPRISED TO SEE A", Dialogue_NewPage
-.db "SHOP IN A PLACE", Dialogue_NewLine
-.db "LIKE THIS!", Dialogue_NewPage
+.db "I BET ", Word_You, "ARE", Dialogue_NewLine
+.db "SURPRISED TO SEE", Dialogue_NewPage
+.db "A SHOP IN A PLACE", Dialogue_NewLine
+.db "LIKE THIS!"
 
 Dialogue_Index_0196:
-.db "A GAS ", Word_Shield, " IS", Dialogue_NewLine
-.db "ONLY 1000 ", Word_Mesetas, "!", Dialogue_NewPage
-.db "PRETTY CHEAP, HUH?", Word_Will_You, " BUY ", Word_One, "?", Dialogue_Terminator62
+.db " A GAS", Dialogue_NewPage
+.db Word_Shield, " IS ONLY", Dialogue_NewLine
+.db "1000 ", Word_Mesetas, "!", Dialogue_NewPage
+.db "PRETTY CHEAP,", Dialogue_NewLine
+.db "HUH? ", Word_Will_You, Dialogue_NewPage
+.db "BUY ", Word_One, "?", Dialogue_Terminator62
 
 Dialogue_Index_0198:
 .db Word_Thanks, "! SEE ", Word_You, Dialogue_NewLine
@@ -1068,7 +1183,8 @@ Dialogue_Index_019A:
 
 Dialogue_Index_019C:
 .db "SORRY, ", Word_That, " WAS", Dialogue_NewLine
-.db Word_Your, "ONLY CHANCE.", Dialogue_Terminator65
+.db Word_Your, "ONLY", Dialogue_NewPage
+.db "CHANCE.", Dialogue_Terminator65
 
 Dialogue_Index_019E:
 .db Word_The, Word_Spaceport, " IS", Dialogue_NewLine
@@ -1076,7 +1192,8 @@ Dialogue_Index_019E:
 
 Dialogue_Index_01A0:
 .db Word_We_Are, "CONFISCAT-", Dialogue_NewLine
-.db "ING ", Word_Your, Word_Passport, ".", Dialogue_Terminator65
+.db "ING YOUR", Dialogue_NewPage
+.db Word_Passport, ".", Dialogue_Terminator65
 
 Dialogue_Index_01A2:
 .db Word_Welcome, "TO SKURE", Dialogue_NewLine
@@ -1090,47 +1207,56 @@ Dialogue_Index_01A4:
 .db "SETTLE ", Word_Here, ".", Dialogue_Terminator65
 
 Dialogue_Index_01A6:
-.db "I DON", Dialogue_Apostrophe, "T ", Word_Know, " A LOTABOUT ", Word_This, Word_Planet, ",", Dialogue_NewPage
+.db "I DON", Dialogue_Apostrophe, "T ", Word_Know, " A LOT", Dialogue_NewLine
+.db "ABOUT THIS", Dialogue_NewPage
+.db Word_Planet, ","
 
 Dialogue_Index_01A8:
-.db "BUT WORD HAS IT", Dialogue_NewLine
-.db Word_That, " ", Word_There_Is, " A", Dialogue_NewPage
-.db Word_Town, " OF NATIVE", Dialogue_NewLine
-.db Word_Dezorian, "S IN ", Word_The, Dialogue_NewPage
-.db "FAR REACHES OF THE", Word_Mountain, "S.", Dialogue_Terminator65
+.db " BUT WORD", Dialogue_NewLine
+.db "HAS IT ", Word_That, " ", Word_There, Dialogue_NewPage
+.db "IS A ", Word_Town, " OF", Dialogue_NewLine
+.db "NATIVE ", Word_Dezorian, "S", Dialogue_NewPage
+.db "IN ", Word_The, "FAR", Dialogue_NewLine
+.db "REACHES OF THE", Dialogue_NewPage
+.db Word_Mountain, "S.", Dialogue_Terminator65
 
 Dialogue_Index_01AA:
-.db "IF ", Word_You, "REALLY HOPETO KILL ", Word_Lassic, ",", Dialogue_NewPage
+.db "IF ", Word_You, "REALLY", Dialogue_NewLine
+.db "HOPE TO KILL", Dialogue_NewPage
+.db Word_Lassic, ","
 
 Dialogue_Index_01AC:
-.db Word_You, "HAD BEST FIND", Dialogue_NewLine
-.db "A SWORD, AXE,", Dialogue_NewPage
-.db Word_Shield, ", ARMOR", Dialogue_NewLine
-.db "MADE OF ", Word_Laconia, ".", Dialogue_NewPage
+.db " ", Word_You, "HAD", Dialogue_NewLine
+.db "BEST FIND A", Dialogue_NewPage
+.db "SWORD, AXE,", Dialogue_NewLine
+.db Word_Shield, ", ARMOR", Dialogue_NewPage
+.db "MADE OF ", Word_Laconia, ".", Dialogue_NewLine
 
 Dialogue_Index_01AE:
-.db "SUCH WEAPONS ", Word_Are, Dialogue_NewLine
-.db "STRONGEST.", Dialogue_NewPage
+.db "SUCH WEAPONS ARE", Dialogue_NewPage
+.db "STRONGEST."
 
 Dialogue_Index_01B0:
-.db "I PRAY FOR ", Word_Your, Dialogue_NewLine
-.db "SAFETY.", Dialogue_Terminator65
+.db " I PRAY", Dialogue_NewLine
+.db "FOR ", Word_Your, "SAFETY.", Dialogue_Terminator65
 
 Dialogue_Index_01B2:
 .db "ARMS MADE OF", Dialogue_NewLine
 .db Word_Laconia, " CONCEAL", Dialogue_NewPage
-.db "HOLY POWER. ", Word_Lassic
+.db "HOLY POWER.", Dialogue_NewLine
+.db Word_Lassic
 
 Dialogue_Index_01B4:
-.db "FEARS ", Word_This, "POWER", Dialogue_NewPage
-.db "AND HAS BEEN", Dialogue_NewLine
-.db "RUNNING AND HIDING", Dialogue_NewPage
-.db "IN DIFFERENT", Dialogue_NewLine
+.db " FEARS THIS", Dialogue_NewPage
+.db "POWER AND HAS", Dialogue_NewLine
+.db "BEEN RUNNING AND", Dialogue_NewPage
+.db "HIDING IN", Dialogue_NewLine
+.db "DIFFERENT"
 
 Dialogue_Index_01B6:
-.db "PLACES IN ", Word_The, Dialogue_NewPage
-.db Word_Planets, " OF ", Word_The, Dialogue_NewLine
-.db Word_Algol, " ", Word_System, ".", Dialogue_Terminator65
+.db " PLACES", Dialogue_NewPage
+.db "IN ", Word_The, Word_Planets, " OF", Dialogue_NewLine
+.db Word_The, Word_Algol, " ", Word_System, ".", Dialogue_Terminator65
 
 Dialogue_Index_01B8:
 .db Word_Dezoris, " IS A", Dialogue_NewLine
@@ -1139,9 +1265,9 @@ Dialogue_Index_01B8:
 Dialogue_Index_01BA:
 .db Word_There_Are, " PLACES", Dialogue_NewLine
 .db "IN ", Word_The, Word_Mountain, "S", Dialogue_NewPage
-.db "WHERE THE ICE IS", Dialogue_NewLine
+.db Word_Where, " ", Word_The, "ICE IS", Dialogue_NewLine
 .db "SOFT AND", Dialogue_NewPage
-.db "IMPASSABLE TO", Dialogue_NewLine
+.db "IM", Word_Pass, "ABLE TO", Dialogue_NewLine
 .db "THOSE ON FOOT.", Dialogue_Terminator65
 
 Dialogue_Index_01BC:
@@ -1151,19 +1277,23 @@ Dialogue_Index_01BC:
 .db Word_Mountain, ".", Dialogue_Terminator65
 
 Dialogue_Index_01BE:
-.db "AN ECLIPSE OCCURS", Dialogue_NewLine
-.db "ON ", Word_This, Word_Planet, Dialogue_NewPage
-.db "ONCE EVERY HUNDREDYEARS. A TORCH", Dialogue_NewPage
+.db "AN ECLIPSE", Dialogue_NewLine
+.db "OCCURS ON THIS", Dialogue_NewPage
+.db Word_Planet, " ONCE", Dialogue_NewLine
+.db "EVERY HUNDRED", Dialogue_NewPage
+.db "YEARS. A TORCH"
 
 Dialogue_Index_01C0:
-.db "LIT DURING AN", Dialogue_NewLine
-.db "ECLIPSE IS CALLED", Dialogue_NewPage
-.db "AN \"ECLIPSE TORCH\""
+.db " LIT", Dialogue_NewLine
+.db "DURING AN", Dialogue_NewPage
+.db "ECLIPSE IS CALLED", Dialogue_NewLine
+.db "AN \"ECLIPSE", Dialogue_NewPage
+.db "TORCH\""
 
 Dialogue_Index_01C2:
-.db "AND IS REGARDED", Dialogue_NewPage
-.db "AS HOLY BY ", Word_The, Dialogue_NewLine
-.db Word_Dezorian, "S.", Dialogue_Terminator65
+.db " AND IS", Dialogue_NewLine
+.db "REGARDED AS HOLY", Dialogue_NewPage
+.db "BY ", Word_The, Word_Dezorian, "S.", Dialogue_Terminator65
 
 Dialogue_Index_01C4:
 .db Word_The, "DEAD GUARON", Dialogue_NewLine
@@ -1193,23 +1323,25 @@ Dialogue_Index_01CC:
 .db "ZE ", Word_Dezoris, " CAVE.", Dialogue_NewLine
 
 Dialogue_Index_01CE:
-.db "OUR FRIENDS ", Word_Are, "IN", Dialogue_NewPage
-.db "ZERE. GIVE ZEM", Dialogue_NewLine
+.db "OUR FRIENDS ARE", Dialogue_NewPage
+.db "IN ZERE. GIVE ZEM", Dialogue_NewLine
 .db "OUR BEST, O.K.?", Dialogue_Terminator65
 
 Dialogue_Index_01D0:
-.db Word_Laerma, " TREES GROW", Dialogue_NewLine
-.db "ZE ", Word_Laerma, " BERRIES.", Dialogue_NewPage
+.db Word_Laerma, " TREES", Dialogue_NewLine
+.db "GROW ZE ", Word_Laerma, Dialogue_NewPage
+.db "BERRIES."
 
 Dialogue_Index_01D2:
-.db "ZOSE BERRIES ", Word_Are, Dialogue_NewLine
-.db "OUR MOST IMPORTANT", Dialogue_NewPage
-.db "FOOD, BUT IT", Dialogue_NewLine
-.db "SHRIVELS UP AFTER", Dialogue_NewPage
-.db "A FEW MOMENTS,", Dialogue_NewLine
+.db " ZOSE", Dialogue_NewLine
+.db "BERRIES ", Word_Are, "OUR", Dialogue_NewPage
+.db "MOST IMPORTANT", Dialogue_NewLine
+.db "FOOD, BUT IT", Dialogue_NewPage
+.db "SHRIVELS UP AFTER", Dialogue_NewLine
+.db "A FEW MOMENTS,", Dialogue_NewPage
 
 Dialogue_Index_01D4:
-.db "UNLESS IT IS PUT", Dialogue_NewPage
+.db "UNLESS IT IS PUT", Dialogue_NewLine
 .db "IN ", Word_Laconian_Pot, ".", Dialogue_Terminator65
 
 Dialogue_Index_01D6:
@@ -1235,33 +1367,39 @@ Dialogue_Index_01DE:
 .db Word_There_Is, ", YES.", Dialogue_Terminator65
 
 Dialogue_Index_01E0:
-.db Word_You, "CAN WARP ", Word_From, Dialogue_NewLine
-.db Word_The, "10TH LEVEL OF", Dialogue_NewPage
-.db Word_The, Word_Dungeon, " UNDER", Dialogue_NewLine
-.db Word_Dezoris, ",YES.", Dialogue_Terminator65
+.db Word_You, "CAN WARP", Dialogue_NewLine
+.db Word_From, Word_The, "10TH", Dialogue_NewPage
+.db "LEVEL OF THE", Dialogue_NewLine
+.db Word_Dungeon, " UNDER", Dialogue_NewPage
+.db Word_Dezoris, ", YES.", Dialogue_Terminator65
 
 Dialogue_Index_01E2:
-.db Word_Laerma, " BERRIES ARE", Dialogue_NewLine
-.db "BLUE ", Word_Laerma, " NUTS", Dialogue_NewLine
-.db "USED IN DYES,YES,", Dialogue_NewPage
-.db "THEY ", Word_Are, ", ", Word_Indeed, ".", Dialogue_Terminator65
+.db Word_Laerma, " BERRIES", Dialogue_NewLine
+.db Word_Are, "BLUE ", Word_Laerma, Dialogue_NewPage
+.db "NUTS USED IN", Dialogue_NewLine
+.db "DYES, YES, THEY", Dialogue_NewPage
+.db Word_Are, ", ", Word_Indeed, ".", Dialogue_Terminator65
 
 Dialogue_Index_01E4:
 .db "IF ", Word_You, "USE A", Dialogue_NewLine
 .db "CRYSTAL IN FRONT", Dialogue_NewPage
 .db "OF A ", Word_Laerma, " TREE,", Dialogue_NewLine
 .db "IT ", Word_Will, " BECOME,", Dialogue_NewPage
-.db "YES, A ", Word_Laerma, " NUT,YES, ", Word_Indeed, ".", Dialogue_Terminator65
+.db "YES, A ", Word_Laerma, Dialogue_NewLine
+.db "NUT, YES, ", Word_Indeed, ".", Dialogue_Terminator65
 
 Dialogue_Index_01E6:
-.db Word_This, Word_Town, " WELCOMESALL ", Word_Palmans, ",YES,", Dialogue_NewPage
+.db Word_This, Word_Town, Dialogue_NewLine
+.db "WELCOMES ALL", Dialogue_NewPage
+.db Word_Palmans, ", YES,", Dialogue_NewLine
 .db Word_Indeed, ", WE DO.", Dialogue_Terminator65
 
 Dialogue_Index_01E8:
 .db Word_This, Word_Town, " IS", Dialogue_NewLine
-.db "CALLED SOPIA.", Dialogue_NewPage
-.db Word_You, Word_Are, "BRAVE TO", Dialogue_NewLine
-.db "PENETRATE ", Word_The, "GAS.", Dialogue_Terminator65
+.db "CALLED SOPIA. YOU", Dialogue_NewPage
+.db Word_Are, "BRAVE TO", Dialogue_NewLine
+.db "PENETRATE THE", Dialogue_NewPage
+.db "GAS.", Dialogue_Terminator65
 
 Dialogue_Index_01EA:
 .db "I", Dialogue_Apostrophe, "M ", Word_The, "HEAD OF", Dialogue_NewLine
@@ -1271,8 +1409,8 @@ Dialogue_Index_01EC:
 .db "BECAUSE OF ", Word_The, Dialogue_NewLine
 .db "CLOUD OF GAS,", Dialogue_NewPage
 .db Word_We_Are, "CUT OFF", Dialogue_NewLine
-.db Word_From, "OTHER TOWNS,", Dialogue_NewPage
-.db Word_We_Are, "THEREFORE", Dialogue_NewLine
+.db Word_From, "OTHER ", Word_Town, "S,", Dialogue_NewPage
+.db Word_We_Are, Word_There, "FORE", Dialogue_NewLine
 .db "VERY POOR.", Dialogue_NewPage
 
 Dialogue_Index_01EE:
@@ -1294,7 +1432,8 @@ Dialogue_Index_01F4:
 Dialogue_Index_01F6:
 .db Word_The, "VERY ", Word_Shield, ",", Dialogue_NewLine
 .db "PERSEUS USED TO", Dialogue_NewPage
-.db "OVERCOME ", Word_Medusa, ",ISBURIED ON ", Word_The, Dialogue_NewPage
+.db "OVERCOME ", Word_Medusa, ",", Dialogue_NewLine
+.db "IS BURIED ON THE", Dialogue_NewPage
 
 Dialogue_Index_01F8:
 .db "SMALL ISLAND IN", Dialogue_NewLine
@@ -1318,14 +1457,17 @@ Dialogue_Index_01FE:
 .db "PLAYED SO FAR!?!", Dialogue_Terminator65
 
 Dialogue_Index_0200:
-.db "BEFORE ", Word_Lassic, " CAMETO POWER, EVEN OUR", Dialogue_NewPage
-.db Word_Town, " HAD PLENTY.", Dialogue_Terminator65
+.db "BEFORE ", Word_Lassic, Dialogue_NewLine
+.db "CAME TO POWER,", Dialogue_NewPage
+.db "EVEN OUR ", Word_Town, Dialogue_NewLine
+.db "HAD PLENTY.", Dialogue_Terminator65
 
 Dialogue_Index_0202:
 .db Word_There_Is, " A MONK", Dialogue_NewLine
-.db Word_Named, "TAJIM IN THE", Dialogue_NewPage
-.db Word_Mountain, "S TO ", Word_The, Dialogue_NewLine
-.db "SOUTH OF ", Word_The, "LAKE.", Dialogue_Terminator65
+.db Word_Named, "TAJIM IN", Dialogue_NewPage
+.db Word_The, Word_Mountain, "S TO", Dialogue_NewLine
+.db Word_The, "SOUTH OF THE", Dialogue_NewPage
+.db "LAKE.", Dialogue_Terminator65
 
 Dialogue_Index_0204:
 .db "I", Dialogue_Apostrophe, "VE HEARD ", Word_That, Dialogue_NewLine
@@ -1338,8 +1480,9 @@ Dialogue_Index_0206:
 .db "VISITING ", Word_Some, "DAY.", Dialogue_Terminator65
 
 Dialogue_Index_0208:
-.db "NO? I", Dialogue_Apostrophe, "D LIKE TO GO", Word_Some, Word_Where, " ", Word_The, "AIR", Dialogue_NewPage
-.db "IS MORE CLEAN", Dialogue_NewLine
+.db "NO? I", Dialogue_Apostrophe, "D LIKE TO GO", Dialogue_NewLine
+.db Word_Some, Word_Where, " THE", Dialogue_NewPage
+.db "AIR IS MORE CLEAN", Dialogue_NewLine
 .db "AND FRESH.", Dialogue_Terminator65
 
 Dialogue_Index_020A:
@@ -1356,11 +1499,12 @@ Dialogue_Index_0210:
 .db "..........", Dialogue_Terminator65
 
 Dialogue_Index_0212:
-.db "THEN ", Word_You, Word_Are, Word_The, Dialogue_NewLine
-.db "VERY ", Word_Queen, " OF ", Word_The, Dialogue_NewPage
-.db "ENTIRE ", Word_System, ". I", Dialogue_NewLine
-.db Word_Will, " ASSIST ", Word_You, "IN", Dialogue_NewPage
-.db "ALL WAYS POSSIBLE.", Dialogue_Terminator65
+.db "THEN ", Word_You, Word_Are, "THE", Dialogue_NewLine
+.db "VERY ", Word_Queen, " OF", Dialogue_NewPage
+.db Word_The, "ENTIRE", Dialogue_NewLine
+.db Word_System, ". ", Word_I_Will, Dialogue_NewPage
+.db "ASSIST ", Word_You, "IN ALL", Dialogue_NewLine
+.db "WAYS POSSIBLE.", Dialogue_Terminator65
 
 Dialogue_Index_0214:
 .db Word_You, Word_Have, "BEEN", Dialogue_NewLine
@@ -1406,11 +1550,13 @@ Dialogue_Index_0226:
 .db "SACRIFICE US! AGH!", Dialogue_Terminator65
 
 Dialogue_Index_0228:
-.db Word_Have, Word_You, "FOUND THE", Dialogue_NewLine
-.db "ARMOR IN GUARON?", Dialogue_Terminator62
+.db Word_Have, Word_You, "FOUND", Dialogue_NewLine
+.db Word_The, "ARMOR IN", Dialogue_NewPage
+.db "GUARON?", Dialogue_Terminator62
 
 Dialogue_Index_022A:
-.db "IT CAN BE FOUND AT", Word_The, "FAR SIDE OF", Dialogue_NewPage
+.db "IT CAN BE FOUND", Dialogue_NewLine
+.db "AT ", Word_The, "FAR SIDE OF", Dialogue_NewPage
 .db "A PIT TRAP.", Dialogue_Terminator65
 
 Dialogue_Index_022C:
@@ -1426,7 +1572,8 @@ Dialogue_Index_022E:
 Dialogue_Index_0230:
 .db "NO? ", Word_That, Dialogue_Apostrophe, "S FINE,", Dialogue_NewLine
 .db "IF ", Word_You, "SO DESIRE.", Dialogue_NewPage
-.db Word_You_Will, " ALWAYS BE", Word_Welcome, Word_Here, ".", Dialogue_Terminator65
+.db Word_You_Will, " ALWAYS", Dialogue_NewLine
+.db "BE ", Word_Welcome, Word_Here, ".", Dialogue_Terminator65
 
 Dialogue_Index_0232:
 .db Word_There_Is, " A ", Word_Tower, Dialogue_NewLine
@@ -1437,8 +1584,10 @@ Dialogue_Index_0232:
 .db "TOP OF ", Word_The, Word_Tower, "!", Dialogue_Terminator65
 
 Dialogue_Index_0234:
-.db "WHAT ", Word_Have, Word_You, "COMEFOR? ", Word_Do_You, " INTEND", Dialogue_NewPage
-.db Word_Some, " MISCHIEF?", Dialogue_Terminator65
+.db "WHAT ", Word_Have, "YOU", Dialogue_NewLine
+.db "COME FOR? ", Word_Do_You, Dialogue_NewPage
+.db "INTEND ", Word_Some, Dialogue_NewLine
+.db "MISCHIEF?", Dialogue_Terminator65
 
 Dialogue_Index_0236:
 .db "I ", Word_Have, "AN UNEASY", Dialogue_NewLine
@@ -1446,33 +1595,42 @@ Dialogue_Index_0236:
 
 Dialogue_Index_0238:
 .db "BE ", Word_Careful, " UP", Dialogue_NewLine
-.db "AHEAD. AT ", Word_The, Dialogue_NewPage
-.db "BREAK IN ", Word_The, "ROAD,GO TO ", Word_The, "LEFT!", Dialogue_Terminator65
+.db "AHEAD. AT THE", Dialogue_NewPage
+.db "BREAK IN THE", Dialogue_NewLine
+.db "ROAD, GO TO THE", Dialogue_NewPage
+.db "LEFT!", Dialogue_Terminator65
 
 Dialogue_Index_023A:
 .db Word_Lassic, " LIVES IN", Dialogue_NewLine
-.db "FEAR OF ", Word_The, Dialogue_NewPage
-.db "CRYSTAL POSSESSED", Dialogue_NewLine
-.db "BY ", Word_The, Word_Soothsayer, Dialogue_NewPage
+.db "FEAR OF THE", Dialogue_NewPage
+.db "CRYSTAL", Dialogue_NewLine
+.db "POSSESSED BY THE", Dialogue_NewPage
+.db Word_Soothsayer
 
 Dialogue_Index_023C:
-.db Word_Named, "DAMOR. ", Word_There, "IS ", Word_Some, Word_Thing, Dialogue_NewPage
-.db "SPECIAL ABOUT IT,", Dialogue_NewLine
+.db " NAMED", Dialogue_NewLine
+.db "DAMOR. ", Word_There_Is, Dialogue_NewPage
+.db Word_Some, Word_Thing, Dialogue_NewLine
+.db "SPECIAL ABOUT IT,", Dialogue_NewPage
 .db "WITHOUT A DOUBT.", Dialogue_Terminator65
 
 Dialogue_Index_023E:
 .db Word_This, "FIRE WAS LIT", Dialogue_NewLine
-.db "DURING ", Word_The, "ECLIPSE", Dialogue_NewPage
-.db "WHICH OCCURS ONCE", Dialogue_NewLine
-.db "EVERY 100 YEARS.", Dialogue_NewPage
+.db "DURING THE", Dialogue_NewPage
+.db "ECLIPSE WHICH", Dialogue_NewLine
+.db "OCCURS ONCE", Dialogue_NewPage
+.db "EVERY 100 YEARS.", Dialogue_NewLine
 
 Dialogue_Index_0240:
-.db "IF ", Word_You, "GIVE ME A", Dialogue_NewLine
-.db "GEM ", Word_From, "A DRAGON,", Dialogue_NewPage
-.db "I", Dialogue_Apostrophe, "LL GIVE ", Word_You, Word_Some, "OF ", Word_This, "FIRE.", Dialogue_NewPage
+.db "IF ", Word_You, "GIVE ME A", Dialogue_NewPage
+.db "GEM ", Word_From, "A", Dialogue_NewLine
+.db "DRAGON, I", Dialogue_Apostrophe, "LL GIVE", Dialogue_NewPage
+.db Word_You, Word_Some, " OF THIS", Dialogue_NewLine
+.db "FIRE."
 
 Dialogue_Index_0242:
-.db "HOW ABOUT IT?", Dialogue_Terminator62
+.db " HOW ABOUT", Dialogue_NewPage
+.db "IT?", Dialogue_Terminator62
 
 Dialogue_Index_0244:
 .db Word_Here, ", TAKE ", Word_This, Dialogue_NewLine
@@ -1485,24 +1643,28 @@ Dialogue_Index_0246:
 Dialogue_Index_0248:
 .db Word_You, Word_Have, "NO GEM!", Dialogue_NewLine
 .db "DO I LOOK LIKE A", Dialogue_NewPage
-.db "FOOL OR ", Word_Some, Word_Thing, "?", Dialogue_Terminator65
+.db "FOOL OR", Dialogue_NewLine
+.db Word_Some, Word_Thing, "?", Dialogue_Terminator65
 
 Dialogue_Index_024A:
 .db "I", Dialogue_Apostrophe, "M SORRY I ", Word_Have, "A", Dialogue_NewLine
 .db "SHOP IN SUCH A", Dialogue_NewPage
 .db "PLACE. SHORTCAKE", Dialogue_NewLine
 .db "FOR 1000 ", Word_Mesetas, "!", Dialogue_NewPage
-.db Word_Will_You, " BUY ", Word_One, "?", Dialogue_Terminator62
+.db Word_Will_You, " BUY", Dialogue_NewLine
+.db Word_One, "?", Dialogue_Terminator62
 
 Dialogue_Index_024C:
-.db "AH,MY YOUNG PUPIL,NOAH. ", Word_You, Word_Are, Dialogue_NewPage
-.db "PREPARING TO FACE", Dialogue_NewLine
-.db Word_Lassic, "?", Dialogue_Terminator65
+.db "AH, MY YOUNG", Dialogue_NewLine
+.db "PUPIL, NOAH. YOU", Dialogue_NewPage
+.db Word_Are, "PREPARING TO", Dialogue_NewLine
+.db "FACE ", Word_Lassic, "?", Dialogue_Terminator65
 
 Dialogue_Index_024E:
-.db "COME,", Word_You_Must, " ", Word_Pass, Dialogue_NewLine
-.db Word_Your, "FINAL TEST---", Dialogue_NewPage
-.db "WE ", Word_Will, " DUEL!", Dialogue_Terminator65
+.db "COME, ", Word_You_Must, Dialogue_NewLine
+.db Word_Pass, " ", Word_Your, "FINAL", Dialogue_NewPage
+.db "TEST--- WE ", Word_Will, Dialogue_NewLine
+.db "DUEL!", Dialogue_Terminator65
 
 Dialogue_Index_0250:
 .db Word_You, Word_Have, "BECOME", Dialogue_NewLine
@@ -1520,8 +1682,9 @@ Dialogue_Index_0254:
 
 Dialogue_Index_0256:
 .db Word_You, Word_Are, Word_Not, "YET", Dialogue_NewLine
-.db "READY! ", Word_You_Must, " GO", Dialogue_NewPage
-.db "STILL UNDERGO MORETRAINING.", Dialogue_Terminator65
+.db "READY! ", Word_You_Must, Dialogue_NewPage
+.db "GO STILL UNDERGO", Dialogue_NewLine
+.db "MORE TRAINING.", Dialogue_Terminator65
 
 Dialogue_Index_0258:
 .db "I ", Word_Have, "NO", Word_Thing, " TO", Dialogue_NewLine
@@ -1529,12 +1692,13 @@ Dialogue_Index_0258:
 
 Dialogue_Index_025A:
 .db "AND WHO ", Word_Are, "YOU?", Dialogue_NewLine
-.db "FIND MY PUPIL NOAH", Dialogue_NewPage
-.db "IN ", Word_The, Word_Maharu, Dialogue_NewLine
+.db "FIND MY PUPIL", Dialogue_NewPage
+.db "NOAH IN THE", Dialogue_NewLine
+.db Word_Maharu
 
 Dialogue_Index_025C:
-.db "CAVE.", Word_Do_You_Know, Dialogue_NewPage
-.db "HIM?", Dialogue_Terminator62
+.db " CAVE. DO", Dialogue_NewPage
+.db Word_You, Word_Know, " HIM?", Dialogue_Terminator62
 
 Dialogue_Index_025E:
 .db "I", Dialogue_Apostrophe, "VE ", Word_Some, Word_Thing, Dialogue_NewLine
@@ -1560,8 +1724,10 @@ Dialogue_Index_0266:
 .db Word_Lassic, Dialogue_Apostrophe, "S SHADOW!", Dialogue_NewPage
 
 Dialogue_Index_0268:
-.db "EVEN IF ", Word_You, "DEFEATME, YOU", Dialogue_Apostrophe, "VE GAINED", Dialogue_NewPage
-.db "NO", Word_Thing, " AT ALL!", Dialogue_Terminator65
+.db "EVEN IF YOU", Dialogue_NewLine
+.db "DEFEAT ME, YOU", Dialogue_Apostrophe, "VE", Dialogue_NewPage
+.db "GAINED NO", Word_Thing, " AT", Dialogue_NewLine
+.db "ALL!", Dialogue_Terminator65
 
 Dialogue_Index_026A:
 .db "DON", Dialogue_Apostrophe, "T GO AGAINST", Dialogue_NewLine
@@ -1569,12 +1735,14 @@ Dialogue_Index_026A:
 
 Dialogue_Index_026C:
 .db "AH, MY CHILDREN,", Dialogue_NewLine
-.db Word_You, Word_Have, "D", Word_One, " VERY", Dialogue_NewPage
-.db "WELL TO COME ", Word_This, Dialogue_NewLine
-.db "FAR. ", Word_You, Word_Are, "VERY", Dialogue_NewPage
-.db "LUCKY ", Word_Indeed, ". DO", Dialogue_NewLine
-.db Word_You, "REALLY ", Word_Wish, " TO", Dialogue_NewPage
-.db "KILL AN OLD MAN?", Dialogue_Terminator62
+.db Word_You, Word_Have, "D", Word_One, Dialogue_NewPage
+.db "VERY WELL TO", Dialogue_NewLine
+.db "COME ", Word_This, "FAR.", Dialogue_NewPage
+.db Word_You, Word_Are, "VERY", Dialogue_NewLine
+.db "LUCKY ", Word_Indeed, ". DO", Dialogue_NewPage
+.db Word_You, "REALLY ", Word_Wish, Dialogue_NewLine
+.db "TO KILL AN OLD", Dialogue_NewPage
+.db "MAN?", Dialogue_Terminator62
 
 Dialogue_Index_026E:
 .db "ALL RIGHT! THEN", Dialogue_NewLine
@@ -1592,48 +1760,52 @@ Dialogue_Index_0272:
 .db Word_Have, "BEEN", Dialogue_NewPage
 
 Dialogue_Index_0274:
-.db "POSSESSED BODY ANDSOUL BY EVIL.", Dialogue_NewPage
+.db "POSSESSED BODY", Dialogue_NewLine
+.db "AND SOUL BY EVIL.", Dialogue_NewPage
 
 Dialogue_Index_0276:
 .db Word_You, "RESCUED OUR", Dialogue_NewLine
-.db Word_World, " JUST IN ", Word_The, Dialogue_NewPage
+.db Word_World, " JUST IN THE", Dialogue_NewPage
 .db "NICK OF ", Word_Time, "! IF", Dialogue_NewLine
 .db Word_You, "HAD COME ", Word_Any, Dialogue_NewPage
 
 Dialogue_Index_0278:
 .db "LATER, IT MIGHT", Dialogue_NewLine
-.db Word_Have, "BEEN TOO LATE", Dialogue_NewPage
-.db "WE ALL ", Word_Thank_You, Dialogue_NewLine
-.db Word_From, Word_The, "BOTTOM", Dialogue_NewPage
-.db "OF OUR HEARTS.", Dialogue_NewLine
-.db Word_Alis, ", ", Word_Your, Word_Father, Dialogue_NewPage
-.db "WAS ONCE ", Word_King, " OF", Dialogue_NewLine
-.db Word_Algol, ". ", Word_The, "DARK", Dialogue_NewPage
-.db Word_Castle, " HAS BEEN", Dialogue_NewLine
-.db "DESTROYED, ", Word_Lassic, Dialogue_NewPage
-.db "KILLED... ", Word_Do_You, ",", Dialogue_NewLine
-.db Word_Alis, ",", Word_Wish, " TO", Dialogue_NewPage
-.db "ASCEND ", Word_Your, Dialogue_NewLine
+.db Word_Have, "BEEN TOO", Dialogue_NewPage
+.db "LATE WE ALL THANK", Dialogue_NewLine
+.db Word_You, Word_From, "THE", Dialogue_NewPage
+.db "BOTTOM OF OUR", Dialogue_NewLine
+.db "HEARTS. ", Word_Alis, ", YOUR", Dialogue_NewPage
+.db Word_Father, " WAS ONCE", Dialogue_NewLine
+.db Word_King, " OF ", Word_Algol, ". THE", Dialogue_NewPage
+.db "DARK ", Word_Castle, " HAS", Dialogue_NewLine
+.db "BEEN DESTROYED,", Dialogue_NewPage
+.db Word_Lassic, " KILLED... DO", Dialogue_NewLine
+.db "YOU, ", Word_Alis, ", ", Word_Wish, " TO", Dialogue_NewPage
+.db "ASCEND YOUR", Dialogue_NewLine
 .db Word_Father, Dialogue_Apostrophe, "S THR", Word_One, Dialogue_NewPage
-.db "AND BECOME ", Word_The, Dialogue_NewLine
+.db "AND BECOME THE", Dialogue_NewLine
 .db Word_Queen, " OF ", Word_Algol, "?", Dialogue_Terminator62
 
 Dialogue_Index_027A:
-.db "RAISE ", Word_The, Dialogue_NewLine
-.db "AEROPRISM TOWARDS", Dialogue_NewPage
-.db Word_The, "HEAVENS- ", Word_You, Dialogue_NewLine
-.db "SHOULD THEN BE", Dialogue_NewPage
-.db "ABLE TO SEE ", Word_The, Dialogue_NewLine
+.db "RAISE THE", Dialogue_NewLine
+.db "AEROPRISM", Dialogue_NewPage
+.db "TOWARDS THE", Dialogue_NewLine
+.db "HEAVENS- YOU", Dialogue_NewPage
+.db "SH", Word_Ould, " THEN BE", Dialogue_NewLine
+.db "ABLE TO SEE THE", Dialogue_NewPage
 .db "DARK ", Word_Castle, ".", Dialogue_Terminator65
 
 Dialogue_Index_027C:
-.db "ALRIGHT! ", Word_You, "SAVEDALL OF ", Word_Algol, "!", Dialogue_Terminator65
+.db "ALRIGHT! YOU", Dialogue_NewLine
+.db Word_Save, "D ALL OF", Dialogue_NewPage
+.db Word_Algol, "!", Dialogue_Terminator65
 
 Dialogue_Index_027E:
-.db Word_We_Are, " ALL", Dialogue_NewLine
-.db "THANKFUL FOR ", Word_Your, Dialogue_NewPage
-.db "BRAVE DEEDS! WE", Dialogue_NewLine
-.db "LOVE ", Word_You, "!", Dialogue_Terminator65
+.db Word_We_Are, "ALL", Dialogue_NewLine
+.db "THANKFUL FOR", Dialogue_NewPage
+.db Word_Your, "BRAVE DEEDS!", Dialogue_NewLine
+.db "WE LOVE ", Word_You, "!", Dialogue_Terminator65
 
 Dialogue_Index_0280:
 .db "REPORT QUICKLY TO", Dialogue_NewLine
@@ -1652,11 +1824,12 @@ Dialogue_Index_0284:
 
 Dialogue_Index_0286:
 .db "THEY SAY ", Word_That, Dialogue_NewLine
-.db Word_There_Are, " ", Word_Motavia, "N", Dialogue_NewPage
-.db "LIVING ON ", Word_Motavia, Dialogue_NewLine
-.db "AND ", Word_Dezorian, "N ON", Dialogue_NewPage
-.db Word_Dezoris, ". I", Dialogue_Apostrophe, "D SURE", Dialogue_NewLine
-.db "LIKE A CHANCE TO", Dialogue_NewPage
+.db Word_There_Are, Dialogue_NewPage
+.db Word_Motavia, "N LIVING", Dialogue_NewLine
+.db "ON ", Word_Motavia, " AND", Dialogue_NewPage
+.db Word_Dezorian, "N ON", Dialogue_NewLine
+.db Word_Dezoris, ". I", Dialogue_Apostrophe, "D SURE", Dialogue_NewPage
+.db "LIKE A CHANCE TO", Dialogue_NewLine
 .db "TALK TO ", Word_Some, Word_One, ".", Dialogue_Terminator65
 
 Dialogue_Index_0288:
@@ -1673,13 +1846,15 @@ Dialogue_Index_028A:
 
 Dialogue_Index_028C:
 .db "NOW ", Word_That, " MY STAFF", Dialogue_NewLine
-.db "IS ASSEMBLED", Dialogue_NewPage
-.db "I CAN BEGIN.", Word_There, Dialogue_NewLine
+.db "IS ASSEMBLED I", Dialogue_NewPage
+.db "CAN BEGIN. ", Word_There, Dialogue_NewLine
 .db "IS HOWERVER, A", Dialogue_NewPage
 
 Dialogue_Index_028E:
-.db "SLIGHT FEE OF 1200", Word_Mesetas, " INVOLVED.", Dialogue_NewPage
-.db Word_Will_You, " PAY?", Dialogue_Terminator62
+.db "SLIGHT FEE OF", Dialogue_NewLine
+.db "1200 ", Word_Mesetas, Dialogue_NewPage
+.db "INVOLVED. ", Word_Will, Dialogue_NewLine
+.db Word_You, "PAY?", Dialogue_Terminator62
 
 Dialogue_Index_0290:
 .db Word_Thank_You, ". I CAN", Dialogue_NewLine
@@ -1707,20 +1882,22 @@ Dialogue_Index_0298:
 .db "CAT ", Word_Will, " DIE!", Dialogue_Terminator65
 
 Dialogue_Index_029A:
-.db "I ", Word_Will, " KILL ", Word_Any, Dialogue_NewLine
+.db Word_I_Will, " KILL ", Word_Any, Dialogue_NewLine
 .db "WHO INTERFERE!", Dialogue_Terminator65
 
 Dialogue_Index_029C:
-.db Word_You, "SHOULD ", Word_Rest, Dialogue_NewLine
+.db Word_You, "SH", Word_Ould, " ", Word_Rest, Dialogue_NewLine
 .db Word_Here, " AWHILE AFTER", Dialogue_NewPage
-.db Word_Your, "LONG JOURNEY.", Dialogue_Terminator65
+.db Word_Your, "LONG", Dialogue_NewLine
+.db "JOURNEY.", Dialogue_Terminator65
 
 Dialogue_Index_029E:
-.db Word_That, " WAS QUICK-OH,", Dialogue_NewLine
-.db Word_I_See, ",", Word_You, Word_Are, Word_Not, Dialogue_NewPage
-.db Word_Through, " WITH", Dialogue_NewLine
-.db Word_Lassic, ". ", Word_You, "HAD", Dialogue_NewPage
-.db "BEST ", Word_Rest, " AT ", Word_The, Dialogue_NewLine
+.db Word_That, " WAS", Dialogue_NewLine
+.db "QUICK-OH, ", Word_I_See, ",", Dialogue_NewPage
+.db Word_You, Word_Are, "NOT", Dialogue_NewLine
+.db Word_Through, " WITH", Dialogue_NewPage
+.db Word_Lassic, ". ", Word_You, "HAD", Dialogue_NewLine
+.db "BEST ", Word_Rest, " AT THE", Dialogue_NewPage
 .db "INN.", Dialogue_Terminator65
 
 Dialogue_Index_02A0:
@@ -1737,9 +1914,9 @@ Dialogue_Index_02A4:
 
 Dialogue_Index_02A6:
 .db "IT HAS ", Word_Some, Word_Thing, Dialogue_NewLine
-.db Word_Strange, ".", Dialogue_NewPage
-.db Word_Where, " IS ", Word_The, Dialogue_NewLine
-.db Word_Governor, ",I WONDER?", Dialogue_Terminator65
+.db Word_Strange, ". ", Word_Where, " IS", Dialogue_NewPage
+.db Word_The, Word_Governor, ",I", Dialogue_NewLine
+.db "WONDER?", Dialogue_Terminator65
 
 Dialogue_Index_02A8:
 .db Word_You, Word_Have, "GOTTEN", Dialogue_NewLine
@@ -1749,8 +1926,9 @@ Dialogue_Index_02A8:
 
 Dialogue_Index_02AA:
 .db Word_Lassic, " HAS DIED.", Dialogue_NewLine
-.db Word_Alis, " ACCOMPLISHED", Dialogue_NewPage
-.db "HER ", Word_Wish, ". ", Word_Nero, " IS", Dialogue_NewLine
-.db "SATISFIED NOW IN", Dialogue_NewPage
-.db "HEAVEN. HURRY TO", Dialogue_NewLine
+.db Word_Alis, Dialogue_NewPage
+.db "ACCOMPLISHED HER", Dialogue_NewLine
+.db Word_Wish, ". ", Word_Nero, " IS", Dialogue_NewPage
+.db "SATISFIED NOW IN", Dialogue_NewLine
+.db "HEAVEN. HURRY TO", Dialogue_NewPage
 .db Word_The, Word_Governor, "!", Dialogue_Terminator65

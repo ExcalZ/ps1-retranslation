@@ -10,8 +10,8 @@
 -- or a timed one ({TIMED}: it passes by itself), until the battle is over. A chest the enemy
 -- leaves is opened (YES; chest=no answers NO).
 -- Check: --known (every window line is a line of dialogue.json), --words=enemies:N,battle_menu.
--- Bounded: the new game to the field, 120 frames for the battle to start, 3000 frames of
--- battle, 20 rounds.
+-- Bounded: the new game to the field, 120 frames for the battle to start, 6000 frames of
+-- battle, 40 rounds.
 
 local ENEMY = tonumber(PS1.params.enemy or 1)
 
@@ -49,7 +49,7 @@ function scenario()
   local page, last, rounds = 0, nil, 0
   local start = now()
   while game_mode() == MODE.interaction do
-    if now() - start > 3000 then error("the battle still on after 3000 frames") end
+    if now() - start > 6000 then error("the battle still on after 6000 frames") end
     if at_button_wait() or at_timed_wait() then
       local text = table.concat(dialogue_text(), " / ")
       if text ~= last then
@@ -73,7 +73,7 @@ function scenario()
       press("two", 4, 20)
     elseif menu_up() and window_open() == false then
       rounds = rounds + 1
-      if rounds > 20 then error("still fighting after 20 rounds") end
+      if rounds > 40 then error("still fighting after 40 rounds") end
       press("two", 4, 20)                -- ATTK
     else
       wait(1)

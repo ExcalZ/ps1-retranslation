@@ -23,7 +23,11 @@
 
 An entry whose `en` equals its `us` is written from `hex`: the stock bytes, so with en = us
 everywhere the ROM is the stock one (checkstock.py). Any other `en` is encoded for the stock
-engine (ps1text.encode_us: upper case, the dictionary). The files keep their CRLF endings.
+engine (ps1text.encode_us: upper case, the dictionary; mixed case in the face where
+vwf_dialogue / vwf_cutscene draw it). With those options the face's printer does not
+auto-wrap, so an entry still in its stock English in a face window is encoded from its `us`
+text with every line break written out, re-wrapped where it overflows (tools/stockwrap.py).
+The files keep their CRLF endings.
 --check writes nothing and fails if a file would change. --encode-all encodes every entry,
 the stock ones too (a test of the encoder: the game must still assemble and read the same).
 """
@@ -35,6 +39,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import ps1text as T
+import stockwrap as W
 import textsrc as S
 import tilemaps as M
 
@@ -84,12 +89,12 @@ LONG = OPTIONS.get('long_names') == 1
 LONG_ITEMS = OPTIONS.get('long_item_names') == 1
 
 
-def entry_bytes(e, words):
-    if e['en'] == e['us'] and not ENCODE_ALL:
-        return bytes.fromhex(e['hex'])
-    if e['kind'] in VWF_KINDS:          # the proportional face: mixed case
-        return T.encode_us(e['en'], words, charset=T.vwf_charset())
-    return T.encode_us(e['en'], words)
+def entry_bytes(e, text, words):
+    """text: the entry's text in this build (tools/stockwrap.py: its en, or the stock text
+    re-wrapped for the proportional windows)."""
+    if ENCODE_ALL and e['en'] == e['us']:
+        return T.encode_us(text, words, charset=T.vwf_charset() if e['kind'] in VWF_KINDS else None)
+    return W.entry_bytes(e, text, words, OPTIONS)
 
 
 def field_bytes(run, width, words):
@@ -122,6 +127,7 @@ def generate(dialogue, script):
 
     # ---- the text files (text/dialogue.asm, cutscenes.asm, messages.asm)
     entries = dialogue['entries']
+    texts = W.texts(entries, script, OPTIONS)
     for f, kinds in S.FILES:
         path = os.path.join(T.DISASM, f)
         body = [S.HEADER]
@@ -131,7 +137,7 @@ def generate(dialogue, script):
             for i in range(0, len(ids), 8):
                 body.append('.dw ' + ', '.join(x['label'] for x in ids[i:i + 8]))
         for n, en in enumerate(x for x in entries if x['kind'] in kinds):
-            data = entry_bytes(en, words)
+            data = entry_bytes(en, texts[en['id']], words)
             if en['label']:
                 body += ([''] if len(body) > 1 else []) + [en['label'] + ':']
             else:

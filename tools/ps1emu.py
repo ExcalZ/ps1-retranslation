@@ -45,6 +45,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import ps1text as T
+import stockwrap as W
 
 ROOT = T.ROOT
 SCRIPTS = os.path.join(ROOT, 'work', 'scripts')
@@ -219,11 +220,23 @@ def window_pages(texts):
     return pages
 
 
+def build_texts(path=None):
+    """dialogue.json (or `path`) and each entry's text as the build gives it (tools/stockwrap.py:
+    with the face options of ps1.options.asm, the stock text re-wrapped). The script for the
+    inserts' widths is the one beside `path` (trybuild's OUT.script.json) or work/script.json."""
+    doc = json.load(open(path or os.path.join(ROOT, 'work', 'dialogue.json'), encoding='utf-8'))
+    spath = path.replace('.dialogue.json', '.script.json') if path else ''
+    if not os.path.exists(spath):
+        spath = os.path.join(ROOT, 'work', 'script.json')
+    script = json.load(open(spath, encoding='utf-8'))
+    return doc, W.texts(doc['entries'], script, T.options())
+
+
 def expected_pages(ids, path=None):
-    """The pages entries `ids` should show, from their `en`: [(kind, lines)]. Cut-scene ids
+    """The pages entries `ids` should show, from their text in the build: [(kind, lines)]. Cut-scene ids
     give cut-scene pages; dialogue and message ids, given in the order the game plays them,
     give the window's pages (one window for a run of consecutive window ids)."""
-    doc = json.load(open(path or os.path.join(ROOT, 'work', 'dialogue.json'), encoding='utf-8'))
+    doc, texts = build_texts(path)
     out, run = [], []
     for i in ids + [None]:
         es = chain(doc, i) if i else []
@@ -233,10 +246,10 @@ def expected_pages(ids, path=None):
         if not es:
             break
         if es[0]['kind'] != 'cutscene':
-            run.append(''.join(e['en'] for e in es))
+            run.append(''.join(texts[e['id']] for e in es))
             continue
         text = T.TAG.sub(lambda m: {'BR': '\n', 'PAGE': '\f', 'CLR': '\f'}.get(m.group(1), ''),
-                         ''.join(e['en'] for e in es))
+                         ''.join(texts[e['id']] for e in es))
         for p in text.split('\f'):
             page = [x.rstrip() for x in p.split('\n')]
             while page and not page[-1]:
@@ -307,11 +320,15 @@ def main():
         if bad:
             raise SystemExit(1)
     if '--known' in sys.argv:
-        doc = json.load(open(opts.get('dialogue') or os.path.join(ROOT, 'work', 'dialogue.json'), encoding='utf-8'))
-        known = set()
-        for e in doc['entries']:
+        doc, texts = build_texts(opts.get('dialogue'))
+        known, chain_text = set(), ''
+        for e in doc['entries']:          # a chain (falls_through) as one text: a line may span it
+            chain_text += texts[e['id']]
+            if e.get('falls_through'):
+                continue
             text = T.TAG.sub(lambda m: '\n' if m.group(1) in ('BR', 'PAGE', 'CLR') else
-                             ('' if m.group(1) in T.TERMINATORS else m.group(0)), e['en'])
+                             ('' if m.group(1) in T.TERMINATORS else m.group(0)), chain_text)
+            chain_text = ''
             known.update(x.rstrip() for x in text.split('\n') if x.strip())
         seen = [l for kind, page in seen_pages(lines) if kind == 'window' for l in page if l.strip()]
         unknown = [l for l in seen if not any(same_page(('window', [k]), ('window', [l])) for k in known)]
