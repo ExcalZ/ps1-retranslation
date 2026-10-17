@@ -2,10 +2,10 @@
 ; long_names: the names for {NAME} (the face's codes, $65-padded), then the name boxes
 ; and the party menu two cells wider than bank 27's, with the names in capitals.
 LongNames:
-.db $41, $4C, $49, $53, $65, $65	; ALIS
-.db $4D, $59, $41, $55, $65, $65	; MYAU
-.db $4F, $44, $49, $4E, $65, $65	; ODIN
-.db $4E, $4F, $41, $48, $65, $65	; NOAH
+.db $41, $71, $6E, $78, $66, $65	; Alisa
+.db $4D, $7E, $66, $7A, $65, $65	; Myau
+.db $54, $7E, $77, $74, $73, $65	; Tyron
+.db $4C, $7A, $79, $7F, $65, $65	; Lutz
 LongNameBoxes:
 .db $F1, $11, $F2, $11, $F2, $11, $F2, $11, $F2, $11, $F2, $11, $F2, $11, $F1, $13
 .db $F3, $11, $F0, $30, $00, $30, $00, $30, $00, $30, $00, $30, $00, $30, $F3, $13

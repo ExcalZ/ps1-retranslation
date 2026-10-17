@@ -259,6 +259,30 @@ transliterations. Only Heal fits the 4-cell lists: **question 5**.
 | ムオーデ | Muode | OPEN | |
 | リーバス | Reebus | RISE | provisional |
 
+## Menus (in the face, `vwf_windows`; in script.json since 2026-10-17)
+
+The JP menu words, translated; each fits its stock cells in the face.
+
+| JP | this translation | US 1987 |
+|---|---|---|
+| タタカウ / マジック / アイテム / ハナス / ニゲル | Fight / Magic / Item / Talk / Flee (the battle menu) | ATTK MAGC ITEM TALK RUN |
+| ツヨサ / シラベル / セーブ | Stats / Search / Save (the command menu, with Magic and Item) | STAS SRCH SAVE |
+| ツカウ / ソウビ / ステル | Use / Equip / Drop | USE EQP DRP |
+| カイタイ / ウリタイ | Buy / Sell | BUY SELL |
+| ハイ / イイエ | Yes / No | YES NO |
+| コウゲキリョク / シュビリョク / サイダイHP / サイダイMP | Attack / Defense / Max HP / Max MP | ATTACK DEFENSE MAX HP MAX MP |
+| ホカノ モチモノ | More (the inventory's next page) | NEXT |
+| メセタ | Meseta (the money line, the owner) | MST |
+
+## In script.json (2026-10-17)
+
+Every name field holds the forms above: the party (Alisa, Myau, Tyron, Lutz), the 64 items, the
+74 enemies and the spells, each at most 14 letters and 80 px in the face (`vwf_windows` lists
+them 10 cells wide). The full form where it fits, otherwise: Spiny Pelt (トゲリスノケガワ),
+Gov's Letter (ソウトクノテガミ), Machine Guard (マシーンガーダー, 15 letters as Guarder). The
+proposals behind questions 1-3 and 6-8 are in as drafted (Gashiko in the spaceport menu,
+Aeroprism, Berserker, the Laconian / Laconia split) until the owner answers.
+
 ## Other words
 
 | JP | proposed | US 1987 |

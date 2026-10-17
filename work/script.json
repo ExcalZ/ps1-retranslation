@@ -10,28 +10,28 @@
      "hex": "414C4953",
      "us": "ALIS",
      "jp": "アリサ",
-     "en": "ALIS"
+     "en": "Alisa"
     },
     {
      "id": 1,
      "hex": "4D594155",
      "us": "MYAU",
      "jp": "ミャウ",
-     "en": "MYAU"
+     "en": "Myau"
     },
     {
      "id": 2,
      "hex": "4F44494E",
      "us": "ODIN",
      "jp": "タイロン",
-     "en": "ODIN"
+     "en": "Tyron"
     },
     {
      "id": 3,
      "hex": "4E4F4148",
      "us": "NOAH",
      "jp": "ルツ",
-     "en": "NOAH"
+     "en": "Lutz"
     }
    ]
   },
@@ -51,448 +51,448 @@
      "hex": "574F4F4443414E45",
      "us": "WOODCANE",
      "jp": "ウッドケイン",
-     "en": "WOODCANE"
+     "en": "Wood Cane"
     },
     {
      "id": 2,
      "hex": "5348542E20535744",
      "us": "SHT. SWD",
      "jp": "ショートソード",
-     "en": "SHT. SWD"
+     "en": "Short Sword"
     },
     {
      "id": 3,
      "hex": "49524E2E20535744",
      "us": "IRN. SWD",
      "jp": "アイアンソード",
-     "en": "IRN. SWD"
+     "en": "Iron Sword"
     },
     {
      "id": 4,
      "hex": "57414E4465202020",
      "us": "WAND",
      "jp": "サイコウオンド",
-     "en": "WAND"
+     "en": "Psycho Wand"
     },
     {
      "id": 5,
      "hex": "49524E2E46414E47",
      "us": "IRN.FANG",
      "jp": "シルバータスク",
-     "en": "IRN.FANG"
+     "en": "Silver Tusk"
     },
     {
      "id": 6,
      "hex": "49524E2E20415845",
      "us": "IRN. AXE",
      "jp": "アイアンアクス",
-     "en": "IRN. AXE"
+     "en": "Iron Axe"
     },
     {
      "id": 7,
      "hex": "5449542E20535744",
      "us": "TIT. SWD",
      "jp": "チタニウムソード",
-     "en": "TIT. SWD"
+     "en": "Titanium Sword"
     },
     {
      "id": 8,
      "hex": "4352432E20535744",
      "us": "CRC. SWD",
      "jp": "セラミックソード",
-     "en": "CRC. SWD"
+     "en": "Ceramic Sword"
     },
     {
      "id": 9,
      "hex": "4E4545444C47554E",
      "us": "NEEDLGUN",
      "jp": "ニードルガン",
-     "en": "NEEDLGUN"
+     "en": "Needle Gun"
     },
     {
      "id": 10,
      "hex": "53494C2E46414E47",
      "us": "SIL.FANG",
      "jp": "サーベルクロー",
-     "en": "SIL.FANG"
+     "en": "Saber Claw"
     },
     {
      "id": 11,
      "hex": "484541542E47554E",
      "us": "HEAT.GUN",
      "jp": "ヒートガン",
-     "en": "HEAT.GUN"
+     "en": "Heat Gun"
     },
     {
      "id": 12,
      "hex": "4C47542E53414252",
      "us": "LGT.SABR",
      "jp": "ライトセイバー",
-     "en": "LGT.SABR"
+     "en": "Light Saber"
     },
     {
      "id": 13,
      "hex": "4C4153522E47554E",
      "us": "LASR.GUN",
      "jp": "レーザーガン",
-     "en": "LASR.GUN"
+     "en": "Laser Gun"
     },
     {
      "id": 14,
      "hex": "4C41432E20535744",
      "us": "LAC. SWD",
      "jp": "ラコニアンソード",
-     "en": "LAC. SWD"
+     "en": "Laconian Sword"
     },
     {
      "id": 15,
      "hex": "4C41432E20415845",
      "us": "LAC. AXE",
      "jp": "ラコニアンアクス",
-     "en": "LAC. AXE"
+     "en": "Laconian Axe"
     },
     {
      "id": 16,
      "hex": "4C54482E41524D52",
      "us": "LTH.ARMR",
      "jp": "レザークロス",
-     "en": "LTH.ARMR"
+     "en": "Leather Cloth"
     },
     {
      "id": 17,
      "hex": "5748542E4D414E54",
      "us": "WHT.MANT",
      "jp": "ホワイトマント",
-     "en": "WHT.MANT"
+     "en": "White Cape"
     },
     {
      "id": 18,
      "hex": "4C47542E53554954",
      "us": "LGT.SUIT",
      "jp": "ライトスーツ",
-     "en": "LGT.SUIT"
+     "en": "Light Suit"
     },
     {
      "id": 19,
      "hex": "49524E2E41524D52",
      "us": "IRN.ARMR",
      "jp": "アイアンアーマー",
-     "en": "IRN.ARMR"
+     "en": "Iron Armor"
     },
     {
      "id": 20,
      "hex": "5448434B2E465552",
      "us": "THCK.FUR",
      "jp": "トゲリスノケガワ",
-     "en": "THCK.FUR"
+     "en": "Spiny Pelt"
     },
     {
      "id": 21,
      "hex": "5A49522E41524D52",
      "us": "ZIR.ARMR",
      "jp": "ジルコニアメイル",
-     "en": "ZIR.ARMR"
+     "en": "Zirconia Mail"
     },
     {
      "id": 22,
      "hex": "444D442E41524D52",
      "us": "DMD.ARMR",
      "jp": "ダイヤノヨロイ",
-     "en": "DMD.ARMR"
+     "en": "Diamond Armor"
     },
     {
      "id": 23,
      "hex": "4C41432E41524D52",
      "us": "LAC.ARMR",
      "jp": "ラコニアアーマー",
-     "en": "LAC.ARMR"
+     "en": "Laconia Armor"
     },
     {
      "id": 24,
      "hex": "4652442E4D414E54",
      "us": "FRD.MANT",
      "jp": "フラードマント",
-     "en": "FRD.MANT"
+     "en": "Frad Mantle"
     },
     {
      "id": 25,
      "hex": "4C54482E20534C44",
      "us": "LTH. SLD",
      "jp": "レザーシールド",
-     "en": "LTH. SLD"
+     "en": "Leather Shield"
     },
     {
      "id": 26,
      "hex": "42524E5A2E534C44",
      "us": "BRNZ.SLD",
      "jp": "アイアンシールド",
-     "en": "BRNZ.SLD"
+     "en": "Iron Shield"
     },
     {
      "id": 27,
      "hex": "49524E2E20534C44",
      "us": "IRN. SLD",
      "jp": "ボロンシールド",
-     "en": "IRN. SLD"
+     "en": "Boron Shield"
     },
     {
      "id": 28,
      "hex": "4352432E20534C44",
      "us": "CRC. SLD",
      "jp": "セラミックノタテ",
-     "en": "CRC. SLD"
+     "en": "Ceramic Shield"
     },
     {
      "id": 29,
      "hex": "474C4F5645652020",
      "us": "GLOVE",
      "jp": "アニマルグラブ",
-     "en": "GLOVE"
+     "en": "Animal Glove"
     },
     {
      "id": 30,
      "hex": "4C4153522E534C44",
      "us": "LASR.SLD",
      "jp": "レーザーバリア",
-     "en": "LASR.SLD"
+     "en": "Laser Barrier"
     },
     {
      "id": 31,
      "hex": "4D4952522E534C44",
      "us": "MIRR.SLD",
      "jp": "ペルセウスノタテ",
-     "en": "MIRR.SLD"
+     "en": "Perseus Shield"
     },
     {
      "id": 32,
      "hex": "4C41432E20534C44",
      "us": "LAC. SLD",
      "jp": "ラコニアシールド",
-     "en": "LAC. SLD"
+     "en": "Laconia Shield"
     },
     {
      "id": 33,
      "hex": "4C414E44524F5652",
      "us": "LANDROVR",
      "jp": "ランドマスター",
-     "en": "LANDROVR"
+     "en": "Land Master"
     },
     {
      "id": 34,
      "hex": "484F565243524654",
      "us": "HOVRCRFT",
      "jp": "フロームーバー",
-     "en": "HOVRCRFT"
+     "en": "Flow Mover"
     },
     {
      "id": 35,
      "hex": "4943452044494752",
      "us": "ICE DIGR",
      "jp": "アイスデッカー",
-     "en": "ICE DIGR"
+     "en": "Ice Decker"
     },
     {
      "id": 36,
      "hex": "434F4C4165202020",
      "us": "COLA",
      "jp": "ペロリーメイト",
-     "en": "COLA"
+     "en": "PelorieMate"
     },
     {
      "id": 37,
      "hex": "4255524745526520",
      "us": "BURGER",
      "jp": "ルオギニン",
-     "en": "BURGER"
+     "en": "Ruoginin"
     },
     {
      "id": 38,
      "hex": "464C555445652020",
      "us": "FLUTE",
      "jp": "スーズフルート",
-     "en": "FLUTE"
+     "en": "Soothe Flute"
     },
     {
      "id": 39,
      "hex": "464C415348652020",
      "us": "FLASH",
      "jp": "サーチライト",
-     "en": "FLASH"
+     "en": "Searchlight"
     },
     {
      "id": 40,
      "hex": "4553434150455265",
      "us": "ESCAPER",
      "jp": "エスケープクロス",
-     "en": "ESCAPER"
+     "en": "Escape Cloth"
     },
     {
      "id": 41,
      "hex": "5452414E53455265",
      "us": "TRANSER",
      "jp": "トランカーペット",
-     "en": "TRANSER"
+     "en": "Tran Carpet"
     },
     {
      "id": 42,
      "hex": "4D41474320484154",
      "us": "MAGC HAT",
      "jp": "マジックハット",
-     "en": "MAGC HAT"
+     "en": "Magic Hat"
     },
     {
      "id": 43,
      "hex": "414C53554C494E65",
      "us": "ALSULIN",
      "jp": "アルシュリン",
-     "en": "ALSULIN"
+     "en": "Alshlin"
     },
     {
      "id": 44,
      "hex": "504F4C594D54524C",
      "us": "POLYMTRL",
      "jp": "ポリメテラール",
-     "en": "POLYMTRL"
+     "en": "Polymeteral"
     },
     {
      "id": 45,
      "hex": "4455474E204B4559",
      "us": "DUGN KEY",
      "jp": "ダンジョンキー",
-     "en": "DUGN KEY"
+     "en": "Dungeon Key"
     },
     {
      "id": 46,
      "hex": "5350484552456520",
      "us": "SPHERE",
      "jp": "テレパシーボール",
-     "en": "SPHERE"
+     "en": "Telepathy Ball"
     },
     {
      "id": 47,
      "hex": "544F524348652020",
      "us": "TORCH",
      "jp": "イクリプストーチ",
-     "en": "TORCH"
+     "en": "Eclipse Torch"
     },
     {
      "id": 48,
      "hex": "505249534D652020",
      "us": "PRISM",
      "jp": "エアロプリズム",
-     "en": "PRISM"
+     "en": "Aeroprism"
     },
     {
      "id": 49,
      "hex": "4E55545365202020",
      "us": "NUTS",
      "jp": "ラエルマベリー",
-     "en": "NUTS"
+     "en": "Laerma Berry"
     },
     {
      "id": 50,
      "hex": "4841505342596520",
      "us": "HAPSBY",
      "jp": "ハプスビー",
-     "en": "HAPSBY"
+     "en": "Hapsby"
     },
     {
      "id": 51,
      "hex": "524F414450415353",
      "us": "ROADPASS",
      "jp": "ロードパス",
-     "en": "ROADPASS"
+     "en": "Road Pass"
     },
     {
      "id": 52,
      "hex": "50415353504F5254",
      "us": "PASSPORT",
      "jp": "パスポート",
-     "en": "PASSPORT"
+     "en": "Passport"
     },
     {
      "id": 53,
      "hex": "434F4D5041535365",
      "us": "COMPASS",
      "jp": "コンパス",
-     "en": "COMPASS"
+     "en": "Compass"
     },
     {
      "id": 54,
      "hex": "43414B4565202020",
      "us": "CAKE",
      "jp": "ショートケーキ",
-     "en": "CAKE"
+     "en": "Shortcake"
     },
     {
      "id": 55,
      "hex": "4C45545445526520",
      "us": "LETTER",
      "jp": "ソウトクノテガミ",
-     "en": "LETTER"
+     "en": "Gov's Letter"
     },
     {
      "id": 56,
      "hex": "4C41432E20504F54",
      "us": "LAC. POT",
      "jp": "ラコニアンポット",
-     "en": "LAC. POT"
+     "en": "Laconian Pot"
     },
     {
      "id": 57,
      "hex": "4D41472E4C414D50",
      "us": "MAG.LAMP",
      "jp": "ライトペンダント",
-     "en": "MAG.LAMP"
+     "en": "Light Pendant"
     },
     {
      "id": 58,
      "hex": "414D425220455945",
      "us": "AMBR EYE",
      "jp": "カーバンクルアイ",
-     "en": "AMBR EYE"
+     "en": "Carbuncle Eye"
     },
     {
      "id": 59,
      "hex": "4741532E20534C44",
      "us": "GAS. SLD",
      "jp": "ガスクリア",
-     "en": "GAS. SLD"
+     "en": "Gas Clear"
     },
     {
      "id": 60,
      "hex": "4352595354414C65",
      "us": "CRYSTAL",
      "jp": "ダモアクリスタル",
-     "en": "CRYSTAL"
+     "en": "Damoa Crystal"
     },
     {
      "id": 61,
      "hex": "4D2053595354454D",
      "us": "M SYSTEM",
      "jp": "マスターシステム",
-     "en": "M SYSTEM"
+     "en": "Master System"
     },
     {
      "id": 62,
      "hex": "4D52434C204B4559",
      "us": "MRCL KEY",
      "jp": "ミラクルキー",
-     "en": "MRCL KEY"
+     "en": "Miracle Key"
     },
     {
      "id": 63,
      "hex": "5A494C4C494F4E65",
      "us": "ZILLION",
      "jp": "ジリオン",
-     "en": "ZILLION"
+     "en": "Zillion"
     },
     {
      "id": 64,
      "hex": "5345435245545365",
      "us": "SECRETS",
      "jp": "ヒミツノモノ",
-     "en": "SECRETS"
+     "en": "Secret Thing"
     }
    ]
   },
@@ -506,7 +506,7 @@
      "hex": "53574F524D652020",
      "us": "SWORM",
      "jp": "モンスターフライ",
-     "en": "SWORM"
+     "en": "Monster Fly"
     },
     {
      "id": 2,
@@ -514,7 +514,7 @@
      "hex": "47522E534C494D45",
      "us": "GR.SLIME",
      "jp": "グリーンスライム",
-     "en": "GR.SLIME"
+     "en": "Green Slime"
     },
     {
      "id": 3,
@@ -522,7 +522,7 @@
      "hex": "57494E4720455945",
      "us": "WING EYE",
      "jp": "ウイングアイ",
-     "en": "WING EYE"
+     "en": "Wing Eye"
     },
     {
      "id": 4,
@@ -530,7 +530,7 @@
      "hex": "4D414E4541544552",
      "us": "MANEATER",
      "jp": "マンイーター",
-     "en": "MANEATER"
+     "en": "Man-Eater"
     },
     {
      "id": 5,
@@ -538,7 +538,7 @@
      "hex": "53434F5250494F4E",
      "us": "SCORPION",
      "jp": "スコーピラス",
-     "en": "SCORPION"
+     "en": "Scorpirus"
     },
     {
      "id": 6,
@@ -546,7 +546,7 @@
      "hex": "472E53434F525049",
      "us": "G.SCORPI",
      "jp": "ラージヤーゴ",
-     "en": "G.SCORPI"
+     "en": "Large Nymph"
     },
     {
      "id": 7,
@@ -554,7 +554,7 @@
      "hex": "424C2E534C494D45",
      "us": "BL.SLIME",
      "jp": "ブルースライム",
-     "en": "BL.SLIME"
+     "en": "Blue Slime"
     },
     {
      "id": 8,
@@ -562,7 +562,7 @@
      "hex": "4E2E4641524D4552",
      "us": "N.FARMER",
      "jp": "モタビアンノーフ",
-     "en": "N.FARMER"
+     "en": "Motavian Nof"
     },
     {
      "id": 9,
@@ -570,7 +570,7 @@
      "hex": "4F574C2042454152",
      "us": "OWL BEAR",
      "jp": "デビルバット",
-     "en": "OWL BEAR"
+     "en": "Devil Bat"
     },
     {
      "id": 10,
@@ -578,7 +578,7 @@
      "hex": "4445414454524545",
      "us": "DEADTREE",
      "jp": "キラープラント",
-     "en": "DEADTREE"
+     "en": "Killer Plant"
     },
     {
      "id": 11,
@@ -586,7 +586,7 @@
      "hex": "53434F5250495553",
      "us": "SCORPIUS",
      "jp": "バイターフライ",
-     "en": "SCORPIUS"
+     "en": "Biter Fly"
     },
     {
      "id": 12,
@@ -594,7 +594,7 @@
      "hex": "452E4641524D4552",
      "us": "E.FARMER",
      "jp": "モタビアンイビル",
-     "en": "E.FARMER"
+     "en": "Motavian Evil"
     },
     {
      "id": 13,
@@ -602,7 +602,7 @@
      "hex": "4749414E54464C59",
      "us": "GIANTFLY",
      "jp": "ヘレックス",
-     "en": "GIANTFLY"
+     "en": "Herex"
     },
     {
      "id": 14,
@@ -610,7 +610,7 @@
      "hex": "435241574C455265",
      "us": "CRAWLER",
      "jp": "サンドワーム",
-     "en": "CRAWLER"
+     "en": "Sand Worm"
     },
     {
      "id": 15,
@@ -618,7 +618,7 @@
      "hex": "424152425249414E",
      "us": "BARBRIAN",
      "jp": "モタビアンマニア",
-     "en": "BARBRIAN"
+     "en": "Berserker"
     },
     {
      "id": 16,
@@ -626,7 +626,7 @@
      "hex": "474F4C444C454E53",
      "us": "GOLDLENS",
      "jp": "ゴールドレンズ",
-     "en": "GOLDLENS"
+     "en": "Gold Lens"
     },
     {
      "id": 17,
@@ -634,7 +634,7 @@
      "hex": "52442E534C494D45",
      "us": "RD.SLIME",
      "jp": "レッドスライム",
-     "en": "RD.SLIME"
+     "en": "Red Slime"
     },
     {
      "id": 18,
@@ -642,7 +642,7 @@
      "hex": "5745524520424154",
      "us": "WERE BAT",
      "jp": "バットマン",
-     "en": "WERE BAT"
+     "en": "Bat Man"
     },
     {
      "id": 19,
@@ -650,7 +650,7 @@
      "hex": "42494720434C5542",
      "us": "BIG CLUB",
      "jp": "カブトガニ",
-     "en": "BIG CLUB"
+     "en": "Horseshoe Crab"
     },
     {
      "id": 20,
@@ -658,7 +658,7 @@
      "hex": "464953484D414E65",
      "us": "FISHMAN",
      "jp": "シャーキン",
-     "en": "FISHMAN"
+     "en": "Sharkin"
     },
     {
      "id": 21,
@@ -666,7 +666,7 @@
      "hex": "4556494C44454144",
      "us": "EVILDEAD",
      "jp": "リッチ",
-     "en": "EVILDEAD"
+     "en": "Lich"
     },
     {
      "id": 22,
@@ -674,7 +674,7 @@
      "hex": "544152414E54554C",
      "us": "TARANTUL",
      "jp": "タランチュラ",
-     "en": "TARANTUL"
+     "en": "Tarantula"
     },
     {
      "id": 23,
@@ -682,7 +682,7 @@
      "hex": "4D414E5449434F52",
      "us": "MANTICOR",
      "jp": "マンチコア",
-     "en": "MANTICOR"
+     "en": "Manticore"
     },
     {
      "id": 24,
@@ -690,7 +690,7 @@
      "hex": "534B454C45544F4E",
      "us": "SKELETON",
      "jp": "スケルトン",
-     "en": "SKELETON"
+     "en": "Skeleton"
     },
     {
      "id": 25,
@@ -698,7 +698,7 @@
      "hex": "414E54204C494F4E",
      "us": "ANT LION",
      "jp": "アリジゴク",
-     "en": "ANT LION"
+     "en": "Antlion"
     },
     {
      "id": 26,
@@ -706,7 +706,7 @@
      "hex": "4D41524D414E6520",
      "us": "MARMAN",
      "jp": "マーシーズ",
-     "en": "MARMAN"
+     "en": "Marshes"
     },
     {
      "id": 27,
@@ -714,7 +714,7 @@
      "hex": "44455A4F5249414E",
      "us": "DEZORIAN",
      "jp": "デゾリアン",
-     "en": "DEZORIAN"
+     "en": "Dezolian"
     },
     {
      "id": 28,
@@ -722,7 +722,7 @@
      "hex": "4C45454348652020",
      "us": "LEECH",
      "jp": "デザートリーチ",
-     "en": "LEECH"
+     "en": "Desert Leech"
     },
     {
      "id": 29,
@@ -730,7 +730,7 @@
      "hex": "56414D5049524565",
      "us": "VAMPIRE",
      "jp": "クライオン",
-     "en": "VAMPIRE"
+     "en": "Crion"
     },
     {
      "id": 30,
@@ -738,7 +738,7 @@
      "hex": "454C455048414E54",
      "us": "ELEPHANT",
      "jp": "ビッグノーズ",
-     "en": "ELEPHANT"
+     "en": "Big Nose"
     },
     {
      "id": 31,
@@ -746,7 +746,7 @@
      "hex": "47484F554C652020",
      "us": "GHOUL",
      "jp": "グール",
-     "en": "GHOUL"
+     "en": "Ghoul"
     },
     {
      "id": 32,
@@ -754,7 +754,7 @@
      "hex": "5348454C46495348",
      "us": "SHELFISH",
      "jp": "アンモナイト",
-     "en": "SHELFISH"
+     "en": "Ammonite"
     },
     {
      "id": 33,
@@ -762,7 +762,7 @@
      "hex": "4558454355544552",
      "us": "EXECUTER",
      "jp": "エグゼキュート",
-     "en": "EXECUTER"
+     "en": "Execute"
     },
     {
      "id": 34,
@@ -770,7 +770,7 @@
      "hex": "5749474854652020",
      "us": "WIGHT",
      "jp": "ワイト",
-     "en": "WIGHT"
+     "en": "Wight"
     },
     {
      "id": 35,
@@ -778,7 +778,7 @@
      "hex": "534B554C4C2D454E",
      "us": "SKULL-EN",
      "jp": "スカルソルジャー",
-     "en": "SKULL-EN"
+     "en": "Skull Soldier"
     },
     {
      "id": 36,
@@ -786,7 +786,7 @@
      "hex": "414D4D4F4E495445",
      "us": "AMMONITE",
      "jp": "マイマイ",
-     "en": "AMMONITE"
+     "en": "Snail"
     },
     {
      "id": 37,
@@ -794,7 +794,7 @@
      "hex": "535048494E586520",
      "us": "SPHINX",
      "jp": "マンチコート",
-     "en": "SPHINX"
+     "en": "Manticort"
     },
     {
      "id": 38,
@@ -802,7 +802,7 @@
      "hex": "53455250454E5465",
      "us": "SERPENT",
      "jp": "サーペント",
-     "en": "SERPENT"
+     "en": "Serpent"
     },
     {
      "id": 39,
@@ -810,7 +810,7 @@
      "hex": "53414E44574F524D",
      "us": "SANDWORM",
      "jp": "リバイアサン",
-     "en": "SANDWORM"
+     "en": "Leviathan"
     },
     {
      "id": 40,
@@ -818,7 +818,7 @@
      "hex": "4C49434865202020",
      "us": "LICH",
      "jp": "ドルージュ",
-     "en": "LICH"
+     "en": "Druj"
     },
     {
      "id": 41,
@@ -826,7 +826,7 @@
      "hex": "4F43544F50555365",
      "us": "OCTOPUS",
      "jp": "オクトパス",
-     "en": "OCTOPUS"
+     "en": "Octopus"
     },
     {
      "id": 42,
@@ -834,7 +834,7 @@
      "hex": "5354414C4B455265",
      "us": "STALKER",
      "jp": "マッドストーカー",
-     "en": "STALKER"
+     "en": "Mad Stalker"
     },
     {
      "id": 43,
@@ -842,7 +842,7 @@
      "hex": "4556494C48454144",
      "us": "EVILHEAD",
      "jp": "デゾリアンヘッド",
-     "en": "EVILHEAD"
+     "en": "Dezolian Head"
     },
     {
      "id": 44,
@@ -850,7 +850,7 @@
      "hex": "5A4F4D4249456520",
      "us": "ZOMBIE",
      "jp": "ゾンビ",
-     "en": "ZOMBIE"
+     "en": "Zombie"
     },
     {
      "id": 45,
@@ -858,7 +858,7 @@
      "hex": "424154414C494F4E",
      "us": "BATALION",
      "jp": "ビュート",
-     "en": "BATALION"
+     "en": "Butte"
     },
     {
      "id": 46,
@@ -866,7 +866,7 @@
      "hex": "524F424F54434F50",
      "us": "ROBOTCOP",
      "jp": "ロボットポリス",
-     "en": "ROBOTCOP"
+     "en": "Robot Police"
     },
     {
      "id": 47,
@@ -874,7 +874,7 @@
      "hex": "534F524345524552",
      "us": "SORCERER",
      "jp": "サイボーグメイジ",
-     "en": "SORCERER"
+     "en": "Cyborg Mage"
     },
     {
      "id": 48,
@@ -882,7 +882,7 @@
      "hex": "4E45535349456520",
      "us": "NESSIE",
      "jp": "フレームリザード",
-     "en": "NESSIE"
+     "en": "Flame Lizard"
     },
     {
      "id": 49,
@@ -890,7 +890,7 @@
      "hex": "5441525A494D414C",
      "us": "TARZIMAL",
      "jp": "タジム",
-     "en": "TARZIMAL"
+     "en": "Tajim"
     },
     {
      "id": 50,
@@ -898,7 +898,7 @@
      "hex": "474F4C454D652020",
      "us": "GOLEM",
      "jp": "ガイア",
-     "en": "GOLEM"
+     "en": "Gaia"
     },
     {
      "id": 51,
@@ -906,7 +906,7 @@
      "hex": "414E44524F434F50",
      "us": "ANDROCOP",
      "jp": "マシーンガーダー",
-     "en": "ANDROCOP"
+     "en": "Machine Guard"
     },
     {
      "id": 52,
@@ -914,7 +914,7 @@
      "hex": "54454E5441434C45",
      "us": "TENTACLE",
      "jp": "ビッグイーター",
-     "en": "TENTACLE"
+     "en": "Big Eater"
     },
     {
      "id": 53,
@@ -922,7 +922,7 @@
      "hex": "4749414E54652020",
      "us": "GIANT",
      "jp": "タロス",
-     "en": "GIANT"
+     "en": "Talos"
     },
     {
      "id": 54,
@@ -930,7 +930,7 @@
      "hex": "57595645524E6520",
      "us": "WYVERN",
      "jp": "スネークロード",
-     "en": "WYVERN"
+     "en": "Snake Lord"
     },
     {
      "id": 55,
@@ -938,7 +938,7 @@
      "hex": "5245415045526520",
      "us": "REAPER",
      "jp": "デスベアラー",
-     "en": "REAPER"
+     "en": "Death Bearer"
     },
     {
      "id": 56,
@@ -946,7 +946,7 @@
      "hex": "4D4147494349414E",
      "us": "MAGICIAN",
      "jp": "カオスソーサラー",
-     "en": "MAGICIAN"
+     "en": "Chaos Sorcerer"
     },
     {
      "id": 57,
@@ -954,7 +954,7 @@
      "hex": "484F5253454D414E",
      "us": "HORSEMAN",
      "jp": "セントール",
-     "en": "HORSEMAN"
+     "en": "Centaur"
     },
     {
      "id": 58,
@@ -962,7 +962,7 @@
      "hex": "46524F53544D414E",
      "us": "FROSTMAN",
      "jp": "アイスマン",
-     "en": "FROSTMAN"
+     "en": "Ice Man"
     },
     {
      "id": 59,
@@ -970,7 +970,7 @@
      "hex": "414D554E4453454E",
      "us": "AMUNDSEN",
      "jp": "バルカン",
-     "en": "AMUNDSEN"
+     "en": "Vulcan"
     },
     {
      "id": 60,
@@ -978,7 +978,7 @@
      "hex": "52442E445241474E",
      "us": "RD.DRAGN",
      "jp": "レッドドラゴン",
-     "en": "RD.DRAGN"
+     "en": "Red Dragon"
     },
     {
      "id": 61,
@@ -986,7 +986,7 @@
      "hex": "47522E445241474E",
      "us": "GR.DRAGN",
      "jp": "グリーンドラゴン",
-     "en": "GR.DRAGN"
+     "en": "Green Dragon"
     },
     {
      "id": 62,
@@ -994,7 +994,7 @@
      "hex": "534841444F576520",
      "us": "SHADOW",
      "jp": "ラシーク",
-     "en": "SHADOW"
+     "en": "LaShiec"
     },
     {
      "id": 63,
@@ -1002,7 +1002,7 @@
      "hex": "4D414D4D4F544865",
      "us": "MAMMOTH",
      "jp": "マンモス",
-     "en": "MAMMOTH"
+     "en": "Mammoth"
     },
     {
      "id": 64,
@@ -1010,7 +1010,7 @@
      "hex": "43454E5441555265",
      "us": "CENTAUR",
      "jp": "キングセイバー",
-     "en": "CENTAUR"
+     "en": "King Saber"
     },
     {
      "id": 65,
@@ -1018,7 +1018,7 @@
      "hex": "4D41524155444552",
      "us": "MARAUDER",
      "jp": "ダークマローダー",
-     "en": "MARAUDER"
+     "en": "Dark Marauder"
     },
     {
      "id": 66,
@@ -1026,7 +1026,7 @@
      "hex": "544954414E652020",
      "us": "TITAN",
      "jp": "ゴーレム",
-     "en": "TITAN"
+     "en": "Golem"
     },
     {
      "id": 67,
@@ -1034,7 +1034,7 @@
      "hex": "4D45445553416520",
      "us": "MEDUSA",
      "jp": "メデューサ",
-     "en": "MEDUSA"
+     "en": "Medusa"
     },
     {
      "id": 68,
@@ -1042,7 +1042,7 @@
      "hex": "57542E445241474E",
      "us": "WT.DRAGN",
      "jp": "フロストドラゴン",
-     "en": "WT.DRAGN"
+     "en": "Frost Dragon"
     },
     {
      "id": 69,
@@ -1050,7 +1050,7 @@
      "hex": "424C2E445241474E",
      "us": "BL.DRAGN",
      "jp": "ドラゴンワイズ",
-     "en": "BL.DRAGN"
+     "en": "Dragon Wise"
     },
     {
      "id": 70,
@@ -1058,7 +1058,7 @@
      "hex": "47442E445241474E",
      "us": "GD.DRAGN",
      "jp": "ゴールドドレイク",
-     "en": "GD.DRAGN"
+     "en": "Gold Drake"
     },
     {
      "id": 71,
@@ -1066,7 +1066,7 @@
      "hex": "44522E4D41446520",
      "us": "DR.MAD",
      "jp": "マッドドクター",
-     "en": "DR.MAD"
+     "en": "Mad Doctor"
     },
     {
      "id": 72,
@@ -1074,7 +1074,7 @@
      "hex": "4C41535349436520",
      "us": "LASSIC",
      "jp": "ラシーク",
-     "en": "LASSIC"
+     "en": "LaShiec"
     },
     {
      "id": 73,
@@ -1082,7 +1082,7 @@
      "hex": "4441524B46414C5A",
      "us": "DARKFALZ",
      "jp": "ダークファルス",
-     "en": "DARKFALZ"
+     "en": "Dark Falz"
     },
     {
      "id": 74,
@@ -1090,7 +1090,7 @@
      "hex": "5341434355425553",
      "us": "SACCUBUS",
      "jp": "ナイトメア",
-     "en": "SACCUBUS"
+     "en": "Nightmare"
     }
    ]
   },
@@ -1246,7 +1246,7 @@
      "jp_addr": "1B:B579",
      "jp_cells": 4,
      "jp": "タタカウ",
-     "en": "ATTK"
+     "en": "Fight"
     },
     {
      "id": 1,
@@ -1263,7 +1263,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B585",
      "jp": "マジック",
-     "en": "MAGC"
+     "en": "Magic"
     },
     {
      "id": 2,
@@ -1280,7 +1280,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B59D",
      "jp": "アイテム",
-     "en": "ITEM"
+     "en": "Item"
     },
     {
      "id": 3,
@@ -1297,7 +1297,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B5B5",
      "jp": "ハナス",
-     "en": "TALK"
+     "en": "Talk"
     },
     {
      "id": 4,
@@ -1314,7 +1314,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B5CD",
      "jp": "ニゲル",
-     "en": "RUN"
+     "en": "Flee"
     }
    ]
   },
@@ -1338,7 +1338,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B6ED",
      "jp": "ヒール",
-     "en": "HEAL"
+     "en": "Heal"
     },
     {
      "id": 1,
@@ -1355,7 +1355,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B705",
      "jp": "ラクスタ",
-     "en": "BYE"
+     "en": "Rakusta"
     },
     {
      "id": 2,
@@ -1372,7 +1372,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B71D",
      "jp": "ペヤラク",
-     "en": "CHAT"
+     "en": "Peyarak"
     },
     {
      "id": 3,
@@ -1389,7 +1389,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B735",
      "jp": "フレエリ",
-     "en": "FIRE"
+     "en": "Flaeli"
     },
     {
      "id": 4,
@@ -1406,7 +1406,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B74D",
      "jp": "ビンドワ",
-     "en": "ROPE"
+     "en": "Bindwa"
     },
     {
      "id": 5,
@@ -1423,7 +1423,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B77D",
      "jp": "ドヒール",
-     "en": "CURE"
+     "en": "Doheal"
     },
     {
      "id": 6,
@@ -1440,7 +1440,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B795",
      "jp": "テルル",
-     "en": "TERR"
+     "en": "Terror"
     },
     {
      "id": 7,
@@ -1457,7 +1457,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B7AD",
      "jp": "ワーラ",
-     "en": "WALL"
+     "en": "Waller"
     },
     {
      "id": 8,
@@ -1474,7 +1474,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B7C5",
      "jp": "パウマ",
-     "en": "HELP"
+     "en": "Pauma"
     },
     {
      "id": 9,
@@ -1508,7 +1508,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B80D",
      "jp": "フレエリ",
-     "en": "FIRE"
+     "en": "Flaeli"
     },
     {
      "id": 11,
@@ -1525,7 +1525,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B825",
      "jp": "テレパス",
-     "en": "TELE"
+     "en": "Telepath"
     },
     {
      "id": 12,
@@ -1542,7 +1542,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B83D",
      "jp": "ヒューン",
-     "en": "WIND"
+     "en": "Hyune"
     },
     {
      "id": 13,
@@ -1559,7 +1559,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B855",
      "jp": "ムワーラ",
-     "en": "PROT"
+     "en": "Muwaller"
     },
     {
      "id": 14,
@@ -1576,7 +1576,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B86D",
      "jp": "タンドレ",
-     "en": "THUN"
+     "en": "Tonndre"
     },
     {
      "id": 15,
@@ -1593,7 +1593,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B89D",
      "jp": "ヒール",
-     "en": "HEAL"
+     "en": "Heal"
     },
     {
      "id": 16,
@@ -1610,7 +1610,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B8B5",
      "jp": "トルーパ",
-     "en": "FLY"
+     "en": "Trupa"
     },
     {
      "id": 17,
@@ -1678,7 +1678,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B92D",
      "jp": "ドヒール",
-     "en": "CURE"
+     "en": "Doheal"
     },
     {
      "id": 21,
@@ -1695,7 +1695,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B945",
      "jp": "ラプット",
-     "en": "TRAP"
+     "en": "Raputt"
     },
     {
      "id": 22,
@@ -1712,7 +1712,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B95D",
      "jp": "スルト",
-     "en": "EXIT"
+     "en": "Surt"
     },
     {
      "id": 23,
@@ -1763,7 +1763,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B9BD",
      "jp": "ドヒール",
-     "en": "CURE"
+     "en": "Doheal"
     },
     {
      "id": 26,
@@ -1780,7 +1780,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B9D5",
      "jp": "スルト",
-     "en": "EXIT"
+     "en": "Surt"
     },
     {
      "id": 27,
@@ -1797,7 +1797,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B9ED",
      "jp": "テレパス",
-     "en": "TELE"
+     "en": "Telepath"
     },
     {
      "id": 28,
@@ -1814,7 +1814,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:BA05",
      "jp": "ムオーデ",
-     "en": "OPEN"
+     "en": "Muode"
     },
     {
      "id": 29,
@@ -1831,7 +1831,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:BA1D",
      "jp": "リーバス",
-     "en": "RISE"
+     "en": "Reebus"
     }
    ]
   },
@@ -1855,7 +1855,7 @@
      "jp_cells": 8,
      "jp_upper": "1B:BAF9",
      "jp": "ホカノ　モチモノ",
-     "en": "NEXT"
+     "en": "More"
     }
    ]
   },
@@ -1950,7 +1950,7 @@
      "jp_addr": "1B:BB99",
      "jp_cells": 4,
      "jp": "ツヨサ",
-     "en": "STAS"
+     "en": "Stats"
     },
     {
      "id": 1,
@@ -1967,7 +1967,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:BBA5",
      "jp": "マジック",
-     "en": "MAGC"
+     "en": "Magic"
     },
     {
      "id": 2,
@@ -1984,7 +1984,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:BBBD",
      "jp": "アイテム",
-     "en": "ITEM"
+     "en": "Item"
     },
     {
      "id": 3,
@@ -2001,7 +2001,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:BBD5",
      "jp": "シラベル",
-     "en": "SRCH"
+     "en": "Search"
     },
     {
      "id": 4,
@@ -2018,7 +2018,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:BBED",
      "jp": "セーブ",
-     "en": "SAVE"
+     "en": "Save"
     }
    ]
   },
@@ -2040,7 +2040,7 @@
      "jp_addr": "1B:BC1B",
      "jp_cells": 3,
      "jp": "ツカウ",
-     "en": "USE"
+     "en": "Use"
     },
     {
      "id": 1,
@@ -2057,7 +2057,7 @@
      "jp_cells": 3,
      "jp_upper": "1B:BC25",
      "jp": "ソウビ",
-     "en": "EQP"
+     "en": "Equip"
     },
     {
      "id": 2,
@@ -2074,7 +2074,7 @@
      "jp_cells": 3,
      "jp_upper": "1B:BC39",
      "jp": "ステル",
-     "en": "DRP"
+     "en": "Drop"
     }
    ]
   },
@@ -2096,7 +2096,7 @@
      "jp_addr": "1B:BC63",
      "jp_cells": 4,
      "jp": "カイタイ",
-     "en": "BUY"
+     "en": "Buy"
     },
     {
      "id": 1,
@@ -2113,7 +2113,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:BC6F",
      "jp": "ウリタイ",
-     "en": "SELL"
+     "en": "Sell"
     }
    ]
   },
@@ -2135,7 +2135,7 @@
      "jp_addr": "1B:BC9D",
      "jp_cells": 3,
      "jp": "ハイ",
-     "en": "YES"
+     "en": "Yes"
     },
     {
      "id": 1,
@@ -2152,7 +2152,7 @@
      "jp_cells": 3,
      "jp_upper": "1B:BCA7",
      "jp": "イイエ",
-     "en": "NO"
+     "en": "No"
     }
    ]
   },
@@ -2175,7 +2175,7 @@
      "jp_cells": 7,
      "jp_upper": "1B:BCDD",
      "jp": "コウゲキリョク",
-     "en": "ATTACK"
+     "en": "Attack"
     },
     {
      "id": 1,
@@ -2191,7 +2191,7 @@
      "jp_cells": 7,
      "jp_upper": "1B:BCDD",
      "jp": "シュビリョク",
-     "en": "DEFENSE"
+     "en": "Defense"
     },
     {
      "id": 2,
@@ -2207,7 +2207,7 @@
      "jp_cells": 7,
      "jp_upper": "1B:BCDD",
      "jp": "サイダイHP",
-     "en": "MAX HP"
+     "en": "Max HP"
     },
     {
      "id": 3,
@@ -2223,7 +2223,7 @@
      "jp_cells": 7,
      "jp_upper": "1B:BCDD",
      "jp": "サイダイMP",
-     "en": "MAX MP"
+     "en": "Max MP"
     }
    ]
   },
@@ -2360,7 +2360,7 @@
      "jp_cells": 3,
      "jp_upper": "03:BEBE",
      "jp": "ガシコ",
-     "en": "GOTHIC"
+     "en": "Gashiko"
     },
     {
      "id": 1,
@@ -2377,7 +2377,7 @@
      "jp_cells": 3,
      "jp_upper": "03:BED2",
      "jp": "ウーゾ",
-     "en": "UZO"
+     "en": "Uzo"
     },
     {
      "id": 2,
@@ -2394,7 +2394,7 @@
      "jp_cells": 3,
      "jp_upper": "03:BEE6",
      "jp": "スクレ",
-     "en": "SKURE"
+     "en": "Skure"
     }
    ]
   },

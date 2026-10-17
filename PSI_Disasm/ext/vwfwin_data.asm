@@ -43,88 +43,88 @@ WinStrings:
 .dw WinString39
 .dw WinString40
 .dw WinString41
-WinString1:	; ATTK
-.db $41, $54, $54, $4B, $65
-WinString2:	; MAGC
-.db $4D, $41, $47, $43, $65
-WinString3:	; ITEM
-.db $49, $54, $45, $4D, $65
-WinString4:	; TALK
-.db $54, $41, $4C, $4B, $65
-WinString5:	; RUN
-.db $52, $55, $4E, $65
-WinString6:	; HEAL
-.db $48, $45, $41, $4C, $65
-WinString7:	; BYE
-.db $42, $59, $45, $65
-WinString8:	; CHAT
-.db $43, $48, $41, $54, $65
-WinString9:	; FIRE
-.db $46, $49, $52, $45, $65
-WinString10:	; ROPE
-.db $52, $4F, $50, $45, $65
-WinString11:	; CURE
-.db $43, $55, $52, $45, $65
-WinString12:	; TERR
-.db $54, $45, $52, $52, $65
-WinString13:	; WALL
-.db $57, $41, $4C, $4C, $65
-WinString14:	; HELP
-.db $48, $45, $4C, $50, $65
-WinString15:	; TELE
-.db $54, $45, $4C, $45, $65
-WinString16:	; WIND
-.db $57, $49, $4E, $44, $65
-WinString17:	; PROT
-.db $50, $52, $4F, $54, $65
-WinString18:	; THUN
-.db $54, $48, $55, $4E, $65
-WinString19:	; FLY
-.db $46, $4C, $59, $65
-WinString20:	; TRAP
-.db $54, $52, $41, $50, $65
-WinString21:	; EXIT
-.db $45, $58, $49, $54, $65
-WinString22:	; OPEN
-.db $4F, $50, $45, $4E, $65
-WinString23:	; RISE
-.db $52, $49, $53, $45, $65
-WinString24:	; NEXT
-.db $4E, $45, $58, $54, $65
-WinString25:	; STAS
-.db $53, $54, $41, $53, $65
-WinString26:	; SRCH
-.db $53, $52, $43, $48, $65
-WinString27:	; SAVE
-.db $53, $41, $56, $45, $65
-WinString28:	; USE
-.db $55, $53, $45, $65
-WinString29:	; EQP
-.db $45, $51, $50, $65
-WinString30:	; DRP
-.db $44, $52, $50, $65
-WinString31:	; BUY
-.db $42, $55, $59, $65
-WinString32:	; SELL
-.db $53, $45, $4C, $4C, $65
-WinString33:	; YES
-.db $59, $45, $53, $65
-WinString34:	; NO
-.db $4E, $4F, $65
-WinString35:	; ATTACK
-.db $41, $54, $54, $41, $43, $4B, $65
-WinString36:	; DEFENSE
-.db $44, $45, $46, $45, $4E, $53, $45, $65
-WinString37:	; MAX HP
-.db $4D, $41, $58, $20, $48, $50, $65
-WinString38:	; MAX MP
-.db $4D, $41, $58, $20, $4D, $50, $65
-WinString39:	; GOTHIC
-.db $47, $4F, $54, $48, $49, $43, $65
-WinString40:	; UZO
-.db $55, $5A, $4F, $65
-WinString41:	; SKURE
-.db $53, $4B, $55, $52, $45, $65
+WinString1:	; Fight
+.db $46, $6E, $6C, $6D, $79, $65
+WinString2:	; Magic
+.db $4D, $66, $6C, $6E, $68, $65
+WinString3:	; Item
+.db $49, $79, $6A, $72, $65
+WinString4:	; Talk
+.db $54, $66, $71, $70, $65
+WinString5:	; Flee
+.db $46, $71, $6A, $6A, $65
+WinString6:	; Heal
+.db $48, $6A, $66, $71, $65
+WinString7:	; Rakusta
+.db $52, $66, $70, $7A, $78, $79, $66, $65
+WinString8:	; Peyarak
+.db $50, $6A, $7E, $66, $77, $66, $70, $65
+WinString9:	; Flaeli
+.db $46, $71, $66, $6A, $71, $6E, $65
+WinString10:	; Bindwa
+.db $42, $6E, $73, $69, $7C, $66, $65
+WinString11:	; Doheal
+.db $44, $74, $6D, $6A, $66, $71, $65
+WinString12:	; Terror
+.db $54, $6A, $77, $77, $74, $77, $65
+WinString13:	; Waller
+.db $57, $66, $71, $71, $6A, $77, $65
+WinString14:	; Pauma
+.db $50, $66, $7A, $72, $66, $65
+WinString15:	; Telepath
+.db $54, $6A, $71, $6A, $75, $66, $79, $6D, $65
+WinString16:	; Hyune
+.db $48, $7E, $7A, $73, $6A, $65
+WinString17:	; Muwaller
+.db $4D, $7A, $7C, $66, $71, $71, $6A, $77, $65
+WinString18:	; Tonndre
+.db $54, $74, $73, $73, $69, $77, $6A, $65
+WinString19:	; Trupa
+.db $54, $77, $7A, $75, $66, $65
+WinString20:	; Raputt
+.db $52, $66, $75, $7A, $79, $79, $65
+WinString21:	; Surt
+.db $53, $7A, $77, $79, $65
+WinString22:	; Muode
+.db $4D, $7A, $74, $69, $6A, $65
+WinString23:	; Reebus
+.db $52, $6A, $6A, $67, $7A, $78, $65
+WinString24:	; More
+.db $4D, $74, $77, $6A, $65
+WinString25:	; Stats
+.db $53, $79, $66, $79, $78, $65
+WinString26:	; Search
+.db $53, $6A, $66, $77, $68, $6D, $65
+WinString27:	; Save
+.db $53, $66, $7B, $6A, $65
+WinString28:	; Use
+.db $55, $78, $6A, $65
+WinString29:	; Equip
+.db $45, $76, $7A, $6E, $75, $65
+WinString30:	; Drop
+.db $44, $77, $74, $75, $65
+WinString31:	; Buy
+.db $42, $7A, $7E, $65
+WinString32:	; Sell
+.db $53, $6A, $71, $71, $65
+WinString33:	; Yes
+.db $59, $6A, $78, $65
+WinString34:	; No
+.db $4E, $74, $65
+WinString35:	; Attack
+.db $41, $79, $79, $66, $68, $70, $65
+WinString36:	; Defense
+.db $44, $6A, $6B, $6A, $73, $78, $6A, $65
+WinString37:	; Max HP
+.db $4D, $66, $7D, $20, $48, $50, $65
+WinString38:	; Max MP
+.db $4D, $66, $7D, $20, $4D, $50, $65
+WinString39:	; Gashiko
+.db $47, $66, $78, $6D, $6E, $70, $74, $65
+WinString40:	; Uzo
+.db $55, $7F, $74, $65
+WinString41:	; Skure
+.db $53, $70, $7A, $77, $6A, $65
 WinMoneyString:	; Meseta
 .db $4D, $6A, $78, $6A, $79, $66, $20, $65
 ; vwf_windows: the spell lists a cell wider (12 rows of 7 cells; from bank 27's maps)

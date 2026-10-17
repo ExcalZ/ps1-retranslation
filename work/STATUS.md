@@ -176,6 +176,13 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
   destinations, the dungeon's menu, inventory and status window (the view comes back), the
   battle spell list (Muwaller / Telepath). Every scenario passes on the working build (24).
 
+* **Names and menus in script.json (2026-10-17).** The party, items, enemies and spells from
+  the glossary (settled forms, and the proposals where questions 1-3 and 6-8 are open); the
+  menu words translated from the JP (Fight / Magic / Item / Talk / Flee, Stats / Search / Save,
+  Use / Equip / Drop, Buy / Sell, Yes / No, Attack / Defense / Max HP / Max MP, More, the
+  spaceport's Gashiko / Uzo / Skure). Every scenario passes with them (`--words` reads them
+  back from the face).
+
 ## Next, in order
 
 1. **Left from the survey:** a cross-check against Maxim's
