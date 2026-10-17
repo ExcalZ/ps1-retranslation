@@ -1,12 +1,18 @@
 """Extract the script into work/dialogue.json and the name tables into work/script.json.
 
     python tools/extract_text.py [--force]
+    python tools/extract_text.py --tilemaps
 
 Runs once, on a stock build (PSI_Disasm/ps1built.sym must be the stock one): it reads the US
 text from the source (textsrc.py), the JP text from work/ps1jp_stock.sms, pairs them (by id
 for the dialogue blocks, by work/pairing.json for the messages and cut-scenes) and writes
 `jp`, `us`, `hex`, the addresses, and `en` = `us`. It refuses to overwrite existing JSON
 without --force: a re-extraction would drop every translation.
+
+--tilemaps adds the tilemap segments (tools/tilemaps.py: menus, spell lists, status labels,
+save slots, spaceport, intro caption; the naming screen and the credits read-only) to the
+existing work/script.json and leaves everything else in it alone. It refuses to replace a
+segment that is already there.
 """
 import json
 import os
@@ -16,6 +22,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import ps1text as T
 import textsrc as S
+import tilemaps as M
 
 ROOT = T.ROOT
 WORK = os.path.join(ROOT, 'work')
@@ -46,7 +53,44 @@ def pair(kind, us_list, jp_list, rules):
     return out
 
 
+def check_source(segs, defs):
+    """Every tilemap run's stock bytes are the source's at its label and offset."""
+    for name, seg in segs.items():
+        if seg['kind'] != 'tilemap':
+            continue
+        lines = T.read(os.path.join(T.DISASM, seg['file'])).split('\r\n')
+        for r in seg['runs']:
+            have = M.read_bytes(lines, r['label'], r['offset'], 2 * r['cells'], defs)
+            assert have.hex().upper() == r['hex'], 'source and ROM differ: %s %d' % (name, r['id'])
+
+
+def add_tilemaps():
+    path = os.path.join(WORK, 'script.json')
+    script = json.load(open(path, encoding='utf-8'))
+    segs = M.extract(open(STOCK, 'rb').read(), open(JP_ROM, 'rb').read(), T.symbols())
+    check_source(segs, T.defines())
+    there = [k for k in segs if k in script['segments']]
+    if there:
+        raise SystemExit('script.json already has %s' % ', '.join(there))
+    script['segments'].update(segs)
+    script['about'] = ABOUT
+    with open(path, 'w', encoding='utf-8', newline='\n') as f:
+        json.dump(script, f, indent=1, ensure_ascii=False)
+        f.write('\n')
+    print('script.json: added %s' % ', '.join('%d %s' % (len(s['runs']), k) for k, s in segs.items()))
+
+
+ABOUT = ('The fixed-width text (docs/pipeline.md 3.6-3.9). Edit only en. party, items, enemies: '
+         'name fields, width in cells, padded with an end code and spaces. kind tilemap: menu '
+         'words stored as glyph-table tiles in a VDP tilemap, one cell a character, cells wide, '
+         'upper: the run owns the row above (the JP dakuten row; in the US font only " and '
+         'the apostrophe use it). kind readonly (naming screen, credits): jp and us only, not '
+         'written back.')
+
+
 def main():
+    if '--tilemaps' in sys.argv:
+        return add_tilemaps()
     for f in ('dialogue.json', 'script.json'):
         if os.path.exists(os.path.join(WORK, f)) and '--force' not in sys.argv:
             raise SystemExit('work/%s exists: extraction would drop the translation (--force)' % f)
@@ -154,11 +198,10 @@ def main():
     for s in segs.values():
         for r in s['runs']:
             r['en'] = r['us']
-    script = {
-        'about': 'The fixed-width name tables (docs/pipeline.md 3.6). Edit only en; width is in '
-                 'cells, the field is padded with an end code and spaces.',
-        'segments': segs,
-    }
+    tiles = M.extract(us_rom, jp, syms)
+    check_source(tiles, defs)
+    segs.update(tiles)
+    script = {'about': ABOUT, 'segments': segs}
 
     for name, doc in (('dialogue.json', dialogue), ('script.json', script)):
         with open(os.path.join(WORK, name), 'w', encoding='utf-8', newline='\n') as f:

@@ -52,14 +52,21 @@ every `en` equals its `us`.
   Camineet. Not yet seen in the emulator: any text the encoder wrote (every `en` still equals
   its `us`), the dialogue window's scrolled pages, battles, shops, menus.
 
+* **Tilemap text (2026-10-16).** `tools/tilemaps.py`; `extract_text.py --tilemaps` added 15
+  tilemap segments (75 runs: menus, status boxes, spell lists, status labels, meseta, save
+  slots, spaceport, intro caption) with JP decoded through the JP glyph table, dakuten from
+  the row above, plus read-only `naming_screen` and `credits`. The JP spaceport is 03:BEB2.
+  gentext writes the runs back; checkstock byte-identical, nothing moved, test_text 0
+  failures. Not yet tried: a changed tilemap `en` in the emulator. Open: three JP caption
+  kanji ($BB $BD $BE) unread; the save-slot names' cells not traced (runs are the digit only).
+
 ## Next, in order
 
-1. **Left from the survey:** the JP spaceport-destination menu; a cross-check against Maxim's
+1. **Left from the survey:** a cross-check against Maxim's
    JP disassembly (`maxim-zhao/psrp`, `disassembly/`); in Mesen, that tiles `$EC`-`$FF` are
    free in every mode and that the title-screen words are graphics.
-2. **The rest of script.json:** the menu and status tilemaps, the spell lists, the naming
-   screen, the intro caption, the spaceport menu and (the owner's call) the credits -
-   tilemaps through the glyph table (`docs/pipeline.md` 3.7-3.9).
+2. **The rest of script.json:** done but for writing the naming screen and (the owner's
+   call) the credits, both read-only for now.
 3. **More scenarios:** an encoder-written line seen in game (a test edit of an intro line, run
    `opening --expect`); talking to a townsperson with `--expect` for window text (scrolled
    pages need the window's two-line model); a battle; a shop; the menus; save and continue.

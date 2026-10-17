@@ -18,7 +18,8 @@ work/dialogue.json --gentext.py--> ps1.asm: the dialogue blocks and cut-scene st
                                    sound/sound_driver.asm: the bank-12 messages
 work/script.json   --gentext.py--> ps1.asm: CharacterNames, ItemNames
                                    banks/bank03.asm: the enemy names
-                                   (menus, spell lists, naming screen, credits: planned)
+                                   banks/bank27.asm, bank18.asm, ps1.asm: the tilemap text
+                                   (naming screen, credits: read-only)
 ```
 
 `tools/sourcebuild.py [out.sms] [--no-gen]` runs `gentext.py`, then
@@ -389,8 +390,10 @@ room.
   159 they pair again; the US split each of the three ending-narration strings (JP 165-167)
   in two `$64` pages; the last three pair one for one. The 23rd US cut-scene string continues
   the JP's 22nd.
-* **Not yet placed:** the JP spaceport-destination menu (the US one is in bank 18, where JP
-  bank 18 differs at `$BE84-$BFBB`).
+* **Spaceport (placed).** The JP menu is an 8 x 5 map at 03:BEB2 (ガシコ ウーゾ スクレ), drawn at
+  `$7AAA` by JP code that pages bank 3; JP bank 18 is `$FF` at `$BE84-$BFBB`. Other JP tilemaps:
+  status labels 00:399E-39CE, meseta 00:3756, save slots 00:3BE8, naming screen 01:4406 (RLE
+  with consecutive tiles, unpacker 01:42DA), intro-caption kanji tiles from 10:BF5E.
 
 ## 4. The script files and the generator
 
@@ -407,6 +410,18 @@ them (dialogue by id, the rest by `work/pairing.json`) and writes:
   JP is part of the entry before. `jp_only`: the JP strings with no US string.
 * `work/script.json`: `segments` `party` (4, width 4), `items` (65, width 8) and `enemies` (74,
   width 8, with the record label), each run `id`, `hex`, `us`, `jp`, `en`.
+
+* `work/script.json` also holds the **tilemap segments** (`tools/tilemaps.py`, added by
+  `extract_text.py --tilemaps`): `name_boxes`, `status_boxes`, `battle_menu`, `spells` (30),
+  `inventory`, `party_menu`, `field_menu`, `item_menu`, `shop_menu`, `yes_no`,
+  `status_labels`, `money`, `save_slots`, `spaceport`, `intro_caption` (kind `tilemap`, 75
+  runs), and `naming_screen` and `credits` (kind `readonly`: `us`/`jp` only). A tilemap run has
+  `label`, `offset` (bytes into the map), `cells`, `upper` (it owns the row above, where JP
+  dakuten and the US `"`/apostrophe tops go), `addr`, `hex`, `upper_hex`, `jp_addr`,
+  `jp_cells`, `jp_upper`, `us`, `jp`, `en`, `where`. One character a cell, leading spaces kept.
+  gentext writes each run through the glyph table `LABEL_7D17` into the map's `.db` lines,
+  only where bytes change; en = us keeps the stock bytes. linecheck checks glyphs, cells and
+  upper rows, and that the party names in the menus match the party table.
 
 **The text form** (`tools/ps1text.py`): `{BR}` new line, `{PAGE}` wait then new line (the
 window scrolls; a cut-scene clears), `{CLR}` clear, `{NAME}` `{ENEMY}` `{ITEM}` `{NUMBER}`

@@ -8,6 +8,12 @@
   game reaches it by reading on).
 * The name fields (CharacterNames, ItemNames, the first line of each Enemy_* record in
   banks/bank03.asm) are rewritten line by line, only where the bytes change.
+* The tilemap runs of script.json (kind `tilemap`: menus, spell lists, status labels, save
+  slots, spaceport, intro caption; tools/tilemaps.py) are written into their maps' `.db`
+  lines in ps1.asm, banks/bank27.asm and banks/bank18.asm, through the glyph table
+  (LABEL_7D17): the lower tile in the run's row, the upper tile in the row above where the run
+  owns it. Only lines whose bytes change are rewritten. Segments of kind `readonly` (the naming
+  screen, the credits) are not written.
 
 An entry whose `en` equals its `us` is written from `hex`: the stock bytes, so with en = us
 everywhere the ROM is the stock one (checkstock.py). Any other `en` is encoded for the stock
@@ -24,6 +30,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import ps1text as T
 import textsrc as S
+import tilemaps as M
 
 WORK = os.path.join(T.ROOT, 'work')
 STRING_SAFE = set(range(0x20, 0x5B)) - {0x40}
@@ -146,7 +153,37 @@ def generate(dialogue, script):
         if have != want:
             lines[i] = '.db\t' + ', '.join(tokens(want, names))
     out[path] = '\r\n'.join(lines)
+
+    # ---- the tilemaps
+    glyphs = M.us_glyph_table(out[os.path.join(T.DISASM, 'ps1.asm')].split('\r\n'), defs)
+    files = {}
+    for seg in segs.values():
+        if seg.get('kind') != 'tilemap':
+            continue
+        path = os.path.join(T.DISASM, *seg['file'].split('/'))
+        if path not in files:
+            files[path] = (out[path] if path in out else T.read(path)).split('\r\n')
+        for run in seg['runs']:
+            lo, up = tilemap_bytes(run, glyphs)
+            M.write_bytes(files[path], run['label'], run['offset'], lo, defs)
+            if up is not None:
+                M.write_bytes(files[path], run['label'],
+                              run['offset'] - 2 * M.ROW_CELLS[run['label']], up, defs)
+    for path, lines in files.items():
+        out[path] = '\r\n'.join(lines)
     return out
+
+
+def tilemap_bytes(run, glyphs):
+    """(lower row, upper row or None) of a tilemap run: the stock bytes when en = us."""
+    stock = (bytes.fromhex(run['hex']), bytes.fromhex(run.get('upper_hex', '')))
+    if run['en'] == run['us'] and not ENCODE_ALL:
+        return stock[0], (stock[1] if run['upper'] else None)
+    try:
+        pairs = M.encode(run['en'], glyphs, run['cells'], run['upper'])
+    except ValueError as x:
+        raise ValueError('%s %s: %s' % (run['label'], run['id'], x))
+    return M.patch(stock, pairs, run['upper'])
 
 
 def main():

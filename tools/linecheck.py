@@ -10,7 +10,11 @@ Checks each `en` that differs from its `us` (--all: every entry, the stock text 
 * cut-scenes: each line at most 20 cells (the picture's width; the JP uses all 20, the US
   18), at most 4 lines a page; the cut-scene printer has no auto-wrap;
 * the end code: the same as the stock entry's, or none where the entry falls through;
-* name fields: at most their width.
+* name fields: at most their width;
+* tilemap runs (menus, spell lists, status labels, save slots, spaceport, intro caption):
+  each glyph in the font, at most the run's cells, and an upper tile (the US `"` and
+  apostrophe) only where the run owns the row above; the party names in the name boxes, the
+  status boxes and the party menu the same as the party table's.
 
 Then the space: bytes the encoded text takes in bank 2 and bank 12 against what the stock text
 and the free bytes after it leave (docs/pipeline.md 3.1).
@@ -22,6 +26,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import ps1text as T
+import tilemaps as M
 
 WORK = os.path.join(T.ROOT, 'work')
 FREE = {'02': 183, '0C': 40}           # bytes free after the stock text in banks 2 and 12
@@ -72,7 +77,18 @@ def main():
         want = None if e.get('falls_through') else end_code(e['us'])
         if end_code(e['en']) != want:
             problems.append('%s: ends in %s, the stock entry in %s' % (e['id'], end_code(e['en']), want))
+    glyphs = M.us_glyph_table()
     for name, seg in script['segments'].items():
+        if seg.get('kind') == 'readonly':
+            continue
+        if seg.get('kind') == 'tilemap':
+            for r in seg['runs']:
+                if r['en'] != r['us'] or check_all:
+                    try:
+                        M.encode(r['en'], glyphs, r['cells'], r['upper'])
+                    except ValueError as x:
+                        problems.append('%s %s (%s): %s' % (name, r['id'], r['where'], x))
+            continue
         for r in seg['runs']:
             if r['en'] != r['us'] or check_all:
                 if len(r['en']) > seg['width']:
@@ -81,6 +97,12 @@ def main():
                     T.encode_us(r['en'], dictionary=False)
                 except ValueError as x:
                     problems.append('%s %s: %s' % (name, r['id'], x))
+    party = [r['en'] for r in script['segments']['party']['runs']]
+    for name in ('name_boxes', 'status_boxes', 'party_menu'):
+        for r in script['segments'][name]['runs']:
+            if r['en'].strip() != party[r['id']]:
+                problems.append('%s %s shows %r; party %d is %r' % (
+                    name, r['id'], r['en'].strip(), r['id'], party[r['id']]))
     for p in problems:
         print(p)
     for bank in ('02', '0C'):

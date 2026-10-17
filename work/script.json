@@ -1,5 +1,5 @@
 {
- "about": "The fixed-width name tables (docs/pipeline.md 3.6). Edit only en; width is in cells, the field is padded with an end code and spaces.",
+ "about": "The fixed-width text (docs/pipeline.md 3.6-3.9). Edit only en. party, items, enemies: name fields, width in cells, padded with an end code and spaces. kind tilemap: menu words stored as glyph-table tiles in a VDP tilemap, one cell a character, cells wide, upper: the run owns the row above (the JP dakuten row; in the US font only \" and the apostrophe use it). kind readonly (naming screen, credits): jp and us only, not written back.",
  "segments": {
   "party": {
    "width": 4,
@@ -1091,6 +1091,1800 @@
      "us": "SACCUBUS",
      "jp": "ナイトメア",
      "en": "SACCUBUS"
+    }
+   ]
+  },
+  "name_boxes": {
+   "kind": "tilemap",
+   "file": "banks/bank27.asm",
+   "about": "The four one-name boxes (LABEL_B27_B40B, 36 bytes each).",
+   "runs": [
+    {
+     "id": 0,
+     "where": "Alis",
+     "label": "LABEL_B27_B40B",
+     "offset": 14,
+     "cells": 4,
+     "upper": false,
+     "addr": "1B:B419",
+     "hex": "CB10D610D310DD10",
+     "us": "ALIS",
+     "jp_addr": "1B:B419",
+     "jp_cells": 4,
+     "jp": "アリサ",
+     "en": "ALIS"
+    },
+    {
+     "id": 1,
+     "where": "Myau",
+     "label": "LABEL_B27_B40B",
+     "offset": 50,
+     "cells": 4,
+     "upper": false,
+     "addr": "1B:B43D",
+     "hex": "D710E310CB10DF10",
+     "us": "MYAU",
+     "jp_addr": "1B:B43D",
+     "jp_cells": 4,
+     "jp": "ミャウ",
+     "en": "MYAU"
+    },
+    {
+     "id": 2,
+     "where": "Odin",
+     "label": "LABEL_B27_B40B",
+     "offset": 86,
+     "cells": 4,
+     "upper": false,
+     "addr": "1B:B461",
+     "hex": "D910CE10D310D810",
+     "us": "ODIN",
+     "jp_addr": "1B:B461",
+     "jp_cells": 4,
+     "jp": "タイロン",
+     "en": "ODIN"
+    },
+    {
+     "id": 3,
+     "where": "Noah",
+     "label": "LABEL_B27_B40B",
+     "offset": 122,
+     "cells": 4,
+     "upper": false,
+     "addr": "1B:B485",
+     "hex": "D810D910CB10D210",
+     "us": "NOAH",
+     "jp_addr": "1B:B485",
+     "jp_cells": 4,
+     "jp": "ルツ",
+     "en": "NOAH"
+    }
+   ]
+  },
+  "status_boxes": {
+   "kind": "tilemap",
+   "file": "banks/bank27.asm",
+   "about": "The battle status boxes, a name centred in 6 cells over the HP and MP row (LABEL_B27_B4AB-B53B).",
+   "runs": [
+    {
+     "id": 0,
+     "where": "Alis",
+     "label": "LABEL_B27_B4AB",
+     "offset": 18,
+     "cells": 6,
+     "upper": false,
+     "addr": "1B:B4BD",
+     "hex": "C010CB10D610D310DD10C010",
+     "us": " ALIS",
+     "jp_addr": "1B:B4BD",
+     "jp_cells": 6,
+     "jp": "　アリサ",
+     "en": " ALIS"
+    },
+    {
+     "id": 1,
+     "where": "Myau",
+     "label": "LABEL_B27_B4DB",
+     "offset": 18,
+     "cells": 6,
+     "upper": false,
+     "addr": "1B:B4ED",
+     "hex": "C010D710E310CB10DF10C010",
+     "us": " MYAU",
+     "jp_addr": "1B:B4ED",
+     "jp_cells": 6,
+     "jp": "　ミャウ",
+     "en": " MYAU"
+    },
+    {
+     "id": 2,
+     "where": "Odin",
+     "label": "LABEL_B27_B50B",
+     "offset": 18,
+     "cells": 6,
+     "upper": false,
+     "addr": "1B:B51D",
+     "hex": "C010D910CE10D310D810C010",
+     "us": " ODIN",
+     "jp_addr": "1B:B51D",
+     "jp_cells": 6,
+     "jp": "　タイロン",
+     "en": " ODIN"
+    },
+    {
+     "id": 3,
+     "where": "Noah",
+     "label": "LABEL_B27_B53B",
+     "offset": 18,
+     "cells": 6,
+     "upper": false,
+     "addr": "1B:B54D",
+     "hex": "C010D810D910CB10D210C010",
+     "us": " NOAH",
+     "jp_addr": "1B:B54D",
+     "jp_cells": 6,
+     "jp": "　　ルツ",
+     "en": " NOAH"
+    }
+   ]
+  },
+  "battle_menu": {
+   "kind": "tilemap",
+   "file": "banks/bank27.asm",
+   "about": "The battle commands (LABEL_B27_B56B).",
+   "runs": [
+    {
+     "id": 0,
+     "where": "attack",
+     "label": "LABEL_B27_B56B",
+     "offset": 14,
+     "cells": 4,
+     "upper": false,
+     "addr": "1B:B579",
+     "hex": "CB10DE10DE10D510",
+     "us": "ATTK",
+     "jp_addr": "1B:B579",
+     "jp_cells": 4,
+     "jp": "タタカウ",
+     "en": "ATTK"
+    },
+    {
+     "id": 1,
+     "where": "magic",
+     "label": "LABEL_B27_B56B",
+     "offset": 38,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B591",
+     "hex": "D710CB10D110CD10",
+     "upper_hex": "C010C010C010C010",
+     "us": "MAGC",
+     "jp_addr": "1B:B591",
+     "jp_cells": 4,
+     "jp_upper": "1B:B585",
+     "jp": "マジック",
+     "en": "MAGC"
+    },
+    {
+     "id": 2,
+     "where": "item",
+     "label": "LABEL_B27_B56B",
+     "offset": 62,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B5A9",
+     "hex": "D310DE10CF10D710",
+     "upper_hex": "C010C010C010C010",
+     "us": "ITEM",
+     "jp_addr": "1B:B5A9",
+     "jp_cells": 4,
+     "jp_upper": "1B:B59D",
+     "jp": "アイテム",
+     "en": "ITEM"
+    },
+    {
+     "id": 3,
+     "where": "talk",
+     "label": "LABEL_B27_B56B",
+     "offset": 86,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B5C1",
+     "hex": "DE10CB10D610D510",
+     "upper_hex": "C010C010C010C010",
+     "us": "TALK",
+     "jp_addr": "1B:B5C1",
+     "jp_cells": 4,
+     "jp_upper": "1B:B5B5",
+     "jp": "ハナス",
+     "en": "TALK"
+    },
+    {
+     "id": 4,
+     "where": "run",
+     "label": "LABEL_B27_B56B",
+     "offset": 110,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B5D9",
+     "hex": "DC10DF10D810C010",
+     "upper_hex": "C010C010C010C010",
+     "us": "RUN",
+     "jp_addr": "1B:B5D9",
+     "jp_cells": 4,
+     "jp_upper": "1B:B5CD",
+     "jp": "ニゲル",
+     "en": "RUN"
+    }
+   ]
+  },
+  "spells": {
+   "kind": "tilemap",
+   "file": "banks/bank27.asm",
+   "about": "The six spell lists (LABEL_B27_B6DF, 12 rows of 6 cells each; LABEL_3478 picks one: Noah is list 2, field magic adds 3). The window shows 2n+1 rows for n known spells. The spells have no other name table.",
+   "runs": [
+    {
+     "id": 0,
+     "where": "Alis, battle, slot 1",
+     "label": "LABEL_B27_B6DF",
+     "offset": 26,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B6F9",
+     "hex": "D210CF10CB10D610",
+     "upper_hex": "C010C010C010C010",
+     "us": "HEAL",
+     "jp_addr": "1B:B6F9",
+     "jp_cells": 4,
+     "jp_upper": "1B:B6ED",
+     "jp": "ヒール",
+     "en": "HEAL"
+    },
+    {
+     "id": 1,
+     "where": "Alis, battle, slot 2",
+     "label": "LABEL_B27_B6DF",
+     "offset": 50,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B711",
+     "hex": "CC10E310CF10C010",
+     "upper_hex": "C010C010C010C010",
+     "us": "BYE",
+     "jp_addr": "1B:B711",
+     "jp_cells": 4,
+     "jp_upper": "1B:B705",
+     "jp": "ラクスタ",
+     "en": "BYE"
+    },
+    {
+     "id": 2,
+     "where": "Alis, battle, slot 3",
+     "label": "LABEL_B27_B6DF",
+     "offset": 74,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B729",
+     "hex": "CD10D210CB10DE10",
+     "upper_hex": "C010C010C010C010",
+     "us": "CHAT",
+     "jp_addr": "1B:B729",
+     "jp_cells": 4,
+     "jp_upper": "1B:B71D",
+     "jp": "ペヤラク",
+     "en": "CHAT"
+    },
+    {
+     "id": 3,
+     "where": "Alis, battle, slot 4",
+     "label": "LABEL_B27_B6DF",
+     "offset": 98,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B741",
+     "hex": "D010D310DC10CF10",
+     "upper_hex": "C010C010C010C010",
+     "us": "FIRE",
+     "jp_addr": "1B:B741",
+     "jp_cells": 4,
+     "jp_upper": "1B:B735",
+     "jp": "フレエリ",
+     "en": "FIRE"
+    },
+    {
+     "id": 4,
+     "where": "Alis, battle, slot 5",
+     "label": "LABEL_B27_B6DF",
+     "offset": 122,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B759",
+     "hex": "DC10D910DA10CF10",
+     "upper_hex": "C010C010C010C010",
+     "us": "ROPE",
+     "jp_addr": "1B:B759",
+     "jp_cells": 4,
+     "jp_upper": "1B:B74D",
+     "jp": "ビンドワ",
+     "en": "ROPE"
+    },
+    {
+     "id": 5,
+     "where": "Myau, battle, slot 1",
+     "label": "LABEL_B27_B6DF",
+     "offset": 170,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B789",
+     "hex": "CD10DF10DC10CF10",
+     "upper_hex": "C010C010C010C010",
+     "us": "CURE",
+     "jp_addr": "1B:B789",
+     "jp_cells": 4,
+     "jp_upper": "1B:B77D",
+     "jp": "ドヒール",
+     "en": "CURE"
+    },
+    {
+     "id": 6,
+     "where": "Myau, battle, slot 2",
+     "label": "LABEL_B27_B6DF",
+     "offset": 194,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B7A1",
+     "hex": "DE10CF10DC10DC10",
+     "upper_hex": "C010C010C010C010",
+     "us": "TERR",
+     "jp_addr": "1B:B7A1",
+     "jp_cells": 4,
+     "jp_upper": "1B:B795",
+     "jp": "テルル",
+     "en": "TERR"
+    },
+    {
+     "id": 7,
+     "where": "Myau, battle, slot 3",
+     "label": "LABEL_B27_B6DF",
+     "offset": 218,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B7B9",
+     "hex": "E110CB10D610D610",
+     "upper_hex": "C010C010C010C010",
+     "us": "WALL",
+     "jp_addr": "1B:B7B9",
+     "jp_cells": 4,
+     "jp_upper": "1B:B7AD",
+     "jp": "ワーラ",
+     "en": "WALL"
+    },
+    {
+     "id": 8,
+     "where": "Myau, battle, slot 4",
+     "label": "LABEL_B27_B6DF",
+     "offset": 242,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B7D1",
+     "hex": "D210CF10D610DA10",
+     "upper_hex": "C010C010C010C010",
+     "us": "HELP",
+     "jp_addr": "1B:B7D1",
+     "jp_cells": 4,
+     "jp_upper": "1B:B7C5",
+     "jp": "パウマ",
+     "en": "HELP"
+    },
+    {
+     "id": 9,
+     "where": "Myau, battle, slot 5",
+     "label": "LABEL_B27_B6DF",
+     "offset": 266,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B7E9",
+     "hex": "C010C010C010C010",
+     "upper_hex": "C010C010C010C010",
+     "us": "",
+     "jp_addr": "1B:B7E9",
+     "jp_cells": 4,
+     "jp_upper": "1B:B7DD",
+     "jp": "",
+     "en": ""
+    },
+    {
+     "id": 10,
+     "where": "Noah, battle, slot 1",
+     "label": "LABEL_B27_B6DF",
+     "offset": 314,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B819",
+     "hex": "D010D310DC10CF10",
+     "upper_hex": "C010C010C010C010",
+     "us": "FIRE",
+     "jp_addr": "1B:B819",
+     "jp_cells": 4,
+     "jp_upper": "1B:B80D",
+     "jp": "フレエリ",
+     "en": "FIRE"
+    },
+    {
+     "id": 11,
+     "where": "Noah, battle, slot 2",
+     "label": "LABEL_B27_B6DF",
+     "offset": 338,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B831",
+     "hex": "DE10CF10D610CF10",
+     "upper_hex": "C010C010C010C010",
+     "us": "TELE",
+     "jp_addr": "1B:B831",
+     "jp_cells": 4,
+     "jp_upper": "1B:B825",
+     "jp": "テレパス",
+     "en": "TELE"
+    },
+    {
+     "id": 12,
+     "where": "Noah, battle, slot 3",
+     "label": "LABEL_B27_B6DF",
+     "offset": 362,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B849",
+     "hex": "E110D310D810CE10",
+     "upper_hex": "C010C010C010C010",
+     "us": "WIND",
+     "jp_addr": "1B:B849",
+     "jp_cells": 4,
+     "jp_upper": "1B:B83D",
+     "jp": "ヒューン",
+     "en": "WIND"
+    },
+    {
+     "id": 13,
+     "where": "Noah, battle, slot 4",
+     "label": "LABEL_B27_B6DF",
+     "offset": 386,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B861",
+     "hex": "DA10DC10D910DE10",
+     "upper_hex": "C010C010C010C010",
+     "us": "PROT",
+     "jp_addr": "1B:B861",
+     "jp_cells": 4,
+     "jp_upper": "1B:B855",
+     "jp": "ムワーラ",
+     "en": "PROT"
+    },
+    {
+     "id": 14,
+     "where": "Noah, battle, slot 5",
+     "label": "LABEL_B27_B6DF",
+     "offset": 410,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B879",
+     "hex": "DE10D210DF10D810",
+     "upper_hex": "C010C010C010C010",
+     "us": "THUN",
+     "jp_addr": "1B:B879",
+     "jp_cells": 4,
+     "jp_upper": "1B:B86D",
+     "jp": "タンドレ",
+     "en": "THUN"
+    },
+    {
+     "id": 15,
+     "where": "Alis, field, slot 1",
+     "label": "LABEL_B27_B6DF",
+     "offset": 458,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B8A9",
+     "hex": "D210CF10CB10D610",
+     "upper_hex": "C010C010C010C010",
+     "us": "HEAL",
+     "jp_addr": "1B:B8A9",
+     "jp_cells": 4,
+     "jp_upper": "1B:B89D",
+     "jp": "ヒール",
+     "en": "HEAL"
+    },
+    {
+     "id": 16,
+     "where": "Alis, field, slot 2",
+     "label": "LABEL_B27_B6DF",
+     "offset": 482,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B8C1",
+     "hex": "D010D610E310C010",
+     "upper_hex": "C010C010C010C010",
+     "us": "FLY",
+     "jp_addr": "1B:B8C1",
+     "jp_cells": 4,
+     "jp_upper": "1B:B8B5",
+     "jp": "トルーパ",
+     "en": "FLY"
+    },
+    {
+     "id": 17,
+     "where": "Alis, field, slot 3",
+     "label": "LABEL_B27_B6DF",
+     "offset": 506,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B8D9",
+     "hex": "C010C010C010C010",
+     "upper_hex": "C010C010C010C010",
+     "us": "",
+     "jp_addr": "1B:B8D9",
+     "jp_cells": 4,
+     "jp_upper": "1B:B8CD",
+     "jp": "",
+     "en": ""
+    },
+    {
+     "id": 18,
+     "where": "Alis, field, slot 4",
+     "label": "LABEL_B27_B6DF",
+     "offset": 530,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B8F1",
+     "hex": "C010C010C010C010",
+     "upper_hex": "C010C010C010C010",
+     "us": "",
+     "jp_addr": "1B:B8F1",
+     "jp_cells": 4,
+     "jp_upper": "1B:B8E5",
+     "jp": "",
+     "en": ""
+    },
+    {
+     "id": 19,
+     "where": "Alis, field, slot 5",
+     "label": "LABEL_B27_B6DF",
+     "offset": 554,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B909",
+     "hex": "C010C010C010C010",
+     "upper_hex": "C010C010C010C010",
+     "us": "",
+     "jp_addr": "1B:B909",
+     "jp_cells": 4,
+     "jp_upper": "1B:B8FD",
+     "jp": "",
+     "en": ""
+    },
+    {
+     "id": 20,
+     "where": "Myau, field, slot 1",
+     "label": "LABEL_B27_B6DF",
+     "offset": 602,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B939",
+     "hex": "CD10DF10DC10CF10",
+     "upper_hex": "C010C010C010C010",
+     "us": "CURE",
+     "jp_addr": "1B:B939",
+     "jp_cells": 4,
+     "jp_upper": "1B:B92D",
+     "jp": "ドヒール",
+     "en": "CURE"
+    },
+    {
+     "id": 21,
+     "where": "Myau, field, slot 2",
+     "label": "LABEL_B27_B6DF",
+     "offset": 626,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B951",
+     "hex": "DE10DC10CB10DA10",
+     "upper_hex": "C010C010C010C010",
+     "us": "TRAP",
+     "jp_addr": "1B:B951",
+     "jp_cells": 4,
+     "jp_upper": "1B:B945",
+     "jp": "ラプット",
+     "en": "TRAP"
+    },
+    {
+     "id": 22,
+     "where": "Myau, field, slot 3",
+     "label": "LABEL_B27_B6DF",
+     "offset": 650,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B969",
+     "hex": "CF10E210D310DE10",
+     "upper_hex": "C010C010C010C010",
+     "us": "EXIT",
+     "jp_addr": "1B:B969",
+     "jp_cells": 4,
+     "jp_upper": "1B:B95D",
+     "jp": "スルト",
+     "en": "EXIT"
+    },
+    {
+     "id": 23,
+     "where": "Myau, field, slot 4",
+     "label": "LABEL_B27_B6DF",
+     "offset": 674,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B981",
+     "hex": "C010C010C010C010",
+     "upper_hex": "C010C010C010C010",
+     "us": "",
+     "jp_addr": "1B:B981",
+     "jp_cells": 4,
+     "jp_upper": "1B:B975",
+     "jp": "",
+     "en": ""
+    },
+    {
+     "id": 24,
+     "where": "Myau, field, slot 5",
+     "label": "LABEL_B27_B6DF",
+     "offset": 698,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B999",
+     "hex": "C010C010C010C010",
+     "upper_hex": "C010C010C010C010",
+     "us": "",
+     "jp_addr": "1B:B999",
+     "jp_cells": 4,
+     "jp_upper": "1B:B98D",
+     "jp": "",
+     "en": ""
+    },
+    {
+     "id": 25,
+     "where": "Noah, field, slot 1",
+     "label": "LABEL_B27_B6DF",
+     "offset": 746,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B9C9",
+     "hex": "CD10DF10DC10CF10",
+     "upper_hex": "C010C010C010C010",
+     "us": "CURE",
+     "jp_addr": "1B:B9C9",
+     "jp_cells": 4,
+     "jp_upper": "1B:B9BD",
+     "jp": "ドヒール",
+     "en": "CURE"
+    },
+    {
+     "id": 26,
+     "where": "Noah, field, slot 2",
+     "label": "LABEL_B27_B6DF",
+     "offset": 770,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B9E1",
+     "hex": "CF10E210D310DE10",
+     "upper_hex": "C010C010C010C010",
+     "us": "EXIT",
+     "jp_addr": "1B:B9E1",
+     "jp_cells": 4,
+     "jp_upper": "1B:B9D5",
+     "jp": "スルト",
+     "en": "EXIT"
+    },
+    {
+     "id": 27,
+     "where": "Noah, field, slot 3",
+     "label": "LABEL_B27_B6DF",
+     "offset": 794,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:B9F9",
+     "hex": "DE10CF10D610CF10",
+     "upper_hex": "C010C010C010C010",
+     "us": "TELE",
+     "jp_addr": "1B:B9F9",
+     "jp_cells": 4,
+     "jp_upper": "1B:B9ED",
+     "jp": "テレパス",
+     "en": "TELE"
+    },
+    {
+     "id": 28,
+     "where": "Noah, field, slot 4",
+     "label": "LABEL_B27_B6DF",
+     "offset": 818,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:BA11",
+     "hex": "D910DA10CF10D810",
+     "upper_hex": "C010C010C010C010",
+     "us": "OPEN",
+     "jp_addr": "1B:BA11",
+     "jp_cells": 4,
+     "jp_upper": "1B:BA05",
+     "jp": "ムオーデ",
+     "en": "OPEN"
+    },
+    {
+     "id": 29,
+     "where": "Noah, field, slot 5",
+     "label": "LABEL_B27_B6DF",
+     "offset": 842,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:BA29",
+     "hex": "DC10D310DD10CF10",
+     "upper_hex": "C010C010C010C010",
+     "us": "RISE",
+     "jp_addr": "1B:BA29",
+     "jp_cells": 4,
+     "jp_upper": "1B:BA1D",
+     "jp": "リーバス",
+     "en": "RISE"
+    }
+   ]
+  },
+  "inventory": {
+   "kind": "tilemap",
+   "file": "banks/bank27.asm",
+   "about": "The inventory's \"next page\" row, drawn from 9 items (LABEL_B27_BAF7).",
+   "runs": [
+    {
+     "id": 0,
+     "where": "next page",
+     "label": "LABEL_B27_BAF7",
+     "offset": 22,
+     "cells": 8,
+     "upper": true,
+     "addr": "1B:BB0D",
+     "hex": "D810CF10E210DE10C010C010C010C010",
+     "upper_hex": "C010C010C010C010C010C010C010C010",
+     "us": "NEXT",
+     "jp_addr": "1B:BB0D",
+     "jp_cells": 8,
+     "jp_upper": "1B:BAF9",
+     "jp": "ホカノ　モチモノ",
+     "en": "NEXT"
+    }
+   ]
+  },
+  "party_menu": {
+   "kind": "tilemap",
+   "file": "banks/bank27.asm",
+   "about": "Choose a party member (LABEL_B27_BB1F).",
+   "runs": [
+    {
+     "id": 0,
+     "where": "Alis",
+     "label": "LABEL_B27_BB1F",
+     "offset": 14,
+     "cells": 4,
+     "upper": false,
+     "addr": "1B:BB2D",
+     "hex": "CB10D610D310DD10",
+     "us": "ALIS",
+     "jp_addr": "1B:BB2D",
+     "jp_cells": 4,
+     "jp": "アリサ",
+     "en": "ALIS"
+    },
+    {
+     "id": 1,
+     "where": "Myau",
+     "label": "LABEL_B27_BB1F",
+     "offset": 38,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:BB45",
+     "hex": "D710E310CB10DF10",
+     "upper_hex": "C010C010C010C010",
+     "us": "MYAU",
+     "jp_addr": "1B:BB45",
+     "jp_cells": 4,
+     "jp_upper": "1B:BB39",
+     "jp": "ミャウ",
+     "en": "MYAU"
+    },
+    {
+     "id": 2,
+     "where": "Odin",
+     "label": "LABEL_B27_BB1F",
+     "offset": 62,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:BB5D",
+     "hex": "D910CE10D310D810",
+     "upper_hex": "C010C010C010C010",
+     "us": "ODIN",
+     "jp_addr": "1B:BB5D",
+     "jp_cells": 4,
+     "jp_upper": "1B:BB51",
+     "jp": "タイロン",
+     "en": "ODIN"
+    },
+    {
+     "id": 3,
+     "where": "Noah",
+     "label": "LABEL_B27_BB1F",
+     "offset": 86,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:BB75",
+     "hex": "D810D910CB10D210",
+     "upper_hex": "C010C010C010C010",
+     "us": "NOAH",
+     "jp_addr": "1B:BB75",
+     "jp_cells": 4,
+     "jp_upper": "1B:BB69",
+     "jp": "ルツ",
+     "en": "NOAH"
+    }
+   ]
+  },
+  "field_menu": {
+   "kind": "tilemap",
+   "file": "banks/bank27.asm",
+   "about": "The field commands (LABEL_B27_BB8B).",
+   "runs": [
+    {
+     "id": 0,
+     "where": "status",
+     "label": "LABEL_B27_BB8B",
+     "offset": 14,
+     "cells": 4,
+     "upper": false,
+     "addr": "1B:BB99",
+     "hex": "DD10DE10CB10DD10",
+     "us": "STAS",
+     "jp_addr": "1B:BB99",
+     "jp_cells": 4,
+     "jp": "ツヨサ",
+     "en": "STAS"
+    },
+    {
+     "id": 1,
+     "where": "magic",
+     "label": "LABEL_B27_BB8B",
+     "offset": 38,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:BBB1",
+     "hex": "D710CB10D110CD10",
+     "upper_hex": "C010C010C010C010",
+     "us": "MAGC",
+     "jp_addr": "1B:BBB1",
+     "jp_cells": 4,
+     "jp_upper": "1B:BBA5",
+     "jp": "マジック",
+     "en": "MAGC"
+    },
+    {
+     "id": 2,
+     "where": "item",
+     "label": "LABEL_B27_BB8B",
+     "offset": 62,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:BBC9",
+     "hex": "D310DE10CF10D710",
+     "upper_hex": "C010C010C010C010",
+     "us": "ITEM",
+     "jp_addr": "1B:BBC9",
+     "jp_cells": 4,
+     "jp_upper": "1B:BBBD",
+     "jp": "アイテム",
+     "en": "ITEM"
+    },
+    {
+     "id": 3,
+     "where": "search",
+     "label": "LABEL_B27_BB8B",
+     "offset": 86,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:BBE1",
+     "hex": "DD10DC10CD10D210",
+     "upper_hex": "C010C010C010C010",
+     "us": "SRCH",
+     "jp_addr": "1B:BBE1",
+     "jp_cells": 4,
+     "jp_upper": "1B:BBD5",
+     "jp": "シラベル",
+     "en": "SRCH"
+    },
+    {
+     "id": 4,
+     "where": "save",
+     "label": "LABEL_B27_BB8B",
+     "offset": 110,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:BBF9",
+     "hex": "DD10CB10E010CF10",
+     "upper_hex": "C010C010C010C010",
+     "us": "SAVE",
+     "jp_addr": "1B:BBF9",
+     "jp_cells": 4,
+     "jp_upper": "1B:BBED",
+     "jp": "セーブ",
+     "en": "SAVE"
+    }
+   ]
+  },
+  "item_menu": {
+   "kind": "tilemap",
+   "file": "banks/bank27.asm",
+   "about": "What to do with an item (LABEL_B27_BC0F).",
+   "runs": [
+    {
+     "id": 0,
+     "where": "use",
+     "label": "LABEL_B27_BC0F",
+     "offset": 12,
+     "cells": 3,
+     "upper": false,
+     "addr": "1B:BC1B",
+     "hex": "DF10DD10CF10",
+     "us": "USE",
+     "jp_addr": "1B:BC1B",
+     "jp_cells": 3,
+     "jp": "ツカウ",
+     "en": "USE"
+    },
+    {
+     "id": 1,
+     "where": "equip",
+     "label": "LABEL_B27_BC0F",
+     "offset": 32,
+     "cells": 3,
+     "upper": true,
+     "addr": "1B:BC2F",
+     "hex": "CF10DB10DA10",
+     "upper_hex": "C010C010C010",
+     "us": "EQP",
+     "jp_addr": "1B:BC2F",
+     "jp_cells": 3,
+     "jp_upper": "1B:BC25",
+     "jp": "ソウビ",
+     "en": "EQP"
+    },
+    {
+     "id": 2,
+     "where": "drop",
+     "label": "LABEL_B27_BC0F",
+     "offset": 52,
+     "cells": 3,
+     "upper": true,
+     "addr": "1B:BC43",
+     "hex": "CE10DC10DA10",
+     "upper_hex": "C010C010C010",
+     "us": "DRP",
+     "jp_addr": "1B:BC43",
+     "jp_cells": 3,
+     "jp_upper": "1B:BC39",
+     "jp": "ステル",
+     "en": "DRP"
+    }
+   ]
+  },
+  "shop_menu": {
+   "kind": "tilemap",
+   "file": "banks/bank27.asm",
+   "about": "Buy or sell (LABEL_B27_BC55).",
+   "runs": [
+    {
+     "id": 0,
+     "where": "buy",
+     "label": "LABEL_B27_BC55",
+     "offset": 14,
+     "cells": 4,
+     "upper": false,
+     "addr": "1B:BC63",
+     "hex": "CC10DF10E310C010",
+     "us": "BUY",
+     "jp_addr": "1B:BC63",
+     "jp_cells": 4,
+     "jp": "カイタイ",
+     "en": "BUY"
+    },
+    {
+     "id": 1,
+     "where": "sell",
+     "label": "LABEL_B27_BC55",
+     "offset": 38,
+     "cells": 4,
+     "upper": true,
+     "addr": "1B:BC7B",
+     "hex": "DD10CF10D610D610",
+     "upper_hex": "C010C010C010C010",
+     "us": "SELL",
+     "jp_addr": "1B:BC7B",
+     "jp_cells": 4,
+     "jp_upper": "1B:BC6F",
+     "jp": "ウリタイ",
+     "en": "SELL"
+    }
+   ]
+  },
+  "yes_no": {
+   "kind": "tilemap",
+   "file": "banks/bank27.asm",
+   "about": "The YES/NO prompt (LABEL_B27_BC91).",
+   "runs": [
+    {
+     "id": 0,
+     "where": "yes",
+     "label": "LABEL_B27_BC91",
+     "offset": 12,
+     "cells": 3,
+     "upper": false,
+     "addr": "1B:BC9D",
+     "hex": "E310CF10DD10",
+     "us": "YES",
+     "jp_addr": "1B:BC9D",
+     "jp_cells": 3,
+     "jp": "ハイ",
+     "en": "YES"
+    },
+    {
+     "id": 1,
+     "where": "no",
+     "label": "LABEL_B27_BC91",
+     "offset": 32,
+     "cells": 3,
+     "upper": true,
+     "addr": "1B:BCB1",
+     "hex": "D810D910C010",
+     "upper_hex": "C010C010C010",
+     "us": "NO",
+     "jp_addr": "1B:BCB1",
+     "jp_cells": 3,
+     "jp_upper": "1B:BCA7",
+     "jp": "イイエ",
+     "en": "NO"
+    }
+   ]
+  },
+  "status_labels": {
+   "kind": "tilemap",
+   "file": "ps1.asm",
+   "about": "The status window's labels (bank 0 LABEL_3881-38B1, one row each; the value follows in the same row). Their upper row is the shared blank row LABEL_B27_BCDB, so a run here has no upper tiles of its own (the JP's dakuten sit in its JP copy). LV and EP (LABEL_3865, LABEL_3875) are window tiles, not text.",
+   "runs": [
+    {
+     "id": 0,
+     "where": "attack",
+     "label": "LABEL_3881",
+     "offset": 2,
+     "cells": 7,
+     "upper": false,
+     "addr": "00:3883",
+     "hex": "CB10DE10DE10CB10CD10D510C010",
+     "us": "ATTACK",
+     "jp_addr": "00:39A0",
+     "jp_cells": 7,
+     "jp_upper": "1B:BCDD",
+     "jp": "コウゲキリョク",
+     "en": "ATTACK"
+    },
+    {
+     "id": 1,
+     "where": "defense",
+     "label": "LABEL_3891",
+     "offset": 2,
+     "cells": 7,
+     "upper": false,
+     "addr": "00:3893",
+     "hex": "CE10CF10D010CF10D810DD10CF10",
+     "us": "DEFENSE",
+     "jp_addr": "00:39B0",
+     "jp_cells": 7,
+     "jp_upper": "1B:BCDD",
+     "jp": "シュビリョク",
+     "en": "DEFENSE"
+    },
+    {
+     "id": 2,
+     "where": "max HP",
+     "label": "LABEL_38A1",
+     "offset": 2,
+     "cells": 7,
+     "upper": false,
+     "addr": "00:38A3",
+     "hex": "D710CB10E210C010D210DA10C010",
+     "us": "MAX HP",
+     "jp_addr": "00:39C0",
+     "jp_cells": 7,
+     "jp_upper": "1B:BCDD",
+     "jp": "サイダイHP",
+     "en": "MAX HP"
+    },
+    {
+     "id": 3,
+     "where": "max MP",
+     "label": "LABEL_38B1",
+     "offset": 2,
+     "cells": 7,
+     "upper": false,
+     "addr": "00:38B3",
+     "hex": "D710CB10E210C010D710DA10C010",
+     "us": "MAX MP",
+     "jp_addr": "00:39D0",
+     "jp_cells": 7,
+     "jp_upper": "1B:BCDD",
+     "jp": "サイダイMP",
+     "en": "MAX MP"
+    }
+   ]
+  },
+  "money": {
+   "kind": "tilemap",
+   "file": "ps1.asm",
+   "about": "The meseta label (bank 0 LABEL_3639). The money box shows its first 3 cells; the status window shows 5, the last 2 blank.",
+   "runs": [
+    {
+     "id": 0,
+     "where": "meseta",
+     "label": "LABEL_3639",
+     "offset": 2,
+     "cells": 3,
+     "upper": false,
+     "addr": "00:363B",
+     "hex": "D710DD10DE10",
+     "us": "MST",
+     "jp_addr": "00:3758",
+     "jp_cells": 3,
+     "jp": "メセタ",
+     "en": "MST"
+    }
+   ]
+  },
+  "save_slots": {
+   "kind": "tilemap",
+   "file": "ps1.asm",
+   "about": "The save-slot list (bank 0 LABEL_3AC4): only the slot numbers, one cell; the rest of each row is left blank. It is copied to save RAM ($8100) when the save RAM is formatted and drawn from there, so a change shows only on a fresh save RAM.",
+   "runs": [
+    {
+     "id": 0,
+     "where": "slot 1",
+     "label": "LABEL_3AC4",
+     "offset": 38,
+     "cells": 1,
+     "upper": true,
+     "addr": "00:3AEA",
+     "hex": "C210",
+     "upper_hex": "C010",
+     "us": "1",
+     "jp_addr": "00:3C0E",
+     "jp_cells": 1,
+     "jp_upper": "00:3BFC",
+     "jp": "1",
+     "en": "1"
+    },
+    {
+     "id": 1,
+     "where": "slot 2",
+     "label": "LABEL_3AC4",
+     "offset": 74,
+     "cells": 1,
+     "upper": true,
+     "addr": "00:3B0E",
+     "hex": "C310",
+     "upper_hex": "C010",
+     "us": "2",
+     "jp_addr": "00:3C32",
+     "jp_cells": 1,
+     "jp_upper": "00:3C20",
+     "jp": "2",
+     "en": "2"
+    },
+    {
+     "id": 2,
+     "where": "slot 3",
+     "label": "LABEL_3AC4",
+     "offset": 110,
+     "cells": 1,
+     "upper": true,
+     "addr": "00:3B32",
+     "hex": "C410",
+     "upper_hex": "C010",
+     "us": "3",
+     "jp_addr": "00:3C56",
+     "jp_cells": 1,
+     "jp_upper": "00:3C44",
+     "jp": "3",
+     "en": "3"
+    },
+    {
+     "id": 3,
+     "where": "slot 4",
+     "label": "LABEL_3AC4",
+     "offset": 146,
+     "cells": 1,
+     "upper": true,
+     "addr": "00:3B56",
+     "hex": "C510",
+     "upper_hex": "C010",
+     "us": "4",
+     "jp_addr": "00:3C7A",
+     "jp_cells": 1,
+     "jp_upper": "00:3C68",
+     "jp": "4",
+     "en": "4"
+    },
+    {
+     "id": 4,
+     "where": "slot 5",
+     "label": "LABEL_3AC4",
+     "offset": 182,
+     "cells": 1,
+     "upper": true,
+     "addr": "00:3B7A",
+     "hex": "C610",
+     "upper_hex": "C010",
+     "us": "5",
+     "jp_addr": "00:3C9E",
+     "jp_cells": 1,
+     "jp_upper": "00:3C8C",
+     "jp": "5",
+     "en": "5"
+    }
+   ]
+  },
+  "spaceport": {
+   "kind": "tilemap",
+   "file": "banks/bank18.asm",
+   "about": "The spaceport destinations (bank 18 LABEL_B18_BE84, 7 x 8 cells, via LABEL_3A21). The JP menu is a 8 x 5 map at 03:BEB2, drawn at $7AAA.",
+   "runs": [
+    {
+     "id": 0,
+     "where": "Gothic",
+     "label": "LABEL_B18_BE84",
+     "offset": 18,
+     "cells": 6,
+     "upper": false,
+     "addr": "12:BE96",
+     "hex": "D110D910DE10D210D310CD10",
+     "us": "GOTHIC",
+     "jp_addr": "03:BEC8",
+     "jp_cells": 3,
+     "jp_upper": "03:BEBE",
+     "jp": "ガシコ",
+     "en": "GOTHIC"
+    },
+    {
+     "id": 1,
+     "where": "Uzo",
+     "label": "LABEL_B18_BE84",
+     "offset": 50,
+     "cells": 6,
+     "upper": true,
+     "addr": "12:BEB6",
+     "hex": "DF10E410D910C010C010C010",
+     "upper_hex": "C010C010C010C010C010C010",
+     "us": "UZO",
+     "jp_addr": "03:BEDC",
+     "jp_cells": 3,
+     "jp_upper": "03:BED2",
+     "jp": "ウーゾ",
+     "en": "UZO"
+    },
+    {
+     "id": 2,
+     "where": "Skure",
+     "label": "LABEL_B18_BE84",
+     "offset": 82,
+     "cells": 6,
+     "upper": true,
+     "addr": "12:BED6",
+     "hex": "DD10D510DF10DC10CF10C010",
+     "upper_hex": "C010C010C010C010C010C010",
+     "us": "SKURE",
+     "jp_addr": "03:BEF0",
+     "jp_cells": 3,
+     "jp_upper": "03:BEE6",
+     "jp": "スクレ",
+     "en": "SKURE"
+    }
+   ]
+  },
+  "intro_caption": {
+   "kind": "tilemap",
+   "file": "banks/bank18.asm",
+   "about": "The caption before the intro (bank 18 LABEL_B18_BEF4, 5 x 20 cells at $7886; LABEL_B18_BF20-BF80 fall inside it). The JP caption is a 5 x 15 map at 03:BF02 with its own tiles $B8-$BF (from 10:BF5E): A, W, 年, $BB, 星, $BD, $BE, 区 ($BB, $BD and $BE are kanji not read with certainty: perhaps 春, and 街 for $BE).",
+   "runs": [
+    {
+     "id": 0,
+     "where": "line 1",
+     "label": "LABEL_B18_BEF4",
+     "offset": 42,
+     "cells": 18,
+     "upper": false,
+     "addr": "12:BF1E",
+     "hex": "DD10DA10CB10CD10CF10C010CD10CF10D810DE10DF10DC10E310C010C410C510C310E510",
+     "us": "SPACE CENTURY 342,",
+     "jp_addr": "03:BF22",
+     "jp_cells": 13,
+     "jp": "AW　342年　{$BB}",
+     "en": "SPACE CENTURY 342,"
+    },
+    {
+     "id": 1,
+     "where": "line 2",
+     "label": "LABEL_B18_BEF4",
+     "offset": 122,
+     "cells": 18,
+     "upper": true,
+     "addr": "12:BF6E",
+     "hex": "CD10CB10D710D310D810CF10CF10DE10C010D910D810C010DA10CB10D610D710CB10C010",
+     "upper_hex": "C010C010C010C010C010C010C010C010C010C010C010C010C010C010C010C010C010C010",
+     "us": "CAMINEET ON PALMA",
+     "jp_addr": "03:BF5E",
+     "jp_cells": 13,
+     "jp_upper": "03:BF40",
+     "jp": "パルマ星　カミニート{$BD}{$BE}区",
+     "en": "CAMINEET ON PALMA"
+    }
+   ]
+  },
+  "naming_screen": {
+   "kind": "readonly",
+   "about": "The naming screen (US LABEL_423C, unpacked by LABEL_4166; JP 01:4406, unpacked by 01:42DA, consecutive tiles with no blank between). Read-only: gentext does not write it. A new grid also needs a new key table (LABEL_4280).",
+   "runs": [
+    {
+     "id": 0,
+     "us": "        INPUT YOUR NAME.{BR}     A B C D E F G H I J K{BR}     L M N O P Q R S T U V{BR}     W X Y Z , ; . ! ? - \"{BR}               ADV RUB END",
+     "jp": "　　　　　アイウエオ　　　マミムメモ　　　ガギグゲゴ{BR}　　　　　カキクケコ　　　ヤ　ユ　ヨ　　　ザジズゼゾ{BR}　　　　　サシスセソ　　　ラリルレロ　　　ダヂヅデド{BR}　　　　　タチツテト　　　ワ　ヲ　ン　　　バビブベボ{BR}　　　　　ナニヌネノ　　　ャュョッー　　　パピプペポ{BR}　　　　　ハヒフヘホ　　　　　ススム　モドル　オワル"
+    }
+   ]
+  },
+  "credits": {
+   "kind": "readonly",
+   "about": "The staff credits (LABEL_B20_BDB8: screens 2-15, each a list of (row, col, ASCII) records in the credits font, A-Z only; us_at/jp_at give each record's row and column). Read-only: whether to translate them is the owner's call. The JP is ASCII too; the US adds FINOS PATA.",
+   "runs": [
+    {
+     "id": 2,
+     "us": "STAFF",
+     "us_at": [
+      [
+       10,
+       13
+      ]
+     ],
+     "jp": "STAFF",
+     "jp_at": [
+      [
+       10,
+       13
+      ]
+     ]
+    },
+    {
+     "id": 3,
+     "us": "TOTAL{BR}PLANNING{BR}OSSALE KOHTA",
+     "us_at": [
+      [
+       5,
+       5
+      ],
+      [
+       7,
+       6
+      ],
+      [
+       6,
+       17
+      ]
+     ],
+     "jp": "TOTAL{BR}PLANNING{BR}OSSALE KOHTA",
+     "jp_at": [
+      [
+       5,
+       5
+      ],
+      [
+       7,
+       6
+      ],
+      [
+       6,
+       17
+      ]
+     ]
+    },
+    {
+     "id": 4,
+     "us": "STORY BY{BR}APRIL FOOL",
+     "us_at": [
+      [
+       15,
+       6
+      ],
+      [
+       15,
+       17
+      ]
+     ],
+     "jp": "STORY BY{BR}APRIL FOOL",
+     "jp_at": [
+      [
+       15,
+       6
+      ],
+      [
+       15,
+       17
+      ]
+     ]
+    },
+    {
+     "id": 5,
+     "us": "SCENARIO{BR}WRITER{BR}OSSALE KOHTA",
+     "us_at": [
+      [
+       5,
+       6
+      ],
+      [
+       7,
+       7
+      ],
+      [
+       6,
+       17
+      ]
+     ],
+     "jp": "SCENARIO{BR}WRITER{BR}OSSALE KOHTA",
+     "jp_at": [
+      [
+       5,
+       6
+      ],
+      [
+       7,
+       7
+      ],
+      [
+       6,
+       17
+      ]
+     ]
+    },
+    {
+     "id": 6,
+     "us": "ASSISTANT{BR}COORDINATORS{BR}FINOS PATA{BR}OTEGAMI CHIE{BR}GAMER MIKI",
+     "us_at": [
+      [
+       6,
+       5
+      ],
+      [
+       6,
+       17
+      ],
+      [
+       11,
+       11
+      ],
+      [
+       15,
+       2
+      ],
+      [
+       15,
+       18
+      ]
+     ],
+     "jp": "ASSISTANT{BR}COORDINATORS{BR}OTEGAMI CHIE{BR}GAMER MIKI",
+     "jp_at": [
+      [
+       10,
+       9
+      ],
+      [
+       12,
+       10
+      ],
+      [
+       15,
+       2
+      ],
+      [
+       15,
+       18
+      ]
+     ]
+    },
+    {
+     "id": 7,
+     "us": "TOTAL DESIGN{BR}PHOEHIX RIE",
+     "us_at": [
+      [
+       6,
+       3
+      ],
+      [
+       6,
+       18
+      ]
+     ],
+     "jp": "TOTAL DESIGN{BR}PHOEHIX RIE",
+     "jp_at": [
+      [
+       6,
+       3
+      ],
+      [
+       6,
+       18
+      ]
+     ]
+    },
+    {
+     "id": 8,
+     "us": "MONSTER{BR}DESIGN{BR}CHAOTIC KAZ",
+     "us_at": [
+      [
+       14,
+       5
+      ],
+      [
+       16,
+       5
+      ],
+      [
+       15,
+       17
+      ]
+     ],
+     "jp": "MONSTER{BR}DESIGN{BR}CHAOTIC KAZ",
+     "jp_at": [
+      [
+       14,
+       5
+      ],
+      [
+       16,
+       5
+      ],
+      [
+       15,
+       17
+      ]
+     ]
+    },
+    {
+     "id": 9,
+     "us": "DESIGN{BR}ROCKHY NAO{BR}SADAMORIAN",
+     "us_at": [
+      [
+       6,
+       8
+      ],
+      [
+       10,
+       9
+      ],
+      [
+       15,
+       17
+      ]
+     ],
+     "jp": "DESIGN{BR}ROCKHY NAO{BR}SADAMORIAN",
+     "jp_at": [
+      [
+       6,
+       8
+      ],
+      [
+       10,
+       9
+      ],
+      [
+       15,
+       17
+      ]
+     ]
+    },
+    {
+     "id": 10,
+     "us": "DESIGN{BR}MYAU CHOKO{BR}G CHIE{BR}YONESAN",
+     "us_at": [
+      [
+       6,
+       8
+      ],
+      [
+       10,
+       9
+      ],
+      [
+       15,
+       17
+      ],
+      [
+       19,
+       9
+      ]
+     ],
+     "jp": "DESIGN{BR}MYAU CHOKO{BR}G CHIE{BR}YONESAN",
+     "jp_at": [
+      [
+       6,
+       8
+      ],
+      [
+       10,
+       9
+      ],
+      [
+       15,
+       17
+      ],
+      [
+       19,
+       9
+      ]
+     ]
+    },
+    {
+     "id": 11,
+     "us": "SOUND{BR}BO",
+     "us_at": [
+      [
+       6,
+       9
+      ],
+      [
+       6,
+       18
+      ]
+     ],
+     "jp": "SOUND{BR}BO",
+     "jp_at": [
+      [
+       6,
+       9
+      ],
+      [
+       6,
+       18
+      ]
+     ]
+    },
+    {
+     "id": 12,
+     "us": "SOFT CHECK{BR}WORKS NISHI",
+     "us_at": [
+      [
+       15,
+       3
+      ],
+      [
+       15,
+       18
+      ]
+     ],
+     "jp": "SOFT CHECK{BR}WORKS NISHI",
+     "jp_at": [
+      [
+       15,
+       3
+      ],
+      [
+       15,
+       18
+      ]
+     ]
+    },
+    {
+     "id": 13,
+     "us": "ASSISTANT{BR}PROGRAMMERS{BR}COM BLUE{BR}M WAKA{BR}ASI",
+     "us_at": [
+      [
+       5,
+       3
+      ],
+      [
+       7,
+       4
+      ],
+      [
+       10,
+       9
+      ],
+      [
+       15,
+       4
+      ],
+      [
+       15,
+       19
+      ]
+     ],
+     "jp": "ASSISTANT{BR}PROGRAMMERS{BR}COM BLUE{BR}M WAKA{BR}ASI",
+     "jp_at": [
+      [
+       5,
+       3
+      ],
+      [
+       7,
+       4
+      ],
+      [
+       10,
+       9
+      ],
+      [
+       15,
+       4
+      ],
+      [
+       15,
+       19
+      ]
+     ]
+    },
+    {
+     "id": 14,
+     "us": "MAIN PROGRAM{BR}MUUUU YUJI",
+     "us_at": [
+      [
+       6,
+       2
+      ],
+      [
+       6,
+       17
+      ]
+     ],
+     "jp": "MAIN PROGRAM{BR}MUUUU YUJI",
+     "jp_at": [
+      [
+       6,
+       2
+      ],
+      [
+       6,
+       17
+      ]
+     ]
+    },
+    {
+     "id": 15,
+     "us": "PRESENTED BY{BR}SEGA",
+     "us_at": [
+      [
+       15,
+       3
+      ],
+      [
+       15,
+       18
+      ]
+     ],
+     "jp": "PRESENTED BY{BR}SEGA",
+     "jp_at": [
+      [
+       15,
+       3
+      ],
+      [
+       15,
+       18
+      ]
+     ]
     }
    ]
   }

@@ -6,6 +6,10 @@
 * every entry's `hex` is the stock ROM at its `addr`, and renders to its `us`;
 * every `jp` renders from the JP ROM at its `jp_addr`;
 * the name tables' `hex` and `jp` match both ROMs;
+* the tilemap runs: `hex` and `upper_hex` are the ROM at `addr` and the row above, at the
+  label's symbol plus `offset`; `us` decodes from them and `jp` from the JP ROM; encoding `us`
+  through the source's glyph table gives the stock bytes back; the read-only segments (naming
+  screen, credits) decode from both ROMs;
 * the US encoder: encoding each `us` and rendering it back gives the same displayed text, and
   the whole script encoded that way (no stock bytes) still fits both banks.
 """
@@ -17,6 +21,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import ps1text as T
 import textsrc as S
+import tilemaps as M
 
 WORK = os.path.join(T.ROOT, 'work')
 US = open(os.path.join(T.DISASM, 'ps1original.sms'), 'rb').read()
@@ -83,6 +88,8 @@ def test_fit(doc, words):
 
 def test_tables(doc):
     for name, seg in doc['segments'].items():
+        if 'width' not in seg:
+            continue
         for r in seg['runs']:
             data = bytes.fromhex(r['hex'])
             check(len(data) == seg['width'], '%s %s: hex width' % (name, r['id']))
@@ -99,12 +106,51 @@ def test_tables(doc):
         check(p == 3 * 0x4000 + S.ENEMIES - 0x8000 + 32 * r['id'], 'enemy %s: record index' % r['label'])
 
 
+def test_tilemaps(doc):
+    syms = T.symbols()
+    glyphs = M.us_glyph_table()
+    check(glyphs == M.us_glyph_table_rom(US), 'the glyph table in the source is not the ROM\'s')
+    uinv, jinv = M.us_inverse(glyphs), M.jp_inverse(JP)
+    n = 0
+    for name, seg in doc['segments'].items():
+        if seg.get('kind') != 'tilemap':
+            continue
+        for r in seg['runs']:
+            n += 1
+            tag = '%s %s' % (name, r['id'])
+            bank, base = syms[r['label']]
+            check(M.addr(bank, base + r['offset']) == r['addr'], tag + ': addr is not label + offset')
+            lo, up, text = M.us_text(US, r, uinv)
+            check(lo.hex().upper() == r['hex'], tag + ': hex is not the ROM')
+            check(r['upper'] == ('upper_hex' in r), tag + ': upper_hex')
+            if r['upper']:
+                check(up.hex().upper() == r['upper_hex'], tag + ': upper_hex is not the ROM')
+            check(text == r['us'], tag + ': us does not decode from the ROM (%r)' % text)
+            check(M.jp_text(JP, r, jinv) == r['jp'], tag + ': jp does not decode from the JP ROM')
+            check(len(lo) == 2 * r['cells'] and M.cell_width(r['us']) <= r['cells'], tag + ': width')
+            stock = (lo, up or b'')
+            enc = M.patch(stock, M.encode(r['us'], glyphs, r['cells'], r['upper']), r['upper'])
+            check(enc == (lo, up), tag + ': encoding us does not give the stock bytes')
+    print('  tilemap runs: %d' % n)
+    ro = doc['segments']
+    check(ro['naming_screen']['runs'][0]['us'] == '{BR}'.join(M.naming_lines(US, 'us', uinv)),
+          'naming screen: us')
+    check(ro['naming_screen']['runs'][0]['jp'] == '{BR}'.join(M.naming_lines(JP, 'jp', jinv)),
+          'naming screen: jp')
+    for r, u, j in zip(ro['credits']['runs'], M.credit_screens(US), M.credit_screens(JP)):
+        check(r['us'] == '{BR}'.join(t for _, _, t in u) and r['us_at'] == [[a, b] for a, b, _ in u],
+              'credits %d: us' % r['id'])
+        check(r['jp'] == '{BR}'.join(t for _, _, t in j) and r['jp_at'] == [[a, b] for a, b, _ in j],
+              'credits %d: jp' % r['id'])
+
+
 def main():
     words = T.us_words()
     test_glyphs()
     test_dialogue(json.load(open(os.path.join(WORK, 'dialogue.json'), encoding='utf-8')), words)
     test_fit(json.load(open(os.path.join(WORK, 'dialogue.json'), encoding='utf-8')), words)
     test_tables(json.load(open(os.path.join(WORK, 'script.json'), encoding='utf-8')))
+    test_tilemaps(json.load(open(os.path.join(WORK, 'script.json'), encoding='utf-8')))
     for f in failures[:40]:
         print('FAIL', f)
     print('%d failures' % len(failures))

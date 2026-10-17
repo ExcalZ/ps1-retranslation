@@ -22,7 +22,7 @@ DISASM = os.path.join(ROOT, 'PSI_Disasm')
 STOCK = os.path.join(DISASM, 'ps1original.sms')
 # every file gentext writes, and the options; put back afterwards
 SOURCES = ['ps1.asm', os.path.join('sound', 'sound_driver.asm'), os.path.join('banks', 'bank03.asm'),
-           'ps1.options.asm']
+           os.path.join('banks', 'bank18.asm'), os.path.join('banks', 'bank27.asm'), 'ps1.options.asm']
 
 
 def main():
@@ -34,7 +34,8 @@ def main():
         paths = {}
         for name in ('dialogue', 'script'):
             doc = json.load(open(os.path.join(ROOT, 'work', name + '.json'), encoding='utf-8'))
-            runs = doc['entries'] if name == 'dialogue' else [r for s in doc['segments'].values() for r in s['runs']]
+            runs = doc['entries'] if name == 'dialogue' else [
+                r for s in doc['segments'].values() if s.get('kind') != 'readonly' for r in s['runs']]
             for r in runs:
                 r['en'] = r['us']
             paths[name] = os.path.join(tmp, name + '.json')
