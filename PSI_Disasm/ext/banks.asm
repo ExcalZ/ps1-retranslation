@@ -31,7 +31,10 @@ Bank35:
 .include "ext\longnames.asm"	; the party's names up to 6 letters
 .ENDIF
 .IF long_item_names == 1
-.include "ext\longitems.asm"	; item and enemy names up to 12 characters
+.include "ext\longitems.asm"	; item and enemy names up to 14 characters
+.ENDIF
+.IF vwf_windows == 1
+.include "ext\vwfwin.asm"	; every window's text in the face
 .ENDIF
 
 .BANK 63 SLOT 2

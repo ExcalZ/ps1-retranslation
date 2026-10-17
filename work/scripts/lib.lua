@@ -96,17 +96,91 @@ local function cell(row, col)
   return vram(a) + 256 * (vram(a + 1) & 1)
 end
 
+-- vwf_windows draws a window's text in the face into tiles it borrows, each such cell's
+-- attribute with bit 5 set: a run of them is read from the tiles' ink (plane 1), column by
+-- column, and matched against the face (FACE, from tools/diafont.py; the longest glyph first)
+local face_cands
+local function face_text(tiles)
+  if not face_cands then
+    face_cands = {}
+    for _, g in ipairs(FACE or {}) do
+      if g[1] ~= "0" and g[1] ~= " " then face_cands[#face_cands + 1] = g end
+    end
+    table.sort(face_cands, function(a, b) return a[2] > b[2] end)
+  end
+  local cols = {}
+  for _, t in ipairs(tiles) do
+    local rows = {}
+    for r = 0, 7 do rows[r] = vram(t * 32 + r * 4 + 1) end
+    for x = 0, 7 do
+      local c = 0
+      for r = 0, 7 do
+        if (rows[r] >> (7 - x)) & 1 == 1 then c = c | (1 << r) end
+      end
+      cols[#cols + 1] = c
+    end
+  end
+  local n, out, x = #cols, {}, 1
+  local function blank_from(i)
+    for k = i, n do if cols[k] ~= 0 then return false end end
+    return true
+  end
+  while x <= n and not blank_from(x) do
+    local hit = false
+    for _, g in ipairs(face_cands) do
+      local ok = true
+      for i = 1, g[2] do
+        if (cols[x + i - 1] or 0) ~= (g[3][i] or 0) then ok = false break end
+      end
+      if ok then
+        out[#out + 1] = g[1]
+        x = x + g[2]
+        hit = true
+        break
+      end
+    end
+    if not hit then
+      if (cols[x] or 0) == 0 and (cols[x + 1] or 0) == 0 and (cols[x + 2] or 0) == 0 then
+        out[#out + 1] = " "
+        x = x + 3
+      else
+        out[#out + 1] = "~"
+        x = x + 1
+      end
+    end
+  end
+  return table.concat(out)
+end
+
+local function face_cell(row, col)
+  return (vram(0x3800 + row * 64 + col * 2 + 1) & 0x20) ~= 0
+end
+
 -- the characters of one text line: its lower tile row, with the upper row's marks
 -- (the apostrophe is a comma above a blank, the quote mark a " above a blank)
 function text_line(lower_row, c0, c1)
   local s = {}
-  for c = c0, c1 do
+  local c = c0
+  while c <= c1 do
+    if face_cell(lower_row, c) then        -- a run of the face's cells (vwf_windows)
+      local tiles = {}
+      while c <= c1 and face_cell(lower_row, c) do
+        tiles[#tiles + 1] = cell(lower_row, c)
+        c = c + 1
+      end
+      s[#s + 1] = face_text(tiles)
+      goto next_cell
+    end
+    do
     local lo, up = cell(lower_row, c), cell(lower_row - 1, c)
     local ch = TILE[lo]
     if lo == 0xC0 and up == 0xE5 then ch = "'"
     elseif lo == 0xC0 and up == 0xEB then ch = '"'
     elseif ch == nil then ch = "~" end
     s[#s + 1] = ch
+    c = c + 1
+    end
+    ::next_cell::
   end
   return (table.concat(s):gsub("[%s~]+$", ""))   -- "~": a cell outside the font
 end
@@ -266,10 +340,24 @@ end
 
 function window_open() return ram(0xC2D3) == 0xFF end
 
+-- a menu word as the stock or the translation has it (PS1_WORDS, from the build's script.json),
+-- in any case
+local function is_word(text, stock, en)
+  local t = text:upper()
+  return t:find(stock, 1, true) ~= nil or (en ~= nil and en ~= "" and t:find(en:upper(), 1, true) ~= nil)
+end
+
 -- the YES / NO box (LABEL_B27_BC91 at VRAM $7B6A: rows 13-17, columns 21-25) is up; checked by
 -- its words, since other screens (the title's logo) put font tiles in that area
 function yes_no_shown()
-  return text_line(14, 21, 26):find("YES", 1, true) ~= nil and text_line(16, 21, 26):find("NO", 1, true) ~= nil
+  local w = PS1_WORDS or {}
+  return is_word(text_line(14, 21, 26), "YES", w.yes) and is_word(text_line(16, 21, 26), "NO", w.no)
+end
+
+-- the battle menu is up: its first word (ATTK, or the translation's)
+function battle_menu_up()
+  local m = area_text(2, 10, 1, 6)[1]
+  return m ~= nil and is_word(m, "ATTK", (PS1_WORDS or {}).attack)
 end
 
 -- page through the dialogue window with button 1, logging and filming each page, until it

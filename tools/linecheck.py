@@ -116,8 +116,25 @@ def main():
         if end_code(text) != want:
             problems.append('%s: ends in %s, the stock entry in %s' % (e['id'], end_code(text), want))
     glyphs = M.us_glyph_table()
+    win = opts.get('vwf_windows') == 1
+    import gentext
     for name, seg in script['segments'].items():
         if seg.get('kind') == 'readonly':
+            continue
+        if seg.get('kind') == 'tilemap' and win and name in gentext.WIN_SEGMENTS:
+            # vwf_windows: the run in the face, within its cells (a party name: LongNames)
+            for r in seg['runs']:
+                if (r['en'] != r['us'] or check_all) and name != 'status_boxes':
+                    text = r['en'].strip()
+                    try:
+                        T.encode_us(text, dictionary=False, charset=T.vwf_charset())
+                    except ValueError as x:
+                        problems.append('%s %s: %s' % (name, r['id'], x))
+                        continue
+                    px = F.width(text) - 1 if text else 0
+                    if px > 8 * r['cells']:
+                        problems.append('%s %s (%s): %r is %d px (%d cells, %d px)' % (
+                            name, r['id'], r['where'], text, px, r['cells'], 8 * r['cells']))
             continue
         if seg.get('kind') == 'tilemap':
             for r in seg['runs']:
@@ -145,7 +162,8 @@ def main():
     # the names the tilemaps show are the party's (in capitals); with long_names the name boxes
     # and the party menu are drawn from the party table itself, so only the status boxes remain
     party = [r['en'].upper() for r in script['segments']['party']['runs']]
-    shown = ('status_boxes',) if opts.get('long_names') == 1 else ('name_boxes', 'status_boxes', 'party_menu')
+    shown = (() if opts.get('vwf_windows') == 1 else       # vwf_windows draws them from LongNames
+             ('status_boxes',) if opts.get('long_names') == 1 else ('name_boxes', 'status_boxes', 'party_menu'))
     for name in shown:
         for r in script['segments'][name]['runs']:
             if r['en'].strip().upper() != party[r['id']]:

@@ -24,3 +24,27 @@
 ; $C790-$C7FF: no stock code reads or writes it (the naming screen's RAM ends at $C789)
 .define LongSharedExtra2	$C790	; up to 84 bytes: the 2 columns at the left edge of the equipment
 				; box, the shop list or the inventory (21 rows x 2 cells)
+; vwf_windows (ext/vwfwin.asm): the tile pool, its marks, a map row in hand
+.define WIN_MARKS	12
+.define WinMarks	$C7E4	; WIN_MARKS x 2 bytes: a save buffer's key (WinKeyOf), WinPos then
+.define WinDepth	$C7FC	; the marks in use
+.define WinFontDirty	$C7FD	; 1: the font's letters were lent (VwfFadeWait reloads the font)
+.define WinPos		$C7FE	; the pool's next position
+.define WinDone		$C7FF	; 1: WinRow drew the row
+.define WinSrc		$DEF4	; 2 bytes: the map row's source
+.define WinSrcBank	$DEF6	; its bank
+.define WinKind		$DEF7	; the screen's pool: 0 none, 1 battle, 2 interaction, 3 dungeon
+.define WinKeyId	$DEF8	; its enemy or person
+.define WinDyn		$DEF9	; the first tile above the enemy's or person's graphics, - $100
+.define WinP0		$DEFA	; the run's first pool position
+.define WinCells	$DEFB	; the run's cells
+.define WinJ		$DEFC	; the run's next pool position (writing its cells)
+.define WinLeft		$DEFD	; the row's cells left
+.define WinStrId	$DEFE	; the run's string
+.define WinStr		$DE96	; 2 bytes: the run's codes
+.define WinRunVram	$DE98	; 2 bytes: the run's first cell
+.define WinFreshLo	$DE9A	; 2 bytes: the region saved last, from
+.define WinFreshHi	$DE9C	; 2 bytes: to (a run inside it is a new window: new tiles)
+.define WinLastSave	$DE9E	; 1: the last thing done was a save (the region grows)
+.define WinReuse	$DE9F	; 1: the run is drawn again in place (its cells' tiles kept)
+.define WinNewMax	$DEFF	; the run's cells that took new tiles

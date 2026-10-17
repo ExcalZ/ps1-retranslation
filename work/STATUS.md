@@ -141,6 +141,22 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
   except battles, which leave only 20 tiles free (`docs/engine-plan.md`). The way to take is the
   owner's call.
 
+* **vwf_windows: every window's text in the face (2026-10-17).** The owner: "accommodate
+  mixed-case", then "we don't need non-VWF non-numbers": the fixed font keeps the blank and
+  digits for the windows, its letters lent in battle. The VRAM audit was redone against real
+  battles (the map's encounter pools with their backdrops, all 15 backdrops set at the loader,
+  all 74 enemies; `work/scripts/vramdump.lua`, `tools/vramsheet.py`): the pools in
+  `docs/pipeline.md` 6. Menu maps carry marked runs (gentext: `WinStrings`); the map copy draws
+  them in the face into lent tiles; marks keyed by the save buffers give them back; a run
+  drawn again in place keeps its tiles. On in the working build: every scenario passes, and
+  menus, lists and party names read back in mixed case (trial builds with Fight / Magic /
+  Item / Talk / Flee, Status / Search, Use / Equip / Drop, Yes / No, 14-letter items and
+  enemies, Alisa / Myau / Tyron / Lutz). Found on the way: tile `$1FF` is written every frame
+  (not free); the battle redraws its menu in place for each member (`LABEL_30D5`). Not yet
+  in the face: the status window's labels, MST, the save slots, the intro caption. Not yet
+  seen: the battle's spell list (MAGC with spells), the spaceport, the second-hand shop's
+  selling list, the hospital and church, a dungeon's menus read back.
+
 ## Next, in order
 
 1. **Left from the survey:** a cross-check against Maxim's
@@ -150,7 +166,9 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
    call) the credits, both read-only for now.
 3. **More scenarios** (as the translation needs them): the second-hand shop (selling), the
    hospital and church (`$C29E` `$12` / `$14`), a dungeon, the ending.
-4. **Engine**: a dictionary generated from the new script if bank 32 gets tight; the
+4. **Engine**: the windows narrower now that names are in the face (items 80 px = 10 cells,
+   not 14: less RAM, less screen); the spell lists as wide as the spells need; the status
+   labels and MST in the face; a dictionary generated from the new script if bank 32 gets tight; the
    naming screen with lower case (later); spell names longer than 4 cells (if the owner wants
    them). Not yet seen with `vwf_cutscene`: the Myau, governor and ending scenes
    (no scenario reaches them yet). Then a dictionary generated from the

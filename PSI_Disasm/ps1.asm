@@ -46,6 +46,11 @@ BANKS 32
 .FAIL "long_names needs vwf_dialogue"
 .ENDIF
 .ENDIF
+.IF vwf_windows == 1
+.IF vwf_cutscene + long_names + long_item_names < 3
+.FAIL "vwf_windows needs vwf_cutscene, long_names and long_item_names"
+.ENDIF
+.ENDIF
 .IF vwf_cutscene == 1
 .IF vwf_dialogue == 0
 .FAIL "vwf_cutscene needs vwf_dialogue"
@@ -7335,6 +7340,13 @@ VwfFadeWait:
 	ld	a, (Fade_timer)
 	or	a
 	ret	nz
+.IF vwf_windows == 1
+	ld	a, $FF
+	ld	(WinKind), a	; vwf_windows: a new screen, a new pool
+	ld	a, (WinFontDirty)
+	or	a
+	jr	nz, VwfFontBack	; and the letters it lent back
+.ENDIF
 	ld	a, (VwfCutDirty)
 	or	a
 	ret	z
@@ -7344,6 +7356,9 @@ VwfFontBack:
 	push	hl
 	xor	a
 	ld	(VwfCutDirty), a
+.IF vwf_windows == 1
+	ld	(WinFontDirty), a
+.ENDIF
 	ld	a, ($FFFF)
 	push	af
 	ld	a, :LABEL_B16_BAD8
@@ -7842,6 +7857,37 @@ LABEL_352D:
 	ld	a, :LongInventory
 	ld	hl, LongInventory
 	jp	FarCall
+.IF vwf_windows == 1
+; vwf_windows: LABEL_3A68's and LABEL_3A8D's rows (WinRowCheck), LABEL_3AA6's save (WinSave)
+WinMapRow:
+	push	bc
+	call	WinRowCheck
+	jp	nz, LABEL_3A68_Tail
+	di
+	rst	$08
+	ld	b, c
+	ld	c, $BE
+	jp	LABEL_3A6E
+WinMapRow2:
+	push	bc
+	call	WinRowCheck
+	jp	nz, LABEL_3A8D_Tail
+	rst	$08
+	ld	b, c
+	ld	c, $BE
+	jp	LABEL_3A92
+WinSaveHook:
+	ld	(WinSrc), hl
+	push	hl
+	ld	a, :WinSave
+	ld	hl, WinSave
+	call	FarCall
+	pop	hl
+	di
+	push	bc
+	push	de
+	jp	LABEL_3AA6_Res
+.ENDIF
 .ORGA $356B
 .ELSE
 LABEL_352D:
@@ -8187,6 +8233,42 @@ LABEL_3707:
 	call	FarCall
 	pop	af
 	ret
+.IF vwf_windows == 1
+; vwf_windows: a map row about to be copied (hl, c bytes, de; its bank in slot 2). nz: WinRow
+; (bank 35) wrote it, hl past it; z: the stock copies it. A row from RAM is a saved screen
+; coming back (the pool's marks); a row with an attribute's bit 5 set holds text runs.
+WinRowCheck:
+	ld	a, h
+	cp	$C0
+	jr	nc, WinRC_Far
+	push	hl
+	push	bc
+	ld	b, c
+	srl	b
+-:	inc	hl
+	ld	a, (hl)
+	inc	hl
+	and	$20
+	jr	nz, +
+	djnz	-
+	pop	bc
+	pop	hl
+	xor	a
+	ret
++:	pop	bc
+	pop	hl
+WinRC_Far:
+	ld	(WinSrc), hl
+	ld	a, ($FFFF)
+	ld	(WinSrcBank), a
+	ld	a, :WinRow
+	ld	hl, WinRow
+	call	FarCall
+	ld	hl, (WinSrc)
+	ld	a, (WinDone)
+	or	a
+	ret
+.ENDIF
 .ORGA $374D
 .ELSE
 LABEL_3707:
@@ -8666,15 +8748,22 @@ LABEL_3A57:
 	ld	($FFFF), a
 	ret
 
+.IF vwf_windows == 1
+LABEL_3A68:
+	jp	WinMapRow	; vwf_windows: a row with text runs is drawn in the face
+.DSB 3, $00
+.ELSE
 LABEL_3A68:
 	push	bc
 	di
 	rst  $08
 	ld	b, c
 	ld	c, $BE
+.ENDIF
 LABEL_3A6E:
 	outi
 	jp	nz, LABEL_3A6E
+LABEL_3A68_Tail:
 	ex   de, hl
 	ld	bc, $0040
 	add	hl, bc
@@ -8696,14 +8785,21 @@ LABEL_3A83:
 	ld	a, :Bank27
 	ld	($FFFF), a
 	di
+.IF vwf_windows == 1
+LABEL_3A8D:
+	jp	WinMapRow2	; vwf_windows: a row with text runs is drawn in the face
+.DSB 2, $00
+.ELSE
 LABEL_3A8D:
 	push	bc
 	rst  $08
 	ld	b, c
 	ld	c, $BE
+.ENDIF
 LABEL_3A92:
 	outi
 	jp	nz, LABEL_3A92
+LABEL_3A8D_Tail:
 	ex   de, hl
 	ld	bc, $0040
 	add	hl, bc
@@ -8715,10 +8811,16 @@ LABEL_3A92:
 	ld	($FFFF), a
 	ret
 
+.IF vwf_windows == 1
+LABEL_3AA6:
+	jp	WinSaveHook	; vwf_windows: the tile pool's mark for this buffer
+.ELSE
 LABEL_3AA6:
 	di
 	push	bc
 	push	de
+.ENDIF
+LABEL_3AA6_Res:
 	res  6, d
 LABEL_3AAB:
 	push	bc

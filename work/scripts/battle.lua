@@ -19,7 +19,7 @@ local function battle_menu() return area_text(2, 10, 1, 6) end
 
 local function menu_up()
   local m = battle_menu()
-  return m[1] == "ATTK" and not at_button_wait() and not at_timed_wait()
+  return battle_menu_up() and not at_button_wait() and not at_timed_wait()
 end
 
 function scenario()

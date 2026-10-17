@@ -106,9 +106,28 @@ def compose(name, scenario, params, frames):
     head += ['    %s = 0x%05X,' % (k, T.rom_offset(b, a)) for k, (b, a) in sorted(syms.items())
              if re.match(r'^[A-Za-z_]\w*$', k)]
     head += ['  },', '}', '']
+    # the face (tools/diafont.py) for reading vwf_windows' cells: each glyph's advance and its
+    # columns, bit r the pixel in row r
+    import diafont
+    head += ['FACE = {']
+    for ch in diafont.CHAR_CODE:
+        adv, rows = diafont.glyph(ch)
+        cols = [sum(((rows[r] >> (7 - x)) & 1) << r for r in range(8)) for x in range(min(adv, 8))]
+        head.append('  { %s, %d, { %s } },' % (lua_str(ch), adv, ', '.join(str(c) for c in cols)))
+    head += ['}', '']
+    # the menu words the build shows (script.json, or --script=: a trial build's copy), so a
+    # scenario finds a translated menu: PS1_WORDS.attack (the battle menu's first), yes, no
+    words = json.load(open(SCRIPT_PATH or os.path.join(ROOT, 'work', 'script.json'), encoding='utf-8'))
+    segs = words['segments']
+    head += ['PS1_WORDS = { attack = %s, yes = %s, no = %s }' % (
+        lua_str(segs['battle_menu']['runs'][0]['en'].strip()),
+        lua_str(segs['yes_no']['runs'][0]['en'].strip()), lua_str(segs['yes_no']['runs'][1]['en'].strip())), '']
     lib = open(os.path.join(SCRIPTS, 'lib.lua'), encoding='utf-8').read()
     body = open(scenario, encoding='utf-8').read()
     return '\n'.join(head) + lib + '\n-- ---- scenario: %s\n' % os.path.basename(scenario) + body
+
+
+SCRIPT_PATH = None                     # main: --script=
 
 
 def run(name, rom=None, params=None, timeout=120, frames=30000, keep_sram=False):
@@ -300,6 +319,8 @@ def main():
         raise SystemExit(__doc__)
     opts = dict(a[2:].split('=', 1) for a in sys.argv[1:] if a.startswith('--') and '=' in a)
     params = dict(a.split('=', 1) for a in sys.argv[1:] if not a.startswith('--') and '=' in a)
+    global SCRIPT_PATH
+    SCRIPT_PATH = opts.get('script')
     code, lines = run(args[0], opts.get('rom'), params, int(opts.get('timeout', 120)),
                       int(opts.get('frames', 30000)), '--keep-sram' in sys.argv)
     for l in lines:

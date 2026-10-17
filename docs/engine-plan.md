@@ -51,7 +51,7 @@ image moves" rule makes cheap.
 | 5 | `vwf_cutscene` | **built** (milestone 3): the cut-scene printer in the face, mixed case, 4 lines of **120 px** (15 tiles each from `$C1`; `$C0` stays the blank the windows fill with). The stock font comes back when the next fade-out ends, or failing a fade before the next menu or window is drawn | the harness reads the cut-scene lines back (a proportional line keeps its upper row clear); `opening --expect` passes on mixed-case lines and `VwfCutDirty` is 0 on the field |
 | 6 | `long_names` | **built** (milestone 4): party names up to 6 letters. `{NAME}` from a 6-letter table through the proportional renderer (mixed case: "Alisa"); the battle's name box and the party menu (both its places) 8 cells wide instead of 6, the names in capitals ("ALISA"); the status boxes already had 6 cells. Bank 27 has no room for wider maps, so they live in bank 35 and are drawn from there; the callers still save the 6 stock columns in the stock buffers and only the 2 new columns go to new RAM (84 bytes at `$DEA0`), because whole wider buffers would have collided (the two party menus are open side by side, and `$DE14` grown would reach the YES/NO box's) | `partymenu`, `healtarget` (the second place, the HEAL target), `battle party=4` (the name box at each turn), the unboosted battle ("Alisa died.") |
 | 7 | `long_item_names` | **built** (milestone 5; 14 characters since 2026-10-17, the owner: "expand windows as necessary"): item and enemy names up to 14 characters. The window map is in `pipeline.md` 3.7. The inserts in the face (mixed case); the inventory, shop list, equipment box and battle name box 6 cells wider to the left (their right edges stay), in capitals; the 6 new columns saved in new RAM (`$DF20` + `$C790`, shared by the three windows that never open together, and `$DFC8` + `$DFE8`) | `inventory`, `shop`, `menus` (STAS), `battle`, each with `--words`; all five options at once |
-| 8 | `menu_case` | mixed case in the menus (fixed width) | depends on decision C below |
+| 8 | `vwf_windows` | **built** (2026-10-17; the owner: "accommodate mixed-case", "we don't need non-VWF non-numbers"): every window's text in the face, in tiles each screen lends (`pipeline.md` 6). Replaces decision C's (1) | every scenario, `battlelist` |
 | - | later | the naming screen with lower case (a new key grid and key table), the credits (the owner's call), the title screen | - |
 
 Tooling with them: gentext's encoder for the new engine (plain bytes, the new character set,
@@ -66,7 +66,8 @@ proofreader (`proofread.html`, as PS II's) drawing lines in the game's face.
   recompression and a compressed script: much more work for the same result).
 * **B. Cut-scene text**: proportional like the dialogue if the per-picture audit finds the
   tiles (recommended), or a fixed-width mixed-case font there.
-* **C. Menus**: (1) stay upper case, fixed width, as the US (cheapest; the dialogue is mixed
+* **C. Menus** (superseded 2026-10-17 by `vwf_windows`: the menus in the face, mixed case, a
+  name costing its width in tiles from what each screen leaves free): (1) stay upper case, fixed width, as the US (cheapest; the dialogue is mixed
   case); (2) small capitals for lower case, if about 26 more tiles turn up (dungeon audit);
   (3) proportional menus (not recommended: an 8-name inventory alone needs 64 work tiles).
 * **D. Name widths**: party 6 letters; items and enemies how wide - 12 cells (most full names

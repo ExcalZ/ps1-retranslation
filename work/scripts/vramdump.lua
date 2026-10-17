@@ -7,6 +7,35 @@
 function scenario()
   new_game_to_field(40)
   wait(60)
+  if PS1.params.field then              -- the field instead: walk about Camineet, sampling
+    local bg, spr = {}, {}
+    for _, dir in ipairs({ "left", "down", "right", "up", "left", "up", "right", "down" }) do
+      set_held({ dir })
+      for _ = 1, 30 do
+        for cell = 0, 32 * 24 - 1 do
+          local lo, hi = vram(0x3800 + 2 * cell), vram(0x3801 + 2 * cell)
+          bg[lo + 256 * (hi & 1)] = 1
+        end
+        for i = 0, 63 do
+          if vram(0x3F00 + i) == 0xD0 then break end
+          spr[256 + vram(0x3F81 + 2 * i)] = true
+        end
+        wait(2)
+      end
+    end
+    set_held({})
+    shot("field")
+    local f = io.open(PS1.out .. "/vramdump.json", "w")
+    local hex = {}
+    for a = 0, 0x3FFF do hex[#hex + 1] = string.format("%02X", vram(a)) end
+    local function keys(t) local o = {} for k, v in pairs(t) do o[#o + 1] = string.format("[%d,%d]", k, v == true and 1 or v) end return table.concat(o, ",") end
+    local pal = {}
+    for i = 0, 31 do pal[#pal + 1] = emu.read(i, emu.memType.smsPaletteRam) end
+    f:write('{"enemy":0,"bg":0,"vram":"' .. table.concat(hex) .. '","shown":[' .. keys(bg) .. '],"spr":[' .. keys(spr) .. '],"pal":[' .. table.concat(pal, ",") .. ']}')
+    f:close()
+    log("field dumped")
+    return
+  end
   if PS1.params.bg then                 -- the backdrop: set as the battle loader reads it
     local bgn = tonumber(PS1.params.bg)
     emu.addMemoryCallback(function() poke(0xC29E, bgn) end, emu.callbackType.exec,
@@ -14,7 +43,7 @@ function scenario()
   end
   poke(0xC408, 1) poke(0xC401, 99) poke(0xC406, 99)   -- weak but sturdy: the enemy lives and attacks
   poke(0xC2E6, tonumber(PS1.params.enemy or 39)) poke(0xC29D, 0xFF) poke(0xC202, 0x0C)
-  wait_until(function() return area_text(2, 10, 1, 6)[1] == "ATTK" end, 300, "the battle menu")
+  wait_until(function() return battle_menu_up() end, 300, "the battle menu")
   log(string.format("at the battle menu: Interaction_Type %d, $C308 %d", ram(0xC29E), ram(0xC308)))
   local bg, spr = {}, {}
   local function sample()
@@ -33,7 +62,7 @@ function scenario()
     sample()
     poke(0xC401, 99)                     -- keep Alisa standing
     if at_button_wait() then press("one", 4, 6)
-    elseif area_text(2, 10, 1, 6)[1] == "ATTK" and not window_open() then
+    elseif battle_menu_up() and not window_open() then
       rounds = rounds + 1
       press("two", 4, 20)
     else wait(2) end

@@ -11,4 +11,6 @@
 .define vwf_dialogue 1		; the dialogue window in the series face, 80 px lines (needs far_calls; ext/vwf.asm)
 .define vwf_cutscene 1		; the cut-scenes in the series face, 120 px lines in the font area (needs vwf_dialogue)
 .define long_names 1		; party names up to 6 letters: {NAME}, the name box, the party menu (needs vwf_dialogue)
-.define long_item_names 1	; item and enemy names up to 12 characters (needs vwf_dialogue; ext/longitems.asm)
+.define long_item_names 1	; item and enemy names up to 14 characters (needs vwf_dialogue; ext/longitems.asm)
+.define vwf_windows 1		; every window's text in the face, tiles lent by the screen (needs vwf_cutscene,
+				; long_names, long_item_names; ext/vwfwin.asm)

@@ -126,6 +126,32 @@ LongRowCells:
 	pop	af
 	ld	a, $11
 	out	(Port_VDPData), a
+.IF vwf_windows == 1
+	ld	a, c			; vwf_windows: the upper row blank, the name in the face below
+	or	a
+	jr	nz, LongRowCells_Face
+	ld	b, 14
+-:	ld	a, $C0
+	out	(Port_VDPData), a
+	push	af
+	pop	af
+	ld	a, $10
+	out	(Port_VDPData), a
+	djnz	-
+	pop	hl
+	ret
+LongRowCells_Face:
+	push	de
+	inc	de
+	inc	de			; the first name cell
+	ld	bc, $0E0E		; 14 cells, at most 14 codes
+	call	WinRun
+	di
+	rst	$08			; the VDP past the name, as the stock writes leave it
+	pop	de
+	pop	hl
+	ret
+.ELSE
 	ld	b, 14
 -:	ld	a, (hl)
 	cp	Dialogue_Terminator65
@@ -143,6 +169,7 @@ LongRowCells:
 	djnz	-
 	pop	hl
 	ret
+.ENDIF
 
 ; a border row at de: b cells between the corners; c = 0 the top, 1 the bottom
 LongBorder:
@@ -423,6 +450,9 @@ LongInvRestore:
 
 ; LABEL_352D: the inventory's contents
 LongInventory:
+.IF vwf_windows == 1
+	call	WinToTopMark		; vwf_windows: a page drawn again takes the same tiles
+.ENDIF
 	ld	de, $78A0
 	ld	bc, $0E00
 	call	LongBorder

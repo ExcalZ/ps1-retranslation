@@ -87,12 +87,12 @@ function scenario()
     set_phase("dungeon battle")
     poke(0xC408, 255) poke(0xC401, 99) poke(0xC406, 99)
     poke(0xC2E6, 1) poke(0xC29D, 0xFF) poke(0xC202, 0x0C)
-    wait_until(function() return area_text(2, 10, 1, 6)[1] == "ATTK" end, 300, "the battle menu")
+    wait_until(function() return battle_menu_up() end, 300, "the battle menu")
     local start = now()
     while game_mode() == MODE.interaction and now() - start < 3000 do
       if at_button_wait() then press("one", 4, 6)
       elseif yes_no_shown() then wait(20) press("two", 4, 20)
-      elseif area_text(2, 10, 1, 6)[1] == "ATTK" and not at_timed_wait() then press("two", 4, 20)
+      elseif battle_menu_up() and not at_timed_wait() then press("two", 4, 20)
       else wait(1) end
     end
     wait(60)
@@ -143,12 +143,12 @@ function scenario()
   poke(0xC408, 255) poke(0xC401, 99) poke(0xC406, 99)
   if PS1.params.bg then poke(0xC29E, tonumber(PS1.params.bg)) end   -- the backdrop (Interaction_Type)
   poke(0xC2E6, tonumber(PS1.params.enemy or 1)) poke(0xC29D, 0xFF) poke(0xC202, 0x0C)
-  wait_until(function() return area_text(2, 10, 1, 6)[1] == "ATTK" end, 300, "the battle menu")
+  wait_until(function() return battle_menu_up() end, 300, "the battle menu")
   local start = now()
   while game_mode() == MODE.interaction and now() - start < 3000 do
     if at_button_wait() then press("one", 4, 6)
     elseif yes_no_shown() then wait(20) press("two", 4, 20)
-    elseif area_text(2, 10, 1, 6)[1] == "ATTK" and not at_timed_wait() then press("two", 4, 20)
+    elseif battle_menu_up() and not at_timed_wait() then press("two", 4, 20)
     else wait(1) end
   end
   end
