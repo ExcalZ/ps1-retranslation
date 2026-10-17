@@ -3,7 +3,7 @@
 -- and ITEM, a conversation, a shop and a battle; for each phase it records the tiles written
 -- (a write callback on VRAM $0000-$37FF, 448 tiles) and the tiles shown (the nametable and the
 -- sprite table, sampled every 10 frames). The result is written to work/analysis/vramaudit.json.
--- only=battle enemy=N: the intro and one battle only; only=dungeon: a dungeon (walking, the
+-- only=battle enemy=N [bg=N]: the intro and one battle only (bg: the backdrop, $C29E); only=dungeon: a dungeon (walking, the
 -- command menu, a battle there). (VDP writes do not reach Mesen's VRAM
 -- write callback, so "written" stays empty: "shown" is the measure.)
 -- Bounded: as the scenarios it borrows from.
@@ -75,8 +75,16 @@ function scenario()
       press(b, 4, 40)
     end
     shot("dungeon_walked")
+    set_phase("dungeon menus")
     open_command_menu()
     choose(1) wait(30) leave()
+    for i = 0, 8 do poke(0xC4C0 + i, 0x21 + i) end
+    poke(0xC4E2, 9)
+    wait(30)
+    open_command_menu() choose(3) wait(30) leave()
+    wait_until(function() return #area_text(2, 10, 1, 6) < 5 and not window_open() end, 300, "the menus closed")
+    wait(60)                             -- the screen under the windows restored before the battle
+    set_phase("dungeon battle")
     poke(0xC408, 255) poke(0xC401, 99) poke(0xC406, 99)
     poke(0xC2E6, 1) poke(0xC29D, 0xFF) poke(0xC202, 0x0C)
     wait_until(function() return area_text(2, 10, 1, 6)[1] == "ATTK" end, 300, "the battle menu")
@@ -133,6 +141,7 @@ function scenario()
   set_phase("battle")
   wait(60)
   poke(0xC408, 255) poke(0xC401, 99) poke(0xC406, 99)
+  if PS1.params.bg then poke(0xC29E, tonumber(PS1.params.bg)) end   -- the backdrop (Interaction_Type)
   poke(0xC2E6, tonumber(PS1.params.enemy or 1)) poke(0xC29D, 0xFF) poke(0xC202, 0x0C)
   wait_until(function() return area_text(2, 10, 1, 6)[1] == "ATTK" end, 300, "the battle menu")
   local start = now()

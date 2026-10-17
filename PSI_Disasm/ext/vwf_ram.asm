@@ -16,7 +16,11 @@
 .define LongPartyExtraA	$DEA0	; 36 bytes: the party menu at $7A44 (9 rows x 2 cells)
 .define LongPartyExtraB	$DEC4	; 36 bytes: the party menu at $7A54
 .define LongBoxExtra	$DEE8	; 12 bytes: the name box (3 rows x 2 cells)
-; long_item_names: the four columns its wider windows cover beyond the stock ones
-.define LongSharedExtra	$DF20	; up to 168 bytes: the equipment box, the shop list or the inventory
-				; (never open together)
+; long_item_names: the six columns its wider windows cover beyond the stock ones, in two parts
+.define LongSharedExtra	$DF20	; up to 168 bytes: the 4 columns beside the stock ones of the
+				; equipment box, the shop list or the inventory (never open together)
 .define LongEnemyBoxExtra	$DFC8	; 32 bytes: the battle's enemy name box (4 rows x 4 cells)
+.define LongEnemyBoxExtra2	$DFE8	; 16 bytes: its 2 columns at the left edge (4 rows x 2 cells)
+; $C790-$C7FF: no stock code reads or writes it (the naming screen's RAM ends at $C789)
+.define LongSharedExtra2	$C790	; up to 84 bytes: the 2 columns at the left edge of the equipment
+				; box, the shop list or the inventory (21 rows x 2 cells)

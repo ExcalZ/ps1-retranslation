@@ -291,7 +291,8 @@ transliterations. Only Heal fits the 4-cell lists: **question 5**.
 3. **エアロキャッスル: Aero Castle or Air Castle?** PS IV's Air Castle is the same castle but
    PS IV's katakana (エア); PS I's is エアロ, as the Aero Prism. Proposed: Aero Castle.
 4. **Answered (the owner, 2026-10-17): "Expand windows as necessary, but accommodate mixed-case"** - the
-   windows widen as the names need, and show them in mixed case (not yet built). The question was: **Item and enemy names over 12 letters (20 items, 8 enemies).** Either (a) the 12-letter forms
+   windows widen as the names need, and show them in mixed case. Built: 14 letters (2026-10-17).
+   Mixed case not yet: battles have no room for the lower-case tiles (`docs/engine-plan.md`). The question was: **Item and enemy names over 12 letters (20 items, 8 enemies).** Either (a) the 12-letter forms
    above (a space dropped, Swd / Shld), or (b) widen `long_item_names` to 14 letters. By the
    window map (`docs/pipeline.md` 3.7) every window that lists them has 2 more free cells to its
    left (the inventory to c16, the shop list and the equipment box to c0, the enemy name box to

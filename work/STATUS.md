@@ -131,6 +131,16 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
   the PS II and PS IV translations' shipped text: people, worlds, places, 64 items, 74
   enemies, 18 spells, with six questions for the owner.
 
+* **Item and enemy windows 14 letters (2026-10-17).** The owner: "Expand windows as necessary,
+  but accommodate mixed-case". `long_item_names` now takes 14 characters: the inventory (r2
+  c16), shop list (r0 c0), equipment box (r10 c0) and battle name box (r0 c8) 6 cells wider than
+  the stock, the two new columns saved at `$C790` (no stock code touches `$C790-$C7FF`) and
+  `$DFE8`. Seen in game with LEATHER SHIELD, CERAMIC SHIELD, ESCAPE CLOTH and CHAOS SORCERER;
+  every scenario passes. **Mixed case in these windows is not built:** the VRAM audit (all 74
+  enemies' battles, town, menus, a dungeon) finds room for the 26 lower-case tiles everywhere
+  except battles, which leave only 20 tiles free (`docs/engine-plan.md`). The way to take is the
+  owner's call.
+
 ## Next, in order
 
 1. **Left from the survey:** a cross-check against Maxim's

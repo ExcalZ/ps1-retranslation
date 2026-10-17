@@ -13,7 +13,7 @@ Checks each `en` that differs from its `us` (--all: every entry, the stock text 
 * cut-scenes: each line at most 20 cells (the picture's width; the JP uses all 20, the US
   18), at most 4 lines a page; the cut-scene printer has no auto-wrap;
 * the end code: the same as the stock entry's, or none where the entry falls through;
-* name fields: at most their width (party 6 with long_names, items and enemies 12 with
+* name fields: at most their width (party 6 with long_names, items and enemies 14 with
   long_item_names: then in the face for the inserts and in capitals for the windows);
 * tilemap runs (menus, spell lists, status labels, save slots, spaceport, intro caption):
   each glyph in the font, at most the run's cells, and an upper tile (the US `"` and
@@ -129,7 +129,7 @@ def main():
             continue
         long_party = (name == 'party' and opts.get('long_names') == 1 or
                       name in ('items', 'enemies') and opts.get('long_item_names') == 1)
-        width = (6 if name == 'party' else 12) if long_party else seg['width']
+        width = (6 if name == 'party' else 14) if long_party else seg['width']
         for r in seg['runs']:
             if r['en'] != r['us'] or check_all:
                 if len(r['en']) > width:

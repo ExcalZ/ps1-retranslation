@@ -12,7 +12,7 @@
 * ext/longnames_data.asm (long_names) is written whole from the party's names: LongNames for
   {NAME}, and the name boxes and party menu two cells wider than bank 27's, in capitals. With
   long_names CharacterNames and the stock name_boxes / party_menu maps keep their stock bytes.
-* ext/longitems_data.asm (long_item_names) likewise: LongItems and LongEnemies, 12 characters
+* ext/longitems_data.asm (long_item_names) likewise: LongItems and LongEnemies, 14 characters
   each; with long_item_names ItemNames and the enemy records' names keep their stock bytes.
 * The tilemap runs of script.json (kind `tilemap`: menus, spell lists, status labels, save
   slots, spaceport, intro caption; tools/tilemaps.py) are written into their maps' `.db`
@@ -260,11 +260,11 @@ def long_names_data(script, defs):
     return '\r\n'.join(lines) + '\r\n'
 
 
-LONG_ITEM = 12
+LONG_ITEM = 14
 
 
 def long_items_data(script):
-    """ext/longitems_data.asm (long_item_names): LongItems (65 x 12) and LongEnemies (75 x 12,
+    """ext/longitems_data.asm (long_item_names): LongItems (65 x 14) and LongEnemies (75 x 14,
     by record index), the face's codes, $65-padded."""
     charset = T.vwf_charset()
     segs = script['segments']
@@ -284,14 +284,14 @@ def long_items_data(script):
              '; long_item_names: the item and enemy names (the face\'s codes, $65-padded).']
     lines += rows('LongItems', segs['items']['runs'], 65)
     lines += rows('LongEnemies', segs['enemies']['runs'], 75)
-    # the inventory's NEXT rows (bank 27's, 10 cells) four cells wider before the right frame,
+    # the inventory's NEXT rows (bank 27's, 10 cells) six cells wider before the right frame,
     # so NEXT lines up with the names
     defs = T.defines()
     bank27 = T.read(os.path.join(T.DISASM, 'banks', 'bank27.asm')).split('\r\n')
     stock = b''.join(b for _, b in M.label_bytes(bank27, 'LABEL_B27_BAF7', 40, defs))[:40]
     lines.append('LongNextRows:')
     for r in (stock[:20], stock[20:]):
-        wide = r[:-2] + bytes([M.BLANK, 0x10]) * 4 + r[-2:]
+        wide = r[:-2] + bytes([M.BLANK, 0x10]) * 6 + r[-2:]
         lines.append('.db ' + ', '.join('$%02X' % b for b in wide))
     return '\r\n'.join(lines) + '\r\n'
 

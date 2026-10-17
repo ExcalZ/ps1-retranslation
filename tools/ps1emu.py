@@ -277,7 +277,7 @@ def expected_words(spec, path=None):
     return out
 
 
-WILD = {'NAME': '.{1,6}', 'ENEMY': '.{1,12}', 'ITEM': '.{1,12}', 'NUMBER': '[0-9O]{1,5}'}
+WILD = {'NAME': '.{1,6}', 'ENEMY': '.{1,14}', 'ITEM': '.{1,14}', 'NUMBER': '[0-9O]{1,5}'}
 
 
 def same_page(want, seen):

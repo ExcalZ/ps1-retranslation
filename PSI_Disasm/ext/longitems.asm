@@ -1,17 +1,18 @@
-; long_item_names: item and enemy names up to 12 characters (docs/pipeline.md 6). Bank 35,
+; long_item_names: item and enemy names up to 14 characters (docs/pipeline.md 6). Bank 35,
 ; with the renderer (needs vwf_dialogue).
 ;
 ; The names are in ext/longitems_data.asm (gentext writes them from work/script.json):
-; LongItems (65 x 12 bytes) and LongEnemies (75 x 12), the face's codes, $65-padded. The
+; LongItems (65 x 14 bytes) and LongEnemies (75 x 14), the face's codes, $65-padded. The
 ; inserts {ITEM} and {ENEMY} draw them proportionally (VwfItem, VwfEnemy); the windows that
 ; list them draw them in the menus' fixed font, a-z as capitals (LongRowName, through the
 ; stock glyph table LABEL_7D17 in bank 1).
 ;
-; Each window that lists names is 4 cells wider, to the left, its right edge where the stock
-; has it: the battle's enemy name box at $7814 (r0 c10, 14 cells; the HP box stays at c24),
-; the equipment box at $7A84 (r10 c2, 14 cells; the status window stays at c16). The callers'
-; stock buffers still take the stock columns; the 4 new columns go to LongEnemyBoxExtra and
-; LongSharedExtra (ext/vwf_ram.asm).
+; Each window that lists names is 6 cells wider, to the left, its right edge where the stock
+; has it: the battle's enemy name box at $7810 (r0 c8, 16 cells; the HP box stays at c24),
+; the equipment box at $7A80 (r10 c0, 16 cells; the status window stays at c16). The callers'
+; stock buffers still take the stock columns; of the 6 new columns the 4 beside the stock ones
+; go to LongEnemyBoxExtra / LongSharedExtra and the 2 at the left edge to LongEnemyBoxExtra2 /
+; LongSharedExtra2 (ext/vwf_ram.asm).
 
 ; ---------------------------------------------------------------- the inserts
 
@@ -36,8 +37,8 @@ VwfEnemy:
 	ld	b, $11
 	push	bc
 	call	LongEnemyPtr
-VwfLongName:			; draw up to 12 codes at hl, a frame a character as the stock
-	ld	b, 12
+VwfLongName:			; draw up to 14 codes at hl, a frame a character as the stock
+	ld	b, 14
 -:	ld	a, (hl)
 	cp	Dialogue_Terminator65
 	jr	z, +
@@ -54,19 +55,21 @@ VwfLongName:			; draw up to 12 codes at hl, a frame a character as the stock
 	pop	de
 	ret
 
-; hl = LongItems + 12 * a
+; hl = LongItems + 14 * a
 LongItemPtr:
 	ld	de, LongItems
-LongPtr12:
+LongPtr14:
 	ld	l, a
 	ld	h, 0
-	add	hl, hl
-	add	hl, hl			; 4a
+	add	hl, hl			; 2a
 	push	de
 	ld	d, h
 	ld	e, l
-	add	hl, hl			; 8a
-	add	hl, de			; 12a
+	add	hl, hl
+	add	hl, hl
+	add	hl, hl			; 16a
+	or	a
+	sbc	hl, de			; 14a
 	pop	de
 	add	hl, de
 	ret
@@ -76,7 +79,7 @@ LongEnemyPtr:
 	ld	a, ($C2E6)
 	and	$7F
 	ld	de, LongEnemies
-	jr	LongPtr12
+	jr	LongPtr14
 
 ; ---------------------------------------------------------------- window rows
 
@@ -97,7 +100,7 @@ LongGlyph:
 	ld	a, (hl)
 	ret
 
-; one row of a name list: the left frame, the 12 codes at hl in row c, the right frame, at de;
+; one row of a name list: the left frame, the 14 codes at hl in row c, the right frame, at de;
 ; de moves a row down, a frame's wait after (as the stock rows)
 LongRowName:
 	push	bc
@@ -114,7 +117,7 @@ LongRowName:
 	out	(Port_VDPData), a
 	jr	LongRowEnd
 
-; the left frame and the 12 codes at hl in row c, to the VDP (its address set, interrupts off)
+; the left frame and the 14 codes at hl in row c, to the VDP (its address set, interrupts off)
 LongRowCells:
 	push	hl
 	ld	a, $F3
@@ -123,7 +126,7 @@ LongRowCells:
 	pop	af
 	ld	a, $11
 	out	(Port_VDPData), a
-	ld	b, 12
+	ld	b, 14
 -:	ld	a, (hl)
 	cp	Dialogue_Terminator65
 	jr	nz, +
@@ -187,8 +190,8 @@ LongRowEnd:
 
 ; ---------------------------------------------------------------- the enemy name box
 
-; LABEL_30ED: the screen under the name box (stock columns c14-c23 to $D928, the 4 new c10-c13
-; to LongEnemyBoxExtra) and under the HP box ($D978)
+; LABEL_30ED: the screen under the name box (stock columns c14-c23 to $D928, the new c10-c13
+; to LongEnemyBoxExtra, c8-c9 to LongEnemyBoxExtra2) and under the HP box ($D978)
 LongEnemyBoxSave:
 	ld	hl, $D928
 	ld	de, $781C
@@ -198,15 +201,19 @@ LongEnemyBoxSave:
 	ld	de, $7814
 	ld	bc, $0408
 	call	LABEL_3AA6
+	ld	hl, LongEnemyBoxExtra2
+	ld	de, $7810
+	ld	bc, $0404
+	call	LABEL_3AA6
 	ld	hl, $D978
 	ld	de, $7830
 	ld	bc, $0A10
 	jp	LABEL_3AA6
 
-; LABEL_3105: the name box, 14 cells at $7814
+; LABEL_3105: the name box, 16 cells at $7810
 LongEnemyBox:
-	ld	de, $7814
-	ld	bc, $0C00
+	ld	de, $7810
+	ld	bc, $0E00
 	call	LongBorder
 	push	de
 	call	LongEnemyPtr
@@ -215,7 +222,7 @@ LongEnemyBox:
 	call	LongRowName
 	ld	c, 1
 	call	LongRowName		; (keeps hl)
-	ld	bc, $0C01
+	ld	bc, $0E01
 	jp	LongBorder
 
 ; LABEL_319E: the screen back under the HP box (unless the enemy is $49) and the name box
@@ -234,11 +241,15 @@ LongEnemyBoxRestore:
 	ld	hl, LongEnemyBoxExtra
 	ld	de, $7814
 	ld	bc, $0408
+	call	LABEL_3A57
+	ld	hl, LongEnemyBoxExtra2
+	ld	de, $7810
+	ld	bc, $0404
 	jp	LABEL_3A57
 
 ; ---------------------------------------------------------------- the equipment box
 
-; LABEL_3707: party member c's weapon, armour and shield, 14 cells at $7A84 (r10 c2)
+; LABEL_3707: party member c's weapon, armour and shield, 16 cells at $7A80 (r10 c0)
 LongEquipBox:
 	push	bc
 	ld	hl, $D928
@@ -249,6 +260,10 @@ LongEquipBox:
 	ld	de, $7A84
 	ld	bc, $0808
 	call	LABEL_3AA6
+	ld	hl, LongSharedExtra2
+	ld	de, $7A80
+	ld	bc, $0804
+	call	LABEL_3AA6
 	pop	bc
 	ld	a, c			; Char_stats + 16 * member + weapon
 	add	a, a
@@ -258,8 +273,8 @@ LongEquipBox:
 	add	a, weapon
 	ld	l, a
 	ld	h, Char_stats >> 8
-	ld	de, $7A84
-	ld	bc, $0C00
+	ld	de, $7A80
+	ld	bc, $0E00
 	call	LongBorder
 	ld	b, 3
 -:	push	bc
@@ -276,7 +291,7 @@ LongEquipBox:
 	inc	hl
 	pop	bc
 	djnz	-
-	ld	bc, $0C01
+	ld	bc, $0E01
 	jp	LongBorder
 
 ; LABEL_374D: the screen back under the equipment box
@@ -288,16 +303,21 @@ LongEquipBoxRestore:
 	ld	hl, LongSharedExtra
 	ld	de, $7A84
 	ld	bc, $0808
+	call	LABEL_3A57
+	ld	hl, LongSharedExtra2
+	ld	de, $7A80
+	ld	bc, $0804
 	jp	LABEL_3A57
 
 ; ---------------------------------------------------------------- the shop list
 
-; The shop list is 20 cells at $7804 (r0 c2; the money box stays at c22). Its rows are still
+; The shop list is 22 cells at $7800 (r0 c0; the money box stays at c22). Its rows are still
 ; written by the stock code (LABEL_38D9's row writer): LongShopName writes the left frame and
-; 12 name cells from 4 cells left of the stock's place, and the stock writes on from c15 - the
+; 14 name cells from 6 cells left of the stock's place, and the stock writes on from c15 - the
 ; blank, the price, the right frame - where it would have after its 8 name cells.
 
-; LABEL_38CD: the screen under it (the stock c6-c21 to $D8A4, c2-c5 to LongSharedExtra)
+; LABEL_38CD: the screen under it (the stock c6-c21 to $D8A4, c2-c5 to LongSharedExtra, c0-c1
+; to LongSharedExtra2)
 LongShopSave:
 	ld	hl, $D8A4
 	ld	de, $780C
@@ -306,6 +326,10 @@ LongShopSave:
 	ld	hl, LongSharedExtra
 	ld	de, $7804
 	ld	bc, $0808
+	call	LABEL_3AA6
+	ld	hl, LongSharedExtra2
+	ld	de, $7800
+	ld	bc, $0804
 	jp	LABEL_3AA6
 
 ; LABEL_3999: the screen back
@@ -317,27 +341,31 @@ LongShopRestore:
 	ld	hl, LongSharedExtra
 	ld	de, $7804
 	ld	bc, $0808
+	call	LABEL_3A57
+	ld	hl, LongSharedExtra2
+	ld	de, $7800
+	ld	bc, $0804
 	jp	LABEL_3A57
 
 ; the top border; de comes back a row down at c6, where the stock rows begin
 LongShopTop:
-	ld	de, $7804
-	ld	bc, $1200
+	ld	de, $7800
+	ld	bc, $1400
 	call	LongBorder
-	ld	hl, 8
+	ld	hl, 12
 	add	hl, de
 	ex	de, hl
 	ret
 
 ; the bottom border, de at c6 of its row
 LongShopBottom:
-	ld	hl, -8
+	ld	hl, -12
 	add	hl, de
 	ex	de, hl
-	ld	bc, $1201
+	ld	bc, $1401
 	jp	LongBorder
 
-; item b's row c at de (c6): the frame and 12 cells from c2. Returns with the VDP at c15 and
+; item b's row c at de (c6): the frame and 14 cells from c0. Returns with the VDP at c15 and
 ; interrupts off, as the stock row writer goes on
 LongShopName:
 	ld	a, b
@@ -346,7 +374,7 @@ LongShopName:
 	pop	de
 	push	de
 	ld	a, e
-	sub	8
+	sub	12
 	ld	e, a
 	jr	nc, +
 	dec	d
@@ -358,11 +386,12 @@ LongShopName:
 
 ; ---------------------------------------------------------------- the inventory
 
-; The inventory is 14 cells at $78A4 (r2 c18; its right edge stays at c31): the top border,
+; The inventory is 16 cells at $78A0 (r2 c16; its right edge stays at c31): the top border,
 ; the money line, the NEXT rows (from 9 items), 8 items, the bottom border. The money line is
-; the stock one (LABEL_35C4) drawn from c22, its left frame blanked, the 4 new cells before it.
+; the stock one (LABEL_35C4) drawn from c22, its left frame blanked, the 6 new cells before it.
 
-; LABEL_3521: the screen under it (the stock c22-c31 to $DC04, c18-c21 to LongSharedExtra)
+; LABEL_3521: the screen under it (the stock c22-c31 to $DC04, c18-c21 to LongSharedExtra,
+; c16-c17 to LongSharedExtra2)
 LongInvSave:
 	ld	hl, $DC04
 	ld	de, $78AC
@@ -371,6 +400,10 @@ LongInvSave:
 	ld	hl, LongSharedExtra
 	ld	de, $78A4
 	ld	bc, $1508
+	call	LABEL_3AA6
+	ld	hl, LongSharedExtra2
+	ld	de, $78A0
+	ld	bc, $1504
 	jp	LABEL_3AA6
 
 ; LABEL_3656: the screen back
@@ -382,12 +415,16 @@ LongInvRestore:
 	ld	hl, LongSharedExtra
 	ld	de, $78A4
 	ld	bc, $1508
+	call	LABEL_3A57
+	ld	hl, LongSharedExtra2
+	ld	de, $78A0
+	ld	bc, $1504
 	jp	LABEL_3A57
 
 ; LABEL_352D: the inventory's contents
 LongInventory:
-	ld	de, $78A4
-	ld	bc, $0C00
+	ld	de, $78A0
+	ld	bc, $0E00
 	call	LongBorder
 	; the money line
 	push	de
@@ -399,7 +436,7 @@ LongInventory:
 	pop	af
 	ld	a, $11
 	out	(Port_VDPData), a
-	ld	b, 3
+	ld	b, 5
 -:	ld	a, $C0
 	out	(Port_VDPData), a
 	push	af
@@ -410,13 +447,13 @@ LongInventory:
 	ei
 	pop	de
 	push	de
-	ld	hl, 8
+	ld	hl, 12
 	add	hl, de
 	ex	de, hl
 	call	LABEL_35C4		; c22-c31, de a row down
 	pop	de
 	push	de
-	ld	hl, 8
+	ld	hl, 12
 	add	hl, de
 	ex	de, hl
 	di
@@ -431,12 +468,12 @@ LongInventory:
 	pop	de
 	ld	hl, $0040
 	add	hl, de
-	ex	de, hl			; c18, the row below the money line
+	ex	de, hl			; c16, the row below the money line
 	ld	a, (Inventory_curr_num)
 	cp	9
 	jr	c, +
 	ld	hl, LongNextRows
-	ld	bc, $021C
+	ld	bc, $0220
 	call	LABEL_3A68
 +:	ld	a, ($C299)
 	ld	hl, Inventory
@@ -457,7 +494,7 @@ LongInventory:
 	inc	hl
 	pop	bc
 	djnz	-
-	ld	bc, $0C01
+	ld	bc, $0E01
 	jp	LongBorder
 
 .include "ext\longitems_data.asm"

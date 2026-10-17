@@ -6994,7 +6994,7 @@ LABEL_30ED:
 
 LABEL_3105:
 .IF long_item_names == 1
-	ld	a, :LongEnemyBox	; long_item_names: the name box 14 cells wide at $7814
+	ld	a, :LongEnemyBox	; long_item_names: the name box 16 cells wide at $7810
 	ld	hl, LongEnemyBox
 	call	FarCall
 .DSB 26, $00		; nops: the stock name part was 34 bytes
@@ -7221,7 +7221,7 @@ LABEL_3244:
 .ENDIF
 
 .IF long_item_names == 1
-; long_item_names: {ENEMY} and {ITEM} from the 12-character tables (ext/longitems.asm)
+; long_item_names: {ENEMY} and {ITEM} from the 14-character tables (ext/longitems.asm)
 LABEL_3262:
 	cp	Dialogue_EnemyName
 	jr	nz, LABEL_3274
@@ -7799,7 +7799,7 @@ LABEL_34D5:
 	add a, l
 	ld (Option_total_num), a
 .IF long_item_names == 1
-	ld	hl, $7964	; long_item_names: the inventory starts at c18
+	ld	hl, $7960	; long_item_names: the inventory starts at c16
 .ELSE
 	ld hl, $796C
 .ENDIF
@@ -7837,7 +7837,7 @@ LABEL_3521:
 .ENDIF
 
 .IF long_item_names == 1
-; long_item_names: the inventory 14 cells wide at $78A4
+; long_item_names: the inventory 16 cells wide at $78A0
 LABEL_352D:
 	ld	a, :LongInventory
 	ld	hl, LongInventory
@@ -8178,7 +8178,7 @@ LABEL_36FB:
 	jp LABEL_3A57
 
 .IF long_item_names == 1
-; long_item_names: party member a's equipment, 14 cells wide at $7A84
+; long_item_names: party member a's equipment, 16 cells wide at $7A80
 LABEL_3707:
 	push	af
 	ld	c, a
@@ -8399,7 +8399,7 @@ LABEL_38CD:
 
 LABEL_38D9:
 .IF long_item_names == 1
-	ld	a, :LongShopTop	; long_item_names: the top border, 20 cells from $7804
+	ld	a, :LongShopTop	; long_item_names: the top border, 22 cells from $7800
 	ld	hl, LongShopTop
 	call	FarCall
 .DSB 4, $00
@@ -8454,7 +8454,7 @@ LABEL_38D9:
 	call LABEL_3A57
 .ENDIF
 .IF long_item_names == 1
-	ld	hl, $7884	; long_item_names: the list starts at c2
+	ld	hl, $7880	; long_item_names: the list starts at c0
 .ELSE
 	ld hl, $788C
 .ENDIF
@@ -8484,7 +8484,7 @@ LABEL_38D9:
 	ld c, $00
 +:
 .IF long_item_names == 1
-	ld	b, a		; long_item_names: the frame and 12 name cells from c2
+	ld	b, a		; long_item_names: the frame and 14 name cells from c0
 	ld	a, :LongShopName
 	ld	hl, LongShopName
 	call	FarCall
