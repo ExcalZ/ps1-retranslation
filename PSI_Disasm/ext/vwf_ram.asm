@@ -12,3 +12,7 @@
 .define VwfRow		$DF08	; 8 bytes: the tile under the pen, 1 bpp
 .define VwfSpill	$DF10	; 8 bytes: what crosses into the next tile (VwfRow + 8)
 .define VwfDigits	$DF18	; 5 bytes: {NUMBER}'s digits
+; long_names: the two columns its wider boxes cover beyond the stock 6 (ext/longnames.asm)
+.define LongPartyExtraA	$DEA0	; 36 bytes: the party menu at $7A44 (9 rows x 2 cells)
+.define LongPartyExtraB	$DEC4	; 36 bytes: the party menu at $7A54
+.define LongBoxExtra	$DEE8	; 12 bytes: the name box (3 rows x 2 cells)

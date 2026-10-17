@@ -1,7 +1,8 @@
 -- A forced battle: enemy=N (B03_EnemyData index, default 1 Sworm). On the field the scenario
 -- leaves what a random encounter does: $C2E6 the enemy, $C29D $FF, game mode $0C
 -- (LoadInteraction), whose interaction screen then runs LABEL_5FFE / LABEL_100F, the battle.
--- Alisa gets attack 255 and 99 HP so ATTK wins (strong=0 leaves her as she is).
+-- Alisa gets attack 255 and 99 HP so ATTK wins (strong=0 leaves her as she is); party=4
+-- brings all four members in (the battle then shows each one's name box at its turn).
 --
 -- The battle menu (ATTK MAGC ITEM TALK RUN, rows 2-10, columns 1-6) and the enemy name box
 -- (row 2, columns 15-22) are read back once; each round button 2 chooses ATTK. Every message
@@ -27,6 +28,13 @@ function scenario()
   if PS1.params.strong ~= "0" then
     poke(0xC408, 255)                    -- attack
     poke(0xC401, 99) poke(0xC406, 99)    -- HP, max HP
+  end
+  if PS1.params.party == "4" then         -- all four, so the battle shows whose turn it is
+    poke(0xC4F0, 3)
+    for _, m in ipairs({ 0xC400, 0xC410, 0xC420, 0xC430 }) do
+      poke(m, ram(m) | 1)
+      if ram(m + 1) == 0 then poke(m + 1, 20) poke(m + 6, 20) end
+    end
   end
   poke(0xC2E6, ENEMY)
   poke(0xC29D, 0xFF)

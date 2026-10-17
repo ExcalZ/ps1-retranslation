@@ -36,6 +36,11 @@ BANKS 32
 .ENDRO
 .ENDIF
 
+.IF long_names == 1
+.IF vwf_dialogue == 0
+.FAIL "long_names needs vwf_dialogue"
+.ENDIF
+.ENDIF
 .IF vwf_cutscene == 1
 .IF vwf_dialogue == 0
 .FAIL "vwf_cutscene needs vwf_dialogue"
@@ -6648,6 +6653,23 @@ LABEL_2E62:
 	out (Port_VDPData), a
 	ret
 
+.IF long_names == 1
+; long_names: the name box 8 cells wide (ext/longnames.asm)
+LABEL_2EAC:
+	ld	hl, $D700
+	ld	de, $7B02
+	ld	bc, $030C
+	call	LABEL_3AA6
+	ld	a, :LongNameBox
+	ld	hl, LongNameBox
+	jp	FarCall
+.ORGA $2ECD
+LABEL_2ECD:
+	ld	a, :LongNameBoxRestore
+	ld	hl, LongNameBoxRestore
+	jp	FarCall
+.ORGA $2ED9
+.ELSE
 LABEL_2EAC:
 	ld hl, $D700
 	ld de, $7B02
@@ -6674,6 +6696,7 @@ LABEL_2ECD:
 	ld de, $7B02
 	ld bc, $030C
 	jp LABEL_3A57
+.ENDIF
 
 LABEL_2ED9:
 	ld hl, $D724
@@ -7132,6 +7155,20 @@ LABEL_3235:
 	inc	hl
 	jp	LABEL_31FA
 
+.IF long_names == 1
+; long_names: {NAME} from LongNames (6 letters), drawn by VwfName
+LABEL_3244:
+	cp	Dialogue_CurrentCharacter
+	jr	nz, LABEL_3262
+	push	hl
+	ld	a, :VwfName
+	ld	hl, VwfName
+	call	FarCall
+	pop	hl
+	inc	hl
+	jp	LABEL_31FA
+.ORGA $3262
+.ELSE
 LABEL_3244:
 	cp	Dialogue_CurrentCharacter
 	jr	nz, LABEL_3262
@@ -7151,6 +7188,7 @@ LABEL_3244:
 	pop	hl
 	inc	hl
 	jp	LABEL_31FA
+.ENDIF
 
 LABEL_3262:
 	cp	Dialogue_EnemyName
@@ -7962,6 +8000,36 @@ LABEL_3682:
 	ld (Cursor_pos), hl
 	jp CheckOptionSelect
 
+.IF long_names == 1
+; long_names: the party menu 8 cells wide (ext/longnames.asm)
+LABEL_369F:
+	ld	a, (Party_curr_num)
+	or	a
+	ret	z
+	ld	(Option_total_num), a
+	ld	a, :LongPartyMenu
+	ld	hl, LongPartyMenu
+	jp	FarCall
+.ORGA $36BB
+LABEL_36BB:
+	ld	a, (Party_curr_num)
+	or	a
+	ret	z
+	ld	de, $7A44
+	ld	a, :LongPartyRestore
+	ld	hl, LongPartyRestore
+	jp	FarCall
+.ORGA $36CC
+LABEL_36CC:
+	ld	a, (Party_curr_num)
+	or	a
+	ret	z
+	ld	de, $7A54
+	ld	a, :LongPartyRestore
+	ld	hl, LongPartyRestore
+	jp	FarCall
+.ORGA $36DD
+.ELSE
 LABEL_369F:
 	ld	a, (Party_curr_num)
 	or	a
@@ -7997,6 +8065,7 @@ LABEL_36CC:
 	ld de, $7A54
 	ld bc, $090C
 	jp LABEL_3A57
+.ENDIF
 
 LABEL_36DD:
 	ld	hl, $D8A4

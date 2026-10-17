@@ -125,18 +125,27 @@ def main():
                     except ValueError as x:
                         problems.append('%s %s (%s): %s' % (name, r['id'], r['where'], x))
             continue
+        long_party = name == 'party' and opts.get('long_names') == 1
+        width = 6 if long_party else seg['width']
         for r in seg['runs']:
             if r['en'] != r['us'] or check_all:
-                if len(r['en']) > seg['width']:
-                    problems.append('%s %s: %r is %d cells (%d)' % (name, r['id'], r['en'], len(r['en']), seg['width']))
+                if len(r['en']) > width:
+                    problems.append('%s %s: %r is %d cells (%d)' % (name, r['id'], r['en'], len(r['en']), width))
                 try:
-                    T.encode_us(r['en'], dictionary=False)
+                    if long_party:      # {NAME} in the face; the boxes in the menus' capitals
+                        T.encode_us(r['en'], dictionary=False, charset=T.vwf_charset())
+                        T.encode_us(r['en'].upper(), dictionary=False)
+                    else:
+                        T.encode_us(r['en'], dictionary=False)
                 except ValueError as x:
                     problems.append('%s %s: %s' % (name, r['id'], x))
-    party = [r['en'] for r in script['segments']['party']['runs']]
-    for name in ('name_boxes', 'status_boxes', 'party_menu'):
+    # the names the tilemaps show are the party's (in capitals); with long_names the name boxes
+    # and the party menu are drawn from the party table itself, so only the status boxes remain
+    party = [r['en'].upper() for r in script['segments']['party']['runs']]
+    shown = ('status_boxes',) if opts.get('long_names') == 1 else ('name_boxes', 'status_boxes', 'party_menu')
+    for name in shown:
         for r in script['segments'][name]['runs']:
-            if r['en'].strip() != party[r['id']]:
+            if r['en'].strip().upper() != party[r['id']]:
                 problems.append('%s %s shows %r; party %d is %r' % (
                     name, r['id'], r['en'].strip(), r['id'], party[r['id']]))
     for p in problems:

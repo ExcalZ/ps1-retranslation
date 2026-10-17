@@ -27,6 +27,9 @@ Bank35:
 .IF vwf_dialogue == 1
 .include "ext\vwf.asm"	; the proportional dialogue window
 .ENDIF
+.IF long_names == 1
+.include "ext\longnames.asm"	; the party's names up to 6 letters
+.ENDIF
 
 .BANK 63 SLOT 2
 .ORG $0000
