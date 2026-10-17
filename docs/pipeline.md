@@ -482,28 +482,54 @@ python tools/ps1emu.py opening --expect=B49B,B4FC,B5D5
   it `emu.setInput` reaches nothing). Portable mode also keeps Mesen's data out of Documents.
 * **Bounded.** Every wait in `lib.lua` has a frame limit and raises when it runs out;
   the run stops at `--frames` (default 30,000); Mesen stops at `--timeout` (default 120 s) and
-  the runner kills it 30 s later. Exit codes: 0 done, 1 the scenario raised, 2 the frame cap.
+  the runner kills it 30 s later. Exit codes: 0 done, 1 the scenario raised (a `fail`
+  screenshot is taken), 2 the frame cap.
+* **A blank battery.** Mesen keeps the cartridge RAM in `Mesen_2.1.1/Saves/ROM.sav`; the runner
+  deletes it before each run unless `--keep-sram`, so a saved game never changes what the next
+  run sees (into a slot already named the game skips the naming screen).
+* **No reset.** `emu.reset()` from a test-runner script stops the script (Mesen then runs to its
+  timeout); a power cycle is two runs, the second with `--keep-sram`.
 * **What a scenario sees** (`lib.lua`): `ram(addr)` (work RAM by CPU address),
   `game_mode()` (`$C202`; `MODE.intro` 3, `map` 9, `dungeon` 11, `interaction` 13, `road` 15),
   `wait`, `wait_until(pred, max, what)`, `press(buttons, n, gap)` (`one`, `two`, `up`, `down`,
   `left`, `right`, `pause`; button 1 shows as `$10` in `Ctrl_1_held` `$C204`),
   `at_button_wait()` (an exec callback on `WaitForButton1Or2`, which runs once a frame while the
   game waits), `dialogue_text()` and `cutscene_text()` (the text read back from the VRAM
-  nametable through the font's tiles: no OCR), `shot(name)`, `log(msg)`.
-* **Checking against the JSON.** `--expect=ID,...` compares the cut-scene pages a scenario
-  logged with those entries' `en`, page by page; `--dialogue=PATH` takes them from another copy.
+  nametable through the font's tiles: no OCR), `shot(name)`, `log(msg)`; `window_open()`
+  (`$C2D3`), `page_window(max, tag)` (pages a conversation with button 1, logging each page),
+  `yes_no_shown()` (the YES / NO box, by its words), `dump_screen(tag)` (every row with text),
+  `new_game_to_field(max_pages, on_page)`, `open_command_menu()`, `area_text(r0, r1, c0, c1)`
+  (a menu: one line per row, step 2; a US menu word is one tile row, a dialogue or cut-scene
+  line two, read on its lower row), `type_name(name)` (the naming screen: the cursor walks the
+  key grid until `$C788`, the code under it, is the key wanted, each step checked; the typed name
+  at `$C721` checked after each key; then END).
+* **Checking against the JSON.** `--expect=ID,...` (ids in the order the game plays them; each
+  runs on through its `falls_through` entries) compares the pages a scenario logged with those
+  entries' `en`: cut-scene pages as they are, and the dialogue window by a model of it
+  (`window_pages`: two lines; `{BR}` and `{PAGE}` move to the next line, scrolling; `{PAGE}` and
+  `{END}` wait; a string that starts in the open window starts on a new line; at each wait the
+  last two lines show). Inserts match any value they can hold. `--dialogue=PATH` takes the
+  text from another copy. `--words=SEGMENT[:a-b],...` checks that those `script.json` runs'
+  `en` are on the rows a scenario dumped.
 * **Trying a line before committing it.** `tools/trybuild.py EDITS.json OUT.sms` applies a few
   `en` edits (`{"dialogue": {id: en}, "script": {segment: {run id: en}}}`) to copies of the
   JSON, builds `OUT.sms` from them, checks nothing moved, and puts the source back. Then run a
   scenario with `--rom=OUT.sms --dialogue=OUT.sms.dialogue.json`. Tried on 2026-10-16: the
   soldier's intro speech rewritten with 20-cell lines and the field menu's STAS / SRCH as STAT
   / LOOK: the game showed both exactly (the encoder's output and the tilemap writer, seen).
-* **Scenarios** (`work/scripts/`): `boot` (the title; the pad reaches the game), `opening` (a new
-  game: every page of the intro logged, filmed and paged, to the field in Camineet),
-  `fieldmenu` (on the field, button 1 switches to the interaction screen, game mode 13, which
-  draws the command menu; its five words read back from rows 2-10, columns 1-6). `lib.lua`'s
-  `new_game_to_field(max_pages, on_page)` gets any scenario to the field, and
-  `area_text(r0, r1, c0, c1)` reads a menu (one line per row, step 2: a US menu word is one
-  tile row; a dialogue or cut-scene line is two, read on its lower row).
+* **Scenarios** (`work/scripts/`), all passing on 2026-10-16:
+
+  | scenario | what | check |
+  |---|---|---|
+  | `boot` | the title; button 1 reaches `Ctrl_1_held` | - |
+  | `opening` | a new game: every intro page, to the field in Camineet | `--expect=B49B,B4FC,B5D5` (8 pages) |
+  | `talk` | Alisa walks up into her home: its sign | `--expect=02A4` |
+  | `forcetalk talk=N` | any person's conversation without walking: the talk id is written to `$C2DB` before the button that opens the interaction screen, whose dispatcher `LABEL_474B` runs that handler (0 is the command menu); 1 is Suelo | `talk=1 --expect=0002,0006` (7 window pages) |
+  | `fieldmenu` | the command menu (on the field a button switches to the interaction screen, mode 13) | - |
+  | `menus` | STAS, MAGC (two field spells given: `$C40F`), ITEM (nine items given: `$C4C0`, count `$C4E2`; the list's NEXT row) and the item actions; button 2 chooses, button 1 cancels | `--words=field_menu,status_labels,spells:15-16,items:33-40,item_menu` (22 words) |
+  | `savegame` | SAVE: the slot list, YES, the naming screen (`type_name`), then the name in the cartridge RAM's slot list (a tilemap of tile, attribute pairs at `$0100`) | the name found |
+  | `continue` | run after `savegame` with `--keep-sram`: CONTINUE, "CONTINUE GAME- YES", the slot list showing the name, the field | slot 1 shows the name |
+
+  Not yet: a battle, a shop, the dungeons.
 
 Emulicious stays the second opinion for accuracy questions.

@@ -17,10 +17,15 @@ function log(msg)
   logf:flush()
 end
 
+local finished = false
+
+-- emu.stop does not halt at once: frames can still arrive, so `finished` shuts the run off
 local function finish(code, msg)
+  if finished then return end
   if msg then log(msg) end
   log("exit " .. code)
   logf:close()
+  finished = true
   emu.stop(code)
 end
 
@@ -121,6 +126,79 @@ function area_text(r0, r1, c0, c1)
   return out
 end
 
+-- log every screen row that holds text (each row read as a lower row, marks from the row
+-- above), tagged; for finding where a menu draws
+function dump_screen(tag)
+  for r = 0, 23 do
+    local s = text_line(r, 0, 31)
+    if s:match("[A-Z0-9]") then log(string.format("%s r%02d |%s", tag, r, s)) end
+  end
+end
+
+-- on the field: switch to the interaction screen and wait for the command menu.
+-- Bounded: 5 presses, 300 frames for the menu.
+function open_command_menu()
+  for try = 1, 5 do
+    press("one", 4, 36)
+    if game_mode() == MODE.interaction then break end
+    if try == 5 then error("the map did not take button 1 in 5 tries") end
+  end
+  wait_until(function() return #area_text(2, 10, 1, 6) >= 5 end, 300, "the command menu")
+  wait(10)
+  return area_text(2, 10, 1, 6)
+end
+
+-- ---------------------------------------------------------------- the naming screen
+
+-- the key table LABEL_4280: 4 rows of 11; $5C ADV, $5D RUB, $5E END
+local KEYS = {}
+for i, c in ipairs({ "A","B","C","D","E","F","G","H","I","J","K",
+                     "L","M","N","O","P","Q","R","S","T","U","V",
+                     "W","X","Y","Z",",",";",".","!","?","-",'"' }) do KEYS[i - 1] = c:byte() end
+for i = 33, 39 do KEYS[i] = 0x5C end
+KEYS[40], KEYS[41], KEYS[42], KEYS[43] = 0x5D, 0x5D, 0x5E, 0x5E
+
+local function key_index(code)
+  for i = 0, 43 do if KEYS[i] == code then return i end end
+end
+
+-- the cursor's key ($C788 holds the code under it) moved onto `code`, one step at a time,
+-- each step checked. Bounded: 30 steps.
+local function cursor_to(code)
+  for _ = 1, 30 do
+    local here = ram(0xC788)
+    if here == code then return end
+    local a, b = key_index(here), key_index(code)
+    if a == nil then error(string.format("cursor on an unknown key $%02X", here)) end
+    local ar, ac, br, bc = a // 11, a % 11, b // 11, b % 11
+    local dir = (br > ar and "down") or (br < ar and "up") or (bc > ac and "right") or "left"
+    for try = 1, 4 do                    -- the screen ignores the pad while it fades in
+      press(dir, 3, 8)
+      if ram(0xC788) ~= here then break end
+      if try == 4 then error(string.format("the cursor did not move %s from $%02X in 4 presses", dir, here)) end
+      wait(30)
+    end
+  end
+  error(string.format("cursor not on $%02X after 30 steps", code))
+end
+
+-- type `name` (at most 5 of A-Z , ; . ! ? - ") and END. Each key is checked under the cursor
+-- before button 2, and the typed name ($C721) after it.
+function type_name(name)
+  wait_until(function() return game_mode() == MODE.name_input end, 300, "the naming screen")
+  wait(30)
+  for i = 1, #name do
+    cursor_to(name:byte(i))
+    press("two", 3, 10)
+    if ram(0xC721 + i - 1) ~= name:byte(i) then
+      error(string.format("typed %q, but the name has $%02X at %d", name:sub(i, i), ram(0xC721 + i - 1), i))
+    end
+  end
+  log("typed " .. name)
+  cursor_to(0x5E)
+  press("two", 3, 10)
+end
+
 function on_field()
   local m = game_mode()
   return m == MODE.map or m == MODE.road or m == MODE.dungeon
@@ -149,6 +227,30 @@ function new_game_to_field(max_pages, on_page)
   error("still no field after " .. max_pages .. " pages")
 end
 
+function window_open() return ram(0xC2D3) == 0xFF end
+
+-- the YES / NO box (LABEL_B27_BC91 at VRAM $7B6A: rows 13-17, columns 21-25) is up; checked by
+-- its words, since other screens (the title's logo) put font tiles in that area
+function yes_no_shown()
+  return text_line(14, 21, 26):find("YES", 1, true) ~= nil and text_line(16, 21, 26):find("NO", 1, true) ~= nil
+end
+
+-- page through the dialogue window with button 1, logging and filming each page, until it
+-- closes. Bounded: `max` pages, 600 frames for each (a YES/NO prompt is not a button wait:
+-- it times out here; answer it in the scenario instead).
+function page_window(max, tag)
+  for page = 1, max do
+    wait_until(function() return at_button_wait() or not window_open() end, 600,
+               "a button wait or the window to close")
+    if not window_open() then return page - 1 end
+    wait(2)
+    log(string.format("page %d (window): %s", page, table.concat(dialogue_text(), " / ")))
+    shot(string.format("%s%02d", tag or "win", page))
+    press("one", 4, 6)
+  end
+  error("the window still open after " .. max .. " pages")
+end
+
 local shots = 0
 function shot(name)
   shots = shots + 1
@@ -173,6 +275,7 @@ if PS1.labels.WaitForButton1Or2 then
 end
 
 emu.addEventCallback(function()
+  if finished then return end
   frame = frame + 1
   if frame > PS1.max_frames then
     finish(2, "FAIL frame cap " .. PS1.max_frames)
@@ -183,6 +286,7 @@ emu.addEventCallback(function()
   end
   local ok, err = coroutine.resume(co)
   if not ok then
+    pcall(shot, "fail")
     finish(1, "FAIL " .. tostring(err))
   elseif coroutine.status(co) == "dead" then
     finish(0, "done")

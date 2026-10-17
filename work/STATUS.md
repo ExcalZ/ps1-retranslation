@@ -57,6 +57,15 @@ every `en` equals its `us`.
   all 8 pages back as the edited JSON has them, `fieldmenu` read STAT / MAGC / ITEM / LOOK /
   SAVE, and the screenshots agree. So the encoder's dialogue and the tilemap writer both show
   correctly, and 20-cell cut-scene lines fit under the picture in the US printer.
+* **More scenarios (2026-10-16).** `--expect` now models the dialogue window (two lines,
+  scrolling; consecutive ids share one window) and matches inserts as wildcards; `--words`
+  checks `script.json` words on screen. `forcetalk` opens any person's conversation by talk id
+  (Suelo: 7 of 7 window pages as the JSON has them); `talk` walks into Alisa's home sign; `menus`
+  reads STAS, MAGC, ITEM and the item actions (22 of 22 words); `savegame` types a name through
+  the naming screen (each key checked) and finds it in the cartridge RAM; `continue`
+  (`--keep-sram`) loads it after a power-on. Each run now starts with a blank battery. Found on
+  the way: `emu.reset()` stops a test-runner script, and the naming screen ignores the pad for
+  over a second after it appears.
 
 * **Tilemap text (2026-10-16).** `tools/tilemaps.py`; `extract_text.py --tilemaps` added 15
   tilemap segments (75 runs: menus, status boxes, spell lists, status labels, meseta, save
@@ -73,9 +82,8 @@ every `en` equals its `us`.
    free in every mode and that the title-screen words are graphics.
 2. **The rest of script.json:** done but for writing the naming screen and (the owner's
    call) the credits, both read-only for now.
-3. **More scenarios:** talking to a townsperson with `--expect` for window text (scrolled
-   pages need the window's two-line model); a battle; a shop; the other menus (status, magic,
-   items); save and continue.
+3. **More scenarios:** a battle (forced, as PS II's: the battle messages and the enemy name
+   box); a shop (forcetalk to a shopkeeper's talk id); a dungeon.
 4. **Engine options**: lower case, a proportional dialogue face, longer names, a text scheme
    with room for the new script (the stock banks have 183 and 40 bytes to spare).
 5. **Translation**, then proofreading in play, then release packaging (BPS + Patcher.html).

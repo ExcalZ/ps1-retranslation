@@ -1,7 +1,9 @@
 """Run a bounded emulator scenario in Mesen 2 (headless test runner).
 
     python tools/ps1emu.py SCENARIO [--rom=PATH] [--timeout=SECONDS] [--frames=N]
-                                    [--expect=ID,ID,...] [--dialogue=PATH] [key=value ...]
+                                    [--expect=ID,ID,...] [--dialogue=PATH]
+                                    [--words=SEGMENT[:a-b],...] [--script=PATH] [--keep-sram]
+                                    [key=value ...]
 
 SCENARIO is work/scripts/SCENARIO.lua (or a path). The runner writes one Lua file to
 work/analysis/run/: a PS1 table (the run's name, the output folder, the frame cap, the bank 0/1
@@ -9,13 +11,21 @@ labels of PSI_Disasm/ps1built.sym, the key=value params), then work/scripts/lib.
 scenario. Mesen runs it with --testRunner at full speed, no window. The log and the screenshots
 land in work/analysis/ (git-ignored) as SCENARIO.log and SCENARIO_NNN_name.png.
 
+Each run starts with a blank battery: Mesen keeps the cartridge RAM in Mesen_2.1.1/Saves/,
+and the runner deletes the ROM's .sav first unless --keep-sram (a saved game would otherwise
+change what the next run sees, e.g. no naming screen for a slot already named).
+
 Bounded three ways: every wait in lib.lua has a frame limit, the run stops at --frames
 (default 30000, about 8 minutes of game time), and Mesen's own --timeout (default 120 s)
 plus a process kill 30 s after that.
 
---expect compares the cut-scene pages the scenario logged with the `en` of those
-dialogue.json entries (ids, or labels without LABEL_): e.g. opening --expect=B49B,B4FC,B5D5;
+--expect compares the pages the scenario logged with the `en` of those dialogue.json entries
+(ids, or labels without LABEL_, in the order the game plays them; each runs on through its
+falls_through entries): cut-scene pages, and the dialogue window's two lines at each button
+wait (window_pages models the scrolling). E.g. opening --expect=B49B,B4FC,B5D5;
 --dialogue=PATH takes the expected text from another copy (trybuild.py writes one).
+--words checks that the `en` of those script.json runs (a segment, or an id range of it) is on
+the screen rows the scenario dumped (dump_screen): e.g. menus --words=field_menu,item_menu.
 
 Mesen is found via $MESEN (the exe or its folder) or ./Mesen_2.1.1/. It runs portable: the
 runner keeps a settings.json beside Mesen.exe with Lua I/O access on (the scenarios write their
@@ -96,7 +106,7 @@ def compose(name, scenario, params, frames):
     return '\n'.join(head) + lib + '\n-- ---- scenario: %s\n' % os.path.basename(scenario) + body
 
 
-def run(name, rom=None, params=None, timeout=120, frames=30000):
+def run(name, rom=None, params=None, timeout=120, frames=30000, keep_sram=False):
     """Run one scenario; returns (exit code, log lines)."""
     scenario = name if name.endswith('.lua') else os.path.join(SCRIPTS, name + '.lua')
     name = os.path.splitext(os.path.basename(scenario))[0]
@@ -105,6 +115,10 @@ def run(name, rom=None, params=None, timeout=120, frames=30000):
         raise SystemExit('no ROM at %s (build one with tools/sourcebuild.py)' % rom)
     exe = mesen()
     ensure_settings(exe)
+    if not keep_sram:                    # every run starts with a blank battery (no saved games)
+        sav = os.path.join(os.path.dirname(exe), 'Saves', os.path.splitext(os.path.basename(rom))[0] + '.sav')
+        if os.path.exists(sav):
+            os.remove(sav)
     os.makedirs(os.path.join(OUT, 'run'), exist_ok=True)
     for f in os.listdir(OUT):
         if f.startswith(name + '_') and f.endswith('.png') or f == name + '.log':
@@ -124,35 +138,127 @@ def run(name, rom=None, params=None, timeout=120, frames=30000):
 
 
 def seen_pages(lines):
-    """The cut-scene pages a scenario logged ("page N (cut-scene): a / b / c / d")."""
+    """The pages a scenario logged ("page N (window|cut-scene): a / b ..."): [(kind, lines)]."""
     out = []
     for l in lines:
-        m = re.search(r'page \d+ \(cut-scene\): (.*)$', l)
+        m = re.search(r'page \d+ \((window|cut-scene)\): (.*)$', l)
         if m:
-            page = [x.rstrip() for x in m.group(1).split(' / ')]
+            page = [x.rstrip() for x in m.group(2).split(' / ')]
             while page and not page[-1]:
                 page.pop()
-            out.append(page)
+            out.append((m.group(1), page))
     return out
 
 
+def chain(doc, start):
+    """The entries the game plays from `start`: on through every falls_through."""
+    entries = doc['entries']
+    i = next((n for n, e in enumerate(entries) if e['id'] in (start, 'LABEL_' + start)), None)
+    if i is None:
+        raise SystemExit('no entry %s in dialogue.json' % start)
+    out = [entries[i]]
+    while out[-1].get('falls_through'):
+        i += 1
+        out.append(entries[i])
+    return out
+
+
+def window_pages(texts):
+    """The dialogue window at each button wait while it plays `texts` (one open window).
+
+    Two lines; a {BR} or a {PAGE} moves to the next line, scrolling once both are used; a
+    {PAGE} and an {END} wait for a button first; {CLR} empties the window; a string that
+    starts in the open window starts on a new line. At a wait the window shows the last two
+    lines since it opened or was cleared."""
+    shown, cur, pages = [], '', []
+
+    def snap():
+        ls = (shown + [cur])[-2:]
+        while ls and not ls[-1]:
+            ls.pop()
+        pages.append(('window', [x.rstrip() for x in ls]))
+
+    for n, text in enumerate(texts):
+        if n and (shown or cur):
+            shown.append(cur)
+            cur = ''
+        pos = 0
+        for m in T.TAG.finditer(text):
+            cur += text[pos:m.start()]
+            tag = m.group(1)
+            if tag in ('BR', 'PAGE'):
+                if tag == 'PAGE':
+                    snap()
+                shown.append(cur)
+                cur = ''
+            elif tag == 'CLR':
+                shown, cur = [], ''
+            elif tag == 'END':
+                snap()
+            elif tag not in T.TERMINATORS:
+                cur += m.group(0)
+            pos = m.end()
+        cur += text[pos:]
+    return pages
+
+
 def expected_pages(ids, path=None):
-    """The pages the cut-scene entries `ids` should show, from their `en`."""
+    """The pages entries `ids` should show, from their `en`: [(kind, lines)]. Cut-scene ids
+    give cut-scene pages; dialogue and message ids, given in the order the game plays them,
+    give the window's pages (one window for a run of consecutive window ids)."""
     doc = json.load(open(path or os.path.join(ROOT, 'work', 'dialogue.json'), encoding='utf-8'))
-    by_id = {e['id']: e for e in doc['entries']}
-    out = []
-    for i in ids:
-        e = by_id.get(i) or by_id.get('LABEL_' + i)
-        if e is None:
-            raise SystemExit('no entry %s in dialogue.json' % i)
-        text = T.TAG.sub(lambda m: {'BR': '\n', 'PAGE': '\f', 'CLR': '\f'}.get(m.group(1), ''), e['en'])
+    out, run = [], []
+    for i in ids + [None]:
+        es = chain(doc, i) if i else []
+        if run and (not es or es[0]['kind'] == 'cutscene'):
+            out += window_pages(run)
+            run = []
+        if not es:
+            break
+        if es[0]['kind'] != 'cutscene':
+            run.append(''.join(e['en'] for e in es))
+            continue
+        text = T.TAG.sub(lambda m: {'BR': '\n', 'PAGE': '\f', 'CLR': '\f'}.get(m.group(1), ''),
+                         ''.join(e['en'] for e in es))
         for p in text.split('\f'):
             page = [x.rstrip() for x in p.split('\n')]
             while page and not page[-1]:
                 page.pop()
             if page:
-                out.append(page)
+                out.append(('cut-scene', page))
     return out
+
+
+def expected_words(spec, path=None):
+    """The `en` of script.json runs: spec 'segment[:a-b|:n],...' -> [(label, word)]."""
+    doc = json.load(open(path or os.path.join(ROOT, 'work', 'script.json'), encoding='utf-8'))
+    out = []
+    for part in spec.split(','):
+        seg, _, ids = part.partition(':')
+        if seg not in doc['segments']:
+            raise SystemExit('no segment %s in script.json' % seg)
+        lo, _, hi = ids.partition('-')
+        for r in doc['segments'][seg]['runs']:
+            if ids and not int(lo) <= int(r['id']) <= int(hi or lo):
+                continue
+            if r['en'].strip():
+                out.append(('%s %s' % (seg, r['id']), r['en'].strip()))
+    return out
+
+
+WILD = {'NAME': '.{1,4}', 'ENEMY': '.{1,8}', 'ITEM': '.{1,8}', 'NUMBER': '[0-9]{1,5}'}
+
+
+def same_page(want, seen):
+    """A page as expected: the same kind and lines, an insert matching any value it can hold."""
+    if want[0] != seen[0] or len(want[1]) != len(seen[1]):
+        return False
+    for w, s in zip(want[1], seen[1]):
+        pattern = ''.join(WILD.get(m.group(1), re.escape(m.group(0))) if m.group(1) else re.escape(m.group(0))
+                          for m in re.finditer(r'\{(\w+)\}|[^{]+|\{', w))
+        if not re.fullmatch(pattern, s):
+            return False
+    return True
 
 
 def main():
@@ -162,7 +268,7 @@ def main():
     opts = dict(a[2:].split('=', 1) for a in sys.argv[1:] if a.startswith('--') and '=' in a)
     params = dict(a.split('=', 1) for a in sys.argv[1:] if not a.startswith('--') and '=' in a)
     code, lines = run(args[0], opts.get('rom'), params, int(opts.get('timeout', 120)),
-                      int(opts.get('frames', 30000)))
+                      int(opts.get('frames', 30000)), '--keep-sram' in sys.argv)
     for l in lines:
         print(l)
     print('%s: %s (exit %d)' % (args[0], EXIT.get(code, 'Mesen did not finish (timeout or crash)'), code))
@@ -171,12 +277,21 @@ def main():
     if 'expect' in opts:
         want, seen = expected_pages(opts['expect'].split(','), opts.get('dialogue')), seen_pages(lines)
         bad = [n for n in range(max(len(want), len(seen)))
-               if n >= len(want) or n >= len(seen) or want[n] != seen[n]]
+               if n >= len(want) or n >= len(seen) or not same_page(want[n], seen[n])]
         for n in bad[:10]:
-            print('page %d: expected %s' % (n + 1, want[n] if n < len(want) else '-'))
-            print('         on screen %s' % (seen[n] if n < len(seen) else '-'))
-        print('%d of %d cut-scene pages as dialogue.json has them' % (len(want) - len(bad), len(want)))
+            print('page %d: expected %s' % (n + 1, str(want[n]) if n < len(want) else '-'))
+            print('         on screen %s' % (str(seen[n]) if n < len(seen) else '-'))
+        print('%d of %d pages as dialogue.json has them' % (len(want) - len(bad), len(want)))
         if bad:
+            raise SystemExit(1)
+    if 'words' in opts:
+        screen = '\n'.join(l.split('|', 1)[1] for l in lines if '|' in l)
+        want = expected_words(opts['words'], opts.get('script'))
+        missing = [(k, w) for k, w in want if not re.search(r'(?<![A-Z0-9])%s(?![A-Z0-9])' % re.escape(w), screen)]
+        for k, w in missing:
+            print('not on screen: %s %r' % (k, w))
+        print('%d of %d script.json words on screen' % (len(want) - len(missing), len(want)))
+        if missing:
             raise SystemExit(1)
 
 
