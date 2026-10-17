@@ -40,7 +40,15 @@ the output is bit-exact.
 | file | what | size | CRC32 | SHA-1 |
 |---|---|---|---|---|
 | `PSI_Disasm/ps1original.sms` | US/EU release **v3** (header version 3, product 9500): what the disassembly reproduces; ships in the disassembly | 524,288 | `00BEF1D7` | `07fcf297...8e06838` |
-| `work/ps1jp_stock.sms` | Japan, 1987 (needed to align the JP script; the owner's dump) | 524,288 | `6605D36A` | - |
+| `work/ps1en_stock.sms` | the same US/EU v3, supplied by the owner (byte-identical to `ps1original.sms`) | 524,288 | `00BEF1D7` | `07fcf297...8e06838` |
+| `work/ps1jp_stock.sms` | Japan, 1987 (header version 0, product 9500, checksum `$2C6B`, `$7FFF` = `$40`): the source of the JP script; the owner's dump | 524,288 | `6605D36A` | `c9a40ddd...0d3e68e4` |
+
+All three are git-ignored (`*.SMS`). SHA-256: v3 `9e324e92bd833b45...`, JP
+`1d8554202f313d97...`. The JP ROM differs from v3 in 67,697 bytes. Banks 0, 1, 2 and 12 differ
+almost throughout (code moved, all the text rewritten). Banks 3 (`$869F-$BFFD`), 15, 16 (the
+font), 18 (`$BE84-$BFBB`), 20 (credits, `$BDC6-$BFA6`) and 27 (menus, `$B41B-$BCE1`) differ in
+part, and bank 14 in one byte. The other banks are identical, so graphics, maps and music
+line up bank for bank. Section 3.12 maps the JP text against the US layout.
 
 The US/EU v2 (`E4A65E79`) is the other export dump; whether the patch should also apply to it
 (as PS II's patcher takes both US revisions) is open.
@@ -84,7 +92,7 @@ One byte per character, the same in every printer.
   row then lower row): `LABEL_33D6` 00:33D6 writes the upper tile at the cursor and the lower
   one 64 bytes (a row) below. In the US font every upper tile is blank (`$C0`) except `"`
   (`$22`: `$EB` above) and the apostrophe (`$27` and `$40`: the comma tile `$E5` above). The
-  upper row is presumably the JP font's dakuten row. Lower tiles: digits `$C1`-`$CA`, letters
+  upper row is the JP font's dakuten row (3.12). Lower tiles: digits `$C1`-`$CA`, letters
   `$CB`-`$E4`, `,` `$E5`, `;` `$E6`, `.` `$E7`, `!` `$E8`, `?` `$E9`, `-` `$EA`.
 * **Blank codes.** 13 codes print a space: `$23`-`$26`, `$28`-`$2B`, `$2F`, `$3A`, `$3C`-`$3E`.
   So there is no colon, slash or parenthesis, and no lower case. The script writes the
@@ -300,7 +308,8 @@ a new grid and a new key table.
   **20 tiles**): that is room for new glyphs without moving anything. This comes from a scan
   of every `LABEL_3FA` call; confirm it in Mesen's tile viewer in a town, a dungeon and a
   battle. The full-screen pictures that overwrite tiles `$000`-`$19C` reload the font
-  afterwards. A lower-case set (26) does not fit in either; it is engine-option work.
+  afterwards. The JP font fills `$C0`-`$FF` (64 tiles, 3.12), so this range was font space
+  from the start. A lower-case set (26) does not fit in either; it is engine-option work.
 
 ### 3.11 What the extractor needs, in short
 
@@ -316,8 +325,60 @@ a new grid and a new key table.
 * **Do not split on these labels:** `LABEL_B18_BF20`, `LABEL_B18_BF50` and `LABEL_B18_BF80`
   fall inside the intro-caption tilemap. Code with another bank paged in uses them as
   addresses (lines 12846, 12884), which is harmless as long as nothing moves.
-* **Japanese.** The JP ROM's kana script, its encoding and any dictionary are read from the
-  JP ROM (STATUS Next 1). Maxim's JP disassembly and `.tbl` files are a cross-check only.
+* **Japanese:** decoded from `work/ps1jp_stock.sms` by the layout in 3.12. Maxim's JP
+  disassembly and `.tbl` files are a cross-check only.
+
+### 3.12 The Japanese ROM, compared
+
+Read from `work/ps1jp_stock.sms`. There are no labels: addresses are JP `bank:addr`, found by
+code signatures of the US routines. All JP text sits in **bank 2**. The US moved the battle
+and system messages to bank 12, and the item names and the glyph table to bank 1, to make
+room.
+
+| | JP | US |
+|---|---|---|
+| glyph table | 02:8000-80B1, 89 pairs for codes `$00`-`$58`, read with bank 2 paged | `LABEL_7D17` 01:7D17, 70 pairs (`$20`-`$65`), any bank |
+| `DialogueBlock` | 02:80B2, 341 pointers, the same ids (`ShowDialogue` 01:59BA reads `$80B0` + id) | 02:8000 |
+| dialogue blocks | 02:835C-AB1E, 10,179 bytes | 02:82AA-B49A, 12,785 bytes |
+| battle and system messages | 02:AB1F-B8BE, 171 strings | bank 12, 174 strings |
+| cut-scene strings | 02:B8BF-BD93, 22 strings (printer 00:34A5) | 02:B49B-BA80, 23 (`LABEL_337D`) |
+| item names | 02:BD94, 65 x 8; then `ItemData` at 02:BF9C | `ItemNames` 01:7DA3; `ItemData` 01:7FAB |
+| dictionary | none | 128 words, bank 2 |
+| party names | 00:3326, 4 x 4: アリサ, ミャウ, タイロン, ルツ | `CharacterNames` 00:31BB |
+| enemy names | bank 3, the same 32-byte records at 03:867F, 8 kana | the same, ASCII |
+| font | `LABEL_B16_BAD8` 10:BAD8 (the same label, 998 bytes packed), 64 tiles `$C0`-`$FF` | 44 tiles `$C0`-`$EB` |
+| menus, spell lists | bank 27, the same tilemaps and window sizes, kana | bank 27 |
+| intro caption | 03:BF02 tilemap, 5 x 15 cells at `$7886` | `LABEL_B18_BEF4`, 5 x 20 |
+| credits | `LABEL_B20_BDB8`, the same format and staff, a few screens moved | the same |
+| free at end of bank 2 | 36 bytes from `$BFDC` | 183 bytes |
+
+* **Encoding.** One byte per kana, katakana only:
+  * `$00` space;
+  * `$01`-`$32` ア イ ウ エ オ カ ... ワ ヲ ン ッ ャ ュ ョ (gojuon order, tiles `$CB`-`$FC`);
+  * `$33`-`$46` ガ ... ド, バ ... ボ: the base kana's tile below and the dakuten tile `$FD`
+    above;
+  * `$47`-`$4B` パ ... ポ: handakuten `$FE` above;
+  * `$4C` 。 (tile `$FE` in the lower row, attribute `$12`), `$4D` ー (`$FF`);
+  * `$4E` lower tile `$A4`, outside the font (its use is still to be found).
+
+  Digits are written by the number printer as tiles `$C1`-`$CA`, as in the US. There is no
+  dictionary: no high-bit test in the printer.
+* **Controls**, in the US order: `$4F` character name, `$50` enemy, `$51` item (8 bytes from
+  02:BD94), `$52` number, `$53` clear the window, `$54` new line, `$55` new page, `$56` end
+  without waiting, `$57` timed end, `$58` (and anything above) end after a button. So JP
+  `$4F`-`$58` correspond to US `$5B`-`$63` and `$65`. JP has no counterpart of `$64`. Short
+  name fields end in `$58`.
+* **Window.** The JP printer (00:333A) uses the same window, the same 18-cell lines, the same
+  wrap rule (no wrap when the next byte is `>= $53`) and the same scroll.
+* **Alignment.** The ids line up one for one. JP id `$0002` is Suelo's line (ワタシハ スエロ。...),
+  as in the US, and the same 68 blocks run on into the next. The messages and cut-scenes are
+  in the same order as the US's bank 12 and bank 2 strings. The last message is ココロガ
+  ナゴムヨウナ / ウツクシイ ネイロダ, the US's "THE SOUND IS HEARTWARMING.". The counts differ
+  slightly (171 vs 174, 22 vs 23), so align those two by order and content, not index.
+* **Menus.** JP menu words use both tile rows (マジック is シ with ゛ above). The US reuses the
+  same tilemaps and leaves the upper row blank.
+* **Not yet placed:** the JP spaceport-destination menu (the US one is in bank 18, where JP
+  bank 18 differs at `$BE84-$BFBB`), and the use of code `$4E`.
 
 ## 4. Extraction (*planned*: done once, on a stock build only)
 

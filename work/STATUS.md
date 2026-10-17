@@ -26,12 +26,18 @@ with WLA-DX 10.7 (`python tools/checkstock.py`), and the stock text engine is ma
   size, the naming screen, the intro, ending and credits, and the font (44 tiles at `$C0`;
   tiles `$EC`-`$FF` look free). Free space: 183 bytes in bank 2, 40 in bank 12. Read-only:
   nothing in the source changed.
+* **Stock ROMs supplied (2026-10-16).** The owner added `work/ps1jp_stock.sms` (Japan,
+  CRC32 `6605D36A`) and `work/ps1en_stock.sms` (US/EU v3, identical to `ps1original.sms`),
+  both git-ignored and recorded in `docs/pipeline.md` section 2. The JP text layout is mapped
+  in section 3.12: everything in bank 2, with the glyph table at `$8000`, the same 341 ids,
+  no dictionary, one byte per katakana, and controls `$4F`-`$58`.
 
 ## Next, in order
 
-1. **The JP ROM.** The owner supplies *Phantasy Star* (Japan) as `work/ps1jp_stock.sms`
-   (CRC32 `6605D36A`). Decode its script (kana encoding, its own dictionary if any) with
-   `tools/ps1text.py`; check against Maxim's JP disassembly (`maxim-zhao/psrp`, `disassembly/`).
+1. **The JP ROM**: supplied (see Done), and its layout and encoding are mapped
+   (`docs/pipeline.md` 3.12). Left: the decoder `tools/ps1text.py` for the JP and US codecs;
+   placing the JP spaceport menu and code `$4E`; a check against Maxim's JP disassembly
+   (`maxim-zhao/psrp`, `disassembly/`).
 2. ~~The stock text engine~~: done (see Done and `docs/pipeline.md` section 3). Still to
    confirm in Mesen when the harness exists: that tiles `$EC`-`$FF` are free in every mode,
    and that the title-screen words are graphics.
