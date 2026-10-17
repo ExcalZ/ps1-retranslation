@@ -144,9 +144,10 @@ def main():
                         problems.append('%s %s: %s' % (name, r['id'], x))
                         continue
                     px = F.width(text) - 1 if text else 0
-                    if px > 8 * r['cells']:
+                    cells = r['cells'] + (1 if name == 'spells' else 0)   # the lists a cell wider
+                    if px > 8 * cells:
                         problems.append('%s %s (%s): %r is %d px (%d cells, %d px)' % (
-                            name, r['id'], r['where'], text, px, r['cells'], 8 * r['cells']))
+                            name, r['id'], r['where'], text, px, cells, 8 * cells))
             continue
         if seg.get('kind') == 'tilemap':
             for r in seg['runs']:

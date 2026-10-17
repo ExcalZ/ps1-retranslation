@@ -1,6 +1,6 @@
 -- The battle's lists: a forced battle (enemy=N, default 39), nine items given; at the battle
 -- menu ITEM opens the inventory (logged, a shot), button 1 closes it; MAGC opens Alisa's spell
--- list (two battle spells given), logged, closed; then ATTK until the battle ends, every
+-- list (two battle spells given: --words=spells:0-1), logged, closed; then ATTK until the battle ends, every
 -- message logged. Check: --words=items:33-40,battle_menu (the lists read back), the screen
 -- under each list comes back (the menu rows after each), --known.
 -- Bounded: the new game to the field, 600 frames for the menu, 30 frames a press, 40 rounds.
@@ -21,7 +21,21 @@ local function cells(tag, row, c0, c1)
 end
 
 local function choose(n)                 -- the battle menu's entry n (1 ATTK ... 5 RUN)
-  for _ = 2, n do press("down", 4, 10) end
+  local function cursor()                -- tile $F0 in column 1, rows 2-10 (it blinks)
+    for _ = 1, 40 do
+      for k = 1, 5 do
+        if vram(0x3800 + (2 * k) * 64 + 2) == 0xF0 then return k end
+      end
+      wait(1)
+    end
+    error("no cursor in the menu")
+  end
+  for _ = 1, 12 do                       -- one press at a time, checked (no wrapping round)
+    local at = cursor()
+    if at == n then break end
+    press(at < n and "down" or "up", 2, 16)
+  end
+  if cursor() ~= n then error("the cursor did not reach entry " .. n) end
   press("two", 4, 40)
 end
 
@@ -54,6 +68,7 @@ function scenario()
   wait(40)
   dump_screen("magc")
   shot("magc")
+  log("spells: " .. table.concat(area_text(10, 18, 7, 12), " / "))
   if PS1.params.trace then cells("magc", 6, 1, 6) cells("magc list", 9, 6, 12) end
   press("one", 4, 40)
   wait_until(menu_up, 300, "the battle menu after MAGC")

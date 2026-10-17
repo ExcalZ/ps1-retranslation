@@ -152,10 +152,8 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
   menus, lists and party names read back in mixed case (trial builds with Fight / Magic /
   Item / Talk / Flee, Status / Search, Use / Equip / Drop, Yes / No, 14-letter items and
   enemies, Alisa / Myau / Tyron / Lutz). Found on the way: tile `$1FF` is written every frame
-  (not free); the battle redraws its menu in place for each member (`LABEL_30D5`). Not yet
-  in the face: the status window's labels, MST, the save slots, the intro caption. Not yet
-  seen: the battle's spell list (MAGC with spells), the spaceport, the second-hand shop's
-  selling list, the hospital and church, a dungeon's menus read back.
+  (not free); the battle redraws its menu in place for each member (`LABEL_30D5`). (The
+  windows left then are done below.)
 * **Meseta (2026-10-17).** The owner: MST becomes "Meseta", in the face. The money line (the
   money box, the inventory, the status window) is drawn as one run, "Meseta 2000", the amount
   in the face too: the money box's 8 cells hold "Meseta 65535" (55 px). The battle's pool now
@@ -168,6 +166,16 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
   buffers (`$C790`, `$DFE8`) are used only without `vwf_windows`. linecheck: an item or enemy at
   most 80 px. Both widths seen in game (trial builds); every scenario passes.
 
+* **vwf_windows finished (2026-10-17).** The spell lists a cell wider (5 text cells: the
+  proposed spells reach 36 px, Muwaller and Telepath), drawn in bank 35 from gentext's wider
+  maps; the status window's labels in the face (`LABEL_2FD8` -> `WinLabel`; the LV row stays
+  the stock's). Only the save slots and the intro caption keep the fixed font. New scenario
+  `windows screen=hospital|church|sell|port|dungeon`, and `battlelist` reads the battle's
+  spell list; menus are chosen by reading the cursor back. Seen in a mixed-case trial build:
+  the hospital and church party menus, Buy / Sell and the selling list, the ship's
+  destinations, the dungeon's menu, inventory and status window (the view comes back), the
+  battle spell list (Muwaller / Telepath). Every scenario passes on the working build (24).
+
 ## Next, in order
 
 1. **Left from the survey:** a cross-check against Maxim's
@@ -175,13 +183,9 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
    free in every mode and that the title-screen words are graphics.
 2. **The rest of script.json:** done but for writing the naming screen and (the owner's
    call) the credits, both read-only for now.
-3. **More scenarios** (as the translation needs them): the second-hand shop (selling), the
-   hospital and church (`$C29E` `$12` / `$14`), a dungeon, the ending.
-4. **Engine**: the windows narrower now that names are in the face (items 80 px = 10 cells,
-   not 14: less RAM, less screen); the spell lists as wide as the spells need; the status
-   labels and MST in the face; a dictionary generated from the new script if bank 32 gets tight; the
-   naming screen with lower case (later); spell names longer than 4 cells (if the owner wants
-   them). Not yet seen with `vwf_cutscene`: the Myau, governor and ending scenes
+3. **More scenarios** (as the translation needs them): the ending.
+4. **Engine**: a dictionary generated from the new script if bank 32 gets tight; the
+   naming screen with lower case (later). Not yet seen with `vwf_cutscene`: the Myau, governor and ending scenes
    (no scenario reaches them yet). Then a dictionary generated from the
    new script, if bank 32 gets tight.
 5. **Translation**: the owner's answers to the glossary's six questions (an engine change

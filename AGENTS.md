@@ -108,7 +108,8 @@ quotes.
   screenshots in `work/analysis/` (`docs/pipeline.md` section 7). Scenarios in
   `work/scripts/` on top of `lib.lua`: `boot`, `opening`, `talk`, `forcetalk talk=N`, `fieldmenu`,
   `menus`, `savegame`, then `continue --keep-sram`, `shop shop=N`, `battle enemy=N`,
-  `partymenu`, `healtarget`, `inventory`, `battlelist enemy=N`, `vramdump enemy=N` (then `tools/vramsheet.py`: the
+  `partymenu`, `healtarget`, `inventory`, `battlelist enemy=N`, `windows screen=hospital|church|sell|port|dungeon`,
+  `vramdump enemy=N` (then `tools/vramsheet.py`: the
   battle's VRAM as a tile sheet, free tiles marked)
   (`docs/pipeline.md` section 7 has the table and each one's check). To see a line in the game
   before committing it: `python tools/trybuild.py EDITS.json OUT.sms`, then a scenario with

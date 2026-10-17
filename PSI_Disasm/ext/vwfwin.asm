@@ -385,6 +385,123 @@ WinMoney:
 	rst	$08			; the right frame's cell
 	ret
 
+; ---------------------------------------------------------------- the status window's labels
+
+; LABEL_2FD8 (WinLabelHook): the label's 8 cells at WinSrc (bank 0: the frame, then a marked run
+; of 7, gentext) at de: the frame, then the run in the face; a row without a mark (the LV row,
+; LABEL_3865) as the stock writes it. Returns with the VDP past the label
+; and interrupts off, as the stock's 16 bytes leave it for the digits.
+WinLabel:
+	call	WinEnsurePool
+	ld	hl, (WinSrc)
+	inc	hl
+	inc	hl
+	inc	hl
+	bit	5, (hl)			; the second cell's attribute: a marked run?
+	ld	hl, (WinSrc)
+	jr	nz, WinLabel_Face
+	di				; no (the LV row): its 16 bytes, as the stock writes them
+	rst	$08
+	ld	b, 16
+-:	ld	a, (hl)
+	out	(Port_VDPData), a
+	inc	hl
+	djnz	-
+	ret
+WinLabel_Face:
+	ld	c, (hl)
+	inc	hl
+	ld	b, (hl)
+	inc	hl
+	call	WinCell			; the frame
+	ld	a, (hl)
+	call	WinStrPtr
+	ld	b, 7
+	call	WinRun
+	di
+	rst	$08
+	ret
+
+; ---------------------------------------------------------------- the spell lists
+
+; LABEL_3478: list WinSpellListA (a character's battle or field spells) with b of them, one cell
+; wider than the stock's 6 so a name in the face may take 5 cells: WinSpellMaps, 12 rows of 7
+; cells a list, and WinSpellBlank for the rows past the spells (ext/vwfwin_data.asm, gentext,
+; from bank 27's maps). The screen under it: the stock buffer $DB74 for the stock columns,
+; WinSpellExtra for the new one at c12.
+WinSpellList:
+	push	bc
+	ld	hl, $DB74
+	ld	de, $7A0C
+	ld	bc, $0C0C
+	call	LABEL_3AA6
+	ld	hl, WinSpellExtra
+	ld	de, $7A18
+	ld	bc, $0C02
+	call	LABEL_3AA6
+	pop	bc
+	ld	a, (WinSpellListA)
+	ld	l, a
+	ld	h, 0
+	ld	d, h
+	ld	e, l
+	add	hl, hl
+	add	hl, hl
+	add	hl, de			; 5a
+	add	hl, hl
+	add	hl, hl
+	add	hl, de			; 21a
+	add	hl, hl
+	add	hl, hl
+	add	hl, hl			; 168a: 12 rows of 14 bytes
+	ld	de, WinSpellMaps
+	add	hl, de
+	ld	de, $7A0C
+	ld	a, b
+	or	a
+	jr	z, WinSpellList_None
+	add	a, a
+	inc	a
+	ld	b, a			; the top border, then two rows a spell
+	ld	c, 14
+	push	bc
+	call	LABEL_3A68
+	pop	bc
+	push	de			; the rest from the blank list, the same rows on
+	ld	l, b
+	ld	h, 0
+	add	hl, hl
+	ld	d, h
+	ld	e, l
+	add	hl, hl
+	add	hl, hl
+	add	hl, hl
+	or	a
+	sbc	hl, de			; 14 bytes a row
+	ld	de, WinSpellBlank
+	add	hl, de
+	pop	de
+	ld	a, 12
+	sub	b
+	ld	b, a
+	ld	c, 14
+	jp	LABEL_3A68
+WinSpellList_None:
+	ld	hl, WinSpellBlank
+	ld	bc, $0C0E
+	jp	LABEL_3A68
+
+; LABEL_34C9: the screen back under the spell list
+WinSpellRestore:
+	ld	hl, $DB74
+	ld	de, $7A0C
+	ld	bc, $0C0C
+	call	LABEL_3A57
+	ld	hl, WinSpellExtra
+	ld	de, $7A18
+	ld	bc, $0C02
+	jp	LABEL_3A57
+
 ; ---------------------------------------------------------------- map rows
 
 ; a map row (WinRowCheck): WinSrc in bank WinSrcBank, c bytes, de its VRAM address. A row from

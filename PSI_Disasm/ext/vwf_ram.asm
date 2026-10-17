@@ -66,3 +66,7 @@
 .define WinLastSave	$DE9E	; 1: the last thing done was a save (the region grows)
 .define WinReuse	$DE9F	; 1: the run is drawn again in place (its cells' tiles kept)
 .define WinNewMax	$DEFF	; the run's cells that took new tiles
+; the spell list's new column and its list number; $C790 is LongSharedExtra2's only without
+; vwf_windows
+.define WinSpellExtra	$C790	; 24 bytes: the screen under the spell list's new column (12 x 1)
+.define WinSpellListA	$C7A8	; the list LABEL_3478 was asked for

@@ -88,12 +88,42 @@ VWF_KINDS = (({'dialogue', 'message'} if OPTIONS.get('vwf_dialogue') == 1 else s
 LONG = OPTIONS.get('long_names') == 1
 LONG_ITEMS = OPTIONS.get('long_item_names') == 1
 WIN = OPTIONS.get('vwf_windows') == 1
-# vwf_windows: the tilemap segments whose runs are drawn in the face (ext/vwfwin.asm). The rest
-# keep the fixed font: the status window's labels and the money line are written by code of
-# their own, the save slots from the cartridge RAM, the intro caption in a cut-scene.
+# vwf_windows: the tilemap segments whose runs are drawn in the face (ext/vwfwin.asm; the status
+# window's labels through WinLabel, the money line through WinMoney). The rest keep the fixed
+# font: the save slots from the cartridge RAM, the intro caption in a cut-scene.
 WIN_SEGMENTS = ('battle_menu', 'field_menu', 'item_menu', 'shop_menu', 'yes_no', 'spells',
-                'spaceport', 'status_boxes', 'inventory')
+                'spaceport', 'status_boxes', 'inventory', 'status_labels')
 WIN_PARTY = 0xF0                       # string ids $F0-$F3: the party's names (LongNames)
+
+
+def win_spell_maps(lines27, defs):
+    """vwf_windows: the six spell lists (LABEL_B27_B6DF, 12 rows of 6 cells each) and the blank
+    one (LABEL_B27_BA3F) a cell wider before the right frame: a border row gets another frame
+    piece, a marked run another cell (5: a spell name in the face up to 40 px), a blank row a
+    blank. From bank 27 as the tilemap writer left it (the runs marked)."""
+    def stock(label, n):
+        return b''.join(b for _, b in M.label_bytes(lines27, label, n, defs))[:n]
+
+    def widen(row):
+        cells = [row[i:i + 2] for i in range(0, 12, 2)]
+        if cells[0][0] == 0xF1:
+            fill = cells[1]
+        elif cells[4][1] & 0x20:
+            fill = bytes([0, 0x30])
+        else:
+            fill = bytes([M.BLANK, 0x10])
+        return b''.join(cells[:5] + [fill] + cells[5:])
+
+    out = ['; vwf_windows: the spell lists a cell wider (12 rows of 7 cells; from bank 27\'s maps)',
+           'WinSpellMaps:']
+    lists = stock('LABEL_B27_B6DF', 6 * 144)
+    for i in range(0, len(lists), 12):
+        out.append('.db ' + ', '.join('$%02X' % b for b in widen(lists[i:i + 12])))
+    out.append('WinSpellBlank:')
+    blank = stock('LABEL_B27_BA3F', 144)
+    for i in range(0, len(blank), 12):
+        out.append('.db ' + ', '.join('$%02X' % b for b in widen(blank[i:i + 12])))
+    return '\r\n'.join(out) + '\r\n'
 
 
 def win_run(string_id, cells):
@@ -246,7 +276,8 @@ def generate(dialogue, script):
                               run['offset'] - 2 * M.ROW_CELLS[run['label']], up, defs)
     for path, lines in files.items():
         out[path] = '\r\n'.join(lines)
-    out[os.path.join(T.DISASM, 'ext', 'vwfwin_data.asm')] = strings.asm()
+    spell_maps = win_spell_maps(files[os.path.join(T.DISASM, 'banks', 'bank27.asm')], defs) if WIN else ''
+    out[os.path.join(T.DISASM, 'ext', 'vwfwin_data.asm')] = strings.asm() + spell_maps
     out[os.path.join(T.DISASM, 'ext', 'longitems_data.asm')] = long_items_data(script, strings)
     return out
 

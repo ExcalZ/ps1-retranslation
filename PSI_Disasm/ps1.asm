@@ -6803,6 +6803,11 @@ LABEL_2FA1:
 	ld ix, Noah_stats
 	jp LABEL_2F1B
 
+.IF vwf_windows == 1
+LABEL_2FD8:
+	jp	WinLabelHook	; vwf_windows: the status window's label in the face
+.DSB 6, $00
+.ELSE
 LABEL_2FD8:
 	di
 	push	de
@@ -6810,6 +6815,7 @@ LABEL_2FD8:
 	rst  $08
 	ld	b, $10
 	jp	LABEL_2FE7
+.ENDIF
 
 LABEL_2FE1:
 	di
@@ -6822,6 +6828,7 @@ LABEL_2FE7:
 	out	(Port_VDPData), a
 	inc	hl
 	djnz	LABEL_2FE7
+LABEL_2FE7_Digits:
 	pop	af
 	ld	bc, $C010
 	ld	d, $FF
@@ -7106,6 +7113,19 @@ LABEL_319E:
 	ld	a, :LongEnemyBoxRestore
 	ld	hl, LongEnemyBoxRestore
 	jp	FarCall
+.IF vwf_windows == 1
+; vwf_windows: LABEL_2FD8 - the status window's label (hl: its 8 cells, the frame then a marked
+; run) in the face (WinLabel), then the stock's digits of a
+WinLabelHook:
+	di
+	push	de
+	push	af
+	ld	(WinSrc), hl
+	ld	a, :WinLabel
+	ld	hl, WinLabel
+	call	FarCall
+	jp	LABEL_2FE7_Digits
+.ENDIF
 .ORGA $31BB
 .ELSE
 LABEL_319E:
@@ -7738,6 +7758,21 @@ LABEL_3464:
 	jp	LABEL_3A57
 
 
+.IF vwf_windows == 1
+; vwf_windows: the spell list one cell wider (the face's spell names take up to 5 cells), drawn
+; and restored in bank 35 (ext/vwfwin.asm)
+LABEL_3478:
+	ld	(WinSpellListA), a
+	ld	a, :WinSpellList
+	ld	hl, WinSpellList
+	jp	FarCall
+.ORGA $34C9
+LABEL_34C9:
+	ld	a, :WinSpellRestore
+	ld	hl, WinSpellRestore
+	jp	FarCall
+.ORGA $34D5
+.ELSE
 LABEL_3478:
 	push af
 	push bc
@@ -7799,6 +7834,7 @@ LABEL_34C9:
 	ld de, $7A0C
 	ld bc, $0C0C
 	jp LABEL_3A57
+.ENDIF
 
 LABEL_34D5:
 	ld a, (Inventory_curr_num)
@@ -8456,20 +8492,20 @@ LABEL_3875:
 .db $F3, $11, $F7, $11, $F5, $11, $C0, $10, $C0, $10, $C0, $10
 
 LABEL_3881:
-.db	$F3, $11, $CB, $10
-.db $DE, $10, $DE, $10, $CB, $10, $CD, $10, $D5, $10, $C0, $10
+.db	$F3, $11, $23, $30
+.db $00, $30, $00, $30, $00, $30, $00, $30, $00, $30, $00, $30
 
 LABEL_3891:
-.db	$F3, $11, $CE, $10
-.db $CF, $10, $D0, $10, $CF, $10, $D8, $10, $DD, $10, $CF, $10
+.db	$F3, $11, $24, $30
+.db $00, $30, $00, $30, $00, $30, $00, $30, $00, $30, $00, $30
 
 LABEL_38A1:
-.db	$F3, $11, $D7, $10
-.db $CB, $10, $E2, $10, $C0, $10, $D2, $10, $DA, $10, $C0, $10
+.db	$F3, $11, $25, $30
+.db $00, $30, $00, $30, $00, $30, $00, $30, $00, $30, $00, $30
 
 LABEL_38B1:
-.db	$F3, $11, $D7, $10
-.db $CB, $10, $E2, $10, $C0, $10, $D7, $10, $DA, $10, $C0, $10
+.db	$F3, $11, $26, $30
+.db $00, $30, $00, $30, $00, $30, $00, $30, $00, $30, $00, $30
 
 LABEL_38C1:
 	ld hl, $DC04
