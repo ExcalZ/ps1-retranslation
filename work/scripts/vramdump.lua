@@ -7,10 +7,15 @@
 function scenario()
   new_game_to_field(40)
   wait(60)
-  if PS1.params.bg then poke(0xC29E, tonumber(PS1.params.bg)) end
+  if PS1.params.bg then                 -- the backdrop: set as the battle loader reads it
+    local bgn = tonumber(PS1.params.bg)
+    emu.addMemoryCallback(function() poke(0xC29E, bgn) end, emu.callbackType.exec,
+                          PS1.labels.LABEL_3CAD, PS1.labels.LABEL_3CAD, emu.cpuType.sms, emu.memType.smsMemory)
+  end
   poke(0xC408, 1) poke(0xC401, 99) poke(0xC406, 99)   -- weak but sturdy: the enemy lives and attacks
   poke(0xC2E6, tonumber(PS1.params.enemy or 39)) poke(0xC29D, 0xFF) poke(0xC202, 0x0C)
   wait_until(function() return area_text(2, 10, 1, 6)[1] == "ATTK" end, 300, "the battle menu")
+  log(string.format("at the battle menu: Interaction_Type %d, $C308 %d", ram(0xC29E), ram(0xC308)))
   local bg, spr = {}, {}
   local function sample()
     for cell = 0, 32 * 24 - 1 do
