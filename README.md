@@ -27,8 +27,11 @@ work/glossary.md         naming decisions
 work/dialogue.json       the script: 538 strings, JP / US / EN
 work/script.json         party, item and enemy names, JP / US / EN
 work/pairing.json        the JP / US alignment of the strings without ids
-PSI_Disasm/              lory90's disassembly (the translation is written into ps1.asm)
-PSI_Disasm/ps1.options.asm  the engine options (none yet)
+docs/engine-plan.md      the engine options: the plan and the owner's decisions
+PSI_Disasm/              lory90's disassembly (the translation is written into it)
+PSI_Disasm/text/         the script as assembly, written by gentext.py
+PSI_Disasm/ext/          the new engine code and banks
+PSI_Disasm/ps1.options.asm  the engine options (1 MB ROM, far calls, relocated script)
 tools/                   the toolchain (Python 3.10+, standard library only)
 ```
 

@@ -82,6 +82,14 @@ every `en` equals its `us`.
   failures. A changed tilemap `en` is now seen in the emulator (above). Open: three JP caption
   kanji ($BB $BD $BE) unread; the save-slot names' cells not traced (runs are the digit only).
 
+* **Engine milestone 1 (2026-10-16).** The owner chose the plan's recommendations
+  (`docs/engine-plan.md`). Built and on: `expand_rom` (1 MB), `far_calls` (`FarCall` /
+  `FarRead` in the RST slots, tested at runtime by `farcall.lua`), `relocate_script` (the
+  script in banks 32-34). The script now lives in `PSI_Disasm/text/*.asm`, written whole by
+  gentext. Every scenario passes on the relocated build with the stock text; checkstock is
+  byte-identical with the options at 0. Found on the way: checkstock and trybuild did not put
+  the text files back (fixed).
+
 ## Next, in order
 
 1. **Left from the survey:** a cross-check against Maxim's
@@ -91,6 +99,7 @@ every `en` equals its `us`.
    call) the credits, both read-only for now.
 3. **More scenarios** (as the translation needs them): the second-hand shop (selling), the
    hospital and church (`$C29E` `$12` / `$14`), a dungeon, the ending.
-4. **Engine options**: lower case, a proportional dialogue face, longer names, a text scheme
-   with room for the new script (the stock banks have 183 and 40 bytes to spare).
+4. **Engine options**, milestone 2 (`docs/engine-plan.md`): the dungeon VRAM audit, then
+   `vwf_dialogue` with the series face; then the cut-scene audit and `vwf_cutscene`;
+   `long_names`; the window RAM map and `long_item_names`.
 5. **Translation**, then proofreading in play, then release packaging (BPS + Patcher.html).

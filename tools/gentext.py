@@ -2,10 +2,11 @@
 
     python tools/gentext.py [--check] [--dialogue=PATH] [--script=PATH]
 
-* The two text regions (textsrc.REGIONS: the dialogue blocks and cut-scenes in ps1.asm, the
-  messages in sound/sound_driver.asm) are regenerated whole between BEGIN/END marker comments,
-  one label per entry in JSON order; an entry without a label follows the previous one (the
-  game reaches it by reading on).
+* The script is written whole into PSI_Disasm/text/ (textsrc.FILES): dialogue.asm
+  (DialogueBlock, the 341 pointers in id order, then the dialogue blocks), cutscenes.asm and
+  messages.asm, one label per entry in JSON order; an entry without a label follows the
+  previous one (the game reaches it by reading on). The source includes them where the stock
+  had them, or in banks 32-34 with relocate_script (ext/banks.asm).
 * The name fields (CharacterNames, ItemNames, the first line of each Enemy_* record in
   banks/bank03.asm) are rewritten line by line, only where the bytes change.
 * The tilemap runs of script.json (kind `tilemap`: menus, spell lists, status labels, save
@@ -105,30 +106,29 @@ def generate(dialogue, script):
     names = control_names(defs)
     out = {}
 
-    # ---- the text regions
+    # ---- the text files (text/dialogue.asm, cutscenes.asm, messages.asm)
     entries = dialogue['entries']
-    for f, first, follows in S.REGIONS:
+    for f, kinds in S.FILES:
         path = os.path.join(T.DISASM, f)
-        lines, s, e = S.region_lines(path, first, follows)
-        kinds = {'message'} if 'sound' in f else {'dialogue', 'cutscene'}
-        body = [S.BEGIN]
-        for en in (x for x in entries if x['kind'] in kinds):
+        body = [S.HEADER]
+        if 'dialogue' in kinds:
+            ids = sorted((x for x in entries if x['kind'] == 'dialogue'), key=lambda x: int(x['id'], 16))
+            body += ['DialogueBlock:']
+            for i in range(0, len(ids), 8):
+                body.append('.dw ' + ', '.join(x['label'] for x in ids[i:i + 8]))
+        for n, en in enumerate(x for x in entries if x['kind'] in kinds):
             data = entry_bytes(en, words)
             if en['label']:
-                body += ['', en['label'] + ':']
+                body += ([''] if len(body) > 1 else []) + [en['label'] + ':']
             else:
                 body.append('; %s: read on from the string above' % en['id'])
             body += db_lines(data, names)
-        body.append(S.END)
-        if lines[s - 1:s] == [S.BEGIN]:
-            s -= 1
-            e += 1
-        out[path] = '\r\n'.join(lines[:s] + body + lines[e:])
+        out[path] = '\r\n'.join(body) + '\r\n'
 
     # ---- the name fields
     segs = script['segments']
     path = os.path.join(T.DISASM, 'ps1.asm')
-    lines = out[path].split('\r\n')
+    lines = T.read(path).split('\r\n')
     for seg, label in (('party', 'CharacterNames'), ('items', 'ItemNames')):
         i = lines.index(label + ':') + 1
         for run in segs[seg]['runs']:

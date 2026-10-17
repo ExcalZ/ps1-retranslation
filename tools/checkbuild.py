@@ -4,13 +4,16 @@
 
 Compares every label of PSI_Disasm/ps1built.sym (the last build) with work/stock_labels.json,
 except the labels that live in the text regions and may move with the translation: bank 2
-from the first dialogue block (02:82AA) to the end of the bank (the blocks, the cut-scene
-strings and the dictionary after them), and bank 12 from the first message (0C:B108).
-Every other label must keep its stock address. --snapshot writes stock_labels.json from the
+from DialogueBlock (02:8000) to the end of the bank (the table, the blocks, the cut-scene
+strings and the dictionary after them; relocate_script takes the text to banks 32-34), and
+bank 12 from the first message (0C:B108); and except the labels an option replaces with its
+own code (REPLACED). Every other label must keep its stock address; labels in the new banks
+(32-63) are new. --snapshot writes stock_labels.json from the
 current symbol file (do it only on a stock build).
 """
 import json
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -18,7 +21,14 @@ sys.path.insert(0, HERE)
 import ps1text as T
 
 SNAPSHOT = os.path.join(T.ROOT, 'work', 'stock_labels.json')
-MOVABLE = [(2, 0x82AA, 0xC000), (12, 0xB108, 0xC000)]
+MOVABLE = [(2, 0x8000, 0xC000), (12, 0xB108, 0xC000)]
+# labels an option removes on purpose (its code takes their place)
+REPLACED = {'far_calls': ['_RST_10H', '_RST_18H', '_RST_20H', '_RST_28H', '_RST_30H']}
+
+
+def options():
+    text = open(os.path.join(T.DISASM, 'ps1.options.asm'), encoding='latin-1').read()
+    return {m.group(1): int(m.group(2)) for m in re.finditer(r'(?m)^\.define\s+(\w+)\s+(\d+)', text)}
 
 
 def movable(bank, addr):
@@ -34,8 +44,11 @@ def main():
         return
     stock = {k: tuple(int(x, 16) for x in v.split(':'))
              for k, v in json.load(open(SNAPSHOT, encoding='utf-8')).items()}
+    gone = {l for opt, labels in REPLACED.items() if options().get(opt) for l in labels}
     moved, missing = [], []
     for name, (bank, addr) in stock.items():
+        if name in gone:
+            continue
         if movable(bank, addr):
             continue
         if name not in syms:

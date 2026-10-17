@@ -17,6 +17,8 @@ Unlike the siblings this is a **Z80 / Master System** game: the Mega Drive tools
 
 **State:** see `work/STATUS.md`. The script is extracted (`work/dialogue.json`,
 `work/script.json`) and the generator writes it back bit-exact; nothing is translated yet.
+Engine options on: `expand_rom`, `far_calls`, `relocate_script` (`docs/pipeline.md` section 6;
+the plan for the rest in `docs/engine-plan.md`).
 
 ## Rebuild rule
 
@@ -65,9 +67,9 @@ failed build (chain commands with `&&` and `test ! -f PSI_Disasm/ps1.log`).
    it. `PSI_Disasm/ps1original.sms` ships with the disassembly and is ignored.
 8. **Maxim's PSRP** (`maxim-zhao/psrp`) states no license: read it as a reference, copy no code
    or text from it, and credit any finding taken from its docs in `NOTICE.md`.
-9. **The generated regions** (between `; ==== BEGIN GENERATED TEXT` and `END` in `ps1.asm` and
-   `sound/sound_driver.asm`) and the name lines are written by `gentext.py`: edit the JSON,
-   not the source.
+9. **Generated files**: `PSI_Disasm/text/*.asm` (the script), the name lines and the tilemap
+   runs are written by `gentext.py`: edit the JSON, not the source. Any tool that rewrites them
+   for a test must put them back (`checkstock.SOURCES` lists them).
 
 ## How to work on the text
 

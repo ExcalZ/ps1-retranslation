@@ -8,14 +8,16 @@ the shape the PS II and PS III projects have and this one will follow; they are 
 
 There is no ROM patching. The game is assembled from source (`PSI_Disasm/ps1.asm` and
 `banks/*.asm`) by WLA-DX, and the translation reaches the source through one generator,
-`tools/gentext.py`, which rewrites the text of the assembly in place from the JSON.
+`tools/gentext.py`, which writes the JSON into the assembly.
 Engine changes are build options in `PSI_Disasm/ps1.options.asm` (section 6): with every
 option at 0 and every `en` equal to its `us`, the ROM is byte-identical to the US/EU release
 v3 (`checkstock.py`).
 
 ```
-work/dialogue.json --gentext.py--> ps1.asm: the dialogue blocks and cut-scene strings
-                                   sound/sound_driver.asm: the bank-12 messages
+work/dialogue.json --gentext.py--> text/dialogue.asm (DialogueBlock + the blocks),
+                                   text/cutscenes.asm, text/messages.asm: included where the
+                                   stock had them (ps1.asm bank 2, sound/sound_driver.asm bank
+                                   12), or in banks 32-34 with relocate_script (ext/banks.asm)
 work/script.json   --gentext.py--> ps1.asm: CharacterNames, ItemNames
                                    banks/bank03.asm: the enemy names
                                    banks/bank27.asm, bank18.asm, ps1.asm: the tilemap text
@@ -431,9 +433,11 @@ the ending), `{$xx}` any other byte. `us` and `jp` are rendered as the window sh
 18-cell auto-wrap is written as an explicit `{BR}` (so "GOVERNORAND" reads "GOVERNOR{BR}AND"),
 and the dictionary words are spelled out. JP spaces are U+3000.
 
-**Generation** (`tools/gentext.py`). The two text regions are regenerated whole between
-`; ==== BEGIN GENERATED TEXT ...` and `; ==== END GENERATED TEXT ====`, one label per entry in
-JSON order (an unlabelled entry follows its predecessor, with a comment naming its id). The
+**Generation** (`tools/gentext.py`). The script is written whole into three files,
+`PSI_Disasm/text/dialogue.asm` (`DialogueBlock`, the 341 pointers in id order, then the blocks),
+`cutscenes.asm` and `messages.asm`, one label per entry in JSON order (an unlabelled entry
+follows its predecessor, with a comment naming its id); `ps1.asm`, `sound/sound_driver.asm` and
+`ext/banks.asm` include them, each under `relocate_script` (section 6). The
 name fields are rewritten line by line where the bytes change, padded with `$65` and spaces.
 An `en` equal to its `us` is written from `hex`; any other is encoded for the stock engine
 (`encode_us`: upper case and the font's punctuation, the 128 words packed greedily, explicit
@@ -457,8 +461,24 @@ in bank 12 (stock 3,796), and the build moves nothing: the encoder fits the stoc
 
 ## 6. Engine options (`PSI_Disasm/ps1.options.asm`)
 
-None yet. Each will be a `.define NAME 0|1` tested with `.IF` in `ps1.asm`, with hooks the
-exact size of the stock code they replace and new code in `PSI_Disasm/ext/`.
+Each is a `.define NAME 0|1` tested with `.IF`; hooks are the exact size of the stock code they
+replace; new code and data go in `PSI_Disasm/ext/`. The plan for the rest is
+[`engine-plan.md`](engine-plan.md). All three below are on in the working build.
+
+| option | what it does | where |
+|---|---|---|
+| `expand_rom` | a 1 MB ROM: the bank map grows to 64 banks; banks 32-63 are new (`$FF` where unused). The first 512 KB stay the stock ROM; the header is unchanged (its checksum covers the first 256 KB) | `ps1.asm` (the bank map), `ext/banks.asm` |
+| `far_calls` | `FarCall` (call the routine at `hl` in bank `a` through slot 2, then page the caller's bank back; 22 bytes) and `FarRead` (`a` = the byte at `hl` in bank `a`; 18 bytes) in the unused RST slots `$10-$37`, exactly 40 bytes, so the interrupt handler stays at `$38`. A self-test routine in bank 63; `work/scripts/farcall.lua` runs both at runtime (the CPU is sent into each stub at a `WaitForVInt` call and checked when it comes back). Not yet used by the game: the proportional printer will be its first caller | `ps1.asm` (bank 0), `ext/banks.asm` |
+| `relocate_script` | the dialogue (with `DialogueBlock`) to bank 32, the messages to bank 33, the cut-scenes to bank 34, a whole bank each. The three printers page the bank of their own text: `ShowDialogue_B2` `ld a, :DialogueBlock`, `ShowDialogue_B12` `ld a, :LABEL_B12_B108`, the cut-scene printer `LABEL_337D` `ld a, :LABEL_B49B` - the stock bytes (2, 12, 2) when the text stays, so the code needs no `.IF`. The dictionary stays in bank 2 (the word expander still pages bank 2) | `ps1.asm`, `sound/sound_driver.asm`, `ext/banks.asm` |
+
+Room with `relocate_script`: dialogue 15,702 bytes (12,785 stock), messages 16,384 (3,796), cut-scenes
+16,384 (1,510). The dialogue bank is the tight one: an English from the Japanese may outgrow it,
+and splitting it over two banks needs a bank per id (a job for the far calls).
+
+Every scenario passes on the relocated build with the same checks as on the stock game
+(2026-10-16): opening, talk, forcetalk (`--expect`), menus (`--words`), save / continue, both
+shops, both battles (`--known`), and an edited line and menu word (`trybuild`). Not exercised
+by any scenario yet: the ending's strings and two of the four read-on messages.
 
 ## 7. Emulator harness
 

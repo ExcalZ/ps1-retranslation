@@ -85,8 +85,8 @@ def main():
             raise SystemExit('gentext.py failed')
     assemble()
     rom = open(BUILT, 'rb').read()
-    if len(rom) != 0x80000:
-        raise SystemExit('ROM is %d bytes, not 512 KB' % len(rom))
+    if len(rom) not in (0x80000, 0x100000):     # 1 MB with expand_rom
+        raise SystemExit('ROM is %d bytes, not 512 KB or 1 MB' % len(rom))
     fixed = fix_checksum(rom)
     if fixed != rom:
         open(BUILT, 'wb').write(fixed)

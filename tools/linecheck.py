@@ -16,10 +16,12 @@ Checks each `en` that differs from its `us` (--all: every entry, the stock text 
   apostrophe) only where the run owns the row above; the party names in the name boxes, the
   status boxes and the party menu the same as the party table's.
 
-Then the space: bytes the encoded text takes in bank 2 and bank 12 against what the stock text
-and the free bytes after it leave (docs/pipeline.md 3.1).
+Then the space: the bytes the encoded text takes against the room it has: with
+relocate_script a bank each (32 the dialogue after its 682-byte table, 33 the messages, 34 the
+cut-scenes); without it, banks 2 and 12 with the bytes free after the stock text.
 """
 import json
+import re
 import os
 import sys
 
@@ -31,6 +33,11 @@ import tilemaps as M
 WORK = os.path.join(T.ROOT, 'work')
 FREE = {'02': 183, '0C': 40}           # bytes free after the stock text in banks 2 and 12
 BUDGET = {'dialogue': (18, None), 'message': (18, None), 'cutscene': (20, 4)}
+
+
+def options():
+    text = open(os.path.join(T.DISASM, 'ps1.options.asm'), encoding='latin-1').read()
+    return {m.group(1): int(m.group(2)) for m in re.finditer(r'(?m)^\.define\s+(\w+)\s+(\d+)', text)}
 
 
 def end_code(text):
@@ -54,10 +61,17 @@ def main():
     script = json.load(open(os.path.join(WORK, 'script.json'), encoding='utf-8'))
     words = T.us_words()
     problems = []
-    used = {'02': 0, '0C': 0}
-    stock = {'02': 0, '0C': 0}
+    relocated = options().get('relocate_script') == 1
+    if relocated:                          # banks 32-34, a bank each (dialogue: after its table)
+        group = {'dialogue': '32 (dialogue)', 'message': '33 (messages)', 'cutscene': '34 (cut-scenes)'}
+        room = {'32 (dialogue)': 0x4000 - 2 * 341, '33 (messages)': 0x4000, '34 (cut-scenes)': 0x4000}
+    else:                                  # the stock banks, with the bytes free after the text
+        group = {'dialogue': '02', 'cutscene': '02', 'message': '0C'}
+        room = None
+    used = {g: 0 for g in group.values()}
+    stock = {g: 0 for g in group.values()}
     for e in dialogue['entries']:
-        bank = e['addr'][:2]
+        bank = group[e['kind']]
         stock[bank] += len(e['hex']) // 2
         try:
             used[bank] += len(bytes.fromhex(e['hex']) if e['en'] == e['us'] else T.encode_us(e['en'], words))
@@ -105,10 +119,10 @@ def main():
                     name, r['id'], r['en'].strip(), r['id'], party[r['id']]))
     for p in problems:
         print(p)
-    for bank in ('02', '0C'):
-        room = stock[bank] + FREE[bank]
-        print('bank %s: %d of %d bytes%s' % (bank, used[bank], room, '  OVER' if used[bank] > room else ''))
-        if used[bank] > room:
+    for bank in used:
+        have = room[bank] if room else stock[bank] + FREE[bank]
+        print('bank %s: %d of %d bytes%s' % (bank, used[bank], have, '  OVER' if used[bank] > have else ''))
+        if used[bank] > have:
             problems.append('bank %s over' % bank)
     print('%d problems' % len(problems))
     if problems:
