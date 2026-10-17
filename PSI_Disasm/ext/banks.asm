@@ -30,6 +30,9 @@ Bank35:
 .IF long_names == 1
 .include "ext\longnames.asm"	; the party's names up to 6 letters
 .ENDIF
+.IF long_item_names == 1
+.include "ext\longitems.asm"	; item and enemy names up to 12 characters
+.ENDIF
 
 .BANK 63 SLOT 2
 .ORG $0000

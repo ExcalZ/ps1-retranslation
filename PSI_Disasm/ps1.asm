@@ -36,6 +36,11 @@ BANKS 32
 .ENDRO
 .ENDIF
 
+.IF long_item_names == 1
+.IF vwf_dialogue == 0
+.FAIL "long_item_names needs vwf_dialogue"
+.ENDIF
+.ENDIF
 .IF long_names == 1
 .IF vwf_dialogue == 0
 .FAIL "long_names needs vwf_dialogue"
@@ -6967,6 +6972,15 @@ LABEL_30E1:
 	ld bc, $0B0C
 	jp LABEL_3A57
 
+.IF long_item_names == 1
+; long_item_names: the screen under the wider name box and under the HP box
+LABEL_30ED:
+	ld	a, :LongEnemyBoxSave
+	ld	hl, LongEnemyBoxSave
+	call	FarCall
+	jp	LABEL_3105
+.ORGA $3105
+.ELSE
 LABEL_30ED:
 	ld	hl, $D928
 	ld	de, $781C
@@ -6976,8 +6990,15 @@ LABEL_30ED:
 	ld	de, $7830
 	ld	bc, $0A10
 	call	LABEL_3AA6
+.ENDIF
 
 LABEL_3105:
+.IF long_item_names == 1
+	ld	a, :LongEnemyBox	; long_item_names: the name box 14 cells wide at $7814
+	ld	hl, LongEnemyBox
+	call	FarCall
+.DSB 26, $00		; nops: the stock name part was 34 bytes
+.ELSE
 	ld	hl, LABEL_B27_BACF
 	ld	de, $781C
 	ld	bc, $0114
@@ -6990,6 +7011,7 @@ LABEL_3105:
 	ld	hl, LABEL_B27_BAE3
 	ld	bc, $0114
 	call	LABEL_3A83
+.ENDIF
 	ld	a, ($C2E6)
 	cp	$49
 	ret  z
@@ -7065,6 +7087,14 @@ LABEL_316F:
 	ei
 	ret
 
+.IF long_item_names == 1
+; long_item_names: the screen back under the HP box and the wider name box
+LABEL_319E:
+	ld	a, :LongEnemyBoxRestore
+	ld	hl, LongEnemyBoxRestore
+	jp	FarCall
+.ORGA $31BB
+.ELSE
 LABEL_319E:
 	ld	hl, $D978
 	ld	de, $7830
@@ -7076,7 +7106,7 @@ LABEL_319E:
 	ld	de, $781C
 	ld	bc, $0414
 	jp	LABEL_3A57
-
+.ENDIF
 
 CharacterNames:
 .db "ALIS"
@@ -7190,6 +7220,31 @@ LABEL_3244:
 	jp	LABEL_31FA
 .ENDIF
 
+.IF long_item_names == 1
+; long_item_names: {ENEMY} and {ITEM} from the 12-character tables (ext/longitems.asm)
+LABEL_3262:
+	cp	Dialogue_EnemyName
+	jr	nz, LABEL_3274
+	push	hl
+	ld	a, :VwfEnemy
+	ld	hl, VwfEnemy
+	call	FarCall
+	pop	hl
+	inc	hl
+	jp	LABEL_31FA
+.ORGA $3274
+LABEL_3274:
+	cp	Dialogue_CurrentItem
+	jr	nz, LABEL_3292
+	push	hl
+	ld	a, :VwfItem
+	ld	hl, VwfItem
+	call	FarCall
+	pop	hl
+	inc	hl
+	jp	LABEL_31FA
+.ORGA $3292
+.ELSE
 LABEL_3262:
 	cp	Dialogue_EnemyName
 	jr	nz, LABEL_3274
@@ -7220,6 +7275,7 @@ LABEL_3274:
 	pop	hl
 	inc	hl
 	jp	LABEL_31FA
+.ENDIF
 
 .IF vwf_dialogue == 1
 ; vwf_dialogue: the stock number printer's 160 bytes. {NUMBER} goes to the proportional
@@ -7742,7 +7798,11 @@ LABEL_34D5:
 	and $07
 	add a, l
 	ld (Option_total_num), a
+.IF long_item_names == 1
+	ld	hl, $7964	; long_item_names: the inventory starts at c18
+.ELSE
 	ld hl, $796C
+.ENDIF
 	ld (Cursor_pos), hl
 	ld hl, $0000
 	ld ($C26B), hl
@@ -7760,12 +7820,30 @@ LABEL_34D5:
 	ld (CurrentItem), a
 	ret
 
+.IF long_item_names == 1
+; long_item_names: the screen under the wider inventory
+LABEL_3521:
+	ld	a, :LongInvSave
+	ld	hl, LongInvSave
+	call	FarCall
+	jp	LABEL_352D
+.ORGA $352D
+.ELSE
 LABEL_3521:
 	ld hl, $DC04
 	ld de, $78AC
 	ld bc, $1514
 	call LABEL_3AA6
+.ENDIF
 
+.IF long_item_names == 1
+; long_item_names: the inventory 14 cells wide at $78A4
+LABEL_352D:
+	ld	a, :LongInventory
+	ld	hl, LongInventory
+	jp	FarCall
+.ORGA $356B
+.ELSE
 LABEL_352D:
 	ld hl, LABEL_B27_BACF
 	ld de, $78AC
@@ -7793,6 +7871,7 @@ LABEL_352D:
 	ld bc, $0114
 	call LABEL_3A57
 	ret
+.ENDIF
 
 LABEL_356B:
 	di
@@ -7962,6 +8041,16 @@ LABEL_364D:
 	ret
 
 
+.IF long_item_names == 1
+LABEL_3656:
+	push	bc
+	ld	a, :LongInvRestore
+	ld	hl, LongInvRestore
+	call	FarCall
+	pop	bc
+	ret
+.ORGA $3665
+.ELSE
 LABEL_3656:
 	push bc
 	ld hl, $DC04
@@ -7970,7 +8059,7 @@ LABEL_3656:
 	call LABEL_3A57
 	pop bc
 	ret
-
+.ENDIF
 
 LABEL_3665:
 	ld	a, (Party_curr_num)
@@ -8088,6 +8177,18 @@ LABEL_36FB:
 	ld bc, $0B0C
 	jp LABEL_3A57
 
+.IF long_item_names == 1
+; long_item_names: party member a's equipment, 14 cells wide at $7A84
+LABEL_3707:
+	push	af
+	ld	c, a
+	ld	a, :LongEquipBox
+	ld	hl, LongEquipBox
+	call	FarCall
+	pop	af
+	ret
+.ORGA $374D
+.ELSE
 LABEL_3707:
 	push	af
 	ld	hl, $D928
@@ -8125,13 +8226,21 @@ LABEL_3735:
 	call	LABEL_3A57
 	pop	af
 	ret
+.ENDIF
 
-
+.IF long_item_names == 1
+LABEL_374D:
+	ld	a, :LongEquipBoxRestore
+	ld	hl, LongEquipBoxRestore
+	jp	FarCall
+.ORGA $3759
+.ELSE
 LABEL_374D:
 	ld hl, $D928
 	ld de, $7A8C
 	ld bc, $0814
 	jp LABEL_3A57
+.ENDIF
 
 LABEL_3759:
 	ld hl, $DE14
@@ -8273,17 +8382,33 @@ LABEL_38C1:
 	ld bc, $0E18
 	jp LABEL_3A57
 
+.IF long_item_names == 1
+; long_item_names: the screen under the wider shop list
+LABEL_38CD:
+	ld	a, :LongShopSave
+	ld	hl, LongShopSave
+	jp	FarCall
+.ORGA $38D9
+.ELSE
 LABEL_38CD:
 	ld hl, $D8A4
 	ld de, $780C
 	ld bc, $0820
 	jp LABEL_3AA6
+.ENDIF
 
 LABEL_38D9:
+.IF long_item_names == 1
+	ld	a, :LongShopTop	; long_item_names: the top border, 20 cells from $7804
+	ld	hl, LongShopTop
+	call	FarCall
+.DSB 4, $00
+.ELSE
 	ld hl, LABEL_B27_BD23
 	ld de, $780C
 	ld bc, $0120
 	call LABEL_3A57
+.ENDIF
 	ld hl, $FFFF
 	ld (hl), :Bank03
 	ld a, ($C2DB)
@@ -8318,10 +8443,21 @@ LABEL_38D9:
 	inc hl
 	pop bc
 	djnz -
+.IF long_item_names == 1
+	ld	a, :LongShopBottom	; long_item_names: the bottom border
+	ld	hl, LongShopBottom
+	call	FarCall
+	nop
+.ELSE
 	ld hl, LABEL_B27_BD43
 	ld bc, $0120
 	call LABEL_3A57
+.ENDIF
+.IF long_item_names == 1
+	ld	hl, $7884	; long_item_names: the list starts at c2
+.ELSE
 	ld hl, $788C
+.ENDIF
 	ld (Cursor_pos), hl
 	call CheckOptionSelect
 	ld hl, $FFFF
@@ -8347,6 +8483,13 @@ LABEL_38D9:
 	jr nz, +
 	ld c, $00
 +:
+.IF long_item_names == 1
+	ld	b, a		; long_item_names: the frame and 12 name cells from c2
+	ld	a, :LongShopName
+	ld	hl, LongShopName
+	call	FarCall
+.DSB 40, $00
+.ELSE
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -8382,6 +8525,7 @@ LABEL_38D9:
 	out (Port_VDPData), a
 	inc hl
 	djnz -
+.ENDIF
 	ld a, c
 	or a
 	ld b, $01
@@ -8408,11 +8552,19 @@ LABEL_397D:
 	jp nz, LABEL_35D5
 	jp LABEL_3620
 
+.IF long_item_names == 1
+LABEL_3999:
+	ld	a, :LongShopRestore
+	ld	hl, LongShopRestore
+	jp	FarCall
+.ORGA $39A5
+.ELSE
 LABEL_3999:
 	ld hl, $D8A4
 	ld de, $780C
 	ld bc, $0820
 	jp LABEL_3A57
+.ENDIF
 
 LABEL_39A5:
 	ld hl, $D928

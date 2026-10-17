@@ -82,7 +82,8 @@ failed build (chain commands with `&&` and `test ! -f PSI_Disasm/ps1.log`).
   are mixed case in the series face, **80 px a line** (`linecheck.py` measures it), any
   character `tools/diafont.py` has; with `vwf_cutscene` too, cut-scenes are **120 px** a line,
   4 lines a page. With `long_names`: party names up to 6 letters (mixed case in `{NAME}`,
-  capitals in the menus; the `status_boxes` runs must match them in capitals). Without them:
+  capitals in the menus; the `status_boxes` runs must match them in capitals); with
+  `long_item_names`: item and enemy names up to 12 characters. Without them:
 * Budgets: dialogue and messages 18 cells a line (the window scrolls, no line limit);
   cut-scenes 20 cells, 4 lines a page; inserts count at their widest ({NAME} 4, {ENEMY} and
   {ITEM} 8, {NUMBER} 5). Names: party 4, items 8, enemies 8.
@@ -105,7 +106,7 @@ quotes.
   screenshots in `work/analysis/` (`docs/pipeline.md` section 7). Scenarios in
   `work/scripts/` on top of `lib.lua`: `boot`, `opening`, `talk`, `forcetalk talk=N`, `fieldmenu`,
   `menus`, `savegame`, then `continue --keep-sram`, `shop shop=N`, `battle enemy=N`,
-  `partymenu`, `healtarget`
+  `partymenu`, `healtarget`, `inventory`
   (`docs/pipeline.md` section 7 has the table and each one's check). To see a line in the game
   before committing it: `python tools/trybuild.py EDITS.json OUT.sms`, then a scenario with
   `--rom=OUT.sms --dialogue=OUT.sms.dialogue.json --expect=...`. Never run Mesen.exe directly without a

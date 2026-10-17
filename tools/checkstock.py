@@ -24,7 +24,8 @@ STOCK = os.path.join(DISASM, 'ps1original.sms')
 SOURCES = ['ps1.asm', os.path.join('sound', 'sound_driver.asm'), os.path.join('banks', 'bank03.asm'),
            os.path.join('banks', 'bank18.asm'), os.path.join('banks', 'bank27.asm'), 'ps1.options.asm',
            os.path.join('text', 'dialogue.asm'), os.path.join('text', 'cutscenes.asm'),
-           os.path.join('text', 'messages.asm'), os.path.join('ext', 'longnames_data.asm')]
+           os.path.join('text', 'messages.asm'), os.path.join('ext', 'longnames_data.asm'),
+           os.path.join('ext', 'longitems_data.asm')]
 
 
 def main():

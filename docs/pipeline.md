@@ -257,6 +257,38 @@ bytes a row. In the table, rows x cells include the frame.
 | `LABEL_B18_BE84` 12:BE84 (via `LABEL_3A21` 00:3A21) | spaceport destinations GOTHIC UZO SKURE (6) | `$7AE4` r11 c18 | 7 x 8 |
 | bank 0 `LABEL_3AC4` | save-slot list, slots 1-5. It is copied to SRAM `$8100` when the save RAM is formatted and drawn from there. | `$786E` r1 c23 | 12 x 9 |
 
+**The windows' save areas.** Each window saves the screen under it (`LABEL_3AA6`: rows x bytes
+from the nametable into RAM) and puts it back (`LABEL_3A57`). The areas overlap where the windows
+never open together:
+
+| buffer | window | place | rows x cells | bytes, end |
+|---|---|---|---|---|
+| `$D700` | money box (`LABEL_39E9`) | r0 c22 | 3 x 10 | 60, `$D73B` |
+| `$D700` | battle name box (`LABEL_2EAC`) | r12 c1 | 3 x 6 | 36, `$D723` |
+| `$D724` | status boxes (`LABEL_2ED9`, `LABEL_2F93`) | r18 c0 | 6 x 32 | 384, `$D8A3` |
+| `$D8A4` | shop list (`LABEL_38CD`) | r0 c6 | 8 x 16 | 256, `$D9A3` |
+| `$D8A4` | command menu, battle menu (`LABEL_36DD`, `LABEL_30C3`) | r1 c1 | 11 x 6 | 132, `$D927` |
+| `$D928` | enemy name box (`LABEL_30ED`) | r0 c14 | 4 x 10 | 80, `$D977` |
+| `$D928` | save-slot list (`LABEL_39A5`) | r1 c23 | 12 x 9 | 216, `$D9FF` |
+| `$D928` | equipment box (`LABEL_3707`) | r10 c6 | 8 x 10 | 160, `$D9C7` |
+| `$D978` | battle HP box (`LABEL_30ED`) | r0 c24 | 10 x 8 | 160, `$DA17` |
+| `$DA18` | dialogue window (`LABEL_31D4`) | r18 c6 | 6 x 20 | 240, `$DB07` |
+| `$DB08` | the window's scroll (`LABEL_3439`) | r20 c7 | 3 x 18 | 108, `$DB73` |
+| `$DB74` | spell list (`LABEL_3478`) | r8 c6 | 12 x 6 | 144, `$DC03` |
+| `$DC04` | inventory (`LABEL_3521`) | r2 c22 | 21 x 10 | 420, `$DDA7` |
+| `$DC04` | status window (`LABEL_37CF`) | r4 c16 | 14 x 12 | 336, `$DD53` |
+| `$DDA8` | party menu (`LABEL_3665`) | r9 c2 | 9 x 6 | 108, `$DE13` |
+| `$DE14` | item actions (`LABEL_3759`) | r8 c25 | 7 x 5 | 70, `$DE59` |
+| `$DE14` | party menu, second place (`LABEL_3682`) | r9 c10 | 9 x 6 | 108, `$DE7F` |
+| `$DE14` | spaceport menu (`LABEL_3A21`) | r11 c18 | 7 x 8 | 112, `$DE83` |
+| `$DE14` | shop BUY / SELL (`LABEL_3777`) | r13 c4 | 5 x 6 | 60, `$DE4F` |
+| `$DE64` | YES / NO (`LABEL_37A3`) | r13 c21 | 5 x 5 | 50, `$DE95` |
+
+Above `$DE95` the stock uses no RAM up to the mapper's `$DFFC` (the audit). The options take:
+`$DEA0-$DEF3` (long_names' extra columns), `$DF00-$DF1F` (the renderer), `$DF20-$DFC7`
+(long_item_names' shared extra columns: the inventory, the shop list or the equipment box, never
+open together) and `$DFC8-$DFE7` (the enemy name box's).
+
 No title-menu text was found in any text or tilemap form; the title screen's words are
 presumably in its graphics (`LABEL_B29_87B8`). To be confirmed in Mesen's tile viewer.
 
@@ -472,6 +504,7 @@ replace; new code and data go in `PSI_Disasm/ext/`. The plan for the rest is
 | `vwf_dialogue` | the dialogue window in the series' proportional face, mixed case, **80 px a line** (10 tiles; off in the working build until the translation fills the window: the stock upper-case lines are wider and would clip). `LABEL_33D6`'s first 4 bytes jump to `VwfGate`, which sits with a new `{NUMBER}` call in the stock number printer's 160 bytes (`LABEL_3292`-`LABEL_3331`): a character for the window's text rows (the cell `de` on row 19 or 21) goes through `FarCall` to `VwfChar` in bank 35, any other (the cut-scene printer, the lists) to the stock code. `VwfChar` composes the glyph into the tile under the pen and the next (1 bpp in RAM, uploaded as the stock font draws: plane 0 background, plane 1 ink) and gives each new line a set of 10 tiles - `$EC-$F5` or `$F6-$FF`, the one the line above does not show (the stock scroll moves the nametable entries, so the old line keeps its tiles). The stock still does the controls, waits, scroll, inserts and dictionary words; the line state `b` ($12 at a new line, then $11) keeps its 18-cell wrap from firing. The printer ends only on `$65` (`jp z` for `jp nc`), so `$66-$7F` are a-z. RAM `$DF00-$DF1F` (`ext/vwf_ram.asm`; the stock never touches `$DE96-$DFFB`). The face: `tools/diafont.py` from `tools/vwfmixed.py` writes `ext/vwffont.asm` on every build | `ps1.asm`, `ext/vwf.asm`, `ext/vwf_ram.asm`, `ext/vwffont.asm` |
 | `vwf_cutscene` | the cut-scenes in the face, mixed case, 4 lines of **120 px** (needs `vwf_dialogue`; off with it). A cut-scene screen shows no menu or list, so the font area is free while one is up: line k owns 15 tiles from `$C1 + 15k` (`$C0` stays blank). `VwfGate` sends rows 16-23 to `VwfChar`, which tells the window's rows (19, 21: bit 6 of `e`) from the cut-scene's (16, 18, 20, 22); the cut-scene printer zeroes `bc` at its entry, at a new line and after a page, so `b` = 0 starts a line. `VwfCutDirty` then has the stock font reloaded (`LABEL_3FA` of `LABEL_B16_BAD8`) when the next fade-out ends (`LABEL_7B0B` calls `VwfFadeWait` for its frame wait) or, failing a fade, before the next tilemap is drawn (`LABEL_3A57` and `LABEL_3A83` call `VwfMenuFont` first). All of it fits the number printer's 160 bytes (to `$3308`) | `ps1.asm`, `ext/vwf.asm` |
 | `long_names` | party names up to 6 letters (needs `vwf_dialogue`). `{NAME}` (`LABEL_3244`) calls `VwfName` in bank 35, which draws the name from `LongNames` (6 bytes each, the face's codes) - mixed case, "Alisa". The battle's name box (`LABEL_2EAC`, restore `LABEL_2ECD`) and the party menu (`LABEL_369F`, at `$7A44` with restore `LABEL_36BB`, at `$7A54` with restore `LABEL_36CC`) are 8 cells wide: their maps (`LongNameBoxes`, `LongPartyRows`, `LongPartyEnd`) are bank 27's two cells wider, written by gentext into `ext/longnames_data.asm` with the names in capitals for the fixed font, and drawn from bank 35 with `LABEL_3A68`. The callers still save the 6 stock columns in the stock buffers (`$D700`, `$DDA8`, `$DE14`); the 2 new columns go to `LongBoxExtra` / `LongPartyExtraA` / `LongPartyExtraB` (`$DEA0-$DEF3`, `ext/vwf_ram.asm`). Each patched routine is padded with `.ORGA` to the next stock label. `CharacterNames` and the stock 4-cell maps keep their stock bytes (unused). The status boxes already have 6 cells: their `status_boxes` runs must show the party names in capitals (`linecheck.py`) | `ps1.asm`, `ext/longnames.asm`, `ext/longnames_data.asm` |
+| `long_item_names` | item and enemy names up to 12 characters (needs `vwf_dialogue`). The names live in `LongItems` / `LongEnemies` (`ext/longitems_data.asm`, the face's codes). `{ITEM}` and `{ENEMY}` (`LABEL_3262`, `LABEL_3274`) call `VwfItem` / `VwfEnemy` (the enemy by `$C2E6`). The windows that list names are 4 cells wider to the left, their right edges where the stock has them, drawn in the menus' capitals by `LongRowName` (a-z as A-Z through `LABEL_7D17`): the inventory 14 cells at r2 c18 (`LABEL_3521`, `LABEL_352D`, restore `LABEL_3656`; the money line is the stock `LABEL_35C4` drawn from c22 with its left frame blanked; cursor `$7964`), the shop list 20 cells at r0 c2 (save `LABEL_38CD`, borders and the name part of the row writer in `LABEL_38D9` - the stock writes on from c15 with the price -, restore `LABEL_3999`; cursor `$7884`), the equipment box 14 cells at r10 c2 (`LABEL_3707`, `LABEL_374D`) and the battle's enemy name box 14 cells at r0 c10 (`LABEL_30ED`, the name part of `LABEL_3105`, `LABEL_319E`). The stock buffers keep the stock columns; the 4 new ones go to `LongSharedExtra` / `LongEnemyBoxExtra`. `ItemNames` and the enemy records' names keep their stock bytes | `ps1.asm`, `ext/longitems.asm`, `ext/longitems_data.asm` |
 | `relocate_script` | the dialogue (with `DialogueBlock`) to bank 32, the messages to bank 33, the cut-scenes to bank 34, a whole bank each. The three printers page the bank of their own text: `ShowDialogue_B2` `ld a, :DialogueBlock`, `ShowDialogue_B12` `ld a, :LABEL_B12_B108`, the cut-scene printer `LABEL_337D` `ld a, :LABEL_B49B` - the stock bytes (2, 12, 2) when the text stays, so the code needs no `.IF`. The dictionary stays in bank 2 (the word expander still pages bank 2) | `ps1.asm`, `sound/sound_driver.asm`, `ext/banks.asm` |
 
 Room with `relocate_script`: dialogue 15,702 bytes (12,785 stock), messages 16,384 (3,796), cut-scenes
@@ -493,7 +526,10 @@ calls passed on the same build (the cut-scenes and lists keep the stock font). W
 `vwf_cutscene` too: the intro's three cut-scenes in mixed case, 120 px lines (8 of 8 pages), the
 font back on the field, and every scenario passing. With `long_names` (party Alisa, Myau,
 Tyron, Lutz): the party menu in both places, the name box at each battle turn, the status boxes
-and "Alisa died." all show the new names, and every window restores the screen under it.
+and "Alisa died." all show the new names, and every window restores the screen under it. With `long_item_names` too (all five options
+on, every test edit at once): the inventory, the shop list, the equipment box and the enemy
+name box show 12-character names (LAND ROVER, CERAMIC SHLD, SHORT SWORD, MONSTER FLY), the
+inserts read "Monster Fly is defeated.", every scenario passes and every window restores.
 
 Every scenario passes on the relocated build with the same checks as on the stock game
 (2026-10-16): opening, talk, forcetalk (`--expect`), menus (`--words`), save / continue, both
@@ -573,6 +609,7 @@ python tools/ps1emu.py opening --expect=B49B,B4FC,B5D5
   | `savegame` | SAVE: the slot list, YES, the naming screen (`type_name`), then the name in the cartridge RAM's slot list (a tilemap of tile, attribute pairs at `$0100`) | the name found |
   | `continue` | run after `savegame` with `--keep-sram`: CONTINUE, "CONTINUE GAME- YES", the slot list showing the name, the field | slot 1 shows the name |
   | `shop shop=N type=armory\|food` | a shop without walking: `Interaction_Type` `$C29E` = `$16` (armory, `LABEL_2BC0`) or `$18` (food, `LABEL_2C8F`) and the shop `$C2DB` (`B03_ShopData`: 1 Camineet Armory, 3 Camineet First Food Shop, 4 / 6 Parolit, 7 Scion) before the button; 2000 meseta given; YES, the stock list, the first item bought, NO, "WELL, COME AGAIN."; the item and the price checked against the stock data in the ROM (its count byte is the last index) | `--expect=B12_B7C7,B12_B7F5,B12_B807,B12_B7E3 --words=items:25+27+28` (the run logs the stock) |
+  | `inventory` | nine items given, ITEM opened and cancelled | the screen comes back, `--words=items:33-40` |
   | `partymenu` | the party filled (`$C4F0` = 3, each member alive), STAS asks who: the party menu (at `$7A44`) read back, cancelled, the screen under it checked | the screen comes back |
   | `healtarget` | four members, a field HEAL: the caster menu (`$7A44`), the spell list, the target menu (`$7A54`, `LABEL_3682`); one cancel closes all three | the screen comes back |
   | `battle enemy=N` | a forced battle: `$C2E6` the enemy, `$C29D` `$FF`, game mode `$0C`, what a random encounter leaves; Alisa boosted (attack 255, 99 HP; `strong=0` not); `party=4` all four members (the name box shows at each turn); ATTK each round; every message logged at its wait; a chest opened (`chest=no`) | `--known --words=enemies:N,battle_menu` |

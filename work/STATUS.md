@@ -111,6 +111,14 @@ every `en` equals its `us`.
   window restores the screen. Off in the working build (it needs `vwf_dialogue`). New
   scenarios: `partymenu`, `healtarget`, `battle party=4`.
 
+* **Engine milestone 5: long_item_names (2026-10-17).** The window map (every save area,
+  `docs/pipeline.md` 3.7), then item and enemy names up to 12 characters: `{ITEM}` and
+  `{ENEMY}` in the face, the inventory, shop list, equipment box and enemy name box 4 cells
+  wider to the left. With all five options on and every test edit at once, every scenario
+  passes and every window restores the screen. New scenario: `inventory`. The engine plan's
+  options are all built; the proportional and long-name options stay off in the working build
+  until the translation fills them.
+
 ## Next, in order
 
 1. **Left from the survey:** a cross-check against Maxim's
@@ -120,8 +128,9 @@ every `en` equals its `us`.
    call) the credits, both read-only for now.
 3. **More scenarios** (as the translation needs them): the second-hand shop (selling), the
    hospital and church (`$C29E` `$12` / `$14`), a dungeon, the ending.
-4. **Engine options** (`docs/engine-plan.md`): the window RAM map, then `long_item_names`
-   (items and enemies 12 cells). Not yet seen with `vwf_cutscene`: the Myau, governor and ending scenes
+4. **Engine**: a dictionary generated from the new script if bank 32 gets tight; the
+   naming screen with lower case (later); spell names longer than 4 cells (if the owner wants
+   them). Not yet seen with `vwf_cutscene`: the Myau, governor and ending scenes
    (no scenario reaches them yet). Then a dictionary generated from the
    new script, if bank 32 gets tight.
 5. **Translation**, then proofreading in play, then release packaging (BPS + Patcher.html).

@@ -323,7 +323,9 @@ def main():
     if 'words' in opts:
         screen = '\n'.join(l.split('|', 1)[1] for l in lines if '|' in l)
         want = expected_words(opts['words'], opts.get('script'))
-        missing = [(k, w) for k, w in want if not re.search(r'(?<![A-Z0-9])%s(?![A-Z0-9])' % re.escape(w), screen)]
+        # the menus' fixed font is capitals only: compare in capitals
+        missing = [(k, w) for k, w in want
+                   if not re.search(r'(?<![A-Z0-9])%s(?![A-Z0-9])' % re.escape(w.upper()), screen.upper())]
         for k, w in missing:
             print('not on screen: %s %r' % (k, w))
         print('%d of %d script.json words on screen' % (len(want) - len(missing), len(want)))
