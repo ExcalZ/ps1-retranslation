@@ -35,7 +35,7 @@ windows show them in capitals, one letter a cell); spells 4 cells (no option wid
 | ハプスビー | Hapsby | Hapsby | the robot |
 | ソウトク | the Governor | the Governor | as PS II. パセオノソウトク, the Governor of Motavia |
 | タジム | Tajim | Tajim | the monk (ドウシ) in the mountains; fought as an enemy (`enemies` 49, US TARZIMAL) |
-| ダモア | Damoa | Damor | the soothsayer (ウラナイシ); his item is the Damoa Crystal |
+| ダモア | Damoa | Damor | the soothsayer (ウラナイシ); his item is the Damoa Crystal (the owner, 2026-10-17: the JP reading) |
 | ペルセウス | Perseus | Perseus | of the shield |
 | エスパー | esper | espar | **settled** (PS IV, PS II) |
 | モタビアン / デゾリアン | Motavian / Dezolian | Motavian / Dezorian | **settled** (PS II glossary) |
@@ -46,7 +46,7 @@ windows show them in capitals, one letter a cell); spells 4 cells (no option wid
 |---|---|---|---|
 | アルゴル (タイヨウケイ) | Algol (star system) | Algol | **settled** |
 | パルマ / モタビア / デゾリス | Palma / Motavia / Dezolis | Palma / Motavia / Dezoris | **settled** (PS IV, PS II) |
-| ラコニア / ラコニアン | Laconia / Laconian | Laconia | **settled** (PS IV, PS III, PS II). The JP has both forms; see the items |
+| ラコニア / ラコニアン | Laconia (Laconian Axe alone) | Laconia | **settled** (PS IV, PS III, PS II). The JP has both forms; Laconia for all but the Laconian Axe, which PS IV ships too (the owner, 2026-10-17) |
 | メセタ | meseta | meseta | **settled** |
 
 ## Places
@@ -56,8 +56,8 @@ windows show them in capitals, one letter a cell); spells 4 cells (no option wid
 | カミニート | Camineet | Camineet | the residential area is キョジュウク |
 | パロリト | Parolit | Parolit | the JP drops the ッ the US spelling implies; Parolit still reads パロリト |
 | シオン | Scion | Scion | a port town. シオン is equally Sion / Zion: question 2 |
-| エピ | Epi | Eppi | the forest of lost travellers (マヨイノモリ) and its village |
-| ガシコ | Gashiko | Gothic | the village and the forest (ガシコノモリ): question 1 |
+| エピ | Epi | Eppi | the forest of lost travellers (マヨイノモリ) and its village (the owner, 2026-10-17: the JP reading) |
+| ガシコ | Gashiko | Gothic | the village and the forest (ガシコノモリ) (the owner, 2026-10-17) |
 | ロアー | Loar | Loar | |
 | アビオン | Abion | Abion | its tower (アビオンノトウ) is the US "tower on a forgotten island" |
 | パセオ | Paseo | Paseo | **settled** (PS II). Motavia's capital (シュト) |
@@ -66,10 +66,10 @@ windows show them in capitals, one letter a cell); spells 4 cells (no option wid
 | ドラスゴー | Drasgow | Drasgow | |
 | ソピア | Sopia | Sopia | the town in the poison gas |
 | スクレ | Skure | Skure | **settled** (PS II) |
-| バルテボ | Bartevo | Bortevo | the JP vowel is バル: question 2 |
-| バヤマーレ | Bayamare | Baya Malay | the hill, its tower and the gentle breeze of the ending. PS IV ships Bayamare (its Termi store): question 2 |
+| バルテボ | Bartevo | Bortevo | the JP vowel is バル (the owner, 2026-10-17) |
+| バヤマーレ | Bayamare | Baya Malay | the hill, its tower and the gentle breeze of the ending. PS IV ships Bayamare (its Termi store) (the owner, 2026-10-17) |
 | トリアダ | Triada | Triada | the prison south of Camineet |
-| グアラン | Guaran | Guaron | the morgue (シタイオキバ): question 2 |
+| グアラン | Guaran | Guaron | the morgue (シタイオキバ) (the owner, 2026-10-17) |
 | コロナ (ノトウ) | Corona Tower | Corona Tower | |
 | メデューサノトウ | Medusa's Tower | Medusa's Tower | |
 | イアラ / ナウラ / マハル | Iala / Naura / Maharu | Iala / Naula / Maharu | caves. Naura **settled** (PS IV ships its cake shop as Naura). マハル could be Mahal; Maharu kept |
@@ -77,7 +77,7 @@ windows show them in capitals, one letter a cell); spells 4 cells (no option wid
 | アルチプラノ | Altiplano | Altiplano | the plateau of the Laerma trees |
 | スペースポート | spaceport | spaceport | |
 | キョウカイ | church | church | |
-| エアロキャッスル | the Aero Castle | a celestial castle | LaShiec's castle. PS IV ships Air Castle for **its** katakana, エアキャッスル; PS I spells it エアロ, as the Aero Prism that reveals it: question 3 |
+| エアロキャッスル | the Air Castle | a celestial castle | LaShiec's castle: as PS IV ships it (エアキャッスル there), though PS I spells it エアロ (the owner, 2026-10-17) |
 | アクマノシロ | the Devil's Castle | the Dark Castle | what the King calls it in the ending (`0278`) |
 
 ## Items (12 letters, `long_item_names`)
@@ -102,8 +102,8 @@ own menu abbreviations), only where the full form does not fit.
 | 11 | ヒートガン | Heat Gun | | HEAT.GUN | |
 | 12 | ライトセイバー | Light Saber | | LGT.SABR | two words, not the trademark |
 | 13 | レーザーガン | Laser Gun | | LASR.GUN | |
-| 14 | ラコニアンソード | Laconian Sword | Laconian Swd | LAC. SWD | |
-| 15 | ラコニアンアクス | Laconian Axe | | LAC. AXE | |
+| 14 | ラコニアンソード | Laconia Sword | | LAC. SWD | Laconia for all but the axe (the owner, 2026-10-17; PS IV ships Laconia Sword) |
+| 15 | ラコニアンアクス | Laconian Axe | | LAC. AXE | as PS IV ships it (the owner, 2026-10-17) |
 | 16 | レザークロス | Leather Cloth | LeatherCloth | LTH.ARMR | **settled** (PS IV ships it) |
 | 17 | ホワイトマント | White Cape |  | WHT.MANT | **settled** (PS IV ships it) (not Mantle, though マント) |
 | 18 | ライトスーツ | Light Suit | | LGT.SUIT | |
@@ -136,7 +136,7 @@ own menu abbreviations), only where the full form does not fit.
 | 45 | ダンジョンキー | Dungeon Key | | DUGN KEY | |
 | 46 | テレパシーボール | Telepathy Ball | TelepathBall | SPHERE | **settled** (PS IV ships it) (in its dialogue) |
 | 47 | イクリプストーチ | Eclipse Torch | EclipseTorch | TORCH | the name **settled** (PS IV), the width not |
-| 48 | エアロプリズム | Aeroprism |  | PRISM | PS IV ships Aeroprism, one word; the PS II glossary has Aero Prism: question 7 |
+| 48 | エアロプリズム | Aeroprism |  | PRISM | as PS IV's shipped text (the owner, 2026-10-17) |
 | 49 | ラエルマベリー | Laerma Berry | | NUTS | from the ラエルマツリー |
 | 50 | ハプスビー | Hapsby | | HAPSBY | |
 | 51 | ロードパス | Road Pass | | ROADPASS | |
@@ -144,7 +144,7 @@ own menu abbreviations), only where the full form does not fit.
 | 53 | コンパス | Compass | | COMPASS | |
 | 54 | ショートケーキ | Shortcake |  | CAKE | **settled** (PS IV ships it) |
 | 55 | ソウトクノテガミ | Governor's Letter | Gov's Letter | LETTER | or plain Letter |
-| 56 | ラコニアンポット | Laconian Pot | | LAC. POT | |
+| 56 | ラコニアンポット | Laconia Pot | | LAC. POT | Laconia for all but the axe (the owner, 2026-10-17) |
 | 57 | ライトペンダント | Light Pendant | LightPendant | MAG.LAMP | |
 | 58 | カーバンクルアイ | Carbuncle Eye | CarbuncleEye | AMBR EYE | |
 | 59 | ガスクリア | Gas Clear | | GAS. SLD | the dialogue spells it ガスクリアー |
@@ -172,7 +172,7 @@ own menu abbreviations), only where the full form does not fit.
 | 12 | モタビアンイビル | Motavian Evil | MotavianEvil | E.FARMER | |
 | 13 | ヘレックス | Herex | | GIANTFLY | |
 | 14 | サンドワーム | Sand Worm |  | CRAWLER | **settled** (PS IV ships it), two words |
-| 15 | モタビアンマニア | Berserker |  | BARBRIAN | PS IV ships モタビアンマニア as Berserker (a translation, not Motavian Mania): question 8 |
+| 15 | モタビアンマニア | Berserker |  | BARBRIAN | as PS IV ships it (the owner, 2026-10-17) |
 | 16 | ゴールドレンズ | Gold Lens | | GOLDLENS | |
 | 17 | レッドスライム | Red Slime | | RD.SLIME | |
 | 18 | バットマン | Bat Man | | WERE BAT | two words, not the trademark |
@@ -279,9 +279,9 @@ The JP menu words, translated; each fits its stock cells in the face.
 Every name field holds the forms above: the party (Alisa, Myau, Tyron, Lutz), the 64 items, the
 74 enemies and the spells, each at most 14 letters and 80 px in the face (`vwf_windows` lists
 them 10 cells wide). The full form where it fits, otherwise: Spiny Pelt (トゲリスノケガワ),
-Gov's Letter (ソウトクノテガミ), Machine Guard (マシーンガーダー, 15 letters as Guarder). The
-proposals behind questions 1-3 and 6-8 are in as drafted (Gashiko in the spaceport menu,
-Aeroprism, Berserker, the Laconian / Laconia split) until the owner answers.
+Gov's Letter (ソウトクノテガミ), Machine Guard (マシーンガーダー, 15 letters as Guarder). The owner
+answered questions 1-3 and 6-8 the same day (Gashiko, the JP readings, Air Castle, Laconia but
+for the Laconian Axe, Aeroprism, Berserker).
 
 ## Other words
 
@@ -305,19 +305,15 @@ Aeroprism, Berserker, the Laconian / Laconia split) until the owner answers.
 * Within PS I: the item ガスクリア is ガスクリアー in the dialogue; ラエルマベリー grows on the
   ラエルマツリー (PS IV's Laerma tree).
 
-## Questions for the owner
+## Questions for the owner (all answered 2026-10-17)
 
-1. **ガシコ: Gashiko or Gothic?** The JP is plainly ガシコ; Gothic is the 1987 reading, and the
-   series rule (Japanese names) says Gashiko. Proposed: Gashiko.
-2. **The town spellings the JP corrects:** Bartevo (バルテボ; US Bortevo), Bayamare (バヤマーレ;
-   US Baya Malay; as PS IV ships it), Guaran (グアラン; US Guaron), Epi (エピ; US Eppi),
-   Damoa (ダモア; US Damor). Scion stays (シオン reads Scion as well as Sion). Proposed: all as
-   listed.
-3. **エアロキャッスル: Aero Castle or Air Castle?** PS IV's Air Castle is the same castle but
-   PS IV's katakana (エア); PS I's is エアロ, as the Aero Prism. Proposed: Aero Castle.
+1. **Answered (the owner, 2026-10-17): Gashiko.**
+2. **Answered (the owner, 2026-10-17): the JP readings** - Bartevo, Bayamare, Guaran, Epi, Damoa.
+3. **Answered (the owner, 2026-10-17): Air Castle**, as PS IV ships it.
 4. **Answered (the owner, 2026-10-17): "Expand windows as necessary, but accommodate mixed-case"** - the
-   windows widen as the names need, and show them in mixed case. Built: 14 letters (2026-10-17).
-   Mixed case not yet: battles have no room for the lower-case tiles (`docs/engine-plan.md`). The question was: **Item and enemy names over 12 letters (20 items, 8 enemies).** Either (a) the 12-letter forms
+   windows widen as the names need, and show them in mixed case. Built the same day:
+   `vwf_windows` draws every window's text in the face; names up to 14 letters and 80 px, in
+   windows 10 cells wide (`docs/pipeline.md` 6). The question was: **Item and enemy names over 12 letters (20 items, 8 enemies).** Either (a) the 12-letter forms
    above (a space dropped, Swd / Shld), or (b) widen `long_item_names` to 14 letters. By the
    window map (`docs/pipeline.md` 3.7) every window that lists them has 2 more free cells to its
    left (the inventory to c16, the shop list and the equipment box to c0, the enemy name box to
@@ -327,10 +323,7 @@ Aeroprism, Berserker, the Laconian / Laconia split) until the owner answers.
 5. **Answered with 4** (windows widen as necessary: the spell lists too). The question was: **Spells:** the transliterations need 5-8 cells and the spell lists are 4 wide. Either (a) an
    engine option for 8-cell spell lists (as PS II's `wide_techs`), or (b) keep 4-letter
    English spell words. Proposed: (a).
-6. **The Laconia names:** keep the JP's own split (Laconian Sword / Axe / Pot, Laconia Armor /
-   Shield), or one form for all (Laconia, as PS III ships)? PS IV follows its own katakana the
-   same way (ラコニアソード Laconia Sword, ラコニアンアックス Laconian Axe). Proposed: the JP's split.
-7. **エアロプリズム:** Aeroprism (PS IV's shipped text) or Aero Prism (the PS II glossary and PS IV's
-   own glossary table)? Proposed: Aeroprism, by the rule that PS IV's shipped text wins.
-8. **モタビアンマニア:** Berserker (PS IV translates it) or Motavian Mania (the katakana)? By the rule,
-   Berserker.
+6. **Answered (the owner, 2026-10-17): Laconia for all, except the Laconian Axe**, which PS IV ships too:
+   Laconia Sword, Laconia Pot, Laconia Armor, Laconia Shield; Laconian Axe.
+7. **Answered (the owner, 2026-10-17): Aeroprism.**
+8. **Answered (the owner, 2026-10-17): Berserker.**
