@@ -130,6 +130,8 @@ def texts(entries, script, opts):
 def stock_bytes(e, text, opts):
     """True when the build can keep an entry's stock bytes: its stock text, unchanged, in a
     printer that still wraps (the window without vwf_dialogue) or never wraps (a cut-scene)."""
+    if opts.get('script_dictionary') == 1:          # the codes $80-$FF are other words now
+        return False
     return text == e['us'] and (e['kind'] not in window_kinds(opts) or e['kind'] == 'cutscene')
 
 

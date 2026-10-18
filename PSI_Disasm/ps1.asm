@@ -46,6 +46,11 @@ BANKS 32
 .FAIL "long_names needs vwf_dialogue"
 .ENDIF
 .ENDIF
+.IF script_dictionary == 1
+.IF relocate_script + vwf_dialogue + vwf_cutscene < 3
+.FAIL "script_dictionary needs relocate_script, vwf_dialogue and vwf_cutscene"
+.ENDIF
+.ENDIF
 .IF vwf_windows == 1
 .IF vwf_cutscene + long_names + long_item_names < 3
 .FAIL "vwf_windows needs vwf_cutscene, long_names and long_item_names"
@@ -18094,6 +18099,9 @@ DialogueWordBlock:
 .dw Dialogue_Word_Index_78, Dialogue_Word_Index_79, Dialogue_Word_Index_7A, Dialogue_Word_Index_7B,
 .dw Dialogue_Word_Index_7C, Dialogue_Word_Index_7D, Dialogue_Word_Index_7E, Dialogue_Word_Index_7F,
 
+.IF script_dictionary == 1
+.include "text\words.asm"	; script_dictionary: the words chosen from the script (gentext)
+.ELSE
 Dialogue_Word_Index_00:
 .db "ALIS", Dialogue_Terminator65
 
@@ -18477,6 +18485,7 @@ Dialogue_Word_Index_7E:
 
 Dialogue_Word_Index_7F:
 .db "OULD", Dialogue_Terminator65
+.ENDIF
 
 
 .BANK 3

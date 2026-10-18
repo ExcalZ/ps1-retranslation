@@ -14,3 +14,5 @@
 .define long_item_names 1	; item and enemy names up to 14 characters (needs vwf_dialogue; ext/longitems.asm)
 .define vwf_windows 1		; every window's text in the face, tiles lent by the screen (needs vwf_cutscene,
 				; long_names, long_item_names; ext/vwfwin.asm)
+.define script_dictionary 1	; the 128 dictionary words chosen from the script as built (needs relocate_script,
+				; vwf_dialogue, vwf_cutscene; tools/scriptdict.py, text/words.asm)

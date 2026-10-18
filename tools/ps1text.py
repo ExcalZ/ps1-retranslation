@@ -191,6 +191,8 @@ def encode_us(text, words=None, dictionary=True, charset=None):
     charset = charset or US_TEXT
     out = bytearray()
     plain = []
+    # the words as text: the stock's are bytes ('@' its apostrophe), script_dictionary's strings
+    texts = [w if isinstance(w, str) else w.decode('latin-1').replace('@', "'") for w in (words or [])]
 
     def flush():
         s = ''.join(plain)
@@ -199,13 +201,13 @@ def encode_us(text, words=None, dictionary=True, charset=None):
         while i < len(s):
             best = None
             if dictionary and words:
-                for n, w in enumerate(words):
-                    if len(w) >= 2 and s.startswith(w.decode('latin-1').replace('@', "'"), i):
-                        if best is None or len(w) > len(words[best]):
+                for n, w in enumerate(texts):
+                    if len(w) >= 2 and s.startswith(w, i):
+                        if best is None or len(w) > len(texts[best]):
                             best = n
             if best is not None:
                 out.append(0x80 | best)
-                i += len(words[best])
+                i += len(texts[best])
                 continue
             c = s[i]
             if c not in charset:

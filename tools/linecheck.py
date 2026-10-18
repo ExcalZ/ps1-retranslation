@@ -87,6 +87,9 @@ def main():
     if vwf:                                # the window in pixels; an insert at its widest value
         insert_px = W.insert_px(script)
     texts = W.texts(dialogue['entries'], script, opts)   # the stock text re-wrapped for the face
+    if opts.get('script_dictionary') == 1:
+        import scriptdict
+        words = scriptdict.words(texts.values())[1]
     for e in dialogue['entries']:
         bank = group[e['kind']]
         stock[bank] += len(e['hex']) // 2

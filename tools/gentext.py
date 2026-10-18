@@ -39,6 +39,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import ps1text as T
+import scriptdict
 import stockwrap as W
 import textsrc as S
 import tilemaps as M
@@ -87,6 +88,7 @@ VWF_KINDS = (({'dialogue', 'message'} if OPTIONS.get('vwf_dialogue') == 1 else s
              | ({'cutscene'} if OPTIONS.get('vwf_cutscene') == 1 else set()))
 LONG = OPTIONS.get('long_names') == 1
 LONG_ITEMS = OPTIONS.get('long_item_names') == 1
+SCRIPT_DICT = OPTIONS.get('script_dictionary') == 1
 WIN = OPTIONS.get('vwf_windows') == 1
 # vwf_windows: the tilemap segments whose runs are drawn in the face (ext/vwfwin.asm; the status
 # window's labels through WinLabel, the money line through WinMoney). The rest keep the fixed
@@ -180,7 +182,7 @@ def field_bytes(run, width, words):
 
 
 def control_names(defs):
-    names = T.word_names(defs)
+    names = {} if SCRIPT_DICT else T.word_names(defs)  # script_dictionary: the codes are other words
     for k, v in defs.items():
         if k.startswith('Dialogue_') and k not in ('Dialogue_flags',) and v in (0x40,) + tuple(range(0x5B, 0x66)):
             names.setdefault(v, k)
@@ -197,6 +199,9 @@ def generate(dialogue, script):
     # ---- the text files (text/dialogue.asm, cutscenes.asm, messages.asm)
     entries = dialogue['entries']
     texts = W.texts(entries, script, OPTIONS)
+    if SCRIPT_DICT:                     # the words chosen from this build's script
+        digest, words = scriptdict.words(texts.values())
+        out[scriptdict.PATH] = scriptdict.asm(words, digest)
     for f, kinds in S.FILES:
         path = os.path.join(T.DISASM, f)
         body = [S.HEADER]

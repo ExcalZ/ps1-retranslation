@@ -208,6 +208,11 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
   translated entries take 9.3 KB against 6.9 KB stock; the remaining 149 would need about
   7.9 KB more, some 2 KB over the bank. Next: the dictionary generated from the new script.
 
+* **script_dictionary (2026-10-17).** The 128 dictionary words chosen from the script at
+  every build (`tools/scriptdict.py`, `text/words.asm`): bank 32 from 15,275 to 11,635 bytes
+  with Palma translated; every scenario passes, the opening, dialogue, battle messages and
+  shops read back through the new words.
+
 ## Next, in order
 
 1. **Left from the survey:** a cross-check against Maxim's
@@ -220,6 +225,6 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
    naming screen with lower case (later). Not yet seen with `vwf_cutscene`: the Myau, governor and ending scenes
    (no scenario reaches them yet). Then a dictionary generated from the
    new script, if bank 32 gets tight.
-5. **Before more dialogue: a dictionary from the new script** (bank 32 is nearly full), then
-   Motavia, Dezolis, the messages and the cut-scenes; then proofreading in play, then release
+5. **Translation**: Motavia, Dezolis, the messages and the cut-scenes (the dictionary keeps
+   bank 32 in room: watch linecheck's byte count); then proofreading in play, then release
    packaging (BPS + Patcher.html).
