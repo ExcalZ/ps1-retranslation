@@ -585,7 +585,15 @@ python tools/ps1emu.py opening --expect=B49B,B4FC,B5D5
   (a menu: one line per row, step 2; a US menu word is one tile row, a dialogue or cut-scene
   line two, read on its lower row), `type_name(name)` (the naming screen: the cursor walks the
   key grid until `$C788`, the code under it, is the key wanted, each step checked; the typed name
-  at `$C721` checked after each key; then END).
+  at `$C721` checked after each key; then END). For scenes: `page_scene(stop, max, tag)`
+  pages the window and cut-scenes alike until `stop()`, logging and filming a page at each
+  button wait (answered with button 1) and each timed wait, counted as it starts: a
+  cut-scene's `{TIMED}` (`LABEL_33D1`, 208 frames) and, with the window open, `{PAUSE}`
+  (`LABEL_2D47`, 208 frames) and `{TIMED}` (`LABEL_2D33`); a wait with no text (a picture) is
+  logged but is not a page. `label_hit(name)` (a predicate: that bank 0/1 code ran since),
+  `answer_yes_no(yes, tag)` (logs the question as `prompt`, not a page), `start_talk(id,
+  ready)` (`forcetalk`'s open: `$C2DB` written before each press), `command_menu_up()`,
+  `use_first_item()` (ITEM, the first item, USE).
 * **Reading the face's windows** (`vwf_windows`): `text_line` reads a run of cells whose
   attribute has bit 5 set from their tiles' ink (plane 1), column by column, against the face
   (`FACE`, which the runner writes from `tools/diafont.py` into each script); so `area_text`,
@@ -598,7 +606,7 @@ python tools/ps1emu.py opening --expect=B49B,B4FC,B5D5
   text the build gives those entries (their `en`, or with the face options the stock text
   re-wrapped: `tools/stockwrap.py`): cut-scene pages as they are, and the dialogue window by a model of it
   (`window_pages`: two lines; `{BR}` and `{PAGE}` move to the next line, scrolling; `{PAGE}` and
-  `{END}` wait; a string that starts in the open window starts on a new line; at each wait the
+  `{END}` wait, `{TIMED}` and `{PAUSE}` end a page too; a string that starts in the open window starts on a new line; at each wait the
   last two lines show). Inserts match any value they can hold. `--dialogue=PATH` takes the
   text from another copy. `--words=SEGMENT[:ids],...` (ids `n`, `a-b`, or several joined with
   `+`) checks that those `script.json` runs' `en` are on the rows a scenario dumped. `--known`
@@ -630,6 +638,12 @@ python tools/ps1emu.py opening --expect=B49B,B4FC,B5D5
   | `partymenu` | the party filled (`$C4F0` = 3, each member alive), STAS asks who: the party menu (at `$7A44`) read back, cancelled, the screen under it checked | the screen comes back |
   | `healtarget` | four members, a field HEAL: the caster menu (`$7A44`), the spell list, the target menu (`$7A54`, `LABEL_3682`); one cancel closes all three | the screen comes back |
   | `battle enemy=N` | a forced battle: `$C2E6` the enemy, `$C29D` `$FF`, game mode `$0C`, what a random encounter leaves; Alisa boosted (attack 255, 99 HP; `strong=0` not); `party=4` all four members (the name box shows at each turn); ATTK each round; every message logged at its wait; a chest opened (`chest=no`) | `--known --words=enemies:N,battle_menu` |
+
+  | `myau` | Myau joins: the merchant (talk `$36`, `LABEL_4C0D`; party of one) with a Laconia Pot given: NO to the price (YES is 0094, "liar"), YES to the trade, then `LABEL_43CF`'s cut-scenes; Myau in the party after | `--expect=0092,0096,009A,B617,B646,B64D,B66E,B6C1` (9 pages) |
+  | `tyron` | Tyron's rescue: Alisa and Myau, the Alshlin used at the statue (talk `$A3`, `LABEL_5538`: the command menu, `$C2DB` kept for `ItemUse_Alsulin`); its messages, a wait over Tyron's picture (`$C2D8` 5: `LABEL_1C15`), `LABEL_4414`'s cut-scenes to `LABEL_FF3`; Tyron in the party after | `--expect=B12_B366,B12_B3B1,B6F3,B746,B786,B7B9,B7D1` (9 pages) |
+  | `lutz` | Lutz joins: three members, the Letter given, Lutz's talk (`$7E`, `LABEL_516F`): 00AE-00B0, a wait over his picture, `LABEL_4461`'s cut-scenes; Lutz in the party after | `--expect=00AE,B85C,B884` (5 pages) |
+  | `wings` | Myau's wings: a Laerma Berry used from talk `$B0`'s command menu (`LABEL_5535`) with `$C2DC` `$FF` (`ItemUse_Nuts`; `$C309` must not be `$17`): B12_B743, then `$C2D8` 7: `LABEL_4497`'s cut-scenes, to `LABEL_4517` | `--expect=B12_B743,B929,B97C` (4 pages) |
+  | `ending [answer=no]` | the Governor freed (talk `$AC`, `LABEL_5666`): 0272-0278, YES (0212) or NO (0230), then `LABEL_454E`: the breeze messages (each a `{PAUSE}`) and the credits (each a cut-scene `{TIMED}`), to the walk after them (`LABEL_661C`, black after this forced entry, in the stock game too) | `--expect=0272,0212,B12_BEB6,B12_BED0,B12_BEE8,B12_BEFD,B12_BF09,B12_BF21,B9E8,B9F0,B9FB,BA06,BA12,BA54` (24 pages; 0230 for `answer=no`) |
 
   `battle enemy=1`: the menu, the name box SWORM, "SWORM / IS KILLED.", "YOU GAINED 2 /
   EXPERIENCE POINTS.", the chest and "THERE ARE 3 / MESETAS INSIDE." (10 of 10 lines known);

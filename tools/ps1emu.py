@@ -204,7 +204,8 @@ def window_pages(texts):
     """The dialogue window at each button wait while it plays `texts` (one open window).
 
     Two lines; a {BR} or a {PAGE} moves to the next line, scrolling once both are used; a
-    {PAGE} and an {END} wait for a button first; {CLR} empties the window; a string that
+    {PAGE} and an {END} wait for a button first ({TIMED} and {PAUSE} for a time: a page too,
+    as lib.lua's page_scene logs them); {CLR} empties the window; a string that
     starts in the open window starts on a new line. At a wait the window shows the last two
     lines since it opened or was cleared."""
     shown, cur, pages = [], '', []
@@ -230,7 +231,7 @@ def window_pages(texts):
                 cur = ''
             elif tag == 'CLR':
                 shown, cur = [], ''
-            elif tag == 'END':
+            elif tag in ('END', 'TIMED', 'PAUSE'):   # a button wait, or a timed one
                 snap()
             elif tag not in T.TERMINATORS:
                 cur += m.group(0)

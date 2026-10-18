@@ -376,6 +376,105 @@ function page_window(max, tag)
   error("the window still open after " .. max .. " pages")
 end
 
+-- a page with nothing to read: every line blank, or a vwf line with no ink (a scene's button
+-- wait over a picture)
+local function blank_page(lines)
+  for _, l in ipairs(lines) do
+    if l:match("^vwf:") then
+      if l:sub(5):match("[1-9A-F]") then return false end
+    elseif l:gsub("[%s~]", "") ~= "" then
+      return false
+    end
+  end
+  return true
+end
+
+-- the waits of a scene that are not button waits, counted as they start: a cut-scene's {TIMED}
+-- (LABEL_33D1: 208 frames), and with the window open its {PAUSE} (LABEL_2D47: 208 frames) and
+-- {TIMED} (LABEL_2D33: 30 frames or a button). Installed at the end of this file.
+local scene_waits = 0
+
+-- a predicate that turns true once the code at label `name` (bank 0/1) has run after this call
+function label_hit(name)
+  local addr = PS1.labels[name] or error("no label " .. name)
+  local hit = false
+  emu.addMemoryCallback(function() hit = true end, emu.callbackType.exec, addr)
+  return function() return hit end
+end
+
+-- page through a scene (the window, cut-scenes, both) until stop() is true: at each button
+-- wait and each timed wait (scene_waits) the text is logged as a page (the window's two lines
+-- when it is open, else the four cut-scene lines) and filmed; a button wait is answered with
+-- button 1, a timed wait runs out by itself. A wait with no text on screen is logged as such
+-- and not counted as a page. Returns the number of pages. Bounded: `max` waits, 1500 frames
+-- for each.
+local scene_pages = 0
+function page_scene(stop, max, tag)
+  local seen, pages = scene_waits, 0
+  for _ = 1, max do
+    wait_until(function() return stop() or at_button_wait() or scene_waits > seen end, 1500,
+               "a page or the end of the scene (" .. (tag or "scene") .. ")")
+    if stop() and not at_button_wait() and scene_waits == seen then return pages end
+    local button = at_button_wait()
+    seen = scene_waits
+    wait(2)
+    local window = window_open()
+    local lines = window and dialogue_text() or cutscene_text()
+    local how = button and "button" or "timed"
+    if blank_page(lines) then
+      log(string.format("%s wait, no text", how))
+    else
+      pages = pages + 1
+      scene_pages = scene_pages + 1
+      log(string.format("page %d (%s): %s", scene_pages, window and "window" or "cut-scene",
+                        table.concat(lines, " / ")))
+      shot(string.format("%s%02d", tag or "scene", scene_pages))
+    end
+    if button then press("one", 4, 6) end
+  end
+  error("the scene still going after " .. max .. " waits")
+end
+
+-- the YES / NO box: the question logged (not as a page: --expect does not model a {NOWAIT}
+-- before a prompt) and filmed, then YES (button 2) or NO (down, button 2). Bounded: 300 frames.
+function answer_yes_no(yes, tag)
+  wait_until(yes_no_shown, 300, "YES / NO")
+  wait(20)
+  log("prompt (window): " .. table.concat(dialogue_text(), " / "))
+  shot(tag or "prompt")
+  if not yes then press("down", 4, 10) end
+  press("two", 4, 0)
+  log("answered " .. (yes and "YES" or "NO"))
+end
+
+-- on the field: open talk handler `id` (the table LABEL_4773) as forcetalk.lua does, $C2DB
+-- written just before each press, until ready() (default: the window). Bounded: 5 presses,
+-- 120 frames each.
+function start_talk(id, ready, what)
+  ready = ready or window_open
+  for try = 1, 5 do
+    poke(0xC2DB, id)
+    press("one", 4, 0)
+    if pcall(wait_until, ready, 120, what or "the window") then break end
+    if try == 5 then error(string.format("talk id $%02X: no %s in 5 tries", id, what or "window")) end
+  end
+  log(string.format("talk id $%02X (game mode %d)", id, game_mode()))
+end
+
+function command_menu_up() return #area_text(2, 10, 1, 6) >= 5 end
+
+-- the command menu is up: ITEM, the first item, USE (button 2 chooses; the item menu gives it to the
+-- first member alive). The screens are logged (dump_screen) and filmed.
+function use_first_item()
+  wait(20)
+  press("down", 4, 10) press("down", 4, 10)
+  press("two", 4, 40)                    -- ITEM
+  dump_screen("items") shot("items")
+  press("two", 4, 40)                    -- the first item
+  dump_screen("actions") shot("actions")
+  press("two", 4, 0)                     -- USE
+end
+
 local shots = 0
 function shot(name)
   shots = shots + 1
@@ -401,6 +500,14 @@ end
 if PS1.labels.LABEL_2D39 then
   emu.addMemoryCallback(function() timed_wait_frame = frame end, emu.callbackType.exec,
                         PS1.labels.LABEL_2D39)
+end
+
+for _, w in ipairs({ { "LABEL_33D1", false }, { "LABEL_2D47", true }, { "LABEL_2D33", true } }) do
+  if PS1.labels[w[1]] then
+    emu.addMemoryCallback(function()
+      if not w[2] or window_open() then scene_waits = scene_waits + 1 end
+    end, emu.callbackType.exec, PS1.labels[w[1]])
+  end
 end
 
 emu.addEventCallback(function()

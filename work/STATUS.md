@@ -249,6 +249,15 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
   one-page save prompt (the slot list opens at once) as well as the stock's two pages.
   Bytes: bank 32 10,141, bank 33 3,173, bank 34 1,154. In game: the battle, shop, save,
   continue, hospital, church, sell and menu scenarios, and the opening.
+* **The story scenes in game (2026-10-17).** Five scenarios reach the scenes no scenario
+  showed: `myau`, `tyron`, `lutz`, `wings`, `ending [answer=no]` (the talk handler or the
+  item use that starts each, the RAM it reads set first: `docs/pipeline.md` section 7).
+  `lib.lua`'s `page_scene` logs timed waits as pages too (a cut-scene's `{TIMED}`, the
+  window's `{PAUSE}` and `{TIMED}`), and `--expect`'s window model ends a page there. Every
+  page of Myau's, Tyron's and Lutz's cut-scenes, Myau's wings, the Governor's speech with
+  both answers, the breeze and the credits reads back as `dialogue.json` has it (9, 9, 5, 4
+  and 24 pages); the credits' names sit where the stock's do (centered in the text line,
+  some 20 px left of the screen's center, as the stock's six leading cells put them).
 
 ## Next, in order
 
@@ -257,9 +266,8 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
    free in every mode and that the title-screen words are graphics.
 2. **The rest of script.json:** done but for writing the naming screen and (the owner's
    call) the credits, both read-only for now.
-3. **More scenarios** (as the translation needs them): the ending.
-4. **Engine**: the naming screen with lower case (later). Not yet seen with
-   `vwf_cutscene`: the Myau, governor and ending scenes (no scenario reaches them yet).
-5. **Proofreading in play** (the translation is complete; scenes no scenario reaches yet:
-   Myau's, Tyron's and Lutz's cut-scenes, the ending, the credits), then release packaging
+3. **More scenarios** (as the translation needs them).
+4. **Engine**: the naming screen with lower case (later).
+5. **Proofreading in play** (the translation is complete; every scene now has a scenario:
+   the story scenes are `myau`, `tyron`, `lutz`, `wings`, `ending`), then release packaging
    (BPS + Patcher.html).

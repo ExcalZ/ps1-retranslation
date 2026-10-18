@@ -109,6 +109,7 @@ quotes.
   `work/scripts/` on top of `lib.lua`: `boot`, `opening`, `talk`, `forcetalk talk=N`, `fieldmenu`,
   `menus`, `savegame`, then `continue --keep-sram`, `shop shop=N`, `battle enemy=N`,
   `partymenu`, `healtarget`, `inventory`, `battlelist enemy=N`, `windows screen=hospital|church|sell|port|dungeon`,
+  `myau`, `tyron`, `lutz`, `wings`, `ending [answer=no]` (the story scenes and the credits),
   `vramdump enemy=N` (then `tools/vramsheet.py`: the
   battle's VRAM as a tile sheet, free tiles marked)
   (`docs/pipeline.md` section 7 has the table and each one's check). To see a line in the game
