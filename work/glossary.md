@@ -294,6 +294,19 @@ for the Laconian Axe, Aeroprism, Berserker).
 | カイゲンレイ | martial law | martial law |
 | メセタ (the money line) | Meseta (the owner, 2026-10-17: the label in the face, "Meseta 2000") | MST |
 
+## Voices
+
+* **Dezolians speak with an American Southern accent** (the owner, 2026-10-17), as PS II and
+  PS IV render their ズラ: "us folks", "ain't", "I reckon", "y'know", dropped g's, "'em".
+  Audible but readable, not the US 1987 "ze/zis". PS I has two Dezolian villages:
+  * ズラ (`01C8`-`01DC`, the village that hates Palmans): the broader, gruffer form ("Folks
+    next door ain't nothin' but liars", "Us folks here can't stand Palma people, no sir").
+  * ンダス (`01DE`-`01E6`, the village that welcomes them): a gentler, courteous Southern
+    ("Why, there's...", "sure enough", "don't ya know", "Y'all from Palma are mighty
+    welcome").
+* **In-jokes the US replaced are kept** from the JP: "big sister Choko" (`0188`), Chie of
+  the letters page (`027A`, where the US put an Aeroprism hint).
+
 ## PS I and PS IV: the same things, different katakana
 
 * **エアロキャッスル (PS I) / エアキャッスル (PS IV)**: LaShiec's castle (question 3).

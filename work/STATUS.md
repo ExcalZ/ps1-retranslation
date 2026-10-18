@@ -229,8 +229,10 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
   thanks and the queen question (0272-0278) with its answers 0212 and 0230 (0212 is that
   answer, not a Sopia line: its Motavia wording is replaced). The JP gives the two Dezolian
   villages their own speech, ズラ where Palmans are hated and ンダス where they are welcome
-  (the US's "ze" and "yes, indeed"): here ", yup" and "that there is", light and
-  consistent, for the owner to confirm. 027A (talk 178) is the JP's in-joke, Chie of the
+  (the US's "ze" and "yes, indeed"). The owner's call (2026-10-17): an American Southern
+  accent, as PS II and PS IV voice Dezolians; the ズラ village broad and gruff, the ンダス
+  village gentle and courteous (`work/glossary.md`, "Voices"; talks 104, 106, 107, 113
+  seen in game). 027A (talk 178) is the JP's in-joke, Chie of the
   letters page, where the US put an Aeroprism hint, as the Palma in-jokes are kept.
   027C-0280 are called by nothing in either version: the JP's copies of the passage boy's
   line, given the same English as 0282. Bank 32 is 10,663 bytes. In game: talks 96-98,

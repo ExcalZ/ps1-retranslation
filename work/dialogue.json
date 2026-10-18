@@ -2554,7 +2554,7 @@
    "us": "THE NEIBORING{BR}VILLAGE ARE ALL{PAGE}LIARS! DON'T{BR}LISTEN TO THEM!{END}",
    "jp_addr": "02:9DC2",
    "jp": "トナリノ　ブラクハ{BR}ウソツキバカリダ。キヲツケナヨ。{END}",
-   "en": "The next village{BR}over is all liars.{PAGE}Watch yourself.{END}"
+   "en": "Folks next door{BR}ain't nothin' but{PAGE}liars. You watch{BR}yourself, hear?{END}"
   },
   {
    "id": "01CA",
@@ -2565,7 +2565,7 @@
    "us": "ZE CORONA TOWER{BR}STANDS ON ZE{PAGE}FAR SIDE OF ZE{BR}MOUNTAIN TO ZE{PAGE}NORTH OF ZIS{BR}VILLAGE.{END}",
    "jp_addr": "02:9DDD",
    "jp": "コノムラノ　キタノ　ヤマノムコウニ{BR}コロナノトウガ　アルズラ。{END}",
-   "en": "Over the mountains{BR}north of this{PAGE}village is the{BR}Corona Tower, yup.{END}"
+   "en": "Over them{BR}mountains north of{PAGE}here's the Corona{BR}Tower, I reckon.{END}"
   },
   {
    "id": "01CC",
@@ -2577,7 +2577,7 @@
    "jp_addr": "02:9DFD",
    "jp": "コロナノトウノ　ニシニハ　デゾリスノ{BR}ドウクツガ　アルズラ。{PAGE}",
    "falls_through": true,
-   "en": "West of the{BR}Corona Tower is{PAGE}the Dezolis Cave.{PAGE}"
+   "en": "Out west of the{BR}Corona Tower is{PAGE}the Dezolis Cave.{PAGE}"
   },
   {
    "id": "01CE",
@@ -2588,7 +2588,7 @@
    "us": "OUR FRIENDS ARE IN{PAGE}ZERE. GIVE ZEM{BR}OUR BEST, O.K.?{END}",
    "jp_addr": "02:9E1B",
    "jp": "ワシラノ　ナカマガ　イルズラ。{BR}ヨロシクズラ。{END}",
-   "en": "Our people are{BR}there. Say hello{PAGE}for us, yup.{END}"
+   "en": "Some of us folks{BR}live there. Tell 'em{PAGE}we said howdy.{END}"
   },
   {
    "id": "01D0",
@@ -2600,7 +2600,7 @@
    "jp_addr": "02:9E33",
    "jp": "ラエルマツリーニハ　ラエルマベリー{BR}トイウ　キノミガ　ナルズラヨ。{PAGE}",
    "falls_through": true,
-   "en": "The Laerma tree{BR}grows a fruit, the{PAGE}Laerma berry, yup.{PAGE}"
+   "en": "Laerma trees grow{BR}Laerma berries.{PAGE}"
   },
   {
    "id": "01D2",
@@ -2612,7 +2612,7 @@
    "jp_addr": "02:9E55",
    "jp": "アノ　キノミハ　オイシイカラ{BR}ワシラノ　ショクリョウニ　シタイケド{PAGE}",
    "falls_through": true,
-   "en": "Those berries are{BR}tasty, so we'd like{PAGE}to eat them, but{BR}unless you put{PAGE}"
+   "en": "Them berries are{BR}mighty tasty, and{PAGE}we'd eat 'em, but{BR}unless ya put 'em{PAGE}"
   },
   {
    "id": "01D4",
@@ -2623,7 +2623,7 @@
    "us": "UNLESS IT IS PUT{PAGE}IN LACONIAN POT.{END}",
    "jp_addr": "02:9E77",
    "jp": "ラコニアノ　ツボニ　イレナイト{BR}ヒカラビテシマウズラヨ。{END}",
-   "en": "them in a Laconia{BR}Pot, they shrivel{PAGE}right up, yup.{END}"
+   "en": "in a Laconia Pot,{BR}they dry right up.{END}"
   },
   {
    "id": "01D6",
@@ -2634,7 +2634,7 @@
    "us": "DO YOU KNOW WHAT{BR}AN AEROPRISM IS?{NOWAIT}",
    "jp_addr": "02:9E94",
    "jp": "エアロプリズム　トイウノヲ{BR}シッテルズラカ。{NOWAIT}",
-   "en": "Know about the{BR}Aeroprism, yup?{NOWAIT}"
+   "en": "Ya ever heard of{BR}the Aeroprism?{NOWAIT}"
   },
   {
    "id": "01D8",
@@ -2645,7 +2645,7 @@
    "us": "IT LETS YOU SEE{BR}ANOTHER WORLD.{END}",
    "jp_addr": "02:9EAB",
    "jp": "コノヨト　チガウ　セカイガ{BR}ミエルソウズラヨ。{END}",
-   "en": "They say it shows{BR}you a world not{PAGE}like this one, yup.{END}"
+   "en": "They say it shows{BR}ya a whole other{PAGE}world, I reckon.{END}"
   },
   {
    "id": "01DA",
@@ -2656,7 +2656,7 @@
    "us": "I'D LIKE TO SEE{BR}ONE SOMETIME.{END}",
    "jp_addr": "02:9EC3",
    "jp": "イチド　ミテミタイモノズラヨ。{END}",
-   "en": "I'd like to see one{BR}someday, yup.{END}"
+   "en": "Sure would like to{BR}see one someday.{END}"
   },
   {
    "id": "01DC",
@@ -2667,7 +2667,7 @@
    "us": "WE OF ZIS TOWN{BR}HATE PALMANS.{END}",
    "jp_addr": "02:9ED3",
    "jp": "コノブラクノ　ミンナハ　パルマノ{BR}ヒトビトヲ　キラッテルズラ。{END}",
-   "en": "Everyone here{BR}hates the people{PAGE}of Palma, yup.{END}"
+   "en": "Us folks here{BR}can't stand Palma{PAGE}people, no sir.{END}"
   },
   {
    "id": "01DE",
@@ -2678,7 +2678,7 @@
    "us": "THERE IS A SPRING{BR}OF LIFE IN THE {PAGE}CORONA TOWER,{BR}THERE IS, YES.{END}",
    "jp_addr": "02:9EF3",
    "jp": "コロナノトウニハ　イノチノイズミガ{BR}アルンダス。{END}",
-   "en": "The Corona Tower{BR}has a Spring of{PAGE}Life, that it does.{END}"
+   "en": "Why, there's a{BR}Spring of Life in{PAGE}the Corona Tower,{BR}sure enough.{END}"
   },
   {
    "id": "01E0",
@@ -2689,7 +2689,7 @@
    "us": "YOU CAN WARP FROM {BR}THE 10TH LEVEL OF{PAGE}THE DUNGEON UNDER{BR}DEZORIS,YES.{END}",
    "jp_addr": "02:9F0C",
    "jp": "デゾリスノ　ドウクツノ　チカ{BR}{NUMBER}カイデ　ワープデキルンダス{BR}ヨ。{END}",
-   "en": "You can warp from{BR}the 10th floor of{PAGE}the Dezolis Cave,{BR}that you can.{END}"
+   "en": "You can warp from{BR}the 10th floor of{PAGE}the Dezolis Cave,{BR}don't ya know.{END}"
   },
   {
    "id": "01E2",
@@ -2700,7 +2700,7 @@
    "us": "LAERMA BERRIES ARE{BR}BLUE LAERMA NUTS{BR}USED IN DYES,YES,{PAGE}THEY ARE , INDEED.{END}",
    "jp_addr": "02:9F2C",
    "jp": "ラエルマベリーハ　アオイイロヲシタ{BR}キノミデ　センリョウニ　ツカウダス。{END}",
-   "en": "Laerma berries are{BR}a blue fruit used{PAGE}for dye, that they{BR}are.{END}"
+   "en": "Them blue Laerma{BR}berries? Good for{PAGE}dye, sure enough.{END}"
   },
   {
    "id": "01E4",
@@ -2711,7 +2711,7 @@
    "us": "IF YOU USE A{BR}CRYSTAL IN FRONT{PAGE}OF A LAERMA TREE,{BR}IT WILL BECOME,{PAGE}YES, A LAERMA NUT,{BR}YES, INDEED.{END}",
    "jp_addr": "02:9F51",
    "jp": "ラエルマツリーノ　マエデ　クリスタル{BR}ヲ　ツカウト　ミガ　ナルンダス。{END}",
-   "en": "Use a crystal{BR}before a Laerma{PAGE}tree, and it bears{BR}fruit, that it does.{END}"
+   "en": "Use a crystal by a{BR}Laerma tree, and{PAGE}it'll bear fruit,{BR}sure as can be.{END}"
   },
   {
    "id": "01E6",
@@ -2722,7 +2722,7 @@
    "us": "THIS TOWN WELCOMES{BR}ALL PALMANS,YES,{PAGE}INDEED, WE DO.{END}",
    "jp_addr": "02:9F74",
    "jp": "コノブラクハ　パルマノ　ヒトビトヲ{BR}カンゲイシマス。{END}",
-   "en": "This village{BR}welcomes the{PAGE}people of Palma,{BR}that it does.{END}"
+   "en": "Y'all from Palma{BR}are mighty{PAGE}welcome in this{BR}village.{END}"
   },
   {
    "id": "01E8",
