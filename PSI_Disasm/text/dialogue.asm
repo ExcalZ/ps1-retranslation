@@ -319,9 +319,16 @@ Dialogue_Index_0010:
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0012:
-.db "T", $6D
+.db "C", $66
+.db $72
+.db $6E
+.db $73
 .db $6A
-.db " ", $77
+.db $6A
+.db $79
+.db Dialogue_Apostrophe, $78
+.db Dialogue_NewLine
+.db $77
 .db $6A
 .db $78
 .db $6E
@@ -332,34 +339,19 @@ Dialogue_Index_0012:
 .db $6E
 .db $66
 .db $71
-.db Dialogue_NewLine
-.db $69
-.db $6E
-.db $78
-.db $79
+.db " ", $66
 .db $77
-.db $6E
-.db $68
-.db $79
-.db " ", $74
-.db $6B
-.db Dialogue_NewPage
-.db "C", $66
-.db $72
-.db $6E
-.db $73
 .db $6A
-.db $6A
-.db $79
+.db $66
 .db " ", $6E
 .db $78
-.db " ", $7A
+.db Dialogue_NewPage
+.db $7A
 .db $73
 .db $69
 .db $6A
 .db $77
-.db Dialogue_NewLine
-.db $72
+.db " ", $72
 .db $66
 .db $77
 .db $79
@@ -545,12 +537,15 @@ Dialogue_Index_001C:
 .db $74
 .db $7A
 .db $77
-.db " ", $78
+.db " ", $74
+.db $7C
+.db $73
+.db Dialogue_NewLine
+.db $78
 .db $66
 .db $70
 .db $6A
-.db ",", Dialogue_NewLine
-.db $69
+.db ", ", $69
 .db $74
 .db $73
 .db Dialogue_Apostrophe, $79
@@ -559,11 +554,11 @@ Dialogue_Index_001C:
 .db $66
 .db $7B
 .db $6A
-.db " ", $79
+.db Dialogue_NewPage
+.db $79
 .db $6D
 .db $6A
-.db Dialogue_NewPage
-.db $77
+.db " ", $77
 .db $6A
 .db $78
 .db $6E
@@ -575,14 +570,10 @@ Dialogue_Index_001C:
 .db $66
 .db $71
 .db Dialogue_NewLine
-.db $69
-.db $6E
-.db $78
-.db $79
+.db $66
 .db $77
-.db $6E
-.db $68
-.db $79
+.db $6A
+.db $66
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_001E:
@@ -691,258 +682,1834 @@ Dialogue_Index_0024:
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0026:
-.db Word_This, "IS PAROLIT", Dialogue_NewLine
-.db Word_Residential_Area, ".", Dialogue_Terminator65
+.db "T", $6D
+.db $6E
+.db $78
+.db " ", $6E
+.db $78
+.db " P", $66
+.db $77
+.db $74
+.db $71
+.db $6E
+.db $79
+.db Dialogue_Apostrophe, $78
+.db Dialogue_NewLine
+.db $77
+.db $6A
+.db $78
+.db $6E
+.db $69
+.db $6A
+.db $73
+.db $79
+.db $6E
+.db $66
+.db $71
+.db " ", $66
+.db $77
+.db $6A
+.db $66
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0028:
-.db Word_The, Word_Forest, " IS A", Dialogue_NewLine
-.db "DANGEROUS PLACE.", Dialogue_Terminator65
+.db "B", $6A
+.db " ", $6A
+.db $7D
+.db $79
+.db $77
+.db $66
+.db " ", $68
+.db $66
+.db $77
+.db $6A
+.db $6B
+.db $7A
+.db $71
+.db " ", $6E
+.db $73
+.db Dialogue_NewLine
+.db $79
+.db $6D
+.db $6A
+.db " ", $6B
+.db $74
+.db $77
+.db $6A
+.db $78
+.db $79
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_002A:
-.db Word_Medusa, " HAS BEEN", Dialogue_NewLine
-.db "REBORN AND LIVES", Dialogue_NewPage
-.db "IN A CAVE TO ", Word_The, Dialogue_NewLine
-.db "SOUTH. IF ", Word_You, "SEE", Dialogue_NewPage
+.db "S", $74
+.db $7A
+.db $79
+.db $6D
+.db " ", $74
+.db $6B
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db $77
+.db $6A
+.db $78
+.db $6E
+.db $69
+.db $6A
+.db $73
+.db $79
+.db $6E
+.db $66
+.db $71
+.db " ", $66
+.db $77
+.db $6A
+.db $66
+.db ",", Dialogue_NewPage
 
 Dialogue_Index_002C:
-.db "HER, ", Word_You_Will, " BE", Dialogue_NewLine
-.db Word_Turned_To_Stone, ".", Dialogue_Terminator65
+.db $6E
+.db $73
+.db " ", $66
+.db " ", $68
+.db $66
+.db $7B
+.db $6A
+.db ", ", $79
+.db $6D
+.db $6A
+.db $7E
+.db " ", $78
+.db $66
+.db $7E
+.db Dialogue_NewLine
+.db $66
+.db " ", $72
+.db $74
+.db $73
+.db $78
+.db $79
+.db $6A
+.db $77
+.db " ", $68
+.db $66
+.db $71
+.db $71
+.db $6A
+.db $69
+.db Dialogue_NewPage
+.db "M", $6A
+.db $69
+.db $7A
+.db $78
+.db $66
+.db " ", $6D
+.db $66
+.db $78
+.db " ", $77
+.db $6E
+.db $78
+.db $6A
+.db $73
+.db Dialogue_NewLine
+.db $66
+.db $6C
+.db $66
+.db $6E
+.db $73
+.db ". W", $6D
+.db $74
+.db $6A
+.db $7B
+.db $6A
+.db $77
+.db Dialogue_NewPage
+.db $78
+.db $6A
+.db $6A
+.db $78
+.db " ", $6D
+.db $6A
+.db $77
+.db " ", $6E
+.db $78
+.db " ", $79
+.db $7A
+.db $77
+.db $73
+.db $6A
+.db $69
+.db Dialogue_NewLine
+.db $79
+.db $74
+.db " ", $78
+.db $79
+.db $74
+.db $73
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_002E:
-.db "TO ", Word_The, "EAST LIES", Dialogue_NewLine
-.db "A PORT ", Word_Town, Dialogue_NewPage
-.db "CALLED ", Word_Scion, ".", Dialogue_Terminator65
+.db "E", $66
+.db $78
+.db $79
+.db " ", $74
+.db $6B
+.db " ", $6D
+.db $6A
+.db $77
+.db $6A
+.db ", ", $79
+.db $6D
+.db $6A
+.db $7E
+.db Dialogue_NewLine
+.db $78
+.db $66
+.db $7E
+.db ", ", $6E
+.db $78
+.db " ", $66
+.db " ", $75
+.db $74
+.db $77
+.db $79
+.db " ", $79
+.db $74
+.db $7C
+.db $73
+.db Dialogue_NewPage
+.db $68
+.db $66
+.db $71
+.db $71
+.db $6A
+.db $69
+.db " S", $68
+.db $6E
+.db $74
+.db $73
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0030:
-.db Word_From, "THE", Dialogue_NewLine
-.db Word_Spaceport, " YOU", Dialogue_NewPage
-.db "CAN GO TO PASEO", Dialogue_NewLine
-.db "ON ", Word_Motavia, ".", Dialogue_Terminator65
+.db "F", $77
+.db $74
+.db $72
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db $78
+.db $75
+.db $66
+.db $68
+.db $6A
+.db $75
+.db $74
+.db $77
+.db $79
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $68
+.db $66
+.db $73
+.db Dialogue_NewPage
+.db $6C
+.db $74
+.db " ", $79
+.db $74
+.db " P", $66
+.db $78
+.db $6A
+.db $74
+.db ", ", $74
+.db $73
+.db Dialogue_NewLine
+.db "M", $74
+.db $79
+.db $66
+.db $7B
+.db $6E
+.db $66
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0032:
-.db Word_There_Is, " AN", Dialogue_NewLine
-.db "UNDERGROUND", Dialogue_NewPage
-.db Word_Passage, " TO ", Word_The, Dialogue_NewLine
-.db Word_Gothic, " ", Word_Forest, Dialogue_NewPage
-.db Word_Some, Word_Where, " TO ", Word_The, Dialogue_NewLine
-.db "WEST OF PAROLIT.", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db $7E
+.db " ", $78
+.db $66
+.db $7E
+.db " ", $79
+.db $6D
+.db $6A
+.db $77
+.db $6A
+.db Dialogue_Apostrophe, $78
+.db Dialogue_NewLine
+.db $66
+.db $73
+.db " ", $7A
+.db $73
+.db $69
+.db $6A
+.db $77
+.db $6C
+.db $77
+.db $74
+.db $7A
+.db $73
+.db $69
+.db Dialogue_NewPage
+.db $75
+.db $66
+.db $78
+.db $78
+.db $66
+.db $6C
+.db $6A
+.db " ", $79
+.db $74
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db "G", $66
+.db $78
+.db $6D
+.db $6E
+.db $70
+.db $74
+.db " ", $6B
+.db $74
+.db $77
+.db $6A
+.db $78
+.db $79
+.db ",", Dialogue_NewPage
+.db $7C
+.db $6A
+.db $78
+.db $79
+.db " ", $74
+.db $6B
+.db " P", $66
+.db $77
+.db $74
+.db $71
+.db $6E
+.db $79
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0034:
-.db "ODIN SET OFF TO", Dialogue_NewLine
-.db "KILL ", Word_Medusa, ". HE", Dialogue_NewPage
+.db "T", $7E
+.db $77
+.db $74
+.db $73
+.db "? H", $6A
+.db " ", $7C
+.db $6A
+.db $73
+.db $79
+.db " ", $74
+.db $6B
+.db $6B
+.db Dialogue_NewLine
+.db $79
+.db $74
+.db " ", $78
+.db $71
+.db $66
+.db $7E
+.db " M", $6A
+.db $69
+.db $7A
+.db $78
+.db $66
+.db ".", Dialogue_NewPage
 
 Dialogue_Index_0036:
-.db "WENT WITH AN", Dialogue_NewLine
-.db "ANIMAL ", Word_That, " CAN", Dialogue_NewPage
-.db "SPEAK! ", Word_The, "ANIMAL", Dialogue_NewLine
-.db "HAD A BOTTLE OF", Dialogue_NewPage
+.db "H", $6A
+.db " ", $6D
+.db $66
+.db $69
+.db " ", $66
+.db " ", $79
+.db $66
+.db $71
+.db $70
+.db $6E
+.db $73
+.db $6C
+.db Dialogue_NewLine
+.db $66
+.db $73
+.db $6E
+.db $72
+.db $66
+.db $71
+.db " ", $7C
+.db $6E
+.db $79
+.db $6D
+.db " ", $6D
+.db $6E
+.db $72
+.db ".", Dialogue_NewPage
 
 Dialogue_Index_0038:
-.db "MEDICINE HANGING", Dialogue_NewLine
-.db Word_From, "ITS NECK,", Dialogue_NewPage
-.db "BUT I DON", Dialogue_Apostrophe, "T ", Word_Know, Dialogue_NewLine
-.db "WHAT ", Word_That, " IS FOR.", Dialogue_Terminator65
+.db "I", $79
+.db " ", $6D
+.db $66
+.db $69
+.db " ", $66
+.db " ", $72
+.db $6A
+.db $69
+.db $6E
+.db $68
+.db $6E
+.db $73
+.db $6A
+.db Dialogue_NewLine
+.db $67
+.db $74
+.db $79
+.db $79
+.db $71
+.db $6A
+.db " ", $6D
+.db $66
+.db $73
+.db $6C
+.db $6E
+.db $73
+.db $6C
+.db Dialogue_NewPage
+.db $6B
+.db $77
+.db $74
+.db $72
+.db " ", $6E
+.db $79
+.db $78
+.db " ", $73
+.db $6A
+.db $68
+.db $70
+.db ".", Dialogue_NewLine
+.db "W", $74
+.db $73
+.db $69
+.db $6A
+.db $77
+.db " ", $7C
+.db $6D
+.db $66
+.db $79
+.db Dialogue_NewPage
+.db $79
+.db $6D
+.db $66
+.db $79
+.db Dialogue_Apostrophe, $78
+.db " ", $6B
+.db $74
+.db $77
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_003A:
-.db "I HEAR ", Word_You, Word_Are, Dialogue_NewLine
-.db "GOING TO TRY", Dialogue_NewPage
-.db "TO KILL ", Word_Lassic, ".", Dialogue_NewLine
-.db "BEST OF LUCK!", Dialogue_Terminator65
+.db "S", $74
+.db " ", $7E
+.db $74
+.db $7A
+.db Dialogue_Apostrophe, $77
+.db $6A
+.db " ", $74
+.db $6B
+.db $6B
+.db " ", $79
+.db $74
+.db Dialogue_NewLine
+.db $67
+.db $6A
+.db $66
+.db $79
+.db " L", $66
+.db "S", $6D
+.db $6E
+.db $6A
+.db $68
+.db "?", Dialogue_NewPage
+.db "G", $74
+.db $74
+.db $69
+.db " ", $71
+.db $7A
+.db $68
+.db $70
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_003C:
-.db "I RECENTLY FOUND", Dialogue_NewLine
-.db "A TAL", Word_King, " BEAST", Dialogue_NewPage
-.db "IN ", Word_The, "CAVE ", Word_Where, Dialogue_NewLine
-.db Word_Medusa, " LIVES."
+.db "T", $6D
+.db $6A
+.db " ", $74
+.db $79
+.db $6D
+.db $6A
+.db $77
+.db " ", $69
+.db $66
+.db $7E
+.db " I", Dialogue_NewLine
+.db $6B
+.db $74
+.db $7A
+.db $73
+.db $69
+.db " ", $66
+.db " ", $79
+.db $66
+.db $71
+.db $70
+.db $6E
+.db $73
+.db $6C
+.db Dialogue_NewPage
+.db $66
+.db $73
+.db $6E
+.db $72
+.db $66
+.db $71
+.db " ", $6E
+.db $73
+.db " M", $6A
+.db $69
+.db $7A
+.db $78
+.db $66
+.db Dialogue_Apostrophe, $78
+.db Dialogue_NewLine
+.db $68
+.db $66
+.db $7B
+.db $6A
+.db ".", Dialogue_NewPage
 
 Dialogue_Index_003E:
-.db " I", Dialogue_NewPage
-.db "SOLD HIM FOR A", Dialogue_NewLine
-.db "GOOD PRICE TO A", Dialogue_NewPage
-.db "MERCHANT FROM", Dialogue_NewLine
-.db "PASEO!", Dialogue_Terminator65
+.db "I ", $78
+.db $74
+.db $71
+.db $69
+.db " ", $6E
+.db $79
+.db " ", $79
+.db $74
+.db " ", $66
+.db Dialogue_NewLine
+.db $72
+.db $6A
+.db $77
+.db $68
+.db $6D
+.db $66
+.db $73
+.db $79
+.db " ", $6B
+.db $77
+.db $74
+.db $72
+.db Dialogue_NewPage
+.db "P", $66
+.db $78
+.db $6A
+.db $74
+.db " ", $6B
+.db $74
+.db $77
+.db " ", $66
+.db " ", $75
+.db $77
+.db $6A
+.db $79
+.db $79
+.db $7E
+.db Dialogue_NewLine
+.db $75
+.db $6A
+.db $73
+.db $73
+.db $7E
+.db ". H", $6A
+.db $6D
+.db " ", $6D
+.db $6A
+.db $6D
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_0040:
-.db Word_Time, "S ", Word_Are, "HARD.", Dialogue_NewLine
-.db Word_There, " DOESN", Dialogue_Apostrophe, "T", Dialogue_NewPage
-.db "SEEM TO BE", Dialogue_NewLine
-.db Word_Any, "WAY TO MAKE", Dialogue_NewPage
-.db "M", Word_One, "Y.", Dialogue_Terminator65
+.db "B", $7A
+.db $78
+.db $6E
+.db $73
+.db $6A
+.db $78
+.db $78
+.db " ", $6E
+.db $78
+.db " ", $67
+.db $66
+.db $69
+.db Dialogue_NewLine
+.db $79
+.db $6D
+.db $6A
+.db $78
+.db $6A
+.db " ", $69
+.db $66
+.db $7E
+.db $78
+.db ". I", $78
+.db $73
+.db Dialogue_Apostrophe, $79
+.db Dialogue_NewPage
+.db $79
+.db $6D
+.db $6A
+.db $77
+.db $6A
+.db " ", $66
+.db $73
+.db $7E
+.db " ", $72
+.db $74
+.db $73
+.db $6A
+.db $7E
+.db Dialogue_NewLine
+.db $79
+.db $74
+.db " ", $67
+.db $6A
+.db " ", $72
+.db $66
+.db $69
+.db $6A
+.db Dialogue_NewPage
+.db $78
+.db $74
+.db $72
+.db $6A
+.db $7C
+.db $6D
+.db $6A
+.db $77
+.db $6A
+.db "?", Dialogue_Terminator65
 
 Dialogue_Index_0042:
-.db "A CAVE CALLED", Dialogue_NewLine
-.db "IALA CAN BE FOUND", Dialogue_NewPage
-.db "ON ", Word_The, "PENINSULA", Dialogue_NewLine
-.db "TO ", Word_The, "SOUTH OF", Dialogue_NewPage
-.db Word_Scion, Dialogue_Terminator65
+.db "O", $73
+.db " ", $79
+.db $6D
+.db $6A
+.db " ", $75
+.db $6A
+.db $73
+.db $6E
+.db $73
+.db $78
+.db $7A
+.db $71
+.db $66
+.db Dialogue_NewLine
+.db $78
+.db $74
+.db $7A
+.db $79
+.db $6D
+.db " ", $74
+.db $6B
+.db " S", $68
+.db $6E
+.db $74
+.db $73
+.db " ", $6E
+.db $78
+.db " ", $66
+.db Dialogue_NewPage
+.db $68
+.db $66
+.db $7B
+.db $6A
+.db " ", $68
+.db $66
+.db $71
+.db $71
+.db $6A
+.db $69
+.db " I", $66
+.db $71
+.db $66
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0044:
-.db Word_This, "IS ", Word_The, "PORT", Dialogue_NewLine
-.db Word_Town, " ", Word_Scion, ".", Dialogue_NewPage
-.db "LONG AGO, WE", Dialogue_NewLine
-.db "THRIVED ON TRADE.", Dialogue_Terminator65
+.db "T", $6D
+.db $6E
+.db $78
+.db " ", $6E
+.db $78
+.db " ", $79
+.db $6D
+.db $6A
+.db " ", $75
+.db $74
+.db $77
+.db $79
+.db Dialogue_NewLine
+.db $79
+.db $74
+.db $7C
+.db $73
+.db " ", $74
+.db $6B
+.db " S", $68
+.db $6E
+.db $74
+.db $73
+.db ". I", $79
+.db Dialogue_NewPage
+.db $74
+.db $73
+.db $68
+.db $6A
+.db " ", $79
+.db $6D
+.db $77
+.db $6E
+.db $7B
+.db $6A
+.db $69
+.db " ", $74
+.db $73
+.db Dialogue_NewLine
+.db $79
+.db $77
+.db $66
+.db $69
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0046:
-.db Word_You, "NEED A", Dialogue_NewLine
-.db "COM", Word_Pass, " TO ", Word_Pass, Dialogue_NewPage
-.db Word_Through, " ", Word_The, "EPPI", Dialogue_NewLine
-.db Word_Forest, ".", Dialogue_Terminator65
+.db "W", $6E
+.db $79
+.db $6D
+.db $74
+.db $7A
+.db $79
+.db " ", $66
+.db Dialogue_NewLine
+.db $68
+.db $74
+.db $72
+.db $75
+.db $66
+.db $78
+.db $78
+.db ", ", $7E
+.db $74
+.db $7A
+.db Dialogue_NewPage
+.db $68
+.db $66
+.db $73
+.db Dialogue_Apostrophe, $79
+.db " ", $6C
+.db $6A
+.db $79
+.db " ", $79
+.db $6D
+.db $77
+.db $74
+.db $7A
+.db $6C
+.db $6D
+.db Dialogue_NewLine
+.db "E", $75
+.db $6E
+.db ", ", $79
+.db $6D
+.db $6A
+.db " ", $6B
+.db $74
+.db $77
+.db $6A
+.db $78
+.db $79
+.db Dialogue_NewPage
+.db $7C
+.db $6D
+.db $6A
+.db $77
+.db $6A
+.db " ", $79
+.db $77
+.db $66
+.db $7B
+.db $6A
+.db $71
+.db $6A
+.db $77
+.db $78
+.db Dialogue_NewLine
+.db $6C
+.db $6A
+.db $79
+.db " ", $71
+.db $74
+.db $78
+.db $79
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0048:
-.db "A DOOR LOCKED", Dialogue_NewLine
-.db "WITH ", Word_Magic_84, "CAN", Dialogue_NewPage
-.db "ONLY BE OPENED", Dialogue_NewLine
-.db "WITH ", Word_Magic_EF, ".", Dialogue_Terminator65
+.db "A ", $69
+.db $74
+.db $74
+.db $77
+.db " ", $78
+.db $6A
+.db $66
+.db $71
+.db $6A
+.db $69
+.db " ", $67
+.db $7E
+.db Dialogue_NewLine
+.db $72
+.db $66
+.db $6C
+.db $6E
+.db $68
+.db " ", $74
+.db $75
+.db $6A
+.db $73
+.db $78
+.db " ", $74
+.db $73
+.db $71
+.db $7E
+.db Dialogue_NewPage
+.db $79
+.db $74
+.db " ", $72
+.db $66
+.db $6C
+.db $6E
+.db $68
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_004A:
-.db Word_There_Is, " A ", Word_Hill, Dialogue_NewLine
-.db Word_Named, Word_Baya, Dialogue_NewPage
-.db Word_Malay, " TO THE", Dialogue_NewLine
-.db "NORTH OF THIS", Dialogue_NewPage
-.db Word_Town, ". BUT N", Word_One, " OF", Dialogue_NewLine
-.db "US D", Word_Are, "APPROACH", Dialogue_NewPage
-.db "IT.", Dialogue_Terminator65
+.db "N", $74
+.db $77
+.db $79
+.db $6D
+.db " ", $74
+.db $6B
+.db " ", $79
+.db $6D
+.db $6E
+.db $78
+.db " ", $79
+.db $74
+.db $7C
+.db $73
+.db Dialogue_NewLine
+.db $6E
+.db $78
+.db " ", $66
+.db " ", $6D
+.db $6E
+.db $71
+.db $71
+.db " ", $68
+.db $66
+.db $71
+.db $71
+.db $6A
+.db $69
+.db Dialogue_NewPage
+.db "B", $66
+.db $7E
+.db $66
+.db $72
+.db $66
+.db $77
+.db $6A
+.db ". B", $7A
+.db $79
+.db Dialogue_NewLine
+.db $73
+.db $74
+.db $73
+.db $6A
+.db " ", $74
+.db $6B
+.db " ", $7A
+.db $78
+.db " ", $68
+.db $66
+.db $73
+.db " ", $6C
+.db $74
+.db Dialogue_NewPage
+.db $73
+.db $6A
+.db $66
+.db $77
+.db " ", $79
+.db $6D
+.db $66
+.db $79
+.db " ", $6D
+.db $6E
+.db $71
+.db $71
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_004C:
-.db "A CAVE CALLED", Dialogue_NewLine
-.db "NAULA LIES ON THE", Dialogue_NewPage
-.db "NORTH COAST OF", Dialogue_NewLine
-.db Word_Baya_Malay, ".", Dialogue_Terminator65
+.db "O", $73
+.db " ", $79
+.db $6D
+.db $6A
+.db " ", $68
+.db $74
+.db $66
+.db $78
+.db $79
+.db " ", $73
+.db $74
+.db $77
+.db $79
+.db $6D
+.db Dialogue_NewLine
+.db $74
+.db $6B
+.db " B", $66
+.db $7E
+.db $66
+.db $72
+.db $66
+.db $77
+.db $6A
+.db " ", $6E
+.db $78
+.db " ", $66
+.db Dialogue_NewPage
+.db $68
+.db $66
+.db $7B
+.db $6A
+.db " ", $68
+.db $66
+.db $71
+.db $71
+.db $6A
+.db $69
+.db " N", $66
+.db $7A
+.db $77
+.db $66
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_004E:
-.db Word_The, Word_Governor, " OF", Dialogue_NewLine
-.db Word_Motavia, " MIGHT", Dialogue_NewPage
-.db "POSSIBLY ", Word_Help, Dialogue_NewLine
-.db Word_You, "WELL.", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db " G", $74
+.db $7B
+.db $6A
+.db $77
+.db $73
+.db $74
+.db $77
+.db " ", $74
+.db $6B
+.db Dialogue_NewLine
+.db "M", $74
+.db $79
+.db $66
+.db $7B
+.db $6E
+.db $66
+.db " ", $72
+.db $6E
+.db $6C
+.db $6D
+.db $79
+.db " ", $79
+.db $66
+.db $70
+.db $6A
+.db Dialogue_NewPage
+.db $7E
+.db $74
+.db $7A
+.db $77
+.db " ", $78
+.db $6E
+.db $69
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0050:
-.db "NOAH LIVES ON", Dialogue_NewLine
-.db Word_Motavia, ".", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db $7E
+.db " ", $78
+.db $66
+.db $7E
+.db " ", $66
+.db Dialogue_NewLine
+.db $75
+.db $74
+.db $7C
+.db $6A
+.db $77
+.db $6B
+.db $7A
+.db $71
+.db " ", $6A
+.db $78
+.db $75
+.db $6A
+.db $77
+.db Dialogue_NewPage
+.db $71
+.db $6E
+.db $7B
+.db $6A
+.db $78
+.db " ", $74
+.db $73
+.db " M", $74
+.db $79
+.db $66
+.db $7B
+.db $6E
+.db $66
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0052:
-.db "DR. ", Word_Luveno, " HAD A", Dialogue_NewLine
-.db Word_Laboratory, " IN THE", Dialogue_NewPage
-.db Word_Gothic, " ", Word_Forest, Dialogue_NewLine
-.db "LONG AGO, IT IS", Dialogue_NewPage
-.db "SAID.", Dialogue_Terminator65
+.db "L", $74
+.db $73
+.db $6C
+.db " ", $66
+.db $6C
+.db $74
+.db ", D", $77
+.db ".", Dialogue_NewLine
+.db "L", $7A
+.db $7B
+.db $6A
+.db $73
+.db $74
+.db " ", $6D
+.db $66
+.db $69
+.db " ", $66
+.db Dialogue_NewPage
+.db $71
+.db $66
+.db $67
+.db $74
+.db $77
+.db $66
+.db $79
+.db $74
+.db $77
+.db $7E
+.db " ", $6E
+.db $73
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db "G", $66
+.db $78
+.db $6D
+.db $6E
+.db $70
+.db $74
+.db " ", $6B
+.db $74
+.db $77
+.db $6A
+.db $78
+.db $79
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0054:
-.db Word_Welcome, "TO EPPI.", Dialogue_Terminator65
+.db "W", $6A
+.db $71
+.db $68
+.db $74
+.db $72
+.db $6A
+.db " ", $79
+.db $74
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db $7B
+.db $6E
+.db $71
+.db $71
+.db $66
+.db $6C
+.db $6A
+.db " ", $74
+.db $6B
+.db " E", $75
+.db $6E
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0056:
-.db Word_Are, Word_You, "LOO", Word_King, Dialogue_NewLine
-.db "FOR A ", Word_Dungeon, Dialogue_NewPage
-.db "KEY?", Dialogue_Terminator62
+.db "A", $6B
+.db $79
+.db $6A
+.db $77
+.db " ", $79
+.db $6D
+.db $6A
+.db " D", $7A
+.db $73
+.db $6C
+.db $6A
+.db $74
+.db $73
+.db Dialogue_NewLine
+.db "K", $6A
+.db $7E
+.db ", ", $66
+.db $77
+.db $6A
+.db " ", $7E
+.db $74
+.db $7A
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_0058:
-.db "I", Dialogue_Apostrophe, "VE HIDDEN A", Dialogue_NewLine
-.db Word_Dungeon, " KEY IN", Dialogue_NewPage
-.db "THE"
+.db "I ", $6D
+.db $6E
+.db $69
+.db " ", $79
+.db $6D
+.db $6A
+.db " D", $7A
+.db $73
+.db $6C
+.db $6A
+.db $74
+.db $73
+.db Dialogue_NewLine
+.db "K", $6A
+.db $7E
+.db " ", $72
+.db $7E
+.db $78
+.db $6A
+.db $71
+.db $6B
+.db ",", Dialogue_NewPage
 
 Dialogue_Index_005A:
-.db " WAREHOUSE IN", Dialogue_NewLine
-.db Word_The, "OUTSKIRTS OF", Dialogue_NewPage
-.db Word_The, "CAMINEET.", Dialogue_Terminator65
+.db $74
+.db $73
+.db " ", $79
+.db $6D
+.db $6A
+.db " ", $76
+.db $7A
+.db $6E
+.db $6A
+.db $79
+.db ", ", $6E
+.db $73
+.db Dialogue_NewLine
+.db $79
+.db $6D
+.db $6A
+.db " ", $7C
+.db $66
+.db $77
+.db $6A
+.db $6D
+.db $74
+.db $7A
+.db $78
+.db $6A
+.db " ", $66
+.db $79
+.db Dialogue_NewPage
+.db $79
+.db $6D
+.db $6A
+.db " ", $6A
+.db $69
+.db $6C
+.db $6A
+.db " ", $74
+.db $6B
+.db Dialogue_NewLine
+.db "C", $66
+.db $72
+.db $6E
+.db $73
+.db $6A
+.db $6A
+.db $79
+.db Dialogue_Apostrophe, $78
+.db Dialogue_NewPage
+.db $77
+.db $6A
+.db $78
+.db $6E
+.db $69
+.db $6A
+.db $73
+.db $79
+.db $6E
+.db $66
+.db $71
+.db " ", $66
+.db $77
+.db $6A
+.db $66
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_005C:
-.db Word_Do_You_Know, " WHAT", Dialogue_NewLine
-.db Word_The, "HARDEST,", Dialogue_NewPage
-.db "STRONGEST", Dialogue_NewLine
-.db "MATERIAL IN OUR", Dialogue_NewPage
-.db Word_World, " IS?", Dialogue_Terminator62
+.db "K", $73
+.db $74
+.db $7C
+.db " ", $79
+.db $6D
+.db $6A
+.db " ", $7C
+.db $74
+.db $77
+.db $71
+.db $69
+.db Dialogue_Apostrophe, $78
+.db Dialogue_NewLine
+.db $6D
+.db $66
+.db $77
+.db $69
+.db $6A
+.db $78
+.db $79
+.db " ", $78
+.db $79
+.db $7A
+.db $6B
+.db $6B
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_005E:
-.db "IT", Dialogue_Apostrophe, "S ", Word_Laconia, "!", Dialogue_NewLine
-.db "ARMS MADE WITH", Dialogue_NewPage
-.db Word_Laconia, " ", Word_Are, Word_The, Dialogue_NewLine
-.db "BEST TO HAVE.", Dialogue_Terminator65
+.db "I", $79
+.db Dialogue_Apostrophe, $78
+.db " L", $66
+.db $68
+.db $74
+.db $73
+.db $6E
+.db $66
+.db "!", Dialogue_NewLine
+.db "W", $6A
+.db $66
+.db $75
+.db $74
+.db $73
+.db $78
+.db " ", $72
+.db $66
+.db $69
+.db $6A
+.db " ", $74
+.db $6B
+.db Dialogue_NewPage
+.db $6E
+.db $79
+.db " ", $66
+.db $77
+.db $6A
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db $78
+.db $79
+.db $77
+.db $74
+.db $73
+.db $6C
+.db $6A
+.db $78
+.db $79
+.db " ", $74
+.db $6B
+.db " ", $66
+.db $71
+.db $71
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0060:
-.db "O.K. GOOD DAY.", Dialogue_Terminator65
+.db "G", $74
+.db $74
+.db $69
+.db ", ", $79
+.db $6D
+.db $6A
+.db $73
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0062:
-.db Word_Do_You_Know, Dialogue_NewLine
-.db "ABOUT ", Word_The, Word_Planets, Dialogue_NewPage
-.db "OF ", Word_The, Word_Algol, " STAR", Dialogue_NewLine
-.db Word_System, "?", Dialogue_Terminator62
+.db "D", $74
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $70
+.db $73
+.db $74
+.db $7C
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db $75
+.db $71
+.db $66
+.db $73
+.db $6A
+.db $79
+.db $78
+.db " ", $74
+.db $6B
+.db " A", $71
+.db $6C
+.db $74
+.db $71
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_0064:
-.db Word_There_Are, " THREE", Dialogue_NewLine
-.db Word_Planets, "; ", Word_Palma, Dialogue_NewPage
-.db Word_Motavia, " AND", Dialogue_NewLine
-.db Word_Dezoris, "."
+.db "T", $6D
+.db $6A
+.db $77
+.db $6A
+.db " ", $66
+.db $77
+.db $6A
+.db " ", $79
+.db $6D
+.db $77
+.db $6A
+.db $6A
+.db ":", Dialogue_NewLine
+.db "P", $66
+.db $71
+.db $72
+.db $66
+.db ", M", $74
+.db $79
+.db $66
+.db $7B
+.db $6E
+.db $66
+.db ",", Dialogue_NewPage
+.db $66
+.db $73
+.db $69
+.db " D", $6A
+.db $7F
+.db $74
+.db $71
+.db $6E
+.db $78
+.db ".", Dialogue_NewPage
 
 Dialogue_Index_0066:
-.db " ", Word_Palma, " IS", Dialogue_NewPage
-.db "A ", Word_World, " OF GREEN.", Dialogue_NewLine
-.db Word_Motavia, " IS A", Dialogue_NewPage
-.db Word_World, " OF SAND.", Dialogue_NewLine
-.db Word_Dezoris, " IS A", Dialogue_NewPage
-.db Word_World, " OF ICE."
+.db "P", $66
+.db $71
+.db $72
+.db $66
+.db " ", $6E
+.db $78
+.db " ", $79
+.db $6D
+.db $6A
+.db " ", $6C
+.db $77
+.db $6A
+.db $6A
+.db $73
+.db Dialogue_NewLine
+.db $75
+.db $71
+.db $66
+.db $73
+.db $6A
+.db $79
+.db ", M", $74
+.db $79
+.db $66
+.db $7B
+.db $6E
+.db $66
+.db Dialogue_NewPage
+.db $79
+.db $6D
+.db $6A
+.db " ", $78
+.db $66
+.db $73
+.db $69
+.db " ", $75
+.db $71
+.db $66
+.db $73
+.db $6A
+.db $79
+.db ",", Dialogue_NewPage
 
 Dialogue_Index_0068:
-.db " THE", Dialogue_NewLine
-.db Word_Algol, " STAR", Dialogue_NewPage
-.db Word_System, " IS", Dialogue_NewLine
-.db Word_Currently, " FACING", Dialogue_NewPage
-.db "A ", Word_Great, "CRISIS.", Dialogue_Terminator65
+.db $66
+.db $73
+.db $69
+.db " D", $6A
+.db $7F
+.db $74
+.db $71
+.db $6E
+.db $78
+.db " ", $79
+.db $6D
+.db $6A
+.db " ", $6E
+.db $68
+.db $6A
+.db Dialogue_NewLine
+.db $75
+.db $71
+.db $66
+.db $73
+.db $6A
+.db $79
+.db ". A", $73
+.db $69
+.db " ", $73
+.db $74
+.db $7C
+.db " ", $66
+.db Dialogue_NewPage
+.db $68
+.db $77
+.db $6E
+.db $78
+.db $6E
+.db $78
+.db " ", $71
+.db $74
+.db $74
+.db $72
+.db $78
+.db " ", $74
+.db $7B
+.db $6A
+.db $77
+.db Dialogue_NewLine
+.db $79
+.db $6D
+.db $6A
+.db " A", $71
+.db $6C
+.db $74
+.db $71
+.db " ", $78
+.db $7E
+.db $78
+.db $79
+.db $6A
+.db $72
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_006A:
-.db Word_This, "IS ", Word_Palma, Dialogue_Apostrophe, "S", Dialogue_NewLine
-.db Word_Spaceport, ". FROM", Dialogue_NewPage
-.db Word_The, Word_Spaceport, " YOU", Dialogue_NewLine
-.db "CAN GO TO PASEO", Dialogue_NewPage
-.db "ON ", Word_Motavia, ".", Dialogue_Terminator65
+.db "T", $6D
+.db $6E
+.db $78
+.db " ", $6E
+.db $78
+.db " P", $66
+.db $71
+.db $72
+.db $66
+.db Dialogue_Apostrophe, $78
+.db Dialogue_NewLine
+.db $78
+.db $75
+.db $66
+.db $68
+.db $6A
+.db $75
+.db $74
+.db $77
+.db $79
+.db ". F", $77
+.db $74
+.db $72
+.db Dialogue_NewPage
+.db $6D
+.db $6A
+.db $77
+.db $6A
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $68
+.db $66
+.db $73
+.db " ", $6C
+.db $74
+.db " ", $79
+.db $74
+.db Dialogue_NewLine
+.db "P", $66
+.db $78
+.db $6A
+.db $74
+.db ", ", $74
+.db $73
+.db " M", $74
+.db $79
+.db $66
+.db $7B
+.db $6E
+.db $66
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_006C:
-.db Word_The, Word_Governor, " IS", Dialogue_NewLine
-.db "IN PASEO. HE", Dialogue_NewPage
-.db "RULES ALL OF", Dialogue_NewLine
-.db Word_Motavia, ".", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db " G", $74
+.db $7B
+.db $6A
+.db $77
+.db $73
+.db $74
+.db $77
+.db " ", $71
+.db $6E
+.db $7B
+.db $6A
+.db $78
+.db Dialogue_NewLine
+.db $6E
+.db $73
+.db " P", $66
+.db $78
+.db $6A
+.db $74
+.db ". H", $6A
+.db " ", $77
+.db $7A
+.db $71
+.db $6A
+.db $78
+.db Dialogue_NewPage
+.db $66
+.db $71
+.db $71
+.db " ", $74
+.db $6B
+.db " M", $74
+.db $79
+.db $66
+.db $7B
+.db $6E
+.db $66
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_006E:
-.db "LONG AGO, A", Dialogue_NewLine
-.db Word_Spaceship, " WAS", Dialogue_NewPage
-.db "BUILT IN THE", Dialogue_NewLine
-.db Word_Gothic, Dialogue_NewPage
-.db Word_Laboratory, ".", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db $7E
+.db " ", $78
+.db $66
+.db $7E
+.db Dialogue_NewLine
+.db $78
+.db $75
+.db $66
+.db $68
+.db $6A
+.db $78
+.db $6D
+.db $6E
+.db $75
+.db $78
+.db " ", $7C
+.db $6A
+.db $77
+.db $6A
+.db Dialogue_NewPage
+.db $74
+.db $73
+.db $68
+.db $6A
+.db " ", $67
+.db $7A
+.db $6E
+.db $71
+.db $79
+.db " ", $66
+.db $79
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db "G", $66
+.db $78
+.db $6D
+.db $6E
+.db $70
+.db $74
+.db " ", $71
+.db $66
+.db $67
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0070:
-.db Word_Do_You_Have, " ", Word_Your, Dialogue_NewLine
-.db Word_Passport, "?", Dialogue_Terminator62
+.db "D", $74
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $6D
+.db $66
+.db $7B
+.db $6A
+.db " ", $66
+.db Dialogue_NewLine
+.db $75
+.db $66
+.db $78
+.db $78
+.db $75
+.db $74
+.db $77
+.db $79
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_0072:
-.db Word_You, "CAN FILE FOR", Dialogue_NewLine
-.db "A ", Word_Passport, " ", Word_Here, ".", Dialogue_NewPage
-.db Word_Do_You, " ", Word_Want, "A", Dialogue_NewLine
-.db Word_Passport, "?", Dialogue_Terminator62
+.db "Y", $74
+.db $7A
+.db " ", $68
+.db $66
+.db $73
+.db " ", $66
+.db $75
+.db $75
+.db $71
+.db $7E
+.db " ", $6B
+.db $74
+.db $77
+.db Dialogue_NewLine
+.db $66
+.db " ", $75
+.db $66
+.db $78
+.db $78
+.db $75
+.db $74
+.db $77
+.db $79
+.db " ", $6D
+.db $6A
+.db $77
+.db $6A
+.db ".", Dialogue_NewPage
+.db "W", $6E
+.db $71
+.db $71
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $66
+.db $75
+.db $75
+.db $71
+.db $7E
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_0074:
-.db Word_Have, Word_You, "EVER", Dialogue_NewLine
-.db "D", Word_One, " ", Word_Any, Word_Thing, Dialogue_NewPage
-.db "ILLEGAL?", Dialogue_Terminator62
+.db "H", $66
+.db $7B
+.db $6A
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $6A
+.db $7B
+.db $6A
+.db $77
+.db Dialogue_NewLine
+.db $67
+.db $77
+.db $74
+.db $70
+.db $6A
+.db $73
+.db " ", $79
+.db $6D
+.db $6A
+.db " ", $71
+.db $66
+.db $7C
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_0076:
-.db Word_Do_You, " ", Word_Currently, Dialogue_NewLine
-.db Word_Have, "AN ILLNESS?", Dialogue_Terminator62
+.db "D", $74
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $6D
+.db $66
+.db $7B
+.db $6A
+.db " ", $66
+.db $73
+.db $7E
+.db Dialogue_NewLine
+.db $78
+.db $6A
+.db $77
+.db $6E
+.db $74
+.db $7A
+.db $78
+.db " ", $6E
+.db $71
+.db $71
+.db $73
+.db $6A
+.db $78
+.db $78
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_0078:
-.db Word_The, Word_Passport, " FEE", Dialogue_NewLine
-.db "IS 100 ", Word_Mesetas, ".", Dialogue_NewPage
-.db "W", Word_Ould, " ", Word_You, "PAY IT?", Dialogue_Terminator62
+.db "T", $6D
+.db $6A
+.db " ", $6B
+.db $6A
+.db $6A
+.db " ", $6E
+.db $78
+.db " 100", Dialogue_NewLine
+.db $72
+.db $6A
+.db $78
+.db $6A
+.db $79
+.db $66
+.db ". A", $71
+.db $71
+.db " ", $77
+.db $6E
+.db $6C
+.db $6D
+.db $79
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_007A:
-.db Word_Your, Word_Passport, " IS", Dialogue_NewLine
-.db "READY, ", Word_Here, ".", Dialogue_Terminator65
+.db "H", $6A
+.db $77
+.db $6A
+.db " ", $6E
+.db $78
+.db " ", $7E
+.db $74
+.db $7A
+.db $77
+.db Dialogue_NewLine
+.db $75
+.db $66
+.db $78
+.db $78
+.db $75
+.db $74
+.db $77
+.db $79
+.db ". P", $71
+.db $6A
+.db $66
+.db $78
+.db $6A
+.db Dialogue_NewPage
+.db $79
+.db $66
+.db $70
+.db $6A
+.db " ", $6E
+.db $79
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_007C:
-.db Word_I_See, ". ", Word_Have, "A GOOD", Dialogue_NewLine
-.db "DAY.", Dialogue_Terminator65
+.db "I ", $78
+.db $6A
+.db $6A
+.db ". T", $66
+.db $70
+.db $6A
+.db " ", $68
+.db $66
+.db $77
+.db $6A
+.db ",", Dialogue_NewLine
+.db $79
+.db $6D
+.db $6A
+.db $73
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_007E:
-.db Word_That, Dialogue_Apostrophe, "S ", Word_Not, "GOOD.", Dialogue_NewLine
-.db "YOU", Dialogue_Apostrophe, "LL ", Word_Have, "TO", Dialogue_NewPage
-.db "COME BACK LATER.", Dialogue_Terminator65
+.db "T", $6D
+.db $66
+.db $79
+.db " ", $7C
+.db $74
+.db $73
+.db Dialogue_Apostrophe, $79
+.db " ", $69
+.db $74
+.db ".", Dialogue_NewLine
+.db "P", $71
+.db $6A
+.db $66
+.db $78
+.db $6A
+.db " ", $68
+.db $74
+.db $72
+.db $6A
+.db " ", $66
+.db $6C
+.db $66
+.db $6E
+.db $73
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0080:
 .db Word_Welcome, "TO ", Word_The, Dialogue_NewLine
@@ -1077,349 +2644,2711 @@ Dialogue_Index_00B0:
 .db "NUISANCE!", Dialogue_Terminator65
 
 Dialogue_Index_00B2:
-.db "HELLO!", Dialogue_Terminator65
+.db "Y", $74
+.db $74
+.db "-", $6D
+.db $74
+.db $74
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_00B4:
-.db "ZZZ...ZZZ...", Dialogue_Terminator65
+.db "Z", $7F
+.db $7F
+.db "... ", $7F
+.db $7F
+.db $7F
+.db "...", Dialogue_Terminator65
 
 Dialogue_Index_00B6:
-.db Word_Please, Word_Rest, " ", Word_Your, Dialogue_NewLine
-.db "WEARY B", Word_One, "S.", Dialogue_Terminator65
+.db "P", $71
+.db $6A
+.db $66
+.db $78
+.db $6A
+.db ", ", $77
+.db $6A
+.db $78
+.db $79
+.db Dialogue_NewLine
+.db $66
+.db $7C
+.db $6D
+.db $6E
+.db $71
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00B8:
-.db "I AM PRAYING FOR", Dialogue_NewLine
-.db Word_Your, "SAFETY.", Dialogue_Terminator65
+.db "P", $71
+.db $6A
+.db $66
+.db $78
+.db $6A
+.db " ", $68
+.db $74
+.db $72
+.db $6A
+.db " ", $67
+.db $66
+.db $68
+.db $70
+.db Dialogue_NewLine
+.db $78
+.db $66
+.db $6B
+.db $6A
+.db ". I", Dialogue_Apostrophe, $71
+.db $71
+.db " ", $67
+.db $6A
+.db Dialogue_NewPage
+.db $75
+.db $77
+.db $66
+.db $7E
+.db $6E
+.db $73
+.db $6C
+.db " ", $6B
+.db $74
+.db $77
+.db " ", $7E
+.db $74
+.db $7A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00BA:
-.db "C", Word_Ould, " YA SPARE", Dialogue_NewLine
-.db "ME A CUP OF COLA?", Dialogue_Terminator62
+.db "G", $74
+.db $79
+.db " ", $66
+.db " P", $6A
+.db $71
+.db $74
+.db $77
+.db $6E
+.db $6A
+.db "M", $66
+.db $79
+.db $6A
+.db Dialogue_NewLine
+.db $79
+.db $74
+.db " ", $78
+.db $75
+.db $66
+.db $77
+.db $6A
+.db ", ", $75
+.db $66
+.db $71
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_00BC:
-.db Word_Thanks, "! ", Word_This, "WAS", Dialogue_NewLine
-.db "ONCE ", Word_The, "LAB. OF", Dialogue_NewPage
+.db "T", $6D
+.db $66
+.db $73
+.db $70
+.db $78
+.db ". T", $6D
+.db $6E
+.db $78
+.db " ", $75
+.db $71
+.db $66
+.db $68
+.db $6A
+.db Dialogue_NewLine
+.db $7C
+.db $66
+.db $78
+.db " ", $74
+.db $73
+.db $68
+.db $6A
+.db " ", $79
+.db $6D
+.db $6A
+.db " ", $71
+.db $66
+.db $67
+.db Dialogue_NewPage
+.db $74
+.db $6B
+.db " ", $66
+.db " ", $78
+.db $68
+.db $6E
+.db $6A
+.db $73
+.db $79
+.db $6E
+.db $78
+.db $79
+.db Dialogue_NewLine
+.db $73
+.db $66
+.db $72
+.db $6A
+.db $69
+.db " L", $7A
+.db $7B
+.db $6A
+.db $73
+.db $74
+.db ".", Dialogue_NewPage
 
 Dialogue_Index_00BE:
-.db "DR. ", Word_Luveno, ". HE", Dialogue_NewLine
-.db "WENT BONKERS,", Dialogue_NewPage
-.db "THOUGH"
+.db "B", $7A
+.db $79
+.db " ", $79
+.db $6D
+.db $6A
+.db $7E
+.db " ", $78
+.db $66
+.db $6E
+.db $69
+.db Dialogue_NewLine
+.db "L", $7A
+.db $7B
+.db $6A
+.db $73
+.db $74
+.db " ", $7C
+.db $66
+.db $78
+.db " ", $72
+.db $66
+.db $69
+.db ",", Dialogue_NewPage
 
 Dialogue_Index_00C0:
-.db " AND BE", Dialogue_NewLine
-.db "INPRIS", Word_One, "D IN", Dialogue_NewPage
-.db "TRIADA TO THE", Dialogue_NewLine
-.db "SOUTH OF ", Word_Here, ".", Dialogue_Terminator65
+.db $66
+.db $73
+.db $69
+.db " ", $71
+.db $74
+.db $68
+.db $70
+.db $6A
+.db $69
+.db " ", $6D
+.db $6E
+.db $72
+.db Dialogue_NewLine
+.db $66
+.db $7C
+.db $66
+.db $7E
+.db " ", $6E
+.db $73
+.db " T", $77
+.db $6E
+.db $66
+.db $69
+.db $66
+.db ", ", $66
+.db Dialogue_NewPage
+.db $75
+.db $77
+.db $6E
+.db $78
+.db $74
+.db $73
+.db " ", $78
+.db $74
+.db $7A
+.db $79
+.db $6D
+.db " ", $74
+.db $6B
+.db Dialogue_NewLine
+.db $79
+.db $6D
+.db $6E
+.db $78
+.db " ", $7B
+.db $6E
+.db $71
+.db $71
+.db $66
+.db $6C
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00C2:
-.db "I GOT NOTHIN", Dialogue_Apostrophe, " TO", Dialogue_NewLine
-.db "SAY T", Dialogue_Apostrophe, "YA!GET LOST!", Dialogue_Terminator65
+.db "G", $74
+.db $79
+.db " ", $73
+.db $74
+.db $79
+.db $6D
+.db $6E
+.db $73
+.db Dialogue_Apostrophe, " ", $79
+.db $74
+.db " ", $78
+.db $66
+.db $7E
+.db Dialogue_NewLine
+.db $79
+.db $74
+.db " ", $7E
+.db $74
+.db $7A
+.db ". G", $6A
+.db $79
+.db " ", $71
+.db $74
+.db $78
+.db $79
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00C4:
-.db "DON", Dialogue_Apostrophe, "T GO NEAR THE", Dialogue_NewLine
-.db Word_Tower, " AT ", Word_The, "FAR", Dialogue_NewPage
+.db "O", $73
+.db $6A
+.db " ", $77
+.db $74
+.db $66
+.db $69
+.db " ", $77
+.db $7A
+.db $73
+.db $78
+.db Dialogue_NewLine
+.db $6B
+.db $77
+.db $74
+.db $72
+.db " ", $79
+.db $6D
+.db $6A
+.db " G", $66
+.db $78
+.db $6D
+.db $6E
+.db $70
+.db $74
+.db Dialogue_NewPage
+.db $6B
+.db $74
+.db $77
+.db $6A
+.db $78
+.db $79
+.db " ", $6E
+.db $73
+.db $79
+.db $74
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db $72
+.db $74
+.db $7A
+.db $73
+.db $79
+.db $66
+.db $6E
+.db $73
+.db $78
+.db ", ", $66
+.db $73
+.db $69
+.db " ", $66
+.db $79
+.db Dialogue_NewPage
+.db $6E
+.db $79
+.db $78
+.db " ", $6A
+.db $73
+.db $69
+.db " ", $78
+.db $79
+.db $66
+.db $73
+.db $69
+.db $78
+.db " ", $66
+.db Dialogue_NewLine
+.db $79
+.db $74
+.db $7C
+.db $6A
+.db $77
+.db ".", Dialogue_NewPage
 
 Dialogue_Index_00C6:
-.db "END OF THE", Dialogue_NewLine
-.db "NARROW ROAD", Dialogue_NewPage
-.db "WHICH GOES FROM", Dialogue_NewLine
-.db Word_The, Word_Gothic, " ", Word_Forest, Dialogue_NewPage
-.db Word_Through, " THE", Dialogue_NewLine
+.db "S", $79
+.db $66
+.db $7E
+.db " ", $66
+.db $7C
+.db $66
+.db $7E
+.db " ", $6B
+.db $77
+.db $74
+.db $72
+.db " ", $6E
+.db $79
+.db ".", Dialogue_NewLine
+.db "T", $6D
+.db $6A
+.db $7E
+.db " ", $78
+.db $66
+.db $7E
+.db " ", $66
+.db Dialogue_NewPage
+.db $6B
+.db $6A
+.db $66
+.db $77
+.db $78
+.db $74
+.db $72
+.db $6A
+.db " ", $72
+.db $74
+.db $73
+.db $78
+.db $79
+.db $6A
+.db $77
+.db Dialogue_NewLine
+.db $71
+.db $6E
+.db $7B
+.db $6A
+.db $78
+.db " ", $79
+.db $6D
+.db $6A
+.db $77
+.db $6A
+.db ",", Dialogue_NewPage
 
 Dialogue_Index_00C8:
-.db Word_Mountain, "S. A", Dialogue_NewPage
-.db Word_Magic_84, "BEAST LIVES", Dialogue_NewLine
-.db Word_There, ". LOOK AT IT", Dialogue_NewPage
-.db "AND YA TURN TO", Dialogue_NewLine
-.db "ST", Word_One, ".", Dialogue_Terminator65
+.db $66
+.db $73
+.db $69
+.db " ", $74
+.db $73
+.db $6A
+.db " ", $71
+.db $74
+.db $74
+.db $70
+.db " ", $66
+.db $79
+.db " ", $6E
+.db $79
+.db Dialogue_NewLine
+.db $79
+.db $7A
+.db $77
+.db $73
+.db $78
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $79
+.db $74
+.db Dialogue_NewPage
+.db $78
+.db $79
+.db $74
+.db $73
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00CA:
-.db "AH, IT", Dialogue_Apostrophe, "S GETTING", Dialogue_NewLine
-.db "LATE! FETCH MY", Dialogue_NewPage
+.db "A", $6D
+.db ", ", $7E
+.db $74
+.db $7A
+.db " ", $79
+.db $74
+.db $74
+.db $70
+.db " ", $7E
+.db $74
+.db $7A
+.db $77
+.db Dialogue_NewLine
+.db $79
+.db $6E
+.db $72
+.db $6A
+.db "! N", $74
+.db $7C
+.db ", ", $6B
+.db $6E
+.db $77
+.db $78
+.db $79
+.db Dialogue_NewPage
+.db $79
+.db $6D
+.db $6E
+.db $73
+.db $6C
+.db $78
+.db " ", $6B
+.db $6E
+.db $77
+.db $78
+.db $79
+.db ":", Dialogue_NewPage
 
 Dialogue_Index_00CC:
-.db "ASSISTANT. HE", Dialogue_Apostrophe, "S", Dialogue_NewLine
-.db "LIKELY HIDING IN", Dialogue_NewPage
-.db Word_The, "UNDERGROUND", Dialogue_NewLine
-.db Word_Passage, ".", Dialogue_Terminator65
+.db $67
+.db $77
+.db $6E
+.db $73
+.db $6C
+.db " ", $72
+.db $6A
+.db " ", $72
+.db $7E
+.db Dialogue_NewLine
+.db $66
+.db $78
+.db $78
+.db $6E
+.db $78
+.db $79
+.db $66
+.db $73
+.db $79
+.db ". H", $6A
+.db Dialogue_Apostrophe, $71
+.db $71
+.db " ", $67
+.db $6A
+.db Dialogue_NewPage
+.db $6D
+.db $6E
+.db $69
+.db $6E
+.db $73
+.db $6C
+.db " ", $6E
+.db $73
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db $7A
+.db $73
+.db $69
+.db $6A
+.db $77
+.db $6C
+.db $77
+.db $74
+.db $7A
+.db $73
+.db $69
+.db Dialogue_NewPage
+.db $75
+.db $66
+.db $78
+.db $78
+.db $66
+.db $6C
+.db $6A
+.db ".", Dialogue_NewPage
+.db "H", $74
+.db $73
+.db $6A
+.db $78
+.db $79
+.db $71
+.db $7E
+.db ", ", $79
+.db $6D
+.db $66
+.db $79
+.db " ", $67
+.db $74
+.db $7E
+.db Dialogue_NewLine
+.db $6E
+.db $78
+.db " ", $78
+.db $74
+.db " ", $78
+.db $6D
+.db $7E
+.db ", ", $6E
+.db $79
+.db Dialogue_Apostrophe, $78
+.db " ", $66
+.db Dialogue_NewPage
+.db $73
+.db $7A
+.db $6E
+.db $78
+.db $66
+.db $73
+.db $68
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00CE:
-.db Word_Dont_Be_A_Fool, Dialogue_Terminator65
+.db "D", $74
+.db $73
+.db Dialogue_Apostrophe, $79
+.db " ", $79
+.db $74
+.db $7E
+.db " ", $7C
+.db $6E
+.db $79
+.db $6D
+.db " ", $72
+.db $6A
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_00D0:
-.db Word_You, "DON", Dialogue_Apostrophe, "T HAVE", Dialogue_NewLine
-.db "ENOUGH. COME BACK", Dialogue_NewPage
-.db "AGAIN WHEN YOU", Dialogue_NewLine
-.db Word_Have, "ENOUGH", Dialogue_NewPage
-.db "FUNDS.", Dialogue_Terminator65
+.db "N", $74
+.db $79
+.db " ", $6A
+.db $73
+.db $74
+.db $7A
+.db $6C
+.db $6D
+.db ", I", Dialogue_Apostrophe, $72
+.db Dialogue_NewLine
+.db $66
+.db $6B
+.db $77
+.db $66
+.db $6E
+.db $69
+.db ". C", $74
+.db $7A
+.db $71
+.db $69
+.db " ", $7E
+.db $74
+.db $7A
+.db Dialogue_NewPage
+.db $6C
+.db $74
+.db " ", $66
+.db $73
+.db $69
+.db " ", $77
+.db $66
+.db $6E
+.db $78
+.db $6A
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db $72
+.db $74
+.db $73
+.db $6A
+.db $7E
+.db "?", Dialogue_Terminator65
 
 Dialogue_Index_00D2:
-.db "SUCCESS! I", Dialogue_NewLine
-.db Word_Present, " A SUPERB", Dialogue_NewPage
-.db Word_Spaceship, " THE", Dialogue_NewLine
-.db Word_Luveno, ".", Dialogue_Terminator65
+.db "R", $6A
+.db $6F
+.db $74
+.db $6E
+.db $68
+.db $6A
+.db "! A", $79
+.db " ", $71
+.db $66
+.db $78
+.db $79
+.db ",", Dialogue_NewLine
+.db $79
+.db $6D
+.db $6A
+.db " ", $78
+.db $75
+.db $66
+.db $68
+.db $6A
+.db $78
+.db $6D
+.db $6E
+.db $75
+.db Dialogue_NewPage
+.db "L", $7A
+.db $7B
+.db $6A
+.db $73
+.db $74
+.db " ", $6E
+.db $78
+.db " ", $6B
+.db $6E
+.db $73
+.db $6E
+.db $78
+.db $6D
+.db $6A
+.db $69
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_00D4:
-.db "IF ", Word_You, "DON", Dialogue_Apostrophe, "T OBEY", Dialogue_NewLine
-.db "ME, I ", Word_Cannot, " ", Word_Help, ".", Dialogue_Terminator65
+.db "I", $6B
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $7C
+.db $74
+.db $73
+.db Dialogue_Apostrophe, $79
+.db " ", $69
+.db $74
+.db " ", $66
+.db $78
+.db Dialogue_NewLine
+.db "I ", $78
+.db $66
+.db $7E
+.db ", I ", $68
+.db $66
+.db $73
+.db Dialogue_Apostrophe, $79
+.db " ", $79
+.db $66
+.db $70
+.db $6A
+.db Dialogue_NewPage
+.db $79
+.db $6D
+.db $6E
+.db $78
+.db " ", $74
+.db $73
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00D6:
-.db "BUT ", Word_You, Word_Cannot, Dialogue_NewLine
-.db "FLY A ", Word_Spaceship, ".", Dialogue_Terminator65
+.db "B", $7A
+.db $79
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $68
+.db $66
+.db $73
+.db Dialogue_Apostrophe, $79
+.db " ", $6B
+.db $71
+.db $7E
+.db Dialogue_NewLine
+.db $79
+.db $6D
+.db $6A
+.db " L", $7A
+.db $7B
+.db $6A
+.db $73
+.db $74
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00D8:
-.db "HOW IS THE", Dialogue_NewLine
-.db Word_Luveno, "? USE IT", Dialogue_NewPage
-.db "WELL.", Dialogue_Terminator65
+.db "H", $74
+.db $7C
+.db " ", $6E
+.db $78
+.db " ", $79
+.db $6D
+.db $6A
+.db " L", $7A
+.db $7B
+.db $6A
+.db $73
+.db $74
+.db Dialogue_NewLine
+.db $77
+.db $7A
+.db $73
+.db $73
+.db $6E
+.db $73
+.db $6C
+.db "? T", $66
+.db $70
+.db $6A
+.db Dialogue_NewPage
+.db $6C
+.db $74
+.db $74
+.db $69
+.db " ", $68
+.db $66
+.db $77
+.db $6A
+.db " ", $74
+.db $6B
+.db " ", $6E
+.db $79
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00DA:
-.db Word_That, Dialogue_Apostrophe, "S TOO BAD.", Dialogue_NewLine
-.db "AND ", Word_You, "HAVE", Dialogue_NewPage
-.db "COME SO FAR, TOO.", Dialogue_Terminator65
+.db "T", $6D
+.db $66
+.db $79
+.db Dialogue_Apostrophe, $78
+.db " ", $66
+.db " ", $78
+.db $6D
+.db $66
+.db $72
+.db $6A
+.db ". S", $74
+.db Dialogue_NewLine
+.db $7E
+.db $74
+.db $7A
+.db $77
+.db " ", $6F
+.db $74
+.db $7A
+.db $77
+.db $73
+.db $6A
+.db $7E
+.db " ", $6A
+.db $73
+.db $69
+.db $78
+.db Dialogue_NewPage
+.db $6D
+.db $6A
+.db $77
+.db $6A
+.db ", ", $79
+.db $6D
+.db $6A
+.db $73
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00DC:
-.db "I", Dialogue_Apostrophe, "M BUSY.DON", Dialogue_Apostrophe, "T", Dialogue_NewLine
-.db "BOTHER ME.", Dialogue_Terminator65
+.db "I", Dialogue_Apostrophe, $72
+.db " ", $67
+.db $7A
+.db $78
+.db $7E
+.db " ", $77
+.db $6E
+.db $6C
+.db $6D
+.db $79
+.db " ", $73
+.db $74
+.db $7C
+.db ".", Dialogue_NewLine
+.db "D", $74
+.db $73
+.db Dialogue_Apostrophe, $79
+.db " ", $67
+.db $74
+.db $79
+.db $6D
+.db $6A
+.db $77
+.db " ", $72
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00DE:
-.db "I", Dialogue_Apostrophe, "M ", Word_Luveno, ". IF", Dialogue_NewLine
-.db "YOU", Dialogue_Apostrophe, "VE COME FOR", Dialogue_NewPage
-.db Word_Help, ", ", Word_You, "HAD", Dialogue_NewLine
-.db "BEST FORGET IT.", Dialogue_NewPage
-.db "LEAVE!", Dialogue_Terminator65
+.db "I", Dialogue_Apostrophe, $72
+.db " L", $7A
+.db $7B
+.db $6A
+.db $73
+.db $74
+.db ". I", $6B
+.db Dialogue_NewLine
+.db $7E
+.db $74
+.db $7A
+.db Dialogue_Apostrophe, $7B
+.db $6A
+.db " ", $68
+.db $74
+.db $72
+.db $6A
+.db " ", $6B
+.db $74
+.db $77
+.db Dialogue_NewPage
+.db $6D
+.db $6A
+.db $71
+.db $75
+.db ", ", $7E
+.db $74
+.db $7A
+.db Dialogue_Apostrophe, $77
+.db $6A
+.db Dialogue_NewLine
+.db $7C
+.db $66
+.db $78
+.db $79
+.db $6E
+.db $73
+.db $6C
+.db " ", $7E
+.db $74
+.db $7A
+.db $77
+.db " ", $79
+.db $6E
+.db $72
+.db $6A
+.db ".", Dialogue_NewPage
+.db "G", $74
+.db " ", $6D
+.db $74
+.db $72
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00E0:
-.db Word_You, Word_Want, "ME TO", Dialogue_NewLine
-.db "BUILD A ", Word_Spaceship, Dialogue_NewPage
-.db "FOR ", Word_You, "? ", Word_Not, "A", Dialogue_NewLine
-.db "CHANCE! I CAN", Dialogue_Apostrophe, "T", Dialogue_NewPage
-.db "ACCEPT SUCH", Dialogue_NewLine
-.db "RESPONSIBILITY.", Dialogue_Terminator65
+.db "W", $6D
+.db $66
+.db $79
+.db "? B", $7A
+.db $6E
+.db $71
+.db $69
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $66
+.db Dialogue_NewLine
+.db $78
+.db $75
+.db $66
+.db $68
+.db $6A
+.db $78
+.db $6D
+.db $6E
+.db $75
+.db "? D", $74
+.db $73
+.db Dialogue_Apostrophe, $79
+.db Dialogue_NewPage
+.db $67
+.db $6A
+.db " ", $77
+.db $6E
+.db $69
+.db $6E
+.db $68
+.db $7A
+.db $71
+.db $74
+.db $7A
+.db $78
+.db "!", Dialogue_NewPage
+.db "D", $74
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $79
+.db $6D
+.db $6E
+.db $73
+.db $70
+.db " I", Dialogue_Apostrophe, $69
+.db Dialogue_NewLine
+.db $79
+.db $66
+.db $70
+.db $6A
+.db " ", $74
+.db $73
+.db " ", $66
+.db " ", $79
+.db $6D
+.db $6E
+.db $73
+.db $6C
+.db Dialogue_NewPage
+.db $71
+.db $6E
+.db $70
+.db $6A
+.db " ", $79
+.db $6D
+.db $66
+.db $79
+.db "?", Dialogue_Terminator65
 
 Dialogue_Index_00E2:
-.db Word_You, "ARE", Dialogue_NewLine
-.db "CERTAINLY", Dialogue_NewPage
-.db "PERSISITENT.", Dialogue_NewLine
-.db "WELL, IF ", Word_You_Will, Dialogue_NewPage
-.db "DO AS I SAY, I", Dialogue_NewLine
-.db Word_Will, " ", Word_Help, " YOU. IS", Dialogue_NewPage
-.db "IT A DEAL?", Dialogue_Terminator62
+.db "H", $72
+.db $72
+.db ". Y", $74
+.db $7A
+.db " ", $69
+.db $74
+.db $73
+.db Dialogue_Apostrophe, $79
+.db Dialogue_NewLine
+.db $6C
+.db $6E
+.db $7B
+.db $6A
+.db " ", $7A
+.db $75
+.db ", ", $69
+.db $74
+.db " ", $7E
+.db $74
+.db $7A
+.db "?", Dialogue_NewPage
+.db "V", $6A
+.db $77
+.db $7E
+.db " ", $7C
+.db $6A
+.db $71
+.db $71
+.db ".", Dialogue_NewPage
+.db "B", $7A
+.db $79
+.db " ", $7E
+.db $74
+.db $7A
+.db Dialogue_Apostrophe, $71
+.db $71
+.db " ", $69
+.db $74
+.db " ", $66
+.db $78
+.db Dialogue_NewLine
+.db "I ", $78
+.db $66
+.db $7E
+.db ". A", $6C
+.db $77
+.db $6A
+.db $6A
+.db $69
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_00E4:
-.db "O.K. ", Word_I_Will, " GO TO", Dialogue_NewLine
-.db Word_Gothic, " ", Word_Village, Dialogue_NewPage
-.db "NEARBY TO MAKE", Dialogue_NewLine
-.db "PREPARATIONS.", Dialogue_NewPage
-.db "COME THEN. DO NOT", Dialogue_NewLine
-.db "WASTE WORRY ON", Dialogue_NewPage
-.db "ME.", Dialogue_Terminator65
+.db "G", $74
+.db $74
+.db $69
+.db ". T", $6D
+.db $6A
+.db $73
+.db " I", Dialogue_Apostrophe, $71
+.db $71
+.db " ", $6C
+.db $74
+.db Dialogue_NewLine
+.db $74
+.db $73
+.db " ", $66
+.db $6D
+.db $6A
+.db $66
+.db $69
+.db " ", $79
+.db $74
+.db Dialogue_NewPage
+.db "G", $66
+.db $78
+.db $6D
+.db $6E
+.db $70
+.db $74
+.db " ", $7B
+.db $6E
+.db $71
+.db $71
+.db $66
+.db $6C
+.db $6A
+.db " ", $79
+.db $74
+.db Dialogue_NewLine
+.db $75
+.db $77
+.db $6A
+.db $75
+.db $66
+.db $77
+.db $6A
+.db ". F", $74
+.db $71
+.db $71
+.db $74
+.db $7C
+.db " ", $72
+.db $6A
+.db Dialogue_NewPage
+.db $79
+.db $6D
+.db $6A
+.db $77
+.db $6A
+.db ".", Dialogue_NewPage
+.db "A", $73
+.db $69
+.db " ", $69
+.db $74
+.db $73
+.db Dialogue_Apostrophe, $79
+.db " ", $7C
+.db $74
+.db $77
+.db $77
+.db $7E
+.db Dialogue_NewLine
+.db $66
+.db $67
+.db $74
+.db $7A
+.db $79
+.db " ", $72
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00E6:
-.db Word_Do_You_Have, " ", Word_Your, Dialogue_NewLine
-.db Word_Roadpass, "?", Dialogue_Terminator62
+.db "D", $74
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $6D
+.db $66
+.db $7B
+.db $6A
+.db " ", $66
+.db Dialogue_NewLine
+.db "R", $74
+.db $66
+.db $69
+.db " P", $66
+.db $78
+.db $78
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_00E8:
-.db Word_You, Word_Are, "A FOOL!", Dialogue_NewLine
-.db Word_You_Will, " DIE!", Dialogue_Terminator65
+.db "Y", $74
+.db $7A
+.db Dialogue_Apostrophe, $7B
+.db $6A
+.db " ", $6C
+.db $74
+.db $79
+.db " ", $73
+.db $6A
+.db $77
+.db $7B
+.db $6A
+.db ".", Dialogue_NewLine
+.db "N", $74
+.db $7C
+.db " ", $7E
+.db $74
+.db $7A
+.db Dialogue_Apostrophe, $71
+.db $71
+.db " ", $69
+.db $6E
+.db $6A
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_00EA:
-.db "SPIDER MONSTERS", Dialogue_NewLine
-.db Word_Are, "ACTUALLY", Dialogue_NewPage
-.db "VERY INTELLIGENT.", Dialogue_Terminator65
+.db "S", $75
+.db $6E
+.db $69
+.db $6A
+.db $77
+.db " ", $72
+.db $74
+.db $73
+.db $78
+.db $79
+.db $6A
+.db $77
+.db $78
+.db Dialogue_NewLine
+.db $66
+.db $77
+.db $6A
+.db " ", $66
+.db $68
+.db $79
+.db $7A
+.db $66
+.db $71
+.db $71
+.db $7E
+.db Dialogue_NewPage
+.db $68
+.db $71
+.db $6A
+.db $7B
+.db $6A
+.db $77
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00EC:
-.db Word_Do_You_Know, " ", Word_The, Dialogue_NewLine
-.db "ROBOT ", Word_Hapsby, "?", Dialogue_Terminator62
+.db "K", $73
+.db $74
+.db $7C
+.db " ", $66
+.db " ", $77
+.db $74
+.db $67
+.db $74
+.db $79
+.db Dialogue_NewLine
+.db $68
+.db $66
+.db $71
+.db $71
+.db $6A
+.db $69
+.db " H", $66
+.db $75
+.db $78
+.db $67
+.db $7E
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_00EE:
-.db "ON ", Word_The, "FAR SIDE", Dialogue_NewLine
-.db "OF ", Word_The, Word_Mountain, "S", Dialogue_NewPage
-.db "LIES A POOL OF", Dialogue_NewLine
-.db "MOLTEN LAVA", Dialogue_NewPage
-.db "CREATED BY A", Dialogue_NewLine
-.db "VOLCANIC", Dialogue_NewPage
-.db "ERUPTION.", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db $7E
+.db " ", $78
+.db $66
+.db $7E
+.db " ", $66
+.db $73
+.db Dialogue_NewLine
+.db $6A
+.db $77
+.db $7A
+.db $75
+.db $79
+.db $6E
+.db $74
+.db $73
+.db " ", $67
+.db $6A
+.db $7E
+.db $74
+.db $73
+.db $69
+.db Dialogue_NewPage
+.db $79
+.db $6D
+.db $6A
+.db " ", $72
+.db $74
+.db $7A
+.db $73
+.db $79
+.db $66
+.db $6E
+.db $73
+.db $78
+.db Dialogue_NewLine
+.db $72
+.db $66
+.db $69
+.db $6A
+.db " ", $66
+.db " ", $71
+.db $66
+.db $70
+.db $6A
+.db " ", $74
+.db $6B
+.db Dialogue_NewPage
+.db $71
+.db $66
+.db $7B
+.db $66
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00F0:
-.db Word_The, Word_Tower, " DEEP IN", Dialogue_NewLine
-.db Word_The, Word_Gothic, Dialogue_NewPage
-.db Word_Mountain, "S IS", Dialogue_NewLine
-.db Word_Know, "N AS", Dialogue_NewPage
-.db Word_Medusa, Dialogue_Apostrophe, "S ", Word_Tower, ".", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db " ", $79
+.db $74
+.db $7C
+.db $6A
+.db $77
+.db " ", $69
+.db $6A
+.db $6A
+.db $75
+.db " ", $6E
+.db $73
+.db Dialogue_NewLine
+.db $79
+.db $6D
+.db $6A
+.db " G", $66
+.db $78
+.db $6D
+.db $6E
+.db $70
+.db $74
+.db Dialogue_NewPage
+.db $72
+.db $74
+.db $7A
+.db $73
+.db $79
+.db $66
+.db $6E
+.db $73
+.db $78
+.db " ", $6E
+.db $78
+.db Dialogue_NewLine
+.db $68
+.db $66
+.db $71
+.db $71
+.db $6A
+.db $69
+.db " M", $6A
+.db $69
+.db $7A
+.db $78
+.db $66
+.db Dialogue_Apostrophe, $78
+.db Dialogue_NewPage
+.db "T", $74
+.db $7C
+.db $6A
+.db $77
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00F2:
-.db "I HAVEN", Dialogue_Apostrophe, "T SEEN", Dialogue_NewLine
-.db Word_Any, Word_One, " FOR A", Dialogue_NewPage
-.db "LONG ", Word_Time, ". ", Word_Will, Dialogue_NewLine
-.db Word_You, "TALK WITH ME?", Dialogue_Terminator62
+.db "H", $6E
+.db "! I ", $6D
+.db $66
+.db $7B
+.db $6A
+.db $73
+.db Dialogue_Apostrophe, $79
+.db " ", $78
+.db $6A
+.db $6A
+.db $73
+.db Dialogue_NewLine
+.db $66
+.db $73
+.db $7E
+.db $74
+.db $73
+.db $6A
+.db " ", $6E
+.db $73
+.db " ", $66
+.db $6C
+.db $6A
+.db $78
+.db ".", Dialogue_NewPage
+.db "W", $6E
+.db $71
+.db $71
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $79
+.db $66
+.db $71
+.db $70
+.db Dialogue_NewLine
+.db $7C
+.db $6E
+.db $79
+.db $6D
+.db " ", $72
+.db $6A
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_00F4:
-.db "POLYMETERAL ", Word_Will, Dialogue_NewLine
-.db "DISSOLVE ALL", Dialogue_NewPage
-.db "MATERIALS EXCEPT", Dialogue_NewLine
-.db "FOR ", Word_Laconia, ".", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db $7E
+.db " ", $78
+.db $66
+.db $7E
+.db " ", $66
+.db Dialogue_NewLine
+.db $72
+.db $6A
+.db $69
+.db $6E
+.db $68
+.db $6E
+.db $73
+.db $6A
+.db " ", $68
+.db $66
+.db $71
+.db $71
+.db $6A
+.db $69
+.db Dialogue_NewPage
+.db "P", $74
+.db $71
+.db $7E
+.db $72
+.db $6A
+.db $79
+.db $6A
+.db $77
+.db $66
+.db $71
+.db Dialogue_NewLine
+.db $69
+.db $6E
+.db $78
+.db $78
+.db $74
+.db $71
+.db $7B
+.db $6A
+.db $78
+.db " ", $66
+.db $73
+.db $7E
+.db $79
+.db $6D
+.db $6E
+.db $73
+.db $6C
+.db Dialogue_NewPage
+.db $67
+.db $7A
+.db $79
+.db " L", $66
+.db $68
+.db $74
+.db $73
+.db $6E
+.db $66
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00F6:
-.db "WHAT? DR. ", Word_Luveno, Dialogue_NewLine
-.db "HAS RETURNED? HE", Dialogue_NewPage
-.db Word_Will, " BUILD", Dialogue_NewLine
-.db "ANOTHER", Dialogue_NewPage
-.db Word_Spaceship, "? ", Word_I_Will, Dialogue_NewLine
-.db "BE ", Word_There, " RIGHT", Dialogue_NewPage
-.db "AWAY.", Dialogue_Terminator65
+.db "W", $6D
+.db $66
+.db $79
+.db "? D", $77
+.db ". L", $7A
+.db $7B
+.db $6A
+.db $73
+.db $74
+.db Dialogue_Apostrophe, $78
+.db Dialogue_NewLine
+.db $67
+.db $66
+.db $68
+.db $70
+.db "? B", $7A
+.db $6E
+.db $71
+.db $69
+.db $6E
+.db $73
+.db $6C
+.db Dialogue_NewPage
+.db $66
+.db $73
+.db $74
+.db $79
+.db $6D
+.db $6A
+.db $77
+.db Dialogue_NewLine
+.db $78
+.db $75
+.db $66
+.db $68
+.db $6A
+.db $78
+.db $6D
+.db $6E
+.db $75
+.db "?", Dialogue_NewPage
+.db "O", $6D
+.db ", ", $66
+.db $71
+.db $71
+.db " ", $77
+.db $6E
+.db $6C
+.db $6D
+.db $79
+.db ". I", Dialogue_Apostrophe, $72
+.db " ", $74
+.db $73
+.db Dialogue_NewLine
+.db $72
+.db $7E
+.db " ", $7C
+.db $66
+.db $7E
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00F8:
-.db "NO MAN ", Word_That, " GOES", Dialogue_NewLine
-.db "INTO ", Word_The, "ROOM IN", Dialogue_NewPage
-.db Word_The, "FAR CORNER", Dialogue_NewLine
-.db "HAS EVER COME OUT", Dialogue_NewPage
-.db "ALIVE! AHA-HA-HA!", Dialogue_Terminator65
+.db "N", $74
+.db " ", $74
+.db $73
+.db $6A
+.db " ", $7C
+.db $6D
+.db $74
+.db " ", $6A
+.db $73
+.db $79
+.db $6A
+.db $77
+.db $78
+.db Dialogue_NewLine
+.db $79
+.db $6D
+.db $6A
+.db " ", $67
+.db $66
+.db $68
+.db $70
+.db " ", $77
+.db $74
+.db $74
+.db $72
+.db Dialogue_NewPage
+.db $68
+.db $74
+.db $72
+.db $6A
+.db $78
+.db " ", $74
+.db $7A
+.db $79
+.db " ", $66
+.db $71
+.db $6E
+.db $7B
+.db $6A
+.db ".", Dialogue_NewLine
+.db "H", $6A
+.db $6D
+.db " ", $6D
+.db $6A
+.db $6D
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_00FA:
-.db "IT SEEMS TO BE A", Dialogue_NewLine
-.db "MAN WHO HAS BEEN", Dialogue_NewPage
-.db Word_Turned_To_Stone, "! I", Dialogue_NewLine
-.db "WONDER IF HE CAN", Dialogue_NewPage
-.db "BE RETURNED TO", Dialogue_NewLine
-.db "HIS ORIGINAL", Dialogue_NewPage
-.db "FORM?", Dialogue_Terminator65
+.db "I", $79
+.db " ", $78
+.db $6A
+.db $6A
+.db $72
+.db $78
+.db " ", $79
+.db $74
+.db " ", $67
+.db $6A
+.db " ", $66
+.db Dialogue_NewLine
+.db $75
+.db $6A
+.db $77
+.db $78
+.db $74
+.db $73
+.db " ", $79
+.db $7A
+.db $77
+.db $73
+.db $6A
+.db $69
+.db " ", $79
+.db $74
+.db Dialogue_NewPage
+.db $78
+.db $79
+.db $74
+.db $73
+.db $6A
+.db ". C", $66
+.db $73
+.db " ", $79
+.db $6D
+.db $6A
+.db $7E
+.db Dialogue_NewLine
+.db $6A
+.db $7B
+.db $6A
+.db $77
+.db " ", $67
+.db $6A
+.db " ", $77
+.db $6A
+.db $78
+.db $79
+.db $74
+.db $77
+.db $6A
+.db $69
+.db "?", Dialogue_Terminator65
 
 Dialogue_Index_00FC:
-.db Word_You_Will, " SOON", Dialogue_NewLine
-.db "FIND OUT THE", Dialogue_NewPage
-.db "TRUTH!", Dialogue_Terminator65
+.db "Y", $74
+.db $7A
+.db " ", $72
+.db $7A
+.db $78
+.db $79
+.db " ", $67
+.db $6A
+.db " ", $77
+.db $6A
+.db $66
+.db $69
+.db $7E
+.db Dialogue_NewLine
+.db $6B
+.db $74
+.db $77
+.db " ", $7C
+.db $6D
+.db $66
+.db $79
+.db Dialogue_Apostrophe, $78
+.db " ", $68
+.db $74
+.db $72
+.db $6E
+.db $73
+.db $6C
+.db ".", Dialogue_NewPage
+.db "H", $6A
+.db $6D
+.db " ", $6D
+.db $6A
+.db $6D
+.db " ", $6D
+.db $6A
+.db $6D
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00FE:
-.db "HALT! GO BACK!", Dialogue_NewLine
-.db Word_Your, "LAST CHANCE!", Dialogue_Terminator65
+.db "I", $79
+.db Dialogue_Apostrophe, $78
+.db " ", $66
+.db " ", $69
+.db $6A
+.db $66
+.db $69
+.db " ", $6A
+.db $73
+.db $69
+.db ".", Dialogue_NewLine
+.db "T", $7A
+.db $77
+.db $73
+.db " ", $67
+.db $66
+.db $68
+.db $70
+.db " ", $7C
+.db $6D
+.db $6E
+.db $71
+.db $6A
+.db Dialogue_NewPage
+.db $7E
+.db $74
+.db $7A
+.db " ", $78
+.db $79
+.db $6E
+.db $71
+.db $71
+.db " ", $68
+.db $66
+.db $73
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0100:
-.db "HOW BRAVE! BUT BE", Dialogue_NewLine
-.db Word_Careful, " OF TRAPS!", Dialogue_Terminator65
+.db "M", $7E
+.db ", ", $7C
+.db $6D
+.db $66
+.db $79
+.db " ", $66
+.db " ", $67
+.db $77
+.db $66
+.db $7B
+.db $6A
+.db Dialogue_NewLine
+.db $7E
+.db $74
+.db $7A
+.db $73
+.db $6C
+.db " ", $74
+.db $73
+.db $6A
+.db "! W", $66
+.db $79
+.db $68
+.db $6D
+.db Dialogue_NewPage
+.db $74
+.db $7A
+.db $79
+.db " ", $6B
+.db $74
+.db $77
+.db " ", $79
+.db $77
+.db $66
+.db $75
+.db $78
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0102:
-.db Word_Bortevo, " IS MY", Dialogue_NewLine
-.db "TURF. DON", Dialogue_Apostrophe, "T YA", Dialogue_NewPage
-.db "MESS ", Dialogue_Apostrophe, "ROUND ", Word_Here, ",", Dialogue_NewLine
-.db "NOW GIT!", Dialogue_Terminator65
+.db "B", $66
+.db $77
+.db $79
+.db $6A
+.db $7B
+.db $74
+.db " ", $6E
+.db $78
+.db " ", $72
+.db $7E
+.db " ", $79
+.db $7A
+.db $77
+.db $6B
+.db ".", Dialogue_NewLine
+.db "D", $74
+.db $73
+.db Dialogue_Apostrophe, $79
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $6C
+.db $74
+.db Dialogue_NewPage
+.db $78
+.db $79
+.db $6E
+.db $77
+.db $77
+.db $6E
+.db $73
+.db $6C
+.db " ", $7A
+.db $75
+.db " ", $79
+.db $77
+.db $74
+.db $7A
+.db $67
+.db $71
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0104:
-.db Word_You_Must, " FIND A", Dialogue_NewLine
-.db "ROBOT NAMED", Dialogue_NewPage
-.db Word_Hapsby, ". HE CAN", Dialogue_NewLine
-.db "FLY A ", Word_Spaceship, ".", Dialogue_Terminator65
+.db "Y", $74
+.db $7A
+.db " ", $72
+.db $7A
+.db $78
+.db $79
+.db " ", $6B
+.db $6E
+.db $73
+.db $69
+.db " ", $66
+.db Dialogue_NewLine
+.db $77
+.db $74
+.db $67
+.db $74
+.db $79
+.db " ", $68
+.db $66
+.db $71
+.db $71
+.db $6A
+.db $69
+.db Dialogue_NewPage
+.db "H", $66
+.db $75
+.db $78
+.db $67
+.db $7E
+.db ".", Dialogue_NewPage
+.db "T", $6D
+.db $66
+.db $79
+.db " ", $77
+.db $74
+.db $67
+.db $74
+.db $79
+.db " ", $78
+.db $6D
+.db $74
+.db $7A
+.db $71
+.db $69
+.db Dialogue_NewLine
+.db $67
+.db $6A
+.db " ", $66
+.db $67
+.db $71
+.db $6A
+.db " ", $79
+.db $74
+.db " ", $6B
+.db $71
+.db $7E
+.db " ", $66
+.db Dialogue_NewPage
+.db $78
+.db $75
+.db $66
+.db $68
+.db $6A
+.db $78
+.db $6D
+.db $6E
+.db $75
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0106:
-.db "IN ", Word_This, "PILE OF", Dialogue_NewLine
-.db "JUNK, ", Word_Some, Word_Where, ",", Dialogue_NewPage
+.db "T", $6D
+.db $6A
+.db $7E
+.db " ", $78
+.db $66
+.db $7E
+.db " ", $66
+.db " ", $6B
+.db $6E
+.db $73
+.db $6A
+.db Dialogue_NewLine
+.db $77
+.db $74
+.db $67
+.db $74
+.db $79
+.db " ", $7C
+.db $66
+.db $78
+.db " ", $79
+.db $6D
+.db $77
+.db $74
+.db $7C
+.db $73
+.db Dialogue_NewPage
+.db $74
+.db $7A
+.db $79
+.db " ", $6E
+.db $73
+.db " ", $79
+.db $6D
+.db $6E
+.db $78
+.db " ", $78
+.db $68
+.db $77
+.db $66
+.db $75
+.db Dialogue_NewLine
+.db $6D
+.db $6A
+.db $66
+.db $75
+.db ",", Dialogue_NewPage
 
 Dialogue_Index_0108:
-.db Word_There_Is, " S", Dialogue_Apostrophe, "PPOSED", Dialogue_NewLine
-.db "T", Dialogue_Apostrophe, "BE A USABLE", Dialogue_NewPage
-.db "ROBOT, BUT YOU", Dialogue_NewLine
-.db Word_Know, " HOW RUMORS", Dialogue_NewPage
-.db "BE.", Dialogue_Terminator65
+.db $67
+.db $7A
+.db $79
+.db " ", $7C
+.db $6D
+.db $74
+.db " ", $70
+.db $73
+.db $74
+.db $7C
+.db $78
+.db " ", $6E
+.db $6B
+.db Dialogue_NewLine
+.db $6E
+.db $79
+.db Dialogue_Apostrophe, $78
+.db " ", $79
+.db $77
+.db $7A
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_010A:
-.db "POLYMETERAL IS", Dialogue_NewLine
-.db "FOR SALE IN", Dialogue_NewPage
-.db "ABION.", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db $7E
+.db " ", $78
+.db $66
+.db $7E
+.db " ", $66
+.db Dialogue_NewLine
+.db $72
+.db $6A
+.db $69
+.db $6E
+.db $68
+.db $6E
+.db $73
+.db $6A
+.db " ", $68
+.db $66
+.db $71
+.db $71
+.db $6A
+.db $69
+.db Dialogue_NewPage
+.db "P", $74
+.db $71
+.db $7E
+.db $72
+.db $6A
+.db $79
+.db $6A
+.db $77
+.db $66
+.db $71
+.db " ", $6E
+.db $78
+.db Dialogue_NewLine
+.db $78
+.db $74
+.db $71
+.db $69
+.db " ", $6E
+.db $73
+.db " A", $67
+.db $6E
+.db $74
+.db $73
+.db Dialogue_NewPage
+.db $7B
+.db $6E
+.db $71
+.db $71
+.db $66
+.db $6C
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_010C:
-.db Word_This, Word_Town, " IS", Dialogue_NewLine
-.db "CALLED LOAR.", Dialogue_NewPage
-.db "WE ", Word_Have, "BEEN IN", Dialogue_NewLine
-.db "DECLINE ", Word_Thanks, " TO", Dialogue_NewPage
-.db Word_The, "WORK OF", Dialogue_NewLine
-.db Word_Lassic, ".", Dialogue_Terminator65
+.db "T", $6D
+.db $6E
+.db $78
+.db " ", $7B
+.db $6E
+.db $71
+.db $71
+.db $66
+.db $6C
+.db $6A
+.db " ", $6E
+.db $78
+.db Dialogue_NewLine
+.db $68
+.db $66
+.db $71
+.db $71
+.db $6A
+.db $69
+.db " L", $74
+.db $66
+.db $77
+.db ".", Dialogue_NewPage
+.db "L", $66
+.db "S", $6D
+.db $6E
+.db $6A
+.db $68
+.db " ", $6D
+.db $66
+.db $78
+.db Dialogue_NewLine
+.db $67
+.db $77
+.db $74
+.db $7A
+.db $6C
+.db $6D
+.db $79
+.db " ", $6E
+.db $79
+.db " ", $79
+.db $74
+.db " ", $77
+.db $7A
+.db $6E
+.db $73
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_010E:
-.db Word_Have, Word_You, "HEARD", Dialogue_NewLine
-.db "OF A GEM CALLED", Dialogue_NewPage
-.db "\"", Word_The, "AMBER EYE\"?", Dialogue_NewLine
+.db "D", $74
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $70
+.db $73
+.db $74
+.db $7C
+.db " ", $66
+.db " ", $6C
+.db $6A
+.db $72
+.db Dialogue_NewLine
+.db $68
+.db $66
+.db $71
+.db $71
+.db $6A
+.db $69
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewPage
+.db "C", $66
+.db $77
+.db $67
+.db $7A
+.db $73
+.db $68
+.db $71
+.db $6A
+.db " E", $7E
+.db $6A
+.db "?", Dialogue_NewPage
 
 Dialogue_Index_0110:
-.db Word_Some, " SAY THE", Dialogue_NewPage
-.db "CASBA DRAGON HAS", Dialogue_NewLine
-.db Word_One, ".", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db $7E
+.db " ", $78
+.db $66
+.db $7E
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db $69
+.db $77
+.db $66
+.db $6C
+.db $74
+.db $73
+.db " ", $74
+.db $6B
+.db " C", $66
+.db $78
+.db $67
+.db $66
+.db Dialogue_NewPage
+.db $6D
+.db $66
+.db $78
+.db " ", $74
+.db $73
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0112:
-.db Word_There_Is, " A", Dialogue_NewLine
-.db Word_Village, " CALLED", Dialogue_NewPage
-.db "ABION ON THE", Dialogue_NewLine
-.db "WESTERN EDGE ON", Dialogue_NewPage
-.db Word_This, "ISLAND.", Dialogue_Terminator65
+.db "A", $79
+.db " ", $79
+.db $6D
+.db $6A
+.db " ", $7C
+.db $6A
+.db $78
+.db $79
+.db " ", $6A
+.db $73
+.db $69
+.db " ", $74
+.db $6B
+.db Dialogue_NewLine
+.db $79
+.db $6D
+.db $6E
+.db $78
+.db " ", $6E
+.db $78
+.db $71
+.db $66
+.db $73
+.db $69
+.db " ", $6E
+.db $78
+.db " ", $66
+.db Dialogue_NewPage
+.db $7B
+.db $6E
+.db $71
+.db $71
+.db $66
+.db $6C
+.db $6A
+.db " ", $68
+.db $66
+.db $71
+.db $71
+.db $6A
+.db $69
+.db Dialogue_NewLine
+.db "A", $67
+.db $6E
+.db $74
+.db $73
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0114:
-.db Word_Do_You_Know, Dialogue_NewLine
-.db "ABOUT ", Word_Laerma, Dialogue_NewPage
-.db "TREES?", Dialogue_Terminator62
+.db "D", $74
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $70
+.db $73
+.db $74
+.db $7C
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db "L", $66
+.db $6A
+.db $77
+.db $72
+.db $66
+.db " ", $79
+.db $77
+.db $6A
+.db $6A
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_0116:
-.db "THEY GROW ON THE", Dialogue_NewLine
-.db "ALTIPLANO", Dialogue_NewPage
-.db "PLATEAU ON THE", Dialogue_NewLine
-.db Word_Planet, " ", Word_Dezoris, ".", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db $7E
+.db " ", $78
+.db $66
+.db $7E
+.db " ", $6E
+.db $79
+.db " ", $6C
+.db $77
+.db $74
+.db $7C
+.db $78
+.db Dialogue_NewLine
+.db $79
+.db $6D
+.db $6E
+.db $68
+.db $70
+.db " ", $74
+.db $73
+.db " ", $66
+.db " ", $75
+.db $71
+.db $66
+.db $79
+.db $6A
+.db $66
+.db $7A
+.db Dialogue_NewPage
+.db $68
+.db $66
+.db $71
+.db $71
+.db $6A
+.db $69
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db "A", $71
+.db $79
+.db $6E
+.db $75
+.db $71
+.db $66
+.db $73
+.db $74
+.db ", ", $74
+.db $73
+.db Dialogue_NewPage
+.db "D", $6A
+.db $7F
+.db $74
+.db $71
+.db $6E
+.db $78
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0118:
-.db Word_You, Word_Are, "GOING TO", Dialogue_NewLine
-.db "TRY TO KILL", Dialogue_NewPage
-.db Word_Lassic, " I HEAR.", Dialogue_NewLine
-.db Word_That, Dialogue_Apostrophe, "S GREAT!"
+.db "W", $6D
+.db $66
+.db $79
+.db "? Y", $74
+.db $7A
+.db Dialogue_Apostrophe, $77
+.db $6A
+.db " ", $6C
+.db $74
+.db $6E
+.db $73
+.db $6C
+.db Dialogue_NewLine
+.db $79
+.db $74
+.db " ", $69
+.db $6A
+.db $6B
+.db $6A
+.db $66
+.db $79
+.db " L", $66
+.db "S", $6D
+.db $6E
+.db $6A
+.db $68
+.db "?", Dialogue_NewPage
+.db "A", $72
+.db $66
+.db $7F
+.db $6E
+.db $73
+.db $6C
+.db "!", Dialogue_NewPage
 
 Dialogue_Index_011A:
-.db " I", Dialogue_NewPage
-.db Word_Have, "HEARD ", Word_That, " A", Dialogue_NewLine
-.db "CERTAIN CRYSTAL", Dialogue_NewPage
-.db Word_Will, " BLOCK EVIL", Dialogue_NewLine
-.db Word_Magic_EF, ".", Dialogue_Terminator65
+.db "I", $79
+.db Dialogue_Apostrophe, $78
+.db " ", $6F
+.db $7A
+.db $78
+.db $79
+.db " ", $66
+.db " ", $77
+.db $7A
+.db $72
+.db $74
+.db $77
+.db ",", Dialogue_NewLine
+.db $67
+.db $7A
+.db $79
+.db " ", $79
+.db $6D
+.db $6A
+.db $7E
+.db " ", $78
+.db $66
+.db $7E
+.db " ", $66
+.db Dialogue_NewPage
+.db $68
+.db $6A
+.db $77
+.db $79
+.db $66
+.db $6E
+.db $73
+.db " ", $68
+.db $77
+.db $7E
+.db $78
+.db $79
+.db $66
+.db $71
+.db Dialogue_NewLine
+.db $78
+.db $6A
+.db $66
+.db $71
+.db $78
+.db " ", $66
+.db $7C
+.db $66
+.db $7E
+.db " ", $6A
+.db $7B
+.db $6E
+.db $71
+.db Dialogue_NewPage
+.db $72
+.db $66
+.db $6C
+.db $6E
+.db $68
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_011C:
-.db Word_Welcome, "TO ABION.", Dialogue_Terminator65
+.db "T", $6D
+.db $6E
+.db $78
+.db " ", $7B
+.db $6E
+.db $71
+.db $71
+.db $66
+.db $6C
+.db $6A
+.db " ", $6E
+.db $78
+.db Dialogue_NewLine
+.db $68
+.db $66
+.db $71
+.db $71
+.db $6A
+.db $69
+.db " A", $67
+.db $6E
+.db $74
+.db $73
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_011E:
-.db Word_Help, "! ", Word_Lassic, " HAS", Dialogue_NewLine
-.db "COME TO ", Word_This, Word_Town, "!", Dialogue_Terminator65
+.db "L", $66
+.db "S", $6D
+.db $6E
+.db $6A
+.db $68
+.db Dialogue_Apostrophe, $78
+.db " ", $6C
+.db $77
+.db $66
+.db $78
+.db $75
+.db Dialogue_NewLine
+.db $6D
+.db $66
+.db $78
+.db " ", $77
+.db $6A
+.db $66
+.db $68
+.db $6D
+.db $6A
+.db $69
+.db " ", $6A
+.db $7B
+.db $6A
+.db $73
+.db Dialogue_NewPage
+.db $79
+.db $6D
+.db $6E
+.db $78
+.db " ", $7B
+.db $6E
+.db $71
+.db $71
+.db $66
+.db $6C
+.db $6A
+.db ". H", $6A
+.db $71
+.db $75
+.db Dialogue_NewLine
+.db $7A
+.db $78
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_0120:
-.db "A ", Word_Strange, " MAN", Dialogue_NewLine
-.db "CAME TO ", Word_This, Word_Town, ".", Dialogue_NewPage
-.db "HE SEEMS TO BE", Dialogue_NewLine
-.db "PERFORMING", Dialogue_NewPage
-.db "ANIMAL", Dialogue_NewLine
+.db "A ", $78
+.db $79
+.db $77
+.db $66
+.db $73
+.db $6C
+.db $6A
+.db $77
+.db " ", $72
+.db $74
+.db $7B
+.db $6A
+.db $69
+.db Dialogue_NewLine
+.db $6E
+.db $73
+.db $79
+.db $74
+.db " ", $79
+.db $6D
+.db $6E
+.db $78
+.db " ", $7B
+.db $6E
+.db $71
+.db $71
+.db $66
+.db $6C
+.db $6A
+.db ".", Dialogue_NewPage
 
 Dialogue_Index_0122:
-.db "EXPERIMENTS. HE", Dialogue_NewPage
-.db "BROUGHT A LARGE", Dialogue_NewLine
-.db "POT OR ", Word_Some, Word_Thing, ".", Dialogue_Terminator65
+.db "H", $6A
+.db Dialogue_Apostrophe, $78
+.db " ", $69
+.db $74
+.db $6E
+.db $73
+.db $6C
+.db " ", $66
+.db $73
+.db $6E
+.db $72
+.db $66
+.db $71
+.db Dialogue_NewLine
+.db $6A
+.db $7D
+.db $75
+.db $6A
+.db $77
+.db $6E
+.db $72
+.db $6A
+.db $73
+.db $79
+.db $78
+.db ", ", $6E
+.db $79
+.db Dialogue_NewPage
+.db $78
+.db $6A
+.db $6A
+.db $72
+.db $78
+.db ". C", $77
+.db $6A
+.db $6A
+.db $75
+.db $7E
+.db "! H", $6A
+.db Dialogue_NewLine
+.db $6D
+.db $66
+.db $69
+.db " ", $78
+.db $74
+.db $72
+.db $6A
+.db $79
+.db $6D
+.db $6E
+.db $73
+.db $6C
+.db " ", $71
+.db $6E
+.db $70
+.db $6A
+.db Dialogue_NewPage
+.db $66
+.db " ", $75
+.db $74
+.db $79
+.db " ", $7C
+.db $6E
+.db $79
+.db $6D
+.db " ", $6D
+.db $6E
+.db $72
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0124:
-.db "IT", Dialogue_Apostrophe, "S A ROBOT MADE", Dialogue_NewLine
-.db "OF ", Word_Laconia, ". BUT", Dialogue_NewPage
-.db "IT HAS BEEN", Dialogue_NewLine
-.db "ABAND", Word_One, "D", Dialogue_NewPage
-.db Word_Some, Word_Where, " AS", Dialogue_NewLine
-.db "BEING USELESS.", Dialogue_Terminator65
+.db "I", $79
+.db Dialogue_Apostrophe, $78
+.db " ", $66
+.db " ", $77
+.db $74
+.db $67
+.db $74
+.db $79
+.db " ", $72
+.db $66
+.db $69
+.db $6A
+.db Dialogue_NewLine
+.db $74
+.db $6B
+.db " L", $66
+.db $68
+.db $74
+.db $73
+.db $6E
+.db $66
+.db ".", Dialogue_NewPage
+.db "B", $7A
+.db $79
+.db " ", $6E
+.db $79
+.db " ", $78
+.db $6A
+.db $6A
+.db $72
+.db $78
+.db " ", $79
+.db $6D
+.db $6A
+.db $7E
+.db Dialogue_NewLine
+.db $68
+.db $66
+.db $71
+.db $71
+.db $6A
+.db $69
+.db " ", $6E
+.db $79
+.db " ", $78
+.db $68
+.db $77
+.db $66
+.db $75
+.db " ", $66
+.db $73
+.db $69
+.db Dialogue_NewPage
+.db $79
+.db $6D
+.db $77
+.db $6A
+.db $7C
+.db " ", $6E
+.db $79
+.db " ", $66
+.db $7C
+.db $66
+.db $7E
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0126:
-.db "I", Dialogue_Apostrophe, "D LIKE TO TRAVEL", Dialogue_NewLine
-.db "IN OUTER SPACE.", Dialogue_Terminator65
+.db "I", Dialogue_Apostrophe, $69
+.db " ", $71
+.db $6E
+.db $70
+.db $6A
+.db " ", $79
+.db $74
+.db " ", $79
+.db $77
+.db $66
+.db $7B
+.db $6A
+.db $71
+.db Dialogue_NewLine
+.db $79
+.db $6D
+.db $77
+.db $74
+.db $7A
+.db $6C
+.db $6D
+.db " ", $78
+.db $75
+.db $66
+.db $68
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0128:
-.db Word_Some, " CATS, IF", Dialogue_NewLine
-.db "THEY EAT A", Dialogue_NewPage
-.db "CERTAIN TYPE OF", Dialogue_NewLine
-.db "NUT, THEY BECOME", Dialogue_NewPage
-.db "HUGE AND CAN FLY.", Dialogue_NewLine
+.db "T", $6D
+.db $6A
+.db $7E
+.db " ", $78
+.db $66
+.db $7E
+.db " ", $79
+.db $6D
+.db $66
+.db $79
+.db Dialogue_NewLine
+.db $7C
+.db $6D
+.db $6A
+.db $73
+.db " ", $66
+.db $73
+.db " ", $66
+.db $73
+.db $6E
+.db $72
+.db $66
+.db $71
+.db Dialogue_NewPage
+.db $68
+.db $66
+.db $71
+.db $71
+.db $6A
+.db $69
+.db " ", $66
+.db " ", $72
+.db $7A
+.db $78
+.db $70
+.db " ", $68
+.db $66
+.db $79
+.db Dialogue_NewLine
+.db $6A
+.db $66
+.db $79
+.db $78
+.db " ", $66
+.db " ", $68
+.db $6A
+.db $77
+.db $79
+.db $66
+.db $6E
+.db $73
+.db " ", $73
+.db $7A
+.db $79
+.db ",", Dialogue_NewPage
 
 Dialogue_Index_012A:
-.db "IT", Dialogue_Apostrophe, "S REALLY VERY", Dialogue_NewPage
-.db "WIERD.", Dialogue_Terminator65
+.db $6E
+.db $79
+.db " ", $6C
+.db $77
+.db $74
+.db $7C
+.db $78
+.db " ", $67
+.db $6E
+.db $6C
+.db " ", $66
+.db $73
+.db $69
+.db Dialogue_NewLine
+.db $68
+.db $66
+.db $73
+.db " ", $6B
+.db $71
+.db $7E
+.db ". S", $79
+.db $77
+.db $66
+.db $73
+.db $6C
+.db $6A
+.db ",", Dialogue_NewPage
+.db $6E
+.db $78
+.db $73
+.db Dialogue_Apostrophe, $79
+.db " ", $6E
+.db $79
+.db "?", Dialogue_Terminator65
 
 Dialogue_Index_012C:
-.db "I", Dialogue_Apostrophe, "M ", Word_Hapsby, ".", Dialogue_NewLine
-.db Word_Thanks, " FOR", Dialogue_NewPage
-.db "FINDING ME. I CAN", Dialogue_NewLine
-.db "FLY ", Word_The, Word_Luveno, Dialogue_NewPage
-.db "FOR YOU.", Dialogue_Terminator65
+.db "I", Dialogue_Apostrophe, $72
+.db " H", $66
+.db $75
+.db $78
+.db $67
+.db $7E
+.db ".", Dialogue_NewPage
+.db "T", $6D
+.db $66
+.db $73
+.db $70
+.db $78
+.db " ", $6B
+.db $74
+.db $77
+.db " ", $6B
+.db $6E
+.db $73
+.db $69
+.db $6E
+.db $73
+.db $6C
+.db Dialogue_NewLine
+.db $72
+.db $6A
+.db ". L", $6A
+.db $66
+.db $7B
+.db $6A
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewPage
+.db $6B
+.db $71
+.db $7E
+.db $6E
+.db $73
+.db $6C
+.db " ", $74
+.db $6B
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db "L", $7A
+.db $7B
+.db $6A
+.db $73
+.db $74
+.db " ", $79
+.db $74
+.db " ", $72
+.db $6A
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_012E:
 .db Word_This, Word_Town, " IS", Dialogue_NewLine
@@ -1499,79 +5428,457 @@ Dialogue_Index_0146:
 .db Word_You, "GOT THIS, O.K.?", Dialogue_Terminator65
 
 Dialogue_Index_0148:
-.db "I", Dialogue_Apostrophe, "M ", Word_The, "GREAT", Dialogue_NewLine
-.db "DAMOR,", Dialogue_NewPage
-.db Word_Soothsayer, "!"
+.db "I ", $66
+.db $72
+.db " D", $66
+.db $72
+.db $74
+.db $66
+.db ", ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db $6C
+.db $77
+.db $6A
+.db $66
+.db $79
+.db $6A
+.db $78
+.db $79
+.db Dialogue_NewPage
+.db $6B
+.db $74
+.db $77
+.db $79
+.db $7A
+.db $73
+.db $6A
+.db "-", $79
+.db $6A
+.db $71
+.db $71
+.db $6A
+.db $77
+.db " ", $6E
+.db $73
+.db Dialogue_NewLine
+.db $79
+.db $6D
+.db $6A
+.db " ", $7C
+.db $74
+.db $77
+.db $71
+.db $69
+.db ".", Dialogue_NewPage
 
 Dialogue_Index_014A:
-.db " DO", Dialogue_NewLine
-.db Word_You, "BELIEVE IN", Dialogue_NewPage
-.db "MY PROPHECIES?", Dialogue_Terminator62
+.db "D", $74
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $67
+.db $6A
+.db $71
+.db $6E
+.db $6A
+.db $7B
+.db $6A
+.db " ", $6E
+.db $73
+.db Dialogue_NewLine
+.db $72
+.db $7E
+.db " ", $6B
+.db $74
+.db $77
+.db $79
+.db $7A
+.db $73
+.db $6A
+.db $78
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_014C:
-.db "I", Dialogue_Apostrophe, "VE GOT A FRIEND", Dialogue_NewLine
-.db "IN ", Word_Bortevo, ". HE", Dialogue_Apostrophe, "S", Dialogue_NewPage
-.db "PROBABLY HAVING", Dialogue_NewLine
-.db "A HARD ", Word_Time, Dialogue_NewPage
-.db "BECAUSE OF THE", Dialogue_NewLine
-.db "LAVA. WHY NOT", Dialogue_NewPage
-.db "VISIT HIM?", Dialogue_Terminator65
+.db "I", Dialogue_Apostrophe, $7B
+.db $6A
+.db " ", $6C
+.db $74
+.db $79
+.db " ", $66
+.db " ", $6B
+.db $77
+.db $6E
+.db $6A
+.db $73
+.db $69
+.db " ", $6E
+.db $73
+.db Dialogue_NewLine
+.db "B", $66
+.db $77
+.db $79
+.db $6A
+.db $7B
+.db $74
+.db ".", Dialogue_NewPage
+.db "W", $6E
+.db $79
+.db $6D
+.db " ", $79
+.db $6D
+.db $66
+.db $79
+.db " ", $71
+.db $66
+.db $7B
+.db $66
+.db Dialogue_NewLine
+.db $71
+.db $66
+.db $70
+.db $6A
+.db ", ", $6D
+.db $6A
+.db " ", $72
+.db $7A
+.db $78
+.db $79
+.db " ", $67
+.db $6A
+.db Dialogue_NewPage
+.db $6D
+.db $66
+.db $7B
+.db $6E
+.db $73
+.db $6C
+.db " ", $66
+.db " ", $6D
+.db $66
+.db $77
+.db $69
+.db " ", $79
+.db $6E
+.db $72
+.db $6A
+.db ".", Dialogue_NewPage
+.db "I", $6B
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $78
+.db $6A
+.db $6A
+.db " ", $6D
+.db $6E
+.db $72
+.db ",", Dialogue_NewLine
+.db $78
+.db $66
+.db $7E
+.db " ", $6D
+.db $6E
+.db " ", $6B
+.db $74
+.db $77
+.db " ", $72
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_014E:
-.db "GOOD!", Dialogue_Terminator65
+.db "G", $74
+.db $74
+.db $69
+.db ", ", $6C
+.db $74
+.db $74
+.db $69
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0150:
-.db "YOU", Dialogue_Apostrophe, "RE SEARCHING", Dialogue_NewLine
-.db "FOR ", Word_Some, Word_Thing, "?", Dialogue_Terminator62
+.db "Y", $74
+.db $7A
+.db " ", $66
+.db $77
+.db $6A
+.db " ", $78
+.db $6A
+.db $66
+.db $77
+.db $68
+.db $6D
+.db $6E
+.db $73
+.db $6C
+.db Dialogue_NewLine
+.db $6B
+.db $74
+.db $77
+.db " ", $78
+.db $74
+.db $72
+.db $6A
+.db $79
+.db $6D
+.db $6E
+.db $73
+.db $6C
+.db ", ", $73
+.db $74
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_0152:
-.db "LEAVE MY SIGHT,", Dialogue_NewLine
-.db "UNBELIEVER!", Dialogue_Terminator65
+.db "W", $6D
+.db $66
+.db $79
+.db "? Y", $74
+.db $7A
+.db " ", $66
+.db $77
+.db $6A
+.db " ", $66
+.db Dialogue_NewLine
+.db $78
+.db $79
+.db $7A
+.db $67
+.db $67
+.db $74
+.db $77
+.db $73
+.db " ", $74
+.db $73
+.db $6A
+.db ". G", $74
+.db Dialogue_NewPage
+.db $6D
+.db $74
+.db $72
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0154:
-.db Word_You, "ARE", Dialogue_NewLine
-.db "SEARCHING FOR", Dialogue_NewPage
-.db "ALEX OSSALE?", Dialogue_Terminator62
+.db "Y", $74
+.db $7A
+.db " ", $78
+.db $6A
+.db $6A
+.db $70
+.db " ", $74
+.db $73
+.db $6A
+.db " A", $71
+.db $6A
+.db $7D
+.db Dialogue_NewLine
+.db "O", $78
+.db $78
+.db $66
+.db $71
+.db $6A
+.db ", ", $73
+.db $74
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_0156:
-.db "EVERY", Word_Thing, " I", Dialogue_Apostrophe, "VE", Dialogue_NewLine
-.db "SAID IS CORRECT?", Dialogue_Terminator62
+.db "A", $71
+.db $71
+.db " I ", $78
+.db $66
+.db $7E
+.db " ", $6E
+.db $78
+.db " ", $79
+.db $77
+.db $7A
+.db $6A
+.db ".", Dialogue_NewLine
+.db "U", $73
+.db $69
+.db $6A
+.db $77
+.db $78
+.db $79
+.db $74
+.db $74
+.db $69
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_0158:
-.db "THEN, COME AGAIN,", Dialogue_NewLine
-.db Word_Any, Word_Time, ".", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db $73
+.db " ", $68
+.db $74
+.db $72
+.db $6A
+.db " ", $66
+.db $6C
+.db $66
+.db $6E
+.db $73
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_015A:
-.db Word_Do_You, " CONTRADICT", Dialogue_NewLine
-.db Word_The, "GREAT", Dialogue_NewPage
-.db "DAMOR?!?", Dialogue_Terminator62
+.db "Y", $74
+.db $7A
+.db " ", $69
+.db $66
+.db $77
+.db $6A
+.db " ", $69
+.db $6A
+.db $6B
+.db $7E
+.db " ", $72
+.db $6A
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_015C:
-.db "OF COURSE NOT!", Dialogue_NewLine
-.db Word_You, Word_Are, "A", Dialogue_NewPage
-.db "PROMISING YOUNG", Dialogue_NewLine
-.db "LASS! ", Word_I_Will
+.db "J", $7A
+.db $78
+.db $79
+.db " ", $78
+.db $74
+.db ". Y", $74
+.db $7A
+.db " ", $78
+.db $6D
+.db $74
+.db $7C
+.db Dialogue_NewLine
+.db $77
+.db $6A
+.db $66
+.db $71
+.db " ", $75
+.db $77
+.db $74
+.db $72
+.db $6E
+.db $78
+.db $6A
+.db ".", Dialogue_NewPage
 
 Dialogue_Index_015E:
-.db " GIVE", Dialogue_NewPage
-.db Word_You, "A ", Word_Magic_EF, Dialogue_NewLine
-.db "CRYSTAL FOR A", Dialogue_NewPage
-.db "REWARD.", Dialogue_Terminator65
+.db "A", $78
+.db " ", $66
+.db " ", $77
+.db $6A
+.db $7C
+.db $66
+.db $77
+.db $69
+.db ", I", Dialogue_NewLine
+.db $78
+.db $6D
+.db $66
+.db $71
+.db $71
+.db " ", $6C
+.db $6E
+.db $7B
+.db $6A
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $66
+.db Dialogue_NewPage
+.db $68
+.db $77
+.db $7E
+.db $78
+.db $79
+.db $66
+.db $71
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0160:
-.db Word_Do_You, " COME IN", Dialogue_NewLine
-.db "FULL ", Word_Know, "LEDGE", Dialogue_NewPage
-.db "OF ", Word_The, Word_Tower, " OF", Dialogue_NewLine
-.db Word_Baya_Malay, "?", Dialogue_Terminator62
+.db "Y", $74
+.db $7A
+.db " ", $70
+.db $73
+.db $74
+.db $7C
+.db " ", $79
+.db $6D
+.db $6E
+.db $78
+.db " ", $6E
+.db $78
+.db Dialogue_NewLine
+.db "B", $66
+.db $7E
+.db $66
+.db $72
+.db $66
+.db $77
+.db $6A
+.db Dialogue_Apostrophe, $78
+.db " ", $79
+.db $74
+.db $7C
+.db $6A
+.db $77
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_0162:
-.db Word_You_Will, " SURELY", Dialogue_NewLine
-.db "INCUR ", Word_The, "WRATH", Dialogue_NewPage
-.db "OF ", Word_The, "HEAVENS!", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db $73
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $78
+.db $6D
+.db $66
+.db $71
+.db $71
+.db Dialogue_NewLine
+.db $78
+.db $7A
+.db $77
+.db $6A
+.db $71
+.db $7E
+.db " ", $6B
+.db $6A
+.db $6A
+.db $71
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewPage
+.db $7C
+.db $77
+.db $66
+.db $79
+.db $6D
+.db " ", $74
+.db $6B
+.db " ", $6D
+.db $6A
+.db $66
+.db $7B
+.db $6A
+.db $73
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0164:
-.db "GO BACK BEFORE IT", Dialogue_NewLine
-.db "IS TOO LATE.", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db $73
+.db " ", $79
+.db $7A
+.db $77
+.db $73
+.db " ", $67
+.db $66
+.db $68
+.db $70
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0166:
 .db Word_This, Word_Town, " IS", Dialogue_NewLine
@@ -1613,127 +5920,810 @@ Dialogue_Index_0170:
 .db Word_Some, " PROTECTION.", Dialogue_Terminator65
 
 Dialogue_Index_0172:
-.db Word_Have, Word_You, "HEARD", Dialogue_NewLine
-.db "OF VEHICLE", Dialogue_NewPage
-.db "CALLED THE", Dialogue_NewLine
-.db "HOVERCRAFT?", Dialogue_Terminator62
+.db "E", $7B
+.db $6A
+.db $77
+.db " ", $6D
+.db $6A
+.db $66
+.db $77
+.db $69
+.db " ", $74
+.db $6B
+.db " ", $66
+.db Dialogue_NewLine
+.db "F", $71
+.db $74
+.db $7C
+.db " M", $74
+.db $7B
+.db $6A
+.db $77
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_0174:
-.db "I BOUGHT IT IN", Dialogue_NewLine
-.db Word_Scion, " ON ", Word_Palma, Dialogue_NewPage
-.db "BUT IT SEEMED", Dialogue_NewLine
-.db "BROKEN SO I", Dialogue_NewPage
-.db "ABAND", Word_One, "D IT IN", Dialogue_NewLine
+.db "I ", $67
+.db $74
+.db $7A
+.db $6C
+.db $6D
+.db $79
+.db " ", $74
+.db $73
+.db $6A
+.db " ", $6E
+.db $73
+.db Dialogue_NewLine
+.db "S", $68
+.db $6E
+.db $74
+.db $73
+.db ", ", $74
+.db $73
+.db " P", $66
+.db $71
+.db $72
+.db $66
+.db ",", Dialogue_NewPage
+.db $67
+.db $7A
+.db $79
+.db " ", $6E
+.db $79
+.db " ", $78
+.db $6A
+.db $6A
+.db $72
+.db $6A
+.db $69
+.db " ", $79
+.db $74
+.db Dialogue_NewLine
+.db $67
+.db $77
+.db $6A
+.db $66
+.db $70
+.db ",", Dialogue_NewPage
 
 Dialogue_Index_0176:
-.db Word_Bortevo, ". IT", Dialogue_NewPage
-.db "PROBABLY CAN", Dialogue_NewLine
-.db "STILL BE USED,", Dialogue_NewPage
-.db "THOUGH.", Dialogue_Terminator65
+.db $78
+.db $74
+.db " I ", $69
+.db $7A
+.db $72
+.db $75
+.db $6A
+.db $69
+.db " ", $6E
+.db $79
+.db " ", $6E
+.db $73
+.db Dialogue_NewLine
+.db "B", $66
+.db $77
+.db $79
+.db $6A
+.db $7B
+.db $74
+.db ". W", $6D
+.db $66
+.db $79
+.db " ", $66
+.db Dialogue_NewPage
+.db $7C
+.db $66
+.db $78
+.db $79
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0178:
-.db Word_You, "FOUND THE", Dialogue_NewLine
-.db "HOVERCRAFT.", Dialogue_NewPage
-.db Word_Hapsby, " HAS", Dialogue_NewLine
-.db Word_Rest, "ORED IT TO", Dialogue_NewPage
+.db "Y", $74
+.db $7A
+.db " ", $6B
+.db $74
+.db $7A
+.db $73
+.db $69
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db "F", $71
+.db $74
+.db $7C
+.db " M", $74
+.db $7B
+.db $6A
+.db $77
+.db ".", Dialogue_NewPage
+.db "H", $66
+.db $75
+.db $78
+.db $67
+.db $7E
+.db " ", $6B
+.db $6E
+.db $7D
+.db $6A
+.db $69
+.db " ", $7C
+.db $6D
+.db $66
+.db $79
+.db Dialogue_NewLine
+.db $7C
+.db $66
+.db $78
+.db " ", $67
+.db $77
+.db $74
+.db $70
+.db $6A
+.db $73
+.db ",", Dialogue_NewPage
 
 Dialogue_Index_017A:
-.db "WOR", Word_King, " ORDER.", Dialogue_Terminator65
+.db $78
+.db $74
+.db " ", $73
+.db $74
+.db $7C
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $68
+.db $66
+.db $73
+.db Dialogue_NewLine
+.db $7A
+.db $78
+.db $6A
+.db " ", $6E
+.db $79
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_017C:
-.db "IT", Dialogue_Apostrophe, "S A GOOD ", Word_Thing, Dialogue_NewLine
-.db "TO HAVE. IT ", Word_Move, "S", Dialogue_NewPage
-.db "ACROSS WATER.", Dialogue_Terminator65
+.db "I", $79
+.db Dialogue_Apostrophe, $78
+.db " ", $6D
+.db $66
+.db $73
+.db $69
+.db $7E
+.db ". I", $79
+.db Dialogue_NewLine
+.db $6C
+.db $71
+.db $6E
+.db $69
+.db $6A
+.db $78
+.db " ", $77
+.db $6E
+.db $6C
+.db $6D
+.db $79
+.db " ", $74
+.db $7B
+.db $6A
+.db $77
+.db Dialogue_NewPage
+.db $79
+.db $6D
+.db $6A
+.db " ", $7C
+.db $66
+.db $79
+.db $6A
+.db $77
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_017E:
-.db Word_Welcome, "TO", Dialogue_NewLine
-.db "DRASGOW -- A", Dialogue_NewPage
-.db "SMALL ", Word_Town, " ON", Dialogue_NewLine
-.db Word_The, "OCEAN.", Dialogue_Terminator65
+.db "T", $6D
+.db $6E
+.db $78
+.db " ", $6E
+.db $78
+.db " D", $77
+.db $66
+.db $78
+.db $6C
+.db $74
+.db $7C
+.db ", ", $66
+.db Dialogue_NewLine
+.db $71
+.db $6E
+.db $79
+.db $79
+.db $71
+.db $6A
+.db " ", $79
+.db $74
+.db $7C
+.db $73
+.db " ", $74
+.db $73
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewPage
+.db $78
+.db $6A
+.db $66
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0180:
-.db Word_You, Word_Are, "DARING TO", Dialogue_NewLine
-.db Word_Have, "FOUND ", Word_Your, Dialogue_NewPage
-.db "WAY ", Word_Here, " EVEN", Dialogue_NewLine
+.db "W", $6E
+.db $79
+.db $6D
+.db " ", $79
+.db $6D
+.db $6A
+.db " ", $78
+.db $6A
+.db $66
+.db " ", $71
+.db $66
+.db $73
+.db $6A
+.db $78
+.db Dialogue_NewLine
+.db $68
+.db $71
+.db $74
+.db $78
+.db $6A
+.db $69
+.db " ", $66
+.db $73
+.db $69
+.db " ", $73
+.db $74
+.db Dialogue_NewPage
+.db $78
+.db $6D
+.db $6E
+.db $75
+.db $78
+.db " ", $77
+.db $7A
+.db $73
+.db $73
+.db $6E
+.db $73
+.db $6C
+.db ",", Dialogue_NewPage
 
 Dialogue_Index_0182:
-.db "THOUGH ", Word_The, "SEA", Dialogue_NewPage
-.db "LANES ", Word_Are, "CLOSED", Dialogue_NewLine
-.db "TO SHIPS.", Dialogue_Terminator65
+.db $6D
+.db $74
+.db $7C
+.db $6A
+.db $7B
+.db $6A
+.db $77
+.db " ", $69
+.db $6E
+.db $69
+.db " ", $7E
+.db $74
+.db $7A
+.db Dialogue_NewLine
+.db $77
+.db $6A
+.db $66
+.db $68
+.db $6D
+.db " ", $79
+.db $6D
+.db $6E
+.db $78
+.db " ", $79
+.db $74
+.db $7C
+.db $73
+.db "?", Dialogue_Terminator65
 
 Dialogue_Index_0184:
-.db Word_There_Is, " A ", Word_Magic_EF, Dialogue_NewLine
-.db "SWORD IN A ", Word_Tower, Dialogue_NewPage
-.db "ON A FORGOTTEN", Dialogue_NewLine
-.db "ISLAND.", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db $7E
+.db " ", $78
+.db $66
+.db $7E
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db $79
+.db $74
+.db $7C
+.db $6A
+.db $77
+.db " ", $74
+.db $6B
+.db " A", $67
+.db $6E
+.db $74
+.db $73
+.db Dialogue_NewPage
+.db $6D
+.db $74
+.db $71
+.db $69
+.db $78
+.db " ", $66
+.db " ", $78
+.db $7C
+.db $74
+.db $77
+.db $69
+.db " ", $79
+.db $6D
+.db $66
+.db $79
+.db Dialogue_NewLine
+.db $78
+.db $6A
+.db $66
+.db $71
+.db $78
+.db " ", $66
+.db $7C
+.db $66
+.db $7E
+.db " ", $72
+.db $66
+.db $6C
+.db $6E
+.db $68
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0186:
-.db "LONG AGO, I SAW A", Dialogue_NewLine
-.db "GIANT ROCK FLOAT", Dialogue_NewPage
-.db Word_Through, " ", Word_The, "SKY.", Dialogue_Terminator65
+.db "L", $74
+.db $73
+.db $6C
+.db " ", $66
+.db $6C
+.db $74
+.db ", I ", $78
+.db $66
+.db $7C
+.db " ", $66
+.db Dialogue_NewLine
+.db $6C
+.db $77
+.db $6A
+.db $66
+.db $79
+.db " ", $77
+.db $74
+.db $68
+.db $70
+.db Dialogue_NewPage
+.db $6B
+.db $71
+.db $74
+.db $66
+.db $79
+.db $6E
+.db $73
+.db $6C
+.db " ", $6E
+.db $73
+.db " ", $79
+.db $6D
+.db $6A
+.db " ", $78
+.db $70
+.db $7E
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0188:
-.db Word_The, "TOP OF THE", Dialogue_NewLine
-.db Word_Hill, " CALLED ", Word_Baya, Dialogue_NewPage
-.db Word_Malay, " IS ALWAYS", Dialogue_NewLine
-.db "HIDDEN BY CLOUDS.", Dialogue_NewPage
+.db "I", Dialogue_Apostrophe, $72
+.db " ", $67
+.db $6E
+.db $6C
+.db " ", $78
+.db $6E
+.db $78
+.db $79
+.db $6A
+.db $77
+.db Dialogue_NewLine
+.db "C", $6D
+.db $74
+.db $70
+.db $74
+.db "!", Dialogue_NewPage
 
 Dialogue_Index_018A:
-.db Word_Some, Word_Thing, " ", Word_Must, Dialogue_NewLine
-.db "BE UP ", Word_There, "!", Dialogue_Terminator65
+.db "K", $6A
+.db $6A
+.db $75
+.db " ", $66
+.db $79
+.db " ", $7E
+.db $74
+.db $7A
+.db $77
+.db Dialogue_NewLine
+.db $66
+.db $69
+.db $7B
+.db $6A
+.db $73
+.db $79
+.db $7A
+.db $77
+.db $6A
+.db ", ", $74
+.db $70
+.db $66
+.db $7E
+.db "?", Dialogue_Terminator65
 
 Dialogue_Index_018C:
-.db "I HEARD ", Word_That, " THEY", Dialogue_NewLine
-.db "SELL GAS ", Word_Shield, Dialogue_NewPage
-.db Word_Here, ", BUT I DON", Dialogue_Apostrophe, "T", Dialogue_NewLine
-.db Word_Know, " ", Word_Where, " ", Word_The, Dialogue_NewPage
-.db "SHOP IS!", Dialogue_NewLine
+.db "I ", $6D
+.db $6A
+.db $66
+.db $77
+.db $69
+.db " ", $79
+.db $6D
+.db $66
+.db $79
+.db " ", $66
+.db Dialogue_NewLine
+.db $69
+.db $6A
+.db $7B
+.db $6E
+.db $68
+.db $6A
+.db " ", $68
+.db $66
+.db $71
+.db $71
+.db $6A
+.db $69
+.db " ", $66
+.db Dialogue_NewPage
+.db "G", $66
+.db $78
+.db " C", $71
+.db $6A
+.db $66
+.db $77
+.db ", ", $7C
+.db $6D
+.db $6E
+.db $68
+.db $6D
+.db Dialogue_NewLine
+.db $78
+.db $6D
+.db $6E
+.db $6A
+.db $71
+.db $69
+.db $78
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $6B
+.db $77
+.db $74
+.db $72
+.db Dialogue_NewPage
+.db $75
+.db $74
+.db $6E
+.db $78
+.db $74
+.db $73
+.db " ", $6C
+.db $66
+.db $78
+.db ",", Dialogue_NewPage
 
 Dialogue_Index_018E:
-.db "WHAT A MESS!", Dialogue_Terminator65
+.db $6E
+.db $78
+.db " ", $78
+.db $74
+.db $71
+.db $69
+.db " ", $6D
+.db $6A
+.db $77
+.db $6A
+.db ", ", $67
+.db $7A
+.db $79
+.db Dialogue_NewLine
+.db $7C
+.db $6D
+.db $6A
+.db $77
+.db $6A
+.db Dialogue_Apostrophe, $78
+.db " ", $79
+.db $6D
+.db $6A
+.db " ", $78
+.db $6D
+.db $74
+.db $75
+.db "?", Dialogue_NewPage
+.db "W", $6D
+.db $66
+.db $79
+.db " ", $66
+.db " ", $6B
+.db $6E
+.db $7D
+.db ". W", $6D
+.db $66
+.db $79
+.db " ", $66
+.db Dialogue_NewLine
+.db $6B
+.db $6E
+.db $7D
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0190:
-.db Word_Welcome, "TO OUR", Dialogue_NewLine
-.db "STORE. WHAT CAN I", Dialogue_NewPage
-.db Word_Help, " ", Word_You, "WITH?", Dialogue_NewLine
+.db "T", $6D
+.db $6E
+.db $78
+.db " ", $6E
+.db $78
+.db " ", $79
+.db $6D
+.db $6A
+.db " ", $6E
+.db $79
+.db $6A
+.db $72
+.db Dialogue_NewLine
+.db $78
+.db $6D
+.db $74
+.db $75
+.db ". W", $6D
+.db $66
+.db $79
+.db " ", $68
+.db $66
+.db $73
+.db " I", Dialogue_NewPage
+.db $69
+.db $74
+.db " ", $6B
+.db $74
+.db $77
+.db " ", $7E
+.db $74
+.db $7A
+.db "?", Dialogue_NewPage
 
 Dialogue_Index_0192:
-.db "AHH, I WAS", Dialogue_NewPage
-.db "PULLING ", Word_Your, "LEG!", Dialogue_NewLine
-.db "WHAT", Dialogue_Apostrophe, "S A MATTER,", Dialogue_NewPage
-.db "CAN", Dialogue_Apostrophe, "T ", Word_You, "TAKE A", Dialogue_NewLine
-.db "JOKE?", Dialogue_Terminator65
+.db "J", $7A
+.db $78
+.db $79
+.db " ", $70
+.db $6E
+.db $69
+.db $69
+.db $6E
+.db $73
+.db $6C
+.db "! S", $74
+.db $77
+.db $77
+.db $7E
+.db Dialogue_NewLine
+.db $6B
+.db $74
+.db $77
+.db " ", $79
+.db $6A
+.db $66
+.db $78
+.db $6E
+.db $73
+.db $6C
+.db ". D", $74
+.db $73
+.db Dialogue_Apostrophe, $79
+.db Dialogue_NewPage
+.db $67
+.db $6A
+.db " ", $72
+.db $66
+.db $69
+.db ", ", $74
+.db $70
+.db $66
+.db $7E
+.db "?", Dialogue_Terminator65
 
 Dialogue_Index_0194:
-.db "I BET ", Word_You, "ARE", Dialogue_NewLine
-.db "SURPRISED TO SEE", Dialogue_NewPage
-.db "A SHOP IN A PLACE", Dialogue_NewLine
-.db "LIKE THIS!"
+.db "B", $6A
+.db $79
+.db " ", $7E
+.db $74
+.db $7A
+.db Dialogue_Apostrophe, $77
+.db $6A
+.db Dialogue_NewLine
+.db $78
+.db $7A
+.db $77
+.db $75
+.db $77
+.db $6E
+.db $78
+.db $6A
+.db $69
+.db " ", $79
+.db $74
+.db " ", $6B
+.db $6E
+.db $73
+.db $69
+.db " ", $66
+.db Dialogue_NewPage
+.db $78
+.db $6D
+.db $74
+.db $75
+.db " ", $6E
+.db $73
+.db " ", $66
+.db " ", $75
+.db $71
+.db $66
+.db $68
+.db $6A
+.db Dialogue_NewLine
+.db $71
+.db $6E
+.db $70
+.db $6A
+.db " ", $79
+.db $6D
+.db $6E
+.db $78
+.db ".", Dialogue_NewPage
 
 Dialogue_Index_0196:
-.db " A GAS", Dialogue_NewPage
-.db Word_Shield, " IS ONLY", Dialogue_NewLine
-.db "1000 ", Word_Mesetas, "!", Dialogue_NewPage
-.db "PRETTY CHEAP,", Dialogue_NewLine
-.db "HUH? ", Word_Will_You, Dialogue_NewPage
-.db "BUY ", Word_One, "?", Dialogue_Terminator62
+.db "O", $73
+.db $71
+.db $7E
+.db " 1000 ", $72
+.db $6A
+.db $78
+.db $6A
+.db $79
+.db $66
+.db Dialogue_NewLine
+.db $6B
+.db $74
+.db $77
+.db " ", $66
+.db " G", $66
+.db $78
+.db " C", $71
+.db $6A
+.db $66
+.db $77
+.db "!", Dialogue_NewPage
+.db "W", $66
+.db $73
+.db $79
+.db " ", $74
+.db $73
+.db $6A
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_0198:
-.db Word_Thanks, "! SEE ", Word_You, Dialogue_NewLine
-.db "AGAIN.", Dialogue_Terminator65
+.db "T", $6D
+.db $66
+.db $73
+.db $70
+.db $78
+.db "! C", $74
+.db $72
+.db $6A
+.db Dialogue_NewLine
+.db $66
+.db $6C
+.db $66
+.db $6E
+.db $73
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_019A:
-.db Word_You, "DON", Dialogue_Apostrophe, "T ", Word_Have, Dialogue_NewLine
-.db "ENOUGH M", Word_One, "Y!", Dialogue_Terminator65
+.db "N", $74
+.db " ", $72
+.db $74
+.db $73
+.db $6A
+.db $7E
+.db "? W", $6D
+.db $66
+.db $79
+.db " ", $66
+.db Dialogue_NewLine
+.db $68
+.db $6D
+.db $6A
+.db $66
+.db $75
+.db $78
+.db $70
+.db $66
+.db $79
+.db $6A
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_019C:
-.db "SORRY, ", Word_That, " WAS", Dialogue_NewLine
-.db Word_Your, "ONLY", Dialogue_NewPage
-.db "CHANCE.", Dialogue_Terminator65
+.db "O", $6D
+.db ", ", $79
+.db $74
+.db $74
+.db " ", $67
+.db $66
+.db $69
+.db ". I", Dialogue_NewLine
+.db $7C
+.db $74
+.db $73
+.db Dialogue_Apostrophe, $79
+.db " ", $78
+.db $6A
+.db $71
+.db $71
+.db " ", $79
+.db $74
+.db " ", $7E
+.db $74
+.db $7A
+.db Dialogue_NewPage
+.db $66
+.db $6C
+.db $66
+.db $6E
+.db $73
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_019E:
-.db Word_The, Word_Spaceport, " IS", Dialogue_NewLine
-.db "CLOSED.", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db " ", $78
+.db $75
+.db $66
+.db $68
+.db $6A
+.db $75
+.db $74
+.db $77
+.db $79
+.db " ", $6E
+.db $78
+.db Dialogue_NewLine
+.db $68
+.db $71
+.db $74
+.db $78
+.db $6A
+.db $69
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_01A0:
 .db Word_We_Are, "CONFISCAT-", Dialogue_NewLine
@@ -2052,39 +7042,301 @@ Dialogue_Index_0212:
 .db "WAYS POSSIBLE.", Dialogue_Terminator65
 
 Dialogue_Index_0214:
-.db Word_You, Word_Have, "BEEN", Dialogue_NewLine
-.db "LOCKED UP,TOO", Dialogue_NewPage
+.db "O", $6D
+.db ", ", $79
+.db $6D
+.db $6A
+.db $7E
+.db " ", $71
+.db $74
+.db $68
+.db $70
+.db $6A
+.db $69
+.db Dialogue_NewLine
+.db $7E
+.db $74
+.db $7A
+.db " ", $7A
+.db $75
+.db " ", $79
+.db $74
+.db $74
+.db "? Y", $74
+.db $7A
+.db Dialogue_NewPage
+.db $75
+.db $74
+.db $74
+.db $77
+.db " ", $79
+.db $6D
+.db $6E
+.db $73
+.db $6C
+.db $78
+.db ".", Dialogue_NewPage
 
 Dialogue_Index_0216:
-.db Word_There_Is, " A WAY", Dialogue_NewLine
-.db "OUT, BUT I LIKE", Dialogue_NewPage
-.db "IT IN ", Word_Here, ",", Dialogue_NewLine
-.db "MYSELF.", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db $77
+.db $6A
+.db Dialogue_Apostrophe, $78
+.db " ", $66
+.db " ", $7C
+.db $66
+.db $7E
+.db " ", $74
+.db $7A
+.db $79
+.db ",", Dialogue_NewLine
+.db $67
+.db $7A
+.db $79
+.db " I", Dialogue_Apostrophe, $69
+.db " ", $77
+.db $66
+.db $79
+.db $6D
+.db $6A
+.db $77
+.db " ", $78
+.db $79
+.db $66
+.db $7E
+.db Dialogue_NewPage
+.db $6E
+.db $73
+.db " ", $6D
+.db $6A
+.db $77
+.db $6A
+.db ". I", $79
+.db Dialogue_Apostrophe, $78
+.db " ", $6A
+.db $66
+.db $78
+.db $6E
+.db $6A
+.db $77
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0218:
-.db Word_There_Are, " GUARDS", Dialogue_NewLine
-.db "UP AHEAD!", Dialogue_Terminator65
+.db "Y", $74
+.db $7A
+.db Dialogue_Apostrophe, $69
+.db " ", $67
+.db $6A
+.db $79
+.db $79
+.db $6A
+.db $77
+.db " ", $73
+.db $74
+.db $79
+.db Dialogue_NewLine
+.db $6C
+.db $74
+.db " ", $66
+.db $73
+.db $7E
+.db " ", $6B
+.db $7A
+.db $77
+.db $79
+.db $6D
+.db $6A
+.db $77
+.db ".", Dialogue_NewPage
+.db "T", $6D
+.db $6A
+.db $77
+.db $6A
+.db " ", $66
+.db $77
+.db $6A
+.db " ", $6C
+.db $7A
+.db $66
+.db $77
+.db $69
+.db $78
+.db Dialogue_NewLine
+.db $66
+.db $6D
+.db $6A
+.db $66
+.db $69
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_021A:
-.db "IF ", Word_You, "PLAN TO GO", Dialogue_NewLine
-.db "BACK, NOW IS ", Word_The, Dialogue_NewPage
-.db Word_Time, " TO LEAVE.", Dialogue_Terminator65
+.db "I", $6B
+.db " ", $7E
+.db $74
+.db $7A
+.db Dialogue_Apostrophe, $77
+.db $6A
+.db " ", $79
+.db $7A
+.db $77
+.db $73
+.db $6E
+.db $73
+.db $6C
+.db Dialogue_NewLine
+.db $67
+.db $66
+.db $68
+.db $70
+.db ", ", $73
+.db $74
+.db $7C
+.db Dialogue_Apostrophe, $78
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewPage
+.db $79
+.db $6E
+.db $72
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_021C:
-.db Word_Do_You_Have, " ", Word_Your, Dialogue_NewLine
-.db Word_Roadpass, "?", Dialogue_Terminator62
+.db "D", $74
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $6D
+.db $66
+.db $7B
+.db $6A
+.db " ", $66
+.db Dialogue_NewLine
+.db "R", $74
+.db $66
+.db $69
+.db " P", $66
+.db $78
+.db $78
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_021E:
-.db Word_This, "IS A FAKE!", Dialogue_NewLine
+.db "L", $6A
+.db $79
+.db " ", $72
+.db $6A
+.db " ", $78
+.db $6A
+.db $6A
+.db "... H", $72
+.db $72
+.db "?", Dialogue_NewLine
+.db "T", $6D
+.db $6E
+.db $78
+.db " ", $6E
+.db $78
+.db " ", $66
+.db " ", $6B
+.db $66
+.db $70
+.db $6A
+.db "!", Dialogue_NewPage
 
 Dialogue_Index_0220:
-.db Word_Do_You, " THINK ", Word_You, Dialogue_NewPage
-.db "CAN FOOL A ROBOT?", Dialogue_NewLine
-.db "OFF TO JAIL WE GO!", Dialogue_Terminator65
+.db "D", $74
+.db $73
+.db Dialogue_Apostrophe, $79
+.db " ", $79
+.db $66
+.db $70
+.db $6A
+.db " ", $72
+.db $6A
+.db " ", $6B
+.db $74
+.db $77
+.db Dialogue_NewLine
+.db $66
+.db " ", $6B
+.db $74
+.db $74
+.db $71
+.db " ", $6F
+.db $7A
+.db $78
+.db $79
+.db Dialogue_NewPage
+.db $67
+.db $6A
+.db $68
+.db $66
+.db $7A
+.db $78
+.db $6A
+.db " I", Dialogue_Apostrophe, $72
+.db " ", $66
+.db Dialogue_NewLine
+.db $77
+.db $74
+.db $67
+.db $74
+.db $79
+.db ". I", $73
+.db $79
+.db $74
+.db " ", $66
+.db " ", $68
+.db $6A
+.db $71
+.db $71
+.db Dialogue_NewPage
+.db $7C
+.db $6E
+.db $79
+.db $6D
+.db " ", $7E
+.db $74
+.db $7A
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_0222:
-.db "GET ME OUT ", Word_Here, "?", Dialogue_NewLine
-.db "BUT IT", Dialogue_Apostrophe, "S IN VAIN.", Dialogue_Terminator65
+.db "Y", $74
+.db $7A
+.db Dialogue_Apostrophe, $71
+.db $71
+.db " ", $6C
+.db $6A
+.db $79
+.db " ", $72
+.db $6A
+.db " ", $74
+.db $7A
+.db $79
+.db Dialogue_NewLine
+.db $74
+.db $6B
+.db " ", $6D
+.db $6A
+.db $77
+.db $6A
+.db "? I", $79
+.db Dialogue_Apostrophe, $78
+.db " ", $73
+.db $74
+.db Dialogue_NewPage
+.db $7A
+.db $78
+.db $6A
+.db ", ", $79
+.db $6D
+.db $74
+.db $7A
+.db $6C
+.db $6D
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0224:
 .db "IT", Dialogue_Apostrophe, "S FOOLISH TO", Dialogue_NewLine
@@ -2105,45 +7357,274 @@ Dialogue_Index_022A:
 .db "A PIT TRAP.", Dialogue_Terminator65
 
 Dialogue_Index_022C:
-.db "WELL,AREN", Dialogue_Apostrophe, "T ", Word_You, Dialogue_NewLine
-.db Word_Some, Word_Thing, "?", Dialogue_Terminator65
+.db "Y", $74
+.db $7A
+.db Dialogue_Apostrophe, $77
+.db $6A
+.db " ", $66
+.db $72
+.db $66
+.db $7F
+.db $6E
+.db $73
+.db $6C
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_022E:
-.db "ALL WHO FACE", Dialogue_NewLine
-.db Word_Lassic, " LOSE THEIR", Dialogue_NewPage
-.db "SOULS TO HIS", Dialogue_NewLine
-.db Word_Magic_EF, "!", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db $7E
+.db " ", $78
+.db $66
+.db $7E
+.db " ", $6A
+.db $7B
+.db $6A
+.db $77
+.db $7E
+.db $74
+.db $73
+.db $6A
+.db Dialogue_NewLine
+.db $7C
+.db $6D
+.db $74
+.db " ", $72
+.db $6A
+.db $6A
+.db $79
+.db $78
+.db " L", $66
+.db "S", $6D
+.db $6E
+.db $6A
+.db $68
+.db Dialogue_NewPage
+.db $6D
+.db $66
+.db $78
+.db " ", $79
+.db $6D
+.db $6A
+.db $6E
+.db $77
+.db " ", $78
+.db $74
+.db $7A
+.db $71
+.db Dialogue_NewLine
+.db $78
+.db $79
+.db $74
+.db $71
+.db $6A
+.db $73
+.db " ", $67
+.db $7E
+.db " ", $6D
+.db $6E
+.db $78
+.db Dialogue_NewPage
+.db $72
+.db $66
+.db $6C
+.db $6E
+.db $68
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0230:
-.db "NO? ", Word_That, Dialogue_Apostrophe, "S FINE,", Dialogue_NewLine
-.db "IF ", Word_You, "SO DESIRE.", Dialogue_NewPage
-.db Word_You_Will, " ALWAYS", Dialogue_NewLine
-.db "BE ", Word_Welcome, Word_Here, ".", Dialogue_Terminator65
+.db "I ", $78
+.db $6A
+.db $6A
+.db ". T", $6D
+.db $66
+.db $79
+.db " ", $6E
+.db $78
+.db " ", $6B
+.db $6E
+.db $73
+.db $6A
+.db ",", Dialogue_NewLine
+.db $79
+.db $74
+.db $74
+.db ". C", $74
+.db $72
+.db $6A
+.db " ", $67
+.db $66
+.db $68
+.db $70
+.db Dialogue_NewPage
+.db $66
+.db $73
+.db $7E
+.db $79
+.db $6E
+.db $72
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0232:
-.db Word_There_Is, " A ", Word_Tower, Dialogue_NewLine
-.db "OF ", Word_The, "TOP OF", Dialogue_NewPage
-.db Word_Baya_Malay, ".", Dialogue_NewLine
-.db Word_Some, Word_Thing, " ", Word_Secret, Dialogue_NewPage
-.db "IS HIDDEN AT ", Word_The, Dialogue_NewLine
-.db "TOP OF ", Word_The, Word_Tower, "!", Dialogue_Terminator65
+.db "O", $73
+.db " ", $79
+.db $6D
+.db $6A
+.db " ", $6D
+.db $6E
+.db $71
+.db $71
+.db " ", $74
+.db $6B
+.db Dialogue_NewLine
+.db "B", $66
+.db $7E
+.db $66
+.db $72
+.db $66
+.db $77
+.db $6A
+.db " ", $78
+.db $79
+.db $66
+.db $73
+.db $69
+.db $78
+.db " ", $66
+.db Dialogue_NewPage
+.db $79
+.db $74
+.db $7C
+.db $6A
+.db $77
+.db ".", Dialogue_NewPage
+.db "T", $6D
+.db $6A
+.db $77
+.db $6A
+.db " ", $72
+.db $7A
+.db $78
+.db $79
+.db " ", $67
+.db $6A
+.db " ", $66
+.db Dialogue_NewLine
+.db $78
+.db $6A
+.db $68
+.db $77
+.db $6A
+.db $79
+.db " ", $6D
+.db $6E
+.db $69
+.db $69
+.db $6A
+.db $73
+.db " ", $6E
+.db $73
+.db " ", $6E
+.db $79
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0234:
-.db "WHAT ", Word_Have, "YOU", Dialogue_NewLine
-.db "COME FOR? ", Word_Do_You, Dialogue_NewPage
-.db "INTEND ", Word_Some, Dialogue_NewLine
-.db "MISCHIEF?", Dialogue_Terminator65
+.db "W", $6D
+.db $66
+.db $79
+.db Dialogue_Apostrophe, $77
+.db $6A
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $6D
+.db $6A
+.db $77
+.db $6A
+.db Dialogue_NewLine
+.db $6B
+.db $74
+.db $77
+.db "? D", $74
+.db $73
+.db Dialogue_Apostrophe, $79
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $6C
+.db $74
+.db Dialogue_NewPage
+.db $72
+.db $66
+.db $70
+.db $6E
+.db $73
+.db Dialogue_Apostrophe, " ", $79
+.db $77
+.db $74
+.db $7A
+.db $67
+.db $71
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0236:
-.db "I ", Word_Have, "AN UNEASY", Dialogue_NewLine
-.db "FEELING.", Dialogue_Terminator65
+.db "I", Dialogue_Apostrophe, $7B
+.db $6A
+.db " ", $6C
+.db $74
+.db $79
+.db " ", $66
+.db " ", $67
+.db $66
+.db $69
+.db Dialogue_NewLine
+.db $6B
+.db $6A
+.db $6A
+.db $71
+.db $6E
+.db $73
+.db $6C
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0238:
-.db "BE ", Word_Careful, " UP", Dialogue_NewLine
-.db "AHEAD. AT THE", Dialogue_NewPage
-.db "BREAK IN THE", Dialogue_NewLine
-.db "ROAD, GO TO THE", Dialogue_NewPage
-.db "LEFT!", Dialogue_Terminator65
+.db "B", $6A
+.db " ", $68
+.db $66
+.db $77
+.db $6A
+.db $6B
+.db $7A
+.db $71
+.db " ", $6B
+.db $77
+.db $74
+.db $72
+.db Dialogue_NewLine
+.db $6D
+.db $6A
+.db $77
+.db $6A
+.db " ", $74
+.db $73
+.db ". A", $79
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewPage
+.db $6B
+.db $74
+.db $77
+.db $70
+.db ", ", $6C
+.db $74
+.db " ", $71
+.db $6A
+.db $6B
+.db $79
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_023A:
 .db Word_Lassic, " LIVES IN", Dialogue_NewLine
@@ -2384,78 +7865,571 @@ Dialogue_Index_0288:
 .db Word_Language, ".", Dialogue_Terminator65
 
 Dialogue_Index_028A:
-.db "I SOLD ", Word_That, Dialogue_NewLine
-.db Word_Laconian_Pot, " FOR", Dialogue_NewPage
-.db "A ", Word_Great, "DEAL OF", Dialogue_NewLine
-.db "M", Word_One, "Y. ", Word_Thanks, ".", Dialogue_Terminator65
+.db "T", $6D
+.db $66
+.db $79
+.db " L", $66
+.db $68
+.db $74
+.db $73
+.db $6E
+.db $66
+.db " P", $74
+.db $79
+.db Dialogue_NewLine
+.db $78
+.db $74
+.db $71
+.db $69
+.db " ", $6B
+.db $74
+.db $77
+.db " ", $66
+.db " ", $6B
+.db $74
+.db $77
+.db $79
+.db $7A
+.db $73
+.db $6A
+.db ".", Dialogue_NewPage
+.db "M", $7A
+.db $68
+.db $6D
+.db " ", $74
+.db $67
+.db $71
+.db $6E
+.db $6C
+.db $6A
+.db $69
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_028C:
-.db "NOW ", Word_That, " MY STAFF", Dialogue_NewLine
-.db "IS ASSEMBLED I", Dialogue_NewPage
-.db "CAN BEGIN. ", Word_There, Dialogue_NewLine
-.db "IS HOWERVER, A", Dialogue_NewPage
+.db "G", $74
+.db $74
+.db $69
+.db ", ", $79
+.db $6D
+.db $66
+.db $79
+.db " ", $78
+.db $6A
+.db $6A
+.db $72
+.db $78
+.db Dialogue_NewLine
+.db $79
+.db $74
+.db " ", $67
+.db $6A
+.db " ", $66
+.db $71
+.db $71
+.db " ", $72
+.db $7E
+.db " ", $78
+.db $79
+.db $66
+.db $6B
+.db $6B
+.db ".", Dialogue_NewPage
+.db "N", $74
+.db $7C
+.db " ", $79
+.db $6D
+.db $6A
+.db $73
+.db ",", Dialogue_NewPage
 
 Dialogue_Index_028E:
-.db "SLIGHT FEE OF", Dialogue_NewLine
-.db "1200 ", Word_Mesetas, Dialogue_NewPage
-.db "INVOLVED. ", Word_Will, Dialogue_NewLine
-.db Word_You, "PAY?", Dialogue_Terminator62
+.db $6E
+.db $79
+.db " ", $7C
+.db $6E
+.db $71
+.db $71
+.db " ", $68
+.db $74
+.db $78
+.db $79
+.db " 1200", Dialogue_NewLine
+.db $72
+.db $6A
+.db $78
+.db $6A
+.db $79
+.db $66
+.db " ", $79
+.db $74
+.db " ", $67
+.db $7A
+.db $6E
+.db $71
+.db $69
+.db ".", Dialogue_NewPage
+.db "W", $6E
+.db $71
+.db $71
+.db " ", $7E
+.db $74
+.db $7A
+.db " ", $75
+.db $66
+.db $7E
+.db " ", $72
+.db $6A
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_0290:
-.db Word_Thank_You, ". I CAN", Dialogue_NewLine
-.db "NOW GET TO WORK.", Dialogue_NewPage
-.db Word_Please, "WAIT ", Word_One, Dialogue_NewLine
-.db "MOMENT.", Dialogue_Terminator65
+.db "T", $6D
+.db $66
+.db $73
+.db $70
+.db " ", $7E
+.db $74
+.db $7A
+.db ". T", $6D
+.db $6A
+.db $73
+.db Dialogue_NewLine
+.db "I", Dialogue_Apostrophe, $71
+.db $71
+.db " ", $67
+.db $6A
+.db $6C
+.db $6E
+.db $73
+.db " ", $7C
+.db $74
+.db $77
+.db $70
+.db ".", Dialogue_NewPage
+.db "W", $66
+.db $6E
+.db $79
+.db " ", $66
+.db " ", $71
+.db $6E
+.db $79
+.db $79
+.db $71
+.db $6A
+.db " ", $7C
+.db $6D
+.db $6E
+.db $71
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0292:
-.db "IT ", Word_Cannot, " BE", Dialogue_NewLine
-.db "HURRIED! ", Word_Please, Dialogue_NewPage
-.db "SHOW A BIT MORE", Dialogue_NewLine
-.db "PATIENCE!", Dialogue_Terminator65
+.db "R", $7A
+.db $78
+.db $6D
+.db $6E
+.db $73
+.db $6C
+.db " ", $7C
+.db $74
+.db $73
+.db Dialogue_Apostrophe, $79
+.db Dialogue_NewLine
+.db $72
+.db $66
+.db $70
+.db $6A
+.db " ", $66
+.db " ", $6C
+.db $74
+.db $74
+.db $69
+.db " ", $78
+.db $6D
+.db $6E
+.db $75
+.db ".", Dialogue_NewPage
+.db "J", $7A
+.db $78
+.db $79
+.db " ", $66
+.db " ", $71
+.db $6E
+.db $79
+.db $79
+.db $71
+.db $6A
+.db " ", $72
+.db $74
+.db $77
+.db $6A
+.db Dialogue_NewLine
+.db $75
+.db $66
+.db $79
+.db $6E
+.db $6A
+.db $73
+.db $68
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0294:
-.db "WE CAN BOARD ", Word_The, Dialogue_NewLine
-.db Word_Luveno, " AND BE ON", Dialogue_NewPage
-.db "OUR WAY!", Dialogue_Terminator65
+.db "G", $74
+.db $74
+.db $69
+.db ". N", $74
+.db $7C
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db "L", $7A
+.db $7B
+.db $6A
+.db $73
+.db $74
+.db " ", $68
+.db $66
+.db $73
+.db " ", $68
+.db $66
+.db $77
+.db $77
+.db $7E
+.db Dialogue_NewPage
+.db $7E
+.db $74
+.db $7A
+.db " ", $6E
+.db $73
+.db $79
+.db $74
+.db " ", $78
+.db $75
+.db $66
+.db $68
+.db $6A
+.db ".", Dialogue_NewPage
+.db "G", $74
+.db " ", $74
+.db $7A
+.db $79
+.db $78
+.db $6E
+.db $69
+.db $6A
+.db " ", $79
+.db $6D
+.db $6A
+.db Dialogue_NewLine
+.db $7B
+.db $6E
+.db $71
+.db $71
+.db $66
+.db $6C
+.db $6A
+.db " ", $66
+.db $73
+.db $69
+.db " ", $6D
+.db $66
+.db $7B
+.db $6A
+.db " ", $66
+.db Dialogue_NewPage
+.db $71
+.db $74
+.db $74
+.db $70
+.db ". I", $79
+.db Dialogue_Apostrophe, $78
+.db " ", $76
+.db $7A
+.db $6E
+.db $79
+.db $6A
+.db " ", $66
+.db Dialogue_NewLine
+.db $78
+.db $6D
+.db $6E
+.db $75
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_0296:
-.db "HEY, BRING ", Word_That, Dialogue_NewLine
-.db "CAT OVER ", Word_Here, "!", Dialogue_Terminator62
+.db "H", $6A
+.db $7E
+.db ", ", $7E
+.db $74
+.db $7A
+.db ", ", $79
+.db $6D
+.db $6A
+.db " ", $68
+.db $66
+.db $79
+.db ".", Dialogue_NewLine
+.db "C", $74
+.db $72
+.db $6A
+.db " ", $74
+.db $7B
+.db $6A
+.db $77
+.db " ", $6D
+.db $6A
+.db $77
+.db $6A
+.db ".", Dialogue_Terminator62
 
 Dialogue_Index_0298:
-.db "OOHH,HA,HA! ", Word_The, Dialogue_NewLine
-.db "CAT ", Word_Will, " DIE!", Dialogue_Terminator65
+.db "H", $6A
+.db $6D
+.db " ", $6D
+.db $6A
+.db $6D
+.db " ", $6D
+.db $6A
+.db $6D
+.db ". Y", $74
+.db $7A
+.db Dialogue_NewLine
+.db $7C
+.db $66
+.db $73
+.db $79
+.db " ", $79
+.db $74
+.db " ", $69
+.db $6E
+.db $6A
+.db " ", $79
+.db $74
+.db $74
+.db "?", Dialogue_Terminator65
 
 Dialogue_Index_029A:
-.db Word_I_Will, " KILL ", Word_Any, Dialogue_NewLine
-.db "WHO INTERFERE!", Dialogue_Terminator65
+.db "A", $73
+.db $7E
+.db $74
+.db $73
+.db $6A
+.db " ", $7C
+.db $6D
+.db $74
+.db " ", $6C
+.db $6A
+.db $79
+.db $78
+.db Dialogue_NewLine
+.db $6E
+.db $73
+.db " ", $72
+.db $7E
+.db " ", $7C
+.db $66
+.db $7E
+.db " ", $69
+.db $6E
+.db $6A
+.db $78
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_029C:
-.db Word_You, "SH", Word_Ould, " ", Word_Rest, Dialogue_NewLine
-.db Word_Here, " AWHILE AFTER", Dialogue_NewPage
-.db Word_Your, "LONG", Dialogue_NewLine
-.db "JOURNEY.", Dialogue_Terminator65
+.db "Y", $74
+.db $7A
+.db " ", $72
+.db $7A
+.db $78
+.db $79
+.db " ", $67
+.db $6A
+.db " ", $79
+.db $6E
+.db $77
+.db $6A
+.db $69
+.db Dialogue_NewLine
+.db $6B
+.db $77
+.db $74
+.db $72
+.db " ", $7E
+.db $74
+.db $7A
+.db $77
+.db " ", $71
+.db $74
+.db $73
+.db $6C
+.db Dialogue_NewPage
+.db $6F
+.db $74
+.db $7A
+.db $77
+.db $73
+.db $6A
+.db $7E
+.db ". R", $6A
+.db $78
+.db $79
+.db " ", $6D
+.db $6A
+.db $77
+.db $6A
+.db Dialogue_NewLine
+.db $66
+.db $78
+.db " ", $71
+.db $74
+.db $73
+.db $6C
+.db " ", $66
+.db $78
+.db " ", $7E
+.db $74
+.db $7A
+.db Dialogue_NewPage
+.db $71
+.db $6E
+.db $70
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_029E:
-.db Word_That, " WAS", Dialogue_NewLine
-.db "QUICK-OH, ", Word_I_See, ",", Dialogue_NewPage
-.db Word_You, Word_Are, "NOT", Dialogue_NewLine
-.db Word_Through, " WITH", Dialogue_NewPage
-.db Word_Lassic, ". ", Word_You, "HAD", Dialogue_NewLine
-.db "BEST ", Word_Rest, " AT THE", Dialogue_NewPage
-.db "INN.", Dialogue_Terminator65
+.db "T", $6D
+.db $6A
+.db $77
+.db $6A
+.db Dialogue_Apostrophe, $78
+.db " ", $73
+.db $74
+.db $79
+.db " ", $66
+.db Dialogue_NewLine
+.db $72
+.db $74
+.db $72
+.db $6A
+.db $73
+.db $79
+.db " ", $79
+.db $74
+.db " ", $71
+.db $74
+.db $78
+.db $6A
+.db ".", Dialogue_NewPage
+.db "S", $79
+.db $6A
+.db $6A
+.db $71
+.db " ", $7E
+.db $74
+.db $7A
+.db $77
+.db $78
+.db $6A
+.db $71
+.db $7B
+.db $6A
+.db $78
+.db ". I", Dialogue_NewLine
+.db $75
+.db $77
+.db $66
+.db $7E
+.db " ", $6B
+.db $74
+.db $77
+.db " ", $7E
+.db $74
+.db $7A
+.db $77
+.db Dialogue_NewPage
+.db $78
+.db $66
+.db $6B
+.db $6A
+.db $79
+.db $7E
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_02A0:
-.db Word_You, "FELL INTO A", Dialogue_NewLine
-.db "DEEP SLEEP.", Dialogue_Terminator63
+.db "Y", $74
+.db $7A
+.db " ", $6B
+.db $6A
+.db $71
+.db $71
+.db " ", $6E
+.db $73
+.db $79
+.db $74
+.db " ", $66
+.db Dialogue_NewLine
+.db $69
+.db $6A
+.db $6A
+.db $75
+.db " ", $78
+.db $71
+.db $6A
+.db $6A
+.db $75
+.db ".", Dialogue_Terminator63
 
 Dialogue_Index_02A2:
-.db Word_You, "HAD A BAD", Dialogue_NewLine
-.db "DREAM.", Dialogue_Terminator65
+.db "I", $79
+.db " ", $7C
+.db $66
+.db $78
+.db " ", $66
+.db " ", $79
+.db $6A
+.db $77
+.db $77
+.db $6E
+.db $67
+.db $71
+.db $6A
+.db Dialogue_NewLine
+.db $69
+.db $77
+.db $6A
+.db $66
+.db $72
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_02A4:
-.db Word_Here, " IS ", Word_The, "HOME", Dialogue_NewLine
-.db "OF ", Word_Alis, ".", Dialogue_Terminator65
+.db "T", $6D
+.db $6E
+.db $78
+.db " ", $6E
+.db $78
+.db " A", $71
+.db $6E
+.db $78
+.db $66
+.db Dialogue_Apostrophe, $78
+.db Dialogue_NewLine
+.db $6D
+.db $74
+.db $72
+.db $6A
+.db ". N", $74
+.db " ", $74
+.db $73
+.db $6A
+.db " ", $6E
+.db $78
+.db Dialogue_NewPage
+.db $6D
+.db $6A
+.db $77
+.db $6A
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_02A6:
 .db "IT HAS ", Word_Some, Word_Thing, Dialogue_NewLine

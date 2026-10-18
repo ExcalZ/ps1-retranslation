@@ -192,6 +192,22 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
   written, and every Camineet talk id shows only script lines. `tools/applyedits.py` writes a
   tried edits file into the JSON.
 
+* **Palma translated (2026-10-17).** From the JP, 176 more dialogue entries: Parolit,
+  Scion, Epi village, Palma's spaceport and passport office (0026-007E), Gashiko, Dr. Luveno
+  and his assistant, the tower road, Triada, Bartevo and Hapsby (00B2-0108), Loar and Abion
+  (010A-012C), Damoa, the Bayamare tower, the Flow Mover, Drasgow and its hidden Gas Clear
+  shop, Triada's cells and the road-pass robot, Luveno's ship, the inn and Alisa's home
+  (0148-02A4). The JP's in-jokes are kept where the US replaced them (0188, "big sister
+  Choko"). Prices the JP prints with {NUMBER} are written out as the US has them (the
+  passport's 100, the Gas Clear's 1000, the ship's 1200): the US code may not set the number.
+  `tools/wraptext.py` lays prose out in 80 px lines, two to a page. In game: every talk id
+  checked (17-68, spot checks above) shows only script lines; the question prompts (the
+  scenario does not answer yes / no) time out as they do on the stock text.
+* **Bank 32 is nearly full: 15,275 of 15,702 bytes** with 192 of 341 dialogue entries
+  translated. Mixed case barely compresses under the stock dictionary (capitals only): the
+  translated entries take 9.3 KB against 6.9 KB stock; the remaining 149 would need about
+  7.9 KB more, some 2 KB over the bank. Next: the dictionary generated from the new script.
+
 ## Next, in order
 
 1. **Left from the survey:** a cross-check against Maxim's
@@ -204,6 +220,6 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
    naming screen with lower case (later). Not yet seen with `vwf_cutscene`: the Myau, governor and ending scenes
    (no scenario reaches them yet). Then a dictionary generated from the
    new script, if bank 32 gets tight.
-5. **Translation**: on from Camineet (Parolit, 0026 on), then the rest of the dialogue, the
-   messages and the cut-scenes; then proofreading in play, then release packaging (BPS +
-   Patcher.html).
+5. **Before more dialogue: a dictionary from the new script** (bank 32 is nearly full), then
+   Motavia, Dezolis, the messages and the cut-scenes; then proofreading in play, then release
+   packaging (BPS + Patcher.html).
