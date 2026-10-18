@@ -118,6 +118,11 @@ quotes.
   writes them into the JSON). Never run Mesen.exe directly without a
   `settings.json` beside it (its first-run wizard blocks the test runner). The GUI debugger
   imports `PSI_Disasm/ps1built.sym`. Emulicious is the second opinion on accuracy.
+* Proofreader: `tools/proofread.html` (open from disk; regenerate with `python tools/proofsync.py`
+  after a change to the face, the options or the budgets). Load `work/dialogue.json` and
+  `work/script.json` together; every entry is drawn in the game's face at linecheck's budgets,
+  with JP and US beside it; **Export edits** writes an `EDITS.json` for `trybuild.py` and
+  `applyedits.py` (which refuses edits made on an `en` that has changed since).
 
 ## Decisions that belong to the owner - do not settle them yourself
 

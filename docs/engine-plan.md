@@ -59,7 +59,8 @@ Tooling with them: gentext's encoder for the new engine (plain bytes, the new ch
 `relocate_script`'s bank layout), `linecheck.py` in pixels (144 px dialogue lines, 160 px
 cut-scene lines, names at their agreed widths), a `diafont.py` that builds the face's tiles and
 width table from `vwfmixed.py`, `checkbuild.py` extended to the new banks, and later the
-proofreader (`proofread.html`, as PS II's) drawing lines in the game's face.
+proofreader (`proofread.html`, as PS II's) drawing lines in the game's face (built 2026-10-17:
+`tools/proofsync.py`, docs/pipeline.md section 7).
 
 ## 4. Decisions for the owner
 

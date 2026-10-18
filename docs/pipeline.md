@@ -22,6 +22,7 @@ work/script.json   --gentext.py--> ps1.asm: CharacterNames, ItemNames
                                    banks/bank03.asm: the enemy names
                                    banks/bank27.asm, bank18.asm, ps1.asm: the tilemap text
                                    (naming screen, credits: read-only)
+tools/proofread_template.html + the face, the budgets --proofsync.py--> tools/proofread.html
 ```
 
 `tools/sourcebuild.py [out.sms] [--no-gen]` runs `gentext.py`, then
@@ -618,6 +619,21 @@ python tools/ps1emu.py opening --expect=B49B,B4FC,B5D5
   scenario with `--rom=OUT.sms --dialogue=OUT.sms.dialogue.json`. Tried on 2026-10-16: the
   soldier's intro speech rewritten with 20-cell lines and the field menu's STAS / SRCH as STAT
   / LOOK: the game showed both exactly (the encoder's output and the tilemap writer, seen).
+* **Proofreading in the browser.** `tools/proofread.html` (open it from disk; regenerate it with
+  `python tools/proofsync.py` after a change to the face, the engine options or the budgets)
+  loads `work/dialogue.json` and `work/script.json` (picked together or dropped on the page)
+  and shows every entry with its JP and US beside the `en`, drawn in the face of
+  `tools/diafont.py` a picture a page: dialogue and messages 80 px a line, cut-scenes 120 px and
+  4 lines a page, each insert as its widest value (the widest party, item or enemy name of the
+  loaded `script.json`; `{NUMBER}` as 99999), the menus each run in its cells x 8 px, the fixed
+  tilemaps a character a cell. Its checks are `linecheck.py`'s, ported line for line with the
+  same messages (only the bank sizes are left to linecheck), including `stockwrap.py`'s re-wrap
+  of an entry back in stock English; checked against linecheck on the whole script and on
+  mutated copies (2026-10-17: the same problems, the same widths). It never writes the JSON:
+  **Export edits** downloads `EDITS.json` in the format `trybuild.py` takes, plus `was` (the
+  `en` each edit replaced) and `notes`; `python tools/applyedits.py EDITS.json` writes the
+  edits, prints the notes and refuses an edit whose `en` has changed in the JSON since it was
+  made (`--force` to write it anyway). **Import edits** loads an export back into the page.
 * **Scenarios** (`work/scripts/`), all passing on 2026-10-17 with every option on:
 
   | scenario | what | check |

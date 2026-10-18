@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PS1 Script Proofreader</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --panel:#fff; --ink:#14171a; --muted:#5b6570;
+    --line:#dfe3e8; --accent:#2f6feb; --ok:#1a7f4b; --warn:#9a6700; --bad:#b3261e;
+    --chip:#eef1f5;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --bg:#14171a; --panel:#1c2024; --ink:#e8eaed; --muted:#9aa4af;
+    --line:#2c3238; --accent:#7aa2f7; --ok:#5dd39e; --warn:#e3b341; --bad:#f2776a;
+    --chip:#252b31;
+  }}
+  :root[data-theme="dark"]{
+    --bg:#14171a; --panel:#1c2024; --ink:#e8eaed; --muted:#9aa4af;
+    --line:#2c3238; --accent:#7aa2f7; --ok:#5dd39e; --warn:#e3b341; --bad:#f2776a;
+    --chip:#252b31;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+  header{position:sticky;top:0;z-index:5;background:var(--panel);border-bottom:1px solid var(--line);
+         padding:10px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  h1{font-size:15px;margin:0 8px 0 0;font-weight:650;white-space:nowrap}
+  button,select,input[type=search]{font:inherit;color:var(--ink);background:var(--chip);
+    border:1px solid var(--line);border-radius:6px;padding:5px 10px}
+  button{cursor:pointer}
+  button.primary{background:var(--accent);color:#fff;border-color:transparent}
+  button:disabled{opacity:.5;cursor:default}
+  label.chk{display:flex;gap:5px;align-items:center;color:var(--muted);font-size:12.5px;white-space:nowrap}
+  .grow{flex:1}
+  .stats{color:var(--muted);font-variant-numeric:tabular-nums;font-size:12.5px}
+  main{padding:12px 16px 80px;max-width:1200px;margin:0 auto}
+  .row{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:8px}
+  .row.chained{margin-bottom:0;border-bottom-left-radius:0;border-bottom-right-radius:0;border-bottom-style:dashed}
+  .row.chained + .row{border-top-left-radius:0;border-top-right-radius:0}
+  .row.edited{border-left:3px solid var(--accent)}
+  .meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:12px;margin-bottom:6px}
+  .id{font-family:ui-monospace,Menlo,Consolas,monospace}
+  .jp{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;background:var(--chip);border-radius:6px;
+      padding:7px 9px;white-space:pre-wrap;word-break:break-all;margin-bottom:7px}
+  .ctl{color:var(--accent);font-size:11px}
+  .jp.cont{color:var(--muted);font-family:inherit;font-size:12.5px}
+  textarea{width:100%;min-height:52px;resize:vertical;font:inherit;color:var(--ink);background:transparent;
+    border:1px solid var(--line);border-radius:6px;padding:7px 9px}
+  textarea.short{min-height:34px}
+  textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
+  .us{font-size:12.5px;margin-top:3px;padding-left:7px;color:var(--muted);border-left:2px solid var(--line);white-space:pre-wrap;word-break:break-word}
+  .us b{font-weight:650}
+  .note{width:100%;margin-top:5px;font:inherit;font-size:12.5px;color:var(--ink);background:transparent;border:1px dashed var(--line);border-radius:6px;padding:4px 8px}
+  .tag{background:var(--chip);border-radius:99px;padding:1px 8px;font-size:11px}
+  .tag.edit{color:var(--accent)} .tag.over{color:var(--bad)} .tag.info{color:var(--muted)}
+  .seghdr{margin:16px 0 8px;padding:7px 11px;border-radius:7px;background:var(--chip);border:1px solid var(--line);
+    font-size:12.5px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+  .seghdr span{color:var(--muted)}
+  .empty{padding:32px 20px;color:var(--muted);max-width:760px;margin:0 auto}
+  .empty li{margin:4px 0}
+  .drop{outline:3px dashed var(--accent);outline-offset:-8px}
+  kbd{background:var(--chip);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 5px;font:11px ui-monospace,monospace}
+  code{font:12.5px ui-monospace,Menlo,Consolas,monospace}
+  .preview{margin-top:7px;border:1px solid var(--line);border-radius:6px;padding:7px 8px;background:var(--chip);overflow-x:auto}
+  .preview>.label{font-size:11px;color:var(--muted);margin-bottom:5px}
+  .page{display:inline-block;vertical-align:top;margin:0 8px 5px 0}
+  .page canvas{display:block;image-rendering:pixelated;border:1px solid #000;border-radius:3px}
+  .page.bad canvas{border-color:var(--bad);box-shadow:0 0 0 1px var(--bad)}
+  .page .w{font:11px ui-monospace,monospace;color:var(--muted);margin-top:2px}
+  .page .w.bad,.msg.bad{color:var(--bad);font-weight:600}
+  .msg{font:11.5px ui-monospace,monospace;color:var(--muted);white-space:pre-wrap;word-break:break-word}
+  .msg.soft{color:var(--warn)}
+  #toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);
+    padding:8px 14px;border-radius:8px;font-size:13px;display:none;max-width:90vw;white-space:pre-wrap;z-index:10}
+</style>
+</head>
+<body>
+<header>
+  <h1>PS1 Script Proofreader</h1>
+  <button id="load">Load JSON</button>
+  <button id="import" disabled>Import edits</button>
+  <button id="export" class="primary" disabled>Export edits</button>
+  <span class="grow"></span>
+  <input type="search" id="q" placeholder="search text / id...">
+  <select id="filter">
+    <option value="all">All</option>
+    <option value="dialogue">Dialogue</option>
+    <option value="message">Messages</option>
+    <option value="cutscene">Cut-scenes</option>
+    <option value="tables">Names and menus</option>
+    <option value="over">Over budget</option>
+    <option value="edited">Edited here</option>
+    <option value="note">Has a note</option>
+  </select>
+  <label class="chk" title="as linecheck.py --all: also measure entries still in their stock English"><input type="checkbox" id="all"> stock too</label>
+  <span class="stats" id="stats">nothing loaded</span>
+</header>
+<main><div id="list"><div class="empty" id="help"></div></div></main>
+<div id="toast"></div>
+<script id="model">
+const OPTIONS={"expand_rom":1,"far_calls":1,"relocate_script":1,"vwf_dialogue":1,"vwf_cutscene":1,"long_names":1,"long_item_names":1,"vwf_windows":1,"script_dictionary":1};
+const FACE={" ":[3,[0,0,0,0,0,0,0,0]],"!":[2,[128,128,128,128,128,0,128,0]],"\"":[4,[160,160,0,0,0,0,0,0]],"%":[5,[144,16,32,32,64,128,144,0]],"&":[5,[64,160,160,64,160,144,96,0]],"'":[2,[128,128,0,0,0,0,0,0]],"(":[3,[64,128,128,128,128,128,64,0]],")":[3,[128,64,64,64,64,64,128,0]],",":[3,[0,0,0,0,0,0,64,128]],"-":[4,[0,0,0,224,0,0,0,0]],".":[2,[0,0,0,0,0,0,128,0]],"/":[4,[32,32,64,64,64,128,128,0]],"0":[5,[96,144,144,144,144,144,96,0]],"1":[4,[64,192,64,64,64,64,224,0]],"2":[5,[96,144,16,32,64,128,240,0]],"3":[5,[224,16,16,96,16,16,224,0]],"4":[5,[144,144,144,240,16,16,16,0]],"5":[5,[240,128,128,224,16,16,224,0]],"6":[5,[96,128,128,224,144,144,96,0]],"7":[5,[240,16,16,32,64,64,64,0]],"8":[5,[96,144,144,96,144,144,96,0]],"9":[5,[96,144,144,112,16,16,96,0]],":":[2,[0,0,0,128,0,128,0,0]],";":[3,[0,0,0,64,0,64,128,0]],"?":[5,[96,144,16,32,64,0,64,0]],"A":[5,[96,144,144,240,144,144,144,0]],"B":[5,[224,144,144,224,144,144,224,0]],"C":[5,[96,144,128,128,128,144,96,0]],"D":[5,[224,144,144,144,144,144,224,0]],"E":[5,[240,128,128,224,128,128,240,0]],"F":[5,[240,128,128,224,128,128,128,0]],"G":[5,[96,144,128,176,144,144,96,0]],"H":[5,[144,144,144,240,144,144,144,0]],"I":[4,[224,64,64,64,64,64,224,0]],"J":[4,[32,32,32,32,32,160,64,0]],"K":[5,[144,144,160,192,160,144,144,0]],"L":[5,[128,128,128,128,128,128,240,0]],"M":[6,[136,216,168,168,136,136,136,0]],"N":[6,[136,200,200,168,152,152,136,0]],"O":[5,[96,144,144,144,144,144,96,0]],"P":[5,[224,144,144,224,128,128,128,0]],"Q":[5,[96,144,144,144,144,176,112,0]],"R":[5,[224,144,144,224,160,144,144,0]],"S":[5,[96,144,128,96,16,144,96,0]],"T":[4,[224,64,64,64,64,64,64,0]],"U":[5,[144,144,144,144,144,144,96,0]],"V":[6,[136,136,136,136,136,80,32,0]],"W":[6,[136,136,136,168,168,168,80,0]],"X":[6,[136,136,80,32,80,136,136,0]],"Y":[6,[136,136,80,32,32,32,32,0]],"Z":[5,[240,16,16,96,128,128,240,0]],"a":[5,[0,0,96,16,112,144,112,0]],"b":[5,[128,128,224,144,144,144,224,0]],"c":[5,[0,0,96,144,128,144,96,0]],"d":[5,[16,16,112,144,144,144,112,0]],"e":[5,[0,0,96,144,240,128,112,0]],"f":[4,[96,128,224,128,128,128,128,0]],"g":[5,[0,0,112,144,144,112,16,96]],"h":[5,[128,128,224,144,144,144,144,0]],"i":[2,[128,0,128,128,128,128,128,0]],"j":[3,[64,0,64,64,64,64,64,128]],"k":[5,[128,128,144,160,192,160,144,0]],"l":[3,[128,128,128,128,128,128,64,0]],"m":[6,[0,0,208,168,168,168,168,0]],"n":[5,[0,0,224,144,144,144,144,0]],"o":[5,[0,0,96,144,144,144,96,0]],"p":[5,[0,0,224,144,144,224,128,128]],"q":[5,[0,0,112,144,144,112,16,16]],"r":[4,[0,0,160,192,128,128,128,0]],"s":[5,[0,0,112,128,96,16,224,0]],"t":[4,[0,128,224,128,128,128,96,0]],"u":[5,[0,0,144,144,144,144,112,0]],"v":[4,[0,0,160,160,160,64,64,0]],"w":[6,[0,0,168,168,168,168,80,0]],"x":[5,[0,0,144,144,96,144,144,0]],"y":[5,[0,0,144,144,144,112,16,96]],"z":[5,[0,0,240,16,96,128,240,0]]};
+const LINE_PX=80;
+const CUT_PX=120;
+const CUT_LINES=4;
+const BUDGET={"dialogue":[18,null],"message":[18,null],"cutscene":[20,4]};
+const INSERT_CELLS={"NAME":4,"ENEMY":8,"ITEM":8,"NUMBER":5};
+const INSERT_PX={"NAME":23,"ITEM":62,"ENEMY":66,"NUMBER":25};
+const INSERT_SAMPLE={"NAME":"Tyron","ITEM":"Perseus Shield","ENEMY":"Horseshoe Crab"};
+const TAGS=["BR","CLR","END","ENEMY","ITEM","NAME","NOWAIT","NUMBER","PAGE","PAUSE","TIMED"];
+const TERMINATORS=["END","NOWAIT","PAUSE","TIMED"];
+const US_TEXT=" !\"',-.0123456789;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const UPPER_CHARS="\"'@";
+const WIN_SEGMENTS=["battle_menu","field_menu","item_menu","shop_menu","yes_no","spells","spaceport","status_boxes","inventory","status_labels"];
+/* ---- the model: linecheck.py's rules over the JSON, no DOM (tools/proofsync.py embeds the data) ---- */
+const VWF=OPTIONS.vwf_dialogue===1, VWF_CUT=VWF&&OPTIONS.vwf_cutscene===1, WIN=OPTIONS.vwf_windows===1;
+const LONG_NAMES=OPTIONS.long_names===1, LONG_ITEMS=OPTIONS.long_item_names===1, DICT=OPTIONS.script_dictionary===1;
+const FACE_KINDS={};   // the kinds drawn in the face: [line px, lines a wait] (stockwrap.window_kinds)
+if(VWF){FACE_KINDS.dialogue=[LINE_PX,2];FACE_KINDS.message=[LINE_PX,2];}
+if(VWF_CUT)FACE_KINDS.cutscene=[CUT_PX,CUT_LINES];
+const FACE_SET=new Set(Object.keys(FACE)), US_SET=new Set(US_TEXT), UPPER_SET=new Set(UPPER_CHARS);
+const TAG_SET=new Set(TAGS), TERM_SET=new Set(TERMINATORS);
+const has=(o,k)=>Object.prototype.hasOwnProperty.call(o,k);
+
+function advance(ch){return has(FACE,ch)?FACE[ch][0]:8;}          // diafont.advance (8: no glyph)
+function facePx(t){let x=0;for(const ch of t)x+=advance(ch);return x;}   // diafont.width
+function pyRepr(s){
+  if(s.includes("'")&&!s.includes('"'))return '"'+s.replace(/\\/g,'\\\\')+'"';
+  return "'"+s.replace(/\\/g,'\\\\').replace(/'/g,"\\'")+"'";
+}
+function pyStrip(s){return s.replace(/^\s+|\s+$/g,'');}
+function pyUpper(s){return s.toUpperCase();}
+/* each insert at its widest (stockwrap.insert_px), and the name that is widest, for the picture */
+function insertInfo(script){
+  if(!script)return {px:INSERT_PX,sample:Object.assign({NUMBER:'99999'},INSERT_SAMPLE)};
+  const px={}, sample={NUMBER:'99999'};
+  for(const [k,seg] of [['NAME','party'],['ITEM','items'],['ENEMY','enemies']]){
+    let best=-1, name='';
+    for(const r of script.segments[seg].runs){const w=facePx(r.en);if(w>best){best=w;name=r.en;}}
+    px[k]=best; sample[k]=name;
+  }
+  px.NUMBER=facePx('99999');
+  return {px,sample};
+}
+/* linecheck.pages: lines grouped by page ({PAGE} and {CLR} start one; end codes vanish) */
+function pages(text){
+  const s=text.replace(/\{([^}]*)\}/g,(m,tag)=>TERM_SET.has(tag)?'':tag==='BR'?'\n':(tag==='PAGE'||tag==='CLR')?'\f':m);
+  return s.split('\f').map(p=>p.split('\n'));
+}
+function linePx(line,ins){   // linecheck: an insert at its widest, any other character its advance
+  let px=0;for(const m of line.matchAll(/\{(NAME|ITEM|ENEMY|NUMBER)\}|[^{]/g))px+=m[1]?ins[m[1]]:advance(m[0]);return px;
+}
+function lineCells(line){    // ps1text.width
+  let n=0;for(const m of line.matchAll(/\{([^}]*)\}|./g)){const t=m[1];if(t===undefined)n++;else if(has(INSERT_CELLS,t))n+=INSERT_CELLS[t];else if(t.startsWith('$'))n++;}return n;
+}
+function endCode(text){const t=[...text.matchAll(/\{([^}]*)\}/g)].map(m=>m[1]);return t.length&&TERM_SET.has(t[t.length-1])?t[t.length-1]:null;}
+/* ps1text.encode_us's errors (null when it encodes) */
+function encodeError(text,charset){
+  let pos=0;
+  const plain=s=>{for(const c of s)if(!charset.has(c))return `no glyph for ${pyRepr(c)} in ${pyRepr(text)}`;return null;};
+  for(const m of text.matchAll(/\{([^}]*)\}/g)){
+    const e=plain(text.slice(pos,m.index));if(e)return e;
+    if(!TAG_SET.has(m[1])&&!/^\$[0-9A-Fa-f]{2}$/.test(m[1]))return `unknown tag {${m[1]}} in ${pyRepr(text)}`;
+    pos=m.index+m[0].length;
+  }
+  return plain(text.slice(pos));
+}
+/* chains: entries that run on into the next (falls_through) */
+function chains(entries){
+  const of=new Map();let cur=[];
+  for(const e of entries){cur.push(e);if(!e.falls_through){for(const x of cur)of.set(x.id,cur);cur=[];}}
+  for(const x of cur)of.set(x.id,cur);
+  return of;
+}
+/* ---- stockwrap.py: an entry still in its stock English is built from its us, re-wrapped where it overflows ---- */
+const MARK='\x00', HARD_WAITS=['CLR','END','NOWAIT','PAUSE','TIMED'];   // WAITS - {PAGE}, sorted
+function wrapLinePx(line,ins){   // stockwrap.line_px: other tags take nothing
+  let px=0;for(const m of line.split(MARK).join('').matchAll(/\{([^}]*)\}|[^{]/g))
+    px+=m[1]===undefined?advance(m[0]):has(ins,m[1])?ins[m[1]]:0;return px;
+}
+function wrapFits(pgs,px,per,ins){return pgs.every(lines=>lines.length<=per&&lines.every(l=>wrapLinePx(l,ins)<=px));}
+function rewrap(seg,px,per,ins){
+  seg=seg.replace(/(?<=[.,!?;])(?=\x00?[A-Z]{2})/g,' ');
+  const words=[];let pending='';
+  for(const tok of seg.split(/ +|\{BR\}|\{PAGE\}|(?=\x00)/)){
+    if(tok===MARK)pending+=MARK;else if(tok){words.push(pending+tok);pending='';}
+  }
+  if(pending)words.push(pending);
+  const lines=[];
+  for(const w of words){
+    const text=w.replace(/^\x00+/,'');
+    if(lines.length&&lines[lines.length-1].split(MARK).join('')&&text){
+      const trial=lines[lines.length-1]+w.slice(0,w.length-text.length)+' '+text;
+      if(wrapLinePx(trial,ins)<=px){lines[lines.length-1]=trial;continue;}
+    }
+    if(lines.length&&!lines[lines.length-1].split(MARK).join(''))lines[lines.length-1]+=w;else lines.push(w);
+  }
+  const pgs=[];for(let i=0;i<lines.length;i+=per)pgs.push(lines.slice(i,i+per).join('{BR}'));
+  return pgs.join('{PAGE}');
+}
+function wrapChain(text,px,per,ins){
+  const out=[], parts=text.split(new RegExp('(\{(?:'+HARD_WAITS.join('|')+')\})'));
+  parts.forEach((run,n)=>{
+    if(n%2){out.push(run);return;}
+    const split=t=>t.split('{PAGE}').map(p=>p.split('{BR}'));
+    const trimmed=run.replace(/ +(?=\x00?(?:\{BR\}|\{PAGE\}|$))/g,'');
+    if(wrapFits(split(run),px,per,ins))out.push(run);
+    else if(wrapFits(split(trimmed),px,per,ins))out.push(trimmed);
+    else out.push(rewrap(run,px,per,ins));
+  });
+  return out.join('');
+}
+/* stockwrap.texts, for the chains that are all stock: id -> the text the build gives it */
+function stockTexts(entries,ins){
+  const out=new Map();let i=0;
+  while(i<entries.length){
+    let j=i;while(entries[j].falls_through&&j+1<entries.length)j++;
+    const chain=entries.slice(i,j+1), kind=chain[0].kind;
+    if(has(FACE_KINDS,kind)&&chain.every(e=>e.en===e.us)){
+      const [px,per]=FACE_KINDS[kind], wrapped=wrapChain(chain.map(e=>e.us).join(MARK),px,per,ins).split(MARK);
+      chain.forEach((e,k)=>out.set(e.id,wrapped[k]));
+    }
+    i=j+1;
+  }
+  return out;
+}
+function entryText(e,stock){return stock.has(e.id)?stock.get(e.id):e.en;}
+function budgetOf(kind){   // [limit, unit, lines a page or null]
+  if(has(FACE_KINDS,kind))return [FACE_KINDS[kind][0],'px',BUDGET[kind][1]];
+  return [BUDGET[kind][0],'cells',BUDGET[kind][1]];
+}
+function measure(line,kind,ins){return has(FACE_KINDS,kind)?linePx(line,ins):lineCells(line);}
+/* linecheck.main's dialogue checks, in its words: "ID: message" */
+function dialogueProblems(e,text,ins,all){
+  const p=[], face=has(FACE_KINDS,e.kind);
+  const stockBytes=!DICT&&text===e.us&&(!face||e.kind==='cutscene');   // stockwrap.stock_bytes
+  if(!stockBytes){const err=encodeError(text,face?FACE_SET:US_SET);if(err){p.push(`${e.id}: ${err}`);return p;}}
+  if(e.en===e.us&&!all)return p;
+  const [width,perPage]=BUDGET[e.kind];
+  for(const page of pages(text)){
+    for(const line of page){
+      if(face){const px=linePx(line,ins),lim=FACE_KINDS[e.kind][0];if(px>lim)p.push(`${e.id}: ${px} px (${lim}): ${line}`);}
+      else if(lineCells(line)>width)p.push(`${e.id}: ${lineCells(line)} cells (${width}): ${line}`);
+    }
+    const n=page.length-(page.length>1&&!page[page.length-1]?1:0);
+    if(perPage&&n>perPage)p.push(`${e.id}: ${n} lines on a page (${perPage})`);
+  }
+  const want=e.falls_through?null:endCode(e.us), got=endCode(text);
+  if(got!==want)p.push(`${e.id}: ends in ${got===null?'None':got}, the stock entry in ${want===null?'None':want}`);
+  return p;
+}
+/* tilemaps.encode's errors, the stock font a cell a character */
+function tileError(text,cells,upper){
+  const cs=[...text.matchAll(/\{\$([0-9A-Fa-f]{2})\}|./g)];
+  for(const m of cs)if(!m[1]&&!US_SET.has(m[0]))return `no glyph for ${pyRepr(m[0])} in ${pyRepr(text)}`;
+  if(cs.length>cells)return `${pyRepr(text)} is ${cs.length} cells; the run has ${cells}`;
+  if(!upper&&cs.some(m=>!m[1]&&UPPER_SET.has(m[0])))return `${pyRepr(text)} needs a tile in the row above, and this run has none`;
+  return null;
+}
+function nameRule(name){   // the name tables: [letters, the face's px or null]
+  const longParty=(name==='party'&&LONG_NAMES)||((name==='items'||name==='enemies')&&LONG_ITEMS);
+  return {longParty, width:longParty?(name==='party'?6:14):null, px:longParty&&WIN&&name!=='party'?80:null};
+}
+/* how a run is measured, for the picture: {mode:'face'|'cells'|'none', limit, unit, text} */
+function runRule(name,seg,r){
+  if(seg.kind==='readonly')return {mode:'none'};
+  if(seg.kind==='tilemap'){
+    if(WIN&&name==='money')return {mode:'face',limit:64,text:pyStrip(r.en)+' 65535',minus:1,what:"the money box's 8 cells, with the largest sum"};
+    if(WIN&&name==='status_boxes')return {mode:'face',limit:null,text:pyStrip(r.en),minus:1,what:'vwf_windows draws the party names here (not checked)'};
+    if(WIN&&WIN_SEGMENTS.includes(name)){const c=r.cells+(name==='spells'?1:0);return {mode:'face',limit:8*c,text:pyStrip(r.en),minus:1,what:`${c} cells in the face`};}
+    return {mode:'cells',limit:r.cells,text:r.en,what:`${r.cells} cells in the stock font`+(r.upper?'':', no row above')};
+  }
+  const nr=nameRule(name);
+  if(nr.longParty)return {mode:'face',limit:nr.px,text:r.en,minus:1,letters:nr.width,
+    what:`${nr.width} letters`+(nr.px?`, ${nr.px} px in the windows`:'')+'; in capitals in the stock menus'};
+  return {mode:'cells',limit:seg.width,text:r.en,what:`${seg.width} cells`};
+}
+/* linecheck.main's table checks: key "segment#id" -> ["message", ...] */
+function scriptProblems(script,all){
+  const out=new Map(), add=(name,r,msg)=>{const k=name+'#'+r.id;if(!out.has(k))out.set(k,[]);out.get(k).push(msg);};
+  for(const [name,seg] of Object.entries(script.segments)){
+    if(seg.kind==='readonly')continue;
+    if(seg.kind==='tilemap'&&WIN&&name==='money'){
+      for(const r of seg.runs){
+        const text=pyStrip(r.en)+' 65535', err=encodeError(text,FACE_SET);
+        if(err){add(name,r,`money ${r.id}: ${err}`);continue;}
+        if(facePx(text)-1>64)add(name,r,`money ${r.id}: ${pyRepr(text)} is ${facePx(text)-1} px (64)`);
+      }
+      continue;
+    }
+    if(seg.kind==='tilemap'&&WIN&&WIN_SEGMENTS.includes(name)){
+      for(const r of seg.runs){
+        if((r.en!==r.us||all)&&name!=='status_boxes'){
+          const text=pyStrip(r.en), err=encodeError(text,FACE_SET);
+          if(err){add(name,r,`${name} ${r.id}: ${err}`);continue;}
+          const px=text?facePx(text)-1:0, cells=r.cells+(name==='spells'?1:0);
+          if(px>8*cells)add(name,r,`${name} ${r.id} (${r.where}): ${pyRepr(text)} is ${px} px (${cells} cells, ${8*cells} px)`);
+        }
+      }
+      continue;
+    }
+    if(seg.kind==='tilemap'){
+      for(const r of seg.runs)if(r.en!==r.us||all){const err=tileError(r.en,r.cells,r.upper);if(err)add(name,r,`${name} ${r.id} (${r.where}): ${err}`);}
+      continue;
+    }
+    const nr=nameRule(name), width=nr.longParty?nr.width:seg.width;
+    for(const r of seg.runs){
+      if(!(r.en!==r.us||all))continue;
+      const n=[...r.en].length;
+      if(n>width)add(name,r,`${name} ${r.id}: ${pyRepr(r.en)} is ${n} cells (${width})`);
+      if(nr.longParty&&WIN&&(name==='items'||name==='enemies')&&facePx(r.en)-1>80)
+        add(name,r,`${name} ${r.id}: ${pyRepr(r.en)} is ${facePx(r.en)-1} px in the face (80)`);
+      const err=nr.longParty?(encodeError(r.en,FACE_SET)||encodeError(pyUpper(r.en),US_SET)):encodeError(r.en,US_SET);
+      if(err)add(name,r,`${name} ${r.id}: ${err}`);
+    }
+  }
+  // the party names the tilemaps show (in capitals) must be the party table's
+  const party=script.segments.party.runs.map(r=>pyUpper(r.en));
+  const shown=WIN?[]:LONG_NAMES?['status_boxes']:['name_boxes','status_boxes','party_menu'];
+  for(const name of shown)for(const r of script.segments[name].runs){
+    const s=pyUpper(pyStrip(r.en));
+    if(s!==party[r.id])add(name,r,`${name} ${r.id} shows ${pyRepr(pyStrip(r.en))}; party ${r.id} is ${pyRepr(party[r.id])}`);
+  }
+  return out;
+}
+</script>
+<script>
+/* ---- drawing: the face's 1bpp glyphs at a pixel pen, white on the window's black ---- */
+const SCALE=2, PAPER='#000', OVER='#4a1414', INK='#f4f4f4', INSERT='#8fb4ff', BADINK='#ff6b6b', ROW=16;
+function putGlyph(g,ch,x,y,color,limit){
+  if(!has(FACE,ch)){g.fillStyle=BADINK;g.fillRect(x*SCALE,y*SCALE,7*SCALE,8*SCALE);return 8;}
+  const [adv,rows]=FACE[ch];
+  for(let r=0;r<8;r++)for(let c=0;c<8;c++)if(rows[r]&(0x80>>c)){
+    g.fillStyle=limit!=null&&x+c>=limit?BADINK:color;g.fillRect((x+c)*SCALE,(y+r)*SCALE,SCALE,SCALE);
+  }
+  return adv;
+}
+function putCell(g,ch,x,y,color,limit){   // the stock fonts: a character a cell, in capitals
+  const u=ch.toUpperCase(), adv=has(FACE,u)?FACE[u][0]:8;
+  putGlyph(g,u,x+Math.max(0,Math.floor((8-adv)/2)),y,limit!=null&&x>=limit*1?BADINK:color,null);
+  return 8;
+}
+/* one picture: `lines` of text in the face (or cells), `limit` px wide, at least `rows` lines */
+function drawPage(cv,lines,o){
+  const {limit,rows,ins,face}=o, unitPx=face?1:8;
+  const widths=lines.map(l=>face?linePx(l,ins.px):lineCells(l)*8);
+  const W=Math.max(limit==null?0:limit*unitPx,...widths,8)+(limit!=null&&Math.max(0,...widths)>limit*unitPx?4:0);
+  const n=Math.max(rows,lines.length);
+  cv.width=W*SCALE;cv.height=n*ROW*SCALE;
+  const g=cv.getContext('2d'), lim=limit==null?null:limit*unitPx;
+  g.fillStyle=PAPER;g.fillRect(0,0,cv.width,cv.height);
+  if(lim!=null&&W>lim){g.fillStyle=OVER;g.fillRect(lim*SCALE,0,(W-lim)*SCALE,cv.height);}
+  lines.forEach((line,k)=>{
+    let x=0;const y=k*ROW+4;
+    for(const m of line.matchAll(face?/\{(NAME|ITEM|ENEMY|NUMBER)\}|[^{]/g:/\{([^}]*)\}|./g)){
+      const t=m[1];
+      if(t!==undefined&&has(ins.px,t)){   // an insert, drawn as its widest value
+        const end=x+(face?ins.px[t]:INSERT_CELLS[t]*8);
+        g.fillStyle='rgba(143,180,255,.18)';g.fillRect(x*SCALE,(y-1)*SCALE,(end-x)*SCALE,10*SCALE);
+        let px=x;for(const ch of ins.sample[t]){if(!face&&px>=end)break;px+=face?putGlyph(g,ch,px,y,INSERT,lim):putCell(g,ch,px,y,INSERT,lim==null?null:lim);}
+        x=end;continue;
+      }
+      if(t!==undefined){if(t.startsWith('$'))x+=8;continue;}   // a {$xx} byte (cells mode)
+      x+=face?putGlyph(g,m[0],x,y,INK,lim):putCell(g,m[0],x,y,INK,lim);
+    }
+  });
+}
+
+/* ---- state ---- */
+let D=null, S=null, dName='dialogue.json', sName='script.json', unexported=false;
+const base=new Map();    // key -> en as loaded
+const notes=new Map();   // key -> the proofreader's note
+let chainOf=new Map(), STOCK=new Map(), INS=insertInfo(null), SP=new Map();
+const dKey=e=>'d:'+e.id, sKey=(seg,r)=>'s:'+seg+'#'+r.id;
+function allMode(){return document.getElementById('all').checked;}
+function stripId(msg,id){return msg.startsWith(id+': ')?msg.slice(id.length+2):msg;}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function fmtCtl(s){return esc(s).replace(/\{([^}]*)\}/g,'<span class="ctl">{$1}</span>');}
+function toast(msg,ms){const t=document.getElementById('toast');t.textContent=msg;t.style.display='block';clearTimeout(t._h);t._h=setTimeout(()=>t.style.display='none',ms||4000);}
+
+function recompute(){
+  INS=insertInfo(S);
+  if(D){chainOf=chains(D.entries);STOCK=stockTexts(D.entries,INS.px);}
+  SP=S?scriptProblems(S,allMode()):new Map();
+}
+function problemsOf(item){
+  if(item.type==='d')return dialogueProblems(item.e,entryText(item.e,STOCK),INS.px,allMode()).map(m=>stripId(m,item.e.id));
+  return SP.get(item.seg+'#'+item.e.id)||[];
+}
+function items(){
+  const out=[];
+  if(D)for(const e of D.entries)out.push({type:'d',e,group:e.kind,key:dKey(e)});
+  if(S)for(const [seg,s] of Object.entries(S.segments))for(const r of s.runs)out.push({type:'s',e:r,seg,group:seg,key:sKey(seg,r)});
+  return out;
+}
+const GROUP_NAMES={dialogue:'Dialogue (DialogueBlock, by id)',message:'Messages (bank 12, by label)',cutscene:'Cut-scenes (the picture printer)'};
+
+/* ---- the list ---- */
+function render(){
+  const list=document.getElementById('list');
+  if(!D&&!S){list.innerHTML='';list.appendChild(helpBox());updateStats();return;}
+  recompute(); list.innerHTML='';
+  const q=document.getElementById('q').value.trim().toLowerCase(), f=document.getElementById('filter').value;
+  let lastGroup=null, shown=0;
+  for(const it of items()){
+    const e=it.e;
+    if(f==='dialogue'||f==='message'||f==='cutscene'){if(it.type!=='d'||e.kind!==f)continue;}
+    if(f==='tables'&&it.type!=='s')continue;
+    if(f==='over'&&!problemsOf(it).length)continue;
+    if(f==='edited'&&e.en===base.get(it.key))continue;
+    if(f==='note'&&!notes.get(it.key))continue;
+    if(q){const hay=[e.en,e.us,e.jp,e.id,e.label,e.where,it.seg,notes.get(it.key)].filter(x=>x!=null).join(' ').toLowerCase();if(!hay.includes(q))continue;}
+    if(it.group!==lastGroup){
+      const h=document.createElement('div');h.className='seghdr';
+      const seg=it.type==='s'?S.segments[it.seg]:null;
+      h.innerHTML=it.type==='d'?`<b>${esc(GROUP_NAMES[it.group]||it.group)}</b><span>${esc(budgetText(it.group))}</span>`
+        :`<b>${esc(it.seg)}</b><span>${esc(seg.about||(seg.label?seg.label+', '+seg.width+' cells':''))}</span>`;
+      list.appendChild(h);lastGroup=it.group;
+    }
+    list.appendChild(rowOf(it,f==='all'&&!q));shown++;
+  }
+  if(!shown)list.innerHTML+='<div class="empty">nothing matches</div>';
+  updateStats(shown);
+}
+function budgetText(kind){
+  const [lim,unit,per]=budgetOf(kind);
+  return `${lim} ${unit} a line`+(per?`, ${per} lines a page`:', the window shows two lines and scrolls')+
+    (unit==='px'?' (the face, inserts at their widest)':' (stock font, inserts at their widest cells)');
+}
+function rowOf(it,chainView){
+  const e=it.e, row=document.createElement('div');
+  row.className='row'+(it.type==='d'&&e.falls_through&&chainView?' chained':'');
+  const tags=[];
+  if(it.type==='d'){
+    tags.push(`<span class="tag info">${esc(e.kind)}</span>`);
+    if(e.falls_through)tags.push('<span class="tag info">runs on into the next entry</span>');
+  }else if(e.where)tags.push(`<span class="tag info">${esc(e.where)}</span>`);
+  const seg=it.type==='s'?S.segments[it.seg]:null, ro=seg&&seg.kind==='readonly';
+  if(ro)tags.push('<span class="tag info">read-only: gentext does not write it</span>');
+  const idtxt=it.type==='d'?`${esc(e.id)}${e.label&&e.label!==e.id?' <span style="opacity:.7">'+esc(e.label)+'</span>':''}`:`${esc(it.seg)} #${esc(e.id)}`;
+  let jp='';
+  if(e.jp)jp=`<div class="jp">${fmtCtl(e.jp)}</div>`;
+  else if(e.jp_cont)jp='<div class="jp cont">its Japanese is part of the entry before (above)</div>';
+  else if(it.type==='d')jp='<div class="jp cont">no Japanese counterpart</div>';
+  row.innerHTML=`<div class="meta"><span class="id">${idtxt}</span>${e.addr?'<span>'+esc(e.addr)+'</span>':''}${tags.join('')}<span class="tags2"></span></div>`
+    +jp
+    +(ro?'':`<textarea spellcheck="true" class="${it.type==='s'?'short':''}" rows="${it.type==='s'?1:Math.min(8,Math.ceil(e.en.length/95)+1)}"></textarea>`)
+    +(ro?'':'<div class="preview"><div class="label"></div><div class="pages"></div><div class="msgs"></div></div>')
+    +(e.us!=null?`<div class="us"><b>US 1988:</b> ${fmtCtl(e.us)}</div>`:'')
+    +(ro?'':'<input class="note" placeholder="note for whoever applies the edits">');
+  if(ro)return row;
+  const ta=row.querySelector('textarea'), note=row.querySelector('.note');
+  ta.value=e.en; note.value=notes.get(it.key)||'';
+  ta.addEventListener('input',()=>{
+    e.en=ta.value; unexported=true; refreshButtons();
+    if(it.type==='s'&&['party','items','enemies'].includes(it.seg)){   // the inserts' widths may change
+      const before=JSON.stringify(INS.px); recompute();
+      if(JSON.stringify(INS.px)!==before){for(const r of document.querySelectorAll('.row'))if(r._refresh)r._refresh();updateStats();return;}
+    }else recompute();   // a chain back in stock English re-wraps
+    row._refresh();
+    if(row._chain)for(const r of document.querySelectorAll('.row'))if(r!==row&&r._chain===row._chain)r._refresh();   // a stock chain re-wraps as one
+    updateStats();
+  });
+  note.addEventListener('input',()=>{if(note.value)notes.set(it.key,note.value);else notes.delete(it.key);unexported=true;refreshButtons();});
+  row._chain=it.type==='d'&&chainOf.get(e.id).length>1?chainOf.get(e.id)[0].id:null;
+  row._refresh=()=>{
+    if(it.type==='d')previewDialogue(row,e);else previewRun(row,it.seg,seg,e);
+    const probs=problemsOf(it), t2=row.querySelector('.tags2');
+    t2.innerHTML=(e.en!==base.get(it.key)?'<span class="tag edit">edited</span> ':'')+(probs.length?'<span class="tag over">over budget</span>':'');
+    row.classList.toggle('edited',e.en!==base.get(it.key));
+    const msgs=row.querySelector('.msgs');msgs.innerHTML='';
+    for(const p of probs){const d=document.createElement('div');d.className='msg bad';d.textContent=p;msgs.appendChild(d);}
+    for(const p of row._soft||[]){const d=document.createElement('div');d.className='msg soft';d.textContent=p;msgs.appendChild(d);}
+  };
+  row._refresh();
+  return row;
+}
+function previewDialogue(row,e){
+  const host=row.querySelector('.pages'), label=row.querySelector('.preview .label');
+  const text=entryText(e,STOCK), [lim,unit,per]=budgetOf(e.kind), face=unit==='px', checked=e.en!==e.us||allMode();
+  const minRows=per||2;
+  label.textContent=(e.kind==='cutscene'?'cut-scene':'window')+`: ${lim} ${unit} a line`+(per?`, ${per} lines a page`:', two lines shown (it scrolls)')
+    +' - one picture a page'+(text!==e.en?' - the stock text as the build re-wraps it':'')+(checked?'':' - stock English, not checked (tick "stock too")');
+  host.innerHTML='';row._soft=[];
+  const pp=pages(text);
+  pp.forEach((lines,i)=>{
+    if(lines.length>1&&!lines[lines.length-1])lines=lines.slice(0,-1);
+    if(i&&i===pp.length-1&&lines.every(l=>!l))return;   // a wait at the very end: no picture of its own
+    const pg=document.createElement('div');pg.className='page';
+    const cv=document.createElement('canvas');drawPage(cv,lines,{limit:lim,rows:minRows,ins:INS,face});pg.appendChild(cv);
+    const widest=Math.max(0,...lines.map(l=>measure(l,e.kind,INS.px)));
+    const d=document.createElement('div');d.className='w';
+    d.textContent=`${widest}/${lim} ${unit}`+(per?`, ${lines.length}/${per} lines`:`, ${lines.length} line${lines.length===1?'':'s'}`);
+    if(checked&&(widest>lim||(per&&lines.length>per))){pg.classList.add('bad');d.classList.add('bad');}
+    pg.appendChild(d);host.appendChild(pg);
+    if(!per&&lines.length>2&&checked)row._soft.push(`${lines.length} lines before a wait: the window shows two, the first scroll away as the last are drawn`);
+  });
+}
+function previewRun(row,name,seg,r){
+  const host=row.querySelector('.pages'), label=row.querySelector('.preview .label'), rule=runRule(name,seg,r);
+  host.innerHTML='';row._soft=[];
+  const pg=document.createElement('div');pg.className='page';const cv=document.createElement('canvas');
+  const d=document.createElement('div');d.className='w';
+  if(rule.mode==='face'){
+    const px=rule.text?facePx(rule.text)-rule.minus:0;
+    drawPage(cv,[rule.text],{limit:rule.limit,rows:1,ins:INS,face:true});
+    const parts=[rule.limit!=null?`${px}/${rule.limit} px`:`${px} px`];
+    if(rule.letters)parts.push(`${[...r.en].length}/${rule.letters} letters`);
+    d.textContent=parts.join(', ');
+    if(rule.limit!=null&&px>rule.limit)d.classList.add('bad'),pg.classList.add('bad');
+    if(rule.letters&&[...r.en].length>rule.letters)d.classList.add('bad'),pg.classList.add('bad');
+  }else{
+    const n=[...rule.text.matchAll(/\{\$[0-9A-Fa-f]{2}\}|./g)].length;
+    drawPage(cv,[rule.text],{limit:rule.limit,rows:1,ins:INS,face:false});
+    d.textContent=`${n}/${rule.limit} cells`;
+    if(n>rule.limit)d.classList.add('bad'),pg.classList.add('bad');
+  }
+  label.textContent=rule.what+(r.en!==r.us||allMode()?'':' - as stock, not checked');
+  pg.appendChild(cv);pg.appendChild(d);host.appendChild(pg);
+}
+function updateStats(shown){
+  const el=document.getElementById('stats');
+  if(!D&&!S){el.textContent='nothing loaded';return;}
+  let n=0,over=0,edited=0;
+  for(const it of items()){if(it.type==='s'&&S.segments[it.seg].kind==='readonly')continue;n++;if(problemsOf(it).length)over++;if(it.e.en!==base.get(it.key))edited++;}
+  el.textContent=[D?dName:null,S?sName:'(no script.json: inserts as built at sync)'].filter(Boolean).join(' + ')
+    +`: ${n} entries, ${over} over budget, ${edited} edited`+(shown!=null?`, ${shown} shown`:'');
+}
+function refreshButtons(){
+  document.getElementById('import').disabled=!(D||S);
+  document.getElementById('export').disabled=!(D||S);
+}
+
+/* ---- loading, edits ---- */
+function loadText(txt,name){
+  const doc=JSON.parse(txt);
+  if(doc.entries){D=doc;dName=name;for(const e of D.entries)base.set(dKey(e),e.en);}
+  else if(doc.segments){S=doc;sName=name;for(const [seg,s] of Object.entries(S.segments))for(const r of s.runs)if(r.en!=null)base.set(sKey(seg,r),r.en);}
+  else if(doc.dialogue||doc.script)return importEdits(doc);
+  else throw new Error(name+': not dialogue.json, script.json or an edits file');
+}
+function readFiles(files){   // the JSON first, then any edits file onto it
+  Promise.all([...files].map(f=>f.text().then(t=>[t,f.name]))).then(rs=>{
+    try{
+      const docs=rs.map(([t,n])=>[JSON.parse(t),t,n]), isDoc=d=>!!(d.entries||d.segments);
+      if(unexported&&docs.some(([d])=>isDoc(d))&&!confirm('Loading replaces the edits not yet exported. Go on?'))return;
+      for(const [d,t,n] of docs.filter(([d])=>isDoc(d)))loadText(t,n);
+      for(const [d,t,n] of docs.filter(([d])=>!isDoc(d)))loadText(t,n);
+    }catch(x){toast(String(x.message||x));}
+    refreshButtons();render();
+  });
+}
+function pick(cb){const i=document.createElement('input');i.type='file';i.accept='.json';i.multiple=true;i.onchange=()=>cb(i.files);i.click();}
+document.getElementById('load').onclick=()=>pick(readFiles);
+document.getElementById('import').onclick=()=>pick(fs=>Promise.all([...fs].map(f=>f.text())).then(ts=>{for(const t of ts)importEdits(JSON.parse(t));}));
+/* an edits file: {"dialogue": {ID: en}, "script": {SEGMENT: {RUN: en}}} as trybuild.py and applyedits.py take it;
+   "was" holds the en each edit replaced (applyedits refuses an edit whose en has changed since), "notes" the notes */
+function buildEdits(){
+  const out={dialogue:{},script:{},was:{dialogue:{},script:{}},notes:{dialogue:{},script:{}}};
+  for(const it of items()){
+    const k=it.key, n=notes.get(k), ed=it.e.en!==base.get(k);
+    if(it.type==='d'){if(ed){out.dialogue[it.e.id]=it.e.en;out.was.dialogue[it.e.id]=base.get(k);}if(n)out.notes.dialogue[it.e.id]=n;}
+    else{
+      const put=(o,v)=>{(o[it.seg]=o[it.seg]||{})[String(it.e.id)]=v;};
+      if(ed){put(out.script,it.e.en);put(out.was.script,base.get(k));}
+      if(n)put(out.notes.script,n);
+    }
+  }
+  const count=Object.keys(out.dialogue).length+Object.values(out.script).reduce((a,o)=>a+Object.keys(o).length,0);
+  const nn=Object.keys(out.notes.dialogue).length+Object.values(out.notes.script).reduce((a,o)=>a+Object.keys(o).length,0);
+  for(const k of ['dialogue','script'])if(!Object.keys(out.notes[k]).length)delete out.notes[k];
+  if(!Object.keys(out.notes).length)delete out.notes;
+  return {out,count,nn};
+}
+function exportEdits(){
+  const {out,count,nn}=buildEdits();
+  if(!count&&!nn){toast('no edits or notes to export');return;}
+  const blob=new Blob([JSON.stringify(out,null,1)+'\n'],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='EDITS.json';a.click();
+  unexported=false;
+  toast(`EDITS.json: ${count} edits, ${nn} notes.\npython tools/applyedits.py EDITS.json`,6000);
+}
+function importEdits(doc){
+  const miss=[], stale=[]; let n=0;
+  const wasD=(doc.was||{}).dialogue||{}, wasS=(doc.was||{}).script||{};
+  if(D){
+    const by=new Map(D.entries.map(e=>[e.id,e]));
+    for(const [id,en] of Object.entries(doc.dialogue||{})){
+      const e=by.get(id)||by.get('LABEL_'+id); if(!e){miss.push(id);continue;}
+      if(has(wasD,id)&&wasD[id]!==base.get(dKey(e)))stale.push(id);
+      e.en=en;n++;
+    }
+    for(const [id,v] of Object.entries((doc.notes||{}).dialogue||{})){const e=by.get(id)||by.get('LABEL_'+id);if(e)notes.set(dKey(e),v);}
+  }else if(doc.dialogue&&Object.keys(doc.dialogue).length)miss.push('(dialogue: load dialogue.json first)');
+  if(S){
+    for(const [seg,runs] of Object.entries(doc.script||{})){
+      const s=S.segments[seg]; if(!s){miss.push(seg);continue;}
+      for(const [rid,en] of Object.entries(runs)){
+        const r=s.runs.find(x=>String(x.id)===rid); if(!r){miss.push(seg+' '+rid);continue;}
+        if(has(wasS[seg]||{},rid)&&wasS[seg][rid]!==base.get(sKey(seg,r)))stale.push(seg+' '+rid);
+        r.en=en;n++;
+      }
+    }
+    for(const [seg,runs] of Object.entries((doc.notes||{}).script||{}))for(const [rid,v] of Object.entries(runs)){
+      const r=(S.segments[seg]||{runs:[]}).runs.find(x=>String(x.id)===rid);if(r)notes.set(sKey(seg,r),v);}
+  }else if(doc.script&&Object.keys(doc.script).length)miss.push('(script: load script.json first)');
+  unexported=true;refreshButtons();render();
+  toast(`imported ${n} edits`+(miss.length?`\nnot found: ${miss.join(', ')}`:'')+(stale.length?`\nchanged in the JSON since they were made: ${stale.join(', ')}`:''),8000);
+}
+document.getElementById('export').onclick=exportEdits;
+document.addEventListener('keydown',ev=>{if((ev.ctrlKey||ev.metaKey)&&ev.key==='s'){ev.preventDefault();if(D||S)exportEdits();}});
+let qTimer=null;
+document.getElementById('q').addEventListener('input',()=>{clearTimeout(qTimer);qTimer=setTimeout(render,200);});
+document.getElementById('filter').addEventListener('change',render);
+document.getElementById('all').addEventListener('change',render);
+window.addEventListener('beforeunload',ev=>{if(unexported){ev.preventDefault();ev.returnValue='';}});
+document.addEventListener('dragover',ev=>{ev.preventDefault();document.body.classList.add('drop');});
+document.addEventListener('dragleave',ev=>{if(!ev.relatedTarget)document.body.classList.remove('drop');});
+document.addEventListener('drop',ev=>{ev.preventDefault();document.body.classList.remove('drop');readFiles(ev.dataTransfer.files);});
+
+function helpBox(){
+  const d=document.createElement('div');d.className='empty';
+  const k=kind=>{const [l,u,p]=budgetOf(kind);return `<b>${l} ${u}</b> a line`+(p?`, <b>${p} lines</b> a page`:'');};
+  d.innerHTML=`<p><b>Load JSON</b> and pick <code>work/dialogue.json</code> and <code>work/script.json</code> together (or drop them here).
+  The page reads them from disk and never writes them: <b>Export edits</b> (<kbd>Ctrl</kbd>+<kbd>S</kbd>) downloads an
+  <code>EDITS.json</code> of the changed <code>en</code> fields and the notes, which
+  <code>python tools/trybuild.py EDITS.json OUT.sms</code> builds a test ROM from and
+  <code>python tools/applyedits.py EDITS.json</code> writes into the JSON. <b>Import edits</b> picks up an export again.</p>
+  <p>The budgets are <code>tools/linecheck.py</code>'s for this build (the engine options in <code>ps1.options.asm</code> when the page was made):</p>
+  <ul>
+   <li>Dialogue and messages: ${k('dialogue')}. The window shows two lines and scrolls, so a message has no line limit.</li>
+   <li>Cut-scenes: ${k('cutscene')}; {PAGE} and {CLR} start a page.</li>
+   <li>Inserts at their widest (blue): {NAME} the widest party name, {ITEM} and {ENEMY} the widest item and enemy name
+     in <code>script.json</code> (as made: ${esc(Object.entries(INSERT_PX).map(([a,b])=>a+' '+b).join(', '))}${VWF?' px':''}), {NUMBER} as 99999.</li>
+   <li>Names: party ${LONG_NAMES?'6 letters':'4 cells'}; items and enemies ${LONG_ITEMS?'14 letters'+(WIN?' and 80 px in the face':''):'8 cells'}.
+     Menus${WIN?': each run in the face within its cells x 8 px (the spell lists a cell wider; the money label with 65535 in 64 px)':': a character a cell, the stock font'}.</li>
+   <li>As linecheck does, only entries whose <code>en</code> differs from <code>us</code> are checked; tick <b>stock too</b> for <code>--all</code>.
+     The bank sizes are left to linecheck.</li>
+  </ul>
+  <p>Edit only the English. A dashed border joins entries that run on into the next (the game reads them as one).
+  Keep each entry's end code ({END} {NOWAIT} {TIMED} {PAUSE}); an entry that runs on has none. Regenerate this page with <code>python tools/proofsync.py</code>.</p>`;
+  return d;
+}
+render();refreshButtons();
+</script>
+</body>
+</html>
