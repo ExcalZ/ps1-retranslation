@@ -714,7 +714,7 @@
    "us": "WELCOME TO THE {BR}PASEO SPACEPORT{PAGE}ON MOTAVIA.{END}",
    "jp_addr": "02:8ABF",
    "jp": "ココハ　モタビアノ{BR}パセオ　スペースポート　ダヨ。{END}",
-   "en": "WELCOME TO THE {BR}PASEO SPACEPORT{PAGE}ON MOTAVIA.{END}"
+   "en": "This is Motavia's{BR}Paseo Spaceport.{END}"
   },
   {
    "id": "0082",
@@ -725,7 +725,7 @@
    "us": "IT IS SAID THAT{BR}ANT LIONS ROAM{PAGE}IN THE DESERT.{END}",
    "jp_addr": "02:8AD9",
    "jp": "サバクノ　ナカデハ　アリジゴクガ{BR}アバレテ　イルトイウ　ウワサダヨ。{END}",
-   "en": "IT IS SAID THAT{BR}ANT LIONS ROAM{PAGE}IN THE DESERT.{END}"
+   "en": "They say antlions{BR}rule the desert.{END}"
   },
   {
    "id": "0084",
@@ -736,7 +736,7 @@
    "us": "THERE IS A CAKE{BR}SHOP IN THE CAVE{PAGE}CALLED NAULA ON{BR}PALMA!{END}",
    "jp_addr": "02:8AFC",
    "jp": "パルマセイノ{BR}ナウラ　トイウ　ドウクツニハ{PAGE}ケーキヤガ　アルンダッテネ。{END}",
-   "en": "THERE IS A CAKE{BR}SHOP IN THE CAVE{PAGE}CALLED NAULA ON{BR}PALMA!{END}"
+   "en": "They say there's a{BR}cake shop in a{PAGE}cave called Naura,{BR}on Palma.{END}"
   },
   {
    "id": "0086",
@@ -747,7 +747,7 @@
    "us": "MOTAVIA'S GOVERNOR{BR}AND LASSIC ARE NOT{PAGE}ON GOOD TERMS, IT{BR}IS SAID.{END}",
    "jp_addr": "02:8B21",
    "jp": "モタビアノ　ソウトクハ　ジツハ{BR}ラシークト　ナカガ　ワルイラシイヨ。{END}",
-   "en": "MOTAVIA'S GOVERNOR{BR}AND LASSIC ARE NOT{PAGE}ON GOOD TERMS, IT{BR}IS SAID.{END}"
+   "en": "They say the{BR}Governor secretly{PAGE}opposes LaShiec.{END}"
   },
   {
    "id": "0088",
@@ -758,7 +758,7 @@
    "us": "A GIFT IS NEEDED{BR}IF YOU WISH TO SEE{PAGE}THE GOVERNOR.{END}",
    "jp_addr": "02:8B44",
    "jp": "ソウトクニ　アウニハ　オクリモノガ{BR}イルソウヨ。{END}",
-   "en": "A GIFT IS NEEDED{BR}IF YOU WISH TO SEE{PAGE}THE GOVERNOR.{END}"
+   "en": "You need a gift to{BR}see the Governor.{END}"
   },
   {
    "id": "008A",
@@ -769,7 +769,7 @@
    "us": "THE GOVERNOR LOVES{BR}SWEETS, I HEAR.{END}",
    "jp_addr": "02:8B5D",
    "jp": "ソウトクハ　アマイモノガ　ダイスキ。{END}",
-   "en": "THE GOVERNOR LOVES{BR}SWEETS, I HEAR.{END}"
+   "en": "The Governor loves{BR}sweets.{END}"
   },
   {
    "id": "008C",
@@ -780,7 +780,7 @@
    "us": "THERE IS A CAVE{BR}CALLED MAHARU IN{PAGE}A MOUNTAIN TO THE {BR}NORTH OF PASEO.{END}",
    "jp_addr": "02:8B70",
    "jp": "マハル　トイウ　ドウクツガ　パセオノ{BR}キタノ　ヤマノ　ナカニ　アリマス。{END}",
-   "en": "THERE IS A CAVE{BR}CALLED MAHARU IN{PAGE}A MOUNTAIN TO THE {BR}NORTH OF PASEO.{END}"
+   "en": "There's a cave{BR}called Maharu in{PAGE}the mountains{BR}north of Paseo.{END}"
   },
   {
    "id": "008E",
@@ -791,7 +791,7 @@
    "us": "THIS IS PASEO{BR}MOTAVIA'S CAPITAL.{END}",
    "jp_addr": "02:8B94",
    "jp": "ココハ　モタビアノ　シュト{BR}パセオ　デス。{END}",
-   "en": "THIS IS PASEO{BR}MOTAVIA'S CAPITAL.{END}"
+   "en": "This is Paseo, the{BR}capital of Motavia.{END}"
   },
   {
    "id": "0090",
@@ -802,7 +802,7 @@
    "us": "IT'S NOT POSSIBLE{BR}TO PASS THROUGH{PAGE}ANT LION ON FOOT.{END}",
    "jp_addr": "02:8BAA",
    "jp": "アリジゴクハ　ヒトノ　アシデハ{BR}トテモ　トオレナイダロウ。{END}",
-   "en": "IT'S NOT POSSIBLE{BR}TO PASS THROUGH{PAGE}ANT LION ON FOOT.{END}"
+   "en": "On foot, no one{BR}gets past antlions.{END}"
   },
   {
    "id": "0092",
@@ -813,7 +813,7 @@
    "us": "I HAVE AN RARE{BR}ANIMAL HERE. WOULD{PAGE}YOU PAY 1 BILLION{BR}MESETAS FOR IT?{NOWAIT}",
    "jp_addr": "02:8BC8",
    "jp": "メズラシイ　ドウブツガ　イルンダケド{BR}{NUMBER}オク　メセタデ　カワナイカ{BR}。{NOWAIT}",
-   "en": "I HAVE AN RARE{BR}ANIMAL HERE. WOULD{PAGE}YOU PAY 1 BILLION{BR}MESETAS FOR IT?{NOWAIT}"
+   "en": "I've got a rare{BR}animal here.{PAGE}100 million meseta{BR}for it. Deal?{NOWAIT}"
   },
   {
    "id": "0094",
@@ -824,7 +824,7 @@
    "us": "YOU ARE A LIAR!{END}",
    "jp_addr": "02:8BEA",
    "jp": "アンタ　ウソツキダネ。{END}",
-   "en": "YOU ARE A LIAR!{END}"
+   "en": "You're a liar.{END}"
   },
   {
    "id": "0096",
@@ -836,7 +836,7 @@
    "jp_addr": "02:8BF6",
    "jp": "オヤ　アンタ　メズラシイ　ツボヲ{BR}モッテイルネ。{PAGE}",
    "falls_through": true,
-   "en": "I SEE YOU HAVE A{BR}STRANGE POT.{PAGE}"
+   "en": "Oh? That's an{BR}unusual pot.{PAGE}"
   },
   {
    "id": "0098",
@@ -847,7 +847,7 @@
    "us": "SHALL I TRADE THE {BR}ANIMAL FOR IT?{NOWAIT}",
    "jp_addr": "02:8C0F",
    "jp": "ソノ　ラコニアンポット　トナラ{BR}コウカンシテモ　イイヨ。　ドウカネ。{NOWAIT}",
-   "en": "SHALL I TRADE THE {BR}ANIMAL FOR IT?{NOWAIT}"
+   "en": "I'd trade the{BR}animal for that{PAGE}Laconia Pot.{BR}What do you say?{NOWAIT}"
   },
   {
    "id": "009A",
@@ -858,7 +858,7 @@
    "us": "ALL RIGHT, THERE{BR}YOU GO WITH HIM.{END}",
    "jp_addr": "02:8C32",
    "jp": "ソレジャ　ツレテイキナ。{BR}カワイガッテ　ヤッテクレ。{END}",
-   "en": "ALL RIGHT, THERE{BR}YOU GO WITH HIM.{END}"
+   "en": "Take good care{BR}of it, then.{END}"
   },
   {
    "id": "009C",
@@ -869,7 +869,7 @@
    "us": "DO YOU HAVE A{BR}PRESENT TO GIVE TO{PAGE}THE GOVERNOR?{NOWAIT}",
    "jp_addr": "02:8C4D",
    "jp": "ソウトクヘノ　オクリモノヲ{BR}モッテキタカ。{NOWAIT}",
-   "en": "DO YOU HAVE A{BR}PRESENT TO GIVE TO{PAGE}THE GOVERNOR?{NOWAIT}"
+   "en": "Got a gift for{BR}the Governor?{NOWAIT}"
   },
   {
    "id": "009E",
@@ -880,7 +880,7 @@
    "us": "I'LL TAKE THE {BR}SHORTCAKE NOW.{END}",
    "jp_addr": "02:8C63",
    "jp": "デハ　ソノ　ショートケーキヲ{BR}アズカッテ　オコウ。{END}",
-   "en": "I'LL TAKE THE {BR}SHORTCAKE NOW.{END}"
+   "en": "Then I'll take that{BR}shortcake for him.{END}"
   },
   {
    "id": "00A0",
@@ -891,7 +891,7 @@
    "us": "I DON'T THINK YOU {BR}HAVE A SUITABLE{PAGE}PRESENT.{END}",
    "jp_addr": "02:8C7D",
    "jp": "オクリモノニ　ナルヨウナ　モノヲ{BR}モッテナイジャナイカ。{END}",
-   "en": "I DON'T THINK YOU {BR}HAVE A SUITABLE{PAGE}PRESENT.{END}"
+   "en": "You've got nothing{BR}fit to be a gift.{END}"
   },
   {
    "id": "00A2",
@@ -902,7 +902,7 @@
    "us": "GO BACK TO YOUR {BR}HOME NOW.{END}",
    "jp_addr": "02:8C9A",
    "jp": "サッサト　カエレ。{END}",
-   "en": "GO BACK TO YOUR {BR}HOME NOW.{END}"
+   "en": "Off with you.{END}"
   },
   {
    "id": "00A4",
@@ -914,7 +914,7 @@
    "jp_addr": "02:8CA4",
    "jp": "ワタシガ　コノホシノ　ソウトクダ。{BR}ラシークヲ　タオシニ　イクソウダナ。{PAGE}",
    "falls_through": true,
-   "en": "I'M THE GOVERNOR.{BR}I'M TOLD THAT YOU {PAGE}INTEND TO TRY TO{BR}KILL LASSIC.{PAGE}"
+   "en": "I am the Governor{BR}of this planet. I{PAGE}hear you mean to{BR}defeat LaShiec.{PAGE}"
   },
   {
    "id": "00A6",
@@ -926,7 +926,7 @@
    "jp_addr": "02:8CC9",
    "jp": "ソノ　ユウキヲ　ホメテヤル。マハルノ{BR}ドウクツニ　ルツ　トイウ　エスパーガ{PAGE}",
    "falls_through": true,
-   "en": "I ADMIRE YOUR {BR}COURAGE. IN THE {PAGE}MAHARU CAVE LIVES{BR}AN ESPAR NAMED {PAGE}"
+   "en": "I commend your{BR}courage.{PAGE}An esper named{BR}Lutz lives in the{PAGE}"
   },
   {
    "id": "00A8",
@@ -938,7 +938,7 @@
    "jp_addr": "02:8CEE",
    "jp": "イル。　ワタシノ　テガミヲ　モッテ{BR}アイニ　ユクガヨイ。{PAGE}",
    "falls_through": true,
-   "en": "NOAH. I WILL GIVE{BR}YOU A LETTER OF{PAGE}INTRODUCTION TO{BR}PRESENT TO HER.{PAGE}"
+   "en": "Maharu cave. Take{BR}my letter to him.{PAGE}"
   },
   {
    "id": "00AA",
@@ -949,7 +949,7 @@
    "us": "I HAVE FAITH THAT{BR}YOU WILL KILL{PAGE}LASSIC AND RETURN{BR}HERE EVENTUALLY.{END}",
    "jp_addr": "02:8D0B",
    "jp": "ラシークヲ　タオシテ　キット　ココヘ{BR}モドッテクルコトヲ　シンジテイルゾ。{END}",
-   "en": "I HAVE FAITH THAT{BR}YOU WILL KILL{PAGE}LASSIC AND RETURN{BR}HERE EVENTUALLY.{END}"
+   "en": "Defeat LaShiec,{BR}then return to me.{END}"
   },
   {
    "id": "00AC",
@@ -960,7 +960,7 @@
    "us": "IF THE GOVERNOR{BR}ORDERS NOAH TO DO{PAGE}SOMETHING,HE WILL{BR}LIKELY OBEY.{END}",
    "jp_addr": "02:8D30",
    "jp": "ルツハ　パセオノ　ソウトクノ{BR}メイレイナラバ　キクカモシレナイ。{END}",
-   "en": "IF THE GOVERNOR{BR}ORDERS NOAH TO DO{PAGE}SOMETHING,HE WILL{BR}LIKELY OBEY.{END}"
+   "en": "Lutz may well{BR}obey an order{PAGE}from the Governor{BR}of Paseo.{END}"
   },
   {
    "id": "00AE",
@@ -972,7 +972,7 @@
    "jp_addr": "02:8D51",
    "jp": "アナタガタハ　ダレデスカ。　ワタシハ{BR}イマ　シュギョウチュウデス。{PAGE}",
    "falls_through": true,
-   "en": "WHO ARE YOU? I'M{BR}BUSY WITH MY{PAGE}"
+   "en": "Who are you? I'm{BR}in training now.{PAGE}"
   },
   {
    "id": "00B0",
@@ -983,7 +983,7 @@
    "us": "TRAINING NOW! DO{BR}NOT BE A NUISANCE!{END}",
    "jp_addr": "02:8D72",
    "jp": "ジャマヲ　シナイデ　クダサイ。{END}",
-   "en": "TRAINING NOW! DO{BR}NOT BE A NUISANCE!{END}"
+   "en": "Please don't{BR}disturb me.{END}"
   },
   {
    "id": "00B2",
@@ -1686,7 +1686,7 @@
    "us": "THIS TOWN IS{BR}CALLED UZO.{END}",
    "jp_addr": "02:9558",
    "jp": "ココハ　モタビアセイノ　ウーゾ{BR}トイウ　ムラデス。{END}",
-   "en": "THIS TOWN IS{BR}CALLED UZO.{END}"
+   "en": "This is Uzo, a{BR}village on Motavia.{END}"
   },
   {
    "id": "0130",
@@ -1697,7 +1697,7 @@
    "us": "IF YOU USE A{BR}VEHICLE CALLED THE{PAGE}LAND ROVER, THE {BR}ANT LION WILL NOT{PAGE}BE ABLE TO HARM{BR}YOU.{END}",
    "jp_addr": "02:9572",
    "jp": "アリジゴクハ　ランドマスター　トイウ{BR}ノリモノヲ　ツカエバ　トオレマスヨ。{END}",
-   "en": "IF YOU USE A{BR}VEHICLE CALLED THE{PAGE}LAND ROVER, THE {BR}ANT LION WILL NOT{PAGE}BE ABLE TO HARM{BR}YOU.{END}"
+   "en": "You can get past{BR}the antlions with a{PAGE}vehicle called a{BR}Land Master.{END}"
   },
   {
    "id": "0132",
@@ -1708,7 +1708,7 @@
    "us": "THERE IS A TOWN{BR}CALLED CASBA TO{PAGE}THE SOUTH OF HERE.{END}",
    "jp_addr": "02:9597",
    "jp": "ウーゾノ　ミナミニ　カスバ　トイウ{BR}ムラガ　アリマス。{END}",
-   "en": "THERE IS A TOWN{BR}CALLED CASBA TO{PAGE}THE SOUTH OF HERE.{END}"
+   "en": "Casba village is{BR}south of Uzo.{END}"
   },
   {
    "id": "0134",
@@ -1719,7 +1719,7 @@
    "us": "THERE ARE DRAGONS{BR}LIVING IN THE {PAGE}CASBA CAVE. THESE{BR}DRAGONS HAVE GEMS{PAGE}IN THEIR HEADS!{END}",
    "jp_addr": "02:95B3",
    "jp": "カスバノ　ドウクツニハ　ドラゴンガ{BR}スミツイタラシイデスヨ。{PAGE}ソノ　ドラゴンノ　アタマニハ{BR}ホウセキガ　ハイッテイルトカ。{END}",
-   "en": "THERE ARE DRAGONS{BR}LIVING IN THE {PAGE}CASBA CAVE. THESE{BR}DRAGONS HAVE GEMS{PAGE}IN THEIR HEADS!{END}"
+   "en": "They say a dragon{BR}lives in Casba's{PAGE}cave, with a gem{BR}in its head.{END}"
   },
   {
    "id": "0136",
@@ -1731,7 +1731,7 @@
    "jp_addr": "02:95F1",
    "jp": "フラードマント　トイウ　マントヲ{BR}シッテルカイ。　カルイケド{PAGE}",
    "falls_through": true,
-   "en": "HAVE YOU HEARD{BR}ABOUT MANTLES MADE{PAGE}OF FRAD FIBERS?{BR}"
+   "en": "Ever heard of the{BR}Frad Mantle?{PAGE}"
   },
   {
    "id": "0138",
@@ -1742,7 +1742,7 @@
    "us": "THEY ARE LIGHT,{PAGE}BUT PROVIDE GREAT {BR}PROTECTION.{END}",
    "jp_addr": "02:9610",
    "jp": "スゴイ　ボウギョリョクガ{BR}アルソウダヨ。{END}",
-   "en": "THEY ARE LIGHT,{PAGE}BUT PROVIDE GREAT {BR}PROTECTION.{END}"
+   "en": "It's light, but{BR}they say it gives{PAGE}great protection.{END}"
   },
   {
    "id": "013A",
@@ -1753,7 +1753,7 @@
    "us": "HAVE YOU HEARD{BR}ABOUT THE {PAGE}SOOTHING FLUTE?{NOWAIT}",
    "jp_addr": "02:9625",
    "jp": "スーズフルート　トイウ　フエノコトヲ{BR}シッテルカイ。{NOWAIT}",
-   "en": "HAVE YOU HEARD{BR}ABOUT THE {PAGE}SOOTHING FLUTE?{NOWAIT}"
+   "en": "Ever heard of the{BR}Soothe Flute?{NOWAIT}"
   },
   {
    "id": "013C",
@@ -1764,7 +1764,7 @@
    "us": "OH, NEVER MIND.{END}",
    "jp_addr": "02:963F",
    "jp": "ソウカイ。ツマンネエノ。{END}",
-   "en": "OH, NEVER MIND.{END}"
+   "en": "Is that so. You're{BR}no fun.{END}"
   },
   {
    "id": "013E",
@@ -1776,7 +1776,7 @@
    "jp_addr": "02:964C",
    "jp": "ナイショダケドサ　ボクガ　パルマセイ{BR}ヘ　イッタトキニ　ガシコノムラノ{PAGE}",
    "falls_through": true,
-   "en": "IT'S A SECRET, BUT{BR}I BURIED ONE AT{PAGE}THE OUTSKIRTS OF{BR}THE TOWN OF GOTHIC{PAGE}"
+   "en": "It's a secret, but{BR}when I went to{PAGE}Palma, I buried{BR}one at the edge{PAGE}"
   },
   {
    "id": "0140",
@@ -1787,7 +1787,7 @@
    "us": "ON PALMA. DON'T{BR}TELL ANYONE.{END}",
    "jp_addr": "02:966F",
    "jp": "ハズレニ　ウメテキタンダ。ダレニモ{BR}イッチャダメダヨ。{END}",
-   "en": "ON PALMA. DON'T{BR}TELL ANYONE.{END}"
+   "en": "of Gashiko village.{BR}Don't tell anyone!{END}"
   },
   {
    "id": "0142",
@@ -1798,7 +1798,7 @@
    "us": "I DON'T KNOW WHO{BR}TOLD YOU THAT.{PAGE}YOU HAD BEST{BR}FORGET IT.{END}",
    "jp_addr": "02:968B",
    "jp": "ダレニ　キイタカ　シラナイガ{BR}アキラメタホウガ　ミノタメダ。{END}",
-   "en": "I DON'T KNOW WHO{BR}TOLD YOU THAT.{PAGE}YOU HAD BEST{BR}FORGET IT.{END}"
+   "en": "I don't know who{BR}told you, but you'd{PAGE}do best to give up.{END}"
   },
   {
    "id": "0144",
@@ -1809,7 +1809,7 @@
    "us": "I TELL YOU NO ONE{BR}CAN DO.GO ON BACK{PAGE}TO WHEREVER YOU {BR}CAME FROM.{END}",
    "jp_addr": "02:96AA",
    "jp": "ダメナモノハ　ダメダ。{BR}サー　カエッタ。カエッタ。{END}",
-   "en": "I TELL YOU NO ONE{BR}CAN DO.GO ON BACK{PAGE}TO WHEREVER YOU {BR}CAME FROM.{END}"
+   "en": "No means no. Go{BR}on, off you go.{END}"
   },
   {
    "id": "0146",
@@ -1820,7 +1820,7 @@
    "us": "ALL RIGHT, ALL{BR}RIGHT. I GIVE UP.{PAGE}BUT DON'T TELL{BR}ANYONE WHERE YOU {PAGE}GOT THIS, O.K.?{END}",
    "jp_addr": "02:96C4",
    "jp": "シツコイヤツダ。ソンナニ　イウノナラ{BR}シカタガナイ。ダレニモ　イウナヨ。{END}",
-   "en": "ALL RIGHT, ALL{BR}RIGHT. I GIVE UP.{PAGE}BUT DON'T TELL{BR}ANYONE WHERE YOU {PAGE}GOT THIS, O.K.?{END}"
+   "en": "You don't give up,{BR}do you? Fine, then.{PAGE}But don't tell{BR}anyone.{END}"
   },
   {
    "id": "0148",
@@ -1998,7 +1998,7 @@
    "us": "THIS TOWN IS{BR}CALLED CASBA.{END}",
    "jp_addr": "02:984C",
    "jp": "ココハ　カスバ　トイウ　ムラデス。{END}",
-   "en": "THIS TOWN IS{BR}CALLED CASBA.{END}"
+   "en": "This is the village{BR}of Casba.{END}"
   },
   {
    "id": "0168",
@@ -2009,7 +2009,7 @@
    "us": "FIERCE DRAGONS{BR}LIVE IN THE CAVE{PAGE}NEAR HERE,AND I'M{BR}SCARED OF THEM.{END}",
    "jp_addr": "02:985E",
    "jp": "コノムラノ　ドウクツニ　ドラゴンガ{BR}スミツイタノ。ワタシ　コワーイ。{END}",
-   "en": "FIERCE DRAGONS{BR}LIVE IN THE CAVE{PAGE}NEAR HERE,AND I'M{BR}SCARED OF THEM.{END}"
+   "en": "A dragon has{BR}moved into this{PAGE}village's cave. I'm{BR}scared!{END}"
   },
   {
    "id": "016A",
@@ -2020,7 +2020,7 @@
    "us": "DON'T BELIEVE YOUR{BR}OWN EYES IN THE {PAGE}DEPTH OF THE {BR}DUNGEONS.{END}",
    "jp_addr": "02:9881",
    "jp": "ダンジョンノ　ナカデハ　オノレノ{BR}メヲ　シンジルデナイゾ。{END}",
-   "en": "DON'T BELIEVE YOUR{BR}OWN EYES IN THE {PAGE}DEPTH OF THE {BR}DUNGEONS.{END}"
+   "en": "In the depths of a{BR}dungeon, don't{PAGE}trust your own{BR}eyes.{END}"
   },
   {
    "id": "016C",
@@ -2032,7 +2032,7 @@
    "jp_addr": "02:989F",
    "jp": "マワリヲ　キリニ　カコマレタ　ムラ{BR}ニハ　デンセツノ　タテノ　イイツタエ{PAGE}",
    "falls_through": true,
-   "en": "THERE ARE LEGENDS{BR}OF A MYSTIC SHIELD{PAGE}IN A VILLAGE{BR}SURROUNDED IN MIST{PAGE}"
+   "en": "A village wrapped{BR}in mist has a{PAGE}legend about a{BR}shield.{PAGE}"
   },
   {
    "id": "016E",
@@ -2043,7 +2043,7 @@
    "us": "IT IS THE SHIELD{BR}PERSEUS USED IN{PAGE}DAYS TO CONQUER{BR}MAGIC BEASTS.{END}",
    "jp_addr": "02:98C4",
    "jp": "ガアル。ソノムカシ　ペルセウスガ{BR}マモノタイジニ　ツカッタトイウ。{END}",
-   "en": "IT IS THE SHIELD{BR}PERSEUS USED IN{PAGE}DAYS TO CONQUER{BR}MAGIC BEASTS.{END}"
+   "en": "They say Perseus{BR}used it long ago to{PAGE}slay monsters.{END}"
   },
   {
    "id": "0170",
@@ -2054,7 +2054,7 @@
    "us": "THERE IS POISON{BR}GAS ABOVE THE SEA{PAGE}TO THE WEST. NO{BR}ONE CAN GO NEAR{PAGE}THERE WITHOUT SOME{BR}PROTECTION.{END}",
    "jp_addr": "02:98E6",
    "jp": "ボクガ　ミズウミノ　ニシヘ　イクト{PAGE}キリノヨウナ　オソロシイ　ドクガスガ{BR}ヒロガッテイタンダ。{PAGE}ナントカ　シナイト{BR}トテモ　チカヨレナイヨ。{END}",
-   "en": "THERE IS POISON{BR}GAS ABOVE THE SEA{PAGE}TO THE WEST. NO{BR}ONE CAN GO NEAR{PAGE}THERE WITHOUT SOME{BR}PROTECTION.{END}"
+   "en": "West of the lake,{BR}a terrible poison{PAGE}gas hangs like fog.{BR}You can't get near{PAGE}unless you do{BR}something about it.{END}"
   },
   {
    "id": "0172",
@@ -2733,7 +2733,7 @@
    "us": "THIS TOWN IS{BR}CALLED SOPIA.{PAGE}YOU ARE BRAVE TO{BR}PENETRATE THE GAS.{END}",
    "jp_addr": "02:9F8F",
    "jp": "コノムラハ　ソピアト　イイマス。{PAGE}ドクガスノ　ナカヲ{BR}ヨウコソ　コラレマシタ。{END}",
-   "en": "THIS TOWN IS{BR}CALLED SOPIA.{PAGE}YOU ARE BRAVE TO{BR}PENETRATE THE GAS.{END}"
+   "en": "This is Sopia.{PAGE}Welcome, you who{BR}came through the{PAGE}poison gas.{END}"
   },
   {
    "id": "01EA",
@@ -2745,7 +2745,7 @@
    "jp_addr": "02:9FB7",
    "jp": "ワタシハ　コノムラノ　ソンチョウ{BR}デス。コノ　キリノセイデ　ホカノ{PAGE}",
    "falls_through": true,
-   "en": "I'M THE HEAD OF{BR}THIS VILLAGE.{PAGE}"
+   "en": "I am the chief of{BR}this village.{PAGE}"
   },
   {
    "id": "01EC",
@@ -2757,7 +2757,7 @@
    "jp_addr": "02:9FD9",
    "jp": "マチヤ　ムラカラ　トザサレタ　ソピア{BR}ハ　トテモ　マズシイノデス。{PAGE}",
    "falls_through": true,
-   "en": "BECAUSE OF THE {BR}CLOUD OF GAS,{PAGE}WE ARE CUT OFF{BR}FROM OTHER TOWNS,{PAGE}WE ARE THEREFORE{BR}VERY POOR.{PAGE}"
+   "en": "The mist has cut{BR}Sopia off from{PAGE}every other town,{BR}and we are poor.{PAGE}"
   },
   {
    "id": "01EE",
@@ -2768,7 +2768,7 @@
    "us": "WILL YOU DONATE{BR}400 MESETAS?{NOWAIT}",
    "jp_addr": "02:9FFA",
    "jp": "ドウカ　{NUMBER}メセタ　キフシテ{BR}クダサイ。{NOWAIT}",
-   "en": "WILL YOU DONATE{BR}400 MESETAS?{NOWAIT}"
+   "en": "Would you donate{BR}400 meseta?{NOWAIT}"
   },
   {
    "id": "01F0",
@@ -2779,7 +2779,7 @@
    "us": "I SEE. WE MUST GO{BR}ON SUFFERING...{END}",
    "jp_addr": "02:A00E",
    "jp": "ソウデスカ。ザンネンデス。ウウッ。{END}",
-   "en": "I SEE. WE MUST GO{BR}ON SUFFERING...{END}"
+   "en": "I see. What a{BR}shame. (sob){END}"
   },
   {
    "id": "01F2",
@@ -2790,7 +2790,7 @@
    "us": "YOU HAVE A LITTLE{BR}MONEY,TOO, I SEE.{END}",
    "jp_addr": "02:A020",
    "jp": "オタガイニ　マズシイノデスネ。{BR}サビシイ　ヨノナカデス。{END}",
-   "en": "YOU HAVE A LITTLE{BR}MONEY,TOO, I SEE.{END}"
+   "en": "So you're poor too.{BR}What a sad world.{END}"
   },
   {
    "id": "01F4",
@@ -2802,7 +2802,7 @@
    "jp_addr": "02:A03D",
    "jp": "アリガトウ。{BR}ワレワレノ　イイツタエニヨレバ{PAGE}",
    "falls_through": true,
-   "en": "THANKS! ACCORDING{BR}TO OUR LEGENDS,{PAGE}"
+   "en": "Thank you.{BR}Our legends say{PAGE}"
   },
   {
    "id": "01F6",
@@ -2814,7 +2814,7 @@
    "jp_addr": "02:A054",
    "jp": "ペルセウスガ　メデューサヲ{BR}タオストキニ　ツカッタ　タテガ{PAGE}",
    "falls_through": true,
-   "en": "THE VERY SHIELD,{BR}PERSEUS USED TO{PAGE}OVERCOME MEDUSA,IS{BR}BURIED ON THE {PAGE}"
+   "en": "the shield Perseus{BR}used on Medusa{PAGE}"
   },
   {
    "id": "01F8",
@@ -2825,7 +2825,7 @@
    "us": "SMALL ISLAND IN{BR}THE MIDDLE OF A{PAGE}LAKE.{END}",
    "jp_addr": "02:A072",
    "jp": "ミズウミニアル　シマノ　サボテンノ{BR}シタニ　ウメテアルソウデス。{END}",
-   "en": "SMALL ISLAND IN{BR}THE MIDDLE OF A{PAGE}LAKE.{END}"
+   "en": "is buried under a{BR}cactus on the{PAGE}island in the lake.{END}"
   },
   {
    "id": "01FA",
@@ -2836,7 +2836,7 @@
    "us": "HI! I'M MIKI!{BR}DO YOU LIKE{PAGE}SEGA GAMES?{NOWAIT}",
    "jp_addr": "02:A093",
    "jp": "アタシ　ゲーマーノ　ミキチャンヨ。{BR}アナタ　マスターシステム　カッタ。{NOWAIT}",
-   "en": "HI! I'M MIKI!{BR}DO YOU LIKE{PAGE}SEGA GAMES?{NOWAIT}"
+   "en": "I'm Miki the gamer!{PAGE}Got a Master{BR}System?{NOWAIT}"
   },
   {
    "id": "01FC",
@@ -2847,7 +2847,7 @@
    "us": "OF COURSE! SEGA{BR}GAMES ARE BEST.{END}",
    "jp_addr": "02:A0B7",
    "jp": "マア　アタシトオンナジ　ゲーマーネ。{BR}ヤッパ　エフエムオンゲンハ　グーネ。{END}",
-   "en": "OF COURSE! SEGA{BR}GAMES ARE BEST.{END}"
+   "en": "Ooh, a gamer like{BR}me! FM sound is{PAGE}the best, right?{END}"
   },
   {
    "id": "01FE",
@@ -2858,7 +2858,7 @@
    "us": "I CAN'T BELIEVE{BR}IT. IF YOU DON'T{PAGE}LIKE THE GAME,....{BR}WHY HAVE YOU {PAGE}PLAYED SO FAR!?!{END}",
    "jp_addr": "02:A0DC",
    "jp": "ヤッダー　アナタ　ハヤク　カッテ{BR}ラッシャイヨー　モー　プン　プン。{END}",
-   "en": "I CAN'T BELIEVE{BR}IT. IF YOU DON'T{PAGE}LIKE THE GAME,....{BR}WHY HAVE YOU {PAGE}PLAYED SO FAR!?!{END}"
+   "en": "No way! Go buy{BR}one now! Hmph!{END}"
   },
   {
    "id": "0200",
@@ -2869,7 +2869,7 @@
    "us": "BEFORE LASSIC CAME{BR}TO POWER, EVEN OUR{PAGE}TOWN HAD PLENTY.{END}",
    "jp_addr": "02:A0FF",
    "jp": "ラシークガ　ケンリョクヲ　ニギル{BR}マエハ　コノムラモ　ユタカダッタ。{END}",
-   "en": "BEFORE LASSIC CAME{BR}TO POWER, EVEN OUR{PAGE}TOWN HAD PLENTY.{END}"
+   "en": "Before LaShiec{BR}took power, even{PAGE}this village was{BR}well off.{END}"
   },
   {
    "id": "0202",
@@ -2880,7 +2880,7 @@
    "us": "THERE IS A MONK{BR}NAMED TAJIM IN THE{PAGE}MOUNTAINS TO THE {BR}SOUTH OF THE LAKE.{END}",
    "jp_addr": "02:A122",
    "jp": "ミズウミノ　ミナミノ　ヤマノ　ナカニ{BR}タジム　トイウ　ドウシガ　イマス。{END}",
-   "en": "THERE IS A MONK{BR}NAMED TAJIM IN THE{PAGE}MOUNTAINS TO THE {BR}SOUTH OF THE LAKE.{END}"
+   "en": "In the mountains{BR}south of the lake{PAGE}lives a monk called{BR}Tajim.{END}"
   },
   {
    "id": "0204",
@@ -2891,7 +2891,7 @@
    "us": "I'VE HEARD THAT{BR}THE PALMA IS A{PAGE}BEAUTIFUL PLANET.{BR}IS THAT TRUE?{NOWAIT}",
    "jp_addr": "02:A146",
    "jp": "パルマセイハ　キレイナ　ホシダト{BR}キキマシタガ　ホントウデスカ。{NOWAIT}",
-   "en": "I'VE HEARD THAT{BR}THE PALMA IS A{PAGE}BEAUTIFUL PLANET.{BR}IS THAT TRUE?{NOWAIT}"
+   "en": "Is Palma really a{BR}lovely planet?{NOWAIT}"
   },
   {
    "id": "0206",
@@ -2902,7 +2902,7 @@
    "us": "I'D LIKE TO GO{BR}VISITING SOMEDAY.{END}",
    "jp_addr": "02:A167",
    "jp": "イッテミタイナー。{END}",
-   "en": "I'D LIKE TO GO{BR}VISITING SOMEDAY.{END}"
+   "en": "I'd love to go{BR}there.{END}"
   },
   {
    "id": "0208",
@@ -2913,7 +2913,7 @@
    "us": "NO? I'D LIKE TO GO{BR}SOMEWHERE THE AIR{PAGE}IS MORE CLEAN{BR}AND FRESH.{END}",
    "jp_addr": "02:A171",
    "jp": "ソウデスカ。ワタシハ　モット{BR}クウキノ　キレイナトコロヘイキタイ。{END}",
-   "en": "NO? I'D LIKE TO GO{BR}SOMEWHERE THE AIR{PAGE}IS MORE CLEAN{BR}AND FRESH.{END}"
+   "en": "Is that so. I want{BR}to go somewhere{PAGE}the air is cleaner.{END}"
   },
   {
    "id": "020A",
@@ -2924,7 +2924,7 @@
    "us": "THANKS!{BR}COME AGAIN!{END}",
    "jp_addr": "02:A193",
    "jp": "アリガトウ。{PAGE}マタキテネ。{END}",
-   "en": "THANKS!{BR}COME AGAIN!{END}"
+   "en": "Thank you!{PAGE}Come again!{END}"
   },
   {
    "id": "020C",
@@ -2935,7 +2935,7 @@
    "us": "TIGHTWAND!{END}",
    "jp_addr": "02:A1A1",
    "jp": "ケチ。{END}",
-   "en": "TIGHTWAND!{END}"
+   "en": "Cheapskate.{END}"
   },
   {
    "id": "020E",
@@ -2946,7 +2946,7 @@
    "us": "DON'T BE A FOOL!{END}",
    "jp_addr": "02:A1A5",
    "jp": "バカニスンデネエ。{END}",
-   "en": "DON'T BE A FOOL!{END}"
+   "en": "Don't you make a{BR}fool of me.{END}"
   },
   {
    "id": "0210",
@@ -2957,7 +2957,7 @@
    "us": "..........{END}",
    "jp_addr": "02:A1AF",
    "jp": "。。。。。。。。。{END}",
-   "en": "..........{END}"
+   "en": "...{END}"
   },
   {
    "id": "0212",
@@ -2968,7 +2968,7 @@
    "us": "THEN YOU ARE THE {BR}VERY QUEEN OF THE {PAGE}ENTIRE SYSTEM. I{BR}WILL ASSIST YOU IN{PAGE}ALL WAYS POSSIBLE.{END}",
    "jp_addr": "02:A1B9",
    "jp": "ソウカ。ソレデコソ　アルゴルオウノ{BR}ムスメダ。{PAGE}ワタシモ　テツダワセテモラウヨ。{END}",
-   "en": "THEN YOU ARE THE {BR}VERY QUEEN OF THE {PAGE}ENTIRE SYSTEM. I{BR}WILL ASSIST YOU IN{PAGE}ALL WAYS POSSIBLE.{END}"
+   "en": "I see. So you truly{BR}are the daughter{PAGE}of Algol's king.{BR}I'll help you, too.{END}"
   },
   {
    "id": "0214",
@@ -3069,7 +3069,7 @@
    "us": "IT'S FOOLISH TO{BR}TRY TO GET LASSIC!{END}",
    "jp_addr": "02:A2B5",
    "jp": "ラシークヲ　タオソウナンテ{BR}ムボウダヨ。{END}",
-   "en": "IT'S FOOLISH TO{BR}TRY TO GET LASSIC!{END}"
+   "en": "Defeat LaShiec?{BR}That's reckless.{END}"
   },
   {
    "id": "0226",
@@ -3080,7 +3080,7 @@
    "us": "LASSIC IS GONNA{BR}SACRIFICE US! AGH!{END}",
    "jp_addr": "02:A2CA",
    "jp": "ワタシタチハ　ラシークノ　イケニエニ{BR}サレテシマウノヨ。　ウッウウ。{END}",
-   "en": "LASSIC IS GONNA{BR}SACRIFICE US! AGH!{END}"
+   "en": "We're going to be{BR}made LaShiec's{PAGE}sacrifices. (sob){END}"
   },
   {
    "id": "0228",
@@ -3091,7 +3091,7 @@
    "us": "HAVE YOU FOUND THE{BR}ARMOR IN GUARON?{NOWAIT}",
    "jp_addr": "02:A2EC",
    "jp": "グアランニアル　ヨロイヲ{BR}テニイレタカイ。{NOWAIT}",
-   "en": "HAVE YOU FOUND THE{BR}ARMOR IN GUARON?{NOWAIT}"
+   "en": "Did you find the{BR}armor in Guaran?{NOWAIT}"
   },
   {
    "id": "022A",
@@ -3102,7 +3102,7 @@
    "us": "IT CAN BE FOUND AT{BR}THE FAR SIDE OF{PAGE}A PIT TRAP.{END}",
    "jp_addr": "02:A302",
    "jp": "ソレハ　オトシアナノ　ムコウガワニ{BR}アルンダヨ。{END}",
-   "en": "IT CAN BE FOUND AT{BR}THE FAR SIDE OF{PAGE}A PIT TRAP.{END}"
+   "en": "It's on the far{BR}side of a pit trap.{END}"
   },
   {
    "id": "022C",
@@ -3191,7 +3191,7 @@
    "jp_addr": "02:A3ED",
    "jp": "ココダケノ　ハナシダガ　ダモア{BR}トイウ　ウラナイシノ　モッテイル{PAGE}",
    "falls_through": true,
-   "en": "LASSIC LIVES IN{BR}FEAR OF THE {PAGE}CRYSTAL POSSESSED{BR}BY THE SOOTHSAYER{PAGE}"
+   "en": "Just between us,{BR}there's a crystal{PAGE}the fortune-teller{BR}Damoa owns,{PAGE}"
   },
   {
    "id": "023C",
@@ -3202,7 +3202,7 @@
    "us": "NAMED DAMOR. THERE{BR}IS SOMETHING{PAGE}SPECIAL ABOUT IT,{BR}WITHOUT A DOUBT.{END}",
    "jp_addr": "02:A40E",
    "jp": "クリスタルヲ　ラシークサマハ{BR}キラッテオラレル。{PAGE}ナニカ　ヒミツガ　アルニチガイナイ。{END}",
-   "en": "NAMED DAMOR. THERE{BR}IS SOMETHING{PAGE}SPECIAL ABOUT IT,{BR}WITHOUT A DOUBT.{END}"
+   "en": "and Lord LaShiec{BR}hates it.{PAGE}There must be{BR}some secret to it.{END}"
   },
   {
    "id": "023E",
@@ -3214,7 +3214,7 @@
    "jp_addr": "02:A43A",
    "jp": "コノ　ヒハ　ヒャクネンニ　イチド{BR}ノ　ニッショクノ　トキニ　ツケタ{PAGE}",
    "falls_through": true,
-   "en": "THIS FIRE WAS LIT{BR}DURING THE ECLIPSE{PAGE}WHICH OCCURS ONCE{BR}EVERY 100 YEARS.{PAGE}"
+   "en": "This fire was lit{BR}in the eclipse that{PAGE}comes once every{BR}hundred years.{PAGE}"
   },
   {
    "id": "0240",
@@ -3226,7 +3226,7 @@
    "jp_addr": "02:A45C",
    "jp": "モノダ。　ドラゴンノ　モッテイル{BR}ホウセキヲ　クレルナラバ　スコシ{PAGE}",
    "falls_through": true,
-   "en": "IF YOU GIVE ME A{BR}GEM FROM A DRAGON,{PAGE}I'LL GIVE YOU SOME{BR}OF THIS FIRE.{PAGE}"
+   "en": "If you give me the{BR}gem a dragon has,{PAGE}"
   },
   {
    "id": "0242",
@@ -3237,7 +3237,7 @@
    "us": "HOW ABOUT IT?{NOWAIT}",
    "jp_addr": "02:A47E",
    "jp": "ワケテ　アゲテモ　ヨイガ　ドウダ。{NOWAIT}",
-   "en": "HOW ABOUT IT?{NOWAIT}"
+   "en": "I'll share some.{BR}What do you say?{NOWAIT}"
   },
   {
    "id": "0244",
@@ -3248,7 +3248,7 @@
    "us": "HERE, TAKE THIS {BR}ECLIPSE TORCH.{END}",
    "jp_addr": "02:A490",
    "jp": "デハ　イクリプストーチヲ{BR}ウケトルガイイ。{END}",
-   "en": "HERE, TAKE THIS {BR}ECLIPSE TORCH.{END}"
+   "en": "Then take this{BR}Eclipse Torch.{END}"
   },
   {
    "id": "0246",
@@ -3259,7 +3259,7 @@
    "us": "NO? THEN WHAT DID{BR}YOU COME FOR?{END}",
    "jp_addr": "02:A4A6",
    "jp": "イラナイノカ。ソレジャア　オメエハ{BR}ナニシニ　キタンダ。{END}",
-   "en": "NO? THEN WHAT DID{BR}YOU COME FOR?{END}"
+   "en": "You don't want it?{BR}Then what'd you{PAGE}come here for?{END}"
   },
   {
    "id": "0248",
@@ -3270,7 +3270,7 @@
    "us": "YOU HAVE NO GEM!{BR}DO I LOOK LIKE A{PAGE}FOOL OR SOMETHING?{END}",
    "jp_addr": "02:A4C3",
    "jp": "ホウセキヲ　モッテナイデハナイカ。{BR}ナメルナヨ。{END}",
-   "en": "YOU HAVE NO GEM!{BR}DO I LOOK LIKE A{PAGE}FOOL OR SOMETHING?{END}"
+   "en": "No gem? Don't{BR}you mock me!{END}"
   },
   {
    "id": "024A",
@@ -3281,7 +3281,7 @@
    "us": "I'M SORRY I HAVE A{BR}SHOP IN SUCH A{PAGE}PLACE. SHORTCAKE{BR}FOR 1000 MESETAS!{PAGE}WILL YOU BUY ONE?{NOWAIT}",
    "jp_addr": "02:A4DC",
    "jp": "コンナトコロニ　オミセガ　アッテ{BR}ゴメンナサイ。{PAGE}ショートケーキヲ　{NUMBER}メセタデ{BR}イカガデスカ。{NOWAIT}",
-   "en": "I'M SORRY I HAVE A{BR}SHOP IN SUCH A{PAGE}PLACE. SHORTCAKE{BR}FOR 1000 MESETAS!{PAGE}WILL YOU BUY ONE?{NOWAIT}"
+   "en": "Sorry my shop's in{BR}such a place.{PAGE}One shortcake is{BR}1000 meseta. Buy?{NOWAIT}"
   },
   {
    "id": "024C",
@@ -3292,7 +3292,7 @@
    "us": "AH,MY YOUNG PUPIL,{BR}NOAH. YOU ARE {PAGE}PREPARING TO FACE{BR}LASSIC?{END}",
    "jp_addr": "02:A50C",
    "jp": "オオ　ワガデシ　ルツヨ。　ツイニ{BR}ラシークヲ　タオス　タビニデルカ。{END}",
-   "en": "AH,MY YOUNG PUPIL,{BR}NOAH. YOU ARE {PAGE}PREPARING TO FACE{BR}LASSIC?{END}"
+   "en": "Ah, Lutz, my pupil.{BR}At last you set{PAGE}out to defeat{BR}LaShiec?{END}"
   },
   {
    "id": "024E",
@@ -3303,7 +3303,7 @@
    "us": "COME,YOU MUST PASS{BR}YOUR FINAL TEST---{PAGE}WE WILL DUEL!{END}",
    "jp_addr": "02:A52F",
    "jp": "デハ　ソツギョウノ　シケンヲ　シテ{BR}ヤロウ。ワシト　タタカウガヨイ。{END}",
-   "en": "COME,YOU MUST PASS{BR}YOUR FINAL TEST---{PAGE}WE WILL DUEL!{END}"
+   "en": "Then I shall give{BR}you your final{PAGE}test. Fight me.{END}"
   },
   {
    "id": "0250",
@@ -3315,7 +3315,7 @@
    "jp_addr": "02:A552",
    "jp": "ツヨクナッタノウ。ルツヨ。{PAGE}ソレダケノチカラガ　アレバヨイ。{PAGE}",
    "falls_through": true,
-   "en": "YOU HAVE BECOME{BR}MUCH STRONGER...{PAGE}"
+   "en": "You've grown{BR}strong, Lutz.{PAGE}With that much{BR}power, you will do.{PAGE}"
   },
   {
    "id": "0252",
@@ -3327,7 +3327,7 @@
    "jp_addr": "02:A571",
    "jp": "ワシカラノ　オクリモノトシテ{BR}フラードマントヲ　ツカワソウ。{PAGE}",
    "falls_through": true,
-   "en": "YOU ARE WELL{BR}PREPARED.{PAGE}"
+   "en": "As a gift from me,{BR}I give you this{PAGE}Frad Mantle.{PAGE}"
   },
   {
    "id": "0254",
@@ -3338,7 +3338,7 @@
    "us": "I'LL GIVE YOU A{BR}FRAD MANTLE AS A{PAGE}GIFT. IT PROTECTS{BR}YOU FROM DANGER!{END}",
    "jp_addr": "02:A590",
    "jp": "オマエノ　カラダヲ　マモッテクレル{BR}ジャロウ。　デハ　ユクガヨイ。{END}",
-   "en": "I'LL GIVE YOU A{BR}FRAD MANTLE AS A{PAGE}GIFT. IT PROTECTS{BR}YOU FROM DANGER!{END}"
+   "en": "It will protect you.{BR}Now go.{END}"
   },
   {
    "id": "0256",
@@ -3349,7 +3349,7 @@
    "us": "YOU ARE NOT YET{BR}READY! YOU MUST GO{PAGE}STILL UNDERGO MORE{BR}TRAINING.{END}",
    "jp_addr": "02:A5B2",
    "jp": "マダマダ　シュギョウガ　タリンノウ。{BR}デナオシテクルガヨイ。{END}",
-   "en": "YOU ARE NOT YET{BR}READY! YOU MUST GO{PAGE}STILL UNDERGO MORE{BR}TRAINING.{END}"
+   "en": "Your training is{BR}far from done.{PAGE}Come back another{BR}time.{END}"
   },
   {
    "id": "0258",
@@ -3360,7 +3360,7 @@
    "us": "I HAVE NOTHING TO{BR}TEACH YOU MORE.{END}",
    "jp_addr": "02:A5D0",
    "jp": "モウ　ワシガ　オシエルコトハ　ナイ。{END}",
-   "en": "I HAVE NOTHING TO{BR}TEACH YOU MORE.{END}"
+   "en": "I have nothing{BR}more to teach you.{END}"
   },
   {
    "id": "025A",
@@ -3372,7 +3372,7 @@
    "jp_addr": "02:A5E3",
    "jp": "オマエサンガタハ　ドナタカナ。{BR}マハルノ　ドウクツニ　ワシノ　デシノ{PAGE}",
    "falls_through": true,
-   "en": "AND WHO ARE YOU?{BR}FIND MY PUPIL NOAH{PAGE}IN THE MAHARU{BR}"
+   "en": "And who might you{BR}be? My pupil Lutz{PAGE}"
   },
   {
    "id": "025C",
@@ -3383,7 +3383,7 @@
    "us": "CAVE.DO YOU KNOW{PAGE}HIM?{NOWAIT}",
    "jp_addr": "02:A606",
    "jp": "ルツガ　オル。シッテオルカ。{NOWAIT}",
-   "en": "CAVE.DO YOU KNOW{PAGE}HIM?{NOWAIT}"
+   "en": "lives in Maharu{BR}cave. Know him?{NOWAIT}"
   },
   {
    "id": "025E",
@@ -3394,7 +3394,7 @@
    "us": "I'VE SOMETHING{BR}I MUST TELL HIM.{PAGE}BRING HIM HERE.{END}",
    "jp_addr": "02:A615",
    "jp": "ルツニ　ツタエネバ　ナラヌコトガ{BR}アル。　ツレテキテハ　クレマイカ。{END}",
-   "en": "I'VE SOMETHING{BR}I MUST TELL HIM.{PAGE}BRING HIM HERE.{END}"
+   "en": "There is something{BR}I must tell Lutz.{PAGE}Won't you bring him{BR}to me?{END}"
   },
   {
    "id": "0260",
@@ -3405,7 +3405,7 @@
    "us": "IN THAT CASE,{BR}THERE IS NO POINT{PAGE}IN FURTHER{BR}CONVERSATION.{END}",
    "jp_addr": "02:A638",
    "jp": "ソウカ。　ナラバ　イッテモ{BR}シカタノナイコトジャノウ。{END}",
-   "en": "IN THAT CASE,{BR}THERE IS NO POINT{PAGE}IN FURTHER{BR}CONVERSATION.{END}"
+   "en": "I see. Then it can't{BR}be helped.{END}"
   },
   {
    "id": "0262",
@@ -3597,7 +3597,7 @@
    "us": "YOU CANNOT COME{BR}THROUGH HERE.{PAGE}THIS IS MY AREA.{END}",
    "jp_addr": "02:A850",
    "jp": "ココカラ　サキハ　ボクノ{BR}ナワバリダカラ　トオセナイヨーダ。{END}",
-   "en": "YOU CANNOT COME{BR}THROUGH HERE.{PAGE}THIS IS MY AREA.{END}"
+   "en": "This is my turf.{BR}No one gets past!{END}"
   },
   {
    "id": "0284",
@@ -3608,7 +3608,7 @@
    "us": "WELL,IF DR.LUVENO{BR}SENT YOU ,I GUESS{PAGE}I HAVE TO LET YOU {BR}THROUGH.{END}",
    "jp_addr": "02:A86F",
    "jp": "ルベノハカセガ　イウノダッタラ{BR}ショウガナイ。　トオッテモイイヨ。{END}",
-   "en": "WELL,IF DR.LUVENO{BR}SENT YOU ,I GUESS{PAGE}I HAVE TO LET YOU {BR}THROUGH.{END}"
+   "en": "If Dr. Luveno says{BR}so, I guess it{PAGE}can't be helped. Go{BR}on through.{END}"
   },
   {
    "id": "0286",
@@ -3619,7 +3619,7 @@
    "us": "THEY SAY THAT{BR}THERE ARE MOTAVIAN{PAGE}LIVING ON MOTAVIA{BR}AND DEZORIANN ON{PAGE}DEZORIS. I'D SURE{BR}LIKE A CHANCE TO{PAGE}TALK TO SOMEONE.{END}",
    "jp_addr": "02:A891",
    "jp": "モタビアセイニハ　モタビアン{BR}デゾリスセイニハ　デゾリアン　トイウ{PAGE}セイジンガ　スンデイルソウダヨ。{BR}イチド　アッテ　ハナシテミタイナ。{END}",
-   "en": "THEY SAY THAT{BR}THERE ARE MOTAVIAN{PAGE}LIVING ON MOTAVIA{BR}AND DEZORIANN ON{PAGE}DEZORIS. I'D SURE{BR}LIKE A CHANCE TO{PAGE}TALK TO SOMEONE.{END}"
+   "en": "They say people{BR}live on other{PAGE}planets: Motavians{BR}on Motavia and{PAGE}Dezolians on{BR}Dezolis.{PAGE}I'd love to meet{BR}one and talk.{END}"
   },
   {
    "id": "0288",
@@ -3630,7 +3630,7 @@
    "us": "SOME INTELLIGENT{BR}MONSTERS HAVE {PAGE}THEIR OWN{BR}LANGUAGE.{END}",
    "jp_addr": "02:A8D6",
    "jp": "カシコイ　モンスターニハ{BR}モンスターコトバガ　アルソウダ。{END}",
-   "en": "SOME INTELLIGENT{BR}MONSTERS HAVE {PAGE}THEIR OWN{BR}LANGUAGE.{END}"
+   "en": "They say clever{BR}monsters have a{PAGE}monster language.{END}"
   },
   {
    "id": "028A",
@@ -3796,7 +3796,7 @@
    "us": "IT HAS SOMETHING{BR}STRANGE.{PAGE}WHERE IS THE {BR}GOVERNOR,I WONDER?{END}",
    "jp_addr": "02:AA8B",
    "jp": "オヤ。ヨウスガ　ヘンダ。{PAGE}ソウトクハ　ドコヘ　イッタンダロウ。{END}",
-   "en": "IT HAS SOMETHING{BR}STRANGE.{PAGE}WHERE IS THE {BR}GOVERNOR,I WONDER?{END}"
+   "en": "Hm? Something's{BR}wrong.{PAGE}Where has the{BR}Governor gone?{END}"
   },
   {
    "id": "02A8",
@@ -3807,7 +3807,7 @@
    "us": "YOU HAVE GOTTEN{BR}YOURSELF KILLED?{PAGE}COME, LET'S TRY{BR}ONE MORE TIME.{END}",
    "jp_addr": "02:AAAB",
    "jp": "オヤ。シンデオルノカ。ナサケナイ。{BR}イキカエッテ　デナオスガイイ。{END}",
-   "en": "YOU HAVE GOTTEN{BR}YOURSELF KILLED?{PAGE}COME, LET'S TRY{BR}ONE MORE TIME.{END}"
+   "en": "Oh? Dead, are{BR}you? How pitiful.{PAGE}Come back to life{BR}and try again.{END}"
   },
   {
    "id": "02AA",
@@ -3818,7 +3818,7 @@
    "us": "LASSIC HAS DIED.{BR}ALIS ACCOMPLISHED{PAGE}HER WISH. NERO IS{BR}SATISFIED NOW IN{PAGE}HEAVEN. HURRY TO{BR}THE GOVERNOR!{END}",
    "jp_addr": "02:AACD",
    "jp": "ラシークハ　タオレタ。{PAGE}アリサノ　ネガイハ　カナエラレタ。{PAGE}テンゴクノ　ネロモ　キット{BR}ヨロコンデイルコトダロウ。{PAGE}サア　パセオノ　ソウトクノ　モトヘ{BR}イソゴウ。{END}",
-   "en": "LASSIC HAS DIED.{BR}ALIS ACCOMPLISHED{PAGE}HER WISH. NERO IS{BR}SATISFIED NOW IN{PAGE}HEAVEN. HURRY TO{BR}THE GOVERNOR!{END}"
+   "en": "LaShiec had fallen.{PAGE}Alisa's wish had{BR}been granted.{PAGE}Surely Nero was{BR}rejoicing in heaven.{PAGE}Now to Paseo, and{BR}the Governor!{END}"
   },
   {
    "id": "LABEL_B49B",

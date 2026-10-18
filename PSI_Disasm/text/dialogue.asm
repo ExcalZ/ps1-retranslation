@@ -45,1051 +45,909 @@ DialogueBlock:
 .dw Dialogue_Index_02A2, Dialogue_Index_02A4, Dialogue_Index_02A6, Dialogue_Index_02A8, Dialogue_Index_02AA
 
 Dialogue_Index_0002:
-.db $D1, $72
-.db $A6, $7A
-.db $6A
-.db $71
-.db $74
-.db $9E, $F8, $70
+.db $D7, $72
+.db $B6, $7A
+.db $D2, $74
+.db $AA, "I ", $70
 .db $73
-.db $B6, Dialogue_NewLine
+.db $A9, Dialogue_NewLine
 .db $6D
-.db $B6, $83, " ", $6B
-.db $6A
-.db $6A
-.db $71
-.db ",", Dialogue_NewPage
-.db "A", $71
-.db $C7, $66
-.db $9E, "N", $A3, $93, $88, $68
-.db $9F, Dialogue_NewLine
-.db $B7, $74
+.db $A9, $80, $F8, $6A
+.db $D2, ",", Dialogue_NewPage
+.db "A", $C1, $78
+.db $66
+.db $AA, "N", $93, $87, $83, $68
+.db $8F, Dialogue_NewLine
+.db $A7, $74
 .db $75
-.db $83, " ", $73
-.db $B6, ".", Dialogue_NewPage
+.db $80, " ", $73
+.db $A9, ".", Dialogue_NewPage
 
 Dialogue_Index_0004:
-.db "B", $7A
-.db $8B, $6E
+.db "B", $FF, " ", $6E
 .db $6B
-.db $83, Dialogue_Apostrophe, $B2, " ", $6A
-.db $7B
-.db $95, Dialogue_NewLine
+.db $80, Dialogue_Apostrophe, $B4, " ", $FD, $89, Dialogue_NewLine
 .db $6D
 .db $7A
 .db $77
-.db $8B, $91, " ", $67
-.db $E1, $79
+.db $84, $8A, " ", $67
+.db $DE, $79
 .db $71
 .db $6A
 .db ",", Dialogue_Terminator65
 
 Dialogue_Index_0006:
-.db $B2, $B7, " ", $6D
-.db $95, $88, $CE, " ", $71
-.db $93, $6C
+.db $B4, $A7, " ", $6D
+.db $89, $83, $C6, " ", $71
+.db $87, $6C
 .db Dialogue_NewLine
-.db $CE, $83, " ", $71
-.db $6E
-.db $70
-.db $B0, Dialogue_NewPage
-.db "D", $93, Dialogue_Apostrophe, $8B, $74
-.db $7B
-.db $95, $69
-.db $A3, $E8, ".", Dialogue_NewLine
-.db "D", $A3, $68
-.db $C4, $88, $D8, $66
-.db $91, ".", Dialogue_Terminator65
+.db $C6, $80, " ", $C1, $70
+.db $99, Dialogue_NewPage
+.db "D", $87, Dialogue_Apostrophe, $84, $E7, $89, $69
+.db $93, $DB, ".", Dialogue_NewLine
+.db "D", $93, $68
+.db $B1, $83, $66
+.db $6C
+.db $66
+.db $8A, ".", Dialogue_Terminator65
 
 Dialogue_Index_0008:
-.db $D1, $72
+.db $D7, $72
 .db " N", $6A
 .db $70
-.db $C7, $B0, $E2, $77
-.db $C4, Dialogue_NewLine
+.db $B0, $99, $CE, $77
+.db $B1, Dialogue_NewLine
 .db $7C
-.db $B4, $8B, $F8, $6D
-.db $6A
-.db $D4, ",", Dialogue_NewPage
+.db $A2, $84, "I ", $6D
+.db $A3, $77
+.db ",", Dialogue_NewPage
 
 Dialogue_Index_000A:
-.db $9D, $88, $6D
-.db $95, $A3, "T", $7E
+.db $8C, $83, $6D
+.db $89, $93, "T", $7E
 .db $77
-.db $93, " ", $C7, Dialogue_NewLine
-.db $91, $E5, " ", $79
-.db $B6, $73
-.db " ", $99, Dialogue_NewPage
+.db $87, " ", $B0, Dialogue_NewLine
+.db $8A, $C3, $D6, $A9, $73
+.db $E8, $BA, $71
+.db $DA, Dialogue_NewPage
 .db "S", $68
 .db $6E
-.db $93, ".", Dialogue_NewPage
+.db $87, ".", Dialogue_NewPage
 
 Dialogue_Index_000C:
 .db "O", $6D
-.db $9B, $9F, $A7, "N", $95, $A3, $71
+.db $98, $8F, $97, "N", $89, $93, $71
 .db $6A
 .db $6B
 .db $79
 .db Dialogue_NewLine
-.db $AA, $75
+.db $9C, $75
 .db $74
-.db $8B, $7C
-.db $E8, $6D
-.db " ", $E4, ",", Dialogue_NewPage
-.db $AA, "L", $F0, $93, $6E
-.db $AA, "P", $74
+.db $84, $7C
+.db $DB, $6D
+.db $C7, $6A
+.db ",", Dialogue_NewPage
+.db $9C, "L", $C9, $87, $6E
+.db $9C, "P", $74
 .db $79
 .db ".", Dialogue_NewPage
 
 Dialogue_Index_000E:
-.db "I", $8B, $78
+.db "I", $84, $78
 .db $6D
-.db $A0, $71
-.db $A7, $68
-.db $C4, $88, $91, Dialogue_NewLine
-.db $B4, $73
+.db $94, $71
+.db $97, $68
+.db $B1, $83, $8A, Dialogue_NewLine
+.db $A2, $73
 .db $69
 .db $7E
-.db $9E, "T", $66
-.db $70
-.db $88, $E8, ".", Dialogue_Terminator65
+.db $AA, "T", $E1, $83, $DB, ".", Dialogue_Terminator65
 
 Dialogue_Index_0010:
-.db "S", $A5, $77
-.db $BB, $F8, $68
-.db $9F, Dialogue_Apostrophe, $8B, $6D
-.db $6A
-.db $71
-.db $75
+.db "S", $95, $77
+.db $AD, "I", $E8, $8F, Dialogue_Apostrophe, $84, $6D
+.db $D2, $75
 .db Dialogue_NewLine
 .db $7E
-.db $A0, " ", $72
-.db $A5, $B0, Dialogue_NewPage
+.db $94, $C7, $95, $99, Dialogue_NewPage
 .db "S", $79
-.db $66
-.db $BB, $78
-.db $66
+.db $EB, $E4, $66
 .db $6B
-.db $B0, Dialogue_Terminator65
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_0012:
 .db "C", $66
 .db $72
-.db $91, $6A
-.db $6A
-.db $79
-.db Dialogue_Apostrophe, $78
+.db $8A, $6A
+.db $D3, Dialogue_Apostrophe, $78
 .db Dialogue_NewLine
-.db $B2, $78
+.db $B4, $78
 .db $6E
 .db $69
-.db $AC, $79
+.db $A0, $79
 .db $6E
-.db $C8, $E5, $B2, $AA, $C7, Dialogue_NewPage
-.db $7A
-.db $73
-.db $69
-.db $95, " ", $72
-.db $D4, $79
+.db $BA, $C3, $B4, $9C, $B0, Dialogue_NewPage
+.db $ED, $69
+.db $89, $C7, $D9, $79
 .db $6E
-.db $C8, " ", $71
+.db $BA, " ", $71
 .db $66
 .db $7C
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0014:
-.db "T", $A3, $74
+.db "T", $93, $74
 .db $75
-.db $AC, $E5, " ", $71
+.db $A0, $C3, " ", $71
 .db $74
 .db $68
 .db $70
-.db $6A
+.db $DA, Dialogue_NewLine
 .db $69
-.db Dialogue_NewLine
-.db $69
-.db $F3, $77
-.db $9B, $7E
-.db $A0, " ", $73
+.db $DC, $77
+.db $98, $7E
+.db $94, " ", $73
 .db $6A
+.db $DA, Dialogue_NewPage
+.db $9C, "D", $ED, $6C
 .db $6A
-.db $69
-.db Dialogue_NewPage
-.db $AA, "D", $7A
-.db $73
-.db $6C
-.db $6A
-.db $93, " K", $6A
+.db $87, " K", $6A
 .db $7E
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0016:
-.db "S", $C4, $88, $69
-.db $7A
-.db $73
-.db $6C
+.db "S", $B1, $83, $69
+.db $ED, $6C
 .db $6A
-.db $93, $78
+.db $87, $78
 .db Dialogue_NewLine
 .db $68
-.db $9F, Dialogue_Apostrophe, $8B, $67
-.db $88, $68
+.db $8F, Dialogue_Apostrophe, $84, $67
+.db $83, $68
 .db $77
 .db $74
 .db $78
-.db $C2, $69
+.db $B5, $69
 .db Dialogue_NewPage
 .db $7C
-.db $E8, $6D
-.db $A0, $8B, $AA, $71
-.db $6E
-.db $6C
-.db $6D
-.db $79
+.db $DB, $6D
+.db $94, $84, $9C, $C1, $E3, $79
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0018:
-.db "T", $A3, $9D, $88, $7C
-.db $F1, $8B, $C9, Dialogue_NewLine
+.db "T", $93, $8C, $83, $7C
+.db $C2, $84, $EC, Dialogue_NewLine
 .db "C", $66
 .db $72
-.db $91, $6A
-.db $6A
-.db $8B, $C7, $85, Dialogue_NewPage
-.db $CA, $75
-.db $A5, $79
+.db $8A, $6A
+.db $D3, " ", $B0, $81, Dialogue_NewPage
+.db $78
+.db $75
+.db $C9, $6A
+.db $75
+.db $95, $79
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_001A:
-.db $97, $83, " ", $68
-.db $9F, Dialogue_NewLine
-.db $B7, $77
+.db $88, $80, $E8, $8F, Dialogue_NewLine
+.db $A7, $77
 .db $6E
 .db $70
-.db $88, $C8, $71
+.db $83, $BA, $71
 .db " ", $70
-.db $91, $69
+.db $8A, $69
 .db $78
 .db Dialogue_NewPage
-.db $C9, " ", $69
-.db $6A
-.db $C8, $8F, $91, $85, Dialogue_NewLine
+.db $A4, $69
+.db $A3, $71
+.db $86, $8A, $81, Dialogue_NewLine
 .db $75
-.db $A5, $8B, $79
-.db $B6, $73
+.db $95, $84, $79
+.db $A9, $73
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_001C:
-.db "F", $A5, $83, $77
-.db " ", $B6, $73
+.db "F", $95, $80, $77
+.db " ", $A9, $73
 .db Dialogue_NewLine
 .db $78
-.db $66
-.db $70
-.db $6A
-.db $9B, $69
-.db $93, Dialogue_Apostrophe, $8B, $71
-.db $6A
-.db $66
-.db $7B
+.db $E1, $6A
+.db $98, $69
+.db $87, Dialogue_Apostrophe, $84, $71
+.db $A3, $7B
 .db $6A
 .db Dialogue_NewPage
-.db $9D, $88, $B2, $78
+.db $8C, $83, $B4, $78
 .db $6E
 .db $69
-.db $AC, $79
+.db $A0, $79
 .db $6E
-.db $C8, Dialogue_NewLine
-.db $D4, $6A
-.db $66
-.db ".", Dialogue_Terminator65
+.db $BA, Dialogue_NewLine
+.db $D9, $A3, ".", Dialogue_Terminator65
 
 Dialogue_Index_001E:
 .db "I", $6B
-.db $83, " ", $69
-.db $93, Dialogue_Apostrophe, $8B, $7C
-.db $9F, $79
+.db $80, " ", $69
+.db $87, Dialogue_Apostrophe, $84, $7C
+.db $8F, $79
 .db Dialogue_NewLine
 .db $79
-.db $A3, $69
+.db $93, $69
 .db $6E
 .db $6A
-.db $9B, $7E
-.db $A0, Dialogue_Apostrophe, $B5, Dialogue_NewPage
-.db $B7, $66
-.db $BB, $77
+.db $98, $7E
+.db $94, Dialogue_Apostrophe, $71
+.db $71
+.db Dialogue_NewPage
+.db $A7, $EB, " ", $77
 .db $6E
-.db $6C
-.db $6D
-.db $8B, $6D
-.db $95, $B0, Dialogue_Terminator65
+.db $E3, $84, $6D
+.db $89, $99, Dialogue_Terminator65
 
 Dialogue_Index_0020:
-.db $F8, $68
-.db $9F, Dialogue_Apostrophe, $8B, $71
-.db $6A
-.db $8B, $7E
-.db $A0, Dialogue_NewLine
-.db $9D, $77
-.db $A0, $6C
-.db $6D
-.db ".", Dialogue_Terminator65
+.db "I", $E8, $8F, Dialogue_Apostrophe, $84, $71
+.db $D3, $80, Dialogue_NewLine
+.db $8C, $77
+.db $94, $E3, ".", Dialogue_Terminator65
 
 Dialogue_Index_0022:
-.db "N", $A3, "R", $74
+.db "N", $93, "R", $74
 .db $66
-.db $A7, "P", $CE, $78
-.db $9B, $73
+.db $97, "P", $C6, $78
+.db $98, $73
 .db $74
 .db Dialogue_NewLine
 .db $6C
-.db $6A
-.db $79
-.db $79
-.db $91, $F2, $9D, $77
-.db $A0, $6C
+.db $D3, $79
+.db $8A, $6C
+.db $D6, $6D
+.db $77
+.db $94, $E3, Dialogue_NewPage
 .db $6D
-.db Dialogue_NewPage
-.db $6D
-.db $95, $B0, Dialogue_Terminator65
+.db $89, $99, Dialogue_Terminator65
 
 Dialogue_Index_0024:
-.db "Y", $A0, " ", $72
-.db $66
-.db $BB, $75
-.db $CE, $78
+.db "Y", $94, $C7, $EB, " ", $75
+.db $C6, $78
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0026:
-.db $EC, $C7, " ", $C7, $F5, $D4, $74
-.db $71
-.db $E8, Dialogue_Apostrophe, $78
+.db $C8, $B0, " ", $B0, " P", $D9, $74
+.db $C1, $FE, $78
 .db Dialogue_NewLine
-.db $B2, $78
+.db $B4, $78
 .db $6E
 .db $69
-.db $AC, $79
+.db $A0, $79
 .db $6E
-.db $C8, $E5, $B2, $66
+.db $BA, $C3, $B4, $66
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0028:
-.db "B", $88, $6A
+.db "B", $83, $6A
 .db $7D
 .db $79
-.db $77
-.db $AA, $68
-.db $D4, $6A
+.db $CF, $E8, $D9, $6A
 .db $6B
 .db $7A
 .db $71
-.db " ", $91, Dialogue_NewLine
-.db $9D, $88, $6B
-.db $A5, $F1, $79
+.db " ", $8A, Dialogue_NewLine
+.db $8C, $83, $6B
+.db $95, $C2, $79
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_002A:
-.db "S", $A0, $9D, " ", $C9, $85, Dialogue_NewLine
-.db $B2, $78
+.db "S", $94, $8C, " ", $A4, $8C, $6A
+.db Dialogue_NewLine
+.db $B4, $78
 .db $6E
 .db $69
-.db $AC, $79
+.db $A0, $79
 .db $6E
-.db $C8, $E5, $B2, $66
+.db $BA, $C3, $B4, $66
 .db ",", Dialogue_NewPage
 
 Dialogue_Index_002C:
-.db $91, $E5, " ", $68
-.db $66
+.db $8A, $C3, $E8, $66
 .db $7B
 .db $6A
-.db $9B, $9D, $6A
-.db $BB, $78
+.db $98, $8C, $6A
+.db $AD, $78
+.db $EB, Dialogue_NewLine
+.db $9C, $72
+.db $87, $A7, $89, $E8, $BA, $71
+.db $DA, Dialogue_NewPage
+.db "M", $DA, $D4, $9C, $A2, $86, $77
+.db $B0, $A0, Dialogue_NewLine
 .db $66
-.db $7E
-.db Dialogue_NewLine
-.db $AA, $72
-.db $93, $B7, $95, " ", $99, Dialogue_NewPage
-.db "M", $6A
-.db $69
-.db $F4, $AA, $B4, $8F, $77
-.db $C7, $AC, Dialogue_NewLine
-.db $D8, $66
-.db $91, $9E, "W", $6D
+.db $6C
+.db $66
+.db $8A, $AA, "W", $6D
 .db $74
-.db $6A
-.db $7B
-.db $95, Dialogue_NewPage
-.db $C2, $F1, " ", $6D
-.db $95, " ", $C7, " ", $79
-.db $7A
+.db $FD, $89, Dialogue_NewPage
+.db $B5, $C2, " ", $6D
+.db $89, " ", $B0, $D6, $7A
 .db $77
 .db $73
-.db $6A
-.db $69
-.db Dialogue_NewLine
+.db $DA, Dialogue_NewLine
 .db $79
-.db $A3, $B7, $93, $B0, Dialogue_Terminator65
+.db $93, $A7, $87, $99, Dialogue_Terminator65
 
 Dialogue_Index_002E:
-.db "E", $CE, $8B, $C9, " ", $6D
-.db $95, $6A
-.db $9B, $9D, $6A
+.db "E", $C6, $84, $A4, $6D
+.db $89, $6A
+.db $98, $8C, $6A
 .db $7E
 .db Dialogue_NewLine
 .db $78
-.db $66
-.db $7E
-.db $9B, $C7, $E5, " ", $75
-.db $A5, $8B, $79
-.db $B6, $73
+.db $EB, $98, $B0, $C3, " ", $75
+.db $95, $84, $79
+.db $A9, $73
 .db Dialogue_NewPage
-.db $99, $A6, $68
+.db $90, $B6, $68
 .db $6E
-.db $93, ".", Dialogue_Terminator65
+.db $87, ".", Dialogue_Terminator65
 
 Dialogue_Index_0030:
 .db "F", $77
-.db $C4, $85, Dialogue_NewLine
-.db $CA, $75
-.db $A5, $8B, $7E
-.db $A0, " ", $68
-.db $9F, Dialogue_NewPage
-.db $6C
-.db $A3, $79
-.db $A3, "P", $CE, $6A
+.db $B1, $81, Dialogue_NewLine
+.db $78
+.db $75
+.db $C9, $6A
+.db $75
+.db $95, $84, $7E
+.db $94, $E8, $8F, Dialogue_NewPage
+.db $F7, $D6, $93, "P", $C6, $6A
 .db $74
-.db $9B, $93, Dialogue_NewLine
-.db "M", $DB, ".", Dialogue_Terminator65
+.db $98, $87, Dialogue_NewLine
+.db $AE, $66
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0032:
-.db $97, $85, $B2, Dialogue_Apostrophe, $78
+.db $88, $81, $B4, Dialogue_Apostrophe, $78
 .db Dialogue_NewLine
-.db $9F, " ", $7A
-.db $73
-.db $69
-.db $95, $6C
+.db $8F, " ", $ED, $69
+.db $89, $6C
 .db $77
-.db $A0, $73
+.db $94, $73
 .db $69
 .db Dialogue_NewPage
 .db $75
-.db $CE, $78
-.db $D8, $88, $79
-.db $A3, $9D, $6A
+.db $C6, $78
+.db $66
+.db $6C
+.db $83, $79
+.db $93, $8C, $6A
 .db Dialogue_NewLine
-.db "G", $CE, $B1, $70
-.db $A3, $6B
-.db $A5, $F1, $79
+.db "G", $C6, $AC, $70
+.db $93, $6B
+.db $95, $C2, $79
 .db ",", Dialogue_NewPage
 .db $7C
-.db $F1, $8B, $C9, $F5, $D4, $74
-.db $71
-.db $E8, ".", Dialogue_Terminator65
+.db $C2, $84, $A4, "P", $D9, $74
+.db $C1, $79
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0034:
 .db "T", $7E
 .db $77
-.db $93, "?", $FD, $88, $7C
-.db $AC, $8B, $C9, $6B
+.db $87, "? H", $83, $7C
+.db $A0, $84, $EC, $6B
 .db Dialogue_NewLine
 .db $79
-.db $A3, $78
+.db $93, $78
 .db $71
-.db $66
-.db $BB, "M", $6A
-.db $69
-.db $F4, $66
+.db $EB, $DD, $DA, $D4, $66
 .db ".", Dialogue_NewPage
 
 Dialogue_Index_0036:
-.db "H", $88, $B4, $A7, $AA, $79
-.db $C8, $70
-.db $91, $6C
+.db "H", $83, $A2, $97, $9C, $79
+.db $BA, $70
+.db $8A, $6C
 .db Dialogue_NewLine
-.db $9F, $6E
-.db $72
-.db $C8, " ", $7C
-.db $E8, $6D
-.db " ", $B1, $72
+.db $8F, $6E
+.db $F1, $71
+.db $F3, $DB, $6D
+.db " ", $AC, $72
 .db ".", Dialogue_NewPage
 
 Dialogue_Index_0038:
-.db "I", $8B, $B4, $A7, $AA, $E4, $69
-.db $6E
+.db "I", $84, $A2, $97, $9C, $72
+.db $DA, $6E
 .db $68
-.db $91, $6A
+.db $8A, $6A
 .db Dialogue_NewLine
 .db $67
 .db $74
 .db $79
 .db $79
 .db $71
-.db $88, $B4, $73
+.db $83, $A2, $73
+.db $F6, $73
 .db $6C
-.db $91, $6C
 .db Dialogue_NewPage
 .db $6B
 .db $77
-.db $C4, " ", $E8, $8F, $73
+.db $B1, " ", $DB, $86, $73
 .db $6A
 .db $68
 .db $70
 .db ".", Dialogue_NewLine
-.db "W", $93, $69
-.db $95, " ", $7C
-.db $B4, $79
+.db "W", $87, $69
+.db $89, $F3, $A2, $79
 .db Dialogue_NewPage
-.db $9D, $E1, Dialogue_Apostrophe, $8F, $6B
-.db $A5, ".", Dialogue_Terminator65
+.db $8C, $DE, Dialogue_Apostrophe, $86, $6B
+.db $95, ".", Dialogue_Terminator65
 
 Dialogue_Index_003A:
-.db "S", $A3, $7E
-.db $A0, Dialogue_Apostrophe, $B2, " ", $C9, $6B
-.db " ", $79
-.db $74
+.db "S", $93, $7E
+.db $94, Dialogue_Apostrophe, $B4, " ", $EC, $6B
+.db $D6, $74
 .db Dialogue_NewLine
 .db $67
-.db $6A
-.db $E1, " L", $66
-.db "S", $B1, $6A
-.db $68
-.db "?", Dialogue_NewPage
-.db "G", $F3, $A7, $71
+.db $A3, $84, $92, "?", Dialogue_NewPage
+.db "G", $DC, $97, $71
 .db $7A
 .db $68
 .db $70
 .db "!", Dialogue_Terminator65
 
 Dialogue_Index_003C:
-.db $EC, $88, $74
-.db $9D, $95, " ", $69
-.db $66
-.db $BB, "I", Dialogue_NewLine
+.db $C8, $83, $74
+.db $8C, $89, " ", $69
+.db $EB, $8E, Dialogue_NewLine
 .db $6B
-.db $A0, $73
-.db $A7, $AA, $79
-.db $C8, $70
-.db $91, $6C
+.db $94, $73
+.db $97, $9C, $79
+.db $BA, $70
+.db $8A, $6C
 .db Dialogue_NewPage
-.db $9F, $6E
-.db $72
-.db $C8, " ", $91, $CD, $6A
-.db $69
-.db $F4, $66
+.db $8F, $6E
+.db $F1, $71
+.db " ", $8A, $DD, $DA, $D4, $66
 .db Dialogue_Apostrophe, $78
 .db Dialogue_NewLine
 .db $68
 .db $66
 .db $7B
-.db $B0, Dialogue_NewPage
+.db $99, Dialogue_NewPage
 
 Dialogue_Index_003E:
-.db $F8, $78
-.db $74
+.db "I", $E4, $74
 .db $71
-.db $A7, $E8, " ", $79
-.db $A3, $66
+.db $97, $DB, $D6, $93, $66
 .db Dialogue_NewLine
-.db $E4, $77
-.db $68
-.db $B4, $73
-.db $8B, $6B
+.db $72
+.db $89, $68
+.db $A2, $73
+.db $84, $6B
 .db $77
-.db $C4, Dialogue_NewPage
-.db "P", $CE, $6A
-.db $A3, $6B
-.db $A5, $E5, " ", $75
-.db $B2, $79
+.db $B1, Dialogue_NewPage
+.db "P", $C6, $6A
+.db $93, $6B
+.db $95, $C3, " ", $75
+.db $B4, $79
 .db $79
 .db $7E
 .db Dialogue_NewLine
 .db $75
-.db $AC, $73
+.db $A0, $73
 .db $7E
-.db $9E, "H", $DA, "!", Dialogue_Terminator65
+.db $AA, "H", $DF, "!", Dialogue_Terminator65
 
 Dialogue_Index_0040:
-.db "B", $F4, $91, $F1, $8F, $C7, " ", $67
+.db "B", $D4, $8A, $C2, $86, $B0, " ", $67
 .db $66
 .db $69
 .db Dialogue_NewLine
-.db $9D, $F1, $88, $69
-.db $66
-.db $7E
-.db $78
-.db $9E, "I", $78
+.db $8C, $C2, $83, $69
+.db $EB, $78
+.db $AA, "I", $78
 .db $73
 .db Dialogue_Apostrophe, $79
 .db Dialogue_NewPage
-.db $9D, $95, $88, $9F, $BB, $72
-.db $93, $6A
+.db $8C, $89, $83, $8F, $AD, $72
+.db $87, $6A
 .db $7E
 .db Dialogue_NewLine
 .db $79
-.db $A3, $67
-.db $88, $72
-.db $66
-.db $69
+.db $93, $67
+.db $83, $F1, $69
 .db $6A
 .db Dialogue_NewPage
 .db $78
-.db $C4, $6A
+.db $B1, $6A
 .db $7C
 .db $6D
-.db $95, $6A
+.db $89, $6A
 .db "?", Dialogue_Terminator65
 
 Dialogue_Index_0042:
 .db "O", $73
-.db $85, " ", $75
-.db $AC, $91, $78
+.db $81, " ", $75
+.db $A0, $8A, $78
 .db $7A
 .db $71
 .db $66
 .db Dialogue_NewLine
 .db $78
-.db $A0, $9D, " ", $C9, $A6, $68
+.db $94, $8C, " ", $A4, "S", $68
 .db $6E
-.db $93, " ", $C7, $E5, Dialogue_NewPage
+.db $87, " ", $B0, $C3, Dialogue_NewPage
 .db $68
 .db $66
 .db $7B
-.db $88, $99, $8E, $C8, $66
+.db $83, $90, $8E, $BA, $66
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0044:
-.db $EC, $C7, " ", $C7, $85, " ", $75
-.db $A5, $79
+.db $C8, $B0, " ", $B0, $81, " ", $75
+.db $95, $79
 .db Dialogue_NewLine
 .db $79
-.db $B6, $73
-.db " ", $C9, $A6, $68
+.db $A9, $73
+.db " ", $A4, "S", $68
 .db $6E
-.db $93, $9E, "I", $79
+.db $87, $AA, "I", $79
 .db Dialogue_NewPage
-.db $93, $68
-.db $88, $9D, $77
+.db $87, $68
+.db $83, $8C, $77
 .db $6E
 .db $7B
-.db $6A
-.db $A7, $93, Dialogue_NewLine
+.db $DA, " ", $87, Dialogue_NewLine
 .db $79
-.db $77
-.db $66
-.db $69
-.db $B0, Dialogue_Terminator65
+.db $CF, $69
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_0046:
-.db "W", $E8, $6D
-.db $A0, $8B, $66
+.db "W", $DB, $6D
+.db $94, $84, $66
 .db Dialogue_NewLine
 .db $68
-.db $C4, $75
-.db $CE, $78
-.db $9B, $7E
-.db $A0, Dialogue_NewPage
+.db $B1, $75
+.db $C6, $78
+.db $98, $7E
+.db $94, Dialogue_NewPage
 .db $68
-.db $9F, Dialogue_Apostrophe, $8B, $6C
-.db $6A
-.db $8B, $9D, $77
-.db $A0, $6C
-.db $6D
-.db Dialogue_NewLine
+.db $8F, Dialogue_Apostrophe, $84, $6C
+.db $D3, $D6, $6D
+.db $77
+.db $94, $E3, Dialogue_NewLine
 .db "E", $75
 .db $6E
-.db $9B, $9D, $88, $6B
-.db $A5, $F1, $79
+.db $98, $8C, $83, $6B
+.db $95, $C2, $79
 .db Dialogue_NewPage
 .db $7C
 .db $6D
-.db $95, $88, $79
-.db $77
-.db $66
-.db $7B
-.db $6A
-.db $71
-.db $95, $78
+.db $89, $83, $79
+.db $CF, $7B
+.db $D2, $89, $78
 .db Dialogue_NewLine
 .db $6C
-.db $6A
-.db $8B, $71
+.db $D3, " ", $71
 .db $74
-.db $B7, ".", Dialogue_Terminator65
+.db $A7, ".", Dialogue_Terminator65
 
 Dialogue_Index_0048:
-.db $AD, $69
-.db $F3, $77
-.db " ", $C2, $C8, $6A
-.db $A7, $67
+.db $BD, $69
+.db $DC, $77
+.db $E4, $A3, $71
+.db $DA, " ", $67
 .db $7E
 .db Dialogue_NewLine
-.db $72
-.db $D8, $6E
-.db $68
+.db $F1, $F6, $68
 .db " ", $74
 .db $75
-.db $AC, $8F, $93, $71
+.db $A0, $86, $87, $71
 .db $7E
 .db Dialogue_NewPage
 .db $79
-.db $A3, $72
-.db $D8, $6E
-.db $68
+.db $93, $F1, $F6, $68
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_004A:
-.db "N", $A5, $9D, " ", $C9, " ", $9D, $C7, " ", $79
-.db $B6, $73
+.db "N", $95, $8C, " ", $A4, $8C, $B0, $D6, $A9, $73
 .db Dialogue_NewLine
-.db $C7, $E5, " ", $B1, $B5, " ", $99, Dialogue_NewPage
-.db "B", $66
-.db $7E
-.db $66
-.db $72
-.db $D4, $B0, $C5, $7A
-.db $79
-.db Dialogue_NewLine
+.db $B0, $C3, " ", $AC, $A6, $90, Dialogue_NewPage
+.db "B", $EB, $66
+.db $F1, $B4, $AA, "B", $FF, Dialogue_NewLine
 .db $73
-.db $93, $88, $C9, " ", $F4, " ", $68
-.db $9F, " ", $6C
-.db $74
-.db Dialogue_NewPage
+.db $87, $83, $A4, $D4, $E8, $8F, " ", $F7, Dialogue_NewPage
 .db $73
-.db $6A
-.db $D4, " ", $9D, $E1, " ", $B1, $B5, ".", Dialogue_Terminator65
+.db $A3, $77
+.db $D6, $A2, $84, $AC, $71
+.db $71
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_004C:
 .db "O", $73
-.db $85, " ", $68
-.db $74
-.db $CE, $8B, $73
-.db $A5, $9D, Dialogue_NewLine
-.db $C9, $C5, $66
-.db $7E
-.db $66
-.db $72
-.db $D4, $88, $C7, $E5, Dialogue_NewPage
+.db $81, $E8, $74
+.db $C6, $84, $73
+.db $95, $8C, Dialogue_NewLine
+.db $A4, "B", $EB, $66
+.db $F1, $B4, " ", $B0, $C3, Dialogue_NewPage
 .db $68
 .db $66
 .db $7B
-.db $88, $99, " N", $66
+.db $83, $90, " N", $66
 .db $7A
-.db $77
+.db $CF, ".", Dialogue_Terminator65
+
+Dialogue_Index_004E:
+.db $C8, $83, "G", $E7, $89, $73
+.db $95, " ", $EC, Dialogue_NewLine
+.db $AE, $9C, $72
+.db $6E
+.db $E3, $84, $79
+.db $E1, $6A
+.db Dialogue_NewPage
+.db $7E
+.db $94, $77
+.db $E4, $6E
+.db $69
+.db $99, Dialogue_Terminator65
+
+Dialogue_Index_0050:
+.db $88, $C3, Dialogue_NewLine
+.db $75
+.db $A9, $89, $6B
+.db $7A
+.db $71
+.db " ", $C2, $75
+.db $89, Dialogue_NewPage
+.db $C1, $7B
+.db $C2, " ", $87, $DD, $74
+.db $79
+.db $66
+.db $7B
+.db $6E
 .db $66
 .db ".", Dialogue_Terminator65
 
-Dialogue_Index_004E:
-.db $EC, $88, "G", $74
-.db $7B
-.db $95, $73
-.db $A5, " ", $C9, Dialogue_NewLine
-.db "M", $DB, " ", $72
-.db $6E
-.db $6C
-.db $6D
-.db $8B, $79
-.db $66
-.db $70
-.db $6A
-.db Dialogue_NewPage
-.db $7E
-.db $A0, $77
-.db " ", $78
-.db $6E
-.db $69
-.db $B0, Dialogue_Terminator65
-
-Dialogue_Index_0050:
-.db $97, $E5, Dialogue_NewLine
-.db $75
-.db $B6, $95, $6B
-.db $7A
-.db $71
-.db " ", $F1, $75
-.db $95, Dialogue_NewPage
-.db $71
-.db $6E
-.db $7B
-.db $F1, " ", $93, $CD, $DB, ".", Dialogue_Terminator65
-
 Dialogue_Index_0052:
-.db "L", $93, $F2, $D8, $74
-.db $9B, "D", $77
+.db "L", $87, $6C
+.db $C3, $F7, $98, "D", $77
 .db ".", Dialogue_NewLine
-.db $F9, $AC, $A3, $B4, $A7, $66
+.db $E9, $A0, $93, $A2, $97, $66
 .db Dialogue_NewPage
 .db $71
 .db $66
 .db $67
-.db $A5, $E1, $A5, $BB, $91, $85, Dialogue_NewLine
-.db "G", $CE, $B1, $70
-.db $A3, $6B
-.db $A5, $F1, $79
+.db $95, $DE, $95, $AD, $8A, $81, Dialogue_NewLine
+.db "G", $C6, $AC, $70
+.db $93, $6B
+.db $95, $C2, $79
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0054:
-.db "W", $6A
-.db $71
-.db $68
-.db $C4, $88, $79
-.db $A3, $9D, $6A
+.db "W", $D2, $68
+.db $B1, $83, $79
+.db $93, $8C, $6A
 .db Dialogue_NewLine
-.db $7B
-.db $6E
-.db $B5, $D8, $88, $C9, " E", $75
+.db $9B, $83, $A4, "E", $75
 .db $6E
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0056:
 .db "A", $6B
 .db $79
-.db $95, $85, $CB, $7A
-.db $73
-.db $6C
+.db $89, $81, $CC, $ED, $6C
 .db $6A
-.db $93, Dialogue_NewLine
+.db $87, Dialogue_NewLine
 .db "K", $6A
 .db $7E
-.db $9B, $D4, $88, $7E
-.db $A0, "?", Dialogue_Terminator62
+.db $98, $D9, $83, $7E
+.db $94, "?", Dialogue_Terminator62
 
 Dialogue_Index_0058:
-.db $F8, $B1, $A7, $9D, $88, "D", $7A
-.db $73
-.db $6C
+.db "I ", $AC, $97, $8C, $83, "D", $ED, $6C
 .db $6A
-.db $93, Dialogue_NewLine
+.db $87, Dialogue_NewLine
 .db "K", $6A
-.db $BB, $72
+.db $AD, $72
 .db $7E
-.db $C2, $71
+.db $B5, $71
 .db $6B
 .db ",", Dialogue_NewPage
 
 Dialogue_Index_005A:
-.db $93, $85, " ", $76
+.db $87, $81, " ", $76
 .db $7A
 .db $6E
-.db $6A
-.db $79
-.db $9B, $91, Dialogue_NewLine
-.db $9D, $88, $7C
-.db $D4, $6A
+.db $D3, $98, $8A, Dialogue_NewLine
+.db $8C, $83, $7C
+.db $D9, $6A
 .db $6D
-.db $A0, $C2, $E5, $79
+.db $94, $B5, $C3, $79
 .db Dialogue_NewPage
-.db $9D, $88, $6A
-.db $69
-.db $6C
-.db $88, $C9, Dialogue_NewLine
+.db $8C, $83, $DA, $6C
+.db $83, $EC, Dialogue_NewLine
 .db "C", $66
 .db $72
-.db $91, $6A
-.db $6A
-.db $79
-.db Dialogue_Apostrophe, $78
+.db $8A, $6A
+.db $D3, Dialogue_Apostrophe, $78
 .db Dialogue_NewPage
-.db $B2, $78
+.db $B4, $78
 .db $6E
 .db $69
-.db $AC, $79
+.db $A0, $79
 .db $6E
-.db $C8, $E5, $B2, $66
+.db $BA, $C3, $B4, $66
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_005C:
 .db "K", $73
-.db $B6, $85, " ", $7C
-.db $A5, $71
+.db $A9, $81, $F3, $95, $71
 .db $69
 .db Dialogue_Apostrophe, $78
 .db Dialogue_NewLine
-.db $B4, $77
+.db $A2, $77
 .db $69
-.db $F1, $8B, $B7, $7A
+.db $C2, $84, $A7, $7A
 .db $6B
 .db $6B
 .db "?", Dialogue_Terminator62
 
 Dialogue_Index_005E:
-.db "I", $79
-.db Dialogue_Apostrophe, $8F, "L", $F0, $93, $6E
+.db "I", $FE, $86, "L", $C9, $87, $6E
 .db $66
 .db "!", Dialogue_NewLine
-.db "W", $6A
-.db $66
-.db $75
-.db $93, $8F, $72
-.db $66
-.db $69
-.db $88, $C9, Dialogue_NewPage
-.db $E8, $E5, $B2, $85, Dialogue_NewLine
-.db $B7, $77
-.db $93, $6C
-.db $F1, $8B, $C9, $E5, $B5, ".", Dialogue_Terminator65
+.db "W", $A3, $75
+.db $87, $86, $F1, $69
+.db $83, $EC, Dialogue_NewPage
+.db $DB, $C3, $B4, $81, Dialogue_NewLine
+.db $A7, $77
+.db $87, $6C
+.db $C2, $84, $A4, $BA, $71
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0060:
-.db "G", $F3, $69
-.db $9B, $9D, $AC, ".", Dialogue_Terminator65
+.db "G", $DC, $69
+.db $98, $8C, $A0, ".", Dialogue_Terminator65
 
 Dialogue_Index_0062:
-.db "D", $A3, $7E
-.db $A0, " ", $70
+.db "D", $93, $7E
+.db $94, " ", $70
 .db $73
-.db $B6, $85, Dialogue_NewLine
+.db $A9, $81, Dialogue_NewLine
 .db $75
 .db $71
-.db $9F, $6A
-.db $79
-.db $8F, $C9, $DC, $71
-.db $6C
-.db $74
-.db $71
+.db $8F, $D3, $86, $A4, "A", $71
+.db $F7, $71
 .db "?", Dialogue_Terminator62
 
 Dialogue_Index_0064:
-.db $EC, $95, $88, $D4, $88, $9D, $B2, $6A
+.db $C8, $89, $83, $D9, $83, $8C, $B4, $6A
 .db ":", Dialogue_NewLine
-.db "P", $C8, $72
-.db $66
-.db $9B, "M", $DB, ",", Dialogue_NewPage
-.db $9F, $A7, "D", $6A
+.db "P", $BA, $F1, $98, $AE, $66
+.db ",", Dialogue_NewPage
+.db $8F, $97, "D", $6A
 .db $7F
 .db $74
-.db $71
-.db $C7, ".", Dialogue_NewPage
+.db $C1, $78
+.db ".", Dialogue_NewPage
 
 Dialogue_Index_0066:
-.db "P", $C8, $72
-.db $AA, $C7, $85, " ", $6C
-.db $B2, $AC, Dialogue_NewLine
+.db "P", $BA, $F1, " ", $B0, $81, " ", $6C
+.db $B4, $A0, Dialogue_NewLine
 .db $75
 .db $71
-.db $9F, $6A
-.db $79
-.db $9B, "M", $DB, Dialogue_NewPage
-.db $9D, $88, $78
-.db $9F, $A7, $75
+.db $8F, $D3, $98, $AE, $66
+.db Dialogue_NewPage
+.db $8C, $83, $78
+.db $8F, $97, $75
 .db $71
-.db $9F, $6A
-.db $79
-.db ",", Dialogue_NewPage
+.db $8F, $D3, ",", Dialogue_NewPage
 
 Dialogue_Index_0068:
-.db $9F, $A7, "D", $6A
+.db $8F, $97, "D", $6A
 .db $7F
 .db $74
-.db $71
-.db $C7, $85, " ", $6E
+.db $C1, $86, $8C, $83, $6E
 .db $68
 .db $6A
 .db Dialogue_NewLine
 .db $75
 .db $71
-.db $9F, $6A
-.db $79
-.db $9E, "A", $73
-.db $A7, $73
-.db $B6, $E5, Dialogue_NewPage
+.db $8F, $D3, $AA, "A", $73
+.db $97, $73
+.db $A9, $C3, Dialogue_NewPage
 .db $68
 .db $77
-.db $C7, $C7, " ", $71
-.db $F3, $72
-.db $8F, $74
-.db $7B
-.db $95, Dialogue_NewLine
-.db $9D, $88, "A", $71
-.db $6C
-.db $74
-.db $71
-.db " ", $78
-.db $7E
-.db $B7, $6A
+.db $B0, $B0, " ", $71
+.db $DC, $72
+.db $86, $E7, $89, Dialogue_NewLine
+.db $8C, $83, "A", $71
+.db $F7, $71
+.db $E4, $7E
+.db $A7, $6A
 .db $72
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_006A:
-.db $EC, $C7, " ", $C7, $F5, $C8, $72
-.db $66
-.db Dialogue_Apostrophe, $78
+.db $C8, $B0, " ", $B0, " P", $BA, $F1, Dialogue_Apostrophe, $78
 .db Dialogue_NewLine
-.db $CA, $75
-.db $A5, $79
-.db $9E, "F", $77
-.db $C4, Dialogue_NewPage
+.db $78
+.db $75
+.db $C9, $6A
+.db $75
+.db $95, $79
+.db $AA, "F", $77
+.db $B1, Dialogue_NewPage
 .db $6D
-.db $95, $88, $7E
-.db $A0, " ", $68
-.db $9F, " ", $6C
-.db $A3, $79
-.db $74
+.db $89, $83, $7E
+.db $94, $E8, $8F, " ", $F7, $D6, $74
 .db Dialogue_NewLine
-.db "P", $CE, $6A
+.db "P", $C6, $6A
 .db $74
-.db $9B, $93, $CD, $DB, ".", Dialogue_Terminator65
+.db $98, $87, $DD, $74
+.db $79
+.db $66
+.db $7B
+.db $6E
+.db $66
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_006C:
-.db $EC, $88, "G", $74
-.db $7B
-.db $95, $73
-.db $A5, " ", $71
-.db $6E
-.db $7B
-.db $F1, Dialogue_NewLine
-.db $91, $F5, $CE, $6A
+.db $C8, $83, "G", $E7, $89, $73
+.db $95, " ", $C1, $7B
+.db $C2, Dialogue_NewLine
+.db $8A, " P", $C6, $6A
 .db $74
-.db $9E, "H", $88, $77
+.db $AA, "H", $83, $77
 .db $7A
 .db $71
-.db $F1, Dialogue_NewPage
-.db $C8, $71
-.db " ", $C9, $CD, $DB, ".", Dialogue_Terminator65
+.db $C2, Dialogue_NewPage
+.db $BA, $71
+.db " ", $A4, $AE, $66
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_006E:
-.db $97, Dialogue_NewLine
-.db $CA, $78
-.db $B1, $75
-.db $8F, $7C
-.db $95, $6A
+.db $88, Dialogue_NewLine
+.db $78
+.db $75
+.db $C9, $C2, $AC, $75
+.db $86, $7C
+.db $89, $6A
 .db Dialogue_NewPage
-.db $93, $68
-.db $88, $67
+.db $87, $68
+.db $83, $67
 .db $7A
 .db $6E
 .db $71
-.db $8B, $E1, $85, Dialogue_NewLine
-.db "G", $CE, $B1, $70
-.db $A3, $71
+.db $84, $DE, $81, Dialogue_NewLine
+.db "G", $C6, $AC, $70
+.db $93, $71
 .db $66
 .db $67
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0070:
-.db "D", $A3, $7E
-.db $A0, " ", $B4, $7B
-.db $88, $66
+.db "D", $93, $7E
+.db $94, " ", $A2, $7B
+.db $83, $66
 .db Dialogue_NewLine
 .db $75
-.db $CE, $78
+.db $C6, $78
 .db $75
-.db $A5, $79
+.db $95, $79
 .db "?", Dialogue_Terminator62
 
 Dialogue_Index_0072:
-.db "Y", $A0, " ", $68
-.db $9F, $E5, $75
+.db "Y", $94, $E8, $8F, $C3, $75
 .db $75
 .db $71
-.db $BB, $6B
-.db $A5, Dialogue_NewLine
-.db $AA, $75
-.db $CE, $78
+.db $AD, $6B
+.db $95, Dialogue_NewLine
+.db $9C, $75
+.db $C6, $78
 .db $75
-.db $A5, $8B, $6D
-.db $95, $B0, Dialogue_NewPage
+.db $95, $84, $6D
+.db $89, $99, Dialogue_NewPage
 .db "W", $6E
-.db $B5, $83, $E5, $75
+.db $A6, $7E
+.db $94, $C3, $75
 .db $75
 .db $71
 .db $7E
@@ -1098,505 +956,645 @@ Dialogue_Index_0072:
 Dialogue_Index_0074:
 .db "H", $66
 .db $7B
-.db $88, $7E
-.db $A0, " ", $6A
-.db $7B
-.db $95, Dialogue_NewLine
+.db $83, $7E
+.db $94, " ", $FD, $89, Dialogue_NewLine
 .db $67
 .db $77
 .db $74
 .db $70
-.db $AC, $85, " ", $71
+.db $A0, $81, " ", $71
 .db $66
 .db $7C
 .db "?", Dialogue_Terminator62
 
 Dialogue_Index_0076:
-.db "D", $A3, $7E
-.db $A0, " ", $B4, $7B
-.db $88, $9F, $7E
+.db "D", $93, $7E
+.db $94, " ", $A2, $7B
+.db $83, $8F, $7E
 .db Dialogue_NewLine
-.db $C2, $77
+.db $B5, $77
 .db $6E
-.db $A0, $8F, $6E
-.db $B5, $73
-.db $F1, $78
+.db $94, $86, $6E
+.db $71
+.db $71
+.db $73
+.db $C2, $78
 .db "?", Dialogue_Terminator62
 
 Dialogue_Index_0078:
-.db $EC, $88, $6B
+.db $C8, $83, $6B
 .db $6A
-.db $88, $C7, " 100", Dialogue_NewLine
-.db $E4, $C2, $79
-.db $66
-.db $9E, "A", $B5, " ", $77
+.db $83, $B0, " 100", Dialogue_NewLine
+.db $72
+.db $C2, $D3, $66
+.db $AA, "A", $A6, $77
 .db $6E
-.db $6C
-.db $6D
-.db $79
+.db $E3, $79
 .db "?", Dialogue_Terminator62
 
 Dialogue_Index_007A:
-.db "H", $95, $88, $C7, $83, $77
+.db "H", $89, $83, $B0, $80, $77
 .db Dialogue_NewLine
 .db $75
-.db $CE, $78
+.db $C6, $78
 .db $75
-.db $A5, $79
-.db $9E, "P", $71
-.db $6A
-.db $CE, $6A
-.db Dialogue_NewPage
+.db $95, $79
+.db $AA, "P", $71
+.db $A3, $B5, Dialogue_NewPage
 .db $79
-.db $66
-.db $70
-.db $88, $E8, ".", Dialogue_Terminator65
+.db $E1, $83, $DB, ".", Dialogue_Terminator65
 
 Dialogue_Index_007C:
-.db $F8, $C2, $B0, " T", $66
-.db $70
-.db $88, $68
-.db $D4, $6A
+.db "I", $E4, $6A
+.db $99, " T", $E1, $83, $68
+.db $D9, $6A
 .db ",", Dialogue_NewLine
-.db $9D, $AC, ".", Dialogue_Terminator65
+.db $8C, $A0, ".", Dialogue_Terminator65
 
 Dialogue_Index_007E:
-.db $EC, $E1, " ", $7C
-.db $93, Dialogue_Apostrophe, $8B, $69
+.db $C8, $DE, $F3, $87, Dialogue_Apostrophe, $84, $69
 .db $74
 .db ".", Dialogue_NewLine
 .db "P", $71
-.db $6A
-.db $CE, $88, $68
-.db $C4, $88, $D8, $66
-.db $91, ".", Dialogue_Terminator65
+.db $A3, $B5, $E8, $B1, $83, $66
+.db $6C
+.db $66
+.db $8A, ".", Dialogue_Terminator65
 
 Dialogue_Index_0080:
-.db "WELC", $A9, $80, $8D, " ", $81, $80, Dialogue_NewLine
-.db "P", $BC, "EO", $A6, "P", $C0, "EP", $9A, "T", Dialogue_NewPage
-.db $90, $CD, $DE, "A.", Dialogue_Terminator65
+.db $C8, $B0, " ", $B0, $DD, $74
+.db $79
+.db $66
+.db $7B
+.db $6E
+.db $66
+.db Dialogue_Apostrophe, $78
+.db Dialogue_NewLine
+.db "P", $C6, $6A
+.db $93, "S", $75
+.db $C9, $6A
+.db $75
+.db $95, $79
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0082:
-.db $E7, $8E, $84, "SAI", $AF, $81, $CF, Dialogue_NewLine
-.db $89, $8A, $BE, $90, $84, "RO", $ED, Dialogue_NewPage
-.db $86, " ", $81, $80, $E3, $D2, "R", $C6, Dialogue_Terminator65
+.db $88, $C3, $73
+.db $79
+.db $C1, $87, $78
+.db Dialogue_NewLine
+.db $77
+.db $7A
+.db $71
+.db $83, $8C, $83, $69
+.db $C2, $89, $79
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0084:
-.db $81, $87, $80, $AB, $DC, " ", $D0, "KE", Dialogue_NewLine
-.db "SH", $EB, $8E, "N ", $81, $80, $D0, $D5, Dialogue_NewPage
-.db $D0, $96, $92, " NAUL", $AD, $90, Dialogue_NewLine
-.db "P", $AE, $E0, "!", Dialogue_Terminator65
+.db $88, $81, $B4, Dialogue_Apostrophe, $86, $66
+.db Dialogue_NewLine
+.db $68
+.db $E1, $83, $78
+.db $6D
+.db $74
+.db $75
+.db " ", $8A, $C3, Dialogue_NewPage
+.db $68
+.db $66
+.db $7B
+.db $83, $90, " N", $66
+.db $7A
+.db $CF, ",", Dialogue_NewLine
+.db $87, " P", $BA, $F1, ".", Dialogue_Terminator65
 
 Dialogue_Index_0086:
-.db "M", $DE, "A", Dialogue_Apostrophe, "S", Dialogue_NewLine
-.db $B9, $D5, "R", $A4, "R", $DC, "ND", Dialogue_NewPage
-.db $98, $DC, $BA, " ", $A4, $8A, $90, Dialogue_NewLine
-.db $B9, "O", $AF, "T", $87, "MS", $9B, $E7, $8E, "S", Dialogue_NewPage
-.db "SAID.", Dialogue_Terminator65
+.db $88, $81, Dialogue_NewLine
+.db "G", $E7, $89, $73
+.db $95, $E4, $6A
+.db $68
+.db $B4, $79
+.db $71
+.db $7E
+.db Dialogue_NewPage
+.db $74
+.db $75
+.db $75
+.db $74
+.db $B5, $86, $92, ".", Dialogue_Terminator65
 
 Dialogue_Index_0088:
-.db $AD, "GIF", $8A, $AB, " NE", $92, $92, Dialogue_NewLine
-.db "IF", $FE, $94, $D7, $AB, "H ", $8D, Dialogue_NewPage
-.db $D2, $80, $81, $80, $B9, $D5, "R", $A4, "R.", Dialogue_Terminator65
+.db "Y", $94, " ", $73
+.db $6A
+.db $DA, $C3, " ", $F6, $6B
+.db $84, $79
+.db $74
+.db Dialogue_NewLine
+.db $B5, $83, $8C, $83, "G", $E7, $89, $73
+.db $95, ".", Dialogue_Terminator65
 
 Dialogue_Index_008A:
-.db $81, $80, $B9, $D5, "R", $A4, "R", Dialogue_NewLine
-.db "LO", $D5, $84, "SWE", $F7, "S", $9B, "I", Dialogue_NewPage
-.db $C1, $8C, ".", Dialogue_Terminator65
+.db $C8, $83, "G", $E7, $89, $73
+.db $95, " ", $71
+.db $E7, $C2, Dialogue_NewLine
+.db $78
+.db $7C
+.db $6A
+.db $D3, $78
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_008C:
-.db $81, $87, $80, $AB, $DC, " ", $D0, $D5, Dialogue_NewLine
-.db $D0, $96, $92, $CD, "A", $A8, "RU", $8E, "N", Dialogue_NewPage
-.db $AD, "M", $94, "NTA", $86, " ", $8D, " ", $81, "E", Dialogue_NewLine
-.db $A4, "R", $81, " ", $9C, "P", $BC, "EO.", Dialogue_Terminator65
+.db $C8, $89, $6A
+.db Dialogue_Apostrophe, $86, $9C, $68
+.db $66
+.db $7B
+.db $6A
+.db Dialogue_NewLine
+.db $90, $DD, $66
+.db $A2, $77
+.db $7A
+.db " ", $8A, Dialogue_NewPage
+.db $8C, $83, $72
+.db $94, $73
+.db $79
+.db $66
+.db $8A, $78
+.db Dialogue_NewLine
+.db $73
+.db $95, $8C, " ", $A4, "P", $C6, $6A
+.db $74
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_008E:
-.db $81, $AB, $8E, $84, "P", $BC, "EO", Dialogue_NewLine
-.db "M", $DE, "A", Dialogue_Apostrophe, $84, $D0, "P", $E7, $AE, ".", Dialogue_Terminator65
+.db $C8, $B0, " ", $B0, " P", $C6, $6A
+.db $74
+.db $98, $8C, $6A
+.db Dialogue_NewLine
+.db $68
+.db $66
+.db $75
+.db $DB, $BA, " ", $A4, $AE, $66
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0090:
-.db $E7, Dialogue_Apostrophe, $84, $A4, $8A, "POSSIB", $B3, Dialogue_NewLine
-.db $8D, $F5, $BC, $84, $81, "R", $94, $EE, Dialogue_NewPage
-.db $89, $8A, $BE, $90, " ", $90, $E2, "OO", $C6, Dialogue_Terminator65
+.db "O", $73
+.db $F8, $DC, $79
+.db $98, $73
+.db $93, $87, $6A
+.db Dialogue_NewLine
+.db $6C
+.db $D3, $86, $75
+.db $C6, $84, $8F, $79
+.db $C1, $87, $78
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0092:
-.db $F8, $A8, $D5, $DC, "N R", $8C, "E", Dialogue_NewLine
-.db $89, "I", $E0, "L", $FD, $87, $BD, Dialogue_NewPage
-.db "W", $94, "L", $AF, $82, "PA", $BF, "1", Dialogue_NewLine
-.db "BI", $96, "I", $90, $CD, $A2, $F7, $BC, Dialogue_NewPage
-.db "F", $9A, $8E, "T?", Dialogue_Terminator62
+.db $D7, $7B
+.db $83, $F7, $84, $9C, $CF, $B4, Dialogue_NewLine
+.db $8F, $6E
+.db $F1, $71
+.db " ", $6D
+.db $89, $99, Dialogue_NewPage
+.db "100", $C7, $6E
+.db $71
+.db $C1, $87, $C7, $C2, $D3, $66
+.db Dialogue_NewLine
+.db $6B
+.db $95, " ", $DB, $AA, "D", $A3, $71
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_0094:
-.db $82, $8C, $80, $AD, $BE, $8C, "!", Dialogue_Terminator65
+.db "Y", $94, Dialogue_Apostrophe, $B4, $C3, " ", $C1, $D9, ".", Dialogue_Terminator65
 
 Dialogue_Index_0096:
-.db $F8, $D2, $80, $82, $A8, $D5, $DC, Dialogue_NewLine
-.db "S", $D9, $89, "G", $80, "PO", $C6, Dialogue_NewPage
+.db "O", $6D
+.db "? ", $C8, $DE, Dialogue_Apostrophe, $86, $8F, Dialogue_NewLine
+.db $ED, $D4, $7A
+.db $BA, " ", $75
+.db $74
+.db $79
+.db ".", Dialogue_NewPage
 
 Dialogue_Index_0098:
-.db "S", $A8, $96, $8E, " ", $D9, "A", $E3, " ", $81, $80, Dialogue_NewLine
-.db $89, "I", $E0, "L", $E2, $9A, $8E, "T?", Dialogue_Terminator62
+.db $D7, $97, $79
+.db $CF, $69
+.db $83, $8C, $6A
+.db Dialogue_NewLine
+.db $8F, $6E
+.db $F1, $71
+.db $F8, $95, $D6, $A2, $79
+.db Dialogue_NewPage
+.db "L", $C9, $87, $6E
+.db $9C, "P", $74
+.db $79
+.db ".", Dialogue_NewLine
+.db "W", $A2, $84, $69
+.db $93, $7E
+.db $94, $E4, $EB, "?", Dialogue_Terminator62
 
 Dialogue_Index_009A:
-.db $AE, "L RI", $EE, "T", $9B, $81, $87, "E", Dialogue_NewLine
-.db $82, $B9, $D7, $E7, "H", $FD, "IM.", Dialogue_Terminator65
+.db "T", $E1, $83, $F7, $74
+.db $97, $68
+.db $D9, $6A
+.db Dialogue_NewLine
+.db $A4, $DB, $98, $8C, $A0, ".", Dialogue_Terminator65
 
 Dialogue_Index_009C:
-.db $DD, $FE, $94, $FD, "A", $D5, $DC, Dialogue_NewLine
-.db "P", $BA, $D2, "N", $8A, $8D, " GI", $D5, Dialogue_NewPage
-.db $8D, " ", $81, $80, $B9, $D5, "R", $A4, "R?", Dialogue_Terminator62
+.db "G", $74
+.db $84, $9C, $F6, $6B
+.db $84, $6B
+.db $95, Dialogue_NewLine
+.db $8C, $83, "G", $E7, $89, $73
+.db $95, "?", Dialogue_Terminator62
 
 Dialogue_Index_009E:
-.db $D1, $96, " TAK", $80, $81, $80, Dialogue_NewLine
-.db "SH", $9A, "T", $D0, "K", $80, $A4, "W.", Dialogue_Terminator65
+.db $C8, $A0, $8E, Dialogue_Apostrophe, $A6, $79
+.db $E1, $83, $8C, $DE, Dialogue_NewLine
+.db $78
+.db $6D
+.db $95, $79
+.db $68
+.db $E1, $83, $6B
+.db $95, " ", $AC, $72
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00A0:
-.db $F8, $DD, "N", Dialogue_Apostrophe, $8A, $81, $86, "K", $FE, $94, " ", Dialogue_NewLine
-.db $A8, $D5, $DC, $A6, "U", $E7, "AB", $B3, Dialogue_NewPage
-.db "P", $BA, $D2, "N", $C6, Dialogue_Terminator65
+.db "Y", $94, Dialogue_Apostrophe, $7B
+.db $83, $F7, $84, $73
+.db $74
+.db $8C, $8A, $6C
+.db Dialogue_NewLine
+.db $6B
+.db $DB, $D6, $93, $67
+.db $83, $9C, $F6, $6B
+.db $79
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00A2:
-.db $B9, $C5, $C0, "K ", $8D, $FE, $94, "R ", Dialogue_NewLine
-.db "H", $A9, $80, $A4, "W.", Dialogue_Terminator65
+.db "O", $6B
+.db $6B
+.db $F3, $DB, $6D
+.db $80, ".", Dialogue_Terminator65
 
 Dialogue_Index_00A4:
-.db $D1, "M ", $81, $80, $B9, $D5, "R", $A4, "R.", Dialogue_NewLine
-.db $D1, "M ", $8D, "L", $AF, $81, $CF, $FE, $94, Dialogue_NewPage
-.db $86, "T", $A1, $AF, $8D, " ", $D9, $BF, $8D, Dialogue_NewLine
-.db "KI", $96, " ", $98, "."
+.db "I", $C3, $72
+.db $81, " G", $E7, $89, $73
+.db $95, Dialogue_NewLine
+.db $A4, $8C, $B0, " ", $75
+.db $71
+.db $8F, $D3, $AA, "I", Dialogue_NewPage
+.db $6D
+.db $A3, $77
+.db $80, $C7, $A3, $73
+.db $D6, $74
+.db Dialogue_NewLine
+.db $69
+.db $6A
+.db $6B
+.db $A3, $84, $92, ".", Dialogue_NewPage
 
 Dialogue_Index_00A6:
-.db $8E, Dialogue_NewPage
-.db "ADMI", $BA, $FE, $94, "R", Dialogue_NewLine
-.db "C", $94, "R", $F6, $BD, $8E, "N ", $81, "E", Dialogue_NewPage
-.db $E0, $A8, "RU ", $D0, $D5, Dialogue_NewLine
-.db $BE, $D5, $84, $89, " ", $A2, "P", $8C, Dialogue_NewPage
-.db "N", $ED, $92
+.db "I", $E8, $B1, $72
+.db $A0, $97, $7E
+.db $94, $77
+.db Dialogue_NewLine
+.db $68
+.db $94, $CF, $6C
+.db $99, Dialogue_NewPage
+.db "A", $73
+.db " ", $C2, $75
+.db $89, " ", $73
+.db $66
+.db $72
+.db $DA, Dialogue_NewLine
+.db "L", $FF, $7F
+.db " ", $C1, $7B
+.db $C2, " ", $8A, $81, Dialogue_NewPage
 
 Dialogue_Index_00A8:
-.db " ", $A4, "AH", $9E, "I", Dialogue_NewLine
-.db $FC, $96, " GI", $D5, $FE, $94, $DC, Dialogue_NewPage
-.db $B3, "TT", $87, " ", $FA, Dialogue_NewLine
-.db $86, $D9, "ODUCTI", $90, " ", $8D, Dialogue_NewPage
-.db "P", $BA, $D2, "N", $8A, $8D, $FD, $87, "."
+.db "M", $66
+.db $A2, $77
+.db $7A
+.db $E8, $66
+.db $7B
+.db $99, " T", $E1, $6A
+.db Dialogue_NewLine
+.db $72
+.db $AD, $71
+.db $D3, $79
+.db $89, $D6, $93, $AC, $72
+.db ".", Dialogue_NewPage
 
 Dialogue_Index_00AA:
-.db $8E, Dialogue_NewLine
-.db $A8, $D5, $E2, "A", $E7, "H ", $81, $CF, Dialogue_NewPage
-.db $82, $FC, $96, " KI", $96, Dialogue_NewLine
-.db $98, $DC, "ND", Dialogue_NewPage
-.db $BA, "T", $D3, "N", $FD, $87, "E", Dialogue_NewLine
-.db "E", $D5, "NTU", $AE, "LY.", Dialogue_Terminator65
+.db "D", $6A
+.db $6B
+.db $A3, $84, $92, ",", Dialogue_NewLine
+.db $8C, $A0, " ", $B4, $79
+.db $7A
+.db $77
+.db $73
+.db $D6, $93, $72
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_00AC:
-.db "IF ", $81, $80, $B9, $D5, "R", $A4, "R", Dialogue_NewLine
-.db $9A, $E3, "R", $84, $A4, "AH ", $8D, $CB, "O", Dialogue_NewPage
-.db "S", $A9, $F7, "H", $86, "G", $9B, $C1, Dialogue_NewLine
-.db $FC, $96, " ", $BE, "KEL", $BF, "O", $DF, "Y.", Dialogue_Terminator65
+.db "L", $FF, $7F
+.db $C7, $EB, $F3, $D2, $71
+.db Dialogue_NewLine
+.db $74
+.db $67
+.db $6A
+.db $AD, $8F, " ", $95, $69
+.db $89, Dialogue_NewPage
+.db $6B
+.db $77
+.db $B1, $81, " G", $E7, $89, $73
+.db $95, Dialogue_NewLine
+.db $A4, "P", $C6, $6A
+.db $74
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_00AE:
-.db "WHO", $DC, $BA, $FE, $94, "?", $8E, Dialogue_Apostrophe, "M", Dialogue_NewLine
-.db "B", $CC, $BF, $FC, $81, $CD, "Y", Dialogue_NewPage
+.db "W", $6D
+.db $93, $D9, $83, $7E
+.db $94, "?", $8E, Dialogue_Apostrophe, $72
+.db Dialogue_NewLine
+.db $8A, $D6, $CF, $8A, $8A, $6C
+.db " ", $73
+.db $A9, ".", Dialogue_NewPage
 
 Dialogue_Index_00B0:
-.db $D9, "A", $86, $86, $E9, $A4, "W!", $CB, "O", Dialogue_NewLine
-.db $A4, $8A, $DF, $DC, Dialogue_NewPage
-.db "NU", $AB, $89, "CE!", Dialogue_Terminator65
+.db "P", $71
+.db $A3, $B5, " ", $69
+.db $87, Dialogue_Apostrophe, $79
+.db Dialogue_NewLine
+.db $69
+.db $B0, $79
+.db $7A
+.db $77
+.db $67
+.db $C7, $99, Dialogue_Terminator65
 
 Dialogue_Index_00B2:
-.db "Y", $F3, "-", $6D
-.db $F3, "!", Dialogue_Terminator65
+.db "Y", $DC, "-", $6D
+.db $DC, "!", Dialogue_Terminator65
 
 Dialogue_Index_00B4:
 .db "Z", $7F
 .db $7F
-.db $C3, " ", $7F
+.db "..", $AA, $7F
 .db $7F
 .db $7F
-.db $C3, Dialogue_Terminator65
+.db "...", Dialogue_Terminator65
 
 Dialogue_Index_00B6:
 .db "P", $71
-.db $6A
-.db $CE, $6A
-.db $9B, $B2, $B7, Dialogue_NewLine
+.db $A3, $B5, $98, $B4, $A7, Dialogue_NewLine
 .db $66
 .db $7C
-.db $B1, $71
-.db $B0, Dialogue_Terminator65
+.db $AC, $71
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_00B8:
 .db "P", $71
-.db $6A
-.db $CE, $88, $68
-.db $C4, $88, $67
-.db $F0, $70
+.db $A3, $B5, $E8, $B1, $83, $67
+.db $C9, $70
 .db Dialogue_NewLine
 .db $78
 .db $66
 .db $6B
-.db $B0, $8E, Dialogue_Apostrophe, $B5, " ", $67
+.db $99, $8E, Dialogue_Apostrophe, $A6, $67
 .db $6A
 .db Dialogue_NewPage
 .db $75
-.db $77
-.db $66
-.db $7E
-.db $91, $F2, $6B
-.db $A5, $83, ".", Dialogue_Terminator65
+.db $CF, $7E
+.db $8A, $6C
+.db $F8, $95, $80, ".", Dialogue_Terminator65
 
 Dialogue_Index_00BA:
 .db "G", $74
-.db $8B, $AA, "P", $6A
-.db $71
-.db $A5, $6E
+.db $84, $9C, "P", $D2, $95, $6E
 .db $6A
-.db "M", $E1, $6A
+.db "M", $DE, $6A
 .db Dialogue_NewLine
 .db $79
-.db $A3, $78
+.db $93, $78
 .db $75
-.db $D4, $6A
-.db $9B, $75
-.db $C8, "?", Dialogue_Terminator62
+.db $D9, $6A
+.db $98, $75
+.db $BA, "?", Dialogue_Terminator62
 
 Dialogue_Index_00BC:
-.db $EC, $9F, $70
+.db $C8, $8F, $70
 .db $78
-.db $9E, $EC, $C7, " ", $75
+.db $AA, $C8, $B0, " ", $75
 .db $71
-.db $F0, $6A
+.db $C9, $6A
 .db Dialogue_NewLine
 .db $7C
-.db $CE, " ", $93, $68
-.db $88, $9D, $88, $71
+.db $C6, " ", $87, $68
+.db $83, $8C, $83, $71
 .db $66
 .db $67
 .db Dialogue_NewPage
-.db $C9, $E5, " ", $78
+.db $A4, $9C, $78
 .db $68
 .db $6E
-.db $AC, $79
-.db $C7, $79
+.db $A0, $79
+.db $B0, $79
 .db Dialogue_NewLine
 .db $73
 .db $66
-.db $E4, $A7, $F9, $AC, $74
+.db $72
+.db $DA, " ", $E9, $A0, $74
 .db ".", Dialogue_NewPage
 
 Dialogue_Index_00BE:
-.db "B", $7A
-.db $8B, $9D, $6A
-.db $BB, $78
+.db "B", $FF, $81, $AD, $78
 .db $66
 .db $6E
 .db $69
 .db Dialogue_NewLine
-.db $F9, $AC, $A3, $7C
-.db $CE, " ", $72
-.db $66
+.db $E9, $A0, $93, $7C
+.db $C6, $C7, $66
 .db $69
 .db ",", Dialogue_NewPage
 
 Dialogue_Index_00C0:
-.db $9F, $A7, $71
+.db $8F, $97, $71
 .db $74
 .db $68
 .db $70
-.db $6A
-.db $A7, $B1, $72
+.db $DA, " ", $AC, $72
 .db Dialogue_NewLine
 .db $66
 .db $7C
-.db $66
-.db $BB, $91, " T", $77
+.db $EB, " ", $8A, " T", $77
 .db $6E
 .db $66
 .db $69
 .db $66
-.db $9B, $66
+.db $98, $66
 .db Dialogue_NewPage
 .db $75
 .db $77
-.db $C7, $93, " ", $78
-.db $A0, $9D, " ", $C9, Dialogue_NewLine
-.db $9D, $C7, " ", $7B
-.db $6E
-.db $B5, $D8, $B0, Dialogue_Terminator65
+.db $B0, $87, $E4, $94, $8C, " ", $EC, Dialogue_NewLine
+.db $8C, $B0, " ", $9B, $99, Dialogue_Terminator65
 
 Dialogue_Index_00C2:
 .db "G", $74
-.db $8B, $73
+.db $84, $73
 .db $74
-.db $9D, $91, Dialogue_Apostrophe, " ", $79
-.db $A3, $78
-.db $66
-.db $7E
-.db Dialogue_NewLine
+.db $8C, $8A, Dialogue_Apostrophe, $D6, $93, $78
+.db $EB, Dialogue_NewLine
 .db $79
-.db $A3, $7E
-.db $A0, $9E, "G", $6A
-.db $8B, $71
+.db $93, $7E
+.db $94, $AA, "G", $D3, " ", $71
 .db $74
-.db $B7, ".", Dialogue_Terminator65
+.db $A7, ".", Dialogue_Terminator65
 
 Dialogue_Index_00C4:
 .db "O", $73
-.db $88, $77
+.db $83, $77
 .db $74
 .db $66
-.db $A7, $77
-.db $7A
-.db $73
-.db $78
+.db $97, $77
+.db $ED, $78
 .db Dialogue_NewLine
 .db $6B
 .db $77
-.db $C4, $85, " G", $CE, $B1, $70
+.db $B1, $81, " G", $C6, $AC, $70
 .db $74
 .db Dialogue_NewPage
 .db $6B
-.db $A5, $F1, $8B, $91, $79
-.db $A3, $9D, $6A
+.db $95, $C2, $84, $8A, $79
+.db $93, $8C, $6A
 .db Dialogue_NewLine
 .db $72
-.db $A0, $73
+.db $94, $73
 .db $79
 .db $66
-.db $91, $78
-.db $9B, $9F, $A7, $E1, Dialogue_NewPage
-.db $E8, $8F, $AC, $A7, $B7, $9F, $69
-.db $8F, $66
+.db $8A, $78
+.db $98, $8F, $97, $DE, Dialogue_NewPage
+.db $DB, $86, $A0, $97, $A7, $8F, $69
+.db $86, $66
 .db Dialogue_NewLine
 .db $79
-.db $B6, $95, ".", Dialogue_NewPage
+.db $A9, $89, ".", Dialogue_NewPage
 
 Dialogue_Index_00C6:
 .db "S", $79
-.db $66
-.db $BB, $66
-.db $7C
-.db $66
-.db $BB, $6B
-.db $77
-.db $C4, " ", $E8, ".", Dialogue_NewLine
-.db $97, $E5, Dialogue_NewPage
+.db $EB, $C3, $7C
+.db $EB, $F8, $77
+.db $B1, " ", $DB, ".", Dialogue_NewLine
+.db $88, $C3, Dialogue_NewPage
 .db $6B
-.db $6A
-.db $D4, $78
-.db $C4, $88, $72
-.db $93, $B7, $95, Dialogue_NewLine
-.db $71
-.db $6E
-.db $7B
-.db $F1, $85, $B2, ",", Dialogue_NewPage
+.db $A3, $77
+.db $78
+.db $B1, $83, $72
+.db $87, $A7, $89, Dialogue_NewLine
+.db $C1, $7B
+.db $C2, $81, $B4, ",", Dialogue_NewPage
 
 Dialogue_Index_00C8:
-.db $9F, $A7, $93, $88, $71
-.db $F3, $70
-.db $E5, $8B, $E8, Dialogue_NewLine
+.db $8F, $97, $87, $83, $71
+.db $DC, $70
+.db $C3, $84, $DB, Dialogue_NewLine
 .db $79
 .db $7A
 .db $77
 .db $73
-.db $8F, $7E
-.db $A0, " ", $79
-.db $74
+.db $86, $7E
+.db $94, $D6, $74
 .db Dialogue_NewPage
-.db $B7, $93, $B0, Dialogue_Terminator65
+.db $A7, $87, $99, Dialogue_Terminator65
 
 Dialogue_Index_00CA:
 .db "A", $6D
-.db $9B, $7E
-.db $A0, " ", $79
-.db $F3, $70
-.db $83, $77
+.db $98, $7E
+.db $94, $D6, $DC, $70
+.db $80, $77
 .db Dialogue_NewLine
 .db $79
 .db $6E
-.db $E4, "! N", $B6, $9B, $6B
+.db $72
+.db $6A
+.db "! N", $A9, $98, $6B
 .db $6E
 .db $77
-.db $B7, Dialogue_NewPage
-.db $9D, $91, $6C
-.db $8F, $6B
+.db $A7, Dialogue_NewPage
+.db $8C, $8A, $6C
+.db $86, $6B
 .db $6E
 .db $77
-.db $B7, ":", Dialogue_NewPage
+.db $A7, ":", Dialogue_NewPage
 
 Dialogue_Index_00CC:
 .db $67
 .db $77
-.db $91, $F2, $E4, " ", $72
+.db $8A, $6C
+.db $C7, $83, $72
 .db $7E
 .db Dialogue_NewLine
-.db $CE, $78
-.db $C7, $79
-.db $9F, $79
-.db $9E, "H", $6A
-.db Dialogue_Apostrophe, $B5, " ", $67
+.db $C6, $78
+.db $B0, $79
+.db $8F, $79
+.db $AA, "H", $6A
+.db Dialogue_Apostrophe, $A6, $67
 .db $6A
 .db Dialogue_NewPage
-.db $B1, $69
-.db $91, $F2, $91, $85, Dialogue_NewLine
-.db $7A
-.db $73
-.db $69
-.db $95, $6C
+.db $AC, $69
+.db $8A, $6C
+.db " ", $8A, $81, Dialogue_NewLine
+.db $ED, $69
+.db $89, $6C
 .db $77
-.db $A0, $73
+.db $94, $73
 .db $69
 .db Dialogue_NewPage
 .db $75
-.db $CE, $78
-.db $D8, $B0, Dialogue_NewPage
-.db "H", $93, $F1, $79
+.db $C6, $78
+.db $66
+.db $6C
+.db $99, Dialogue_NewPage
+.db "H", $87, $C2, $79
 .db $71
 .db $7E
-.db $9B, $9D, $E1, " ", $67
+.db $98, $8C, $DE, " ", $67
 .db $74
 .db $7E
 .db Dialogue_NewLine
-.db $C7, " ", $78
-.db $A3, $78
+.db $B0, $E4, $93, $78
 .db $6D
 .db $7E
-.db $9B, $E8, Dialogue_Apostrophe, $8F, $66
+.db $98, $DB, Dialogue_Apostrophe, $86, $66
 .db Dialogue_NewPage
 .db $73
 .db $7A
-.db $C7, $9F, $68
-.db $B0, Dialogue_Terminator65
+.db $B0, $8F, $68
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_00CE:
-.db "D", $93, Dialogue_Apostrophe, $8B, $79
+.db "D", $87, Dialogue_Apostrophe, $84, $79
 .db $74
-.db $BB, $7C
-.db $E8, $6D
-.db " ", $E4, "!", Dialogue_Terminator65
+.db $AD, $7C
+.db $DB, $6D
+.db $C7, $6A
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_00D0:
 .db "N", $74
-.db $8B, $AC, $A0, $6C
-.db $6D
-.db $9B, $D1, $72
+.db $84, $A0, $94, $E3, $98, $D7, $72
 .db Dialogue_NewLine
 .db $66
 .db $6B
-.db $77
-.db $66
-.db $6E
+.db $CF, $6E
 .db $69
-.db $9E, "C", $A0, $71
-.db $A7, $7E
-.db $A0, Dialogue_NewPage
-.db $6C
-.db $A3, $9F, $A7, $77
-.db $66
-.db $C7, $88, $9D, $6A
+.db $AA, "C", $94, $71
+.db $97, $7E
+.db $94, Dialogue_NewPage
+.db $F7, $C3, $73
+.db $97, $CF, $B0, $83, $8C, $6A
 .db Dialogue_NewLine
 .db $72
-.db $93, $6A
+.db $87, $6A
 .db $7E
 .db "?", Dialogue_Terminator65
 
@@ -1607,231 +1605,198 @@ Dialogue_Index_00D2:
 .db $6E
 .db $68
 .db $6A
-.db "!", $DC, $8B, $71
-.db $CE, $79
+.db "! A", $84, $71
+.db $C6, $79
 .db ",", Dialogue_NewLine
-.db $9D, $88, $CA, $78
-.db $B1, $75
+.db $8C, $83, $78
+.db $75
+.db $C9, $C2, $AC, $75
 .db Dialogue_NewPage
-.db $F9, $AC, $A3, $C7, " ", $6B
-.db $91, $C7, $6D
-.db $6A
-.db $69
-.db "!", Dialogue_Terminator65
+.db $E9, $A0, $93, $B0, $F8, $8A, $B0, $6D
+.db $DA, "!", Dialogue_Terminator65
 
 Dialogue_Index_00D4:
 .db "I", $6B
-.db $83, " ", $7C
-.db $93, Dialogue_Apostrophe, $8B, $69
-.db $A3, $CE, Dialogue_NewLine
-.db $F8, $78
-.db $66
-.db $7E
-.db $9B, $F8, $68
-.db $9F, Dialogue_Apostrophe, $8B, $79
-.db $66
-.db $70
-.db $6A
+.db $80, $F3, $87, Dialogue_Apostrophe, $84, $69
+.db $93, $C6, Dialogue_NewLine
+.db "I", $E4, $EB, $98, "I", $E8, $8F, Dialogue_Apostrophe, $84, $79
+.db $E1, $6A
 .db Dialogue_NewPage
-.db $9D, $C7, " ", $93, ".", Dialogue_Terminator65
+.db $8C, $B0, " ", $87, ".", Dialogue_Terminator65
 
 Dialogue_Index_00D6:
-.db "B", $7A
-.db $8B, $7E
-.db $A0, " ", $68
-.db $9F, Dialogue_Apostrophe, $8B, $6B
+.db "B", $FF, $80, $E8, $8F, Dialogue_Apostrophe, $84, $6B
 .db $71
 .db $7E
 .db Dialogue_NewLine
-.db $9D, $88, $F9, $AC, $74
+.db $8C, $83, $E9, $A0, $74
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_00D8:
-.db "H", $B6, " ", $C7, $85, " ", $F9, $AC, $74
+.db "H", $A9, " ", $B0, $81, " ", $E9, $A0, $74
 .db Dialogue_NewLine
 .db $77
-.db $7A
-.db $73
-.db $73
-.db $91, $6C
-.db "? T", $66
-.db $70
-.db $6A
+.db $ED, $73
+.db $8A, $6C
+.db "? T", $E1, $6A
 .db Dialogue_NewPage
-.db $6C
-.db $F3, $A7, $68
-.db $D4, $88, $C9, " ", $E8, ".", Dialogue_Terminator65
+.db $F7, $74
+.db $97, $68
+.db $D9, $83, $A4, $DB, ".", Dialogue_Terminator65
 
 Dialogue_Index_00DA:
-.db $EC, $E1, Dialogue_Apostrophe, $8F, $AA, $78
-.db $B4, $E4, $9E, "S", $74
+.db $C8, $DE, Dialogue_Apostrophe, $86, $9C, $78
+.db $A2, $72
+.db $99, $B6, $74
 .db Dialogue_NewLine
 .db $7E
-.db $A0, $77
+.db $94, $77
 .db " ", $6F
-.db $A0, $77
+.db $94, $77
 .db $73
 .db $6A
-.db $BB, $AC, $69
+.db $AD, $A0, $69
 .db $78
 .db Dialogue_NewPage
 .db $6D
-.db $95, $6A
-.db $9B, $9D, $AC, ".", Dialogue_Terminator65
+.db $89, $6A
+.db $98, $8C, $A0, ".", Dialogue_Terminator65
 
 Dialogue_Index_00DC:
-.db $D1, $72
+.db $D7, $72
 .db " ", $67
-.db $F4, $BB, $77
+.db $D4, $AD, $77
 .db $6E
-.db $6C
-.db $6D
-.db $8B, $73
-.db $B6, ".", Dialogue_NewLine
-.db "D", $93, Dialogue_Apostrophe, $8B, $67
+.db $E3, $84, $73
+.db $A9, ".", Dialogue_NewLine
+.db "D", $87, Dialogue_Apostrophe, $84, $67
 .db $74
-.db $9D, $95, " ", $E4, ".", Dialogue_Terminator65
+.db $8C, $89, $C7, $99, Dialogue_Terminator65
 
 Dialogue_Index_00DE:
-.db $D1, $72
-.db " ", $F9, $AC, $74
-.db $9E, "I", $6B
+.db $D7, $72
+.db " ", $E9, $A0, $74
+.db $AA, "I", $6B
 .db Dialogue_NewLine
 .db $7E
-.db $A0, Dialogue_Apostrophe, $7B
-.db $88, $68
-.db $C4, $88, $6B
-.db $A5, Dialogue_NewPage
+.db $94, Dialogue_Apostrophe, $7B
+.db $83, $68
+.db $B1, $83, $6B
+.db $95, Dialogue_NewPage
 .db $6D
-.db $6A
-.db $71
-.db $75
-.db $9B, $7E
-.db $A0, Dialogue_Apostrophe, $B2, Dialogue_NewLine
+.db $D2, $75
+.db $98, $7E
+.db $94, Dialogue_Apostrophe, $B4, Dialogue_NewLine
 .db $7C
-.db $CE, $79
-.db $91, $F2, $7E
-.db $A0, $77
-.db " ", $79
-.db $6E
-.db $E4, ".", Dialogue_NewPage
-.db "G", $A3, $6D
-.db $C4, $B0, Dialogue_Terminator65
+.db $C6, $79
+.db $8A, $6C
+.db $80, $77
+.db $D6, $6E
+.db $72
+.db $99, Dialogue_NewPage
+.db "G", $93, $6D
+.db $B1, $99, Dialogue_Terminator65
 
 Dialogue_Index_00E0:
-.db "W", $B4, $79
-.db "?", $C5, $7A
+.db "W", $A2, $79
+.db "?", $CA, $7A
 .db $6E
 .db $71
-.db $A7, $7E
-.db $A0, $E5, Dialogue_NewLine
-.db $CA, $78
-.db $B1, $75
-.db "?", $CB, $93, Dialogue_Apostrophe, $79
+.db $97, $7E
+.db $94, $C3, Dialogue_NewLine
+.db $78
+.db $75
+.db $C9, $C2, $AC, $75
+.db "?", $CC, $87, Dialogue_Apostrophe, $79
 .db Dialogue_NewPage
 .db $67
-.db $88, $77
+.db $83, $77
 .db $6E
 .db $69
 .db $6E
 .db $68
 .db $7A
 .db $71
-.db $A0, $78
+.db $94, $78
 .db "!", Dialogue_NewPage
-.db "D", $A3, $7E
-.db $A0, " ", $9D, $91, $70
+.db "D", $93, $7E
+.db $94, $D6, $AC, $73
+.db $70
 .db $8E, Dialogue_Apostrophe, $69
 .db Dialogue_NewLine
 .db $79
-.db $66
-.db $70
-.db $88, $93, $E5, " ", $9D, $91, $6C
+.db $E1, $83, $87, $C3, $D6, $AC, $73
+.db $6C
 .db Dialogue_NewPage
-.db $71
-.db $6E
-.db $70
-.db $88, $9D, $E1, "?", Dialogue_Terminator65
+.db $C1, $70
+.db $83, $8C, $DE, "?", Dialogue_Terminator65
 
 Dialogue_Index_00E2:
 .db "H", $72
 .db $72
-.db $9E, "Y", $A0, " ", $69
-.db $93, Dialogue_Apostrophe, $79
+.db $AA, "Y", $94, " ", $69
+.db $87, Dialogue_Apostrophe, $79
 .db Dialogue_NewLine
-.db $6C
-.db $6E
-.db $7B
-.db $88, $7A
+.db $F6, $7B
+.db $83, $7A
 .db $75
-.db $9B, $69
-.db $A3, $7E
-.db $A0, "?", Dialogue_NewPage
-.db "V", $95, $BB, $7C
-.db $6A
-.db $B5, ".", Dialogue_NewPage
-.db "B", $7A
-.db $8B, $7E
-.db $A0, Dialogue_Apostrophe, $B5, " ", $69
-.db $A3, $CE, Dialogue_NewLine
-.db $F8, $78
-.db $66
-.db $7E
-.db $9E, "A", $6C
-.db $B2, $6A
-.db $69
-.db "?", Dialogue_Terminator62
+.db $98, $69
+.db $93, $7E
+.db $94, "?", Dialogue_NewPage
+.db "V", $89, $AD, $7C
+.db $D2, $71
+.db ".", Dialogue_NewPage
+.db "B", $FF, $80, Dialogue_Apostrophe, $A6, $69
+.db $93, $C6, Dialogue_NewLine
+.db "I", $E4, $EB, $AA, "A", $6C
+.db $B4, $DA, "?", Dialogue_Terminator62
 
 Dialogue_Index_00E4:
-.db "G", $F3, $69
-.db $9E, $EC, $AC, $8E, Dialogue_Apostrophe, $B5, " ", $6C
-.db $74
-.db Dialogue_NewLine
-.db $93, $E5, $6D
-.db $6A
-.db $66
-.db $A7, $79
+.db "G", $DC, $69
+.db $AA, $C8, $A0, $8E, Dialogue_Apostrophe, $A6, $F7, Dialogue_NewLine
+.db $87, $C3, $6D
+.db $A3, $97, $79
 .db $74
 .db Dialogue_NewPage
-.db "G", $CE, $B1, $70
-.db $A3, $7B
-.db $6E
-.db $B5, $D8, $88, $79
+.db "G", $C6, $AC, $70
+.db $93, $9B, $83, $79
 .db $74
 .db Dialogue_NewLine
 .db $75
-.db $B2, $75
-.db $D4, $B0, $E2, $74
-.db $B5, $B6, " ", $E4, Dialogue_NewPage
-.db $9D, $95, $B0, Dialogue_NewPage
+.db $B4, $75
+.db $D9, $99, $CE, $74
+.db $71
+.db $71
+.db $A9, $C7, $6A
+.db Dialogue_NewPage
+.db $8C, $89, $99, Dialogue_NewPage
 .db "A", $73
-.db $A7, $69
-.db $93, Dialogue_Apostrophe, $8B, $7C
-.db $A5, $77
+.db $97, $69
+.db $87, Dialogue_Apostrophe, $84, $7C
+.db $95, $77
 .db $7E
 .db Dialogue_NewLine
 .db $66
 .db $67
-.db $A0, $8B, $E4, ".", Dialogue_Terminator65
+.db $94, $84, $72
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_00E6:
-.db "D", $A3, $7E
-.db $A0, " ", $B4, $7B
-.db $88, $66
+.db "D", $93, $7E
+.db $94, " ", $A2, $7B
+.db $83, $66
 .db Dialogue_NewLine
 .db "R", $74
 .db $66
-.db $A7, "P", $CE, $78
+.db $97, "P", $C6, $78
 .db "?", Dialogue_Terminator62
 
 Dialogue_Index_00E8:
-.db "Y", $A0, Dialogue_Apostrophe, $7B
-.db $88, $6C
-.db $74
-.db $8B, $73
-.db $95, $7B
-.db $B0, Dialogue_NewLine
-.db "N", $B6, $83, Dialogue_Apostrophe, $B5, " ", $69
+.db "Y", $94, Dialogue_Apostrophe, $7B
+.db $83, $F7, $84, $73
+.db $89, $7B
+.db $99, Dialogue_NewLine
+.db "N", $A9, $80, Dialogue_Apostrophe, $A6, $69
 .db $6E
 .db $6A
 .db "!", Dialogue_Terminator65
@@ -1840,29 +1805,26 @@ Dialogue_Index_00EA:
 .db "S", $75
 .db $6E
 .db $69
-.db $95, " ", $72
-.db $93, $B7, $95, $78
+.db $89, $C7, $87, $A7, $89, $78
 .db Dialogue_NewLine
-.db $D4, $88, $F0, $79
+.db $D9, $83, $C9, $79
 .db $7A
-.db $C8, $71
+.db $BA, $71
 .db $7E
 .db Dialogue_NewPage
 .db $68
 .db $71
-.db $6A
-.db $7B
-.db $95, ".", Dialogue_Terminator65
+.db $FD, $89, ".", Dialogue_Terminator65
 
 Dialogue_Index_00EC:
 .db "K", $73
-.db $B6, $E5, " ", $77
+.db $A9, $C3, " ", $77
 .db $74
 .db $67
 .db $74
 .db $79
 .db Dialogue_NewLine
-.db $99, $FD, $66
+.db $90, " H", $66
 .db $75
 .db $78
 .db $67
@@ -1870,30 +1832,26 @@ Dialogue_Index_00EC:
 .db "?", Dialogue_Terminator62
 
 Dialogue_Index_00EE:
-.db $97, $E5, $73
+.db $88, $C3, $73
 .db Dialogue_NewLine
-.db $95, $7A
+.db $89, $7A
 .db $75
 .db $79
 .db $6E
-.db $93, " ", $67
+.db $87, " ", $67
 .db $6A
 .db $7E
-.db $93, $69
+.db $87, $69
 .db Dialogue_NewPage
-.db $9D, $88, $72
-.db $A0, $73
+.db $8C, $83, $72
+.db $94, $73
 .db $79
 .db $66
-.db $91, $78
+.db $8A, $78
 .db Dialogue_NewLine
-.db $72
-.db $66
-.db $69
-.db $88, $AA, $71
-.db $66
-.db $70
-.db $88, $C9, Dialogue_NewPage
+.db $F1, $69
+.db $83, $9C, $71
+.db $E1, $83, $EC, Dialogue_NewPage
 .db $71
 .db $66
 .db $7B
@@ -1901,1193 +1859,1216 @@ Dialogue_Index_00EE:
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_00F0:
-.db $EC, $88, $79
-.db $B6, $95, " ", $69
+.db $C8, $83, $79
+.db $A9, $89, " ", $69
 .db $6A
 .db $6A
 .db $75
-.db " ", $91, Dialogue_NewLine
-.db $9D, $88, "G", $CE, $B1, $70
+.db " ", $8A, Dialogue_NewLine
+.db $8C, $83, "G", $C6, $AC, $70
 .db $74
 .db Dialogue_NewPage
 .db $72
-.db $A0, $73
+.db $94, $73
 .db $79
 .db $66
-.db $91, $8F, $C7, Dialogue_NewLine
-.db $99, $CD, $6A
-.db $69
-.db $F4, $66
+.db $8A, $86, $B0, Dialogue_NewLine
+.db $90, $DD, $DA, $D4, $66
 .db Dialogue_Apostrophe, $78
 .db Dialogue_NewPage
-.db "T", $B6, $95, ".", Dialogue_Terminator65
+.db "T", $A9, $89, ".", Dialogue_Terminator65
 
 Dialogue_Index_00F2:
 .db "H", $6E
-.db "!", $8E, " ", $B4, $7B
-.db $AC, Dialogue_Apostrophe, $8B, $C2, $AC, Dialogue_NewLine
-.db $9F, $7E
-.db $93, $88, $91, $E5, $6C
-.db $F1, ".", Dialogue_NewPage
+.db "!", $8E, " ", $A2, $7B
+.db $A0, Dialogue_Apostrophe, $84, $B5, $A0, Dialogue_NewLine
+.db $8F, $7E
+.db $87, $83, $8A, $C3, $6C
+.db $C2, ".", Dialogue_NewPage
 .db "W", $6E
-.db $B5, $83, " ", $79
-.db $C8, $70
+.db $A6, $7E
+.db $94, $D6, $BA, $70
 .db Dialogue_NewLine
 .db $7C
-.db $E8, $6D
-.db " ", $E4, "?", Dialogue_Terminator62
+.db $DB, $6D
+.db $C7, $6A
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_00F4:
-.db $97, $E5, Dialogue_NewLine
-.db $E4, $69
-.db $6E
+.db $88, $C3, Dialogue_NewLine
+.db $72
+.db $DA, $6E
 .db $68
-.db $91, $88, $99, Dialogue_NewPage
+.db $8A, $83, $90, Dialogue_NewPage
 .db "P", $74
 .db $71
 .db $7E
-.db $E4, $79
-.db $95, $C8, Dialogue_NewLine
+.db $72
+.db $D3, $89, $BA, Dialogue_NewLine
 .db $69
-.db $C7, $78
+.db $B0, $78
 .db $74
 .db $71
 .db $7B
-.db $F1, $E5, $73
+.db $C2, $C3, $73
 .db $7E
-.db $9D, $91, $6C
+.db $8C, $8A, $6C
 .db Dialogue_NewPage
 .db $67
-.db $7A
-.db $8B, "L", $F0, $93, $6E
+.db $FF, " L", $C9, $87, $6E
 .db $66
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_00F6:
-.db "W", $B4, $79
-.db "?", $CB, $77
-.db $9E, $F9, $AC, $74
+.db "W", $A2, $79
+.db "?", $CC, $77
+.db $AA, $E9, $A0, $74
 .db Dialogue_Apostrophe, $78
 .db Dialogue_NewLine
 .db $67
-.db $F0, $70
-.db "?", $C5, $7A
+.db $C9, $70
+.db "?", $CA, $7A
 .db $6E
 .db $71
 .db $69
-.db $91, $6C
+.db $8A, $6C
 .db Dialogue_NewPage
-.db $9F, $74
-.db $9D, $95, Dialogue_NewLine
-.db $CA, $78
-.db $B1, $75
+.db $8F, $74
+.db $8C, $89, Dialogue_NewLine
+.db $78
+.db $75
+.db $C9, $C2, $AC, $75
 .db "?", Dialogue_NewPage
 .db "O", $6D
-.db $9B, $C8, $71
+.db $98, $BA, $71
 .db " ", $77
 .db $6E
-.db $6C
-.db $6D
-.db $79
-.db $9E, $D1, $72
-.db " ", $93, Dialogue_NewLine
+.db $E3, $79
+.db $AA, $D7, $72
+.db " ", $87, Dialogue_NewLine
 .db $72
-.db $BB, $7C
-.db $66
-.db $7E
-.db ".", Dialogue_Terminator65
+.db $AD, $7C
+.db $EB, ".", Dialogue_Terminator65
 
 Dialogue_Index_00F8:
-.db "N", $A3, $93, $88, $7C
+.db "N", $93, $87, $83, $7C
 .db $6D
-.db $A3, $AC, $79
-.db $95, $78
+.db $93, $A0, $79
+.db $89, $78
 .db Dialogue_NewLine
-.db $9D, $88, $67
-.db $F0, $70
+.db $8C, $83, $67
+.db $C9, $70
 .db " ", $77
-.db $F3, $72
+.db $DC, $72
 .db Dialogue_NewPage
 .db $68
-.db $C4, $F1, " ", $A0, $8B, $C8, $6E
+.db $B1, $C2, " ", $94, $84, $BA, $6E
 .db $7B
-.db $B0, Dialogue_NewLine
-.db "H", $DA, "!", Dialogue_Terminator65
+.db $99, Dialogue_NewLine
+.db "H", $DF, "!", Dialogue_Terminator65
 
 Dialogue_Index_00FA:
-.db "I", $8B, $C2, $6A
+.db "I", $84, $B5, $6A
 .db $72
-.db $8F, $79
-.db $A3, $67
-.db $88, $66
+.db $86, $79
+.db $93, $67
+.db $83, $66
 .db Dialogue_NewLine
 .db $75
-.db $95, $78
-.db $93, " ", $79
-.db $7A
+.db $89, $78
+.db $87, $D6, $7A
 .db $77
 .db $73
-.db $6A
-.db $A7, $79
-.db $74
+.db $DA, $D6, $74
 .db Dialogue_NewPage
-.db $B7, $93, $B0, " C", $9F, $85, $7E
+.db $A7, $87, $99, $F2, $8F, $81, $7E
 .db Dialogue_NewLine
-.db $6A
-.db $7B
-.db $95, " ", $67
-.db $88, $B2, $B7, $A5, $6A
-.db $69
-.db "?", Dialogue_Terminator65
+.db $FD, $89, " ", $67
+.db $83, $B4, $A7, $95, $DA, "?", Dialogue_Terminator65
 
 Dialogue_Index_00FC:
-.db "Y", $A0, " ", $72
-.db $F4, $8B, $67
-.db $88, $B2, $66
+.db "Y", $94, $C7, $D4, $84, $67
+.db $83, $B4, $66
 .db $69
 .db $7E
 .db Dialogue_NewLine
 .db $6B
-.db $A5, " ", $7C
-.db $B4, $79
-.db Dialogue_Apostrophe, $8F, $68
-.db $C4, $91, $6C
+.db $95, $F3, $A2, $FE, $86, $68
+.db $B1, $8A, $6C
 .db ".", Dialogue_NewPage
-.db "H", $DA, " ", $6D
+.db "H", $DF, " ", $6D
 .db $6A
 .db $6D
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_00FE:
-.db "I", $79
-.db Dialogue_Apostrophe, $8F, $AA, $69
-.db $6A
-.db $66
-.db $A7, $AC, $69
+.db "I", $FE, $86, $9C, $69
+.db $A3, $97, $A0, $69
 .db ".", Dialogue_NewLine
 .db "T", $7A
 .db $77
 .db $73
 .db " ", $67
-.db $F0, $70
-.db " ", $7C
-.db $B1, $71
+.db $C9, $70
+.db $F3, $AC, $71
 .db $6A
 .db Dialogue_NewPage
 .db $7E
-.db $A0, " ", $B7, $6E
-.db $B5, " ", $68
-.db $9F, ".", Dialogue_Terminator65
+.db $94, $E4, $79
+.db $6E
+.db $A6, $68
+.db $8F, ".", Dialogue_Terminator65
 
 Dialogue_Index_0100:
 .db "M", $7E
-.db $9B, $7C
-.db $B4, $8B, $AA, $67
-.db $77
-.db $66
-.db $7B
+.db $98, $7C
+.db $A2, $84, $9C, $67
+.db $CF, $7B
 .db $6A
 .db Dialogue_NewLine
 .db $7E
-.db $A0, $73
-.db $F2, $93, $6A
-.db "!", $D7, $E1, $68
+.db $94, $73
+.db $6C
+.db " ", $87, $6A
+.db "!", $D0, $DE, $68
 .db $6D
 .db Dialogue_NewPage
-.db $A0, $8B, $6B
-.db $A5, " ", $79
-.db $77
-.db $66
-.db $75
+.db $94, $84, $6B
+.db $95, $D6, $CF, $75
 .db $78
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0102:
-.db "B", $D4, $79
-.db $6A
-.db $7B
-.db $A3, $C7, " ", $72
-.db $BB, $79
+.db "B", $D9, $79
+.db $FD, $93, $B0, $C7, $AD, $79
 .db $7A
 .db $77
 .db $6B
 .db ".", Dialogue_NewLine
-.db "D", $93, Dialogue_Apostrophe, $8B, $7E
-.db $A0, " ", $6C
-.db $74
-.db Dialogue_NewPage
-.db $B7, $6E
+.db "D", $87, Dialogue_Apostrophe, $84, $7E
+.db $94, " ", $F7, Dialogue_NewPage
+.db $A7, $6E
 .db $77
 .db $77
-.db $91, $F2, $7A
+.db $8A, $6C
+.db " ", $7A
 .db $75
-.db " ", $79
-.db $77
-.db $A0, $67
+.db $D6, $77
+.db $94, $67
 .db $71
-.db $B0, Dialogue_Terminator65
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_0104:
-.db "Y", $A0, " ", $72
-.db $F4, $8B, $6B
-.db $91, $A7, $66
+.db "Y", $94, $C7, $D4, $84, $6B
+.db $8A, $97, $66
 .db Dialogue_NewLine
 .db $77
 .db $74
 .db $67
 .db $74
-.db $8B, $99, Dialogue_NewPage
+.db $84, $90, Dialogue_NewPage
 .db "H", $66
 .db $75
 .db $78
 .db $67
 .db $7E
 .db ".", Dialogue_NewPage
-.db $EC, $E1, " ", $77
+.db $C8, $DE, " ", $77
 .db $74
 .db $67
 .db $74
-.db $8B, $78
+.db $84, $78
 .db $6D
-.db $A0, $71
+.db $94, $71
 .db $69
 .db Dialogue_NewLine
 .db $67
-.db $88, $66
+.db $83, $66
 .db $67
 .db $71
-.db $88, $79
-.db $A3, $6B
+.db $83, $79
+.db $93, $6B
 .db $71
-.db $BB, $66
+.db $AD, $66
 .db Dialogue_NewPage
-.db $CA, $78
-.db $B1, $75
+.db $78
+.db $75
+.db $C9, $C2, $AC, $75
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0106:
-.db $97, $E5, " ", $6B
-.db $91, $6A
+.db $88, $C3, $F8, $8A, $6A
 .db Dialogue_NewLine
 .db $77
 .db $74
 .db $67
 .db $74
-.db $8B, $7C
-.db $CE, " ", $9D, $77
-.db $B6, $73
-.db Dialogue_NewPage
-.db $A0, $8B, $91, " ", $9D, $C7, " ", $78
-.db $68
+.db $84, $7C
+.db $C6, $D6, $6D
 .db $77
-.db $66
-.db $75
+.db $A9, $73
+.db Dialogue_NewPage
+.db $94, $84, $8A, $D6, $AC, $86, $78
+.db $68
+.db $CF, $75
 .db Dialogue_NewLine
 .db $6D
-.db $6A
-.db $66
-.db $75
+.db $A3, $75
 .db ",", Dialogue_NewPage
 
 Dialogue_Index_0108:
 .db $67
-.db $7A
-.db $8B, $7C
-.db $6D
-.db $A3, $70
+.db $FF, $F3, $6D
+.db $93, $70
 .db $73
-.db $B6, $8F, $6E
+.db $A9, $86, $6E
 .db $6B
 .db Dialogue_NewLine
-.db $E8, Dialogue_Apostrophe, $8F, $79
+.db $DB, Dialogue_Apostrophe, $86, $79
 .db $77
 .db $7A
-.db $B0, Dialogue_Terminator65
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_010A:
-.db $97, $E5, Dialogue_NewLine
-.db $E4, $69
-.db $6E
+.db $88, $C3, Dialogue_NewLine
+.db $72
+.db $DA, $6E
 .db $68
-.db $91, $88, $99, Dialogue_NewPage
+.db $8A, $83, $90, Dialogue_NewPage
 .db "P", $74
 .db $71
 .db $7E
-.db $E4, $79
-.db $95, $C8, " ", $C7, Dialogue_NewLine
+.db $72
+.db $D3, $89, $BA, " ", $B0, Dialogue_NewLine
 .db $78
 .db $74
 .db $71
-.db $A7, $91, $DC, $67
+.db $97, $8A, " A", $67
 .db $6E
-.db $93, Dialogue_NewPage
-.db $7B
-.db $6E
-.db $B5, $D8, $B0, Dialogue_Terminator65
+.db $87, Dialogue_NewPage
+.db $9B, $99, Dialogue_Terminator65
 
 Dialogue_Index_010C:
-.db $EC, $C7, " ", $7B
-.db $6E
-.db $B5, $D8, $88, $C7, Dialogue_NewLine
-.db $99, " L", $74
-.db $D4, ".", Dialogue_NewPage
-.db "L", $66
-.db "S", $B1, $6A
-.db $68
-.db " ", $B4, $78
+.db $C8, $B0, " ", $9B, $83, $B0, Dialogue_NewLine
+.db $90, " L", $74
+.db $D9, ".", Dialogue_NewPage
+.db $92, " ", $A2, $78
 .db Dialogue_NewLine
 .db $67
 .db $77
-.db $A0, $6C
-.db $6D
-.db $8B, $E8, " ", $79
-.db $A3, $77
+.db $94, $E3, $84, $DB, $D6, $93, $77
 .db $7A
-.db $91, ".", Dialogue_Terminator65
+.db $8A, ".", Dialogue_Terminator65
 
 Dialogue_Index_010E:
-.db "D", $A3, $7E
-.db $A0, " ", $70
+.db "D", $93, $7E
+.db $94, " ", $70
 .db $73
-.db $B6, $E5, " ", $6C
+.db $A9, $C3, " ", $6C
 .db $6A
 .db $72
 .db Dialogue_NewLine
-.db $99, $85, Dialogue_NewPage
-.db "C", $D4, $67
-.db $7A
-.db $73
-.db $68
+.db $90, $81, Dialogue_NewPage
+.db "C", $D9, $67
+.db $ED, $68
 .db $71
-.db $88, "E", $7E
+.db $83, "E", $7E
 .db $6A
 .db "?", Dialogue_NewPage
 
 Dialogue_Index_0110:
-.db $97, $85, Dialogue_NewLine
+.db $88, $81, Dialogue_NewLine
 .db $69
-.db $77
-.db $D8, $93, " ", $C9, " C", $CE, $67
+.db $CF, $F7, $73
+.db " ", $A4, "C", $C6, $67
 .db $66
 .db Dialogue_NewPage
-.db $B4, $8F, $93, $B0, Dialogue_Terminator65
+.db $A2, $86, $87, $99, Dialogue_Terminator65
 
 Dialogue_Index_0112:
-.db "A", $8B, $9D, $88, $7C
-.db $F1, $8B, $AC, $A7, $C9, Dialogue_NewLine
-.db $9D, $C7, " ", $C7, $71
-.db $9F, $A7, $C7, $E5, Dialogue_NewPage
-.db $7B
-.db $6E
-.db $B5, $D8, $88, $99, Dialogue_NewLine
+.db "A", $84, $8C, $83, $7C
+.db $C2, $84, $A0, $97, $EC, Dialogue_NewLine
+.db $8C, $B0, " ", $B0, $71
+.db $8F, $97, $B0, $C3, Dialogue_NewPage
+.db $9B, $83, $90, Dialogue_NewLine
 .db "A", $67
 .db $6E
-.db $93, ".", Dialogue_Terminator65
+.db $87, ".", Dialogue_Terminator65
 
 Dialogue_Index_0114:
-.db "D", $A3, $7E
-.db $A0, " ", $70
+.db "D", $93, $7E
+.db $94, " ", $70
 .db $73
-.db $B6, $85, Dialogue_NewLine
+.db $A9, $81, Dialogue_NewLine
 .db "L", $66
-.db $95, $72
-.db $AA, $79
-.db $B2, $6A
+.db $89, $F1, $D6, $B4, $6A
 .db "?", Dialogue_Terminator62
 
 Dialogue_Index_0116:
-.db $97, " ", $E8, " ", $6C
+.db $88, " ", $DB, " ", $6C
 .db $77
-.db $B6, $78
+.db $A9, $78
 .db Dialogue_NewLine
-.db $9D, $6E
+.db $8C, $6E
 .db $68
 .db $70
-.db " ", $93, $E5, " ", $75
+.db " ", $87, $C3, " ", $75
 .db $71
-.db $E1, $6A
-.db $66
-.db $7A
+.db $DE, $A3, $7A
 .db Dialogue_NewPage
-.db $99, $85, Dialogue_NewLine
+.db $90, $81, Dialogue_NewLine
 .db "A", $71
 .db $79
 .db $6E
 .db $75
 .db $71
-.db $9F, $74
-.db $9B, $93, Dialogue_NewPage
+.db $8F, $74
+.db $98, $87, Dialogue_NewPage
 .db "D", $6A
 .db $7F
 .db $74
-.db $71
-.db $C7, ".", Dialogue_Terminator65
+.db $C1, $78
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0118:
-.db "W", $B4, $79
-.db "?", $FE, $A0, Dialogue_Apostrophe, $B2, " ", $6C
-.db $74
-.db $91, $6C
+.db "W", $A2, $79
+.db "? Y", $94, Dialogue_Apostrophe, $B4, " ", $F7, $8A, $6C
 .db Dialogue_NewLine
 .db $79
-.db $A3, $69
+.db $93, $69
 .db $6A
 .db $6B
-.db $6A
-.db $E1, " L", $66
-.db "S", $B1, $6A
-.db $68
-.db "?", Dialogue_NewPage
-.db "A", $72
-.db $66
-.db $7F
-.db $91, $6C
+.db $A3, $84, $92, "?", Dialogue_NewPage
+.db "A", $F1, $7F
+.db $8A, $6C
 .db "!", Dialogue_NewPage
 
 Dialogue_Index_011A:
-.db "I", $79
-.db Dialogue_Apostrophe, $8F, $6F
-.db $F4, $8B, $AA, $77
+.db "I", $FE, $86, $6F
+.db $D4, $84, $9C, $77
 .db $7A
 .db $72
-.db $A5, ",", Dialogue_NewLine
+.db $95, ",", Dialogue_NewLine
 .db $67
-.db $7A
-.db $8B, $9D, $6A
-.db $BB, $78
-.db $66
-.db $BB, $66
-.db Dialogue_NewPage
+.db $FF, $81, $AD, $78
+.db $EB, $C3, Dialogue_NewPage
 .db $68
-.db $95, $79
+.db $89, $79
 .db $66
-.db $91, " ", $68
-.db $77
+.db $8A, $E8, $77
 .db $7E
-.db $B7, $C8, Dialogue_NewLine
-.db $C2, $C8, $8F, $66
+.db $A7, $BA, Dialogue_NewLine
+.db $B5, $BA, $86, $66
 .db $7C
-.db $66
-.db $BB, $6A
-.db $7B
-.db $6E
+.db $EB, " ", $FD, $6E
 .db $71
 .db Dialogue_NewPage
-.db $72
-.db $D8, $6E
-.db $68
+.db $F1, $F6, $68
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_011C:
-.db $EC, $C7, " ", $7B
+.db $C8, $B0, " ", $9B, $83, $B0, Dialogue_NewLine
+.db $90, " A", $67
 .db $6E
-.db $B5, $D8, $88, $C7, Dialogue_NewLine
-.db $99, $DC, $67
-.db $6E
-.db $93, ".", Dialogue_Terminator65
+.db $87, ".", Dialogue_Terminator65
 
 Dialogue_Index_011E:
-.db "L", $66
-.db "S", $B1, $6A
-.db $68
-.db Dialogue_Apostrophe, $8F, $6C
-.db $77
-.db $CE, $75
-.db Dialogue_NewLine
-.db $B4, $8F, $B2, $F0, $6D
-.db $6A
-.db $A7, $6A
-.db $7B
-.db $AC, Dialogue_NewPage
-.db $9D, $C7, " ", $7B
-.db $6E
-.db $B5, $D8, $B0, $FD, $6A
-.db $71
+.db $92, Dialogue_Apostrophe, $86, $6C
+.db $CF, $78
 .db $75
 .db Dialogue_NewLine
-.db $F4, "!", Dialogue_Terminator65
+.db $A2, $86, $B4, $C9, $6D
+.db $DA, " ", $FD, $A0, Dialogue_NewPage
+.db $8C, $B0, " ", $9B, $99, " H", $D2, $75
+.db Dialogue_NewLine
+.db $D4, "!", Dialogue_Terminator65
 
 Dialogue_Index_0120:
-.db $AD, $B7, $77
-.db $9F, $6C
-.db $95, " ", $72
-.db $74
-.db $7B
-.db $6A
-.db $69
-.db Dialogue_NewLine
-.db $91, $79
-.db $A3, $9D, $C7, " ", $7B
-.db $6E
-.db $B5, $D8, $B0, Dialogue_NewPage
+.db $BD, $A7, $CF, $73
+.db $6C
+.db $89, $C7, $E7, $DA, Dialogue_NewLine
+.db $8A, $79
+.db $93, $8C, $B0, " ", $9B, $99, Dialogue_NewPage
 
 Dialogue_Index_0122:
 .db "H", $6A
-.db Dialogue_Apostrophe, $8F, $69
+.db Dialogue_Apostrophe, $86, $69
 .db $74
-.db $91, $F2, $9F, $6E
-.db $72
-.db $C8, Dialogue_NewLine
+.db $8A, $6C
+.db $C3, $73
+.db $6E
+.db $F1, $71
+.db Dialogue_NewLine
 .db $6A
 .db $7D
 .db $75
-.db $95, $6E
-.db $E4, $73
-.db $79
+.db $89, $6E
+.db $72
+.db $A0, $79
 .db $78
-.db $9B, $E8, Dialogue_NewPage
-.db $C2, $6A
+.db $98, $DB, Dialogue_NewPage
+.db $B5, $6A
 .db $72
 .db $78
-.db $9E, "C", $B2, $6A
+.db $AA, "C", $B4, $6A
 .db $75
 .db $7E
-.db "!", $FD, $6A
+.db "! H", $6A
 .db Dialogue_NewLine
-.db $B4, $A7, $78
-.db $C4, $6A
-.db $9D, $91, $F2, $71
-.db $6E
-.db $70
+.db $A2, $97, $78
+.db $B1, $D3, $AC, $73
+.db $6C
+.db " ", $C1, $70
 .db $6A
 .db Dialogue_NewPage
-.db $AA, $75
+.db $9C, $75
 .db $74
-.db $8B, $7C
-.db $E8, $6D
-.db " ", $B1, $72
+.db $84, $7C
+.db $DB, $6D
+.db " ", $AC, $72
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0124:
-.db "I", $79
-.db Dialogue_Apostrophe, $8F, $AA, $77
+.db "I", $FE, $86, $9C, $77
 .db $74
 .db $67
 .db $74
-.db $8B, $72
-.db $66
-.db $69
+.db $84, $F1, $69
 .db $6A
 .db Dialogue_NewLine
-.db $C9, " L", $F0, $93, $6E
+.db $A4, "L", $C9, $87, $6E
 .db $66
 .db ".", Dialogue_NewPage
-.db "B", $7A
-.db $8B, $E8, " ", $C2, $6A
+.db "B", $FF, " ", $DB, $E4, $6A
+.db $6A
 .db $72
-.db $8F, $9D, $6A
+.db $86, $8C, $6A
 .db $7E
 .db Dialogue_NewLine
-.db $99, " ", $E8, " ", $78
-.db $68
-.db $77
-.db $66
-.db $75
-.db $E5, $73
+.db $90, " ", $DB, $E4, $68
+.db $CF, $75
+.db $C3, $73
 .db $69
 .db Dialogue_NewPage
-.db $9D, $B2, $7C
-.db " ", $E8, $E5, $7C
-.db $66
-.db $7E
-.db ".", Dialogue_Terminator65
+.db $8C, $B4, $7C
+.db " ", $DB, $C3, $7C
+.db $EB, ".", Dialogue_Terminator65
 
 Dialogue_Index_0126:
-.db $D1, $A7, $71
-.db $6E
-.db $70
-.db $88, $79
-.db $A3, $79
-.db $77
-.db $66
-.db $7B
-.db $6A
-.db $71
-.db Dialogue_NewLine
-.db $9D, $77
-.db $A0, $6C
-.db $6D
-.db " ", $CA, ".", Dialogue_Terminator65
+.db $D7, $97, $C1, $70
+.db $83, $79
+.db $93, $79
+.db $CF, $7B
+.db $D2, Dialogue_NewLine
+.db $8C, $77
+.db $94, $E3, $E4, $75
+.db $C9, $99, Dialogue_Terminator65
 
 Dialogue_Index_0128:
-.db $97, " ", $9D, $E1, Dialogue_NewLine
+.db $88, $D6, $A2, $79
+.db Dialogue_NewLine
 .db $7C
 .db $6D
-.db $AC, $E5, $73
-.db $E5, $73
+.db $A0, $C3, $73
+.db $C3, $73
 .db $6E
-.db $72
-.db $C8, Dialogue_NewPage
-.db $99, $E5, " ", $72
-.db $F4, $70
-.db " ", $68
-.db $E1, Dialogue_NewLine
-.db $6A
-.db $E1, $8F, $AA, $68
-.db $95, $79
+.db $F1, $71
+.db Dialogue_NewPage
+.db $90, $C3, $C7, $D4, $70
+.db $E8, $DE, Dialogue_NewLine
+.db $A3, $79
+.db $86, $9C, $68
+.db $89, $79
 .db $66
-.db $91, " ", $73
-.db $7A
-.db $79
-.db ",", Dialogue_NewPage
+.db $8A, " ", $73
+.db $FF, ",", Dialogue_NewPage
 
 Dialogue_Index_012A:
-.db $E8, " ", $6C
+.db $DB, " ", $6C
 .db $77
-.db $B6, $8F, $67
+.db $A9, $86, $67
 .db $6E
-.db $F2, $9F, $69
+.db $6C
+.db $C3, $73
+.db $69
 .db Dialogue_NewLine
 .db $68
-.db $9F, " ", $6B
-.db $71
+.db $8F, $F8, $71
 .db $7E
-.db $9E, "S", $79
-.db $77
-.db $9F, $6C
+.db $AA, "S", $79
+.db $CF, $73
+.db $6C
 .db $6A
 .db ",", Dialogue_NewPage
-.db $C7, $73
-.db Dialogue_Apostrophe, $8B, $E8, "?", Dialogue_Terminator65
+.db $B0, $73
+.db Dialogue_Apostrophe, $84, $DB, "?", Dialogue_Terminator65
 
 Dialogue_Index_012C:
-.db $D1, $72
-.db $FD, $66
+.db $D7, $72
+.db " H", $66
 .db $75
 .db $78
 .db $67
 .db $7E
 .db ".", Dialogue_NewPage
-.db $EC, $9F, $70
-.db $8F, $6B
-.db $A5, " ", $6B
-.db $91, $69
-.db $91, $6C
+.db $C8, $8F, $70
+.db $86, $6B
+.db $95, $F8, $8A, $69
+.db $8A, $6C
 .db Dialogue_NewLine
-.db $E4, $9E, "L", $6A
-.db $66
-.db $7B
-.db $88, $9D, $6A
+.db $72
+.db $99, " L", $A3, $7B
+.db $83, $8C, $6A
 .db Dialogue_NewPage
 .db $6B
 .db $71
 .db $7E
-.db $91, $F2, $C9, $85, Dialogue_NewLine
-.db $F9, $AC, $A3, $79
-.db $A3, $E4, "!", Dialogue_Terminator65
+.db $8A, $6C
+.db " ", $A4, $8C, $6A
+.db Dialogue_NewLine
+.db $E9, $A0, $93, $79
+.db $93, $72
+.db $6A
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_012E:
-.db $81, $AB, " ", $8D, "WN", $8E, "S", Dialogue_NewLine
-.db $D0, $96, $92, " UZO.", Dialogue_Terminator65
+.db $C8, $B0, " ", $B0, " U", $7F
+.db $74
+.db $98, $66
+.db Dialogue_NewLine
+.db $9B, $83, $87, $DD, $74
+.db $79
+.db $66
+.db $7B
+.db $6E
+.db $66
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0130:
-.db "IF", $FE, $94, " ", $CC, $80, "A", Dialogue_NewLine
-.db $D5, "H", $EA, $B3, " ", $D0, $96, $92, Dialogue_NewPage
-.db $81, $80, "L", $89, $AF, "RO", $D5, "R,", Dialogue_NewLine
-.db $81, $80, $89, $8A, $BE, $90, $D7, "I", $96, Dialogue_NewPage
-.db $A4, $8A, $DF, $DC, "B", $B3, " ", $8D, Dialogue_NewLine
-.db $A8, "RM", $FE, $94, ".", Dialogue_Terminator65
+.db "Y", $94, $E8, $8F, " ", $6C
+.db $D3, " ", $75
+.db $C6, $79
+.db Dialogue_NewLine
+.db $8C, $83, $8F, $79
+.db $C1, $87, $86, $7C
+.db $DB, $6D
+.db $C3, Dialogue_NewPage
+.db $7B
+.db $6A
+.db $AC, $68
+.db $71
+.db $83, $90, $C3, Dialogue_NewLine
+.db "L", $8F, $97, "M", $C6, $79
+.db $89, ".", Dialogue_Terminator65
 
 Dialogue_Index_0132:
-.db $81, $87, $80, $AB, $DC, " ", $8D, "WN", Dialogue_NewLine
-.db $D0, $96, $92, " ", $D0, "SB", $AD, $8D, Dialogue_NewPage
-.db $81, $80, "S", $94, $81, " ", $9C, $C1, $BA, ".", Dialogue_Terminator65
+.db "C", $C6, $67
+.db $9C, $9B, $83, $B0, Dialogue_NewLine
+.db $78
+.db $94, $8C, " ", $A4, "U", $7F
+.db $74
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0134:
-.db $81, $87, $80, $8C, "E", Dialogue_NewLine
-.db "DR", $F6, $90, $84, $BE, "V", $86, "G", Dialogue_NewPage
-.db $86, " ", $81, $80, $D0, "SBA", Dialogue_NewLine
-.db $D0, $D5, $9E, $81, $A2, "E", Dialogue_NewPage
-.db "DR", $F6, $90, $84, $A8, $D5, Dialogue_NewLine
-.db "G", $E6, $84, $86, " ", $81, "EIR", Dialogue_NewPage
-.db $C1, "ADS!", Dialogue_Terminator65
+.db $88, $C3, " ", $69
+.db $CF, $F7, $73
+.db Dialogue_NewLine
+.db $C1, $7B
+.db $C2, " ", $8A, $F2, $C6, $67
+.db $66
+.db Dialogue_Apostrophe, $78
+.db Dialogue_NewPage
+.db $68
+.db $66
+.db $7B
+.db $6A
+.db $98, $7C
+.db $DB, $6D
+.db $C3, " ", $6C
+.db $6A
+.db $72
+.db Dialogue_NewLine
+.db $8A, " ", $DB, $86, $6D
+.db $A3, $69
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0136:
-.db $A8, $D5, $FE, $94, $FD, "E", $8C, "D", Dialogue_NewLine
-.db "AB", $94, $8A, $E0, "NT", $B3, "S", Dialogue_NewPage
-.db $E0, $E3, " ", $9C, "FRAD", Dialogue_NewLine
-.db "FI", $DF, "RS?"
+.db "E", $7B
+.db $89, " ", $6D
+.db $A3, $77
+.db $97, $A4, $8C, $6A
+.db Dialogue_NewLine
+.db "F", $CF, $97, "M", $8F, $79
+.db $71
+.db $6A
+.db "?", Dialogue_NewPage
 
 Dialogue_Index_0138:
-.db " ", $81, "E", $BF, $8C, "E", Dialogue_NewPage
-.db $BE, $EE, "T", $9B, "BUT", Dialogue_NewLine
-.db "PROVI", $E3, " G", $BA, $CF, Dialogue_NewPage
-.db $FB, "I", $90, ".", Dialogue_Terminator65
+.db "I", $FE, $86, $C1, $E3, $79
+.db $98, $67
+.db $FF, Dialogue_NewLine
+.db $8C, $6A
+.db $AD, $78
+.db $EB, " ", $DB, " ", $F6, $7B
+.db $C2, Dialogue_NewPage
+.db $6C
+.db $B4, $DE, " ", $75
+.db $77
+.db $74
+.db $79
+.db $6A
+.db $68
+.db $79
+.db $6E
+.db $87, ".", Dialogue_Terminator65
 
 Dialogue_Index_013A:
-.db $A8, $D5, $FE, $94, $FD, "E", $8C, "D", Dialogue_NewLine
-.db "AB", $94, $8A, $81, $80, Dialogue_NewPage
-.db "SOO", $81, $86, $E9, "FLUTE?", Dialogue_Terminator62
+.db "E", $7B
+.db $89, " ", $6D
+.db $A3, $77
+.db $97, $A4, $8C, $6A
+.db Dialogue_NewLine
+.db "S", $DC, $8C, $83, "F", $71
+.db $FF, $6A
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_013C:
-.db "OH", $9B, "NE", $D5, "R", $CD, $86, "D.", Dialogue_Terminator65
+.db "I", $86, $8C, $DE, $E4, $74
+.db $AA, "Y", $94, Dialogue_Apostrophe, $B4, Dialogue_NewLine
+.db $73
+.db $93, $6B
+.db $ED, ".", Dialogue_Terminator65
 
 Dialogue_Index_013E:
-.db $E7, Dialogue_Apostrophe, $84, $AD, $D2, "C", $BA, "T", $9B, "BUT", Dialogue_NewLine
-.db $F8, "B", $D3, "I", $92, " ", $90, $80, $CF, Dialogue_NewPage
-.db $81, $80, $94, "TSKIRT", $84, $FA, Dialogue_NewLine
-.db $81, $80, $8D, "WN ", $FA, Dialogue_NewPage
-.db $B9, $81, $EA
+.db "I", $FE, $86, $9C, $B5, $68
+.db $B4, $79
+.db $98, $67
+.db $FF, Dialogue_NewLine
+.db $7C
+.db $6D
+.db $A0, $8E, $F3, $A0, $84, $79
+.db $74
+.db Dialogue_NewPage
+.db "P", $BA, $F1, $98, "I ", $67
+.db $7A
+.db $77
+.db $6E
+.db $DA, Dialogue_NewLine
+.db $87, $83, $DE, $81, " ", $DA, $6C
+.db $6A
+.db Dialogue_NewPage
 
 Dialogue_Index_0140:
-.db " ", $90, $F5, $AE, $E0, ".", Dialogue_NewLine
-.db $DD, "N", Dialogue_Apostrophe, $8A, "TE", $96, Dialogue_NewPage
-.db $89, "Y", $90, $BD, Dialogue_Terminator65
+.db $A4, "G", $C6, $AC, $70
+.db $93, $9B, $99, Dialogue_NewLine
+.db "D", $87, Dialogue_Apostrophe, $84, $79
+.db $D2, $71
+.db $C3, $73
+.db $7E
+.db $87, $6A
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_0142:
-.db $F8, $DD, "N", Dialogue_Apostrophe, $8A, "K", $A4, "W", $D7, "HO", Dialogue_NewLine
-.db $8D, "L", $AF, $82, $81, $CF, ".", Dialogue_NewPage
-.db $82, $A8, $AF, $DF, "ST", Dialogue_NewLine
-.db "F", $9A, "G", $F7, $8E, $C6, Dialogue_Terminator65
+.db "I ", $69
+.db $87, Dialogue_Apostrophe, $84, $70
+.db $73
+.db $A9, $F3, $6D
+.db $74
+.db Dialogue_NewLine
+.db $79
+.db $74
+.db $71
+.db $97, $7E
+.db $94, $98, $67
+.db $FF, $80, Dialogue_Apostrophe, $69
+.db Dialogue_NewPage
+.db $69
+.db $93, $67
+.db $C2, $84, $79
+.db $93, $F6, $7B
+.db $83, $7A
+.db $75
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0144:
-.db $F8, "TE", $96, $FE, $94, " ", $A4, " ", $90, "E", Dialogue_NewLine
-.db $D0, "N", $CB, "O.", $B9, " ", $90, $C5, $C0, "K", Dialogue_NewPage
-.db $8D, $D7, $C1, $BA, $D5, "R", $FE, $94, " ", Dialogue_NewLine
-.db $D0, "M", $80, "FR", $A9, ".", Dialogue_Terminator65
+.db "N", $93, $72
+.db $A3, $73
+.db $86, $73
+.db $74
+.db $AA, "G", $74
+.db Dialogue_NewLine
+.db $87, $98, $EC, $6B
+.db $80, " ", $F7, ".", Dialogue_Terminator65
 
 Dialogue_Index_0146:
-.db $AE, "L RI", $EE, "T", $9B, $AE, "L", Dialogue_NewLine
-.db "RI", $EE, $C6, $8E, " GI", $D5, " UP.", Dialogue_NewPage
-.db "BU", $8A, $DD, "N", Dialogue_Apostrophe, $8A, "TE", $96, Dialogue_NewLine
-.db $89, "Y", $90, $80, "W", $C1, $BA, Dialogue_NewPage
-.db $82, $B9, $8A, $81, $AB, $9B, "O.K.?", Dialogue_Terminator65
+.db "Y", $94, " ", $69
+.db $87, Dialogue_Apostrophe, $84, $F6, $7B
+.db $83, $7A
+.db $75
+.db ",", Dialogue_NewLine
+.db $69
+.db $93, $7E
+.db $94, "?", $CE, $8A, $6A
+.db $98, $8C, $A0, ".", Dialogue_NewPage
+.db "B", $FF, " ", $69
+.db $87, Dialogue_Apostrophe, $84, $79
+.db $D2, $71
+.db Dialogue_NewLine
+.db $8F, $7E
+.db $87, $99, Dialogue_Terminator65
 
 Dialogue_Index_0148:
-.db $F8, $66
-.db $72
-.db $CB, $66
+.db "I", $C3, $72
+.db $CC, $66
 .db $72
 .db $74
 .db $66
-.db $9B, $9D, $6A
+.db $98, $8C, $6A
 .db Dialogue_NewLine
 .db $6C
-.db $B2, $E1, $F1, $79
+.db $B4, $DE, $C2, $79
 .db Dialogue_NewPage
 .db $6B
-.db $A5, $79
-.db $7A
-.db $73
-.db $6A
+.db $95, $79
+.db $ED, $6A
 .db "-", $79
-.db $6A
-.db $B5, $95, " ", $91, Dialogue_NewLine
-.db $9D, $88, $7C
-.db $A5, $71
+.db $D2, $71
+.db $89, " ", $8A, Dialogue_NewLine
+.db $8C, $83, $7C
+.db $95, $71
 .db $69
 .db ".", Dialogue_NewPage
 
 Dialogue_Index_014A:
-.db "D", $A3, $7E
-.db $A0, " ", $67
-.db $6A
-.db $71
-.db $6E
-.db $6A
-.db $7B
-.db $88, $91, Dialogue_NewLine
+.db "D", $93, $7E
+.db $94, " ", $67
+.db $D2, $6E
+.db $FD, $83, $8A, Dialogue_NewLine
 .db $72
-.db $BB, $6B
-.db $A5, $79
-.db $7A
-.db $73
-.db $F1, "?", Dialogue_Terminator62
+.db $AD, $6B
+.db $95, $79
+.db $ED, $C2, "?", Dialogue_Terminator62
 
 Dialogue_Index_014C:
-.db $D1, $7B
-.db $88, $6C
-.db $74
-.db $8B, $AA, $6B
+.db $D7, $7B
+.db $83, $F7, $84, $9C, $6B
 .db $77
 .db $6E
-.db $AC, $A7, $91, Dialogue_NewLine
-.db "B", $D4, $79
-.db $6A
-.db $7B
-.db $74
+.db $A0, $97, $8A, Dialogue_NewLine
+.db "B", $D9, $79
+.db $FD, $74
 .db ".", Dialogue_NewPage
-.db "W", $E8, $6D
-.db " ", $9D, $E1, " ", $71
+.db "W", $DB, $6D
+.db $D6, $A2, $84, $71
 .db $66
 .db $7B
 .db $66
 .db Dialogue_NewLine
 .db $71
-.db $66
-.db $70
-.db $6A
-.db $9B, $6D
-.db $88, $72
-.db $F4, $8B, $67
+.db $E1, $6A
+.db $98, $6D
+.db $83, $72
+.db $D4, $84, $67
 .db $6A
 .db Dialogue_NewPage
-.db $B4, $7B
-.db $91, $F2, $AA, $B4, $77
-.db $A7, $79
+.db $A2, $7B
+.db $8A, $6C
+.db $C3, " ", $A2, $77
+.db $97, $79
 .db $6E
-.db $E4, ".", Dialogue_NewPage
+.db $72
+.db $99, Dialogue_NewPage
 .db "I", $6B
-.db $83, " ", $C2, $88, $B1, $72
+.db $80, $E4, $6A
+.db $83, $AC, $72
 .db ",", Dialogue_NewLine
 .db $78
-.db $66
-.db $BB, $B1, " ", $6B
-.db $A5, " ", $E4, ".", Dialogue_Terminator65
+.db $EB, " ", $AC, $F8, $95, $C7, $99, Dialogue_Terminator65
 
 Dialogue_Index_014E:
-.db "G", $F3, $69
-.db $9B, $6C
-.db $F3, $69
+.db "G", $DC, $69
+.db $98, $F7, $74
+.db $69
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0150:
-.db "Y", $A0, $E5, $B2, " ", $C2, $D4, $68
-.db $B1, $73
+.db "Y", $94, $C3, $B4, $E4, $A3, $77
+.db $68
+.db $AC, $73
 .db $6C
 .db Dialogue_NewLine
 .db $6B
-.db $A5, " ", $78
-.db $C4, $6A
-.db $9D, $91, $6C
-.db $9B, $73
+.db $95, $E4, $B1, $D3, $AC, $73
+.db $6C
+.db $98, $73
 .db $74
 .db "?", Dialogue_Terminator62
 
 Dialogue_Index_0152:
-.db "W", $B4, $79
-.db "?", $FE, $A0, $E5, $B2, $E5, Dialogue_NewLine
-.db $B7, $7A
+.db "W", $A2, $79
+.db "? Y", $94, $C3, $B4, $C3, Dialogue_NewLine
+.db $A7, $7A
 .db $67
 .db $67
-.db $A5, $73
-.db " ", $93, $B0, " G", $74
+.db $95, $73
+.db " ", $87, $99, " G", $74
 .db Dialogue_NewPage
 .db $6D
-.db $C4, $B0, Dialogue_Terminator65
+.db $B1, $99, Dialogue_Terminator65
 
 Dialogue_Index_0154:
-.db "Y", $A0, " ", $C2, $6A
+.db "Y", $94, $E4, $6A
+.db $6A
 .db $70
-.db " ", $93, $88, "A", $71
+.db " ", $87, $83, "A", $71
 .db $6A
 .db $7D
 .db Dialogue_NewLine
 .db "O", $78
 .db $78
-.db $C8, $6A
-.db $9B, $73
+.db $BA, $6A
+.db $98, $73
 .db $74
 .db "?", Dialogue_Terminator62
 
 Dialogue_Index_0156:
-.db "A", $B5, $8E, " ", $78
-.db $66
-.db $BB, $C7, " ", $79
-.db $77
+.db "A", $A6, "I", $E4, $EB, " ", $B0, $D6, $77
 .db $7A
-.db $B0, Dialogue_NewLine
+.db $99, Dialogue_NewLine
 .db "U", $73
 .db $69
-.db $95, $B7, $F3, $69
+.db $89, $A7, $DC, $69
 .db "?", Dialogue_Terminator62
 
 Dialogue_Index_0158:
-.db $EC, $AC, " ", $68
-.db $C4, $88, $D8, $66
-.db $91, ".", Dialogue_Terminator65
+.db $C8, $A0, $E8, $B1, $83, $66
+.db $6C
+.db $66
+.db $8A, ".", Dialogue_Terminator65
 
 Dialogue_Index_015A:
-.db "Y", $A0, " ", $69
-.db $D4, $88, $69
+.db "Y", $94, " ", $69
+.db $D9, $83, $69
 .db $6A
 .db $6B
-.db $BB, $E4, "?", Dialogue_Terminator62
+.db $AD, $72
+.db $6A
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_015C:
-.db "J", $F4, $8B, $78
+.db "J", $D4, $84, $78
 .db $74
-.db $9E, "Y", $A0, " ", $78
-.db $6D
-.db $B6, Dialogue_NewLine
-.db $B2, $C8, " ", $75
+.db $AA, "Y", $94, $E4, $6D
+.db $A9, Dialogue_NewLine
+.db $B4, $BA, " ", $75
 .db $77
-.db $C4, $C7, $B0, Dialogue_NewPage
+.db $B1, $B0, $99, Dialogue_NewPage
 
 Dialogue_Index_015E:
-.db "A", $8F, $AA, $B2, $7C
-.db $D4, $69
-.db $9B, "I", Dialogue_NewLine
+.db "A", $86, $9C, $B4, $7C
+.db $D9, $69
+.db $98, "I", Dialogue_NewLine
 .db $78
-.db $B4, $B5, " ", $6C
-.db $6E
-.db $7B
-.db $88, $7E
-.db $A0, $E5, Dialogue_NewPage
+.db $A2, $A6, $F6, $7B
+.db $83, $7E
+.db $94, $C3, Dialogue_NewPage
 .db $68
 .db $77
 .db $7E
-.db $B7, $C8, ".", Dialogue_Terminator65
+.db $A7, $BA, ".", Dialogue_Terminator65
 
 Dialogue_Index_0160:
-.db "Y", $A0, " ", $70
+.db "Y", $94, " ", $70
 .db $73
-.db $B6, " ", $9D, $C7, " ", $C7, Dialogue_NewLine
-.db "B", $66
-.db $7E
-.db $66
-.db $72
-.db $D4, $6A
-.db Dialogue_Apostrophe, $8F, $79
-.db $B6, $95, "?", Dialogue_Terminator62
+.db $A9, $D6, $AC, $86, $B0, Dialogue_NewLine
+.db "B", $EB, $66
+.db $F1, $B4, Dialogue_Apostrophe, $86, $79
+.db $A9, $89, "?", Dialogue_Terminator62
 
 Dialogue_Index_0162:
-.db $EC, $AC, $83, " ", $78
-.db $B4, $B5, Dialogue_NewLine
+.db $C8, $A0, $80, $E4, $A2, $71
+.db $71
+.db Dialogue_NewLine
 .db $78
 .db $7A
-.db $B2, $71
-.db $BB, $6B
+.db $B4, $71
+.db $AD, $6B
 .db $6A
-.db $6A
-.db $71
-.db $85, Dialogue_NewPage
+.db $D2, $81, Dialogue_NewPage
 .db $7C
-.db $77
-.db $E1, $6D
-.db " ", $C9, " ", $6D
-.db $6A
-.db $66
-.db $7B
-.db $AC, ".", Dialogue_Terminator65
+.db $CF, $8C, " ", $A4, $6D
+.db $A3, $7B
+.db $A0, ".", Dialogue_Terminator65
 
 Dialogue_Index_0164:
-.db $EC, $AC, " ", $79
-.db $7A
+.db $C8, $A0, $D6, $7A
 .db $77
 .db $73
 .db " ", $67
-.db $F0, $70
+.db $C9, $70
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0166:
-.db $81, $AB, " ", $8D, "WN", $8E, "S", Dialogue_NewLine
-.db $D0, $96, $92, " ", $D0, "SBA.", Dialogue_Terminator65
+.db $C8, $B0, " ", $B0, $81, " ", $9B, $6A
+.db Dialogue_NewLine
+.db $A4, "C", $C6, $67
+.db $66
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0168:
-.db "FI", $87, "C", $80, "DR", $F6, $90, "S", Dialogue_NewLine
-.db $BE, $D5, $8E, "N ", $81, $80, $D0, $D5, Dialogue_NewPage
-.db "NE", $8C, $FD, $87, "E,", $89, $AF, $D1, "M", Dialogue_NewLine
-.db "S", $D0, $BA, $AF, $9C, $81, $E6, ".", Dialogue_Terminator65
+.db $BD, $69
+.db $CF, $F7, $73
+.db " ", $A2, $78
+.db Dialogue_NewLine
+.db $72
+.db $E7, $DA, " ", $8A, $79
+.db $93, $8C, $B0, Dialogue_NewPage
+.db $9B, $6A
+.db Dialogue_Apostrophe, $86, $68
+.db $66
+.db $7B
+.db $99, $8E, Dialogue_Apostrophe, $72
+.db Dialogue_NewLine
+.db $78
+.db $68
+.db $D9, $DA, "!", Dialogue_Terminator65
 
 Dialogue_Index_016A:
-.db $DD, "N", Dialogue_Apostrophe, $8A, $DF, $BE, "E", $D5, Dialogue_NewLine
-.db "Y", $94, "R OWN EY", $A2, $8E, "N", Dialogue_NewPage
-.db $81, $80, $E3, "P", $81, " ", $9C, $81, "E", Dialogue_NewLine
-.db "D", $EF, "GE", $90, $FF, Dialogue_Terminator65
+.db "I", $73
+.db $81, " ", $69
+.db $6A
+.db $75
+.db $8C, $86, $A4, $66
+.db Dialogue_NewLine
+.db $69
+.db $ED, $6C
+.db $6A
+.db $87, $98, $69
+.db $87, Dialogue_Apostrophe, $79
+.db Dialogue_NewPage
+.db $79
+.db $77
+.db $D4, $84, $7E
+.db $94, $77
+.db " ", $A9, $73
+.db Dialogue_NewLine
+.db $6A
+.db $7E
+.db $C2, ".", Dialogue_Terminator65
 
 Dialogue_Index_016C:
-.db $81, $87, $80, $8C, "E", Dialogue_NewLine
-.db $B3, "G", $A1, "D", $84, $9C, "A", Dialogue_NewPage
-.db "MYST", $EA, $A6, "HIEL", $AF, $86, Dialogue_NewLine
-.db $AD, "VI", $96, $F6, "E", Dialogue_NewPage
-.db "S", $D3, "R", $94, "N", $E3, $AF, $86, Dialogue_NewLine
-.db "M", $AB, "T"
+.db $BD, $9B, $83, $7C
+.db $CF, $75
+.db $75
+.db $DA, Dialogue_NewLine
+.db $8A, $C7, $B0, $84, $A2, $86, $66
+.db Dialogue_NewPage
+.db $71
+.db $6A
+.db $6C
+.db $A0, $97, $66
+.db $67
+.db $94, $84, $66
+.db Dialogue_NewLine
+.db $78
+.db $AC, $D2, $69
+.db ".", Dialogue_NewPage
 
 Dialogue_Index_016E:
-.db $8E, $8A, $AB, " ", $81, "E", Dialogue_NewPage
-.db "SHIEL", $AF, "P", $87, $D2, $CC, Dialogue_NewLine
-.db $CC, $92, $8E, "N", $CB, "AY", $84, $8D, Dialogue_NewPage
-.db "C", $90, "QU", $87, $CD, $F6, $EA, Dialogue_NewLine
-.db $DF, $BC, "T", $FF, Dialogue_Terminator65
+.db $88, " P", $89, $B5, $D4, Dialogue_NewLine
+.db $D4, $DA, " ", $DB, " ", $71
+.db $87, $6C
+.db $C3, $F7, $D6, $74
+.db Dialogue_NewPage
+.db $78
+.db $71
+.db $EB, $C7, $87, $A7, $89, $78
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0170:
-.db $81, $87, $80, $AB, $F5, "O", $AB, $90, Dialogue_NewLine
-.db "G", $BC, $DC, "BO", $D5, " ", $81, $80, $D2, "A", Dialogue_NewPage
-.db $8D, " ", $81, $80, "W", $A2, $C6, " ", $A4, Dialogue_NewLine
-.db $90, $80, $D0, "N ", $B9, " NE", $8C, Dialogue_NewPage
-.db $81, $87, $80, $FC, $81, $94, "T", Dialogue_NewLine
-.db "S", $A9, $80, $FB, "I", $90, ".", Dialogue_Terminator65
+.db "W", $C2, $84, $A4, $8C, $83, $71
+.db $E1, $6A
+.db ",", Dialogue_NewLine
+.db $9C, $79
+.db $89, $77
+.db $6E
+.db $67
+.db $71
+.db $83, $75
+.db $74
+.db $B0, $87, Dialogue_NewPage
+.db $6C
+.db $C6, " ", $A2, $73
+.db $6C
+.db $86, $C1, $70
+.db $83, $6B
+.db $74
+.db $6C
+.db ".", Dialogue_NewLine
+.db "Y", $94, $E8, $8F, Dialogue_Apostrophe, $84, $6C
+.db $D3, " ", $73
+.db $A3, $77
+.db Dialogue_NewPage
+.db $ED, $71
+.db $C2, $86, $7E
+.db $94, " ", $69
+.db $74
+.db Dialogue_NewLine
+.db $78
+.db $B1, $D3, $AC, $73
+.db $6C
+.db $C3, $67
+.db $94, $84, $DB, ".", Dialogue_Terminator65
 
 Dialogue_Index_0172:
 .db "E", $7B
-.db $95, " ", $6D
-.db $6A
-.db $D4, $A7, $C9, $E5, Dialogue_NewLine
+.db $89, " ", $6D
+.db $A3, $77
+.db $97, $A4, $66
+.db Dialogue_NewLine
 .db "F", $71
-.db $B6, $CD, $74
-.db $7B
-.db $95, "?", Dialogue_Terminator62
+.db $A9, $DD, $E7, $89, "?", Dialogue_Terminator62
 
 Dialogue_Index_0174:
-.db $F8, $67
-.db $A0, $6C
-.db $6D
-.db $8B, $93, $88, $91, Dialogue_NewLine
+.db "I ", $67
+.db $94, $E3, $84, $87, $83, $8A, Dialogue_NewLine
 .db "S", $68
 .db $6E
-.db $93, $9B, $93, $F5, $C8, $72
-.db $66
-.db ",", Dialogue_NewPage
+.db $87, $98, $87, " P", $BA, $F1, ",", Dialogue_NewPage
 .db $67
-.db $7A
-.db $8B, $E8, " ", $C2, $6A
-.db $E4, $A7, $79
-.db $74
+.db $FF, " ", $DB, $E4, $6A
+.db $6A
+.db $72
+.db $DA, $D6, $74
 .db Dialogue_NewLine
 .db $67
-.db $B2, $66
-.db $70
-.db ",", Dialogue_NewPage
+.db $B4, $E1, ",", Dialogue_NewPage
 
 Dialogue_Index_0176:
 .db $78
-.db $A3, $F8, $69
+.db $93, "I ", $69
 .db $7A
 .db $72
 .db $75
-.db $6A
-.db $A7, $E8, " ", $91, Dialogue_NewLine
-.db "B", $D4, $79
-.db $6A
-.db $7B
-.db $74
-.db $9E, "W", $B4, $8B, $66
+.db $DA, " ", $DB, " ", $8A, Dialogue_NewLine
+.db "B", $D9, $79
+.db $FD, $74
+.db $AA, "W", $A2, $84, $66
 .db Dialogue_NewPage
 .db $7C
-.db $CE, $79
-.db $B0, Dialogue_Terminator65
+.db $C6, $79
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_0178:
-.db "Y", $A0, " ", $6B
-.db $A0, $73
-.db $A7, $9D, $6A
+.db "Y", $94, $F8, $94, $73
+.db $97, $8C, $6A
 .db Dialogue_NewLine
 .db "F", $71
-.db $B6, $CD, $74
-.db $7B
-.db $95, ".", Dialogue_NewPage
+.db $A9, $DD, $E7, $89, ".", Dialogue_NewPage
 .db "H", $66
 .db $75
 .db $78
 .db $67
-.db $BB, $6B
+.db $AD, $6B
 .db $6E
 .db $7D
-.db $6A
-.db $A7, $7C
-.db $B4, $79
+.db $DA, $F3, $A2, $79
 .db Dialogue_NewLine
 .db $7C
-.db $CE, " ", $67
+.db $C6, " ", $67
 .db $77
 .db $74
 .db $70
-.db $AC, ",", Dialogue_NewPage
+.db $A0, ",", Dialogue_NewPage
 
 Dialogue_Index_017A:
 .db $78
-.db $A3, $73
-.db $B6, $83, " ", $68
-.db $9F, Dialogue_NewLine
-.db $F4, $88, $E8, "!", Dialogue_Terminator65
+.db $93, $73
+.db $A9, $80, $E8, $8F, Dialogue_NewLine
+.db $D4, $83, $DB, "!", Dialogue_Terminator65
 
 Dialogue_Index_017C:
-.db "I", $79
-.db Dialogue_Apostrophe, $8F, $B4, $73
+.db "I", $FE, $86, $A2, $73
 .db $69
 .db $7E
-.db $9E, "I", $79
+.db $AA, "I", $79
 .db Dialogue_NewLine
 .db $6C
-.db $71
+.db $C1, $69
+.db $C2, " ", $77
 .db $6E
-.db $69
-.db $F1, " ", $77
-.db $6E
-.db $6C
-.db $6D
-.db $8B, $74
-.db $7B
-.db $95, Dialogue_NewPage
-.db $9D, $88, $7C
-.db $E1, $95, ".", Dialogue_Terminator65
+.db $E3, $84, $E7, $89, Dialogue_NewPage
+.db $8C, $83, $7C
+.db $DE, $89, ".", Dialogue_Terminator65
 
 Dialogue_Index_017E:
-.db $EC, $C7, " ", $C7, $CB, $77
-.db $CE, $6C
-.db $B6, $9B, $66
+.db $C8, $B0, " ", $B0, $CC, $CF, $78
+.db $F7, $7C
+.db $98, $66
 .db Dialogue_NewLine
+.db $C1, $79
+.db $79
 .db $71
-.db $E8, $79
-.db $71
-.db $88, $79
-.db $B6, $73
-.db " ", $93, $85, Dialogue_NewPage
-.db $C2, $66
+.db $83, $79
+.db $A9, $73
+.db " ", $87, $81, Dialogue_NewPage
+.db $B5, $66
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0180:
-.db "W", $E8, $6D
-.db $85, " ", $C2, $AA, $71
-.db $9F, $F1, Dialogue_NewLine
+.db "W", $DB, $6D
+.db $81, $E4, $A3, " ", $71
+.db $8F, $C2, Dialogue_NewLine
 .db $68
 .db $71
 .db $74
-.db $C2, $A7, $9F, $A7, $73
+.db $B5, $97, $8F, $97, $73
 .db $74
 .db Dialogue_NewPage
 .db $78
-.db $B1, $75
-.db $8F, $77
-.db $7A
-.db $73
-.db $73
-.db $91, $6C
+.db $AC, $75
+.db $86, $77
+.db $ED, $73
+.db $8A, $6C
 .db ",", Dialogue_NewPage
 
 Dialogue_Index_0182:
 .db $6D
-.db $B6, $6A
-.db $7B
-.db $95, " ", $69
+.db $A9, $FD, $89, " ", $69
 .db $6E
-.db $A7, $7E
-.db $A0, Dialogue_NewLine
-.db $B2, $F0, $6D
-.db " ", $9D, $C7, " ", $79
-.db $B6, $73
+.db $97, $7E
+.db $94, Dialogue_NewLine
+.db $B4, $C9, $6D
+.db $D6, $AC, $86, $79
+.db $A9, $73
 .db "?", Dialogue_Terminator65
 
 Dialogue_Index_0184:
-.db $97, $85, Dialogue_NewLine
+.db $88, $81, Dialogue_NewLine
 .db $79
-.db $B6, $95, " ", $C9, $DC, $67
+.db $A9, $89, " ", $A4, "A", $67
 .db $6E
-.db $93, Dialogue_NewPage
+.db $87, Dialogue_NewPage
 .db $6D
 .db $74
 .db $71
 .db $69
-.db $8F, $AA, $78
+.db $86, $9C, $78
 .db $7C
-.db $A5, $A7, $9D, $E1, Dialogue_NewLine
-.db $C2, $C8, $8F, $66
+.db $95, $97, $8C, $DE, Dialogue_NewLine
+.db $B5, $BA, $86, $66
 .db $7C
-.db $66
-.db $BB, $72
-.db $D8, $6E
-.db $68
+.db $EB, $C7, $66
+.db $F6, $68
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0186:
-.db "L", $93, $F2, $D8, $74
-.db $9B, $F8, $78
-.db $66
+.db "L", $87, $6C
+.db $C3, $F7, $98, "I", $E4, $66
 .db $7C
-.db $E5, Dialogue_NewLine
+.db $C3, Dialogue_NewLine
 .db $6C
-.db $B2, $E1, " ", $77
+.db $B4, $DE, " ", $77
 .db $74
 .db $68
 .db $70
@@ -3095,18 +3076,18 @@ Dialogue_Index_0186:
 .db $6B
 .db $71
 .db $74
-.db $E1, $91, $F2, $91, $85, " ", $78
-.db $70
+.db $DE, $8A, $6C
+.db " ", $8A, $81, $E4, $70
 .db $7E
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0188:
-.db $D1, $72
+.db $D7, $72
 .db " ", $67
 .db $6E
-.db $F2, $78
-.db $C7, $79
-.db $95, Dialogue_NewLine
+.db $6C
+.db $E4, $B0, $79
+.db $89, Dialogue_NewLine
 .db "C", $6D
 .db $74
 .db $70
@@ -3117,71 +3098,61 @@ Dialogue_Index_018A:
 .db "K", $6A
 .db $6A
 .db $75
-.db $E5, $8B, $7E
-.db $A0, $77
+.db $C3, $84, $7E
+.db $94, $77
 .db Dialogue_NewLine
 .db $66
 .db $69
 .db $7B
-.db $AC, $79
+.db $A0, $79
 .db $7A
-.db $B2, $9B, $74
+.db $B4, $98, $74
 .db $70
-.db $66
-.db $7E
-.db "?", Dialogue_Terminator65
+.db $EB, "?", Dialogue_Terminator65
 
 Dialogue_Index_018C:
-.db $F8, $6D
-.db $6A
-.db $D4, $A7, $9D, $E1, $E5, Dialogue_NewLine
+.db "I ", $6D
+.db $A3, $77
+.db $97, $8C, $DE, $C3, Dialogue_NewLine
 .db $69
-.db $6A
-.db $7B
-.db $6E
+.db $FD, $6E
 .db $68
-.db $88, $99, $E5, Dialogue_NewPage
-.db "G", $CE, " C", $71
-.db $6A
-.db $D4, $9B, $7C
-.db $B1, $68
+.db $83, $90, $C3, Dialogue_NewPage
+.db "G", $C6, $F2, $71
+.db $A3, $77
+.db $98, $7C
+.db $AC, $68
 .db $6D
 .db Dialogue_NewLine
 .db $78
-.db $B1, $6A
-.db $71
-.db $69
-.db $8F, $7E
-.db $A0, " ", $6B
-.db $77
-.db $C4, Dialogue_NewPage
+.db $AC, $D2, $69
+.db $86, $7E
+.db $94, $F8, $77
+.db $B1, Dialogue_NewPage
 .db $75
 .db $74
-.db $C7, $93, " ", $6C
-.db $CE, ",", Dialogue_NewPage
+.db $B0, $87, " ", $6C
+.db $C6, ",", Dialogue_NewPage
 
 Dialogue_Index_018E:
-.db $C7, " ", $78
-.db $74
+.db $B0, $E4, $74
 .db $71
-.db $A7, $6D
-.db $95, $6A
-.db $9B, $67
-.db $7A
-.db $79
-.db Dialogue_NewLine
+.db $97, $6D
+.db $89, $6A
+.db $98, $67
+.db $FF, Dialogue_NewLine
 .db $7C
 .db $6D
-.db $95, $6A
-.db Dialogue_Apostrophe, $8F, $9D, $88, $78
+.db $89, $6A
+.db Dialogue_Apostrophe, $86, $8C, $83, $78
 .db $6D
 .db $74
 .db $75
 .db "?", Dialogue_NewPage
-.db "W", $B4, $8B, $AA, $6B
+.db "W", $A2, $84, $9C, $6B
 .db $6E
 .db $7D
-.db $9E, "W", $B4, $8B, $66
+.db $AA, "W", $A2, $84, $66
 .db Dialogue_NewLine
 .db $6B
 .db $6E
@@ -3189,1274 +3160,1711 @@ Dialogue_Index_018E:
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0190:
-.db $EC, $C7, " ", $C7, $85, " ", $E8, $6A
+.db $C8, $B0, " ", $B0, $81, " ", $DB, $6A
 .db $72
 .db Dialogue_NewLine
 .db $78
 .db $6D
 .db $74
 .db $75
-.db $9E, "W", $B4, $8B, $68
-.db $9F, $8E, Dialogue_NewPage
+.db $AA, "W", $A2, $84, $68
+.db $8F, $8E, Dialogue_NewPage
 .db $69
-.db $A3, $6B
-.db $A5, $83, "?", Dialogue_NewPage
+.db $93, $6B
+.db $95, $80, "?", Dialogue_NewPage
 
 Dialogue_Index_0192:
-.db "J", $F4, $8B, $70
+.db "J", $D4, $84, $70
 .db $6E
 .db $69
 .db $69
-.db $91, $6C
-.db "!", $A6, $A5, $77
+.db $8A, $6C
+.db "!", $B6, $95, $77
 .db $7E
 .db Dialogue_NewLine
 .db $6B
-.db $A5, " ", $79
-.db $6A
-.db $CE, $91, $6C
-.db $9E, "D", $93, Dialogue_Apostrophe, $79
+.db $95, $D6, $A3, $78
+.db $8A, $6C
+.db $AA, "D", $87, Dialogue_Apostrophe, $79
 .db Dialogue_NewPage
 .db $67
-.db $88, $72
-.db $66
-.db $69
-.db $9B, $74
+.db $83, $F1, $69
+.db $98, $74
 .db $70
-.db $66
-.db $7E
-.db "?", Dialogue_Terminator65
+.db $EB, "?", Dialogue_Terminator65
 
 Dialogue_Index_0194:
-.db "B", $6A
-.db $8B, $7E
-.db $A0, Dialogue_Apostrophe, $B2, Dialogue_NewLine
+.db "B", $D3, $80, Dialogue_Apostrophe, $B4, Dialogue_NewLine
 .db $78
 .db $7A
 .db $77
 .db $75
 .db $77
-.db $C7, $6A
-.db $A7, $79
-.db $A3, $6B
-.db $91, $A7, $66
+.db $B0, $DA, $D6, $93, $6B
+.db $8A, $97, $66
 .db Dialogue_NewPage
 .db $78
 .db $6D
 .db $74
 .db $75
-.db " ", $91, $E5, " ", $75
+.db " ", $8A, $C3, " ", $75
 .db $71
-.db $F0, $6A
+.db $C9, $6A
 .db Dialogue_NewLine
-.db $71
-.db $6E
-.db $70
-.db $88, $9D, $C7, ".", Dialogue_NewPage
+.db $C1, $70
+.db $83, $8C, $B0, ".", Dialogue_NewPage
 
 Dialogue_Index_0196:
 .db "O", $73
 .db $71
-.db $BB, "1000 ", $E4, $C2, $79
-.db $66
+.db $AD, "1000", $C7, $C2, $D3, $66
 .db Dialogue_NewLine
 .db $6B
-.db $A5, $E5, " G", $CE, " C", $71
-.db $6A
-.db $D4, "!", Dialogue_NewPage
-.db "W", $9F, $8B, $93, $6A
+.db $95, $C3, " G", $C6, $F2, $71
+.db $A3, $77
+.db "!", Dialogue_NewPage
+.db "W", $8F, $84, $87, $6A
 .db "?", Dialogue_Terminator62
 
 Dialogue_Index_0198:
-.db $EC, $9F, $70
+.db $C8, $8F, $70
 .db $78
-.db "! C", $C4, $6A
+.db "!", $F2, $B1, $6A
 .db Dialogue_NewLine
-.db $D8, $66
-.db $91, ".", Dialogue_Terminator65
+.db $66
+.db $6C
+.db $66
+.db $8A, ".", Dialogue_Terminator65
 
 Dialogue_Index_019A:
-.db "N", $A3, $72
-.db $93, $6A
+.db "N", $93, $72
+.db $87, $6A
 .db $7E
-.db "?", $D7, $B4, $8B, $66
+.db "?", $D0, $A2, $84, $66
 .db Dialogue_NewLine
 .db $68
 .db $6D
-.db $6A
-.db $66
-.db $75
+.db $A3, $75
 .db $78
 .db $70
-.db $E1, $6A
+.db $DE, $6A
 .db "!", Dialogue_Terminator65
 
 Dialogue_Index_019C:
 .db "O", $6D
-.db $9B, $79
-.db $F3, " ", $67
+.db $98, $79
+.db $DC, " ", $67
 .db $66
 .db $69
-.db $9E, "I", Dialogue_NewLine
+.db $AA, "I", Dialogue_NewLine
 .db $7C
-.db $93, Dialogue_Apostrophe, $8B, $C2, $B5, " ", $79
-.db $A3, $7E
-.db $A0, Dialogue_NewPage
-.db $D8, $66
-.db $91, ".", Dialogue_Terminator65
+.db $87, Dialogue_Apostrophe, $84, $B5, $A6, $79
+.db $93, $7E
+.db $94, Dialogue_NewPage
+.db $66
+.db $6C
+.db $66
+.db $8A, ".", Dialogue_Terminator65
 
 Dialogue_Index_019E:
-.db $EC, $88, $CA, $75
-.db $A5, $8B, $C7, Dialogue_NewLine
+.db $C8, $83, $78
+.db $75
+.db $C9, $6A
+.db $75
+.db $95, $84, $B0, Dialogue_NewLine
 .db $68
 .db $71
 .db $74
-.db $C2, $69
+.db $B5, $69
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_01A0:
-.db "W", $80, $8C, $80, "C", $90, "F", $AB, $D0, "T-", Dialogue_NewLine
-.db $86, $E9, "Y", $94, "R", Dialogue_NewPage
-.db "P", $BC, "SP", $9A, $C6, Dialogue_Terminator65
+.db "W", $82, $9E, $82, "C", $AF, "F", $BC, "C", $E2, "-", Dialogue_NewLine
+.db $96, "G ", $8D, "R", Dialogue_NewPage
+.db "P", $F9, "SP", $AB, $F5, Dialogue_Terminator65
 
 Dialogue_Index_01A2:
-.db "WELC", $A9, $80, $8D, $A6, "K", $D3, "E", Dialogue_NewLine
-.db $90, $CB, "EZ", $9A, $AB, ".", Dialogue_NewPage
-.db $E7, Dialogue_Apostrophe, $84, "F", $BA, "EZ", $86, "G", Dialogue_NewLine
-.db $94, "TSI", $E3, $9B, $AB, "N", Dialogue_Apostrophe, $8A, $E7, "?", Dialogue_Terminator65
+.db "W", $BB, "C", $C5, $82, $A1, $B6, "K", $EA, "E", Dialogue_NewLine
+.db $AF, $CC, "EZ", $AB, $BC, ".", Dialogue_NewPage
+.db "IT", Dialogue_Apostrophe, $8B, "F", $C4, "EZ", $96, "G", Dialogue_NewLine
+.db $C0, "TSI", $F4, $98, $BC, "N", Dialogue_Apostrophe, $9D, "IT?", Dialogue_Terminator65
 
 Dialogue_Index_01A4:
-.db "MOS", $8A, $E6, "IGR", $89, "TS", Dialogue_NewLine
-.db "FR", $A9, $F5, $AE, $E0, Dialogue_NewPage
-.db $D2, "TT", $B3, $FD, $87, $BD, Dialogue_Terminator65
+.db "MO", $D8, " EMIGR", $91, "TS", Dialogue_NewLine
+.db "FR", $C5, " P", $A5, "MA", Dialogue_NewPage
+.db "S", $F0, "T", $CB, " ", $E0, $C4, ".", Dialogue_Terminator65
 
 Dialogue_Index_01A6:
-.db $F8, $DD, "N", Dialogue_Apostrophe, $8A, "K", $A4, "W", $DC, " LOT", Dialogue_NewLine
-.db "AB", $94, $8A, $81, $AB, Dialogue_NewPage
-.db "PL", $89, $F7, ","
+.db "I", $CC, $AF, Dialogue_Apostrophe, $9D, "K", $B8, "W ", $BD, "LOT", Dialogue_NewLine
+.db "AB", $C0, $9D, $85, $BC, Dialogue_NewPage
+.db "PL", $91, $F0, ","
 
 Dialogue_Index_01A8:
-.db $C5, "U", $8A, "W", $9A, "D", Dialogue_NewLine
-.db $A8, $84, $E7, " ", $81, $CF, " ", $81, $87, "E", Dialogue_NewPage
-.db $AB, $DC, " ", $8D, "WN ", $FA, Dialogue_NewLine
-.db "N", $CF, "I", $D5, $CB, "EZ", $9A, "I", $89, "S", Dialogue_NewPage
-.db $86, " ", $81, $80, "F", $8C, Dialogue_NewLine
-.db $BA, $C0, $C1, $84, $9C, $81, "E", Dialogue_NewPage
-.db "M", $94, "NTA", $86, $FF, Dialogue_Terminator65
+.db $CA, "U", $9D, "W", $AB, "D", Dialogue_NewLine
+.db $BE, $8B, "I", $9D, $85, $E2, " ", $85, $9A, "E", Dialogue_NewPage
+.db $BC, " ", $BD, $A1, "WN OF", Dialogue_NewLine
+.db "N", $E2, "IV", $82, $F4, "Z", $AB, "I", $91, "S", Dialogue_NewPage
+.db $96, " ", $85, $82, "F", $9E, Dialogue_NewLine
+.db $C4, $CD, $E0, $8B, $A8, $85, "E", Dialogue_NewPage
+.db "M", $C0, "NTA", $96, "S.", Dialogue_Terminator65
 
 Dialogue_Index_01AA:
-.db "IF", $FE, $94, " ", $BA, $AE, "LY", Dialogue_NewLine
-.db "H", $EB, $80, $8D, " KI", $96, Dialogue_NewPage
-.db $98, ","
+.db "IF ", $8D, " ", $C4, $A5, "LY", Dialogue_NewLine
+.db "H", $FA, $82, $A1, " K", $BF, Dialogue_NewPage
+.db $B7, ","
 
 Dialogue_Index_01AC:
-.db $FE, $94, $FD, "AD", Dialogue_NewLine
-.db $DF, "S", $8A, "F", $86, $AF, "A", Dialogue_NewPage
-.db "SW", $9A, "D", $9B, "AXE,", Dialogue_NewLine
-.db "SHIELD", $9B, $8C, "M", $9A, Dialogue_NewPage
-.db $E0, $E3, " ", $9C, "L", $C0, $90, "IA.", Dialogue_NewLine
+.db " ", $8D, " ", $BE, "D", Dialogue_NewLine
+.db "B", $B3, $9D, "F", $96, $E5, "A", Dialogue_NewPage
+.db "SW", $AB, "D", $98, "AXE,", Dialogue_NewLine
+.db "SHI", $BB, "D", $98, $9E, "M", $AB, Dialogue_NewPage
+.db "MA", $F4, " ", $A8, "L", $CD, $AF, "IA.", Dialogue_NewLine
 
 Dialogue_Index_01AE:
-.db "SUCH", $D7, "EAP", $90, $84, $8C, "E", Dialogue_NewPage
-.db "S", $D9, $90, "G", $A2, $C6
+.db "SUCH", $D0, "EAP", $AF, $8B, $9E, "E", Dialogue_NewPage
+.db $D8, "R", $AF, "G", $B3, $F5
 
 Dialogue_Index_01B0:
-.db $8E, $F5, "RAY", Dialogue_NewLine
-.db "F", $9A, $FE, $94, "R", $A6, "AF", $F7, "Y.", Dialogue_Terminator65
+.db $8E, " PRAY", Dialogue_NewLine
+.db "F", $AB, " ", $8D, "R", $B6, "AF", $F0, "Y.", Dialogue_Terminator65
 
 Dialogue_Index_01B2:
-.db $8C, "M", $84, $E0, $E3, " ", $FA, Dialogue_NewLine
-.db "L", $C0, $90, "I", $AD, "C", $90, "CE", $AE, Dialogue_NewPage
-.db "HOL", $BF, "POW", $87, ".", Dialogue_NewLine
-.db $98
+.db $9E, "M", $8B, "MA", $F4, " OF", Dialogue_NewLine
+.db "L", $CD, $AF, "I", $BD, "C", $AF, "CE", $A5, Dialogue_NewPage
+.db "HOLY POW", $9A, ".", Dialogue_NewLine
+.db $B7
 
 Dialogue_Index_01B4:
-.db $E2, "E", $8C, $84, $81, $AB, Dialogue_NewPage
-.db "POW", $87, $DC, "N", $AF, $A8, "S", Dialogue_NewLine
-.db $DF, $A1, " R", $EF, "N", $86, $E9, $89, "D", Dialogue_NewPage
-.db "HID", $86, $E9, $86, Dialogue_NewLine
-.db "DIFF", $87, $A1, "T"
+.db $CE, "E", $9E, $8B, $85, $BC, Dialogue_NewPage
+.db "POW", $9A, " ", $91, $E5, $BE, "S", Dialogue_NewLine
+.db "BE", $B2, " R", $FB, "N", $96, "G ", $91, "D", Dialogue_NewPage
+.db "HID", $96, "G", $8E, "N", Dialogue_NewLine
+.db "DIFF", $9A, $B2, "T"
 
 Dialogue_Index_01B6:
-.db $F5, "L", $C0, $A2, Dialogue_NewPage
-.db $86, " ", $81, $80, "PL", $89, $F7, $84, $FA, Dialogue_NewLine
-.db $81, $80, $AE, $B9, "L", $A6, "YST", $E6, ".", Dialogue_Terminator65
+.db " PL", $CD, $B3, Dialogue_NewPage
+.db $96, " ", $85, $82, "PL", $91, $F0, $8B, "OF", Dialogue_NewLine
+.db $85, $82, $A5, $E6, "L", $B6, "Y", $D8, "EM.", Dialogue_Terminator65
 
 Dialogue_Index_01B8:
-.db $E3, "Z", $9A, $AB, $8E, $84, "A", Dialogue_NewLine
-.db "W", $9A, "L", $AF, $9C, $EA, $BD, Dialogue_Terminator65
+.db $F4, "Z", $AB, $BC, $8E, $8B, "A", Dialogue_NewLine
+.db "W", $AB, "L", $E5, $A8, "IC", $D1, Dialogue_Terminator65
 
 Dialogue_Index_01BA:
-.db $81, $87, $80, $8C, $80, "PL", $C0, $A2, Dialogue_NewLine
-.db $86, " ", $81, $80, "M", $94, "NTA", $86, "S", Dialogue_NewPage
-.db "W", $C1, $BA, " ", $81, $80, $EA, $80, $AB, Dialogue_NewLine
-.db "S", $FA, $8A, $89, "D", Dialogue_NewPage
-.db "IMP", $BC, "SAB", $B3, " ", $8D, Dialogue_NewLine
-.db $81, "O", $D2, " ", $90, $E2, "OO", $C6, Dialogue_Terminator65
+.db $85, $9A, $82, $9E, $82, "PL", $CD, $B3, Dialogue_NewLine
+.db $96, " ", $85, $82, "M", $C0, "NTA", $96, "S", Dialogue_NewPage
+.db "W", $E0, $C4, " ", $85, $82, "IC", $82, $BC, Dialogue_NewLine
+.db "SOF", $9D, $91, "D", Dialogue_NewPage
+.db "IMP", $F9, "SAB", $CB, " ", $A1, Dialogue_NewLine
+.db $85, "OS", $82, $AF, $CE, "OO", $F5, Dialogue_Terminator65
 
 Dialogue_Index_01BC:
-.db $81, $80, $AE, "TIPL", $89, "O", Dialogue_NewLine
-.db "PL", $CF, "EAU", $8E, $84, $CF, " ", $81, $80, Dialogue_NewPage
-.db $8D, "P ", $9C, $81, $80, $EA, "E", Dialogue_NewLine
-.db "M", $94, "NTA", $86, ".", Dialogue_Terminator65
+.db $85, $82, $A5, "TIPL", $91, "O", Dialogue_NewLine
+.db "PL", $E2, "EAU", $8E, $8B, $E2, " ", $85, $82, Dialogue_NewPage
+.db $A1, "P ", $A8, $85, $82, "ICE", Dialogue_NewLine
+.db "M", $C0, "NTA", $96, ".", Dialogue_Terminator65
 
 Dialogue_Index_01BE:
-.db $89, " EC", $BE, "P", $D2, Dialogue_NewLine
-.db "OCC", $D3, $84, $90, " ", $81, $AB, Dialogue_NewPage
-.db "PL", $89, $F7, " ", $90, "CE", Dialogue_NewLine
-.db "E", $D5, "R", $BF, "H", $EF, "D", $BA, "D", Dialogue_NewPage
-.db "YE", $8C, $FF, $DC, " ", $8D, "RCH"
+.db $91, " ", $EF, "LIPSE", Dialogue_NewLine
+.db "OCC", $EA, $8B, $AF, " ", $85, $BC, Dialogue_NewPage
+.db "PL", $91, $F0, " ", $AF, "CE", Dialogue_NewLine
+.db "EV", $9A, "Y H", $FB, "D", $C4, "D", Dialogue_NewPage
+.db "YE", $9E, "S", $AA, $BD, $A1, "RCH"
 
 Dialogue_Index_01C0:
-.db " ", $BE, "T", Dialogue_NewLine
-.db "D", $D3, $86, $E9, $89, Dialogue_NewPage
-.db "EC", $BE, "P", $D2, $8E, $84, $D0, $96, $92, Dialogue_NewLine
-.db $89, " \"EC", $BE, "P", $D2, Dialogue_NewPage
-.db $8D, "RCH\""
+.db " LIT", Dialogue_NewLine
+.db "D", $EA, $96, "G ", $91, Dialogue_NewPage
+.db $EF, "LIPS", $82, $BC, $F2, $A5, $CB, "D", Dialogue_NewLine
+.db $91, " \"", $EF, "LIPSE", Dialogue_NewPage
+.db $A1, "RCH\""
 
 Dialogue_Index_01C2:
-.db $DC, "N", $AF, $AB, Dialogue_NewLine
-.db $BA, "G", $8C, $E3, $AF, $BC, $FD, "OLY", Dialogue_NewPage
-.db "B", $BF, $81, $80, $E3, "Z", $9A, "I", $89, $FF, Dialogue_Terminator65
+.db " ", $91, $E5, $BC, Dialogue_NewLine
+.db $C4, "G", $9E, $F4, $E5, $F9, " HOLY", Dialogue_NewPage
+.db "BY ", $85, $82, $F4, "Z", $AB, "I", $91, "S.", Dialogue_Terminator65
 
 Dialogue_Index_01C4:
-.db $81, $80, $E3, "A", $AF, "GU", $8C, $90, Dialogue_NewLine
-.db "M", $9A, "GU", $80, $A8, $D5, $C5, "E", $A1, Dialogue_NewPage
-.db $D0, $96, $92, $C5, $C0, "K ", $8D, Dialogue_NewLine
+.db $85, $82, $F4, "A", $E5, "GU", $9E, $AF, Dialogue_NewLine
+.db "M", $AB, "GU", $82, $BE, "V", $82, "BE", $B2, Dialogue_NewPage
+.db "C", $A5, $CB, $E5, "B", $CD, "K ", $A1, Dialogue_NewLine
 
 Dialogue_Index_01C6:
-.db $BE, "FE!", $D7, $A8, $8A, "FE", $8C, "!", Dialogue_Terminator65
+.db "LIFE!", $D0, $BE, $9D, "FE", $9E, "!", Dialogue_Terminator65
 
 Dialogue_Index_01C8:
-.db $81, $80, "NEIB", $9A, $86, "G", Dialogue_NewLine
-.db "VI", $96, $F6, $80, $8C, $80, $AE, "L", Dialogue_NewPage
-.db $BE, $8C, "S!", $CB, $90, Dialogue_Apostrophe, "T", Dialogue_NewLine
-.db $BE, "ST", $A1, " ", $8D, " ", $81, $E6, "!", Dialogue_Terminator65
+.db $85, $82, "NEIB", $AB, $96, "G", Dialogue_NewLine
+.db "V", $BF, "AG", $82, $9E, $82, $A5, "L", Dialogue_NewPage
+.db "LI", $9E, "S!", $CC, $AF, Dialogue_Apostrophe, "T", Dialogue_NewLine
+.db "L", $BC, "T", $B2, " ", $A1, " ", $85, "EM!", Dialogue_Terminator65
 
 Dialogue_Index_01CA:
-.db "Z", $80, "C", $9A, $90, $AD, $8D, "W", $87, Dialogue_NewLine
-.db "ST", $89, "D", $84, $90, " ZE", Dialogue_NewPage
-.db "F", $8C, $A6, "I", $E3, " ", $9C, "ZE", Dialogue_NewLine
-.db "M", $94, "NTA", $86, " ", $8D, " ZE", Dialogue_NewPage
-.db $A4, "R", $81, " ", $9C, "Z", $AB, Dialogue_NewLine
-.db "VI", $96, $F6, $BD, Dialogue_Terminator65
+.db "Z", $82, "C", $AB, $AF, $BD, $A1, "W", $9A, Dialogue_NewLine
+.db $D8, $91, "D", $8B, $AF, " ZE", Dialogue_NewPage
+.db "F", $9E, $B6, "I", $F4, " ", $A8, "ZE", Dialogue_NewLine
+.db "M", $C0, "NTA", $96, " ", $A1, " ZE", Dialogue_NewPage
+.db $B8, "R", $85, " ", $A8, "Z", $BC, Dialogue_NewLine
+.db "V", $BF, "AG", $D1, Dialogue_Terminator65
 
 Dialogue_Index_01CC:
-.db $8D, " Z", $80, "W", $A2, $8A, $9C, "ZE", Dialogue_NewLine
-.db "C", $9A, $90, $AD, $8D, "W", $87, $8E, "S", Dialogue_NewPage
-.db "Z", $80, $E3, "Z", $9A, $AB, " ", $D0, $D5, ".", Dialogue_NewLine
+.db $A1, " Z", $82, "W", $B3, $9D, $A8, "ZE", Dialogue_NewLine
+.db "C", $AB, $AF, $BD, $A1, "W", $9A, $8E, "S", Dialogue_NewPage
+.db "Z", $82, $F4, "Z", $AB, $BC, $F2, "AV", $D1, Dialogue_NewLine
 
 Dialogue_Index_01CE:
-.db $94, "R", $E2, "RI", $A1, "D", $84, $8C, "E", Dialogue_NewPage
-.db $86, " Z", $87, $BD, " GI", $D5, " Z", $E6, Dialogue_NewLine
-.db $94, "R", $C5, $A2, "T", $9B, "O.K.?", Dialogue_Terminator65
+.db $C0, "R", $CE, "RI", $B2, "D", $8B, $9E, "E", Dialogue_NewPage
+.db $96, " Z", $9A, $D1, " GIV", $82, "ZEM", Dialogue_NewLine
+.db $C0, "R", $CA, $B3, "T", $98, "O.K.?", Dialogue_Terminator65
 
 Dialogue_Index_01D0:
-.db "LA", $87, $E0, " ", $D9, "E", $A2, Dialogue_NewLine
-.db "GROW Z", $80, "LA", $87, $E0, Dialogue_NewPage
-.db $DF, "RRI", $A2, "."
+.db "LA", $9A, "M", $BD, "T", $C4, $B3, Dialogue_NewLine
+.db "GROW Z", $82, "LA", $9A, "MA", Dialogue_NewPage
+.db "B", $9A, "RI", $B3, "."
 
 Dialogue_Index_01D2:
-.db " ZO", $D2, Dialogue_NewLine
-.db $DF, "RRI", $A2, $DC, $BA, " ", $94, "R", Dialogue_NewPage
-.db "MOS", $8A, "IMP", $9A, "T", $89, "T", Dialogue_NewLine
-.db "FOOD", $9B, "BU", $8A, $E7, Dialogue_NewPage
-.db "SHRI", $D5, "L", $84, "UP", $DC, "FT", $87, Dialogue_NewLine
-.db $AD, "FEW", $CD, $A9, $A1, "TS,", Dialogue_NewPage
+.db " ZOSE", Dialogue_NewLine
+.db "B", $9A, "RI", $B3, " ", $9E, $82, $C0, "R", Dialogue_NewPage
+.db "MO", $D8, $8E, "MP", $AB, "T", $91, "T", Dialogue_NewLine
+.db "FOOD", $98, "BU", $9D, "IT", Dialogue_NewPage
+.db "SHRIV", $BB, $8B, "UP AFT", $9A, Dialogue_NewLine
+.db $BD, "FEW", $DD, $C5, $B2, "TS,", Dialogue_NewPage
 
 Dialogue_Index_01D4:
-.db $EF, $B3, "S", $84, $E7, $8E, $84, "PUT", Dialogue_NewLine
-.db $86, " L", $C0, $90, "I", $89, $F5, "O", $C6, Dialogue_Terminator65
+.db $FB, $CB, "S", $8B, "I", $9D, $BC, " PUT", Dialogue_NewLine
+.db $96, " L", $CD, $AF, "I", $91, " PO", $F5, Dialogue_Terminator65
 
 Dialogue_Index_01D6:
-.db $DD, $FE, $94, " K", $A4, "W", $D7, $A8, "T", Dialogue_NewLine
-.db $89, $DC, $87, $EB, "R", $AB, "M", $8E, "S?", Dialogue_Terminator62
+.db $EE, " ", $8D, " K", $B8, "W", $D0, $BE, "T", Dialogue_NewLine
+.db $91, " A", $9A, $FA, "R", $BC, "M", $8E, "S?", Dialogue_Terminator62
 
 Dialogue_Index_01D8:
-.db $E7, " ", $B3, "T", $84, $82, $D2, "E", Dialogue_NewLine
-.db $89, "O", $81, $87, $D7, $9A, "LD.", Dialogue_Terminator65
+.db "I", $9D, $CB, "T", $8B, $8D, $B6, "EE", Dialogue_NewLine
+.db $91, "O", $85, $9A, $D0, $AB, "LD.", Dialogue_Terminator65
 
 Dialogue_Index_01DA:
-.db $D1, $AF, $BE, "K", $80, $8D, $A6, "EE", Dialogue_NewLine
-.db $90, $80, "S", $A9, $F7, "IM", $BD, Dialogue_Terminator65
+.db $D7, $E5, "LIK", $82, $A1, $B6, "EE", Dialogue_NewLine
+.db $AF, $82, "S", $C5, $F0, "IM", $D1, Dialogue_Terminator65
 
 Dialogue_Index_01DC:
-.db "W", $80, $9C, "Z", $AB, " ", $8D, "WN", Dialogue_NewLine
-.db $A8, "T", $80, "P", $AE, $E0, "N", $FF, Dialogue_Terminator65
+.db "W", $82, $A8, "Z", $BC, " ", $A1, "WN", Dialogue_NewLine
+.db $BE, "T", $82, "P", $A5, "M", $91, "S.", Dialogue_Terminator65
 
 Dialogue_Index_01DE:
-.db $81, $87, $80, $AB, $DC, $A6, "PR", $86, "G", Dialogue_NewLine
-.db $9C, $BE, "F", $80, $86, " ", $81, $80, Dialogue_NewPage
-.db "C", $9A, $90, $AD, $8D, "W", $87, ",", Dialogue_NewLine
-.db $81, $87, $80, $AB, $9B, "Y", $A2, ".", Dialogue_Terminator65
+.db $85, $9A, $82, $BC, " ", $BD, "SPR", $96, "G", Dialogue_NewLine
+.db $A8, "LIF", $82, $96, " ", $85, $82, Dialogue_NewPage
+.db "C", $AB, $AF, $BD, $A1, "W", $9A, ",", Dialogue_NewLine
+.db $85, $9A, $82, $BC, $98, "Y", $B3, ".", Dialogue_Terminator65
 
 Dialogue_Index_01E0:
-.db $82, $D0, "N", $D7, $8C, "P", Dialogue_NewLine
-.db "FR", $A9, " ", $81, $80, "10", $81, Dialogue_NewPage
-.db $B3, $D5, "L ", $9C, $81, "E", Dialogue_NewLine
-.db "D", $EF, "GE", $90, " ", $EF, $E3, "R", Dialogue_NewPage
-.db $E3, "Z", $9A, $AB, $9B, "Y", $A2, ".", Dialogue_Terminator65
+.db $8D, $F2, $91, $D0, $9E, "P", Dialogue_NewLine
+.db "FR", $C5, " ", $85, $82, "10", $85, Dialogue_NewPage
+.db $CB, "V", $BB, " ", $A8, $85, "E", Dialogue_NewLine
+.db "D", $FB, "GE", $AF, " ", $FB, $F4, "R", Dialogue_NewPage
+.db $F4, "Z", $AB, $BC, $98, "Y", $B3, ".", Dialogue_Terminator65
 
 Dialogue_Index_01E2:
-.db "LA", $87, $E0, $C5, $87, "RI", $A2, Dialogue_NewLine
-.db $8C, $80, "BLU", $80, "LA", $87, $E0, Dialogue_NewPage
-.db "NUT", $84, $CC, $92, $8E, "N", Dialogue_NewLine
-.db "DY", $A2, $9B, "Y", $A2, $9B, $81, "EY", Dialogue_NewPage
-.db $8C, $80, $9B, $86, $E3, $92, ".", Dialogue_Terminator65
+.db "LA", $9A, "M", $BD, "B", $9A, "RI", $B3, Dialogue_NewLine
+.db $9E, $82, "BLU", $82, "LA", $9A, "MA", Dialogue_NewPage
+.db "NUT", $8B, $FC, $9F, $8E, "N", Dialogue_NewLine
+.db "DY", $B3, $98, "Y", $B3, $98, $85, "EY", Dialogue_NewPage
+.db $9E, $82, $98, $96, $F4, $9F, ".", Dialogue_Terminator65
 
 Dialogue_Index_01E4:
-.db "IF", $FE, $94, " ", $CC, $80, "A", Dialogue_NewLine
-.db "CRYST", $AE, $8E, "N", $E2, "R", $90, "T", Dialogue_NewPage
-.db $9C, $AD, "LA", $87, $E0, " ", $D9, "EE,", Dialogue_NewLine
-.db $E7, $D7, "I", $96, $C5, "EC", $A9, "E,", Dialogue_NewPage
-.db "Y", $A2, $9B, $AD, "LA", $87, $E0, Dialogue_NewLine
-.db "NUT", $9B, "Y", $A2, $9B, $86, $E3, $92, ".", Dialogue_Terminator65
+.db "IF ", $8D, " ", $FC, $82, "A", Dialogue_NewLine
+.db "CRY", $D8, $A5, $8E, "N", $CE, "R", $AF, "T", Dialogue_NewPage
+.db $A8, $BD, "LA", $9A, "M", $BD, "T", $C4, "E,", Dialogue_NewLine
+.db "I", $9D, "W", $BF, $CA, $EF, $C5, "E,", Dialogue_NewPage
+.db "Y", $B3, $98, $BD, "LA", $9A, "MA", Dialogue_NewLine
+.db "NUT", $98, "Y", $B3, $98, $96, $F4, $9F, ".", Dialogue_Terminator65
 
 Dialogue_Index_01E6:
-.db $81, $AB, " ", $8D, "WN", Dialogue_NewLine
-.db "WELC", $A9, $A2, $DC, $96, Dialogue_NewPage
-.db "P", $AE, $E0, "NS", $9B, "Y", $A2, ",", Dialogue_NewLine
-.db $86, $E3, $92, $9B, "W", $80, $DD, ".", Dialogue_Terminator65
+.db $85, $BC, " ", $A1, "WN", Dialogue_NewLine
+.db "W", $BB, "C", $C5, $B3, " ", $A5, "L", Dialogue_NewPage
+.db "P", $A5, "M", $91, "S", $98, "Y", $B3, ",", Dialogue_NewLine
+.db $96, $F4, $9F, $98, "W", $82, $EE, ".", Dialogue_Terminator65
 
 Dialogue_Index_01E8:
-.db $81, $AB, " ", $8D, "WN", $8E, "S", Dialogue_NewLine
-.db $D0, $96, $92, $A6, $EB, "IA", $9E, "Y", $94, Dialogue_NewPage
-.db $8C, $80, "BRA", $D5, " ", $8D, Dialogue_NewLine
-.db "P", $A1, $F7, "R", $CF, $80, $81, "E", Dialogue_NewPage
-.db "G", $BC, ".", Dialogue_Terminator65
+.db $C8, $B0, " ", $B0, $B6, $74
+.db $75
+.db $6E
+.db $66
+.db ".", Dialogue_NewPage
+.db "W", $D2, $68
+.db $B1, $6A
+.db $98, $7E
+.db $94, $F3, $6D
+.db $74
+.db Dialogue_NewLine
+.db $68
+.db $66
+.db $72
+.db $83, $8C, $77
+.db $94, $E3, $81, Dialogue_NewPage
+.db $75
+.db $74
+.db $B0, $87, " ", $6C
+.db $C6, ".", Dialogue_Terminator65
 
 Dialogue_Index_01EA:
-.db $D1, "M ", $81, $80, $C1, "A", $AF, $FA, Dialogue_NewLine
-.db $81, $AB, " VI", $96, $F6, $BD, Dialogue_NewPage
+.db "I", $C3, $72
+.db $81, $E8, $AC, $6A
+.db $6B
+.db " ", $EC, Dialogue_NewLine
+.db $8C, $B0, " ", $9B, $99, Dialogue_NewPage
 
 Dialogue_Index_01EC:
-.db $DF, $D0, $CC, $80, $9C, $81, $80, Dialogue_NewLine
-.db "CL", $94, $AF, $9C, "G", $BC, ",", Dialogue_NewPage
-.db "W", $80, $8C, $80, "CU", $8A, $FA, "F", Dialogue_NewLine
-.db "FR", $A9, " O", $81, $87, " ", $8D, "WNS,", Dialogue_NewPage
-.db "W", $80, $8C, $80, $81, $87, "EF", $9A, "E", Dialogue_NewLine
-.db $D5, "R", $BF, "PO", $9A, ".", Dialogue_NewPage
+.db $C8, $83, $72
+.db $B0, $84, $A2, $86, $68
+.db $FF, Dialogue_NewLine
+.db "S", $74
+.db $75
+.db $6E
+.db $9C, $EC, $6B
+.db $F8, $77
+.db $B1, Dialogue_NewPage
+.db $FD, $89, $AD, $74
+.db $8C, $89, $D6, $A9, $73
+.db ",", Dialogue_NewLine
+.db $8F, $97, $7C
+.db $83, $D9, $83, $75
+.db $DC, $77
+.db ".", Dialogue_NewPage
 
 Dialogue_Index_01EE:
-.db $FC, $96, $FE, $94, $CB, $90, $CF, "E", Dialogue_NewLine
-.db "400", $CD, $A2, $F7, $BC, "?", Dialogue_Terminator62
+.db "W", $94, $71
+.db $97, $7E
+.db $94, " ", $69
+.db $87, $DE, $6A
+.db Dialogue_NewLine
+.db "400", $C7, $C2, $D3, $66
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_01F0:
-.db $F8, $D2, $BD, $D7, $80, "M", $CC, $8A, $B9, Dialogue_NewLine
-.db $90, $A6, "UFF", $87, $86, "G", $C3, Dialogue_Terminator65
+.db "I", $E4, $6A
+.db $99, $D0, $A2, $84, $66
+.db Dialogue_NewLine
+.db $78
+.db $A2, $72
+.db $99, " (", $78
+.db $74
+.db $67
+.db ")", Dialogue_Terminator65
 
 Dialogue_Index_01F2:
-.db $82, $A8, $D5, $DC, " ", $BE, "TT", $B3, Dialogue_NewLine
-.db "M", $90, "EY,", $8D, "O", $9B, $F8, $D2, $BD, Dialogue_Terminator65
+.db "S", $93, $7E
+.db $94, Dialogue_Apostrophe, $B4, " ", $75
+.db $DC, $77
+.db $D6, $DC, ".", Dialogue_NewLine
+.db "W", $A2, $84, $9C, $78
+.db $66
+.db $97, $7C
+.db $95, $71
+.db $69
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_01F4:
-.db $81, $89, "KS!", $DC, "CC", $9A, "D", $86, "G", Dialogue_NewLine
-.db $8D, " ", $94, "R ", $B3, "G", $A1, "DS,", Dialogue_NewPage
+.db $C8, $8F, $70
+.db $80, ".", Dialogue_NewLine
+.db "O", $7A
+.db $77
+.db " ", $71
+.db $6A
+.db $6C
+.db $A0, $69
+.db $86, $78
+.db $EB, Dialogue_NewPage
 
 Dialogue_Index_01F6:
-.db $81, $80, $D5, "R", $BF, "SHIELD,", Dialogue_NewLine
-.db "P", $87, $D2, $CC, " ", $CC, $92, " ", $8D, Dialogue_NewPage
-.db "O", $D5, "RC", $A9, $80, "M", $92, $CC, "A,", Dialogue_NewLine
-.db $AB, $C5, $D3, "I", $92, " ", $90, " ", $81, "E", Dialogue_NewPage
+.db $8C, $83, $78
+.db $AC, $D2, $97, "P", $89, $B5, $D4, Dialogue_NewLine
+.db $D4, $DA, " ", $87, $DD, $DA, $D4, $66
+.db Dialogue_NewPage
 
 Dialogue_Index_01F8:
-.db "S", $E0, $96, $8E, "SL", $89, $AF, $86, Dialogue_NewLine
-.db $81, $80, "MIDD", $B3, " ", $9C, "A", Dialogue_NewPage
-.db "LAK", $BD, Dialogue_Terminator65
+.db $B0, " ", $67
+.db $7A
+.db $77
+.db $6E
+.db $DA, " ", $ED, $69
+.db $89, $C3, Dialogue_NewLine
+.db $68
+.db $C9, $79
+.db $D4, " ", $87, $81, Dialogue_NewPage
+.db $B0, $71
+.db $8F, $97, $8A, $81, " ", $71
+.db $E1, $99, Dialogue_Terminator65
 
 Dialogue_Index_01FA:
-.db "HI!", $8E, Dialogue_Apostrophe, "M", $CD, "IKI!", Dialogue_NewLine
-.db $DD, $FE, $94, " ", $BE, "KE", Dialogue_NewPage
-.db $D2, "G", $AD, "G", $ED, $A2, "?", Dialogue_Terminator62
+.db $D7, $72
+.db $DD, $6E
+.db $70
+.db $6E
+.db $81, " ", $6C
+.db $66
+.db $72
+.db $89, "!", Dialogue_NewPage
+.db "G", $74
+.db $84, $9C, "M", $C6, $79
+.db $89, Dialogue_NewLine
+.db "S", $7E
+.db $A7, $6A
+.db $72
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_01FC:
-.db $9C, "C", $94, "R", $D2, "!", $A6, "EGA", Dialogue_NewLine
-.db "G", $ED, $A2, $DC, $BA, $C5, $A2, $C6, Dialogue_Terminator65
+.db "O", $74
+.db $6D
+.db $98, $9C, $6C
+.db $66
+.db $72
+.db $89, " ", $C1, $70
+.db $6A
+.db Dialogue_NewLine
+.db $72
+.db $6A
+.db "!", $CE, "M", $E4, $94, $73
+.db $97, $B0, Dialogue_NewPage
+.db $8C, $83, $67
+.db $C2, $79
+.db $98, $77
+.db $6E
+.db $E3, $79
+.db "?", Dialogue_Terminator65
 
 Dialogue_Index_01FE:
-.db $F8, $D0, "N", Dialogue_Apostrophe, $8A, $DF, $BE, "E", $D5, Dialogue_NewLine
-.db $E7, $9E, "IF", $FE, $94, $CB, $90, Dialogue_Apostrophe, "T", Dialogue_NewPage
-.db $BE, "K", $80, $81, $80, "G", $ED, "E,", $C3, ".", Dialogue_NewLine
-.db "WH", $BF, $A8, $D5, $FE, $94, " ", Dialogue_NewPage
-.db "PLAY", $92, $A6, "O", $E2, $8C, "!?!", Dialogue_Terminator65
+.db "N", $93, $7C
+.db $EB, "! G", $93, $67
+.db $7A
+.db $7E
+.db Dialogue_NewLine
+.db $87, $83, $73
+.db $A9, "! H", $72
+.db $75
+.db $6D
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_0200:
-.db $DF, "F", $9A, $80, $98, Dialogue_NewLine
-.db $D0, "M", $80, $8D, $F5, "OW", $87, ",", Dialogue_NewPage
-.db "E", $D5, "N ", $94, "R ", $8D, "WN", Dialogue_NewLine
-.db $A8, $AF, "P", $B3, "NTY.", Dialogue_Terminator65
+.db "B", $6A
+.db $6B
+.db $95, $83, $92, Dialogue_NewLine
+.db $79
+.db $DC, $70
+.db " ", $75
+.db $A9, $89, $98, $FD, $A0, Dialogue_NewPage
+.db $8C, $B0, " ", $9B, $83, $7C
+.db $C6, Dialogue_NewLine
+.db $7C
+.db $D2, $71
+.db " ", $EC, $6B
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0202:
-.db $81, $87, $80, $AB, $DC, $CD, $90, "K", Dialogue_NewLine
-.db "N", $ED, $92, " TAJIM", $8E, "N", Dialogue_NewPage
-.db $81, $80, "M", $94, "NTA", $86, $84, $8D, Dialogue_NewLine
-.db $81, $80, "S", $94, $81, " ", $9C, $81, "E", Dialogue_NewPage
-.db "LAK", $BD, Dialogue_Terminator65
+.db "I", $73
+.db $81, $C7, $94, $73
+.db $79
+.db $66
+.db $8A, $78
+.db Dialogue_NewLine
+.db $78
+.db $94, $8C, " ", $A4, $8C, $83, $71
+.db $E1, $6A
+.db Dialogue_NewPage
+.db $C1, $7B
+.db $C2, $C3, $C7, $87, $70
+.db $E8, $BA, $71
+.db $DA, Dialogue_NewLine
+.db "T", $66
+.db $6F
+.db $6E
+.db $72
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0204:
-.db $D1, $D5, $FD, "E", $8C, $AF, $81, $CF, Dialogue_NewLine
-.db $81, $80, "P", $AE, $E0, $8E, $84, "A", Dialogue_NewPage
-.db $DF, "AUTIFUL", $F5, "L", $89, $F7, ".", Dialogue_NewLine
-.db $AB, " ", $81, $CF, " ", $D9, "UE?", Dialogue_Terminator62
+.db "I", $86, "P", $BA, $F1, " ", $B4, $BA, $71
+.db $AD, $66
+.db Dialogue_NewLine
+.db $71
+.db $E7, $D2, $AD, $75
+.db $71
+.db $8F, $D3, "?", Dialogue_Terminator62
 
 Dialogue_Index_0206:
-.db $D1, $AF, $BE, "K", $80, $8D, " ", $B9, Dialogue_NewLine
-.db "V", $AB, $E7, $86, $E9, "S", $A9, $92, "AY.", Dialogue_Terminator65
+.db $D7, $97, $71
+.db $E7, $83, $79
+.db $93, $F7, Dialogue_NewLine
+.db $8C, $89, $99, Dialogue_Terminator65
 
 Dialogue_Index_0208:
-.db $A4, "?", $8E, Dialogue_Apostrophe, $AF, $BE, "K", $80, $8D, " ", $B9, Dialogue_NewLine
-.db "S", $A9, "EW", $C1, $BA, " ", $81, "E", Dialogue_NewPage
-.db "AIR", $8E, $84, "M", $9A, $80, "C", $B3, $89, Dialogue_NewLine
-.db $89, $AF, "F", $BA, "SH.", Dialogue_Terminator65
+.db "I", $86, $8C, $DE, $E4, $74
+.db $AA, "I", $F3, $8F, $79
+.db Dialogue_NewLine
+.db $79
+.db $93, $F7, $E4, $B1, $6A
+.db $7C
+.db $6D
+.db $89, $6A
+.db Dialogue_NewPage
+.db $8C, $83, $66
+.db $6E
+.db $77
+.db " ", $B0, $E8, $71
+.db $A3, $73
+.db $89, ".", Dialogue_Terminator65
 
 Dialogue_Index_020A:
-.db $81, $89, "KS!", Dialogue_NewLine
-.db "C", $A9, $80, $F6, "A", $86, "!", Dialogue_Terminator65
+.db $C8, $8F, $70
+.db $80, "!", Dialogue_NewPage
+.db "C", $B1, $83, $66
+.db $6C
+.db $66
+.db $8A, "!", Dialogue_Terminator65
 
 Dialogue_Index_020C:
-.db "TI", $EE, "TW", $89, "D!", Dialogue_Terminator65
+.db "C", $6D
+.db $A3, $75
+.db $78
+.db $70
+.db $DE, $99, Dialogue_Terminator65
 
 Dialogue_Index_020E:
-.db $DD, "N", Dialogue_Apostrophe, $8A, $DF, $DC, $E2, "OOL!", Dialogue_Terminator65
+.db "D", $87, Dialogue_Apostrophe, $84, $7E
+.db $94, $C7, $E1, $83, $66
+.db Dialogue_NewLine
+.db $6B
+.db $DC, $71
+.db " ", $A4, $72
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_0210:
-.db $C3, $C3, $C3, ".", Dialogue_Terminator65
+.db "...", Dialogue_Terminator65
 
 Dialogue_Index_0212:
-.db $81, $A1, $FE, $94, $DC, $BA, " ", $81, "E", Dialogue_NewLine
-.db $D5, "R", $BF, "QUE", $A1, " ", $FA, Dialogue_NewPage
-.db $81, $80, $A1, "TI", $BA, Dialogue_NewLine
-.db "SYST", $E6, $9E, $F8, $FC, $96, Dialogue_NewPage
-.db $BC, "S", $AB, $8A, $82, $86, $DC, $96, Dialogue_NewLine
-.db "WAY", $84, "POSSIB", $B3, ".", Dialogue_Terminator65
+.db "I", $E4, $6A
+.db $99, $B6, $93, $7E
+.db $94, $D6, $77
+.db $7A
+.db $71
+.db $7E
+.db Dialogue_NewLine
+.db $D9, $83, $8C, $83, $69
+.db $66
+.db $7A
+.db $E3, $79
+.db $89, Dialogue_NewPage
+.db $A4, "A", $71
+.db $F7, $71
+.db Dialogue_Apostrophe, $86, $70
+.db $8A, $6C
+.db ".", Dialogue_NewLine
+.db $D7, $A6, $6D
+.db $D2, $75
+.db $80, $98, $79
+.db $DC, ".", Dialogue_Terminator65
 
 Dialogue_Index_0214:
 .db "O", $6D
-.db $9B, $9D, $6A
-.db $BB, $71
+.db $98, $8C, $6A
+.db $AD, $71
 .db $74
 .db $68
 .db $70
-.db $6A
-.db $69
-.db Dialogue_NewLine
+.db $DA, Dialogue_NewLine
 .db $7E
-.db $A0, " ", $7A
+.db $94, " ", $7A
 .db $75
-.db " ", $79
-.db $F3, "?", $FE, $A0, Dialogue_NewPage
+.db $D6, $DC, "? Y", $94, Dialogue_NewPage
 .db $75
-.db $F3, $77
-.db " ", $9D, $91, $6C
+.db $DC, $77
+.db $D6, $AC, $73
+.db $6C
 .db $78
 .db ".", Dialogue_NewPage
 
 Dialogue_Index_0216:
-.db $EC, $95, $6A
-.db Dialogue_Apostrophe, $8F, $AA, $7C
-.db $66
-.db $BB, $A0, $79
+.db $C8, $89, $6A
+.db Dialogue_Apostrophe, $86, $9C, $7C
+.db $EB, " ", $94, $79
 .db ",", Dialogue_NewLine
 .db $67
-.db $7A
-.db $8B, $D1, $A7, $77
-.db $E1, $6D
-.db $95, " ", $B7, $66
-.db $7E
-.db Dialogue_NewPage
-.db $91, " ", $6D
-.db $95, $B0, $8E, $79
-.db Dialogue_Apostrophe, $8F, $6A
-.db $CE, $6E
-.db $95, ".", Dialogue_Terminator65
+.db $FF, $8E, Dialogue_Apostrophe, $97, $CF, $8C, $89, $E4, $79
+.db $EB, Dialogue_NewPage
+.db $8A, " ", $6D
+.db $89, $99, $8E, $FE, $86, $A3, $78
+.db $6E
+.db $89, ".", Dialogue_Terminator65
 
 Dialogue_Index_0218:
-.db "Y", $A0, Dialogue_Apostrophe, $A7, $67
-.db $6A
-.db $79
-.db $79
-.db $95, " ", $73
+.db "Y", $94, Dialogue_Apostrophe, $97, $67
+.db $D3, $79
+.db $89, " ", $73
 .db $74
 .db $79
 .db Dialogue_NewLine
-.db $6C
-.db $A3, $9F, $BB, $6B
+.db $F7, $C3, $73
+.db $AD, $6B
 .db $7A
 .db $77
-.db $9D, $95, ".", Dialogue_NewPage
-.db $EC, $95, $88, $D4, $88, $6C
+.db $8C, $89, ".", Dialogue_NewPage
+.db $C8, $89, $83, $D9, $83, $6C
 .db $7A
-.db $D4, $69
+.db $D9, $69
 .db $78
 .db Dialogue_NewLine
 .db $66
 .db $6D
-.db $6A
-.db $66
-.db $69
+.db $A3, $69
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_021A:
 .db "I", $6B
-.db $83, Dialogue_Apostrophe, $B2, " ", $79
-.db $7A
+.db $80, Dialogue_Apostrophe, $B4, $D6, $7A
 .db $77
 .db $73
-.db $91, $6C
+.db $8A, $6C
 .db Dialogue_NewLine
 .db $67
-.db $F0, $70
-.db $9B, $73
-.db $B6, Dialogue_Apostrophe, $8F, $9D, $6A
+.db $C9, $70
+.db $98, $73
+.db $A9, Dialogue_Apostrophe, $86, $8C, $6A
 .db Dialogue_NewPage
 .db $79
 .db $6E
-.db $E4, ".", Dialogue_Terminator65
+.db $72
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_021C:
-.db "D", $A3, $7E
-.db $A0, " ", $B4, $7B
-.db $88, $66
+.db "D", $93, $7E
+.db $94, " ", $A2, $7B
+.db $83, $66
 .db Dialogue_NewLine
 .db "R", $74
 .db $66
-.db $A7, "P", $CE, $78
+.db $97, "P", $C6, $78
 .db "?", Dialogue_Terminator62
 
 Dialogue_Index_021E:
-.db "L", $6A
-.db $8B, $E4, " ", $C2, $B0, ".", $9E, "H", $72
+.db "L", $D3, $C7, $83, $B5, $99, ".", $AA, "H", $72
 .db $72
 .db "?", Dialogue_NewLine
-.db $EC, $C7, " ", $C7, $E5, " ", $6B
-.db $66
-.db $70
-.db $6A
+.db $C8, $B0, " ", $B0, $C3, $F8, $E1, $6A
 .db "!", Dialogue_NewPage
 
 Dialogue_Index_0220:
-.db "D", $93, Dialogue_Apostrophe, $8B, $79
-.db $66
-.db $70
-.db $88, $E4, " ", $6B
-.db $A5, Dialogue_NewLine
-.db $AA, $6B
-.db $F3, $71
+.db "D", $87, Dialogue_Apostrophe, $84, $79
+.db $E1, $83, $72
+.db $83, $6B
+.db $95, Dialogue_NewLine
+.db $9C, $6B
+.db $DC, $71
 .db " ", $6F
-.db $F4, $79
+.db $D4, $79
 .db Dialogue_NewPage
 .db $67
 .db $6A
 .db $68
 .db $66
-.db $F4, $88, $D1, $72
-.db $E5, Dialogue_NewLine
+.db $D4, $83, $D7, $72
+.db $C3, Dialogue_NewLine
 .db $77
 .db $74
 .db $67
 .db $74
 .db $79
-.db $9E, "I", $73
+.db $AA, "I", $73
 .db $79
-.db $A3, $AA, $68
-.db $6A
-.db $B5, Dialogue_NewPage
+.db $93, $9C, $68
+.db $D2, $71
+.db Dialogue_NewPage
 .db $7C
-.db $E8, $6D
-.db $83, "!", Dialogue_Terminator65
+.db $DB, $6D
+.db $80, "!", Dialogue_Terminator65
 
 Dialogue_Index_0222:
-.db "Y", $A0, Dialogue_Apostrophe, $B5, " ", $6C
-.db $6A
-.db $8B, $E4, " ", $A0, $79
+.db "Y", $94, Dialogue_Apostrophe, $A6, $6C
+.db $D3, $C7, $83, $94, $79
 .db Dialogue_NewLine
-.db $C9, " ", $6D
-.db $95, $6A
-.db "?", $8E, $79
-.db Dialogue_Apostrophe, $8F, $73
+.db $A4, $6D
+.db $89, $6A
+.db "?", $8E, $FE, $86, $73
 .db $74
 .db Dialogue_NewPage
-.db $F4, $6A
-.db $9B, $9D, $A0, $6C
-.db $6D
-.db ".", Dialogue_Terminator65
+.db $D4, $6A
+.db $98, $8C, $94, $E3, ".", Dialogue_Terminator65
 
 Dialogue_Index_0224:
-.db $E7, Dialogue_Apostrophe, $84, "FOO", $BE, "SH ", $8D, Dialogue_NewLine
-.db $D9, $BF, $8D, " G", $F7, " ", $98, "!", Dialogue_Terminator65
+.db "D", $6A
+.db $6B
+.db $A3, $84, $92, "?", Dialogue_NewLine
+.db $C8, $DE, Dialogue_Apostrophe, $86, $B4, $68
+.db $70
+.db $71
+.db $C2, $78
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0226:
-.db $98, $8E, $84, $B9, "NNA", Dialogue_NewLine
-.db "S", $C0, "RIF", $EA, $80, $CC, "!", $DC, $EE, "!", Dialogue_Terminator65
+.db "W", $6A
+.db Dialogue_Apostrophe, $B4, " ", $F7, $8A, $6C
+.db $D6, $93, $67
+.db $6A
+.db Dialogue_NewLine
+.db $F1, $69
+.db $83, $92, Dialogue_Apostrophe, $78
+.db Dialogue_NewPage
+.db $78
+.db $C9, $77
+.db $6E
+.db $6B
+.db $6E
+.db $68
+.db $C2, $AA, "(", $78
+.db $74
+.db $67
+.db ")", Dialogue_Terminator65
 
 Dialogue_Index_0228:
-.db $A8, $D5, $FE, $94, $E2, $94, "ND", Dialogue_NewLine
-.db $81, $80, $8C, "M", $9A, $8E, "N", Dialogue_NewPage
-.db "GU", $8C, $90, "?", Dialogue_Terminator62
+.db "D", $6E
+.db $97, $7E
+.db $94, $F8, $8A, $97, $8C, $6A
+.db Dialogue_NewLine
+.db $D9, $72
+.db $95, " ", $8A, " G", $7A
+.db $D9, $8F, "?", Dialogue_Terminator62
 
 Dialogue_Index_022A:
-.db $E7, " ", $D0, "N", $C5, $80, "F", $94, "ND", Dialogue_NewLine
-.db $CF, " ", $81, $80, "F", $8C, $A6, "I", $E3, " ", $FA, Dialogue_NewPage
-.db $AD, "P", $E7, " ", $D9, "AP.", Dialogue_Terminator65
+.db "I", $FE, $86, $87, $81, $F8, $D9, Dialogue_NewLine
+.db $78
+.db $6E
+.db $69
+.db $83, $A4, $9C, $75
+.db $DB, $D6, $CF, $75
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_022C:
-.db "Y", $A0, Dialogue_Apostrophe, $B2, $E5, $72
-.db $66
-.db $7F
-.db $91, $6C
+.db "Y", $94, Dialogue_Apostrophe, $B4, $C3, $F1, $7F
+.db $8A, $6C
 .db "!", Dialogue_Terminator65
 
 Dialogue_Index_022E:
-.db $97, " ", $6A
-.db $7B
-.db $95, $7E
-.db $93, $6A
+.db $88, " ", $FD, $89, $7E
+.db $87, $6A
 .db Dialogue_NewLine
 .db $7C
 .db $6D
-.db $A3, $E4, $6A
-.db $79
-.db $8F, "L", $66
-.db "S", $B1, $6A
-.db $68
-.db Dialogue_NewPage
-.db $B4, $8F, $9D, $6A
+.db $93, $72
+.db $6A
+.db $D3, $86, $92, Dialogue_NewPage
+.db $A2, $86, $8C, $6A
 .db $6E
 .db $77
-.db " ", $78
-.db $A0, $71
+.db $E4, $94, $71
 .db Dialogue_NewLine
-.db $B7, $74
+.db $A7, $74
 .db $71
-.db $AC, " ", $67
-.db $BB, $B1, $78
+.db $A0, " ", $67
+.db $AD, $AC, $78
 .db Dialogue_NewPage
-.db $72
-.db $D8, $6E
-.db $68
+.db $F1, $F6, $68
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0230:
-.db $F8, $C2, $B0, " ", $EC, $E1, " ", $C7, " ", $6B
-.db $91, $6A
+.db "I", $E4, $6A
+.db $99, " ", $C8, $DE, " ", $B0, $F8, $8A, $6A
 .db ",", Dialogue_NewLine
 .db $79
-.db $F3, $9E, "C", $C4, $88, $67
-.db $F0, $70
+.db $DC, $AA, "C", $B1, $83, $67
+.db $C9, $70
 .db Dialogue_NewPage
-.db $9F, $7E
+.db $8F, $7E
 .db $79
 .db $6E
-.db $E4, ".", Dialogue_Terminator65
+.db $72
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_0232:
 .db "O", $73
-.db $85, " ", $B1, $B5, " ", $C9, Dialogue_NewLine
-.db "B", $66
-.db $7E
-.db $66
-.db $72
-.db $D4, $88, $B7, $9F, $69
-.db $8F, $66
+.db $81, " ", $AC, $A6, $EC, Dialogue_NewLine
+.db "B", $EB, $66
+.db $F1, $B4, $E4, $79
+.db $8F, $69
+.db $86, $66
 .db Dialogue_NewPage
 .db $79
-.db $B6, $95, ".", Dialogue_NewPage
-.db $EC, $95, $88, $72
-.db $F4, $8B, $67
-.db $88, $66
+.db $A9, $89, ".", Dialogue_NewPage
+.db $C8, $89, $83, $72
+.db $D4, $84, $67
+.db $83, $66
 .db Dialogue_NewLine
-.db $C2, $68
-.db $B2, $8B, $B1, $69
+.db $B5, $68
+.db $B4, $84, $AC, $69
 .db $69
-.db $AC, " ", $91, " ", $E8, ".", Dialogue_Terminator65
+.db $A0, " ", $8A, " ", $DB, ".", Dialogue_Terminator65
 
 Dialogue_Index_0234:
-.db "W", $B4, $79
-.db Dialogue_Apostrophe, $B2, $83, " ", $6D
-.db $95, $6A
+.db "W", $A2, $FE, $B4, $80, " ", $6D
+.db $89, $6A
 .db Dialogue_NewLine
 .db $6B
-.db $A5, "?", $CB, $93, Dialogue_Apostrophe, $8B, $7E
-.db $A0, " ", $6C
-.db $74
-.db Dialogue_NewPage
-.db $72
-.db $66
-.db $70
-.db $91, Dialogue_Apostrophe, " ", $79
-.db $77
-.db $A0, $67
+.db $95, "?", $CC, $87, Dialogue_Apostrophe, $84, $7E
+.db $94, " ", $F7, Dialogue_NewPage
+.db $F1, $70
+.db $8A, Dialogue_Apostrophe, $D6, $77
+.db $94, $67
 .db $71
-.db $B0, Dialogue_Terminator65
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_0236:
-.db $D1, $7B
-.db $88, $6C
-.db $74
-.db $8B, $AA, $67
+.db $D7, $7B
+.db $83, $F7, $84, $9C, $67
 .db $66
 .db $69
 .db Dialogue_NewLine
 .db $6B
 .db $6A
-.db $6A
-.db $71
-.db $91, $6C
+.db $D2, $8A, $6C
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_0238:
-.db "B", $88, $68
-.db $D4, $6A
+.db "B", $83, $68
+.db $D9, $6A
 .db $6B
 .db $7A
 .db $71
-.db " ", $6B
-.db $77
-.db $C4, Dialogue_NewLine
+.db $F8, $77
+.db $B1, Dialogue_NewLine
 .db $6D
-.db $95, $88, $93, $9E, "A", $8B, $9D, $6A
+.db $89, $83, $87, $AA, "A", $84, $8C, $6A
 .db Dialogue_NewPage
 .db $6B
-.db $A5, $70
-.db $9B, $6C
-.db $A3, $71
+.db $95, $70
+.db $98, $F7, " ", $71
 .db $6A
 .db $6B
 .db $79
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_023A:
-.db $98, " ", $BE, $D5, $84, $86, Dialogue_NewLine
-.db "FE", $8C, " ", $9C, $81, "E", Dialogue_NewPage
-.db "CRYST", $AE, Dialogue_NewLine
-.db "POS", $D2, "S", $D2, $AF, "B", $BF, $81, "E", Dialogue_NewPage
-.db "SOO", $81, "SAY", $87
+.db "J", $D4, $84, $67
+.db $D3, $7C
+.db $6A
+.db $A0, " ", $D4, ",", Dialogue_NewLine
+.db $8C, $89, $6A
+.db Dialogue_Apostrophe, $86, $9C, $68
+.db $77
+.db $7E
+.db $A7, $BA, Dialogue_NewPage
+.db $8C, $83, $6B
+.db $95, $79
+.db $ED, $6A
+.db "-", $79
+.db $D2, $71
+.db $89, Dialogue_NewLine
+.db "D", $66
+.db $72
+.db $74
+.db $9C, $A9, $73
+.db $78
+.db ",", Dialogue_NewPage
 
 Dialogue_Index_023C:
-.db " N", $ED, $92, Dialogue_NewLine
-.db "D", $ED, $9A, $9E, $81, $87, $80, $AB, Dialogue_NewPage
-.db "S", $A9, $F7, "H", $86, "G", Dialogue_NewLine
-.db "SPECI", $AE, $DC, "B", $94, $8A, $E7, ",", Dialogue_NewPage
-.db $FC, $81, $94, $8A, $AD, $DD, "UB", $C6, Dialogue_Terminator65
+.db $8F, $97, "L", $95, $97, $92, Dialogue_NewLine
+.db $A2, $79
+.db $C2, " ", $DB, ".", Dialogue_NewPage
+.db $C8, $89, $83, $72
+.db $D4, $84, $67
+.db $6A
+.db Dialogue_NewLine
+.db $78
+.db $B1, $83, $B5, $68
+.db $B4, $84, $79
+.db $93, $DB, ".", Dialogue_Terminator65
 
 Dialogue_Index_023E:
-.db $81, $AB, $E2, "I", $BA, $D7, $BC, " ", $BE, "T", Dialogue_NewLine
-.db "D", $D3, $86, $E9, $81, "E", Dialogue_NewPage
-.db "EC", $BE, "P", $D2, $D7, "H", $EA, "H", Dialogue_NewLine
-.db "OCC", $D3, $84, $90, "CE", Dialogue_NewPage
-.db "E", $D5, "R", $BF, "100", $FE, "E", $8C, $FF, Dialogue_NewLine
+.db $C8, $B0, $F8, $6E
+.db $B4, $F3, $C6, " ", $C1, $79
+.db Dialogue_NewLine
+.db $8A, $81, " ", $6A
+.db $68
+.db $C1, $75
+.db $B5, $D6, $A2, $79
+.db Dialogue_NewPage
+.db $68
+.db $B1, $C2, " ", $87, $68
+.db $83, $FD, $89, $7E
+.db Dialogue_NewLine
+.db $6D
+.db $ED, $69
+.db $B4, $97, $7E
+.db $A3, $77
+.db $78
+.db ".", Dialogue_NewPage
 
 Dialogue_Index_0240:
-.db "IF", $FE, $94, " GI", $D5, $CD, $80, "A", Dialogue_NewPage
-.db "G", $E6, $E2, "R", $A9, $DC, Dialogue_NewLine
-.db "DR", $F6, $90, $9B, $D1, $96, " GI", $D5, Dialogue_NewPage
-.db $82, "S", $A9, $80, $9C, $81, $AB, Dialogue_NewLine
-.db "FI", $BA, "."
+.db "I", $6B
+.db $80, " ", $F6, $7B
+.db $83, $72
+.db $83, $8C, $6A
+.db Dialogue_NewLine
+.db $6C
+.db $6A
+.db $72
+.db $C3, " ", $69
+.db $CF, $F7, $73
+.db " ", $A2, $78
+.db ",", Dialogue_NewPage
 
 Dialogue_Index_0242:
-.db $FD, "OW", $DC, "B", $94, "T", Dialogue_NewPage
-.db $E7, "?", Dialogue_Terminator62
+.db $D7, $A6, $78
+.db $A2, $B4, $E4, $B1, $99, Dialogue_NewLine
+.db "W", $A2, $84, $69
+.db $93, $7E
+.db $94, $E4, $EB, "?", Dialogue_Terminator62
 
 Dialogue_Index_0244:
-.db $C1, $BA, $9B, "TAK", $80, $81, $AB, " ", Dialogue_NewLine
-.db "EC", $BE, "P", $D2, " ", $8D, "RCH.", Dialogue_Terminator65
+.db $C8, $A0, $D6, $E1, $83, $8C, $B0, Dialogue_NewLine
+.db "E", $68
+.db $C1, $75
+.db $B5, " T", $95, $68
+.db $6D
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0246:
-.db $A4, "? ", $81, $A1, $D7, $A8, $8A, "DID", Dialogue_NewLine
-.db $82, "C", $A9, $80, "F", $9A, "?", Dialogue_Terminator65
+.db "Y", $94, " ", $69
+.db $87, Dialogue_Apostrophe, $84, $7C
+.db $8F, $84, $DB, "?", Dialogue_NewLine
+.db $C8, $A0, $F3, $A2, $FE, $97, $7E
+.db $94, Dialogue_NewPage
+.db $68
+.db $B1, $83, $6D
+.db $89, $83, $6B
+.db $95, "?", Dialogue_Terminator65
 
 Dialogue_Index_0248:
-.db $82, $A8, $D5, " ", $A4, " G", $E6, "!", Dialogue_NewLine
-.db $DD, $8E, " LOOK ", $BE, "K", $80, "A", Dialogue_NewPage
-.db "FOOL ", $9A, Dialogue_NewLine
-.db "S", $A9, $F7, "H", $86, "G?", Dialogue_Terminator65
+.db "N", $93, $6C
+.db $6A
+.db $72
+.db "?", $CC, $87, Dialogue_Apostrophe, $79
+.db Dialogue_NewLine
+.db $7E
+.db $94, $C7, $74
+.db $68
+.db $70
+.db $C7, $6A
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_024A:
-.db $D1, "M", $A6, $9A, "R", $BF, $F8, $A8, $D5, $DC, Dialogue_NewLine
-.db "SH", $EB, $8E, "N", $A6, "UCH", $DC, Dialogue_NewPage
-.db "PL", $C0, $BD, $A6, "H", $9A, "T", $D0, "KE", Dialogue_NewLine
-.db "F", $9A, " 1000", $CD, $A2, $F7, $BC, "!", Dialogue_NewPage
-.db $FC, $96, $FE, $94, $C5, "UY", Dialogue_NewLine
-.db $90, "E?", Dialogue_Terminator62
+.db "S", $95, $77
+.db $AD, $72
+.db $AD, $78
+.db $6D
+.db $74
+.db $75
+.db Dialogue_Apostrophe, $86, $8A, Dialogue_NewLine
+.db $78
+.db $7A
+.db $68
+.db $6D
+.db $C3, " ", $75
+.db $71
+.db $C9, $99, Dialogue_NewPage
+.db "O", $73
+.db $83, $78
+.db $6D
+.db $95, $79
+.db $68
+.db $E1, $83, $B0, Dialogue_NewLine
+.db "1000", $C7, $C2, $D3, $66
+.db $AA, "B", $7A
+.db $7E
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_024C:
-.db "AH", $9B, "M", $BF, "Y", $94, "NG", Dialogue_NewLine
-.db "PUPIL", $9B, $A4, "AH", $9E, "Y", $94, Dialogue_NewPage
-.db $8C, $80, "P", $BA, "P", $8C, $86, $E9, $8D, Dialogue_NewLine
-.db "F", $C0, $80, $98, "?", Dialogue_Terminator65
+.db "A", $6D
+.db $98, "L", $FF, $7F
+.db $98, $72
+.db $AD, $75
+.db $7A
+.db $75
+.db $6E
+.db $71
+.db ".", Dialogue_NewLine
+.db "A", $84, $71
+.db $C6, $84, $7E
+.db $94, $E4, $D3, Dialogue_NewPage
+.db $94, $84, $79
+.db $93, $69
+.db $6A
+.db $6B
+.db $A3, $79
+.db Dialogue_NewLine
+.db $92, "?", Dialogue_Terminator65
 
 Dialogue_Index_024E:
-.db "C", $A9, "E", $9B, $82, "M", $CC, "T", Dialogue_NewLine
-.db "P", $BC, $84, "Y", $94, "R", $E2, $86, $AE, Dialogue_NewPage
-.db "T", $A2, "T---", $D7, $80, $FC, $96, Dialogue_NewLine
-.db "DUEL!", Dialogue_Terminator65
+.db $C8, $A0, $8E, $E4, $A2, $A6, $F6, $7B
+.db $6A
+.db Dialogue_NewLine
+.db $7E
+.db $94, $80, $77
+.db $F8, $8A, $BA, Dialogue_NewPage
+.db $79
+.db $C2, $79
+.db $AA, "F", $6E
+.db $E3, $84, $72
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_0250:
-.db $82, $A8, $D5, $C5, "EC", $A9, "E", Dialogue_NewLine
-.db "MUCH", $A6, $D9, $90, "G", $87, $C3, Dialogue_NewPage
+.db "Y", $94, Dialogue_Apostrophe, $7B
+.db $83, $6C
+.db $77
+.db $A9, $73
+.db Dialogue_NewLine
+.db $A7, $77
+.db $87, $6C
+.db $98, "L", $FF, $7F
+.db ".", Dialogue_NewPage
+.db "W", $DB, $6D
+.db $D6, $A2, $84, $72
+.db $7A
+.db $68
+.db $6D
+.db Dialogue_NewLine
+.db $75
+.db $A9, $89, $98, $7E
+.db $94, $F3, $6E
+.db $A6, $69
+.db $74
+.db ".", Dialogue_NewPage
 
 Dialogue_Index_0252:
-.db $82, $8C, $80, "WE", $96, Dialogue_NewLine
-.db "P", $BA, "P", $8C, $92, ".", Dialogue_NewPage
+.db "A", $86, $9C, $F6, $6B
+.db $84, $6B
+.db $77
+.db $B1, $C7, $6A
+.db ",", Dialogue_NewLine
+.db "I ", $F6, $7B
+.db $83, $7E
+.db $94, $D6, $AC, $78
+.db Dialogue_NewPage
+.db "F", $CF, $97, "M", $8F, $79
+.db $71
+.db $99, Dialogue_NewPage
 
 Dialogue_Index_0254:
-.db $D1, $96, " GI", $D5, $FE, $94, $DC, Dialogue_NewLine
-.db "FRA", $AF, $E0, "NT", $B3, $DC, $84, "A", Dialogue_NewPage
-.db "GIF", $C6, $8E, $8A, $FB, "S", Dialogue_NewLine
-.db $82, "FR", $A9, $CB, $89, "G", $87, "!", Dialogue_Terminator65
+.db "I", $84, $7C
+.db $6E
+.db $A6, $75
+.db $77
+.db $74
+.db $79
+.db $6A
+.db $68
+.db $84, $7E
+.db $94, ".", Dialogue_NewLine
+.db "N", $A9, " ", $F7, ".", Dialogue_Terminator65
 
 Dialogue_Index_0256:
-.db $82, $8C, $80, $A4, $8A, "Y", $F7, Dialogue_NewLine
-.db $BA, "ADY!", $FE, $94, $CD, $CC, "T", Dialogue_NewPage
-.db $B9, $A6, "TI", $96, " ", $EF, $E3, "R", $B9, Dialogue_NewLine
-.db "M", $9A, $80, $D9, "A", $86, $86, "G.", Dialogue_Terminator65
+.db "Y", $94, $77
+.db $D6, $CF, $8A, $8A, $6C
+.db " ", $B0, Dialogue_NewLine
+.db $6B
+.db $D9, $F8, $77
+.db $B1, " ", $69
+.db $87, $99, Dialogue_NewPage
+.db "C", $B1, $83, $67
+.db $C9, $70
+.db $C3, $73
+.db $74
+.db $8C, $89, Dialogue_NewLine
+.db $79
+.db $6E
+.db $72
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_0258:
-.db $F8, $A8, $D5, " ", $A4, $81, $86, $E9, $8D, Dialogue_NewLine
-.db "TE", $C0, "H", $FE, $94, $CD, $9A, $BD, Dialogue_Terminator65
+.db "I ", $A2, $7B
+.db $83, $73
+.db $74
+.db $8C, $8A, $6C
+.db Dialogue_NewLine
+.db $72
+.db $95, $83, $79
+.db $93, $79
+.db $A3, $68
+.db $6D
+.db $80, ".", Dialogue_Terminator65
 
 Dialogue_Index_025A:
-.db $89, $AF, "WHO", $DC, $BA, $FE, $94, "?", Dialogue_NewLine
-.db "F", $86, $AF, "M", $BF, "PUPIL", Dialogue_NewPage
-.db $A4, "AH", $8E, "N ", $81, "E", Dialogue_NewLine
-.db $E0, $A8, "RU"
+.db "A", $73
+.db $97, $7C
+.db $6D
+.db $93, $72
+.db $6E
+.db $E3, $84, $7E
+.db $94, Dialogue_NewLine
+.db $67
+.db $6A
+.db "?", $DD, $AD, $75
+.db $7A
+.db $75
+.db $6E
+.db $71
+.db " L", $FF, $7F
+.db Dialogue_NewPage
 
 Dialogue_Index_025C:
-.db " ", $D0, $D5, $9E, $DD, Dialogue_NewPage
-.db $82, "K", $A4, "W", $FD, "IM?", Dialogue_Terminator62
+.db $C1, $7B
+.db $C2, " ", $8A, $DD, $66
+.db $A2, $77
+.db $7A
+.db Dialogue_NewLine
+.db $68
+.db $66
+.db $7B
+.db $99, " K", $73
+.db $A9, " ", $AC, $72
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_025E:
-.db $D1, $D5, $A6, $A9, $F7, "H", $86, "G", Dialogue_NewLine
-.db $F8, "M", $CC, $8A, "TE", $96, $FD, "IM.", Dialogue_NewPage
-.db "BR", $86, $E9, "HIM", $FD, $87, $BD, Dialogue_Terminator65
+.db $C8, $89, $83, $B0, $E4, $B1, $D3, $AC, $73
+.db $6C
+.db Dialogue_NewLine
+.db "I", $C7, $D4, $84, $79
+.db $D2, $71
+.db " L", $FF, $7F
+.db ".", Dialogue_NewPage
+.db "W", $87, Dialogue_Apostrophe, $84, $7E
+.db $94, " ", $67
+.db $77
+.db $8A, $6C
+.db " ", $AC, $72
+.db Dialogue_NewLine
+.db $79
+.db $93, $72
+.db $6A
+.db "?", Dialogue_Terminator65
 
 Dialogue_Index_0260:
-.db $86, " ", $81, $CF, " ", $D0, $D2, ",", Dialogue_NewLine
-.db $81, $87, $80, $AB, " ", $A4, $F5, "O", $86, "T", Dialogue_NewPage
-.db $86, $E2, $D3, $81, $87, Dialogue_NewLine
-.db "C", $90, $D5, "RS", $CF, "I", $90, ".", Dialogue_Terminator65
+.db "I", $E4, $6A
+.db $99, " ", $C8, $A0, " ", $DB, $E8, $8F, Dialogue_Apostrophe, $79
+.db Dialogue_NewLine
+.db $67
+.db $83, $6D
+.db $D2, $75
+.db $DA, ".", Dialogue_Terminator65
 
 Dialogue_Index_0262:
-.db $F8, $A8, $D5, $D7, $CF, "C", $C1, "D", Dialogue_NewLine
-.db $AE, "L", $FE, $94, "R", $DC, "CTI", $90, $FF, Dialogue_NewPage
+.db "I ", $BE, "V", $82, "W", $E2, "C", $E0, "D", Dialogue_NewLine
+.db $A5, "L ", $8D, "R ", $CD, "TI", $AF, "S.", Dialogue_NewPage
 
 Dialogue_Index_0264:
-.db $CF, "T", $C0, "K", $CD, $80, $A4, "W", $9B, "IF", Dialogue_NewLine
-.db $82, "D", $8C, $BD, Dialogue_Terminator65
+.db $E2, "T", $CD, "K", $DD, $82, $B8, "W", $98, "IF", Dialogue_NewLine
+.db $8D, $CC, $9E, $D1, Dialogue_Terminator65
 
 Dialogue_Index_0266:
-.db $D1, "M", $C5, "U", $8A, $90, "LY", Dialogue_NewLine
-.db $98, Dialogue_Apostrophe, $84, "S", $A8, $DD, "W!", Dialogue_NewPage
+.db $D7, "M", $CA, "U", $9D, $AF, "LY", Dialogue_NewLine
+.db $B7, Dialogue_Apostrophe, $8B, "S", $BE, $EE, "W!", Dialogue_NewPage
 
 Dialogue_Index_0268:
-.db "E", $D5, "N", $8E, "F", $FE, $94, Dialogue_NewLine
-.db $E3, "FE", $CF, $CD, "E", $9B, "Y", $94, Dialogue_Apostrophe, $D5, Dialogue_NewPage
-.db "GA", $86, $92, " ", $A4, $81, $86, $E9, $CF, Dialogue_NewLine
-.db $AE, "L!", Dialogue_Terminator65
+.db "EV", $B2, $8E, "F ", $8D, Dialogue_NewLine
+.db $F4, "FE", $E2, $DD, "E", $98, $8D, Dialogue_Apostrophe, "VE", Dialogue_NewPage
+.db "GA", $96, $9F, " ", $B8, $85, $96, "G ", $E2, Dialogue_NewLine
+.db $A5, "L!", Dialogue_Terminator65
 
 Dialogue_Index_026A:
-.db $DD, "N", Dialogue_Apostrophe, $8A, $B9, $DC, "GA", $86, "ST", Dialogue_NewLine
-.db $98, "!", Dialogue_Terminator65
+.db $EE, "N", Dialogue_Apostrophe, $9D, $E6, " AGA", $96, $D8, Dialogue_NewLine
+.db $B7, "!", Dialogue_Terminator65
 
 Dialogue_Index_026C:
-.db "AH", $9B, "M", $BF, "CHILD", $BA, "N,", Dialogue_NewLine
-.db $82, $A8, $D5, $CB, $90, "E", Dialogue_NewPage
-.db $D5, "R", $BF, "WE", $96, " ", $8D, Dialogue_NewLine
-.db "C", $A9, $80, $81, $AB, $E2, $8C, ".", Dialogue_NewPage
-.db $82, $8C, $80, $D5, "RY", Dialogue_NewLine
-.db "LUCK", $BF, $86, $E3, $92, $9E, $DD, Dialogue_NewPage
-.db $82, $BA, $AE, "L", $BF, $FC, "SH", Dialogue_NewLine
-.db $8D, " KI", $96, $DC, "N OLD", Dialogue_NewPage
-.db $E0, "N?", Dialogue_Terminator62
+.db "AH", $98, "MY", $F2, "HILD", $C4, "N,", Dialogue_NewLine
+.db $8D, " ", $BE, "V", $82, $EE, "NE", Dialogue_NewPage
+.db "V", $9A, "Y", $D0, $BB, "L ", $A1, Dialogue_NewLine
+.db "C", $C5, $82, $85, $BC, $CE, $9E, ".", Dialogue_NewPage
+.db $8D, " ", $9E, $82, "V", $9A, "Y", Dialogue_NewLine
+.db "LUCKY", $8E, "N", $F4, $9F, $AA, $EE, Dialogue_NewPage
+.db $8D, " ", $C4, $A5, "LY", $D0, $BC, "H", Dialogue_NewLine
+.db $A1, " K", $BF, " ", $91, " OLD", Dialogue_NewPage
+.db "M", $91, "?", Dialogue_Terminator62
 
 Dialogue_Index_026E:
-.db $AE, "L RI", $EE, "T! ", $81, $A1, Dialogue_NewLine
-.db "W", $80, $FC, $96, $E2, $9A, "G", $F7, Dialogue_NewPage
-.db $81, $AB, $DC, $84, $89, " ", $EF, "F", $9A, "-", Dialogue_NewLine
-.db "T", $EF, $CF, $80, "M", $AB, "TAK", $BD, Dialogue_Terminator65
+.db $A5, "L RIGHT! ", $85, $B2, Dialogue_NewLine
+.db "W", $82, "W", $BF, $CE, $AB, "G", $F0, Dialogue_NewPage
+.db $85, $BC, " ", $F9, " ", $91, " ", $FB, "F", $AB, "-", Dialogue_NewLine
+.db "T", $FB, $E2, $82, "M", $BC, "TAK", $D1, Dialogue_Terminator65
 
 Dialogue_Index_0270:
-.db "E", $D5, "N ", $A4, "W", $FE, $94, " ", $D9, "Y", Dialogue_NewLine
-.db $8D, $E2, "OOL", $D7, $E7, "H", $CD, "E?", Dialogue_NewPage
-.db $82, "S", $A8, $96, " ", $BA, "P", $A1, "T!", Dialogue_Terminator65
+.db "EV", $B2, " ", $B8, "W ", $8D, " TRY", Dialogue_NewLine
+.db $A1, $CE, "OOL", $D0, "I", $85, $DD, "E?", Dialogue_NewPage
+.db $8D, $B6, $BE, "LL ", $C4, "P", $B2, "T!", Dialogue_Terminator65
 
 Dialogue_Index_0272:
-.db $D1, "M", $A6, $9A, "RY", $9B, $F8, "M", $CC, "T", Dialogue_NewLine
-.db $A8, $D5, $C5, "E", $A1, Dialogue_NewPage
+.db $D7, "M", $B6, $AB, "RY", $98, "I", $DD, $FC, "T", Dialogue_NewLine
+.db $BE, "V", $82, "BE", $B2, Dialogue_NewPage
 
 Dialogue_Index_0274:
-.db "POS", $D2, "S", $D2, $AF, "BODY", Dialogue_NewLine
-.db $89, $AF, "S", $94, "L", $C5, $BF, "EVIL.", Dialogue_NewPage
+.db "POSS", $B3, "S", $9F, $CA, "ODY", Dialogue_NewLine
+.db $91, $E5, "S", $C0, "L", $CA, "Y EVIL.", Dialogue_NewPage
 
 Dialogue_Index_0276:
-.db $82, $BA, "SCU", $92, " ", $94, "R", Dialogue_NewLine
-.db "W", $9A, "L", $AF, "J", $CC, $8A, $86, " ", $81, "E", Dialogue_NewPage
-.db "N", $EA, "K ", $9C, "TIME!", $8E, "F", Dialogue_NewLine
-.db $82, $A8, $AF, "C", $A9, $80, $89, "Y", Dialogue_NewPage
+.db $8D, " ", $C4, "SCU", $9F, " ", $C0, "R", Dialogue_NewLine
+.db "W", $AB, "L", $E5, "J", $FC, $9D, $96, " ", $85, "E", Dialogue_NewPage
+.db "NICK ", $A8, "TIME!", $8E, "F", Dialogue_NewLine
+.db $8D, " ", $BE, $E5, "C", $C5, $82, $91, "Y", Dialogue_NewPage
 
 Dialogue_Index_0278:
-.db "L", $CF, $87, $9B, $E7, $CD, "I", $EE, "T", Dialogue_NewLine
-.db $A8, $D5, $C5, "E", $A1, " ", $8D, "O", Dialogue_NewPage
-.db "L", $CF, $80, "W", $80, $AE, "L ", $81, $89, "K", Dialogue_NewLine
-.db $82, "FR", $A9, " ", $81, "E", Dialogue_NewPage
-.db "BOT", $8D, "M ", $9C, $94, "R", Dialogue_NewLine
-.db $C1, $8C, "T", $FF, $DC, $BE, "S", $9B, "Y", $94, "R", Dialogue_NewPage
-.db "F", $CF, $C1, "R", $D7, $BC, " ", $90, "CE", Dialogue_NewLine
-.db "K", $86, $E9, $9C, $AE, $B9, "L", $9E, $81, "E", Dialogue_NewPage
-.db "D", $8C, "K ", $D0, "ST", $B3, $FD, $BC, Dialogue_NewLine
-.db $DF, $A1, $CB, $A2, $D9, "OY", $92, ",", Dialogue_NewPage
-.db $98, " KI", $96, $92, $C3, $CB, "O", Dialogue_NewLine
-.db "Y", $94, $9B, $AE, $AB, $9B, $FC, "SH ", $8D, Dialogue_NewPage
-.db $BC, "C", $A1, $AF, "Y", $94, "R", Dialogue_NewLine
-.db "F", $CF, $C1, "R", Dialogue_Apostrophe, $84, $81, "R", $90, "E", Dialogue_NewPage
-.db $89, $AF, $DF, "C", $A9, $80, $81, "E", Dialogue_NewLine
-.db "QUE", $A1, " ", $9C, $AE, $B9, "L?", Dialogue_Terminator62
+.db "L", $E2, $9A, $98, "I", $9D, "MIGHT", Dialogue_NewLine
+.db $BE, "V", $82, "BE", $B2, " ", $A1, "O", Dialogue_NewPage
+.db "L", $E2, $82, "W", $82, $A5, "L ", $85, $91, "K", Dialogue_NewLine
+.db $8D, $CE, "R", $C5, " ", $85, "E", Dialogue_NewPage
+.db "BOT", $A1, "M ", $A8, $C0, "R", Dialogue_NewLine
+.db $E0, $9E, "TS", $AA, $A5, $BC, $98, $8D, "R", Dialogue_NewPage
+.db "F", $E2, $E0, "R", $D0, $F9, " ", $AF, "CE", Dialogue_NewLine
+.db "K", $96, "G ", $A8, $A5, $E6, "L", $AA, $85, "E", Dialogue_NewPage
+.db "D", $9E, "K", $F2, $F9, "T", $CB, " ", $BE, "S", Dialogue_NewLine
+.db "BE", $B2, $CC, $B3, "TROY", $9F, ",", Dialogue_NewPage
+.db $B7, " K", $BF, $9F, "..", $AA, $EE, Dialogue_NewLine
+.db $8D, $98, $A5, $BC, $98, "W", $BC, "H ", $A1, Dialogue_NewPage
+.db $F9, "C", $B2, $E5, $8D, "R", Dialogue_NewLine
+.db "F", $E2, $E0, "R", Dialogue_Apostrophe, $8B, $85, "R", $AF, "E", Dialogue_NewPage
+.db $91, $E5, "B", $EF, $C5, $82, $85, "E", Dialogue_NewLine
+.db "QUE", $B2, " ", $A8, $A5, $E6, "L?", Dialogue_Terminator62
 
 Dialogue_Index_027A:
-.db "RA", $AB, $80, $81, "E", Dialogue_NewLine
-.db "A", $87, $EB, "R", $AB, "M", Dialogue_NewPage
-.db $8D, "W", $8C, "D", $84, $81, "E", Dialogue_NewLine
-.db $C1, "A", $D5, "NS-", $FE, $94, Dialogue_NewPage
-.db "SH", $94, "L", $AF, $81, $A1, $C5, "E", Dialogue_NewLine
-.db "AB", $B3, " ", $8D, $A6, "E", $80, $81, "E", Dialogue_NewPage
-.db "D", $8C, "K ", $D0, "ST", $B3, ".", Dialogue_Terminator65
+.db "RA", $BC, $82, $85, "E", Dialogue_NewLine
+.db "A", $9A, $FA, "R", $BC, "M", Dialogue_NewPage
+.db $A1, "W", $9E, "D", $8B, $85, "E", Dialogue_NewLine
+.db $E0, "AV", $B2, "S- ", $8D, Dialogue_NewPage
+.db "SH", $C0, "L", $E5, $85, $B2, $CA, "E", Dialogue_NewLine
+.db "AB", $CB, " ", $A1, $B6, "E", $82, $85, "E", Dialogue_NewPage
+.db "D", $9E, "K", $F2, $F9, "T", $CB, ".", Dialogue_Terminator65
 
 Dialogue_Index_027C:
-.db $AE, "RI", $EE, "T!", $FE, $94, Dialogue_NewLine
-.db "SA", $D5, $AF, $AE, "L ", $FA, Dialogue_NewPage
-.db $AE, $B9, "L!", Dialogue_Terminator65
+.db $A5, "RIGHT! ", $8D, Dialogue_NewLine
+.db "SAV", $9F, " ", $A5, "L OF", Dialogue_NewPage
+.db $A5, $E6, "L!", Dialogue_Terminator65
 
 Dialogue_Index_027E:
-.db "W", $80, $8C, $80, $AE, "L", Dialogue_NewLine
-.db $81, $89, "KFUL", $E2, $9A, Dialogue_NewPage
-.db "Y", $94, "R", $C5, "RA", $D5, $CB, "E", $92, "S!", Dialogue_NewLine
-.db "W", $80, "LO", $D5, $FE, $94, " !", Dialogue_Terminator65
+.db "W", $82, $9E, $82, $A5, "L", Dialogue_NewLine
+.db $85, $91, "KFUL", $CE, $AB, Dialogue_NewPage
+.db $8D, "R", $CA, "RAV", $82, $F4, $9F, "S!", Dialogue_NewLine
+.db "W", $82, "LOV", $82, $8D, " !", Dialogue_Terminator65
 
 Dialogue_Index_0280:
-.db $BA, "P", $9A, $8A, "QU", $EA, "KL", $BF, $8D, Dialogue_NewLine
-.db $81, $80, $B9, $D5, "R", $A4, "R!", Dialogue_Terminator65
+.db $C4, "P", $AB, $9D, "QUICKLY ", $A1, Dialogue_NewLine
+.db $85, $82, $E6, "V", $9A, $B8, "R!", Dialogue_Terminator65
 
 Dialogue_Index_0282:
-.db $82, $D0, "N", $A4, $8A, "C", $A9, "E", Dialogue_NewLine
-.db $81, "R", $94, $EE, $FD, $87, $BD, Dialogue_NewPage
-.db $81, $AB, $8E, $84, "M", $BF, $8C, "EA.", Dialogue_Terminator65
+.db $C8, $B0, " ", $B0, $C7, $AD, $79
+.db $7A
+.db $77
+.db $6B
+.db ".", Dialogue_NewLine
+.db "N", $93, $87, $83, $6C
+.db $D3, $86, $75
+.db $C6, $79
+.db "!", Dialogue_Terminator65
 
 Dialogue_Index_0284:
-.db "WE", $96, ",IF", $CB, "R.LU", $D5, $A4, Dialogue_NewLine
-.db $D2, "N", $8A, $82, ",", $F8, "GU", $A2, "S", Dialogue_NewPage
-.db $F8, $A8, $D5, " ", $8D, " ", $B3, $8A, $82, Dialogue_NewLine
-.db $81, "R", $94, $EE, ".", Dialogue_Terminator65
+.db "I", $6B
+.db $CC, $77
+.db $AA, $E9, $A0, $93, $78
+.db $EB, $78
+.db Dialogue_NewLine
+.db $78
+.db $74
+.db $98, "I ", $6C
+.db $7A
+.db $C2, $86, $DB, Dialogue_NewPage
+.db $68
+.db $8F, Dialogue_Apostrophe, $84, $67
+.db $83, $6D
+.db $D2, $75
+.db $DA, $AA, "G", $74
+.db Dialogue_NewLine
+.db $87, $D6, $6D
+.db $77
+.db $94, $E3, ".", Dialogue_Terminator65
 
 Dialogue_Index_0286:
-.db $81, "E", $BF, "SA", $BF, $81, $CF, Dialogue_NewLine
-.db $81, $87, $80, $8C, "E", Dialogue_NewPage
-.db "M", $DE, $89, " ", $BE, "V", $86, "G", Dialogue_NewLine
-.db $90, $CD, $DE, $AD, $89, "D", Dialogue_NewPage
-.db $E3, "Z", $9A, "I", $89, "N ", $90, Dialogue_NewLine
-.db $E3, "Z", $9A, $AB, $9E, $D1, $AF, "S", $D3, "E", Dialogue_NewPage
-.db $BE, "K", $80, $AD, "C", $A8, "NC", $80, $8D, Dialogue_NewLine
-.db "T", $AE, "K ", $8D, $A6, $A9, "E", $90, $BD, Dialogue_Terminator65
+.db $88, " ", $75
+.db $6A
+.db $74
+.db $75
+.db $71
+.db $6A
+.db Dialogue_NewLine
+.db $C1, $7B
+.db $83, $87, " ", $74
+.db $8C, $89, Dialogue_NewPage
+.db $75
+.db $71
+.db $8F, $D3, $78
+.db ":", $DD, $74
+.db $79
+.db $66
+.db $7B
+.db $6E
+.db $8F, $78
+.db Dialogue_NewLine
+.db $87, $DD, $74
+.db $79
+.db $66
+.db $7B
+.db $6E
+.db $9C, $8F, $69
+.db Dialogue_NewPage
+.db "D", $6A
+.db $7F
+.db $74
+.db $C1, $8F, $86, $87, Dialogue_NewLine
+.db "D", $6A
+.db $7F
+.db $74
+.db $C1, $78
+.db ".", Dialogue_NewPage
+.db $D7, $97, $71
+.db $E7, $83, $79
+.db $93, $72
+.db $6A
+.db $D3, Dialogue_NewLine
+.db $87, $83, $8F, $97, $79
+.db $BA, $70
+.db ".", Dialogue_Terminator65
 
 Dialogue_Index_0288:
-.db "S", $A9, $80, $86, "TE", $96, "IG", $A1, "T", Dialogue_NewLine
-.db "M", $90, "ST", $87, $84, $A8, $D5, " ", Dialogue_NewPage
-.db $81, "EIR OWN", Dialogue_NewLine
-.db "L", $89, "GU", $F6, $BD, Dialogue_Terminator65
+.db $88, $E8, $71
+.db $FD, $89, Dialogue_NewLine
+.db $72
+.db $87, $A7, $89, $86, $A2, $7B
+.db $83, $66
+.db Dialogue_NewPage
+.db $72
+.db $87, $A7, $89, " ", $71
+.db $8F, $6C
+.db $7A
+.db $66
+.db $6C
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_028A:
-.db $EC, $E1, " L", $F0, $93, $6E
-.db $AA, "P", $74
+.db $C8, $DE, " L", $C9, $87, $6E
+.db $9C, "P", $74
 .db $79
 .db Dialogue_NewLine
 .db $78
 .db $74
 .db $71
-.db $A7, $6B
-.db $A5, $E5, " ", $6B
-.db $A5, $79
-.db $7A
-.db $73
-.db $B0, Dialogue_NewPage
+.db $97, $6B
+.db $95, $C3, $F8, $95, $79
+.db $ED, $99, Dialogue_NewPage
 .db "M", $7A
 .db $68
 .db $6D
 .db " ", $74
 .db $67
-.db $71
-.db $6E
-.db $6C
-.db $6A
-.db $69
-.db "!", Dialogue_Terminator65
+.db $C1, $6C
+.db $DA, "!", Dialogue_Terminator65
 
 Dialogue_Index_028C:
-.db "G", $F3, $69
-.db $9B, $9D, $E1, " ", $C2, $6A
+.db "G", $DC, $69
+.db $98, $8C, $DE, $E4, $6A
+.db $6A
 .db $72
 .db $78
 .db Dialogue_NewLine
 .db $79
-.db $A3, $67
-.db $88, $C8, $71
-.db " ", $72
-.db $BB, $B7, $66
+.db $93, $67
+.db $83, $BA, $71
+.db $C7, $AD, $A7, $66
 .db $6B
 .db $6B
 .db ".", Dialogue_NewPage
-.db "N", $B6, $85, $73
+.db "N", $A9, $81, $73
 .db ",", Dialogue_NewPage
 
 Dialogue_Index_028E:
-.db $E8, " ", $7C
-.db $6E
-.db $B5, " ", $68
+.db $DB, $F3, $6E
+.db $A6, $68
 .db $74
-.db $B7, " 1200", Dialogue_NewLine
-.db $E4, $C2, $79
-.db $AA, $79
-.db $A3, $67
+.db $A7, " 1200", Dialogue_NewLine
+.db $72
+.db $C2, $D3, $9C, $79
+.db $93, $67
 .db $7A
 .db $6E
 .db $71
 .db $69
 .db ".", Dialogue_NewPage
 .db "W", $6E
-.db $B5, $83, " ", $75
-.db $66
-.db $BB, $E4, "?", Dialogue_Terminator62
+.db $A6, $7E
+.db $94, " ", $75
+.db $EB, $C7, $6A
+.db "?", Dialogue_Terminator62
 
 Dialogue_Index_0290:
-.db $EC, $9F, $70
-.db $83, $9E, $EC, $AC, Dialogue_NewLine
-.db $D1, $B5, " ", $67
+.db $C8, $8F, $70
+.db $80, $AA, $C8, $A0, Dialogue_NewLine
+.db $D7, $A6, $67
 .db $6A
-.db $6C
-.db $91, " ", $7C
-.db $A5, $70
+.db $F6, $73
+.db $F3, $95, $70
 .db ".", Dialogue_NewPage
 .db "W", $66
-.db $E8, $E5, " ", $71
-.db $E8, $79
+.db $DB, $C3, " ", $C1, $79
+.db $79
 .db $71
-.db $88, $7C
-.db $B1, $71
-.db $B0, Dialogue_Terminator65
+.db $83, $7C
+.db $AC, $71
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_0292:
-.db "R", $F4, $B1, $73
-.db $F2, $7C
-.db $93, Dialogue_Apostrophe, $79
+.db "R", $D4, $AC, $73
+.db $6C
+.db $F3, $87, Dialogue_Apostrophe, $79
 .db Dialogue_NewLine
-.db $72
-.db $66
-.db $70
-.db $88, $AA, $6C
-.db $F3, $A7, $78
-.db $B1, $75
+.db $F1, $70
+.db $83, $9C, $F7, $74
+.db $97, $78
+.db $AC, $75
 .db ".", Dialogue_NewPage
-.db "J", $F4, $8B, $AA, $71
-.db $E8, $79
+.db "J", $D4, $84, $9C, $C1, $79
+.db $79
 .db $71
-.db $88, $72
-.db $A5, $6A
+.db $83, $72
+.db $95, $6A
 .db Dialogue_NewLine
 .db $75
-.db $E1, $6E
-.db $AC, $68
-.db $B0, Dialogue_Terminator65
+.db $DE, $6E
+.db $A0, $68
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_0294:
-.db "G", $F3, $69
-.db $9E, "N", $B6, $85, Dialogue_NewLine
-.db $F9, $AC, $A3, $68
-.db $9F, " ", $68
-.db $D4, $77
+.db "G", $DC, $69
+.db $AA, "N", $A9, $81, Dialogue_NewLine
+.db $E9, $A0, $93, $68
+.db $8F, $E8, $D9, $77
 .db $7E
 .db Dialogue_NewPage
 .db $7E
-.db $A0, " ", $91, $79
-.db $A3, $CA, ".", Dialogue_NewPage
-.db "G", $A3, $A0, $79
+.db $94, " ", $8A, $79
+.db $93, $78
+.db $75
+.db $C9, $99, Dialogue_NewPage
+.db "G", $93, $94, $79
 .db $78
 .db $6E
 .db $69
-.db $88, $9D, $6A
+.db $83, $8C, $6A
 .db Dialogue_NewLine
-.db $7B
-.db $6E
-.db $B5, $D8, $88, $9F, $A7, $B4, $7B
-.db $88, $66
+.db $9B, $83, $8F, $97, $A2, $7B
+.db $83, $66
 .db Dialogue_NewPage
 .db $71
-.db $F3, $70
-.db $9E, "I", $79
-.db Dialogue_Apostrophe, $8F, $76
+.db $DC, $70
+.db $AA, "I", $FE, $86, $76
 .db $7A
-.db $E8, $88, $66
+.db $DB, $83, $66
 .db Dialogue_NewLine
 .db $78
-.db $B1, $75
+.db $AC, $75
 .db "!", Dialogue_Terminator65
 
 Dialogue_Index_0296:
 .db "H", $6A
 .db $7E
-.db $9B, $7E
-.db $A0, $9B, $9D, $88, $68
-.db $E1, ".", Dialogue_NewLine
-.db "C", $C4, $88, $74
-.db $7B
-.db $95, " ", $6D
-.db $95, $B0, Dialogue_Terminator62
+.db $98, $7E
+.db $94, $98, $8C, $83, $68
+.db $DE, ".", Dialogue_NewLine
+.db "C", $B1, $83, $E7, $89, " ", $6D
+.db $89, $99, Dialogue_Terminator62
 
 Dialogue_Index_0298:
-.db "H", $DA, " ", $6D
+.db "H", $DF, " ", $6D
 .db $6A
 .db $6D
-.db $9E, "Y", $A0, Dialogue_NewLine
+.db $AA, "Y", $94, Dialogue_NewLine
 .db $7C
-.db $9F, $8B, $79
-.db $A3, $69
+.db $8F, $84, $79
+.db $93, $69
 .db $6E
-.db $88, $79
-.db $F3, "?", Dialogue_Terminator65
+.db $83, $79
+.db $DC, "?", Dialogue_Terminator65
 
 Dialogue_Index_029A:
 .db "A", $73
 .db $7E
-.db $93, $88, $7C
+.db $87, $83, $7C
 .db $6D
-.db $A3, $6C
-.db $6A
-.db $79
-.db $78
+.db $93, $6C
+.db $D3, $78
 .db Dialogue_NewLine
-.db $91, " ", $72
-.db $BB, $7C
-.db $66
-.db $BB, $69
+.db $8A, $C7, $AD, $7C
+.db $EB, " ", $69
 .db $6E
-.db $F1, ".", Dialogue_Terminator65
+.db $C2, ".", Dialogue_Terminator65
 
 Dialogue_Index_029C:
-.db "Y", $A0, " ", $72
-.db $F4, $8B, $67
-.db $88, $79
+.db "Y", $94, $C7, $D4, $84, $67
+.db $83, $79
 .db $6E
-.db $B2, $69
+.db $B4, $69
 .db Dialogue_NewLine
 .db $6B
 .db $77
-.db $C4, $83, $77
+.db $B1, $80, $77
 .db " ", $71
-.db $93, $6C
+.db $87, $6C
 .db Dialogue_NewPage
 .db $6F
-.db $A0, $77
+.db $94, $77
 .db $73
 .db $6A
 .db $7E
-.db $9E, "R", $F1, $8B, $6D
-.db $95, $6A
+.db $AA, "R", $C2, $84, $6D
+.db $89, $6A
 .db Dialogue_NewLine
-.db $CE, " ", $71
-.db $93, $F2, $CE, $83, Dialogue_NewPage
-.db $71
-.db $6E
-.db $70
-.db $B0, Dialogue_Terminator65
+.db $C6, " ", $71
+.db $87, $6C
+.db $C3, $86, $7E
+.db $94, Dialogue_NewPage
+.db $C1, $70
+.db $99, Dialogue_Terminator65
 
 Dialogue_Index_029E:
-.db $EC, $95, $6A
-.db Dialogue_Apostrophe, $8F, $73
+.db $C8, $89, $6A
+.db Dialogue_Apostrophe, $86, $73
 .db $74
-.db $8B, $66
+.db $84, $66
 .db Dialogue_NewLine
 .db $72
-.db $C4, $AC, $8B, $79
-.db $A3, $71
+.db $B1, $A0, $84, $79
+.db $93, $71
 .db $74
-.db $C2, ".", Dialogue_NewPage
+.db $B5, ".", Dialogue_NewPage
 .db "S", $79
 .db $6A
-.db $6A
-.db $71
-.db $83, $77
-.db $C2, $71
+.db $D2, $80, $77
+.db $B5, $71
 .db $7B
-.db $F1, $9E, "I", Dialogue_NewLine
+.db $C2, $AA, "I", Dialogue_NewLine
 .db $75
-.db $77
-.db $66
-.db $BB, $6B
-.db $A5, $83, $77
+.db $CF, $AD, $6B
+.db $95, $80, $77
 .db Dialogue_NewPage
 .db $78
 .db $66
 .db $6B
-.db $6A
-.db $79
-.db $7E
+.db $D3, $7E
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_02A0:
-.db "Y", $A0, " ", $6B
-.db $6A
-.db $B5, " ", $91, $79
-.db $A3, $66
+.db "Y", $94, $F8, $D2, $71
+.db " ", $8A, $79
+.db $93, $66
 .db Dialogue_NewLine
 .db $69
 .db $6A
 .db $6A
 .db $75
-.db " ", $78
-.db $71
+.db $E4, $71
 .db $6A
 .db $6A
 .db $75
 .db ".", Dialogue_Terminator63
 
 Dialogue_Index_02A2:
-.db "I", $8B, $7C
-.db $CE, $E5, " ", $79
-.db $95, $77
+.db "I", $84, $7C
+.db $C6, $C3, $D6, $89, $77
 .db $6E
 .db $67
 .db $71
 .db $6A
 .db Dialogue_NewLine
 .db $69
-.db $B2, $66
+.db $B4, $66
 .db $72
 .db ".", Dialogue_Terminator65
 
 Dialogue_Index_02A4:
-.db $EC, $C7, " ", $C7, $DC, $71
-.db $C7, $66
+.db $C8, $B0, " ", $B0, " A", $C1, $78
+.db $66
 .db Dialogue_Apostrophe, $78
 .db Dialogue_NewLine
 .db $6D
-.db $C4, $B0, " N", $A3, $93, $88, $C7, Dialogue_NewPage
+.db $B1, $99, " N", $93, $87, $83, $B0, Dialogue_NewPage
 .db $6D
-.db $95, $B0, Dialogue_Terminator65
+.db $89, $99, Dialogue_Terminator65
 
 Dialogue_Index_02A6:
-.db $E7, $FD, $BC, $A6, $A9, $F7, "H", $86, "G", Dialogue_NewLine
-.db "S", $D9, $89, "G", $BD, $D7, $C1, $BA, $8E, "S", Dialogue_NewPage
-.db $81, $80, $B9, $D5, "R", $A4, "R,I", Dialogue_NewLine
-.db "W", $90, $E3, "R?", Dialogue_Terminator65
+.db "H", $72
+.db "?", $B6, $B1, $D3, $AC, $73
+.db $6C
+.db Dialogue_Apostrophe, $78
+.db Dialogue_NewLine
+.db $7C
+.db $77
+.db $87, $6C
+.db ".", Dialogue_NewPage
+.db "W", $6D
+.db $89, $83, $A2, $86, $8C, $6A
+.db Dialogue_NewLine
+.db "G", $E7, $89, $73
+.db $95, " ", $F7, $73
+.db $6A
+.db "?", Dialogue_Terminator65
 
 Dialogue_Index_02A8:
-.db $82, $A8, $D5, " ", $B9, "TT", $A1, Dialogue_NewLine
-.db "Y", $94, "R", $D2, "LF KI", $96, $92, "?", Dialogue_NewPage
-.db "C", $A9, "E", $9B, $B3, "T", Dialogue_Apostrophe, $84, $D9, "Y", Dialogue_NewLine
-.db $90, $80, "M", $9A, $80, "TIM", $BD, Dialogue_Terminator65
+.db "O", $6D
+.db "?", $CC, $A3, $69
+.db $98, $D9, $6A
+.db Dialogue_NewLine
+.db $7E
+.db $94, "? H", $A9, " ", $75
+.db $DB, $6E
+.db $6B
+.db $7A
+.db $71
+.db ".", Dialogue_NewPage
+.db "C", $B1, $83, $67
+.db $C9, $70
+.db $D6, $93, $C1, $6B
+.db $6A
+.db Dialogue_NewLine
+.db $8F, $97, $79
+.db $77
+.db $AD, $66
+.db $6C
+.db $66
+.db $8A, ".", Dialogue_Terminator65
 
 Dialogue_Index_02AA:
-.db $98, $FD, $BC, $CB, "I", $92, ".", Dialogue_NewLine
-.db $AE, $AB, Dialogue_NewPage
-.db $C0, "C", $A9, "P", $BE, "S", $C1, $AF, $C1, "R", Dialogue_NewLine
-.db $FC, "SH", $9E, "N", $87, "O", $8E, "S", Dialogue_NewPage
-.db "S", $CF, $AB, "FI", $92, " ", $A4, "W", $8E, "N", Dialogue_NewLine
-.db $C1, "A", $D5, "N", $9E, "H", $D3, "R", $BF, $8D, Dialogue_NewPage
-.db $81, $80, $B9, $D5, "R", $A4, "R!", Dialogue_Terminator65
+.db $92, " ", $A2, $97, $6B
+.db $BA, $71
+.db $A0, ".", Dialogue_NewPage
+.db "A", $C1, $78
+.db $66
+.db Dialogue_Apostrophe, $86, $7C
+.db $B0, $6D
+.db " ", $A2, $69
+.db Dialogue_NewLine
+.db $67
+.db $6A
+.db $A0, " ", $6C
+.db $CF, $73
+.db $79
+.db $DA, ".", Dialogue_NewPage
+.db "S", $7A
+.db $B4, $71
+.db $AD, "N", $89, $93, $7C
+.db $C6, Dialogue_NewLine
+.db $B4, $6F
+.db $74
+.db $6E
+.db $68
+.db $8A, $6C
+.db " ", $8A, " ", $6D
+.db $A3, $7B
+.db $A0, ".", Dialogue_NewPage
+.db "N", $A9, $D6, $93, "P", $C6, $6A
+.db $74
+.db $98, $8F, $69
+.db Dialogue_NewLine
+.db $8C, $83, "G", $E7, $89, $73
+.db $95, "!", Dialogue_Terminator65

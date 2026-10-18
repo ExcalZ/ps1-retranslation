@@ -212,6 +212,17 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
   every build (`tools/scriptdict.py`, `text/words.asm`): bank 32 from 15,275 to 11,635 bytes
   with Palma translated; every scenario passes, the opening, dialogue, battle messages and
   shops read back through the new words.
+* **Motavia translated (2026-10-17).** From the JP, 97 more dialogue entries (289 of 341):
+  Paseo, its spaceport and the Governor (0080-00B0), Uzo and the Soothe Flute (012E-0146),
+  Casba (0166-0170), Sopia, Miki the gamer and the village chief (01E8-0212), the Guaran
+  armor (0224-022A), the eclipse fire, the Naura shortcake and Lutz's teacher (023A-0262),
+  the passage boy and the Motavians (0282-0288), the Governor's last scenes and the ending
+  narration (02A6-02AA). The JP's {NUMBER} prices are written out as the US has them (the
+  animal's 100 million, the donation's 400, the shortcake's 1000). The face has no `*`:
+  sobs are "(sob)". Falls-through chunks are laid out by hand to fill their pages, moving a
+  few words across the JP's split where a lone word would sit on a page. Bank 32 is 11,122
+  bytes (the dictionary re-chosen for the larger script). In game: the Governor (talk 55,
+  9 pages) and the spaceport (talk 44) read back as script lines; every scenario passes.
 
 ## Next, in order
 
@@ -221,10 +232,8 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
 2. **The rest of script.json:** done but for writing the naming screen and (the owner's
    call) the credits, both read-only for now.
 3. **More scenarios** (as the translation needs them): the ending.
-4. **Engine**: a dictionary generated from the new script if bank 32 gets tight; the
-   naming screen with lower case (later). Not yet seen with `vwf_cutscene`: the Myau, governor and ending scenes
-   (no scenario reaches them yet). Then a dictionary generated from the
-   new script, if bank 32 gets tight.
-5. **Translation**: Motavia, Dezolis, the messages and the cut-scenes (the dictionary keeps
+4. **Engine**: the naming screen with lower case (later). Not yet seen with
+   `vwf_cutscene`: the Myau, governor and ending scenes (no scenario reaches them yet).
+5. **Translation**: Dezolis, the messages and the cut-scenes (the dictionary keeps
    bank 32 in room: watch linecheck's byte count); then proofreading in play, then release
    packaging (BPS + Patcher.html).
