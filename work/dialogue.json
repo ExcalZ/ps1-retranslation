@@ -3862,7 +3862,7 @@
    "us": "WE WILL BE FELLOW{BR}TRAVELERS.{BR}I'M ALIS; WHAT'S{BR}YOUR NAME?{END}",
    "jp_addr": "02:BA43",
    "jp": "キョウカラ　ナカマネ。{BR}ワタシハ　アリサ。{BR}アナタノ　ナマエヲ　オシエテ。{END}",
-   "en": "WE WILL BE FELLOW{BR}TRAVELERS.{BR}I'M ALIS; WHAT'S{BR}YOUR NAME?{END}"
+   "en": "From today, we're{BR}companions. I'm Alisa. Tell{BR}me your name.{END}"
   },
   {
    "id": "LABEL_B646",
@@ -3873,7 +3873,7 @@
    "us": "I'M MYAU.{END}",
    "jp_addr": "02:BA69",
    "jp": "ミャウ。{END}",
-   "en": "I'M MYAU.{END}"
+   "en": "Myau.{END}"
   },
   {
    "id": "LABEL_B64D",
@@ -3884,7 +3884,7 @@
    "us": "MYAU, HAVE YOU {BR}EVER HEARD OF A{BR}MAN NAMED ODIN?{END}",
    "jp_addr": "02:BA6E",
    "jp": "ネエ　ミャウ。{BR}タイロンノ　コト　ナンダケド　ナニカ{BR}シッテイタラ　オシエテ。{END}",
-   "en": "MYAU, HAVE YOU {BR}EVER HEARD OF A{BR}MAN NAMED ODIN?{END}"
+   "en": "Say, Myau. If you know{BR}anything about Tyron,{BR}please tell me.{END}"
   },
   {
    "id": "LABEL_B66E",
@@ -3895,7 +3895,7 @@
    "us": "YES, BUT HE IS{BR}TURNED TO STONE!{BR}IF HE DRINKS THIS{BR}MEDICINE, HE'LL BE{PAGE}O.K., BUT I CANNOT{BR}OPEN THE BOTTLE.{END}",
    "jp_addr": "02:BA96",
    "jp": "タイロン　イシニ　ナッチャッタノ。{BR}コノ　クスリ　カケレバ　ナオルンダ。{BR}ケド　ミャウ　ビンノ　フタ{BR}アケラレナイノ。{END}",
-   "en": "YES, BUT HE IS{BR}TURNED TO STONE!{BR}IF HE DRINKS THIS{BR}MEDICINE, HE'LL BE{PAGE}O.K., BUT I CANNOT{BR}OPEN THE BOTTLE.{END}"
+   "en": "Tyron got turned to stone.{BR}This medicine will cure him if{BR}it's poured on him. But Myau{BR}can't open the bottle.{END}"
   },
   {
    "id": "LABEL_B6C1",
@@ -3906,7 +3906,7 @@
    "us": "WELL, THEN, WE'D{BR}BETTER GO SAVE{BR}ODIN TOGETHER,{BR}O.K.?{END}",
    "jp_addr": "02:BAD2",
    "jp": "ソッカ。{BR}ジャ　イッショニ　タイロンヲ{BR}タスケニ　イキマショウ。{END}",
-   "en": "WELL, THEN, WE'D{BR}BETTER GO SAVE{BR}ODIN TOGETHER,{BR}O.K.?{END}"
+   "en": "I see. Then let's go and{BR}save Tyron together.{END}"
   },
   {
    "id": "LABEL_B6F3",
@@ -3917,7 +3917,7 @@
    "us": "THANKS FOR SAVING{BR}ME. I GUESS IF{BR}MEDUSA CAN STOP{BR}ME, I DON'T HAVE {PAGE}MUCH HOPE OF{BR}KILLING LASSIC,{BR}DO I?{END}",
    "jp_addr": "02:BAF3",
    "jp": "アリガトウ。タスカッタヨ。{BR}シカシ　メデューサニ{BR}シテヤラレルヨウデハ　ラシークハ{BR}タオセソウニ　ナイナ。{END}",
-   "en": "THANKS FOR SAVING{BR}ME. I GUESS IF{BR}MEDUSA CAN STOP{BR}ME, I DON'T HAVE {PAGE}MUCH HOPE OF{BR}KILLING LASSIC,{BR}DO I?{END}"
+   "en": "Thanks. You saved me. But if{BR}Medusa can get the better{BR}of me, I'll never beat{BR}LaShiec.{END}"
   },
   {
    "id": "LABEL_B746",
@@ -3928,7 +3928,7 @@
    "us": "MY BROTHER DIED{BR}TRYING TO KILL{BR}LASSIC. BEFORE HE{BR}DIED, HE TOLD ME{PAGE}TO SEEK YOUR HELP.{END}",
    "jp_addr": "02:BB29",
    "jp": "ワタシノ　ニイサンモ　ラシークヲ{BR}タオソウトシテ　シンデシマッタワ。{BR}シヌマエニ　アナタノ　ナマエヲ{BR}イイノコシテ。{END}",
-   "en": "MY BROTHER DIED{BR}TRYING TO KILL{BR}LASSIC. BEFORE HE{BR}DIED, HE TOLD ME{PAGE}TO SEEK YOUR HELP.{END}"
+   "en": "My brother died trying to{BR}defeat LaShiec too. Before{BR}he died, he left me your{BR}name.{END}"
   },
   {
    "id": "LABEL_B786",
@@ -3939,7 +3939,7 @@
    "us": "IS THAT SO? WELL,{BR}I MUST NOT LET{BR}YOUR BROTHER DIE{BR}UNAVENGED.{END}",
    "jp_addr": "02:BB64",
    "jp": "ソウダッタノカ。{BR}ヨシ　キミノ　ニイサンノ　タメニモ{BR}チカラヲ　アワセテ　ラシークヲ{BR}タオソウ。{END}",
-   "en": "IS THAT SO? WELL,{BR}I MUST NOT LET{BR}YOUR BROTHER DIE{BR}UNAVENGED.{END}"
+   "en": "So that's how it was. All{BR}right: for your brother's{BR}sake too, let's join forces{BR}and defeat LaShiec.{END}"
   },
   {
    "id": "LABEL_B7B9",
@@ -3950,7 +3950,7 @@
    "us": "WHY DID YOU TRY TO{BR}KILL MEDUSA?{END}",
    "jp_addr": "02:BB95",
    "jp": "ソレヨリ　ナゼ　メデューサヲ{BR}タオソウト　シタノ。{END}",
-   "en": "WHY DID YOU TRY TO{BR}KILL MEDUSA?{END}"
+   "en": "But why did you try to fight{BR}Medusa?{END}"
   },
   {
    "id": "LABEL_B7D1",
@@ -3961,7 +3961,7 @@
    "us": "BECAUSE MEDUSA HAS{BR}A MYSTIC AXE.{BR}UNFORTUNATELY, SHE{BR}GOT AWAY FROM ME.{PAGE}ANYHOW, I HAVE {BR}STASHED A COMPASS{BR}IN ONE OF THE{BR}PASSAGES OF THIS {PAGE}CAVE. LET'S GO AND{BR}GET IT{END}",
    "jp_addr": "02:BBAF",
    "jp": "メデューサガ　モッテイル　デンセツノ{BR}オノガ　ホシカッタンダケド{BR}ニゲラレチマッタ。{BR}クヤシイナア。{PAGE}ソウイエバ　オレ　コノ　ドウクツノ{BR}イキドマリニ　コンパスヲ{BR}カクシテオイタンダッケ。{BR}トリニ　イコウゼ。{END}",
-   "en": "BECAUSE MEDUSA HAS{BR}A MYSTIC AXE.{BR}UNFORTUNATELY, SHE{BR}GOT AWAY FROM ME.{PAGE}ANYHOW, I HAVE {BR}STASHED A COMPASS{BR}IN ONE OF THE{BR}PASSAGES OF THIS {PAGE}CAVE. LET'S GO AND{BR}GET IT{END}"
+   "en": "I wanted the legendary axe{BR}Medusa has, but it got away{BR}from me. Dang it!{PAGE}Come to think of it, I hid a{BR}compass at a dead end in{BR}this cave. Let's go get it.{END}"
   },
   {
    "id": "LABEL_B85C",
@@ -3972,7 +3972,7 @@
    "us": "I'VE RECEIVED A{BR}LETTER FROM THE {BR}GOVERNOR. PLEASE {BR}READ IT.{END}",
    "jp_addr": "02:BC18",
    "jp": "ソウトクカラノ　テガミヲ　アズカッテ{BR}キマシタ。{BR}ヨンデイタダケマセンカ。{END}",
-   "en": "I'VE RECEIVED A{BR}LETTER FROM THE {BR}GOVERNOR. PLEASE {BR}READ IT.{END}"
+   "en": "I've brought a letter from{BR}the Governor. Would you{BR}read it?{END}"
   },
   {
    "id": "LABEL_B884",
@@ -3983,7 +3983,7 @@
    "us": "LET ME SEE IT.....{BR}OUR DUTY IS CLEAR;{BR}WE MUST PROTECT{BR}THE PLANETS OF THE{PAGE}ALGOL SYSTEM FROM {BR}EVIL.{BR}WE MUST FIRST GO{BR}TO THE GOTHIC{PAGE}FORESTS AND FIND{BR}DR.LUVENO. WE CAN{BR}USE AN UNDERGROUND{BR}PASSAGE FROM A{PAGE}MANHOLE IN THE{BR}SPACEPORT.{END}",
    "jp_addr": "02:BC3E",
    "jp": "ワカリマシタ。{BR}ミンナデ　コノ　アルゴルタイヨウケイヲ{BR}アクノ　テカラ　マモリマショウ。{PAGE}ソノタメニハ　マズガシコノ　モリヘ{BR}イッテ　ルベノハカセニ　アイタイ。{BR}タシカ　マンホールヲ　トオッテ{BR}イケタハズデス。{END}",
-   "en": "LET ME SEE IT.....{BR}OUR DUTY IS CLEAR;{BR}WE MUST PROTECT{BR}THE PLANETS OF THE{PAGE}ALGOL SYSTEM FROM {BR}EVIL.{BR}WE MUST FIRST GO{BR}TO THE GOTHIC{PAGE}FORESTS AND FIND{BR}DR.LUVENO. WE CAN{BR}USE AN UNDERGROUND{BR}PASSAGE FROM A{PAGE}MANHOLE IN THE{BR}SPACEPORT.{END}"
+   "en": "Very well. Together, let us{BR}protect the Algol system{BR}from evil.{PAGE}For that, I would first{BR}see Dr. Luveno in the{BR}Gashiko forest. We can get{BR}there through the manhole.{END}"
   },
   {
    "id": "LABEL_B929",
@@ -3994,7 +3994,7 @@
    "us": "WHEN MYAU EATS THE{BR}NUTS OF LAERMA, HE{BR}BECOMES CLOTHED IN{BR}FLAME AND EMITS A{PAGE}BLINDING LIGHT.{END}",
    "jp_addr": "02:BCA8",
    "jp": "ラエルマベリーヲ　カジルト{BR}ミャウノ　カラダハ　ネツヲ　オビ{BR}マバユイ　ヒカリニ　ツツマレタ。{END}",
-   "en": "WHEN MYAU EATS THE{BR}NUTS OF LAERMA, HE{BR}BECOMES CLOTHED IN{BR}FLAME AND EMITS A{PAGE}BLINDING LIGHT.{END}"
+   "en": "When Myau bit into the{BR}Laerma berry, Myau's body{BR}grew hot and was wrapped{BR}in a dazzling light.{END}"
   },
   {
    "id": "LABEL_B97C",
@@ -4005,7 +4005,7 @@
    "us": "WHEN HE IS VISIBLE{BR}AGAIN, HE HAS BEEN{BR}TRANSFORMED INTO{PAGE}A BEAUTIFUL{BR}WINGED BEAST.{BR}MYAU FLAPS HIS{BR}WINGS PLOUDLY.{END}",
    "jp_addr": "02:BCD8",
    "jp": "ソシテ　ミルミル　ウチニ　ミャウハ{BR}オオキナ　ツバサヲ　モッタ　ウツクシイ{BR}ケモノヘト　カワッタ。{PAGE}ミャウハ　トクイソウニ　ヒトツ{BR}ハバテイテ　ミセタ。{END}",
-   "en": "WHEN HE IS VISIBLE{BR}AGAIN, HE HAS BEEN{BR}TRANSFORMED INTO{PAGE}A BEAUTIFUL{BR}WINGED BEAST.{BR}MYAU FLAPS HIS{BR}WINGS PLOUDLY.{END}"
+   "en": "Then, before their eyes,{BR}Myau became a beautiful{BR}beast with great wings.{PAGE}Proudly, Myau gave{BR}the wings a flap{BR}to show them off.{END}"
   },
   {
    "id": "LABEL_B9E8",
@@ -4016,7 +4016,7 @@
    "us": "{BR}     ALIS{TIMED}",
    "jp_addr": "02:BD25",
    "jp": "　{BR}　　　　　アリサ{TIMED}",
-   "en": "{BR}     ALIS{TIMED}"
+   "en": "{BR}                 Alisa{TIMED}"
   },
   {
    "id": "LABEL_B9F0",
@@ -4027,7 +4027,7 @@
    "us": "{BR}     ODIN{TIMED}",
    "jp_addr": "02:BD30",
    "jp": "　{BR}　　　　　タイロン{TIMED}",
-   "en": "{BR}     ODIN{TIMED}"
+   "en": "{BR}                Tyron{TIMED}"
   },
   {
    "id": "LABEL_B9FB",
@@ -4038,7 +4038,7 @@
    "us": "{BR}     NOAH{TIMED}",
    "jp_addr": "02:BD3C",
    "jp": "　{BR}　　　　　ルツ{TIMED}",
-   "en": "{BR}     NOAH{TIMED}"
+   "en": "{BR}                 Lutz{TIMED}"
   },
   {
    "id": "LABEL_BA06",
@@ -4049,7 +4049,7 @@
    "us": "{BR}     AND MYAU{TIMED}",
    "jp_addr": "02:BD46",
    "jp": "　{BR}　　　　　ソシテ　ミャウ{TIMED}",
-   "en": "{BR}     AND MYAU{TIMED}"
+   "en": "{BR}             and Myau{TIMED}"
   },
   {
    "id": "LABEL_BA12",
@@ -4060,7 +4060,7 @@
    "us": "EVEN THOUGH THE{BR}MEMORIES OF EVIL{BR}FADE AWAY, THEIR{BR}NAMES WILL BE KEPT{TIMED}",
    "jp_addr": "02:BD55",
    "jp": "　　　　ヤミノ　キオクガ　キエテモ{BR}　　　　カレラノ　ナマエハ{BR}　　　　ヒトビトノ　ココロニ{BR}　　　　ノコリツヅケルダロウ。{TIMED}",
-   "en": "EVEN THOUGH THE{BR}MEMORIES OF EVIL{BR}FADE AWAY, THEIR{BR}NAMES WILL BE KEPT{TIMED}"
+   "en": "Even as the memory{BR}of the darkness{BR}fades, their names{BR}will live on{TIMED}"
   },
   {
    "id": "LABEL_BA54",
@@ -4070,7 +4070,7 @@
    "hex": "5F494E20DE484541525453204F4660DE50454F504C45204F4620DE60414C474F4C20464F524556455221212163",
    "us": "{CLR}IN THE HEARTS OF{BR}THE PEOPLE OF THE {BR}ALGOL FOREVER!!!{TIMED}",
    "jp_cont": true,
-   "en": "{CLR}IN THE HEARTS OF{BR}THE PEOPLE OF THE {BR}ALGOL FOREVER!!!{TIMED}"
+   "en": "{CLR}in the hearts of{BR}the people forever.{TIMED}"
   },
   {
    "id": "LABEL_B12_B108",
@@ -4081,7 +4081,7 @@
    "us": "{ENEMY} DODGES{BR}{NAME}'S ATTACK.{TIMED}",
    "jp_addr": "02:AB1F",
    "jp": "{ENEMY}ハ　{NAME}ノ{BR}コウゲキヲ　カワシタ。{TIMED}",
-   "en": "{ENEMY} DODGES{BR}{NAME}'S ATTACK.{TIMED}"
+   "en": "{ENEMY}{BR}dodged {NAME}.{TIMED}"
   },
   {
    "id": "LABEL_B12_B118",
@@ -4092,7 +4092,7 @@
    "us": "{NAME} DODGES{BR}{ENEMY}'S ATTACK.{TIMED}",
    "jp_addr": "02:AB31",
    "jp": "{NAME}ハ　{ENEMY}ノ{BR}コウゲキヲ　カワシタ。{TIMED}",
-   "en": "{NAME} DODGES{BR}{ENEMY}'S ATTACK.{TIMED}"
+   "en": "{NAME} dodged{BR}{ENEMY}.{TIMED}"
   },
   {
    "id": "LABEL_B12_B128",
@@ -4103,7 +4103,7 @@
    "us": "{NAME} SPEAKS.{NOWAIT}",
    "jp_addr": "02:AB43",
    "jp": "{NAME}ハ　ハナシカケタ。{NOWAIT}",
-   "en": "{NAME} SPEAKS.{NOWAIT}"
+   "en": "{NAME} spoke to it.{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B132",
@@ -4114,7 +4114,7 @@
    "us": "{ENEMY} ANSWERS.{TIMED}",
    "jp_addr": "02:AB4E",
    "jp": "{ENEMY}ハ　コタエタ。{TIMED}",
-   "en": "{ENEMY} ANSWERS.{TIMED}"
+   "en": "{ENEMY}{BR}answered.{TIMED}"
   },
   {
    "id": "LABEL_B12_B13D",
@@ -4125,7 +4125,7 @@
    "us": "{NAME} AND {ENEMY}{BR}CANNOT UNDERSTAND{PAGE}EACH OTHER.{TIMED}",
    "jp_addr": "02:AB57",
    "jp": "ツウジナカッタ。{TIMED}",
-   "en": "{NAME} AND {ENEMY}{BR}CANNOT UNDERSTAND{PAGE}EACH OTHER.{TIMED}"
+   "en": "The words didn't{BR}get through.{TIMED}"
   },
   {
    "id": "LABEL_B12_B15E",
@@ -4136,7 +4136,7 @@
    "us": "{ENEMY} BLOCKS{BR}ANY RETREAT.{TIMED}",
    "jp_addr": "02:AB60",
    "jp": "{ENEMY}ハ　ニゲミチニ{BR}タチフサガッタ。{TIMED}",
-   "en": "{ENEMY} BLOCKS{BR}ANY RETREAT.{TIMED}"
+   "en": "{ENEMY}{BR}blocked the way.{TIMED}"
   },
   {
    "id": "LABEL_B12_B172",
@@ -4147,7 +4147,7 @@
    "us": "{NAME}'S MAGIC IS{BR}NOT EFFECTIVE.{TIMED}",
    "jp_addr": "02:AB72",
    "jp": "{NAME}ノ　マジックハ{BR}コウカガ　ナカッタ。{TIMED}",
-   "en": "{NAME}'S MAGIC IS{BR}NOT EFFECTIVE.{TIMED}"
+   "en": "{NAME}'s magic{BR}didn't work.{TIMED}"
   },
   {
    "id": "LABEL_B12_B172.1",
@@ -4158,7 +4158,7 @@
    "us": "{ENEMY}'S MAGIC{BR}IS NOT EFFECTIVE.{TIMED}",
    "jp_addr": "02:AB86",
    "jp": "{ENEMY}ノ　マジックハ{BR}コウカガ　ナカッタ。{TIMED}",
-   "en": "{ENEMY}'S MAGIC{BR}IS NOT EFFECTIVE.{TIMED}"
+   "en": "{ENEMY}'s{BR}magic didn't work.{TIMED}"
   },
   {
    "id": "LABEL_B12_B18B",
@@ -4169,7 +4169,7 @@
    "us": "AN INVISIBLE MAGIC{BR}WALL ARISES.{TIMED}",
    "jp_addr": "02:AB9A",
    "jp": "メノマエニ　ミエナイ　マホウノ{BR}カベガ　デキタ。{TIMED}",
-   "en": "AN INVISIBLE MAGIC{BR}WALL ARISES.{TIMED}"
+   "en": "An invisible magic{BR}wall rose up.{TIMED}"
   },
   {
    "id": "LABEL_B12_B1A3",
@@ -4180,7 +4180,7 @@
    "us": "THE MAGIC WALL{BR}DEFLECTS THE {PAGE}{ENEMY}'S ATTACK.{TIMED}",
    "jp_addr": "02:ABB3",
    "jp": "{ENEMY}ノ　コウゲキハ{BR}マホウノ　カベニ　ハネカエサレタ。{TIMED}",
-   "en": "THE MAGIC WALL{BR}DEFLECTS THE {PAGE}{ENEMY}'S ATTACK.{TIMED}"
+   "en": "{ENEMY}'s{BR}attack bounced{PAGE}off the magic wall.{TIMED}"
   },
   {
    "id": "LABEL_B12_B1B2",
@@ -4191,7 +4191,7 @@
    "us": "THE MAGIC WALL{BR}DEFLECTS THE {PAGE}{ENEMY}'S MAGIC.{TIMED}",
    "jp_addr": "02:ABCE",
    "jp": "{ENEMY}ノ　マジックハ{BR}マホウノ　カベニ　ハネカエサレタ。{TIMED}",
-   "en": "THE MAGIC WALL{BR}DEFLECTS THE {PAGE}{ENEMY}'S MAGIC.{TIMED}"
+   "en": "{ENEMY}'s{BR}magic bounced off{PAGE}the magic wall.{TIMED}"
   },
   {
    "id": "LABEL_B12_B1C1",
@@ -4202,7 +4202,7 @@
    "us": "THE MAGIC WALL{BR}DISAPPEAR.{TIMED}",
    "jp_addr": "02:ABE9",
    "jp": "ミエナイ　カベノ　コウカガ{BR}ナクナッタ。{TIMED}",
-   "en": "THE MAGIC WALL{BR}DISAPPEAR.{TIMED}"
+   "en": "The invisible wall{BR}wore off.{TIMED}"
   },
   {
    "id": "LABEL_B12_B1D0",
@@ -4213,7 +4213,7 @@
    "us": "{NAME} IS HEALED.{TIMED}",
    "jp_addr": "02:ABFE",
    "jp": "{NAME}ノ　タイリョクガ{BR}カイフクシタ。{TIMED}",
-   "en": "{NAME} IS HEALED.{TIMED}"
+   "en": "{NAME} was healed.{TIMED}"
   },
   {
    "id": "LABEL_B12_B1D8",
@@ -4224,7 +4224,7 @@
    "us": "{ENEMY} IS{BR}HEALED.{TIMED}",
    "jp_addr": "02:AC10",
    "jp": "{ENEMY}ノ　タイリョクガ{BR}カイフクシタ。{TIMED}",
-   "en": "{ENEMY} IS{BR}HEALED.{TIMED}"
+   "en": "{ENEMY}{BR}was healed.{TIMED}"
   },
   {
    "id": "LABEL_B12_B1E0",
@@ -4235,7 +4235,7 @@
    "us": "{ENEMY} IS TIED{BR}UP.{TIMED}",
    "jp_addr": "02:AC22",
    "jp": "{ENEMY}ヲ{BR}カナシバリニシタ。{TIMED}",
-   "en": "{ENEMY} IS TIED{BR}UP.{TIMED}"
+   "en": "{ENEMY}{BR}was bound.{TIMED}"
   },
   {
    "id": "LABEL_B12_B1EE",
@@ -4246,7 +4246,7 @@
    "us": "{NAME} IS TIED UP.{TIMED}",
    "jp_addr": "02:AC2F",
    "jp": "{NAME}ハ　カナシバリニ　アッタ。{TIMED}",
-   "en": "{NAME} IS TIED UP.{TIMED}"
+   "en": "{NAME} was bound.{TIMED}"
   },
   {
    "id": "LABEL_B12_B1FC",
@@ -4257,7 +4257,7 @@
    "us": "{NAME} CANNOT MOVE.{TIMED}",
    "jp_addr": "02:AC3E",
    "jp": "{NAME}ハ　ウゴケナイ。{TIMED}",
-   "en": "{NAME} CANNOT MOVE.{TIMED}"
+   "en": "{NAME} can't move.{TIMED}"
   },
   {
    "id": "LABEL_B12_B203",
@@ -4268,7 +4268,7 @@
    "us": "{ENEMY} CANNOT{BR}MOVE.{TIMED}",
    "jp_addr": "02:AC48",
    "jp": "{ENEMY}ハ　ウゴケナイ。{TIMED}",
-   "en": "{ENEMY} CANNOT{BR}MOVE.{TIMED}"
+   "en": "{ENEMY}{BR}can't move.{TIMED}"
   },
   {
    "id": "LABEL_B12_B20A",
@@ -4279,7 +4279,7 @@
    "us": "{NAME} REMOVES THE {BR}BINDINGS.{TIMED}",
    "jp_addr": "02:AC52",
    "jp": "{NAME}ハ　カナシバリガ　トケタ。{TIMED}",
-   "en": "{NAME} REMOVES THE {BR}BINDINGS.{TIMED}"
+   "en": "{NAME} broke free.{TIMED}"
   },
   {
    "id": "LABEL_B12_B21D",
@@ -4290,7 +4290,7 @@
    "us": "{ENEMY} REMOVES{BR}THE BINDINGS.{TIMED}",
    "jp_addr": "02:AC61",
    "jp": "{ENEMY}ハ{BR}カナシバリガ　トケタ。{TIMED}",
-   "en": "{ENEMY} REMOVES{BR}THE BINDINGS.{TIMED}"
+   "en": "{ENEMY}{BR}broke free.{TIMED}"
   },
   {
    "id": "LABEL_B12_B22F",
@@ -4301,7 +4301,7 @@
    "us": "{NAME} IS BURSTING{BR}WITH STRENGTH.{TIMED}",
    "jp_addr": "02:AC70",
    "jp": "{NAME}ハ　カラダニ　チカラガ{BR}ミナギルノヲ　カンジタ。{TIMED}",
-   "en": "{NAME} IS BURSTING{BR}WITH STRENGTH.{TIMED}"
+   "en": "{NAME} surged{BR}with power.{TIMED}"
   },
   {
    "id": "LABEL_B12_B24C",
@@ -4312,7 +4312,7 @@
    "us": "{ENEMY} RECOILS{BR}IN FEAR.{TIMED}",
    "jp_addr": "02:AC8A",
    "jp": "{ENEMY}ハ　コワクナッテ{BR}シリゴミシタ。{TIMED}",
-   "en": "{ENEMY} RECOILS{BR}IN FEAR.{TIMED}"
+   "en": "{ENEMY}{BR}cowered in fear.{TIMED}"
   },
   {
    "id": "LABEL_B12_B25F",
@@ -4323,7 +4323,7 @@
    "us": "ALIS AND HER{BR}COMPANY ESCAPE{PAGE}QUICKLY.{TIMED}",
    "jp_addr": "02:AC9C",
    "jp": "{ENEMY}ハ　ニゲアシノ{BR}ハヤサニ　オドロイタ。{TIMED}",
-   "en": "ALIS AND HER{BR}COMPANY ESCAPE{PAGE}QUICKLY.{TIMED}"
+   "en": "{ENEMY}{BR}was amazed at{PAGE}how fast you fled.{TIMED}"
   },
   {
    "id": "LABEL_B12_B27F",
@@ -4334,7 +4334,7 @@
    "us": "THERE WAS NO TRAP.{END}",
    "jp_addr": "02:ACB1",
    "jp": "ワナジャナカッタ。{END}",
-   "en": "THERE WAS NO TRAP.{END}"
+   "en": "It wasn't a trap.{END}"
   },
   {
    "id": "LABEL_B12_B28E",
@@ -4345,7 +4345,7 @@
    "us": "{NAME} SPOTTED AND{BR}DISARMED THE TRAP.{END}",
    "jp_addr": "02:ACBB",
    "jp": "アブナイ　トコロダッタ。{NAME}ハ{BR}ワナヲ　ミヤブッテ　ハズシタ。{END}",
-   "en": "{NAME} SPOTTED AND{BR}DISARMED THE TRAP.{END}"
+   "en": "That was close!{BR}{NAME} spotted the{PAGE}trap and disarmed{BR}it.{END}"
   },
   {
    "id": "LABEL_B12_B2AC",
@@ -4356,7 +4356,7 @@
    "us": "{NAME} USES{BR}{ITEM}.{TIMED}",
    "jp_addr": "02:ACDA",
    "jp": "{NAME}ハ　{ITEM}ヲ{BR}ツカッタ。{TIMED}",
-   "en": "{NAME} USES{BR}{ITEM}.{TIMED}"
+   "en": "{NAME} used{BR}{ITEM}.{TIMED}"
   },
   {
    "id": "LABEL_B12_B2B6",
@@ -4367,7 +4367,7 @@
    "us": "{NAME} EQUIPS{BR}{ITEM}.{NOWAIT}",
    "jp_addr": "02:ACE6",
    "jp": "{NAME}ハ　{ITEM}ヲ{BR}ソウビシタ。{NOWAIT}",
-   "en": "{NAME} EQUIPS{BR}{ITEM}.{NOWAIT}"
+   "en": "{NAME} equipped{BR}{ITEM}.{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B2C2",
@@ -4378,7 +4378,7 @@
    "us": "{NAME} DROPS{BR}{ITEM}.{END}",
    "jp_addr": "02:ACF3",
    "jp": "{NAME}ハ　{ITEM}ヲ{BR}ステテシマッタ。{END}",
-   "en": "{NAME} DROPS{BR}{ITEM}.{END}"
+   "en": "{NAME} dropped{BR}{ITEM}.{END}"
   },
   {
    "id": "LABEL_B12_B2CD",
@@ -4389,7 +4389,7 @@
    "us": "BUT IT HAS NO{BR}EFFECT.{TIMED}",
    "jp_addr": "02:AD02",
    "jp": "シカシ　コウカハ　ナカッタ。{TIMED}",
-   "en": "BUT IT HAS NO{BR}EFFECT.{TIMED}"
+   "en": "But it had no{BR}effect.{TIMED}"
   },
   {
    "id": "LABEL_B12_B2E3",
@@ -4400,7 +4400,7 @@
    "us": "USING {ITEM}{BR}WILL DO NO GOOD{PAGE}HERE.{END}",
    "jp_addr": "02:AD11",
    "jp": "シカシ　ココデ　{ITEM}ハ{BR}ヤクニ　タタナイ。{END}",
-   "en": "USING {ITEM}{BR}WILL DO NO GOOD{PAGE}HERE.{END}"
+   "en": "But {ITEM}{BR}is no use here.{END}"
   },
   {
    "id": "LABEL_B12_B2FB",
@@ -4411,7 +4411,7 @@
    "us": "CANNOT DISEMBARK{BR}HERE!{END}",
    "jp_addr": "02:AD26",
    "jp": "ココデ　オリルワケニハ　イカナイ。{END}",
-   "en": "CANNOT DISEMBARK{BR}HERE!{END}"
+   "en": "You can't get off{BR}here.{END}"
   },
   {
    "id": "LABEL_B12_B305",
@@ -4422,7 +4422,7 @@
    "us": "EMBARKED.{TIMED}",
    "jp_addr": "02:AD38",
    "jp": "{ITEM}ニ　ノリコンダ。{TIMED}",
-   "en": "EMBARKED.{TIMED}"
+   "en": "Boarded the{BR}{ITEM}.{TIMED}"
   },
   {
    "id": "LABEL_B12_B30A",
@@ -4433,7 +4433,7 @@
    "us": "DISEMBARKED.{TIMED}",
    "jp_addr": "02:AD42",
    "jp": "{ITEM}カラ　トビオリタ。{TIMED}",
-   "en": "DISEMBARKED.{TIMED}"
+   "en": "Got off the{BR}{ITEM}.{TIMED}"
   },
   {
    "id": "LABEL_B12_B312",
@@ -4444,7 +4444,7 @@
    "us": "NOTHING HAPPENS,{BR}HOWEVER.{TIMED}",
    "jp_addr": "02:AD4D",
    "jp": "シカシ　ナニモ　オキナカッタ。{TIMED}",
-   "en": "NOTHING HAPPENS,{BR}HOWEVER.{TIMED}"
+   "en": "But nothing{BR}happened.{TIMED}"
   },
   {
    "id": "LABEL_B12_B322",
@@ -4455,7 +4455,7 @@
    "us": "{ENEMY} HEARS THE{BR}FLUTE AND FALLS{PAGE}ASLEEP.{TIMED}",
    "jp_addr": "02:AD5D",
    "jp": "{ENEMY}ハ　フエノネヲ{BR}キイテ　オトナシクナッタ。{TIMED}",
-   "en": "{ENEMY} HEARS THE{BR}FLUTE AND FALLS{PAGE}ASLEEP.{TIMED}"
+   "en": "The flute calmed{BR}{ENEMY}.{TIMED}"
   },
   {
    "id": "LABEL_B12_B322.1",
@@ -4466,7 +4466,7 @@
    "us": "{ENEMY}'S EYES{BR}LOOK VACANT.{TIMED}",
    "jp_addr": "02:AD74",
    "jp": "{ENEMY}ハ　メガ　ウツロダ。{TIMED}",
-   "en": "{ENEMY}'S EYES{BR}LOOK VACANT.{TIMED}"
+   "en": "{ENEMY}'s{BR}eyes are vacant.{TIMED}"
   },
   {
    "id": "LABEL_B12_B35C",
@@ -4477,7 +4477,7 @@
    "us": "CANNOT DO THAT{BR}HERE.{TIMED}",
    "jp_addr": "02:AD80",
    "jp": "シカシ　イマハ　ソンナコトヲ{BR}シテイルバアイジャ　ナイヨウダ。{TIMED}",
-   "en": "CANNOT DO THAT{BR}HERE.{TIMED}"
+   "en": "But this is no time{BR}for that.{TIMED}"
   },
   {
    "id": "LABEL_B12_B366",
@@ -4488,7 +4488,7 @@
    "us": "{NAME} TAKES OUT{BR}{ITEM}.{TIMED}",
    "jp_addr": "02:ADA0",
    "jp": "{NAME}ハ　{ITEM}ヲ{BR}トリダシタ。{TIMED}",
-   "en": "{NAME} TAKES OUT{BR}{ITEM}.{TIMED}"
+   "en": "{NAME} took out{BR}{ITEM}.{TIMED}"
   },
   {
    "id": "LABEL_B12_B375",
@@ -4499,7 +4499,7 @@
    "us": "IT DOESN'T SEEM TO{BR}BE BROKEN.{END}",
    "jp_addr": "02:ADAD",
    "jp": "ベツニ　コワレテナイヨウダ。{END}",
-   "en": "IT DOESN'T SEEM TO{BR}BE BROKEN.{END}"
+   "en": "It doesn't seem to{BR}be broken.{END}"
   },
   {
    "id": "LABEL_B12_B392",
@@ -4510,7 +4510,7 @@
    "us": "CANNOT GO FORWARD,{BR}IT'S PITCH BLACK.{END}",
    "jp_addr": "02:ADBC",
    "jp": "マックラデ　ススムコトガ　デキナイ。{END}",
-   "en": "CANNOT GO FORWARD,{BR}IT'S PITCH BLACK.{END}"
+   "en": "It's pitch dark.{BR}You can't go on.{END}"
   },
   {
    "id": "LABEL_B12_B3B1",
@@ -4521,7 +4521,7 @@
    "us": "THE BOTTLECAP{BR}OPENS AND THE {PAGE}CONTENTS QUIETLY{BR}LEAK OUT.{TIMED}",
    "jp_addr": "02:ADCF",
    "jp": "ソシテ　ビンノ　フタヲ　アケテ{BR}シズカニ　タラシタ。{TIMED}",
-   "en": "THE BOTTLECAP{BR}OPENS AND THE {PAGE}CONTENTS QUIETLY{BR}LEAK OUT.{TIMED}"
+   "en": "Then the bottle{BR}was opened and{PAGE}gently poured out.{TIMED}"
   },
   {
    "id": "LABEL_B12_B3E3",
@@ -4532,7 +4532,7 @@
    "us": "BUT MYAU CANNOT{BR}OPEN THE BOTTLE.{END}",
    "jp_addr": "02:ADEA",
    "jp": "シカシ　ミャウハ　ビンノ　フタヲ{BR}アケルコトガ　デキナカッタ。{END}",
-   "en": "BUT MYAU CANNOT{BR}OPEN THE BOTTLE.{END}"
+   "en": "But Myau couldn't{BR}open the bottle.{END}"
   },
   {
    "id": "LABEL_B12_B3F9",
@@ -4543,7 +4543,7 @@
    "us": "IT STINKS!{END}",
    "jp_addr": "02:AE0A",
    "jp": "イツ　カイデミテモ　イヤナ{BR}ニオイガ　スル。{END}",
-   "en": "IT STINKS!{END}"
+   "en": "It smells awful,{BR}every single time.{END}"
   },
   {
    "id": "LABEL_B12_B404",
@@ -4554,7 +4554,7 @@
    "us": "{NAME} HAS A TERRI-{BR}BLE PREMONITION.{END}",
    "jp_addr": "02:AE21",
    "jp": "{NAME}ハ　トテモ{BR}イヤナ　ヨカンガシタ。{END}",
-   "en": "{NAME} HAS A TERRI-{BR}BLE PREMONITION.{END}"
+   "en": "{NAME} had a very{BR}bad feeling.{END}"
   },
   {
    "id": "LABEL_B12_B424",
@@ -4565,7 +4565,7 @@
    "us": "{NAME} FEELS{BR}NOTHING.{END}",
    "jp_addr": "02:AE34",
    "jp": "{NAME}ハ　ナニモ　カンジナカッタ。{END}",
-   "en": "{NAME} FEELS{BR}NOTHING.{END}"
+   "en": "{NAME} felt nothing.{END}"
   },
   {
    "id": "LABEL_B12_B431",
@@ -4576,7 +4576,7 @@
    "us": "{ENEMY} SEES THE {BR}RED FLAME AND{PAGE}BECOMES AFRAID.{TIMED}",
    "jp_addr": "02:AE44",
    "jp": "{ENEMY}ハ　アカイ　ホナオヲ{BR}ミテ　オジケズイタ。{TIMED}",
-   "en": "{ENEMY} SEES THE {BR}RED FLAME AND{PAGE}BECOMES AFRAID.{TIMED}"
+   "en": "{ENEMY}{BR}feared the flame.{TIMED}"
   },
   {
    "id": "LABEL_B12_B458",
@@ -4587,7 +4587,7 @@
    "us": "{NAME} RAISES{BR}{ITEM} TOWARDS{PAGE}THE SKY.{TIMED}",
    "jp_addr": "02:AE5B",
    "jp": "{NAME}ハ　{ITEM}ヲ{BR}テンニ　カザシタ。{TIMED}",
-   "en": "{NAME} RAISES{BR}{ITEM} TOWARDS{PAGE}THE SKY.{TIMED}"
+   "en": "{NAME} raised{BR}{ITEM}{PAGE}to the heavens.{TIMED}"
   },
   {
    "id": "LABEL_B12_B471",
@@ -4598,7 +4598,7 @@
    "us": "{NAME} TAKES THE NUT{BR}OF LAERMA AND PUTS{PAGE}IT IN THE LACONIAN{BR}POT.{END}",
    "jp_addr": "02:AE6B",
    "jp": "{NAME}ハ　ラエルマベリーヲ　トッテ{BR}ラコニアンポットニ　イレタ。{END}",
-   "en": "{NAME} TAKES THE NUT{BR}OF LAERMA AND PUTS{PAGE}IT IN THE LACONIAN{BR}POT.{END}"
+   "en": "{NAME} picked a{BR}Laerma berry and{PAGE}put it in the{BR}Laconia Pot.{END}"
   },
   {
    "id": "LABEL_B12_B49A",
@@ -4609,7 +4609,7 @@
    "us": "{NAME} TAKES THE NUT{BR}OF LAERMA, BUT IT{PAGE}SHRIVELS UP AFTER{BR}A FEW MOMENTS.{END}",
    "jp_addr": "02:AE8A",
    "jp": "ラエルマベリーヲ　トッテミタガ{BR}シバラクスルト　ヒカラビテシマッタ。{END}",
-   "en": "{NAME} TAKES THE NUT{BR}OF LAERMA, BUT IT{PAGE}SHRIVELS UP AFTER{BR}A FEW MOMENTS.{END}"
+   "en": "You picked a{BR}Laerma berry, but{PAGE}before long it{BR}shriveled up.{END}"
   },
   {
    "id": "LABEL_B12_B4D5",
@@ -4620,7 +4620,7 @@
    "us": "A VISION OF A{BR}CELESTIAL CASTLE{PAGE}APPEAR IN THE {BR}SKY.{END}",
    "jp_addr": "02:AEAD",
    "jp": "マボロシノ　エアロキャッスルガ{BR}オオゾラニ　スガタヲ　アラワシタ。{END}",
-   "en": "A VISION OF A{BR}CELESTIAL CASTLE{PAGE}APPEAR IN THE {BR}SKY.{END}"
+   "en": "The Air Castle{BR}appeared in the{PAGE}sky like a vision.{END}"
   },
   {
    "id": "LABEL_B12_B500",
@@ -4631,7 +4631,7 @@
    "us": "MYAU ISN'T HUNGRY,{BR}SO SHE PUTS THE {PAGE}FOOD BACK.{END}",
    "jp_addr": "02:AECF",
    "jp": "オナカガ　スイテナカッタノデ{BR}モトニ　モドシタ。{END}",
-   "en": "MYAU ISN'T HUNGRY,{BR}SO SHE PUTS THE {PAGE}FOOD BACK.{END}"
+   "en": "Myau wasn't{BR}hungry, so it{PAGE}went back.{END}"
   },
   {
    "id": "LABEL_B12_B52C",
@@ -4642,7 +4642,7 @@
    "us": "HAPSBY SHAKES HIS{BR}HEAD \"NO\".{END}",
    "jp_addr": "02:AEE8",
    "jp": "ハプスビーハ　イヤイヤヲシタ。{END}",
-   "en": "HAPSBY SHAKES HIS{BR}HEAD \"NO\".{END}"
+   "en": "Hapsby shook his{BR}head.{END}"
   },
   {
    "id": "LABEL_B12_B544",
@@ -4653,7 +4653,7 @@
    "us": "HAPSBY IS{BR}HARDHEADED.{END}",
    "jp_addr": "02:AEF8",
    "jp": "ハプスビーノ　アタマハ　カタイ。{END}",
-   "en": "HAPSBY IS{BR}HARDHEADED.{END}"
+   "en": "Hapsby's head is{BR}hard.{END}"
   },
   {
    "id": "LABEL_B12_B555",
@@ -4664,7 +4664,7 @@
    "us": "THERE IS NO NEED{BR}TO USE THAT.{END}",
    "jp_addr": "02:AF09",
    "jp": "ソレハ　ツカワナクテモ{BR}キキメガ　アル。{END}",
-   "en": "THERE IS NO NEED{BR}TO USE THAT.{END}"
+   "en": "That works without{BR}being used.{END}"
   },
   {
    "id": "LABEL_B12_B569",
@@ -4675,7 +4675,7 @@
    "us": "THERE DOESN'T SEEM{BR}TO BE ANYTHING{PAGE}SPECIAL ABOUT IT.{END}",
    "jp_addr": "02:AF1E",
    "jp": "トクニ　カワッタトコロハ{BR}ナイヨウダ。{END}",
-   "en": "THERE DOESN'T SEEM{BR}TO BE ANYTHING{PAGE}SPECIAL ABOUT IT.{END}"
+   "en": "There's nothing{BR}special about it.{END}"
   },
   {
    "id": "LABEL_B12_B592",
@@ -4686,7 +4686,7 @@
    "us": "YOU FOUND{BR}{ITEM}.{END}",
    "jp_addr": "02:AF32",
    "jp": "{ITEM}ヲ　ミツケタ。{END}",
-   "en": "YOU FOUND{BR}{ITEM}.{END}"
+   "en": "Found{BR}{ITEM}.{END}"
   },
   {
    "id": "LABEL_B12_B59C",
@@ -4697,7 +4697,7 @@
    "us": "{NAME} FEELS VERY{BR}LIGHT.{TIMED}",
    "jp_addr": "02:AF3B",
    "jp": "ナンダカ　カラダガ　カルクナッタ。{TIMED}",
-   "en": "{NAME} FEELS VERY{BR}LIGHT.{TIMED}"
+   "en": "Somehow, your{BR}body felt lighter.{TIMED}"
   },
   {
    "id": "LABEL_B12_B5B0",
@@ -4708,7 +4708,7 @@
    "us": "{NAME} IS{BR}RESURRECTED.{END}",
    "jp_addr": "02:AF4D",
    "jp": "{NAME}ノ　タマシイハ{BR}ヨミガエッタ。{END}",
-   "en": "{NAME} IS{BR}RESURRECTED.{END}"
+   "en": "{NAME} came back{BR}to life.{END}"
   },
   {
    "id": "LABEL_B12_B5BA",
@@ -4719,7 +4719,7 @@
    "us": "ODIN CANNOT USE{BR}MAGIC.{TIMED}",
    "jp_addr": "02:AF5E",
    "jp": "タイロンハ　マジックヲ　ツカエナイ。{TIMED}",
-   "en": "ODIN CANNOT USE{BR}MAGIC.{TIMED}"
+   "en": "Tyron can't use{BR}magic.{TIMED}"
   },
   {
    "id": "LABEL_B12_B5C8",
@@ -4730,7 +4730,7 @@
    "us": "{NAME} HAS NOT {BR}LEARNED MAGIC YET{TIMED}",
    "jp_addr": "02:AF71",
    "jp": "{NAME}ハ　マダ　マジックヲ{BR}オボエテイナイ。{TIMED}",
-   "en": "{NAME} HAS NOT {BR}LEARNED MAGIC YET{TIMED}"
+   "en": "{NAME} knows no{BR}magic yet.{TIMED}"
   },
   {
    "id": "LABEL_B12_B5DE",
@@ -4741,7 +4741,7 @@
    "us": "{NAME} CANNOT EQUIP{BR}THAT ITEM.{END}",
    "jp_addr": "02:AF86",
    "jp": "{NAME}ハ　{ITEM}ヲ{BR}ソウビ　デキナイ。{END}",
-   "en": "{NAME} CANNOT EQUIP{BR}THAT ITEM.{END}"
+   "en": "{NAME} can't equip{BR}{ITEM}.{END}"
   },
   {
    "id": "LABEL_B12_B5F0",
@@ -4752,7 +4752,7 @@
    "us": "YOU NEED NOT EQUIP{BR}THAT ITEM.{END}",
    "jp_addr": "02:AF96",
    "jp": "ソレハ　ソウビシナクテモイイ。{END}",
-   "en": "YOU NEED NOT EQUIP{BR}THAT ITEM.{END}"
+   "en": "That doesn't need{BR}equipping.{END}"
   },
   {
    "id": "LABEL_B12_B604",
@@ -4763,7 +4763,7 @@
    "us": "YOU GAINED {NUMBER}{BR}EXPERIENCE POINTS.{END}",
    "jp_addr": "02:AFA6",
    "jp": "ケイケンチガ　{NUMBER}ポイント{BR}アガッタ。{END}",
-   "en": "YOU GAINED {NUMBER}{BR}EXPERIENCE POINTS.{END}"
+   "en": "Gained {NUMBER}{BR}experience points.{END}"
   },
   {
    "id": "LABEL_B12_B621",
@@ -4774,7 +4774,7 @@
    "us": "{NAME} ADVANCED{BR}A LEVEL.{END}",
    "jp_addr": "02:AFB9",
    "jp": "{NAME}ハ　レベルアップシタ。{END}",
-   "en": "{NAME} ADVANCED{BR}A LEVEL.{END}"
+   "en": "{NAME} went up a{BR}level.{END}"
   },
   {
    "id": "LABEL_B12_B635",
@@ -4785,7 +4785,7 @@
    "us": "{NAME} LEARNED{BR}A SPELL.{END}",
    "jp_addr": "02:AFC6",
    "jp": "{NAME}ハ　マジックヲ{BR}ヒトツ　ミニツケタ。{END}",
-   "en": "{NAME} LEARNED{BR}A SPELL.{END}"
+   "en": "{NAME} learned a{BR}new spell.{END}"
   },
   {
    "id": "LABEL_B12_B648",
@@ -4796,7 +4796,7 @@
    "us": "THERE ARE {NUMBER}{BR}MESETAS INSIDE.{END}",
    "jp_addr": "02:AFDA",
    "jp": "{NUMBER}メセタ　ハイッテイタ。{END}",
-   "en": "THERE ARE {NUMBER}{BR}MESETAS INSIDE.{END}"
+   "en": "There were {NUMBER}{BR}meseta inside.{END}"
   },
   {
    "id": "LABEL_B12_B656",
@@ -4807,7 +4807,7 @@
    "us": "DO YOU WANT TO{BR}OPEN IT?{NOWAIT}",
    "jp_addr": "02:AFE7",
    "jp": "アケテミルカ。{NOWAIT}",
-   "en": "DO YOU WANT TO{BR}OPEN IT?{NOWAIT}"
+   "en": "Open it?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B665",
@@ -4818,7 +4818,7 @@
    "us": "IT'S EMPTY.{END}",
    "jp_addr": "02:AFEF",
    "jp": "カラッポダッタ。{END}",
-   "en": "IT'S EMPTY.{END}"
+   "en": "It was empty.{END}"
   },
   {
    "id": "LABEL_B12_B671",
@@ -4829,7 +4829,7 @@
    "us": "YOU CANNOT CARRY{BR}ANYMORE.{PAGE}DO YOU WANT TO{BR}DROP SOMETHING?{NOWAIT}",
    "jp_addr": "02:AFF8",
    "jp": "コレイジョウ　モノヲ　モテナイ{BR}ナニカヲ　ステルカ。{NOWAIT}",
-   "en": "YOU CANNOT CARRY{BR}ANYMORE.{PAGE}DO YOU WANT TO{BR}DROP SOMETHING?{NOWAIT}"
+   "en": "You can't carry{BR}any more.{PAGE}Drop something?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B68C",
@@ -4840,7 +4840,7 @@
    "us": "WHAT DO YOU WANT {BR}TO DROP?{NOWAIT}",
    "jp_addr": "02:B013",
    "jp": "ドレヲ　ステルカ。{NOWAIT}",
-   "en": "WHAT DO YOU WANT {BR}TO DROP?{NOWAIT}"
+   "en": "Drop which?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B69E",
@@ -4851,7 +4851,7 @@
    "us": "{ITEM} IS {BR}DROPPED,{END}",
    "jp_addr": "02:B01D",
    "jp": "{ITEM}ヲ　ステテ{END}",
-   "en": "{ITEM} IS {BR}DROPPED,{END}"
+   "en": "Dropped{BR}{ITEM}{END}"
   },
   {
    "id": "LABEL_B12_B6AD",
@@ -4862,7 +4862,7 @@
    "us": "AND {ITEM} IS{BR}PICKED UP.{END}",
    "jp_addr": "02:B024",
    "jp": "{ITEM}ヲ　テニイレタ。{END}",
-   "en": "AND {ITEM} IS{BR}PICKED UP.{END}"
+   "en": "and got{BR}{ITEM}.{END}"
   },
   {
    "id": "LABEL_B12_B6C1",
@@ -4873,7 +4873,7 @@
    "us": "{ITEM} IS NOT {BR}NEEDED?{NOWAIT}",
    "jp_addr": "02:B02E",
    "jp": "{ITEM}ハ　イラナイノカ。{NOWAIT}",
-   "en": "{ITEM} IS NOT {BR}NEEDED?{NOWAIT}"
+   "en": "You don't want{BR}{ITEM}?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B6D0",
@@ -4884,7 +4884,7 @@
    "us": "{ITEM} IS{BR}ABANDONED.{END}",
    "jp_addr": "02:B039",
    "jp": "{ITEM}ヲ　アキラメタ。{END}",
-   "en": "{ITEM} IS{BR}ABANDONED.{END}"
+   "en": "Gave up on{BR}{ITEM}.{END}"
   },
   {
    "id": "LABEL_B12_B6DE",
@@ -4895,7 +4895,7 @@
    "us": "{ITEM} SHOULDN'T{BR}BE THROWN AWAY.{END}",
    "jp_addr": "02:B043",
    "jp": "{ITEM}ヲ{BR}ステルワケニハ　イカナイ。{END}",
-   "en": "{ITEM} SHOULDN'T{BR}BE THROWN AWAY.{END}"
+   "en": "{ITEM}{BR}can't be dropped.{END}"
   },
   {
    "id": "LABEL_B12_B6F7",
@@ -4906,7 +4906,7 @@
    "us": "NOT ENOUGH MAGIC{BR}POINTS.{TIMED}",
    "jp_addr": "02:B054",
    "jp": "マジックポイントガ　タリナイ。{TIMED}",
-   "en": "NOT ENOUGH MAGIC{BR}POINTS.{TIMED}"
+   "en": "Not enough magic{BR}points.{TIMED}"
   },
   {
    "id": "LABEL_B12_B709",
@@ -4917,7 +4917,7 @@
    "us": "{NAME} IS STILL{BR}ALIVE.{TIMED}",
    "jp_addr": "02:B064",
    "jp": "{NAME}ハ　マダ　イキテイル。{TIMED}",
-   "en": "{NAME} IS STILL{BR}ALIVE.{TIMED}"
+   "en": "{NAME} is still alive.{TIMED}"
   },
   {
    "id": "LABEL_B12_B71B",
@@ -4928,7 +4928,7 @@
    "us": "{ENEMY}{BR}IS KILLED.{END}",
    "jp_addr": "02:B071",
    "jp": "{ENEMY}ヲ　ヤッツケタ。{END}",
-   "en": "{ENEMY}{BR}IS KILLED.{END}"
+   "en": "Defeated{BR}{ENEMY}.{END}"
   },
   {
    "id": "LABEL_B12_B728",
@@ -4939,7 +4939,7 @@
    "us": "{NAME} DIED.{TIMED}",
    "jp_addr": "02:B07B",
    "jp": "{NAME}ハ　シンデシマッタ。{TIMED}",
-   "en": "{NAME} DIED.{TIMED}"
+   "en": "{NAME} died.{TIMED}"
   },
   {
    "id": "LABEL_B12_B730",
@@ -4950,7 +4950,7 @@
    "us": "{NAME} IS ALREADY{BR}DEAD.{TIMED}",
    "jp_addr": "02:B087",
    "jp": "{NAME}ハ　モウ　シンデイル。{TIMED}",
-   "en": "{NAME} IS ALREADY{BR}DEAD.{TIMED}"
+   "en": "{NAME} is already{BR}dead.{TIMED}"
   },
   {
    "id": "LABEL_B12_B743",
@@ -4961,7 +4961,7 @@
    "us": "MYAU ATE THE NUT{BR}OF LAERMA.{END}",
    "jp_addr": "02:B094",
    "jp": "ミャウハ　ラエルマベリーヲ{BR}カジッタ。{END}",
-   "en": "MYAU ATE THE NUT{BR}OF LAERMA.{END}"
+   "en": "Myau nibbled the{BR}Laerma berry.{END}"
   },
   {
    "id": "LABEL_B12_B754",
@@ -4972,7 +4972,7 @@
    "us": "WHERE ARE WE{BR}GOING?{NOWAIT}",
    "jp_addr": "02:B0A8",
    "jp": "ドコヘ　イキマスカ。{NOWAIT}",
-   "en": "WHERE ARE WE{BR}GOING?{NOWAIT}"
+   "en": "Where to?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B761",
@@ -4983,7 +4983,7 @@
    "us": "WE ARE HEADING FOR{BR}SKURE ON DEZORIS?{NOWAIT}",
    "jp_addr": "02:B0B3",
    "jp": "デゾリスセイノ　スクレノマチヘ{BR}イキマス。イイデスカ。{NOWAIT}",
-   "en": "WE ARE HEADING FOR{BR}SKURE ON DEZORIS?{NOWAIT}"
+   "en": "To Skure, on{BR}Dezolis. All right?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B76F",
@@ -4994,7 +4994,7 @@
    "us": "WE ARE HEADING FOR{BR}UZO ON MOTAVIA?{NOWAIT}",
    "jp_addr": "02:B0CF",
    "jp": "モタビアセイノ　ウーゾノムラヘ{BR}イキマス。イイデスカ。{NOWAIT}",
-   "en": "WE ARE HEADING FOR{BR}UZO ON MOTAVIA?{NOWAIT}"
+   "en": "To Uzo, on Motavia.{BR}All right?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B77B",
@@ -5005,7 +5005,7 @@
    "us": "WE ARE HEADING FOR{BR}GOTHIC ON PALMA?{NOWAIT}",
    "jp_addr": "02:B0EB",
    "jp": "パルマセイノ　ガシコノムラヘ{BR}イキマス。イイデスカ。{NOWAIT}",
-   "en": "WE ARE HEADING FOR{BR}GOTHIC ON PALMA?{NOWAIT}"
+   "en": "To Gashiko, on{BR}Palma. All right?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B785",
@@ -5016,7 +5016,7 @@
    "us": "WE ARE AT SKURE.{NOWAIT}",
    "jp_addr": "02:B106",
    "jp": "ココハ　スクレ　デス。{NOWAIT}",
-   "en": "WE ARE AT SKURE.{NOWAIT}"
+   "en": "This is Skure.{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B790",
@@ -5027,7 +5027,7 @@
    "us": "WE ARE AT UZO.{NOWAIT}",
    "jp_addr": "02:B112",
    "jp": "ココハ　ウーゾ　デス。{NOWAIT}",
-   "en": "WE ARE AT UZO.{NOWAIT}"
+   "en": "This is Uzo.{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B799",
@@ -5038,7 +5038,7 @@
    "us": "WE ARE AT GOTHIC.{NOWAIT}",
    "jp_addr": "02:B11E",
    "jp": "ココハ　ガシコ　デス。{NOWAIT}",
-   "en": "WE ARE AT GOTHIC.{NOWAIT}"
+   "en": "This is Gashiko.{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B799.1",
@@ -5049,7 +5049,7 @@
    "us": "LET'S GO!{TIMED}",
    "jp_addr": "02:B12A",
    "jp": "シュッパーツ。{TIMED}",
-   "en": "LET'S GO!{TIMED}"
+   "en": "Off we go!{TIMED}"
   },
   {
    "id": "LABEL_B12_B7AA",
@@ -5060,7 +5060,7 @@
    "us": "THE PATH IN THE {BR}WOODS IS UNCLEAR.{END}",
    "jp_addr": "02:B132",
    "jp": "モリノナカデ　ミチニ　マヨッテ{BR}シマッタ。{END}",
-   "en": "THE PATH IN THE {BR}WOODS IS UNCLEAR.{END}"
+   "en": "You lost your way{BR}in the forest.{END}"
   },
   {
    "id": "LABEL_B12_B7C7",
@@ -5071,7 +5071,7 @@
    "us": "THIS IS AN ARMORY.{BR}DO YOU WANT TO BUY{PAGE}SOMETHING?{NOWAIT}",
    "jp_addr": "02:B148",
    "jp": "ココハ　アーマーショップデス。{BR}ナニカ　カイマスカ。{NOWAIT}",
-   "en": "THIS IS AN ARMORY.{BR}DO YOU WANT TO BUY{PAGE}SOMETHING?{NOWAIT}"
+   "en": "This is the armor{BR}shop.{PAGE}Will you buy{BR}something?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B7E3",
@@ -5082,7 +5082,7 @@
    "us": "WELL, COME AGAIN.{END}",
    "jp_addr": "02:B163",
    "jp": "ソウデスカ。マタキテクダサイ。{END}",
-   "en": "WELL, COME AGAIN.{END}"
+   "en": "I see. Please come{BR}again.{END}"
   },
   {
    "id": "LABEL_B12_B7F5",
@@ -5093,7 +5093,7 @@
    "us": "WHICH DO YOU WANT {BR}TO BUY?{NOWAIT}",
    "jp_addr": "02:B173",
    "jp": "ドレヲ　カイマスカ。{NOWAIT}",
-   "en": "WHICH DO YOU WANT {BR}TO BUY?{NOWAIT}"
+   "en": "Which will you{BR}buy?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B807",
@@ -5104,7 +5104,7 @@
    "us": "THANK YOU.{BR}ANYTHING ELSE?{NOWAIT}",
    "jp_addr": "02:B17E",
    "jp": "アリガトウ。モット　カイマスカ。{NOWAIT}",
-   "en": "THANK YOU.{BR}ANYTHING ELSE?{NOWAIT}"
+   "en": "Thank you.{BR}Anything else?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B813",
@@ -5115,7 +5115,7 @@
    "us": "YOU CANNOT CARRY{BR}ANY MORE.{PAGE}THANK YOU AND{BR}COME AGAIN.{END}",
    "jp_addr": "02:B18F",
    "jp": "ソレイジョウ　モテナイヨウデスネ。{BR}マタキテクダサイ。{END}",
-   "en": "YOU CANNOT CARRY{BR}ANY MORE.{PAGE}THANK YOU AND{BR}COME AGAIN.{END}"
+   "en": "Looks like you{BR}can't carry any{PAGE}more. Please come{BR}again.{END}"
   },
   {
    "id": "LABEL_B12_B832",
@@ -5126,7 +5126,7 @@
    "us": "THIS IS A{BR}FIRST FOOD SHOP.{PAGE}WOULD YOU LIKE TO{BR}BUY SOMETHING?{NOWAIT}",
    "jp_addr": "02:B1AB",
    "jp": "ココハ　ドラッグストアデス。{BR}ナニカ　カイマスカ。{NOWAIT}",
-   "en": "THIS IS A{BR}FIRST FOOD SHOP.{PAGE}WOULD YOU LIKE TO{BR}BUY SOMETHING?{NOWAIT}"
+   "en": "This is the{BR}drugstore.{PAGE}Will you buy{BR}something?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B85D",
@@ -5137,7 +5137,7 @@
    "us": "THIS IS A{BR}SECOND-HAND SHOP.{PAGE}CAN I HELP YOU?{NOWAIT}",
    "jp_addr": "02:B1C5",
    "jp": "ココハ　ツールショップデス。{BR}ドンナ　ゴヨウデスカ。{NOWAIT}",
-   "en": "THIS IS A{BR}SECOND-HAND SHOP.{PAGE}CAN I HELP YOU?{NOWAIT}"
+   "en": "This is the tool{BR}shop.{PAGE}How can I help{BR}you?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B882",
@@ -5148,7 +5148,7 @@
    "us": "WHAT WOULD YOU {BR}LIKE TO SELL?{NOWAIT}",
    "jp_addr": "02:B1E0",
    "jp": "ドレヲ　ウリマスカ。{NOWAIT}",
-   "en": "WHAT WOULD YOU {BR}LIKE TO SELL?{NOWAIT}"
+   "en": "Which will you{BR}sell?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B89A",
@@ -5159,7 +5159,7 @@
    "us": "{ITEM}? LET ME{BR}SEE.....{PAGE}HOW ABOUT {NUMBER}{BR}MESETAS?{NOWAIT}",
    "jp_addr": "02:B1EB",
    "jp": "{ITEM}デスネ。{BR}{NUMBER}メセタデ　イイデスカ。{NOWAIT}",
-   "en": "{ITEM}? LET ME{BR}SEE.....{PAGE}HOW ABOUT {NUMBER}{BR}MESETAS?{NOWAIT}"
+   "en": "{ITEM}?{PAGE}{NUMBER} meseta for{BR}it. All right?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B8BC",
@@ -5170,7 +5170,7 @@
    "us": "THANK YOU.{BR}ANYTHING ELSE?{NOWAIT}",
    "jp_addr": "02:B1FE",
    "jp": "アリガトウ　モットウリマスカ。{NOWAIT}",
-   "en": "THANK YOU.{BR}ANYTHING ELSE?{NOWAIT}"
+   "en": "Thank you. Selling{BR}anything else?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B8C8",
@@ -5181,7 +5181,7 @@
    "us": "THIS IS A HOSPITAL{BR}DO YOU NEED HELP?{NOWAIT}",
    "jp_addr": "02:B20E",
    "jp": "ココハ　ホスピタルデス。{BR}チリョウヲ　ウケマスカ。{NOWAIT}",
-   "en": "THIS IS A HOSPITAL{BR}DO YOU NEED HELP?{NOWAIT}"
+   "en": "This is the{BR}hospital.{PAGE}Do you need{BR}treatment?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B8E0",
@@ -5192,7 +5192,7 @@
    "us": "THE FEE FOR{BR}HEALING IS {NUMBER}{PAGE}MESETAS. IS THAT{BR}ACCEPTABLE?{NOWAIT}",
    "jp_addr": "02:B228",
    "jp": "シンサツト　チリョウヒ{BR}{NUMBER}メセタデス。ヨロシイデスカ{BR}。{NOWAIT}",
-   "en": "THE FEE FOR{BR}HEALING IS {NUMBER}{PAGE}MESETAS. IS THAT{BR}ACCEPTABLE?{NOWAIT}"
+   "en": "The exam and{BR}treatment come to{PAGE}{NUMBER} meseta. All{BR}right?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B90A",
@@ -5203,7 +5203,7 @@
    "us": "DOES ANYONE ELSE{BR}NEED TO BE HEALED?{NOWAIT}",
    "jp_addr": "02:B244",
    "jp": "ホカニ　チリョウヲ　ウケタイカタハ{BR}イマスカ。{NOWAIT}",
-   "en": "DOES ANYONE ELSE{BR}NEED TO BE HEALED?{NOWAIT}"
+   "en": "Does anyone else{BR}need treatment?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B925",
@@ -5214,7 +5214,7 @@
    "us": "WHO NEEDS TO BE{BR}HEALED?{NOWAIT}",
    "jp_addr": "02:B25C",
    "jp": "ドナタガ　チリョウヲ　ウケマスカ。{NOWAIT}",
-   "en": "WHO NEEDS TO BE{BR}HEALED?{NOWAIT}"
+   "en": "Who needs{BR}treatment?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B938",
@@ -5225,7 +5225,7 @@
    "us": "THANK YOU FOR{BR}WAITING.TAKE CARE.{END}",
    "jp_addr": "02:B26E",
    "jp": "オマチドウサマ。{BR}ドウゾ　オダイジニ。{END}",
-   "en": "THANK YOU FOR{BR}WAITING.TAKE CARE.{END}"
+   "en": "Thank you for{BR}waiting. Take care.{END}"
   },
   {
    "id": "LABEL_B12_B951",
@@ -5237,7 +5237,7 @@
    "jp_addr": "02:B282",
    "jp": "ソウデスカ　オテツダイデキナクテ{BR}ザンネンデス。デハ　オキヲツケテ。{END}",
    "falls_through": true,
-   "en": "I'M SORRY I COULD{BR}NOT HELP.{PAGE}"
+   "en": "I see. I'm sorry I{BR}couldn't help.{PAGE}"
   },
   {
    "id": "LABEL_B12_B964",
@@ -5247,7 +5247,7 @@
    "hex": "C9424520ED2E65",
    "us": "PLEASE BE CAREFUL.{END}",
    "jp_cont": true,
-   "en": "PLEASE BE CAREFUL.{END}"
+   "en": "Please take care.{END}"
   },
   {
    "id": "LABEL_B12_B96B",
@@ -5258,7 +5258,7 @@
    "us": "{NAME} IS NOT NEED{BR}TO BE HEALED.{END}",
    "jp_addr": "02:B2A5",
    "jp": "{NAME}サンハ　イジヨウ{BR}アリマセンネ。{END}",
-   "en": "{NAME} IS NOT NEED{BR}TO BE HEALED.{END}"
+   "en": "There's nothing{BR}wrong with {NAME}.{END}"
   },
   {
    "id": "LABEL_B12_B97F",
@@ -5269,7 +5269,7 @@
    "us": "THIS IS A CHURCH.{BR}DO YOU WISH TO{PAGE}RESURRECT SOMEONE?{NOWAIT}",
    "jp_addr": "02:B2B7",
    "jp": "ココハ　キョウカイデス。　ダレカノ{BR}タマシイヲ　ヨビモドサレマスカ。{NOWAIT}",
-   "en": "THIS IS A CHURCH.{BR}DO YOU WISH TO{PAGE}RESURRECT SOMEONE?{NOWAIT}"
+   "en": "This is the church.{PAGE}Shall I call back{BR}someone's soul?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B97F.1",
@@ -5280,7 +5280,7 @@
    "us": "I SHALL PRAY FOR{BR}YOU.{END}",
    "jp_addr": "02:B2DA",
    "jp": "デハ　アナタノタメニ{BR}オイノリヲ　ササゲマス。{END}",
-   "en": "I SHALL PRAY FOR{BR}YOU.{END}"
+   "en": "Then I shall pray{BR}for you.{END}"
   },
   {
    "id": "LABEL_B12_B9B0",
@@ -5291,7 +5291,7 @@
    "us": "I WILL NOW CAST{BR}A SPELL.{TIMED}",
    "jp_addr": "02:B2F2",
    "jp": "ソレデハ　ジュモンヲ　トナエマス。{TIMED}",
-   "en": "I WILL NOW CAST{BR}A SPELL.{TIMED}"
+   "en": "Now I shall chant{BR}the spell.{TIMED}"
   },
   {
    "id": "LABEL_B12_B9C4",
@@ -5302,7 +5302,7 @@
    "us": "SABRUS CABRUS{BR}SEBRUS BASS!{TIMED}",
    "jp_addr": "02:B304",
    "jp": "アルテムハムラム　アルテムハムハム{BR}ストラトポン。{TIMED}",
-   "en": "SABRUS CABRUS{BR}SEBRUS BASS!{TIMED}"
+   "en": "Altem ham-ram,{BR}altem ham-ham,{PAGE}strato-pon!{TIMED}"
   },
   {
    "id": "LABEL_B12_B9D3",
@@ -5313,7 +5313,7 @@
    "us": "WHO IS TO BE{BR}RESURRECTED?{NOWAIT}",
    "jp_addr": "02:B31E",
    "jp": "ドナタノ　タマシイデショウ。{NOWAIT}",
-   "en": "WHO IS TO BE{BR}RESURRECTED?{NOWAIT}"
+   "en": "Whose soul shall it{BR}be?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B9E5",
@@ -5324,7 +5324,7 @@
    "us": "ANYONE ELSE?{NOWAIT}",
    "jp_addr": "02:B32D",
    "jp": "ホカノカタハ　イカガデスカ。{NOWAIT}",
-   "en": "ANYONE ELSE?{NOWAIT}"
+   "en": "Anyone else?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_B9EE",
@@ -5335,7 +5335,7 @@
    "us": "THAT REQUIRES{BR}{NUMBER} MESETAS. O.K{BR}.?{NOWAIT}",
    "jp_addr": "02:B33C",
    "jp": "{NUMBER}メセタ　カカリマスガ{BR}ヨロシイデスカ。{NOWAIT}",
-   "en": "THAT REQUIRES{BR}{NUMBER} MESETAS. O.K{BR}.?{NOWAIT}"
+   "en": "That will be {NUMBER}{BR}meseta. All right?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_BA04",
@@ -5346,7 +5346,7 @@
    "us": "TO ADVANCE TO{BR}THE NEXT LEVEL,{END}",
    "jp_addr": "02:B351",
    "jp": "コレカラ　レベルアップスルタメニハ{END}",
-   "en": "TO ADVANCE TO{BR}THE NEXT LEVEL,{END}"
+   "en": "To reach the next{BR}level,{END}"
   },
   {
    "id": "LABEL_B12_BA1F",
@@ -5357,7 +5357,7 @@
    "us": "{NAME} NEEDS {NUMBER}{BR}EXPERIENCE POINTS.{END}",
    "jp_addr": "02:B363",
    "jp": "{NAME}ハ　{NUMBER}ポイント{BR}ヒツヨウデス。{END}",
-   "en": "{NAME} NEEDS {NUMBER}{BR}EXPERIENCE POINTS.{END}"
+   "en": "{NAME} needs {NUMBER}{BR}more points.{END}"
   },
   {
    "id": "LABEL_B12_BA3C",
@@ -5368,7 +5368,7 @@
    "us": "MAY THE GODS{BR}WATCH OVER YOU!{END}",
    "jp_addr": "02:B374",
    "jp": "アナタガタノ　ユクスエニ{BR}カミノ　メグミガ　アリマスヨウニ。{END}",
-   "en": "MAY THE GODS{BR}WATCH OVER YOU!{END}"
+   "en": "May the gods{BR}bless your road.{END}"
   },
   {
    "id": "LABEL_B12_BA56",
@@ -5379,7 +5379,7 @@
    "us": "{NAME} IS ALIVE.{NOWAIT}",
    "jp_addr": "02:B393",
    "jp": "{NAME}ハ　イキテイマスヨ。{NOWAIT}",
-   "en": "{NAME} IS ALIVE.{NOWAIT}"
+   "en": "{NAME} is alive.{NOWAIT}"
   },
   {
    "id": "LABEL_B12_BA62",
@@ -5390,7 +5390,7 @@
    "us": "WILL SAVE THE GAME{BR}IN PROGRESS.{PAGE}PLEASE SELECT{BR}A NUMBER.{NOWAIT}",
    "jp_addr": "02:B39F",
    "jp": "セーブヲ　オコナイマス。{BR}バンゴウヲ　エランデクダサイ。{NOWAIT}",
-   "en": "WILL SAVE THE GAME{BR}IN PROGRESS.{PAGE}PLEASE SELECT{BR}A NUMBER.{NOWAIT}"
+   "en": "Let's save. Please{BR}choose a number.{NOWAIT}"
   },
   {
    "id": "LABEL_B12_BA82",
@@ -5401,7 +5401,7 @@
    "us": "YOU SELECTED {NUMBER}{BR}IS THAT O.K.{NOWAIT}",
    "jp_addr": "02:B3BC",
    "jp": "{NUMBER}バンデ　イイデスカ。{NOWAIT}",
-   "en": "YOU SELECTED {NUMBER}{BR}IS THAT O.K.{NOWAIT}"
+   "en": "Number {NUMBER}. All{BR}right?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_BA93",
@@ -5412,7 +5412,7 @@
    "us": "WELL, SAVING {NUMBER}{BR}.{TIMED}",
    "jp_addr": "02:B3C8",
    "jp": "デハ　{NUMBER}バンニ　セーブシマス{BR}。{TIMED}",
-   "en": "WELL, SAVING {NUMBER}{BR}.{TIMED}"
+   "en": "Saving to number{BR}{NUMBER}.{TIMED}"
   },
   {
    "id": "LABEL_B12_BAA3",
@@ -5423,7 +5423,7 @@
    "us": "COMPLETED.{END}",
    "jp_addr": "02:B3D8",
    "jp": "オワリマシタ。{END}",
-   "en": "COMPLETED.{END}"
+   "en": "Done.{END}"
   },
   {
    "id": "LABEL_B12_BAAE",
@@ -5434,7 +5434,7 @@
    "us": "WE WANT TO BE{BR}FRIENDS WITH{PAGE}PEOPLE FROM PALMA.{END}",
    "jp_addr": "02:B3E0",
    "jp": "ワタシタチハ　パルマノ　ヒトタチト{BR}ナカヨク　シタイ。{END}",
-   "en": "WE WANT TO BE{BR}FRIENDS WITH{PAGE}PEOPLE FROM PALMA.{END}"
+   "en": "We'd like to be{BR}friends with the{PAGE}people of Palma.{END}"
   },
   {
    "id": "LABEL_B12_BAD0",
@@ -5445,7 +5445,7 @@
    "us": "I WANT TO EAT A{BR}NUT OF LAERMA.{END}",
    "jp_addr": "02:B3FC",
    "jp": "ラエルマベリーガ　タベタイナア。{END}",
-   "en": "I WANT TO EAT A{BR}NUT OF LAERMA.{END}"
+   "en": "I wanna eat a{BR}Laerma berry.{END}"
   },
   {
    "id": "LABEL_B12_BAE6",
@@ -5456,7 +5456,7 @@
    "us": "DO NOT OFFEND{BR}LASSIC.{END}",
    "jp_addr": "02:B40D",
    "jp": "ラシークサマニハ{BR}サカラワナイホウガ　イイヨ。{END}",
-   "en": "DO NOT OFFEND{BR}LASSIC.{END}"
+   "en": "You'd best not{BR}defy Lord LaShiec.{END}"
   },
   {
    "id": "LABEL_B12_BAF4",
@@ -5467,7 +5467,7 @@
    "us": "YOU UNDERSTAND OUR{BR}LANGUAGE?{END}",
    "jp_addr": "02:B425",
    "jp": "オッ。ワタシタチノ　コトバガ{BR}ワカルンダネ。{END}",
-   "en": "YOU UNDERSTAND OUR{BR}LANGUAGE?{END}"
+   "en": "Oh! You can{BR}understand us?{END}"
   },
   {
    "id": "LABEL_B12_BB06",
@@ -5478,7 +5478,7 @@
    "us": "HELLO!{END}",
    "jp_addr": "02:B43C",
    "jp": "ヤッホー。{END}",
-   "en": "HELLO!{END}"
+   "en": "Yoo-hoo!{END}"
   },
   {
    "id": "LABEL_B12_BB0D",
@@ -5489,7 +5489,7 @@
    "us": "BE CAREFUL OF PITS{BR}IN THE DUNGEON.{END}",
    "jp_addr": "02:B442",
    "jp": "ダンジョンデハ　オトシアナニ{BR}キヲツケナヨ。{END}",
-   "en": "BE CAREFUL OF PITS{BR}IN THE DUNGEON.{END}"
+   "en": "Watch out for pits{BR}in the dungeons.{END}"
   },
   {
    "id": "LABEL_B12_BB20",
@@ -5500,7 +5500,7 @@
    "us": "MANY OF THE {BR}TREASURE CHESTS IN{PAGE}THE DUNGEON ARE {BR}TRAPPED.{END}",
    "jp_addr": "02:B459",
    "jp": "タカラバコハ　ムヤミニ{BR}アケルト　ケガヲスルヨ。{END}",
-   "en": "MANY OF THE {BR}TREASURE CHESTS IN{PAGE}THE DUNGEON ARE {BR}TRAPPED.{END}"
+   "en": "Open treasure{BR}chests carelessly,{PAGE}and you'll get{BR}hurt.{END}"
   },
   {
    "id": "LABEL_B12_BB3D",
@@ -5511,7 +5511,7 @@
    "us": "YOU THIEF!{END}",
    "jp_addr": "02:B472",
    "jp": "コノ　オイハギヤロウ。{END}",
-   "en": "YOU THIEF!{END}"
+   "en": "You lousy bandit!{END}"
   },
   {
    "id": "LABEL_B12_BB45",
@@ -5522,7 +5522,7 @@
    "us": "WE ARE OUTCASTS.{BR}FORGIVE US.{END}",
    "jp_addr": "02:B47E",
    "jp": "ワタシタチハ　ドウセ{BR}ニクマレモノダヨ。{END}",
-   "en": "WE ARE OUTCASTS.{BR}FORGIVE US.{END}"
+   "en": "Everyone hates us{BR}anyway.{END}"
   },
   {
    "id": "LABEL_B12_BB5C",
@@ -5533,7 +5533,7 @@
    "us": "THE SOUND OF THE {BR}SOOTHING FLUTE IS{PAGE}A JOY TO BOTH THE {BR}EAR AND THE HEART.{END}",
    "jp_addr": "02:B493",
    "jp": "スーズフルートノ　ネイロハ{BR}イイナア。{END}",
-   "en": "THE SOUND OF THE {BR}SOOTHING FLUTE IS{PAGE}A JOY TO BOTH THE {BR}EAR AND THE HEART.{END}"
+   "en": "The Soothe Flute{BR}sounds so nice.{END}"
   },
   {
    "id": "LABEL_B12_BB8D",
@@ -5544,7 +5544,7 @@
    "us": "THE VEHICLE KNOWN{BR}AS \"ICE DIGGER\"{PAGE}LIVES UP TO ITS{BR}NAME.{END}",
    "jp_addr": "02:B4A7",
    "jp": "アイスデッカー　トイウ　ノリモノハ{BR}コオリモ　ケズレルンダッテ。{END}",
-   "en": "THE VEHICLE KNOWN{BR}AS \"ICE DIGGER\"{PAGE}LIVES UP TO ITS{BR}NAME.{END}"
+   "en": "They say a vehicle{BR}called the Ice{PAGE}Decker can even{BR}cut through ice.{END}"
   },
   {
    "id": "LABEL_B12_BBBF",
@@ -5555,7 +5555,7 @@
    "us": "LASSIC LIVES ABOVE{BR}THE SKY.{END}",
    "jp_addr": "02:B4C8",
    "jp": "ラシークサマハ　ソラノウエニ{BR}イラッシャルンダ。{END}",
-   "en": "LASSIC LIVES ABOVE{BR}THE SKY.{END}"
+   "en": "Lord LaShiec lives{BR}up above the sky.{END}"
   },
   {
    "id": "LABEL_B12_BBD2",
@@ -5566,7 +5566,7 @@
    "us": "THE MAD DOCTOR{BR}IN ABION HAS A{PAGE}LACONIAN POT.{END}",
    "jp_addr": "02:B4E1",
    "jp": "アビオンノ　マッドドクターガ{BR}ラスコニアンポットヲ　モッテタゼ。{END}",
-   "en": "THE MAD DOCTOR{BR}IN ABION HAS A{PAGE}LACONIAN POT.{END}"
+   "en": "The Mad Doctor in{BR}Abion had a{PAGE}Laconia Pot.{END}"
   },
   {
    "id": "LABEL_B12_BBF0",
@@ -5577,7 +5577,7 @@
    "us": "THERE ARE PLACES{BR}IN THE SKY{PAGE}WHERE EVEN SPACE-{BR}SHIP CANNOT GO.{END}",
    "jp_addr": "02:B502",
    "jp": "ソラノ　ウエニハ　ウチュウセンデモ{BR}イケナイトコロガアルゼ。{END}",
-   "en": "THERE ARE PLACES{BR}IN THE SKY{PAGE}WHERE EVEN SPACE-{BR}SHIP CANNOT GO.{END}"
+   "en": "Up above the sky{BR}are places even a{PAGE}spaceship can't{BR}reach.{END}"
   },
   {
    "id": "LABEL_B12_BC1A",
@@ -5588,7 +5588,7 @@
    "us": "A NUT OF LAERMA{BR}NEEDS SPECIAL{PAGE}LIGHT TO GLOW.{END}",
    "jp_addr": "02:B521",
    "jp": "ラエルマベリーヲ　ミノラセルタメニハ{BR}アルモノガ　ヒツヨウダ。{END}",
-   "en": "A NUT OF LAERMA{BR}NEEDS SPECIAL{PAGE}LIGHT TO GLOW.{END}"
+   "en": "To make Laerma{BR}berries grow, you{PAGE}need a certain{BR}something.{END}"
   },
   {
    "id": "LABEL_B12_BC42",
@@ -5599,7 +5599,7 @@
    "us": "THERE ARE SECRET{BR}DOORS IN THE{PAGE}DUNGEON MAZE.{END}",
    "jp_addr": "02:B540",
    "jp": "ダンジョンノ　メイロニハ{BR}カクシトビラガ　アルンダゼ。{END}",
-   "en": "THERE ARE SECRET{BR}DOORS IN THE{PAGE}DUNGEON MAZE.{END}"
+   "en": "Dungeon mazes{BR}have hidden doors.{END}"
   },
   {
    "id": "LABEL_B12_BC5B",
@@ -5610,7 +5610,7 @@
    "us": "THE MIRACLE KEY{BR}CAN OPEN DOORS{PAGE}WHICH ARE SHUT{BR}BY MAGIC.{END}",
    "jp_addr": "02:B55C",
    "jp": "ミラクルキーハ　マホウノドアデモ{BR}アケルコトガ　デキルゾ。{END}",
-   "en": "THE MIRACLE KEY{BR}CAN OPEN DOORS{PAGE}WHICH ARE SHUT{BR}BY MAGIC.{END}"
+   "en": "The Miracle Key{BR}can open even{PAGE}magic doors.{END}"
   },
   {
    "id": "LABEL_B12_BC89",
@@ -5621,7 +5621,7 @@
    "us": "SOME DEZORIANS{BR}LIKE TO TELL LIES,{PAGE}SO BE CAREFUL.{END}",
    "jp_addr": "02:B57A",
    "jp": "デゾリアンニハ　ウソツキモ　イルカラ{BR}キヲツケナヨ。{END}",
-   "en": "SOME DEZORIANS{BR}LIKE TO TELL LIES,{PAGE}SO BE CAREFUL.{END}"
+   "en": "Some Dezolians lie,{BR}so watch out.{END}"
   },
   {
    "id": "LABEL_B12_BCAA",
@@ -5632,7 +5632,7 @@
    "us": "YOU ARE BRAVE TO{BR}APPROACH ME!{END}",
    "jp_addr": "02:B594",
    "jp": "ワタシニ　ハナシカケルトハ{BR}ユウキガ　アルネエ。　ガンバレヨ。{END}",
-   "en": "YOU ARE BRAVE TO{BR}APPROACH ME!{END}"
+   "en": "Talking to me?{BR}You've got guts.{PAGE}Good luck.{END}"
   },
   {
    "id": "LABEL_B12_BCC2",
@@ -5643,7 +5643,7 @@
    "us": "{ENEMY} IS BURST-{BR}ING WITH STRENGTH.{TIMED}",
    "jp_addr": "02:B5B4",
    "jp": "{ENEMY}ハ　カラダニ{BR}チカラガ　ミナギルノヲカンジタ。{TIMED}",
-   "en": "{ENEMY} IS BURST-{BR}ING WITH STRENGTH.{TIMED}"
+   "en": "{ENEMY}{BR}surged with power.{TIMED}"
   },
   {
    "id": "LABEL_B12_BCE1",
@@ -5654,7 +5654,7 @@
    "us": "{ENEMY} HAD A{BR}TREASURE CHEST.{NOWAIT}",
    "jp_addr": "02:B5CD",
    "jp": "{ENEMY}ハ　タカラバコヲ{BR}モッテイタ。{NOWAIT}",
-   "en": "{ENEMY} HAD A{BR}TREASURE CHEST.{NOWAIT}"
+   "en": "{ENEMY}{BR}had a chest.{NOWAIT}"
   },
   {
    "id": "LABEL_B12_BCED",
@@ -5665,7 +5665,7 @@
    "us": "WE ARE CURRENTLY{BR}FACING EAST.{END}",
    "jp_addr": "02:B5DE",
    "jp": "イマ　ヒガシヲムイテイル。{END}",
-   "en": "WE ARE CURRENTLY{BR}FACING EAST.{END}"
+   "en": "Facing east.{END}"
   },
   {
    "id": "LABEL_B12_BCF7",
@@ -5676,7 +5676,7 @@
    "us": "WE ARE CURRENTLY{BR}FACING WEST.{END}",
    "jp_addr": "02:B5EC",
    "jp": "イマ　ニシヲ　ムイテイル。{END}",
-   "en": "WE ARE CURRENTLY{BR}FACING WEST.{END}"
+   "en": "Facing west.{END}"
   },
   {
    "id": "LABEL_B12_BD01",
@@ -5687,7 +5687,7 @@
    "us": "WE ARE CURRENTLY{BR}FACING NORTH.{END}",
    "jp_addr": "02:B5FA",
    "jp": "イマ　キタヲ　ムイテイル。{END}",
-   "en": "WE ARE CURRENTLY{BR}FACING NORTH.{END}"
+   "en": "Facing north.{END}"
   },
   {
    "id": "LABEL_B12_BD0C",
@@ -5698,7 +5698,7 @@
    "us": "WE ARE CURRENTLY{BR}FACING SOUTH.{END}",
    "jp_addr": "02:B608",
    "jp": "イマ　ミナミヲ　ムイテイル。{END}",
-   "en": "WE ARE CURRENTLY{BR}FACING SOUTH.{END}"
+   "en": "Facing south.{END}"
   },
   {
    "id": "LABEL_B12_BD17",
@@ -5709,7 +5709,7 @@
    "us": "YOU ARE ALL DEAD.{END}",
    "jp_addr": "02:B617",
    "jp": "アリサタチハ　ゼンメツシタ。{END}",
-   "en": "YOU ARE ALL DEAD.{END}"
+   "en": "Alisa's party was{BR}wiped out.{END}"
   },
   {
    "id": "LABEL_B12_BD23",
@@ -5720,7 +5720,7 @@
    "us": "ALIS'S HOPE CANNOT{BR}OVERCOME THE POWER{PAGE}OF LASSIC.{BR}THE ADVENTURE IS{PAGE}OVER.{END}",
    "jp_addr": "02:B626",
    "jp": "アリサノ　ネガイハ　ラシークノ{BR}ヤボウノ　マエニ{PAGE}ムナシク　キエサッタ。{BR}ココデ　ボウケンハ　オワリデス。{END}",
-   "en": "ALIS'S HOPE CANNOT{BR}OVERCOME THE POWER{PAGE}OF LASSIC.{BR}THE ADVENTURE IS{PAGE}OVER.{END}"
+   "en": "Alisa's wish faded{BR}to nothing before{PAGE}LaShiec's ambition.{PAGE}Here the{BR}adventure ends.{END}"
   },
   {
    "id": "LABEL_B12_BD57",
@@ -5731,7 +5731,7 @@
    "us": "YOU DON'T HAVE {BR}ENOUGH MONEY.{PAGE}COME AGAIN LATER.{END}",
    "jp_addr": "02:B65C",
    "jp": "オカネガ　タリナイヨウデスネ。{BR}マタキテクダサイ。{END}",
-   "en": "YOU DON'T HAVE {BR}ENOUGH MONEY.{PAGE}COME AGAIN LATER.{END}"
+   "en": "Looks like you're{BR}short of money.{PAGE}Please come again.{END}"
   },
   {
    "id": "LABEL_B12_BD7E",
@@ -5742,7 +5742,7 @@
    "us": "THAT WILL COME IN{BR}HANDY LATER.{END}",
    "jp_addr": "02:B676",
    "jp": "ソレハ　アトデ　ヤクニタチマスヨ。{END}",
-   "en": "THAT WILL COME IN{BR}HANDY LATER.{END}"
+   "en": "That will come in{BR}handy later.{END}"
   },
   {
    "id": "LABEL_B12_BD97",
@@ -5753,7 +5753,7 @@
    "us": "THERE IS A{BR}TREASURE CHEST.{NOWAIT}",
    "jp_addr": "02:B688",
    "jp": "タカラバコヲ　ミツケタ。{NOWAIT}",
-   "en": "THERE IS A{BR}TREASURE CHEST.{NOWAIT}"
+   "en": "Found a treasure{BR}chest.{NOWAIT}"
   },
   {
    "id": "LABEL_B12_BD9F",
@@ -5764,7 +5764,7 @@
    "us": "SABRUS CABRUS{BR}SEB..B...HACK,HACK{PAGE}SORRY, I SEEM TO{BR}HAVE FAILED.{END}",
    "jp_addr": "02:B695",
    "jp": "アルテムハムラム　ア　ウッ。{BR}ゴホッ。ゴホッ。{PAGE}ゴメンナサイ。{BR}ドウヤラ　シッパイシタヨウデス。{END}",
-   "en": "SABRUS CABRUS{BR}SEB..B...HACK,HACK{PAGE}SORRY, I SEEM TO{BR}HAVE FAILED.{END}"
+   "en": "Altem ham-ram, a-{BR}urk! Cough! Cough!{PAGE}I'm sorry. It seems{BR}I have failed.{END}"
   },
   {
    "id": "LABEL_B12_BDCE",
@@ -5775,7 +5775,7 @@
    "us": "BOUND FOR MOTAVIA.{BR}GETTING ON?{NOWAIT}",
    "jp_addr": "02:B6C6",
    "jp": "モタビア　ユキデス。ノリマスカ。{NOWAIT}",
-   "en": "BOUND FOR MOTAVIA.{BR}GETTING ON?{NOWAIT}"
+   "en": "Bound for Motavia.{BR}Boarding?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_BDE6",
@@ -5786,7 +5786,7 @@
    "us": "BOUND FOR PALMA.{BR}GETTING ON?{NOWAIT}",
    "jp_addr": "02:B6D7",
    "jp": "パルマ　ユキデス。ノリマスカ。{NOWAIT}",
-   "en": "BOUND FOR PALMA.{BR}GETTING ON?{NOWAIT}"
+   "en": "Bound for Palma.{BR}Boarding?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_BDFF",
@@ -5797,7 +5797,7 @@
    "us": "{NAME} IS STRONG{BR}ENOUGH ALREADY.{END}",
    "jp_addr": "02:B6E7",
    "jp": "{NAME}ハ　モウ{BR}チカライッパイデス。{END}",
-   "en": "{NAME} IS STRONG{BR}ENOUGH ALREADY.{END}"
+   "en": "{NAME} is already at{BR}full strength.{END}"
   },
   {
    "id": "LABEL_B12_BE1B",
@@ -5808,7 +5808,7 @@
    "us": "CONTINUE A GAME.{BR}SELECT A NUMBER.{NOWAIT}",
    "jp_addr": "02:B6F8",
    "jp": "ゲームノ　ツヅキヲ　ヤリマス。{BR}バンゴウヲ　エランデクダサイ。{NOWAIT}",
-   "en": "CONTINUE A GAME.{BR}SELECT A NUMBER.{NOWAIT}"
+   "en": "Continue a game.{BR}Choose a number.{NOWAIT}"
   },
   {
    "id": "LABEL_B12_BE35",
@@ -5819,7 +5819,7 @@
    "us": "CONTINUING GAME {NUMBER}{BR}.{TIMED}",
    "jp_addr": "02:B718",
    "jp": "デハ　{NUMBER}バンノゲームヲ　ハジ{BR}メマス。{TIMED}",
-   "en": "CONTINUING GAME {NUMBER}{BR}.{TIMED}"
+   "en": "Starting game{BR}number {NUMBER}.{TIMED}"
   },
   {
    "id": "LABEL_B12_BE45",
@@ -5841,7 +5841,7 @@
    "us": "WILL DELETE A{BR}SAVED GAME O.K.?{NOWAIT}",
    "jp_addr": "02:B76F",
    "jp": "セーブシタ　ゲームヲ　ケシマス。{BR}イイデスカ。{NOWAIT}",
-   "en": "WILL DELETE A{BR}SAVED GAME O.K.?{NOWAIT}"
+   "en": "Delete a saved{BR}game. All right?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_BE6F",
@@ -5852,7 +5852,7 @@
    "us": "DELETE A GAME.{BR}SELECT A NUMBER.{NOWAIT}",
    "jp_addr": "02:B787",
    "jp": "ナンバンノ　ゲームヲ　ケシマスカ。{NOWAIT}",
-   "en": "DELETE A GAME.{BR}SELECT A NUMBER.{NOWAIT}"
+   "en": "Delete which{BR}game?{NOWAIT}"
   },
   {
    "id": "LABEL_B12_BE82",
@@ -5863,7 +5863,7 @@
    "us": "GAME {NUMBER} HAS BEE{BR}N{BR}DELETED.{END}",
    "jp_addr": "02:B799",
    "jp": "{NUMBER}バンノ　ゲームヲ　ケシマシ{BR}タ。{END}",
-   "en": "GAME {NUMBER} HAS BEE{BR}N{BR}DELETED.{END}"
+   "en": "Game {NUMBER}{BR}deleted.{END}"
   },
   {
    "id": "LABEL_B12_BE93",
@@ -5874,7 +5874,7 @@
    "us": "{NAME} HAS BEEN{BR}TURNED TO STONE.{END}",
    "jp_addr": "02:B7AA",
    "jp": "{NAME}ハ　イシニ　ナッテシマッタ。{END}",
-   "en": "{NAME} HAS BEEN{BR}TURNED TO STONE.{END}"
+   "en": "{NAME} was turned{BR}to stone.{END}"
   },
   {
    "id": "LABEL_B12_BEA1",
@@ -5885,7 +5885,7 @@
    "us": "{ITEM} IS USED{BR}BY SOMEONE NOW.{END}",
    "jp_addr": "02:B7BA",
    "jp": "{ITEM}ハ　イマ　ダレカガ{BR}ツカッテシマッタ。{END}",
-   "en": "{ITEM} IS USED{BR}BY SOMEONE NOW.{END}"
+   "en": "{ITEM}{BR}is already in use.{END}"
   },
   {
    "id": "LABEL_B12_BEB6",
@@ -5896,7 +5896,7 @@
    "us": "THE SKY GRADUALLY{BR}CLEARS AND{PAUSE}",
    "jp_addr": "02:B7CF",
    "jp": "シダイニ　ソラガ　アカルクナッテイキ{BR}ヒトビトモ　ヘイワヲ　トリモドシタ。{NOWAIT}",
-   "en": "THE SKY GRADUALLY{BR}CLEARS AND{PAUSE}"
+   "en": "Little by little,{BR}the sky grew light,{PAUSE}"
   },
   {
    "id": "LABEL_B12_BED0",
@@ -5906,7 +5906,7 @@
    "hex": "DE50454143452049536052455455524E454420544F20DE64",
    "us": "THE PEACE IS{BR}RETURNED TO THE {PAUSE}",
    "jp_cont": true,
-   "en": "THE PEACE IS{BR}RETURNED TO THE {PAUSE}"
+   "en": "and the people{BR}found peace again.{PAUSE}"
   },
   {
    "id": "LABEL_B12_BEE8",
@@ -5917,7 +5917,7 @@
    "us": "ALGOL SYSTEM.{BR}A GENTLE BREEZE{PAUSE}",
    "jp_addr": "02:B7F4",
    "jp": "イマ　バヤマーレハ　サワヤカナ{BR}ソヨカゼニ　ツツマレテイル。{NOWAIT}",
-   "en": "ALGOL SYSTEM.{BR}A GENTLE BREEZE{PAUSE}"
+   "en": "Now Bayamare lay{BR}wrapped in a cool,{PAUSE}"
   },
   {
    "id": "LABEL_B12_BEFD",
@@ -5927,7 +5927,7 @@
    "hex": "434152455353455360C22E64",
    "us": "CARESSES{BR}BAYA MALAY.{PAUSE}",
    "jp_cont": true,
-   "en": "CARESSES{BR}BAYA MALAY.{PAUSE}"
+   "en": "gentle breeze.{PAUSE}"
   },
   {
    "id": "LABEL_B12_BF09",
@@ -5938,7 +5938,7 @@
    "us": "BUT DOES THE {BR}BREEZE KNOWS OF{PAUSE}",
    "jp_addr": "02:B813",
    "jp": "カレラノ　ナガク　クルシカッタタビヲ{BR}ソヨカゼハ　シッテイルノダロウカ。{NOWAIT}",
-   "en": "BUT DOES THE {BR}BREEZE KNOWS OF{PAUSE}"
+   "en": "Did that breeze{BR}know of their{PAUSE}"
   },
   {
    "id": "LABEL_B12_BF21",
@@ -5948,7 +5948,7 @@
    "hex": "DE48415244534849505320DC5448455920454E44555245443F64",
    "us": "THE HARDSHIPS THAT{BR}THEY ENDURED?{PAUSE}",
    "jp_cont": true,
-   "en": "THE HARDSHIPS THAT{BR}THEY ENDURED?{PAUSE}"
+   "en": "long, hard road?{PAUSE}"
   },
   {
    "id": "LABEL_B12_BF3B",
@@ -5959,7 +5959,7 @@
    "us": "ALIS AND HER{BR}COMPANY ON MYAU,{PAGE}ARE TOSSED INTO{BR}THE SKY.{END}",
    "jp_addr": "02:B837",
    "jp": "ミャウニ　ノッテイタ　アリサタチハ{BR}ソラニ　ホウリダサレテシマッタ。{END}",
-   "en": "ALIS AND HER{BR}COMPANY ON MYAU,{PAGE}ARE TOSSED INTO{BR}THE SKY.{END}"
+   "en": "Alisa and the{BR}others, riding on{PAGE}Myau, were thrown{BR}into the sky.{END}"
   },
   {
    "id": "LABEL_B12_BF64",
@@ -5970,7 +5970,7 @@
    "us": "ALIS HEARS NERO'S{BR}VOICE IN THE DEPTH{PAGE}OF HER SOUL;{BR}\"YOU'LL BE REBORN{PAGE}TO FIGHT FOR{BR}PEACE AGAIN.\"{PAGE}ALIS IS{BR}RESURRECTED.{END}",
    "jp_addr": "02:B85A",
    "jp": "ソノトキ　アリサノ　タマシイハ{BR}ネロノコエヲ　キイタ。{PAGE}オマエハ　フタタビ　イキテ{BR}ヘイワノタメニ　ツクスガイイ。{PAGE}アリサノ　タマシイハ　ヨミガエッタ。{END}",
-   "en": "ALIS HEARS NERO'S{BR}VOICE IN THE DEPTH{PAGE}OF HER SOUL;{BR}\"YOU'LL BE REBORN{PAGE}TO FIGHT FOR{BR}PEACE AGAIN.\"{PAGE}ALIS IS{BR}RESURRECTED.{END}"
+   "en": "Then Alisa's soul{BR}heard Nero's voice.{PAGE}It told her to live{BR}once more and give{PAGE}herself to peace.{PAGE}Alisa came back to{BR}life.{END}"
   },
   {
    "id": "LABEL_B12_BFC4",
@@ -5981,7 +5981,7 @@
    "us": "THE SOUND IS{BR}HEARTWARMING.{END}",
    "jp_addr": "02:B8A7",
    "jp": "ココロガ　ナゴムヨウナ{BR}ウツクシイ　ネイロダ。{END}",
-   "en": "THE SOUND IS{BR}HEARTWARMING.{END}"
+   "en": "What a beautiful,{BR}soothing sound.{END}"
   }
  ],
  "jp_only": [

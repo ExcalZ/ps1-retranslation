@@ -1,4 +1,4 @@
--- Save a game. SAVE from the command menu: "WILL SAVE THE GAME..." (a button wait),
+-- Save a game. SAVE from the command menu: the save prompt (a button wait if it has two pages),
 -- the slot list (button 2 on slot 1), "YOU SELECTED 1 / IS THAT O.K." with YES/NO (button 2 on
 -- YES), the naming screen (type_name: every key checked under the cursor; a slot already named
 -- skips it and says "WELL, SAVING 1." / "COMPLETED." instead); the name must then be in the
@@ -21,10 +21,11 @@ function scenario()
   open_command_menu()
   for _ = 1, 4 do press("down", 4, 10) end
   press("two", 4, 0)
-  wait_for_button_wait(300, "WILL SAVE THE GAME")
+  -- the stock's two pages wait for a button first; a one-page prompt opens the slot list at once
+  wait_until(function() return at_button_wait() or #slots() >= 5 end, 300, "the save prompt")
   window_line("save")
   shot("save")
-  press("one", 4, 0)
+  if #slots() < 5 then press("one", 4, 0) end
   wait_until(function() return #slots() >= 5 end, 300, "the slot list")
   window_line("slots")
   log("slots: " .. table.concat(slots(), " / "))

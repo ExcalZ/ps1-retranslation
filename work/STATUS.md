@@ -239,6 +239,17 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
   102, 107 (every falls-through chain whole) and 178 read back as script lines; every
   scenario passes.
 
+* **The translation is complete (2026-10-17).** The last 193 entries: the 20 cut-scenes
+  (Myau, Tyron and Lutz joining, Myau's wings, the credits' names centered in the 120 px
+  line) and the 173 messages (battle, items, shops, hospital, church, save and continue,
+  the monster talk, the ending's breeze). Every entry of `work/dialogue.json` is from the JP
+  now. Battle messages put `{ENEMY}` (66 px at its widest, Horseshoe Crab) on a line of its
+  own so most stay two lines; the vehicle lines name the vehicle as the JP does
+  (`{ITEM}` is set: boarding and getting off are both item uses). `savegame.lua` takes a
+  one-page save prompt (the slot list opens at once) as well as the stock's two pages.
+  Bytes: bank 32 10,141, bank 33 3,173, bank 34 1,154. In game: the battle, shop, save,
+  continue, hospital, church, sell and menu scenarios, and the opening.
+
 ## Next, in order
 
 1. **Left from the survey:** a cross-check against Maxim's
@@ -249,6 +260,6 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
 3. **More scenarios** (as the translation needs them): the ending.
 4. **Engine**: the naming screen with lower case (later). Not yet seen with
    `vwf_cutscene`: the Myau, governor and ending scenes (no scenario reaches them yet).
-5. **Translation**: the messages and the cut-scenes (the dictionary keeps
-   bank 32 in room: watch linecheck's byte count); then proofreading in play, then release
-   packaging (BPS + Patcher.html).
+5. **Proofreading in play** (the translation is complete; scenes no scenario reaches yet:
+   Myau's, Tyron's and Lutz's cut-scenes, the ending, the credits), then release packaging
+   (BPS + Patcher.html).

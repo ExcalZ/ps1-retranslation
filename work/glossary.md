@@ -290,7 +290,11 @@ for the Laconian Axe, Aeroprism, Berserker).
 | ダンジョン | dungeon | dungeon |
 | マジック / マホウ | magic | magic |
 | マッドドクター | the Mad Doctor | the mad doctor |
-| アルテムハムラム アルテムハムハムストラトポン | the church's spell, kept as the JP's sounds | SABRUS CABRUS SEBRUS BASS |
+| アルテムハムラム アルテムハムハムストラトポン | the church's spell, kept as the JP's sounds: "Altem ham-ram, altem ham-ham, strato-pon!" | SABRUS CABRUS SEBRUS BASS |
+| ステル (an item) | drop, as the menu's Drop | drop / throw away |
+| カナシバリ | bound ("was bound", "broke free"), as the Bindwa spell | tied up |
+| アーマーショップ / ドラッグストア / ツールショップ | the armor shop / the drugstore / the tool shop | armory / first food shop / second-hand shop |
+| ホスピタル / キョウカイ | the hospital / the church | the same |
 | カイゲンレイ | martial law | martial law |
 | メセタ (the money line) | Meseta (the owner, 2026-10-17: the label in the face, "Meseta 2000") | MST |
 
@@ -304,6 +308,8 @@ for the Laconian Axe, Aeroprism, Berserker).
   * ンダス (`01DE`-`01E6`, the village that welcomes them): a gentler, courteous Southern
     ("Why, there's...", "sure enough", "don't ya know", "Y'all from Palma are mighty
     welcome").
+* **Myau has no pronoun**: the JP gives none (the US says "he" in one scene and "she" in
+  another); the text repeats the name or says "it" of a thing, never of Myau.
 * **In-jokes the US replaced are kept** from the JP: "big sister Choko" (`0188`), Chie of
   the letters page (`027A`, where the US put an Aeroprism hint).
 
