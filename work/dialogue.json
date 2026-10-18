@@ -11,7 +11,7 @@
    "jp_addr": "02:835C",
    "jp": "ワタシハ　スエロ。アリサノ　キモチハ{BR}ヨクワカルワ。モウダレモ　アナタヲ{PAGE}",
    "falls_through": true,
-   "en": "I'M SUELO. I KNOW{BR}HOW YOU MUST FEEL,{PAGE}DEAR,NO ONE CAN{BR}STOP YOU FROM {PAGE}DOING WHAT YOU {BR}KNOW YOU MUST DO.{PAGE}"
+   "en": "I'm Suelo. I know{BR}how you feel,{PAGE}Alisa. No one can{BR}stop you now.{PAGE}"
   },
   {
    "id": "0004",
@@ -22,7 +22,7 @@
    "us": "BUT IF YOU SHOULD{BR}EVER BE WOUNDED{PAGE}IN BATTLE,COME{BR}HERE TO REST.{END}",
    "jp_addr": "02:8380",
    "jp": "トメルコトハ　デキナイ。　デモ　モシ{BR}タタカイデ　キズツイタトキハ{END}",
-   "en": "BUT IF YOU SHOULD{BR}EVER BE WOUNDED{PAGE}IN BATTLE,COME{BR}HERE TO REST.{END}"
+   "en": "But if you're ever{BR}hurt in battle,{END}"
   },
   {
    "id": "0006",
@@ -33,7 +33,7 @@
    "us": "PLEASE REST{BR}YOURSELF.{PAGE}YOU ARE WELCOME {BR}HERE AT ANYTIME.{END}",
    "jp_addr": "02:83A1",
    "jp": "ココデ　ユックリ　ヤスンデ　オユキ。{PAGE}ムリヲ　シナイヨウニネ。{BR}マタ　イツデモ　イラッシャイ。{END}",
-   "en": "PLEASE REST{BR}YOURSELF.{PAGE}YOU ARE WELCOME {BR}HERE AT ANYTIME.{END}"
+   "en": "rest here as long{BR}as you like.{PAGE}Don't overdo it.{BR}Do come again.{END}"
   },
   {
    "id": "0008",
@@ -45,7 +45,7 @@
    "jp_addr": "02:83D1",
    "jp": "ボクハ　ネキセ。{BR}キクトコロニ　ヨルト{PAGE}",
    "falls_through": true,
-   "en": "I'M NEKISE. ONE{BR}HEARS LOTS OF{PAGE}"
+   "en": "I'm Nekise. From{BR}what I hear,{PAGE}"
   },
   {
    "id": "000A",
@@ -57,7 +57,7 @@
    "jp_addr": "02:83E5",
    "jp": "ユウシャ　タイロンハ　シオントイウ{BR}マチニ　イルラシイ。{PAGE}",
    "falls_through": true,
-   "en": "STORIES, YOU KNOW,{BR}BUT SOME SAY THAT{PAGE}A FIGHTER NAMED {BR}ODIN LIVES IN A{PAGE}TOWN CALLED SCION.{BR}"
+   "en": "the hero Tyron is{BR}in a town called{PAGE}Scion.{PAGE}"
   },
   {
    "id": "000C",
@@ -69,7 +69,7 @@
    "jp_addr": "02:8402",
    "jp": "アッ。ソレト　ネロカラ{BR}ラコニアンポット　トイウ　ツボヲ{PAGE}",
    "falls_through": true,
-   "en": "ALSO, I HAVE A{PAGE}LACONIAN POT GIVEN{BR}"
+   "en": "Oh, and Nero left{BR}a pot with me,{PAGE}a Laconia Pot.{PAGE}"
   },
   {
    "id": "000E",
@@ -80,7 +80,7 @@
    "us": "BY NERO. THAT{PAGE}WOULD BE HELPFUL{BR}TO YOU IN YOUR {PAGE}TASK.{END}",
    "jp_addr": "02:841F",
    "jp": "アズカッテタンダ。アトデ　ヤクニ{BR}タツダロウカラ　モッテイクトイイヨ。{END}",
-   "en": "BY NERO. THAT{PAGE}WOULD BE HELPFUL{BR}TO YOU IN YOUR {PAGE}TASK.{END}"
+   "en": "It should come in{BR}handy. Take it.{END}"
   },
   {
    "id": "0010",
@@ -91,7 +91,7 @@
    "us": "I WISH I COULD{BR}HELP YOU MORE.{PAGE}I PRAY FOR YOUR {BR}SAFETY.{END}",
    "jp_addr": "02:8443",
    "jp": "チカラニナレナクテ　ゴメン。{BR}ブジヲ　イノッテルヨ。{END}",
-   "en": "I WISH I COULD{BR}HELP YOU MORE.{PAGE}I PRAY FOR YOUR {BR}SAFETY.{END}"
+   "en": "Sorry I can't help{BR}you more.{PAGE}Stay safe.{END}"
   },
   {
    "id": "0012",
@@ -102,7 +102,7 @@
    "us": "THE CAMINEET{BR}RESIDENTIAL AREA{PAGE}IS UNDER{BR}MARTIAL LAW.{END}",
    "jp_addr": "02:845E",
    "jp": "コノ　カミニート　キョジュウクハ{BR}カイゲンレイガ　シカレテイルンダ。{END}",
-   "en": "THE CAMINEET{BR}RESIDENTIAL AREA{PAGE}IS UNDER{BR}MARTIAL LAW.{END}"
+   "en": "The residential{BR}district of{PAGE}Camineet is under{BR}martial law.{END}"
   },
   {
    "id": "0014",
@@ -113,7 +113,7 @@
    "us": "YOU NEED A{BR}DUNGEON KEY TO{PAGE}OPEN LOCKED DOORS.{END}",
    "jp_addr": "02:8481",
    "jp": "カギノ　カカッタ　ドアヲ　アケルニハ{BR}ダンジョンキーガ　ヒツヨウデス。{END}",
-   "en": "YOU NEED A{BR}DUNGEON KEY TO{PAGE}OPEN LOCKED DOORS.{END}"
+   "en": "To open a locked{BR}door, you need{PAGE}a Dungeon Key.{END}"
   },
   {
    "id": "0016",
@@ -124,7 +124,7 @@
    "us": "IN SOME DUNGEONS{BR}YOU WILL NOT GET{PAGE}FAR WITHOUT SOME{BR}SORT OF LIGHT.{END}",
    "jp_addr": "02:84A4",
    "jp": "アカリガナイト　ススメナイ{BR}ダンジョンモ　アルヨ。{END}",
-   "en": "IN SOME DUNGEONS{BR}YOU WILL NOT GET{PAGE}FAR WITHOUT SOME{BR}SORT OF LIGHT.{END}"
+   "en": "Some dungeons{BR}can't be crossed{PAGE}without a light.{END}"
   },
   {
    "id": "0018",
@@ -135,7 +135,7 @@
    "us": "THERE IS A{BR}SPACEPORT TO THE {PAGE}WEST OF CAMINEET.{END}",
    "jp_addr": "02:84BE",
    "jp": "カミニートノ　ニシハ　スペースポート{BR}デス。{END}",
-   "en": "THERE IS A{BR}SPACEPORT TO THE {PAGE}WEST OF CAMINEET.{END}"
+   "en": "To the west of{BR}Camineet is the{PAGE}spaceport.{END}"
   },
   {
    "id": "001A",
@@ -146,7 +146,7 @@
    "us": "IF YOU WANT TO{BR}MAKE A DEAL, YOU {PAGE}SHOULD HEAD FOR{BR}THE PORT TOWN.{END}",
    "jp_addr": "02:84D4",
    "jp": "ミナトマチデハ　イロイロナ　トリヒキ{BR}ガ　デキル　トイウ　ハナシダ。{END}",
-   "en": "IF YOU WANT TO{BR}MAKE A DEAL, YOU {PAGE}SHOULD HEAD FOR{BR}THE PORT TOWN.{END}"
+   "en": "They say you can{BR}strike all kinds{PAGE}of deals in the{BR}port town.{END}"
   },
   {
    "id": "001C",
@@ -157,7 +157,7 @@
    "us": "YOU HAD BETTER{BR}NOT LEAVE THE {PAGE}RESIDENTIAL AREA.{END}",
    "jp_addr": "02:84F6",
    "jp": "キョジュウクノ　ソトニハ　デナイホウ{BR}ガ　ミノタメダ。{END}",
-   "en": "YOU HAD BETTER{BR}NOT LEAVE THE {PAGE}RESIDENTIAL AREA.{END}"
+   "en": "For your sake,{BR}don't leave the{PAGE}residential{BR}district.{END}"
   },
   {
    "id": "001E",
@@ -168,7 +168,7 @@
    "us": "UNLESS YOU HOPE TO{BR}DIE, YOU HAD BEST{PAGE}STAY HERE.{END}",
    "jp_addr": "02:8511",
    "jp": "シニタクナカッタラ　ココニイルンダ。{END}",
-   "en": "UNLESS YOU HOPE TO{BR}DIE, YOU HAD BEST{PAGE}STAY HERE.{END}"
+   "en": "If you don't want{BR}to die, you'll{PAGE}stay right here.{END}"
   },
   {
    "id": "0020",
@@ -179,7 +179,7 @@
    "us": "YOU MAY NOT PASS.{END}",
    "jp_addr": "02:8524",
    "jp": "ココヲ　トオスワケニハ　イカナイ。{END}",
-   "en": "YOU MAY NOT PASS.{END}"
+   "en": "I can't let you{BR}through.{END}"
   },
   {
    "id": "0022",
@@ -190,7 +190,7 @@
    "us": "YOU CANNOT PASS{BR}WITHOUT ROADPASS.{END}",
    "jp_addr": "02:8536",
    "jp": "ロードパスノ　ナイモノハ　ココヲ{BR}トオレナイ。{END}",
-   "en": "YOU CANNOT PASS{BR}WITHOUT ROADPASS.{END}"
+   "en": "No Road Pass, no{BR}getting through{PAGE}here.{END}"
   },
   {
    "id": "0024",
@@ -201,7 +201,7 @@
    "us": "YOU MAY PROCEED.{END}",
    "jp_addr": "02:854E",
    "jp": "トオッテ　ヨシ。{END}",
-   "en": "YOU MAY PROCEED.{END}"
+   "en": "You may pass.{END}"
   },
   {
    "id": "0026",
@@ -3829,7 +3829,7 @@
    "us": "SCUM! DO NOT SNIFF{BR}AROUND IN LASSIC'S{BR}AFFAIRS! LEARN{BR}THIS LESSON WELL!{PAGE}NERO! WHAT HAPP-{BR}ENED! DON'T DIE!{END}",
    "jp_addr": "02:B8BF",
    "jp": "ラシークサマノ　コトヲ　コソコソト{BR}カギマワリヤガッテ。{BR}コレカラハ　セイゼイ　オトナシク{BR}シテイルコトダナ。{PAGE}ニイサン。{BR}ナニガ　アッタノ。{BR}シッカリシテ。{END}",
-   "en": "SCUM! DO NOT SNIFF{BR}AROUND IN LASSIC'S{BR}AFFAIRS! LEARN{BR}THIS LESSON WELL!{PAGE}NERO! WHAT HAPP-{BR}ENED! DON'T DIE!{END}"
+   "en": "So you've been snooping{BR}into Lord LaShiec's affairs.{BR}From now on, you'll keep{BR}nice and quiet.{PAGE}Brother! What happened?{BR}Hang on!{END}"
   },
   {
    "id": "LABEL_B4FC",
@@ -3840,7 +3840,7 @@
    "us": "ALIS,LISTEN!{BR}LASSIC IS LEADING{BR}OUR WORLD TO{BR}DESTRUCTION. I{PAGE}TRIED TO DISCOVER{BR}HIS PLANS, BUT I{BR}COULD NOT DO MUCH{BR}BY MYSELF.{PAGE}I HAVE HEARD OF A{BR}MAN WITH GREAT {BR}STRENGTH NAMED {BR}\"ODIN.\" MAYBE THE{PAGE}TWO OF YOU CAN{BR}STOP LASSIC.{BR}ALIS,IT'S TOO LATE{BR}FOR ME. BE STRONG.{END}",
    "jp_addr": "02:B90F",
    "jp": "アリサ。キイテクレ。{BR}ラシークハ　コノホシニ　キョダイナ{BR}ワザワイヲ　マネイテシマッタ。{BR}セカイハ　ハメツニ　ムカッテイル。{PAGE}オレハ　ラシークガ　ナニヲ　タクランデ{BR}イルノカ　サグッテイタンダ。{BR}ケド　オレヒトリデハ　ドウスルコトモ{BR}デキナカッタ。{PAGE}タビノ　トチュウ　タイロン　トイウ{BR}ツヨイ　オトコノ　ウワサヲ　キイタ。{BR}カレト　イッショナラ　ラシークヲ　タオシ{BR}ヘイワヲ　トリモドスコトガデキルダロウ。{PAGE}アリサ。{BR}オレハ　モウ　ダメダ。{BR}オマエ　ヒトリヲ　ノコシテイク　オレヲ{BR}ユルシテクレ。{END}",
-   "en": "ALIS,LISTEN!{BR}LASSIC IS LEADING{BR}OUR WORLD TO{BR}DESTRUCTION. I{PAGE}TRIED TO DISCOVER{BR}HIS PLANS, BUT I{BR}COULD NOT DO MUCH{BR}BY MYSELF.{PAGE}I HAVE HEARD OF A{BR}MAN WITH GREAT {BR}STRENGTH NAMED {BR}\"ODIN.\" MAYBE THE{PAGE}TWO OF YOU CAN{BR}STOP LASSIC.{BR}ALIS,IT'S TOO LATE{BR}FOR ME. BE STRONG.{END}"
+   "en": "Alisa... Listen to me.{BR}LaShiec has brought a{BR}terrible calamity down on{BR}this planet.{PAGE}The world is headed for ruin.{BR}I was trying to find out{BR}what LaShiec is plotting.{BR}But alone, I was powerless.{PAGE}On my travels I heard of{BR}a strong man named Tyron.{BR}With him, you could defeat{BR}LaShiec and restore peace.{PAGE}Alisa... I'm finished.{BR}Forgive me for leaving{BR}you all alone.{END}"
   },
   {
    "id": "LABEL_B5D5",
@@ -3851,7 +3851,7 @@
    "us": "I WILL MAKE SURE{BR}THAT MY BROTHER{BR}DIED NOT IN VAIN!{BR}WATCH OVER AND{PAGE}PROTECT ME, NERO!{END}",
    "jp_addr": "02:BA08",
    "jp": "アリサハ　ニイサンノ　イノチヲ　ムダニ{BR}シナイタメニ　タタカイニ　イキマス。{BR}キット　ミマモッテイテネ。{BR}ニイサン。{END}",
-   "en": "I WILL MAKE SURE{BR}THAT MY BROTHER{BR}DIED NOT IN VAIN!{BR}WATCH OVER AND{PAGE}PROTECT ME, NERO!{END}"
+   "en": "I'll fight, Brother, so that{BR}your life won't have been{BR}given in vain. Watch over{BR}me, won't you?{END}"
   },
   {
    "id": "LABEL_B617",

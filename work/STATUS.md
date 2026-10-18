@@ -183,6 +183,15 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
   spaceport's Gashiko / Uzo / Skure). Every scenario passes with them (`--words` reads them
   back from the face).
 
+* **Translation begun (2026-10-17): the opening and Camineet.** From the JP: the intro
+  caption (AW 342, SPRING / CAMINEET, PALMA: the JP's two unread kanji are 春 and 居住, from
+  the JP font's tiles), the three opening cut-scenes (LABEL_B49B, B4FC, B5D5) and Camineet's
+  people (dialogue 0002-0024: Suelo, Nekise, the townsfolk, the soldiers and the gate guards).
+  Window lines are 80 px (about 16 letters), two to a page as the stock; cut-scene lines
+  120 px, four to a page. Seen in game: the opening's 7 pages and Suelo's 5 read back as
+  written, and every Camineet talk id shows only script lines. `tools/applyedits.py` writes a
+  tried edits file into the JSON.
+
 ## Next, in order
 
 1. **Left from the survey:** a cross-check against Maxim's
@@ -195,7 +204,6 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
    naming screen with lower case (later). Not yet seen with `vwf_cutscene`: the Myau, governor and ending scenes
    (no scenario reaches them yet). Then a dictionary generated from the
    new script, if bank 32 gets tight.
-5. **Translation**: the owner's answers to the glossary's six questions (an engine change
-   if 14-letter items or 8-cell spells are chosen), the names into `script.json`, then the
-   script bank by bank; then proofreading in play, then release packaging (BPS +
+5. **Translation**: on from Camineet (Parolit, 0026 on), then the rest of the dialogue, the
+   messages and the cut-scenes; then proofreading in play, then release packaging (BPS +
    Patcher.html).

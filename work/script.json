@@ -2416,7 +2416,7 @@
      "jp_addr": "03:BF22",
      "jp_cells": 13,
      "jp": "AW　342年　{$BB}",
-     "en": "SPACE CENTURY 342,"
+     "en": "AW 342, SPRING"
     },
     {
      "id": 1,
@@ -2433,7 +2433,7 @@
      "jp_cells": 13,
      "jp_upper": "03:BF40",
      "jp": "パルマ星　カミニート{$BD}{$BE}区",
-     "en": "CAMINEET ON PALMA"
+     "en": "CAMINEET, PALMA"
     }
    ]
   },

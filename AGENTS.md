@@ -113,7 +113,8 @@ quotes.
   battle's VRAM as a tile sheet, free tiles marked)
   (`docs/pipeline.md` section 7 has the table and each one's check). To see a line in the game
   before committing it: `python tools/trybuild.py EDITS.json OUT.sms`, then a scenario with
-  `--rom=OUT.sms --dialogue=OUT.sms.dialogue.json --expect=...`. Never run Mesen.exe directly without a
+  `--rom=OUT.sms --dialogue=OUT.sms.dialogue.json --expect=...` (then `tools/applyedits.py EDITS.json`
+  writes them into the JSON). Never run Mesen.exe directly without a
   `settings.json` beside it (its first-run wizard blocks the test runner). The GUI debugger
   imports `PSI_Disasm/ps1built.sym`. Emulicious is the second opinion on accuracy.
 
