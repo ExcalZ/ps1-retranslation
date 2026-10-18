@@ -214,7 +214,7 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
   shops read back through the new words.
 * **Motavia translated (2026-10-17).** From the JP, 97 more dialogue entries (289 of 341):
   Paseo, its spaceport and the Governor (0080-00B0), Uzo and the Soothe Flute (012E-0146),
-  Casba (0166-0170), Sopia, Miki the gamer and the village chief (01E8-0212), the Guaran
+  Casba (0166-0170), Sopia, Miki the gamer and the village chief (01E8-0210), the Guaran
   armor (0224-022A), the eclipse fire, the Naura shortcake and Lutz's teacher (023A-0262),
   the passage boy and the Motavians (0282-0288), the Governor's last scenes and the ending
   narration (02A6-02AA). The JP's {NUMBER} prices are written out as the US has them (the
@@ -223,6 +223,19 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
   few words across the JP's split where a lone word would sit on a page. Bank 32 is 11,122
   bytes (the dictionary re-chosen for the larger script). In game: the Governor (talk 55,
   9 pages) and the spaceport (talk 44) read back as script lines; every scenario passes.
+* **Dezolis and the end translated (2026-10-17): every dialogue entry is now from the JP.**
+  The last 53: Skure, the Laconia arms and the eclipse (01A0-01C6), the two Dezolian
+  villages (01C8-01E6), LaShiec's double and LaShiec (0262-0270), the possessed man's
+  thanks and the queen question (0272-0278) with its answers 0212 and 0230 (0212 is that
+  answer, not a Sopia line: its Motavia wording is replaced). The JP gives the two Dezolian
+  villages their own speech, ズラ where Palmans are hated and ンダス where they are welcome
+  (the US's "ze" and "yes, indeed"): here ", yup" and "that there is", light and
+  consistent, for the owner to confirm. 027A (talk 178) is the JP's in-joke, Chie of the
+  letters page, where the US put an Aeroprism hint, as the Palma in-jokes are kept.
+  027C-0280 are called by nothing in either version: the JP's copies of the passage boy's
+  line, given the same English as 0282. Bank 32 is 10,663 bytes. In game: talks 96-98,
+  102, 107 (every falls-through chain whole) and 178 read back as script lines; every
+  scenario passes.
 
 ## Next, in order
 
@@ -234,6 +247,6 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
 3. **More scenarios** (as the translation needs them): the ending.
 4. **Engine**: the naming screen with lower case (later). Not yet seen with
    `vwf_cutscene`: the Myau, governor and ending scenes (no scenario reaches them yet).
-5. **Translation**: Dezolis, the messages and the cut-scenes (the dictionary keeps
+5. **Translation**: the messages and the cut-scenes (the dictionary keeps
    bank 32 in room: watch linecheck's byte count); then proofreading in play, then release
    packaging (BPS + Patcher.html).

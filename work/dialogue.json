@@ -2325,7 +2325,7 @@
    "us": "WE ARE CONFISCAT-{BR}ING YOUR PASSPORT.{END}",
    "jp_addr": "02:9B9E",
    "jp": "パスポートヲ　ボッシュウスルゾ。{END}",
-   "en": "WE ARE CONFISCAT-{BR}ING YOUR PASSPORT.{END}"
+   "en": "We're confiscating{BR}your passport.{END}"
   },
   {
    "id": "01A2",
@@ -2336,7 +2336,7 @@
    "us": "WELCOME TO SKURE{BR}ON DEZORIS.{PAGE}IT'S FREEZING{BR}OUTSIDE, ISN'T IT?{END}",
    "jp_addr": "02:9BAF",
    "jp": "ココハ　デゾリスセイノ　スクレ。{BR}ソトハ　サムカッタデショウ。{END}",
-   "en": "WELCOME TO SKURE{BR}ON DEZORIS.{PAGE}IT'S FREEZING{BR}OUTSIDE, ISN'T IT?{END}"
+   "en": "This is Skure, on{BR}Dezolis. Cold out{PAGE}there, wasn't it?{END}"
   },
   {
    "id": "01A4",
@@ -2347,7 +2347,7 @@
    "us": "MOST EMIGRANTS{BR}FROM PALMA{PAGE}SETTLE HERE.{END}",
    "jp_addr": "02:9BCF",
    "jp": "パルマセイカラノ　イミンハ　ホトンド{BR}コノマチニ　スンデイマス。{END}",
-   "en": "MOST EMIGRANTS{BR}FROM PALMA{PAGE}SETTLE HERE.{END}"
+   "en": "Most immigrants{BR}from Palma live{PAGE}here in this town.{END}"
   },
   {
    "id": "01A6",
@@ -2359,7 +2359,7 @@
    "jp_addr": "02:9BEF",
    "jp": "ワタシ　コノホシノコトハ{BR}ヨクシラナイケド　キタノ　ヤマオクニ{PAGE}",
    "falls_through": true,
-   "en": "I DON'T KNOW A LOT{BR}ABOUT THIS PLANET,{PAGE}"
+   "en": "I don't know much{BR}about this planet,{PAGE}but I hear that in{BR}the mountains far{PAGE}"
   },
   {
    "id": "01A8",
@@ -2370,7 +2370,7 @@
    "us": "BUT WORD HAS IT{BR}THAT THERE IS A{PAGE}TOWN OF NATIVE{BR}DEZORIANS IN THE {PAGE}FAR REACHES OF THE{BR}MOUNTAINS.{END}",
    "jp_addr": "02:9C0F",
    "jp": "コノホシノ　ジュウミン　デゾリアンノ{BR}ムラガ　アルソウヨ。{END}",
-   "en": "BUT WORD HAS IT{BR}THAT THERE IS A{PAGE}TOWN OF NATIVE{BR}DEZORIANS IN THE {PAGE}FAR REACHES OF THE{BR}MOUNTAINS.{END}"
+   "en": "to the north is a{BR}Dezolian village,{PAGE}home to the{BR}planet's people.{END}"
   },
   {
    "id": "01AA",
@@ -2382,7 +2382,7 @@
    "jp_addr": "02:9C2C",
    "jp": "ナニ　ラシークヲ　タオスンダト。{BR}ソレナラバ　ラコニアデ　デキタ{PAGE}",
    "falls_through": true,
-   "en": "IF YOU REALLY HOPE{BR}TO KILL LASSIC,{PAGE}"
+   "en": "What? You'll beat{BR}LaShiec? Then{PAGE}"
   },
   {
    "id": "01AC",
@@ -2394,7 +2394,7 @@
    "jp_addr": "02:9C4D",
    "jp": "ソード　アクス　シールド　アーマー{BR}ヲ　ソロエナサレ。{PAGE}",
    "falls_through": true,
-   "en": "YOU HAD BEST FIND{BR}A SWORD, AXE,{PAGE}SHIELD, ARMOR{BR}MADE OF LACONIA.{PAGE}"
+   "en": "gather the sword,{BR}axe, shield, and{PAGE}armor of Laconia.{PAGE}"
   },
   {
    "id": "01AE",
@@ -2406,7 +2406,7 @@
    "jp_addr": "02:9C69",
    "jp": "コレラノ　ブキハ　サイキョウノ{BR}チカラヲ　ハッキスルダロウ。{PAGE}",
    "falls_through": true,
-   "en": "SUCH WEAPONS ARE {BR}STRONGEST.{PAGE}"
+   "en": "Those arms will{BR}show their full{PAGE}"
   },
   {
    "id": "01B0",
@@ -2417,7 +2417,7 @@
    "us": "I PRAY FOR YOUR {BR}SAFETY.{END}",
    "jp_addr": "02:9C88",
    "jp": "ブジヲ　イノッテイル。{END}",
-   "en": "I PRAY FOR YOUR {BR}SAFETY.{END}"
+   "en": "power. I pray you{BR}come to no harm.{END}"
   },
   {
    "id": "01B2",
@@ -2429,7 +2429,7 @@
    "jp_addr": "02:9C94",
    "jp": "ラコニアデ　デキタ　ブキハ　セイナル{BR}チカラヲ　ヒメテイルンダ。{PAGE}",
    "falls_through": true,
-   "en": "ARMS MADE OF{BR}LACONIA CONCEAL{PAGE}HOLY POWER. LASSIC"
+   "en": "Arms made of{BR}Laconia hold a{PAGE}holy power, and{BR}LaShiec hates it.{PAGE}"
   },
   {
    "id": "01B4",
@@ -2441,7 +2441,7 @@
    "jp_addr": "02:9CB4",
    "jp": "ラシークハ　ソレヲ　キラッテ{BR}アルゴル　タイヨウケイノ　ワクセイノ{PAGE}",
    "falls_through": true,
-   "en": "FEARS THIS POWER{PAGE}AND HAS BEEN{BR}RUNNING AND HIDING{PAGE}IN DIFFERENT{BR}"
+   "en": "They say he hid{BR}them all over{PAGE}"
   },
   {
    "id": "01B6",
@@ -2452,7 +2452,7 @@
    "us": "PLACES IN THE {PAGE}PLANETS OF THE {BR}ALGOL SYSTEM.{END}",
    "jp_addr": "02:9CD6",
    "jp": "アチコチニ　カクシテシマッタトイウ。{END}",
-   "en": "PLACES IN THE {PAGE}PLANETS OF THE {BR}ALGOL SYSTEM.{END}"
+   "en": "the planets of the{BR}Algol system.{END}"
   },
   {
    "id": "01B8",
@@ -2463,7 +2463,7 @@
    "us": "DEZORIS IS A{BR}WORLD OF ICE.{END}",
    "jp_addr": "02:9CE9",
    "jp": "デゾリスセイハ　コオリノホシデス。{END}",
-   "en": "DEZORIS IS A{BR}WORLD OF ICE.{END}"
+   "en": "Dezolis is a{BR}planet of ice.{END}"
   },
   {
    "id": "01BA",
@@ -2474,7 +2474,7 @@
    "us": "THERE ARE PLACES{BR}IN THE MOUNTAINS{PAGE}WHERE THE ICE IS{BR}SOFT AND{PAGE}IMPASSABLE TO{BR}THOSE ON FOOT.{END}",
    "jp_addr": "02:9CFB",
    "jp": "コオリノ　ヤマノナカニハ{BR}クズレヤスイトコロモ　アルヨウデス。{END}",
-   "en": "THERE ARE PLACES{BR}IN THE MOUNTAINS{PAGE}WHERE THE ICE IS{BR}SOFT AND{PAGE}IMPASSABLE TO{BR}THOSE ON FOOT.{END}"
+   "en": "In the ice{BR}mountains, some{PAGE}places seem to{BR}crumble easily.{END}"
   },
   {
    "id": "01BC",
@@ -2485,7 +2485,7 @@
    "us": "THE ALTIPLANO{BR}PLATEAU IS AT THE {PAGE}TOP OF THE ICE{BR}MOUNTAIN.{END}",
    "jp_addr": "02:9D1B",
    "jp": "アルチプラノコウゲンハ　マワリヲ{BR}コオリノ　ヤマニ　カコマレテイマス。{END}",
-   "en": "THE ALTIPLANO{BR}PLATEAU IS AT THE {PAGE}TOP OF THE ICE{BR}MOUNTAIN.{END}"
+   "en": "The Altiplano{BR}plateau is ringed{PAGE}by ice mountains.{END}"
   },
   {
    "id": "01BE",
@@ -2497,7 +2497,7 @@
    "jp_addr": "02:9D3F",
    "jp": "コノホシハ　ヒャクネンニ　イチド{BR}ニッショクガ　アリマス。{PAGE}",
    "falls_through": true,
-   "en": "AN ECLIPSE OCCURS{BR}ON THIS PLANET{PAGE}ONCE EVERY HUNDRED{BR}YEARS. A TORCH{PAGE}"
+   "en": "Once in a hundred{BR}years, this planet{PAGE}has an eclipse.{BR}The fire lit then{PAGE}"
   },
   {
    "id": "01C0",
@@ -2509,7 +2509,7 @@
    "jp_addr": "02:9D5D",
    "jp": "ソノトキニ　トモサレタ　ホノオハ{BR}イクリプストーチト　ヨバレ{PAGE}",
    "falls_through": true,
-   "en": "LIT DURING AN{BR}ECLIPSE IS CALLED{PAGE}AN \"ECLIPSE TORCH\""
+   "en": "is called the{BR}Eclipse Torch,{PAGE}"
   },
   {
    "id": "01C2",
@@ -2520,7 +2520,7 @@
    "us": "AND IS REGARDED{PAGE}AS HOLY BY THE {BR}DEZORIANS.{END}",
    "jp_addr": "02:9D7C",
    "jp": "シンセイナル　ホノオトシテ{BR}デゾリアンニ　マツラレテイルノデス。{END}",
-   "en": "AND IS REGARDED{PAGE}AS HOLY BY THE {BR}DEZORIANS.{END}"
+   "en": "and the Dezolians{BR}revere it as a{PAGE}sacred flame.{END}"
   },
   {
    "id": "01C4",
@@ -2532,7 +2532,7 @@
    "jp_addr": "02:9D9D",
    "jp": "グアランノ　シタイオキバノ{BR}シニンガ　ヨミガエッタソウダ。{PAGE}",
    "falls_through": true,
-   "en": "THE DEAD GUARON{BR}MORGUE HAVE BEEN{PAGE}CALLED BACK TO{BR}"
+   "en": "They say the dead{BR}in Guaran's morgue{PAGE}have risen again.{PAGE}"
   },
   {
    "id": "01C6",
@@ -2543,7 +2543,7 @@
    "us": "LIFE! WHAT FEAR!{END}",
    "jp_addr": "02:9DBB",
    "jp": "オソロシヤ。{END}",
-   "en": "LIFE! WHAT FEAR!{END}"
+   "en": "How dreadful.{END}"
   },
   {
    "id": "01C8",
@@ -2554,7 +2554,7 @@
    "us": "THE NEIBORING{BR}VILLAGE ARE ALL{PAGE}LIARS! DON'T{BR}LISTEN TO THEM!{END}",
    "jp_addr": "02:9DC2",
    "jp": "トナリノ　ブラクハ{BR}ウソツキバカリダ。キヲツケナヨ。{END}",
-   "en": "THE NEIBORING{BR}VILLAGE ARE ALL{PAGE}LIARS! DON'T{BR}LISTEN TO THEM!{END}"
+   "en": "The next village{BR}over is all liars.{PAGE}Watch yourself.{END}"
   },
   {
    "id": "01CA",
@@ -2565,7 +2565,7 @@
    "us": "ZE CORONA TOWER{BR}STANDS ON ZE{PAGE}FAR SIDE OF ZE{BR}MOUNTAIN TO ZE{PAGE}NORTH OF ZIS{BR}VILLAGE.{END}",
    "jp_addr": "02:9DDD",
    "jp": "コノムラノ　キタノ　ヤマノムコウニ{BR}コロナノトウガ　アルズラ。{END}",
-   "en": "ZE CORONA TOWER{BR}STANDS ON ZE{PAGE}FAR SIDE OF ZE{BR}MOUNTAIN TO ZE{PAGE}NORTH OF ZIS{BR}VILLAGE.{END}"
+   "en": "Over the mountains{BR}north of this{PAGE}village is the{BR}Corona Tower, yup.{END}"
   },
   {
    "id": "01CC",
@@ -2577,7 +2577,7 @@
    "jp_addr": "02:9DFD",
    "jp": "コロナノトウノ　ニシニハ　デゾリスノ{BR}ドウクツガ　アルズラ。{PAGE}",
    "falls_through": true,
-   "en": "TO ZE WEST OF ZE{BR}CORONA TOWER IS{PAGE}ZE DEZORIS CAVE.{BR}"
+   "en": "West of the{BR}Corona Tower is{PAGE}the Dezolis Cave.{PAGE}"
   },
   {
    "id": "01CE",
@@ -2588,7 +2588,7 @@
    "us": "OUR FRIENDS ARE IN{PAGE}ZERE. GIVE ZEM{BR}OUR BEST, O.K.?{END}",
    "jp_addr": "02:9E1B",
    "jp": "ワシラノ　ナカマガ　イルズラ。{BR}ヨロシクズラ。{END}",
-   "en": "OUR FRIENDS ARE IN{PAGE}ZERE. GIVE ZEM{BR}OUR BEST, O.K.?{END}"
+   "en": "Our people are{BR}there. Say hello{PAGE}for us, yup.{END}"
   },
   {
    "id": "01D0",
@@ -2600,7 +2600,7 @@
    "jp_addr": "02:9E33",
    "jp": "ラエルマツリーニハ　ラエルマベリー{BR}トイウ　キノミガ　ナルズラヨ。{PAGE}",
    "falls_through": true,
-   "en": "LAERMA TREES GROW{BR}ZE LAERMA BERRIES.{PAGE}"
+   "en": "The Laerma tree{BR}grows a fruit, the{PAGE}Laerma berry, yup.{PAGE}"
   },
   {
    "id": "01D2",
@@ -2612,7 +2612,7 @@
    "jp_addr": "02:9E55",
    "jp": "アノ　キノミハ　オイシイカラ{BR}ワシラノ　ショクリョウニ　シタイケド{PAGE}",
    "falls_through": true,
-   "en": "ZOSE BERRIES ARE {BR}OUR MOST IMPORTANT{PAGE}FOOD, BUT IT{BR}SHRIVELS UP AFTER{PAGE}A FEW MOMENTS,{BR}"
+   "en": "Those berries are{BR}tasty, so we'd like{PAGE}to eat them, but{BR}unless you put{PAGE}"
   },
   {
    "id": "01D4",
@@ -2623,7 +2623,7 @@
    "us": "UNLESS IT IS PUT{PAGE}IN LACONIAN POT.{END}",
    "jp_addr": "02:9E77",
    "jp": "ラコニアノ　ツボニ　イレナイト{BR}ヒカラビテシマウズラヨ。{END}",
-   "en": "UNLESS IT IS PUT{PAGE}IN LACONIAN POT.{END}"
+   "en": "them in a Laconia{BR}Pot, they shrivel{PAGE}right up, yup.{END}"
   },
   {
    "id": "01D6",
@@ -2634,7 +2634,7 @@
    "us": "DO YOU KNOW WHAT{BR}AN AEROPRISM IS?{NOWAIT}",
    "jp_addr": "02:9E94",
    "jp": "エアロプリズム　トイウノヲ{BR}シッテルズラカ。{NOWAIT}",
-   "en": "DO YOU KNOW WHAT{BR}AN AEROPRISM IS?{NOWAIT}"
+   "en": "Know about the{BR}Aeroprism, yup?{NOWAIT}"
   },
   {
    "id": "01D8",
@@ -2645,7 +2645,7 @@
    "us": "IT LETS YOU SEE{BR}ANOTHER WORLD.{END}",
    "jp_addr": "02:9EAB",
    "jp": "コノヨト　チガウ　セカイガ{BR}ミエルソウズラヨ。{END}",
-   "en": "IT LETS YOU SEE{BR}ANOTHER WORLD.{END}"
+   "en": "They say it shows{BR}you a world not{PAGE}like this one, yup.{END}"
   },
   {
    "id": "01DA",
@@ -2656,7 +2656,7 @@
    "us": "I'D LIKE TO SEE{BR}ONE SOMETIME.{END}",
    "jp_addr": "02:9EC3",
    "jp": "イチド　ミテミタイモノズラヨ。{END}",
-   "en": "I'D LIKE TO SEE{BR}ONE SOMETIME.{END}"
+   "en": "I'd like to see one{BR}someday, yup.{END}"
   },
   {
    "id": "01DC",
@@ -2667,7 +2667,7 @@
    "us": "WE OF ZIS TOWN{BR}HATE PALMANS.{END}",
    "jp_addr": "02:9ED3",
    "jp": "コノブラクノ　ミンナハ　パルマノ{BR}ヒトビトヲ　キラッテルズラ。{END}",
-   "en": "WE OF ZIS TOWN{BR}HATE PALMANS.{END}"
+   "en": "Everyone here{BR}hates the people{PAGE}of Palma, yup.{END}"
   },
   {
    "id": "01DE",
@@ -2678,7 +2678,7 @@
    "us": "THERE IS A SPRING{BR}OF LIFE IN THE {PAGE}CORONA TOWER,{BR}THERE IS, YES.{END}",
    "jp_addr": "02:9EF3",
    "jp": "コロナノトウニハ　イノチノイズミガ{BR}アルンダス。{END}",
-   "en": "THERE IS A SPRING{BR}OF LIFE IN THE {PAGE}CORONA TOWER,{BR}THERE IS, YES.{END}"
+   "en": "The Corona Tower{BR}has a Spring of{PAGE}Life, that it does.{END}"
   },
   {
    "id": "01E0",
@@ -2689,7 +2689,7 @@
    "us": "YOU CAN WARP FROM {BR}THE 10TH LEVEL OF{PAGE}THE DUNGEON UNDER{BR}DEZORIS,YES.{END}",
    "jp_addr": "02:9F0C",
    "jp": "デゾリスノ　ドウクツノ　チカ{BR}{NUMBER}カイデ　ワープデキルンダス{BR}ヨ。{END}",
-   "en": "YOU CAN WARP FROM {BR}THE 10TH LEVEL OF{PAGE}THE DUNGEON UNDER{BR}DEZORIS,YES.{END}"
+   "en": "You can warp from{BR}the 10th floor of{PAGE}the Dezolis Cave,{BR}that you can.{END}"
   },
   {
    "id": "01E2",
@@ -2700,7 +2700,7 @@
    "us": "LAERMA BERRIES ARE{BR}BLUE LAERMA NUTS{BR}USED IN DYES,YES,{PAGE}THEY ARE , INDEED.{END}",
    "jp_addr": "02:9F2C",
    "jp": "ラエルマベリーハ　アオイイロヲシタ{BR}キノミデ　センリョウニ　ツカウダス。{END}",
-   "en": "LAERMA BERRIES ARE{BR}BLUE LAERMA NUTS{BR}USED IN DYES,YES,{PAGE}THEY ARE , INDEED.{END}"
+   "en": "Laerma berries are{BR}a blue fruit used{PAGE}for dye, that they{BR}are.{END}"
   },
   {
    "id": "01E4",
@@ -2711,7 +2711,7 @@
    "us": "IF YOU USE A{BR}CRYSTAL IN FRONT{PAGE}OF A LAERMA TREE,{BR}IT WILL BECOME,{PAGE}YES, A LAERMA NUT,{BR}YES, INDEED.{END}",
    "jp_addr": "02:9F51",
    "jp": "ラエルマツリーノ　マエデ　クリスタル{BR}ヲ　ツカウト　ミガ　ナルンダス。{END}",
-   "en": "IF YOU USE A{BR}CRYSTAL IN FRONT{PAGE}OF A LAERMA TREE,{BR}IT WILL BECOME,{PAGE}YES, A LAERMA NUT,{BR}YES, INDEED.{END}"
+   "en": "Use a crystal{BR}before a Laerma{PAGE}tree, and it bears{BR}fruit, that it does.{END}"
   },
   {
    "id": "01E6",
@@ -2722,7 +2722,7 @@
    "us": "THIS TOWN WELCOMES{BR}ALL PALMANS,YES,{PAGE}INDEED, WE DO.{END}",
    "jp_addr": "02:9F74",
    "jp": "コノブラクハ　パルマノ　ヒトビトヲ{BR}カンゲイシマス。{END}",
-   "en": "THIS TOWN WELCOMES{BR}ALL PALMANS,YES,{PAGE}INDEED, WE DO.{END}"
+   "en": "This village{BR}welcomes the{PAGE}people of Palma,{BR}that it does.{END}"
   },
   {
    "id": "01E8",
@@ -2968,7 +2968,7 @@
    "us": "THEN YOU ARE THE {BR}VERY QUEEN OF THE {PAGE}ENTIRE SYSTEM. I{BR}WILL ASSIST YOU IN{PAGE}ALL WAYS POSSIBLE.{END}",
    "jp_addr": "02:A1B9",
    "jp": "ソウカ。ソレデコソ　アルゴルオウノ{BR}ムスメダ。{PAGE}ワタシモ　テツダワセテモラウヨ。{END}",
-   "en": "I see. So you truly{BR}are the daughter{PAGE}of Algol's king.{BR}I'll help you, too.{END}"
+   "en": "Spoken like the{BR}daughter of{PAGE}Algol's king. I'll{BR}help you as well.{END}"
   },
   {
    "id": "0214",
@@ -3417,7 +3417,7 @@
    "jp_addr": "02:A654",
    "jp": "オマエタチノ　コウドウハ{BR}スベテオミトオシダ。{PAGE}",
    "falls_through": true,
-   "en": "I HAVE WATCHED{BR}ALL YOUR ACTIONS.{PAGE}"
+   "en": "I have seen all{BR}that you've done.{PAGE}"
   },
   {
    "id": "0264",
@@ -3428,7 +3428,7 @@
    "us": "ATTACK ME NOW, IF{BR}YOU DARE.{END}",
    "jp_addr": "02:A66C",
    "jp": "カカッテクルガ　イイ。{END}",
-   "en": "ATTACK ME NOW, IF{BR}YOU DARE.{END}"
+   "en": "Come at me, then.{END}"
   },
   {
    "id": "0266",
@@ -3440,7 +3440,7 @@
    "jp_addr": "02:A678",
    "jp": "オレハ　ラシークサマノ{BR}カゲムシャダ。{PAGE}",
    "falls_through": true,
-   "en": "I'M BUT ONLY{BR}LASSIC'S SHADOW!{PAGE}"
+   "en": "I am Lord{BR}LaShiec's double.{PAGE}"
   },
   {
    "id": "0268",
@@ -3451,7 +3451,7 @@
    "us": "EVEN IF YOU DEFEAT{BR}ME, YOU'VE GAINED{PAGE}NOTHING AT ALL!{END}",
    "jp_addr": "02:A68C",
    "jp": "オレヲタオシタトコロデ{BR}ドウニモナラナイノサ。　ヒッヒッ。{END}",
-   "en": "EVEN IF YOU DEFEAT{BR}ME, YOU'VE GAINED{PAGE}NOTHING AT ALL!{END}"
+   "en": "Defeating me won't{BR}change a thing.{PAGE}Heh heh heh.{END}"
   },
   {
    "id": "026A",
@@ -3462,7 +3462,7 @@
    "us": "DON'T GO AGAINST{BR}LASSIC!{END}",
    "jp_addr": "02:A6AA",
    "jp": "ラシークサマニ　サカラウナ。{END}",
-   "en": "DON'T GO AGAINST{BR}LASSIC!{END}"
+   "en": "Do not defy Lord{BR}LaShiec.{END}"
   },
   {
    "id": "026C",
@@ -3473,7 +3473,7 @@
    "us": "AH, MY CHILDREN,{BR}YOU HAVE DONE VERY{PAGE}WELL TO COME THIS {BR}FAR. YOU ARE VERY{PAGE}LUCKY INDEED. DO{BR}YOU REALLY WISH TO{PAGE}KILL AN OLD MAN?{NOWAIT}",
    "jp_addr": "02:A6B9",
    "jp": "トウトウ　ココマデ　キタカ。{BR}ウンノ　イイヤツラメ。{PAGE}ソンナニ　ワシヲ　タオシタイノカ。{NOWAIT}",
-   "en": "AH, MY CHILDREN,{BR}YOU HAVE DONE VERY{PAGE}WELL TO COME THIS {BR}FAR. YOU ARE VERY{PAGE}LUCKY INDEED. DO{BR}YOU REALLY WISH TO{PAGE}KILL AN OLD MAN?{NOWAIT}"
+   "en": "So you've come{BR}this far at last,{PAGE}lucky wretches.{PAGE}Do you want me{BR}dead that badly?{NOWAIT}"
   },
   {
    "id": "026E",
@@ -3484,7 +3484,7 @@
    "us": "ALL RIGHT! THEN{BR}WE WILL FORGET{PAGE}THIS AS AN UNFOR-{BR}TUNATE MISTAKE.{END}",
    "jp_addr": "02:A6E6",
    "jp": "ソウカ。ソレナラバ{PAGE}ソノ　カンガエガ　マチガッテイタ{BR}コトヲ　オモイシルガイイ。{END}",
-   "en": "ALL RIGHT! THEN{BR}WE WILL FORGET{PAGE}THIS AS AN UNFOR-{BR}TUNATE MISTAKE.{END}"
+   "en": "I see. Then learn{BR}how wrong it was.{END}"
   },
   {
    "id": "0270",
@@ -3495,7 +3495,7 @@
    "us": "EVEN NOW YOU TRY{BR}TO FOOL WITH ME?{PAGE}YOU SHALL REPENT!{END}",
    "jp_addr": "02:A70F",
    "jp": "コノゴニ　オヨンデ{BR}フザケタヤツラダ。{PAGE}コウカイサセテヤル。{END}",
-   "en": "EVEN NOW YOU TRY{BR}TO FOOL WITH ME?{PAGE}YOU SHALL REPENT!{END}"
+   "en": "Toying with me, at{BR}this late hour?{PAGE}You'll regret it.{END}"
   },
   {
    "id": "0272",
@@ -3507,7 +3507,7 @@
    "jp_addr": "02:A72E",
    "jp": "オオ。ミンナ　スマナカッタ。{PAGE}ワタシノ　ココロト　カラダハ{PAGE}",
    "falls_through": true,
-   "en": "I'M SORRY, I MUST{BR}HAVE BEEN{PAGE}"
+   "en": "Oh... Forgive me,{BR}all of you.{PAGE}"
   },
   {
    "id": "0274",
@@ -3519,7 +3519,7 @@
    "jp_addr": "02:A74C",
    "jp": "ドウヤラ　アシキ　マリョクニ{BR}オカサレテイタラシイ。{PAGE}",
    "falls_through": true,
-   "en": "POSSESSED BODY AND{BR}SOUL BY EVIL.{PAGE}"
+   "en": "My heart and body{BR}were, it seems,{PAGE}taken over by an{BR}evil magic.{PAGE}"
   },
   {
    "id": "0276",
@@ -3531,7 +3531,7 @@
    "jp_addr": "02:A767",
    "jp": "ヨクゾ　コノヨヲ　スクッテクレタ。{BR}モウスコシ　オソカッタラ{PAGE}",
    "falls_through": true,
-   "en": "YOU RESCUED OUR{BR}WORLD JUST IN THE {PAGE}NICK OF TIME! IF{BR}YOU HAD COME ANY{PAGE}"
+   "en": "You saved this{BR}world. Had you{PAGE}"
   },
   {
    "id": "0278",
@@ -3542,7 +3542,7 @@
    "us": "LATER, IT MIGHT{BR}HAVE BEEN TOO LATE{PAGE}WE ALL THANK YOU{BR}FROM THE BOTTOM{PAGE}OF OUR HEARTS.{BR}ALIS, YOUR FATHER{PAGE}WAS ONCE KING OF{BR}ALGOL. THE DARK{PAGE}CASTLE HAS BEEN{BR}DESTROYED, LASSIC{PAGE}KILLED... DO YOU,{BR}ALIS,WISH TO{PAGE}ASCEND YOUR {BR}FATHER'S THRONE{PAGE}AND BECOME THE {BR}QUEEN OF ALGOL?{NOWAIT}",
    "jp_addr": "02:A786",
    "jp": "タイヘンナコトニ　ナッテイタダロウ。{BR}ココロカラ　レイヲ　イウゾ。{PAGE}アリサヨ。{BR}オマエニ　ハナシタイコトガアル。{PAGE}ジツハ　オマエノ　チチハ{BR}アルゴルノ　オウダッタ。{PAGE}アクマノ　シロハ　クズレサリ{BR}ラシーク　ナキ　イマ　オマエハ{PAGE}チチノ　アトヲ　ツギ　アルゴルノ{BR}ジョウオウト　ナルカ。{NOWAIT}",
-   "en": "LATER, IT MIGHT{BR}HAVE BEEN TOO LATE{PAGE}WE ALL THANK YOU{BR}FROM THE BOTTOM{PAGE}OF OUR HEARTS.{BR}ALIS, YOUR FATHER{PAGE}WAS ONCE KING OF{BR}ALGOL. THE DARK{PAGE}CASTLE HAS BEEN{BR}DESTROYED, LASSIC{PAGE}KILLED... DO YOU,{BR}ALIS,WISH TO{PAGE}ASCEND YOUR {BR}FATHER'S THRONE{PAGE}AND BECOME THE {BR}QUEEN OF ALGOL?{NOWAIT}"
+   "en": "come any later, it{BR}would have been{PAGE}dire. I thank you{BR}from my heart.{PAGE}Alisa, there is{BR}something I must{PAGE}tell you. In truth,{BR}your father was{PAGE}the king of Algol.{BR}The Devil's Castle{PAGE}has fallen and{BR}LaShiec is no more.{PAGE}Will you follow him{BR}as Queen of Algol?{NOWAIT}"
   },
   {
    "id": "027A",
@@ -3553,7 +3553,7 @@
    "us": "RAISE THE {BR}AEROPRISM TOWARDS{PAGE}THE HEAVENS- YOU {BR}SHOULD THEN BE{PAGE}ABLE TO SEE THE {BR}DARK CASTLE.{END}",
    "jp_addr": "02:A814",
    "jp": "ワタシ　オテガミ　チエチャンヨ。{BR}イツモ　オタヨリ　アリガトウ。{PAGE}コノゲームノ　カンソウヲ{BR}キカセテネ。　マッテルワ。{END}",
-   "en": "RAISE THE {BR}AEROPRISM TOWARDS{PAGE}THE HEAVENS- YOU {BR}SHOULD THEN BE{PAGE}ABLE TO SEE THE {BR}DARK CASTLE.{END}"
+   "en": "I'm Chie from the{BR}letters page.{PAGE}Thanks for always{BR}writing in!{PAGE}Tell me what you{BR}thought of this{PAGE}game. I'll be{BR}waiting!{END}"
   },
   {
    "id": "027C",
@@ -3564,7 +3564,7 @@
    "us": "ALRIGHT! YOU SAVED{BR}ALL OF ALGOL!{END}",
    "jp_addr": "02:A850",
    "jp": "ココカラ　サキハ　ボクノ{BR}ナワバリダカラ　トオセナイヨーダ。{END}",
-   "en": "ALRIGHT! YOU SAVED{BR}ALL OF ALGOL!{END}"
+   "en": "This is my turf.{BR}No one gets past!{END}"
   },
   {
    "id": "027E",
@@ -3575,7 +3575,7 @@
    "us": "WE ARE  ALL{BR}THANKFUL FOR YOUR {PAGE}BRAVE DEEDS! WE{BR}LOVE YOU !{END}",
    "jp_addr": "02:A850",
    "jp": "ココカラ　サキハ　ボクノ{BR}ナワバリダカラ　トオセナイヨーダ。{END}",
-   "en": "WE ARE  ALL{BR}THANKFUL FOR YOUR {PAGE}BRAVE DEEDS! WE{BR}LOVE YOU !{END}"
+   "en": "This is my turf.{BR}No one gets past!{END}"
   },
   {
    "id": "0280",
@@ -3586,7 +3586,7 @@
    "us": "REPORT QUICKLY TO{BR}THE GOVERNOR!{END}",
    "jp_addr": "02:A850",
    "jp": "ココカラ　サキハ　ボクノ{BR}ナワバリダカラ　トオセナイヨーダ。{END}",
-   "en": "REPORT QUICKLY TO{BR}THE GOVERNOR!{END}"
+   "en": "This is my turf.{BR}No one gets past!{END}"
   },
   {
    "id": "0282",
