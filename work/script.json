@@ -1,5 +1,5 @@
 {
- "about": "The fixed-width text (docs/pipeline.md 3.6-3.9). Edit only en. party, items, enemies: name fields, width in cells, padded with an end code and spaces. kind tilemap: menu words stored as glyph-table tiles in a VDP tilemap, one cell a character, cells wide, upper: the run owns the row above (the JP dakuten row; in the US font only \" and the apostrophe use it). kind readonly (naming screen, credits): jp and us only, not written back.",
+ "about": "The fixed-width text (docs/pipeline.md 3.6-3.9). Edit only en. party, items, enemies: name fields, width in cells, padded with an end code and spaces. kind tilemap: menu words stored as glyph-table tiles in a VDP tilemap, one cell a character, cells wide, upper: the run owns the row above (the JP dakuten row; in the US font only \" and the apostrophe use it). kind naming: the naming screen's key words, lower tiles in its RLE. kind readonly (the rest of the naming screen, credits): jp and us only, not written back.",
  "segments": {
   "party": {
    "width": 4,
@@ -2439,12 +2439,58 @@
   },
   "naming_screen": {
    "kind": "readonly",
-   "about": "The naming screen (US LABEL_423C, unpacked by LABEL_4166; JP 01:4406, unpacked by 01:42DA, consecutive tiles with no blank between). Read-only: gentext does not write it. A new grid also needs a new key table (LABEL_4280).",
+   "about": "The naming screen (US LABEL_423C, unpacked by LABEL_4166; JP 01:4406, unpacked by 01:42DA, consecutive tiles with no blank between). Read-only: gentext does not write it (its three key words are naming_keys). A new grid also needs a new key table (LABEL_4280).",
    "runs": [
     {
      "id": 0,
      "us": "        INPUT YOUR NAME.{BR}     A B C D E F G H I J K{BR}     L M N O P Q R S T U V{BR}     W X Y Z , ; . ! ? - \"{BR}               ADV RUB END",
      "jp": "　　　　　アイウエオ　　　マミムメモ　　　ガギグゲゴ{BR}　　　　　カキクケコ　　　ヤ　ユ　ヨ　　　ザジズゼゾ{BR}　　　　　サシスセソ　　　ラリルレロ　　　ダヂヅデド{BR}　　　　　タチツテト　　　ワ　ヲ　ン　　　バビブベボ{BR}　　　　　ナニヌネノ　　　ャュョッー　　　パピプペポ{BR}　　　　　ハヒフヘホ　　　　　ススム　モドル　オワル"
+    }
+   ]
+  },
+  "naming_keys": {
+   "kind": "naming",
+   "file": "ps1.asm",
+   "about": "The naming screen's three key words (in LABEL_423C's last literal run, byte 47: 11 tiles), 3 cells each in the stock font, capitals, no row above. gentext writes the lower tiles in place; the JP is from 01:4406.",
+   "runs": [
+    {
+     "id": 0,
+     "where": "forward",
+     "label": "LABEL_423C",
+     "offset": 48,
+     "cells": 3,
+     "upper": false,
+     "addr": "01:426C",
+     "hex": "CBCEE0",
+     "us": "ADV",
+     "jp": "ススム",
+     "en": "FWD"
+    },
+    {
+     "id": 1,
+     "where": "delete",
+     "label": "LABEL_423C",
+     "offset": 52,
+     "cells": 3,
+     "upper": false,
+     "addr": "01:4270",
+     "hex": "DCDFCC",
+     "us": "RUB",
+     "jp": "モドル",
+     "en": "DEL"
+    },
+    {
+     "id": 2,
+     "where": "end",
+     "label": "LABEL_423C",
+     "offset": 56,
+     "cells": 3,
+     "upper": false,
+     "addr": "01:4274",
+     "hex": "CFD8CE",
+     "us": "END",
+     "jp": "オワル",
+     "en": "END"
     }
    ]
   },

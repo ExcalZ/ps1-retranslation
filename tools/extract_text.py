@@ -84,7 +84,8 @@ ABOUT = ('The fixed-width text (docs/pipeline.md 3.6-3.9). Edit only en. party, 
          'name fields, width in cells, padded with an end code and spaces. kind tilemap: menu '
          'words stored as glyph-table tiles in a VDP tilemap, one cell a character, cells wide, '
          'upper: the run owns the row above (the JP dakuten row; in the US font only " and '
-         'the apostrophe use it). kind readonly (naming screen, credits): jp and us only, not '
+         'the apostrophe use it). kind naming: the naming screen\'s key words, lower tiles in '
+         'its RLE. kind readonly (the rest of the naming screen, credits): jp and us only, not '
          'written back.')
 
 

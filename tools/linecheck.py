@@ -152,7 +152,7 @@ def main():
                         problems.append('%s %s (%s): %r is %d px (%d cells, %d px)' % (
                             name, r['id'], r['where'], text, px, cells, 8 * cells))
             continue
-        if seg.get('kind') == 'tilemap':
+        if seg.get('kind') in ('tilemap', 'naming'):
             for r in seg['runs']:
                 if r['en'] != r['us'] or check_all:
                     try:

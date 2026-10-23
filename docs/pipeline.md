@@ -453,7 +453,10 @@ them (dialogue by id, the rest by `work/pairing.json`) and writes:
   `extract_text.py --tilemaps`): `name_boxes`, `status_boxes`, `battle_menu`, `spells` (30),
   `inventory`, `party_menu`, `field_menu`, `item_menu`, `shop_menu`, `yes_no`,
   `status_labels`, `money`, `save_slots`, `spaceport`, `intro_caption` (kind `tilemap`, 75
-  runs), and `naming_screen` and `credits` (kind `readonly`: `us`/`jp` only). A tilemap run has
+  runs), `naming_keys` (kind `naming`: the naming screen's three key words, 3 cells each in
+  the literal run at `LABEL_423C` + 47, written in place as lower tiles only, checked as
+  tilemap runs with no row above), and `naming_screen` and `credits` (kind `readonly`:
+  `us`/`jp` only). A tilemap run has
   `label`, `offset` (bytes into the map), `cells`, `upper` (it owns the row above, where JP
   dakuten and the US `"`/apostrophe tops go), `addr`, `hex`, `upper_hex`, `jp_addr`,
   `jp_cells`, `jp_upper`, `us`, `jp`, `en`, `where`. One character a cell, leading spaces kept.

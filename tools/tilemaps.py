@@ -1,6 +1,7 @@
 """The text stored as VDP tilemaps: menus, status labels, spell lists, the save-slot list, the
-spaceport menu, the intro caption (written back by gentext.py), and the naming screen and the
-staff credits (read-only). docs/pipeline.md 3.7-3.9 and section 4.
+spaceport menu, the intro caption, the naming screen's key words (written back by gentext.py),
+and the rest of the naming screen and the staff credits (read-only). docs/pipeline.md 3.7-3.9
+and section 4.
 
 A tilemap cell is two bytes, (tile, attribute). A menu word is a run of text cells (attribute
 $10) holding the lower tile of each character's glyph pair; the glyph's upper tile (the JP
@@ -273,6 +274,7 @@ def extract(us_rom, jp_rom, syms):
         segs[name] = {'kind': 'tilemap', 'file': f.replace(os.sep, '/'), 'about': about,
                       'runs': out}
     segs['naming_screen'] = naming_segment(us_rom, jp_rom, uinv, jinv)
+    segs['naming_keys'] = naming_keys_segment(us_rom, jp_rom, uinv, jinv)
     segs['credits'] = credits_segment(us_rom, jp_rom)
     return segs
 
@@ -348,10 +350,38 @@ def naming_segment(us_rom, jp_rom, uinv, jinv):
     return {'kind': 'readonly',
             'about': 'The naming screen (US LABEL_423C, unpacked by LABEL_4166; JP 01:4406, '
                      'unpacked by 01:42DA, consecutive tiles with no blank between). Read-only: '
-                     'gentext does not write it. A new grid also needs a new key table '
-                     '(LABEL_4280).',
+                     'gentext does not write it (its three key words are naming_keys). A new '
+                     'grid also needs a new key table (LABEL_4280).',
             'runs': [{'id': 0, 'us': '{BR}'.join(naming_lines(us_rom, 'us', uinv)),
                       'jp': '{BR}'.join(naming_lines(jp_rom, 'jp', jinv))}]}
+
+
+# the key words: in the RLE's last literal run (its count byte $CB at LABEL_423C + 47: 11 tiles,
+# the words with a blank between), lower tiles only - the row above them is blank
+NAMING_LABEL = 'LABEL_423C'
+NAMING_KEYS = [('forward', 48), ('delete', 52), ('end', 56)]
+NAMING_RUN = 47
+
+
+def naming_keys_segment(us_rom, jp_rom, uinv, jinv):
+    base = NAMING['us'][0]
+    jp = [w for w in naming_lines(jp_rom, 'jp', jinv)[-1].split('　') if w][-3:]
+    runs = []
+    for n, ((where, off), j) in enumerate(zip(NAMING_KEYS, jp)):
+        tiles = us_rom[base + off:base + off + 3]
+        runs.append({'id': n, 'where': where, 'label': NAMING_LABEL, 'offset': off, 'cells': 3,
+                     'upper': False, 'addr': addr(1, base + off), 'hex': tiles.hex().upper(),
+                     'us': naming_text(tiles, uinv), 'jp': j})
+        runs[-1]['en'] = runs[-1]['us']
+    return {'kind': 'naming', 'file': 'ps1.asm',
+            'about': 'The naming screen\'s three key words (in LABEL_423C\'s last literal run, '
+                     'byte 47: 11 tiles), 3 cells each in the stock font, capitals, no row '
+                     'above. gentext writes the lower tiles in place; the JP is from 01:4406.',
+            'runs': runs}
+
+
+def naming_text(tiles, inv):
+    return decode(bytes(x for t in tiles for x in (t, 0x10)), None, inv)
 
 
 # ---------------------------------------------------------------- read-only: credits

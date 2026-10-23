@@ -137,6 +137,14 @@ def test_tilemaps(doc):
           'naming screen: us')
     check(ro['naming_screen']['runs'][0]['jp'] == '{BR}'.join(M.naming_lines(JP, 'jp', jinv)),
           'naming screen: jp')
+    keys = ro['naming_keys']
+    check(US[M.NAMING['us'][0] + M.NAMING_RUN] == 0xC0 | 11, 'naming keys: the literal run moved')
+    want = M.naming_keys_segment(US, JP, uinv, jinv)['runs']
+    check(len(want) == len(keys['runs']), 'naming keys: count')
+    for r, w in zip(keys['runs'], want):
+        check(dict(r, en=None) == dict(w, en=None), 'naming keys %s: not as read from the ROMs' % r['id'])
+        enc = bytes(t for _, t in M.encode(r['us'], glyphs, r['cells'], False))
+        check(enc.hex().upper() == r['hex'], 'naming keys %s: encoding us does not give the stock bytes' % r['id'])
     for r, u, j in zip(ro['credits']['runs'], M.credit_screens(US), M.credit_screens(JP)):
         check(r['us'] == '{BR}'.join(t for _, _, t in u) and r['us_at'] == [[a, b] for a, b, _ in u],
               'credits %d: us' % r['id'])

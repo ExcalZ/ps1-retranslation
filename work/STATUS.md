@@ -258,14 +258,22 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
   both answers, the breeze and the credits reads back as `dialogue.json` has it (9, 9, 5, 4
   and 24 pages); the credits' names sit where the stock's do (centered in the text line,
   some 20 px left of the screen's center, as the stock's six leading cells put them).
+* **The naming screen's keys (2026-10-23).** The owner: "ADV RUB END" becomes "FWD DEL
+  END", as in PS II. The three words are a literal run in the screen's RLE (`LABEL_423C` +
+  47, 11 tiles), so `script.json` has a new segment `naming_keys` (kind `naming`, 3 cells
+  each, lower tiles only) that gentext writes in place; the rest of the screen stays
+  read-only. `linecheck` and the proofreader check it as a tilemap run, `test_text` against
+  both ROMs. `type_name` (lib.lua) now screenshots the screen before END; `savegame` shows
+  FWD DEL END and still types and saves.
 
 ## Next, in order
 
 1. **Left from the survey:** a cross-check against Maxim's
    JP disassembly (`maxim-zhao/psrp`, `disassembly/`); in Mesen, that tiles `$EC`-`$FF` are
    free in every mode and that the title-screen words are graphics.
-2. **The rest of script.json:** done but for writing the naming screen and (the owner's
-   call) the credits, both read-only for now.
+2. **The rest of script.json:** done but for writing the naming screen's grid and prompt
+   (its key words are `naming_keys`) and (the owner's call) the credits, both read-only for
+   now.
 3. **More scenarios** (as the translation needs them).
 4. **Engine**: the naming screen with lower case (later).
 5. **Proofreading in play** (the translation is complete; every scene now has a scenario:

@@ -261,7 +261,7 @@ end
 
 -- ---------------------------------------------------------------- the naming screen
 
--- the key table LABEL_4280: 4 rows of 11; $5C ADV, $5D RUB, $5E END
+-- the key table LABEL_4280: 4 rows of 11; $5C ADV, $5D RUB, $5E END (FWD DEL END in ours)
 local KEYS = {}
 for i, c in ipairs({ "A","B","C","D","E","F","G","H","I","J","K",
                      "L","M","N","O","P","Q","R","S","T","U","V",
@@ -306,6 +306,7 @@ function type_name(name)
     end
   end
   log("typed " .. name)
+  shot("naming")
   cursor_to(0x5E)
   press("two", 3, 10)
 end

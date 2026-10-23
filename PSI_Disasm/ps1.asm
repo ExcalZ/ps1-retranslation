@@ -9813,8 +9813,8 @@ LABEL_423C:
 .db $DC, $C0, $D8, $CB, $D7, $CF, $E7, $58
 .db $C0, $55, $C0, $8B, $CB, $2A, $C0, $8B
 .db $D6, $1E, $C0, $01, $EB, $0B, $C0, $8A
-.db $E1, $36, $C0, $CB, $CB, $CE, $E0, $C0
-.db $DC, $DF, $CC, $C0, $CF, $D8, $CE, $09
+.db $E1, $36, $C0, $CB, $D0, $E1, $CE, $C0
+.db $CE, $CF, $D6, $C0, $CF, $D8, $CE, $09
 .db $C0, $01, $F1, $17, $F2, $01, $F1, $00
 
 LABEL_4280:

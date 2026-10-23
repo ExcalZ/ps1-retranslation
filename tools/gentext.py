@@ -18,8 +18,9 @@
   slots, spaceport, intro caption; tools/tilemaps.py) are written into their maps' `.db`
   lines in ps1.asm, banks/bank27.asm and banks/bank18.asm, through the glyph table
   (LABEL_7D17): the lower tile in the run's row, the upper tile in the row above where the run
-  owns it. Only lines whose bytes change are rewritten. Segments of kind `readonly` (the naming
-  screen, the credits) are not written.
+  owns it. Only lines whose bytes change are rewritten. The naming screen's key words (kind
+  `naming`) go in place into its RLE (LABEL_423C), lower tiles only. Segments of kind
+  `readonly` (the rest of the naming screen, the credits) are not written.
 
 An entry whose `en` equals its `us` is written from `hex`: the stock bytes, so with en = us
 everywhere the ROM is the stock one (checkstock.py). Any other `en` is encoded for the stock
@@ -279,6 +280,14 @@ def generate(dialogue, script):
             if up is not None:
                 M.write_bytes(files[path], run['label'],
                               run['offset'] - 2 * M.ROW_CELLS[run['label']], up, defs)
+    for name, seg in segs.items():
+        if seg.get('kind') != 'naming':
+            continue
+        path = os.path.join(T.DISASM, *seg['file'].split('/'))
+        if path not in files:
+            files[path] = (out[path] if path in out else T.read(path)).split('\r\n')
+        for run in seg['runs']:
+            M.write_bytes(files[path], run['label'], run['offset'], naming_bytes(run, glyphs), defs)
     for path, lines in files.items():
         out[path] = '\r\n'.join(lines)
     spell_maps = win_spell_maps(files[os.path.join(T.DISASM, 'banks', 'bank27.asm')], defs) if WIN else ''
@@ -402,6 +411,17 @@ def tilemap_bytes(run, glyphs):
     except ValueError as x:
         raise ValueError('%s %s: %s' % (run['label'], run['id'], x))
     return M.patch(stock, pairs, run['upper'])
+
+
+def naming_bytes(run, glyphs):
+    """The lower tiles of a naming-screen key word (the RLE holds tiles, no attributes)."""
+    if run['en'] == run['us'] and not ENCODE_ALL:
+        return bytes.fromhex(run['hex'])
+    try:
+        pairs = M.encode(run['en'], glyphs, run['cells'], False)
+    except ValueError as x:
+        raise ValueError('naming_keys %s: %s' % (run['id'], x))
+    return bytes(t for _, t in pairs)
 
 
 def main():

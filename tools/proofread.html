@@ -264,7 +264,7 @@ function nameRule(name){   // the name tables: [letters, the face's px or null]
 /* how a run is measured, for the picture: {mode:'face'|'cells'|'none', limit, unit, text} */
 function runRule(name,seg,r){
   if(seg.kind==='readonly')return {mode:'none'};
-  if(seg.kind==='tilemap'){
+  if(seg.kind==='tilemap'||seg.kind==='naming'){
     if(WIN&&name==='money')return {mode:'face',limit:64,text:pyStrip(r.en)+' 65535',minus:1,what:"the money box's 8 cells, with the largest sum"};
     if(WIN&&name==='status_boxes')return {mode:'face',limit:null,text:pyStrip(r.en),minus:1,what:'vwf_windows draws the party names here (not checked)'};
     if(WIN&&WIN_SEGMENTS.includes(name)){const c=r.cells+(name==='spells'?1:0);return {mode:'face',limit:8*c,text:pyStrip(r.en),minus:1,what:`${c} cells in the face`};}
@@ -299,7 +299,7 @@ function scriptProblems(script,all){
       }
       continue;
     }
-    if(seg.kind==='tilemap'){
+    if(seg.kind==='tilemap'||seg.kind==='naming'){
       for(const r of seg.runs)if(r.en!==r.us||all){const err=tileError(r.en,r.cells,r.upper);if(err)add(name,r,`${name} ${r.id} (${r.where}): ${err}`);}
       continue;
     }
