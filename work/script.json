@@ -24,7 +24,7 @@
      "hex": "4F44494E",
      "us": "ODIN",
      "jp": "タイロン",
-     "en": "Tyron"
+     "en": "Tyrone"
     },
     {
      "id": 3,
@@ -352,7 +352,7 @@
      "hex": "504F4C594D54524C",
      "us": "POLYMTRL",
      "jp": "ポリメテラール",
-     "en": "Polymeteral"
+     "en": "Polymetheral"
     },
     {
      "id": 45,
@@ -464,7 +464,7 @@
      "hex": "4352595354414C65",
      "us": "CRYSTAL",
      "jp": "ダモアクリスタル",
-     "en": "Damoa Crystal"
+     "en": "Damour Crystal"
     },
     {
      "id": 61,
@@ -562,7 +562,7 @@
      "hex": "4E2E4641524D4552",
      "us": "N.FARMER",
      "jp": "モタビアンノーフ",
-     "en": "Motavian Nof"
+     "en": "MotavianFarmer"
     },
     {
      "id": 9,
@@ -594,7 +594,7 @@
      "hex": "452E4641524D4552",
      "us": "E.FARMER",
      "jp": "モタビアンイビル",
-     "en": "Motavian Evil"
+     "en": "Evil Motavian"
     },
     {
      "id": 13,
@@ -730,7 +730,7 @@
      "hex": "56414D5049524565",
      "us": "VAMPIRE",
      "jp": "クライオン",
-     "en": "Crion"
+     "en": "Cryion"
     },
     {
      "id": 30,
@@ -762,7 +762,7 @@
      "hex": "4558454355544552",
      "us": "EXECUTER",
      "jp": "エグゼキュート",
-     "en": "Execute"
+     "en": "Executer"
     },
     {
      "id": 34,
@@ -858,7 +858,7 @@
      "hex": "424154414C494F4E",
      "us": "BATALION",
      "jp": "ビュート",
-     "en": "Butte"
+     "en": "Bhut"
     },
     {
      "id": 46,
@@ -906,7 +906,7 @@
      "hex": "414E44524F434F50",
      "us": "ANDROCOP",
      "jp": "マシーンガーダー",
-     "en": "Machine Guard"
+     "en": "MachineGuarder"
     },
     {
      "id": 52,
@@ -1179,7 +1179,7 @@
      "jp_addr": "1B:B4BD",
      "jp_cells": 6,
      "jp": "　アリサ",
-     "en": " ALIS"
+     "en": " Alis"
     },
     {
      "id": 1,
@@ -1194,7 +1194,7 @@
      "jp_addr": "1B:B4ED",
      "jp_cells": 6,
      "jp": "　ミャウ",
-     "en": " MYAU"
+     "en": " Myau"
     },
     {
      "id": 2,
@@ -1209,7 +1209,7 @@
      "jp_addr": "1B:B51D",
      "jp_cells": 6,
      "jp": "　タイロン",
-     "en": " ODIN"
+     "en": "Tyrone"
     },
     {
      "id": 3,
@@ -1224,7 +1224,7 @@
      "jp_addr": "1B:B54D",
      "jp_cells": 6,
      "jp": "　　ルツ",
-     "en": " NOAH"
+     "en": " Lutz"
     }
    ]
   },
@@ -1355,7 +1355,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B705",
      "jp": "ラクスタ",
-     "en": "Rakusta"
+     "en": "Whisk"
     },
     {
      "id": 2,
@@ -1372,7 +1372,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B71D",
      "jp": "ペヤラク",
-     "en": "Peyarak"
+     "en": "Fluency"
     },
     {
      "id": 3,
@@ -1423,7 +1423,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B77D",
      "jp": "ドヒール",
-     "en": "Doheal"
+     "en": "Megaheal"
     },
     {
      "id": 6,
@@ -1474,7 +1474,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B7C5",
      "jp": "パウマ",
-     "en": "Pauma"
+     "en": "Boost"
     },
     {
      "id": 9,
@@ -1559,7 +1559,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B855",
      "jp": "ムワーラ",
-     "en": "Muwaller"
+     "en": "Magicwall"
     },
     {
      "id": 14,
@@ -1610,7 +1610,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B8B5",
      "jp": "トルーパ",
-     "en": "Trupa"
+     "en": "Troop"
     },
     {
      "id": 17,
@@ -1678,7 +1678,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B92D",
      "jp": "ドヒール",
-     "en": "Doheal"
+     "en": "Megaheal"
     },
     {
      "id": 21,
@@ -1695,7 +1695,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B945",
      "jp": "ラプット",
-     "en": "Raputt"
+     "en": "Untrap"
     },
     {
      "id": 22,
@@ -1712,7 +1712,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B95D",
      "jp": "スルト",
-     "en": "Surt"
+     "en": "Evac"
     },
     {
      "id": 23,
@@ -1763,7 +1763,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B9BD",
      "jp": "ドヒール",
-     "en": "Doheal"
+     "en": "Megaheal"
     },
     {
      "id": 26,
@@ -1780,7 +1780,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:B9D5",
      "jp": "スルト",
-     "en": "Surt"
+     "en": "Evac"
     },
     {
      "id": 27,
@@ -1814,7 +1814,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:BA05",
      "jp": "ムオーデ",
-     "en": "Muode"
+     "en": "Unseal"
     },
     {
      "id": 29,
@@ -1831,7 +1831,7 @@
      "jp_cells": 4,
      "jp_upper": "1B:BA1D",
      "jp": "リーバス",
-     "en": "Reebus"
+     "en": "Rebirth"
     }
    ]
   },
@@ -1855,7 +1855,7 @@
      "jp_cells": 8,
      "jp_upper": "1B:BAF9",
      "jp": "ホカノ　モチモノ",
-     "en": "More"
+     "en": "NEXT"
     }
    ]
   },
@@ -1950,7 +1950,7 @@
      "jp_addr": "1B:BB99",
      "jp_cells": 4,
      "jp": "ツヨサ",
-     "en": "Stats"
+     "en": "Status"
     },
     {
      "id": 1,
@@ -2175,7 +2175,7 @@
      "jp_cells": 7,
      "jp_upper": "1B:BCDD",
      "jp": "コウゲキリョク",
-     "en": "Attack"
+     "en": "Attack Pwr"
     },
     {
      "id": 1,
@@ -2191,7 +2191,7 @@
      "jp_cells": 7,
      "jp_upper": "1B:BCDD",
      "jp": "シュビリョク",
-     "en": "Defense"
+     "en": "Defense Pwr"
     },
     {
      "id": 2,
@@ -2416,7 +2416,7 @@
      "jp_addr": "03:BF22",
      "jp_cells": 13,
      "jp": "AW　342年　{$BB}",
-     "en": "AW 342, SPRING"
+     "en": "AW 342, SPRINGTIME"
     },
     {
      "id": 1,

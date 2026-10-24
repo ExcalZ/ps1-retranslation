@@ -55,44 +55,44 @@ WinString5:	; Flee
 .db $46, $71, $6A, $6A, $65
 WinString6:	; Heal
 .db $48, $6A, $66, $71, $65
-WinString7:	; Rakusta
-.db $52, $66, $70, $7A, $78, $79, $66, $65
-WinString8:	; Peyarak
-.db $50, $6A, $7E, $66, $77, $66, $70, $65
+WinString7:	; Whisk
+.db $57, $6D, $6E, $78, $70, $65
+WinString8:	; Fluency
+.db $46, $71, $7A, $6A, $73, $68, $7E, $65
 WinString9:	; Flaeli
 .db $46, $71, $66, $6A, $71, $6E, $65
 WinString10:	; Bindwa
 .db $42, $6E, $73, $69, $7C, $66, $65
-WinString11:	; Doheal
-.db $44, $74, $6D, $6A, $66, $71, $65
+WinString11:	; Megaheal
+.db $4D, $6A, $6C, $66, $6D, $6A, $66, $71, $65
 WinString12:	; Terror
 .db $54, $6A, $77, $77, $74, $77, $65
 WinString13:	; Waller
 .db $57, $66, $71, $71, $6A, $77, $65
-WinString14:	; Pauma
-.db $50, $66, $7A, $72, $66, $65
+WinString14:	; Boost
+.db $42, $74, $74, $78, $79, $65
 WinString15:	; Telepath
 .db $54, $6A, $71, $6A, $75, $66, $79, $6D, $65
 WinString16:	; Hyune
 .db $48, $7E, $7A, $73, $6A, $65
-WinString17:	; Muwaller
-.db $4D, $7A, $7C, $66, $71, $71, $6A, $77, $65
+WinString17:	; Magicwall
+.db $4D, $66, $6C, $6E, $68, $7C, $66, $71, $71, $65
 WinString18:	; Tonndre
 .db $54, $74, $73, $73, $69, $77, $6A, $65
-WinString19:	; Trupa
-.db $54, $77, $7A, $75, $66, $65
-WinString20:	; Raputt
-.db $52, $66, $75, $7A, $79, $79, $65
-WinString21:	; Surt
-.db $53, $7A, $77, $79, $65
-WinString22:	; Muode
-.db $4D, $7A, $74, $69, $6A, $65
-WinString23:	; Reebus
-.db $52, $6A, $6A, $67, $7A, $78, $65
-WinString24:	; More
-.db $4D, $74, $77, $6A, $65
-WinString25:	; Stats
-.db $53, $79, $66, $79, $78, $65
+WinString19:	; Troop
+.db $54, $77, $74, $74, $75, $65
+WinString20:	; Untrap
+.db $55, $73, $79, $77, $66, $75, $65
+WinString21:	; Evac
+.db $45, $7B, $66, $68, $65
+WinString22:	; Unseal
+.db $55, $73, $78, $6A, $66, $71, $65
+WinString23:	; Rebirth
+.db $52, $6A, $67, $6E, $77, $79, $6D, $65
+WinString24:	; NEXT
+.db $4E, $45, $58, $54, $65
+WinString25:	; Status
+.db $53, $79, $66, $79, $7A, $78, $65
 WinString26:	; Search
 .db $53, $6A, $66, $77, $68, $6D, $65
 WinString27:	; Save
@@ -111,10 +111,10 @@ WinString33:	; Yes
 .db $59, $6A, $78, $65
 WinString34:	; No
 .db $4E, $74, $65
-WinString35:	; Attack
-.db $41, $79, $79, $66, $68, $70, $65
-WinString36:	; Defense
-.db $44, $6A, $6B, $6A, $73, $78, $6A, $65
+WinString35:	; Attack Pwr
+.db $41, $79, $79, $66, $68, $70, $20, $50, $7C, $77, $65
+WinString36:	; Defense Pwr
+.db $44, $6A, $6B, $6A, $73, $78, $6A, $20, $50, $7C, $77, $65
 WinString37:	; Max HP
 .db $4D, $66, $7D, $20, $48, $50, $65
 WinString38:	; Max MP

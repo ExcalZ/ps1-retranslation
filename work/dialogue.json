@@ -4345,7 +4345,7 @@
    "us": "{NAME} SPOTTED AND{BR}DISARMED THE TRAP.{END}",
    "jp_addr": "02:ACBB",
    "jp": "アブナイ　トコロダッタ。{NAME}ハ{BR}ワナヲ　ミヤブッテ　ハズシタ。{END}",
-   "en": "That was close!{BR}{NAME} spotted the{PAGE}trap and disarmed{BR}it.{END}"
+   "en": "That was close!{BR}{NAME} spotted{PAGE}the trap and{BR}disarmed it.{END}"
   },
   {
    "id": "LABEL_B12_B2AC",
@@ -4400,7 +4400,7 @@
    "us": "USING {ITEM}{BR}WILL DO NO GOOD{PAGE}HERE.{END}",
    "jp_addr": "02:AD11",
    "jp": "シカシ　ココデ　{ITEM}ハ{BR}ヤクニ　タタナイ。{END}",
-   "en": "But {ITEM}{BR}is no use here.{END}"
+   "en": "But{BR}{ITEM}{BR}is no use here.{END}"
   },
   {
    "id": "LABEL_B12_B2FB",
@@ -4565,7 +4565,7 @@
    "us": "{NAME} FEELS{BR}NOTHING.{END}",
    "jp_addr": "02:AE34",
    "jp": "{NAME}ハ　ナニモ　カンジナカッタ。{END}",
-   "en": "{NAME} felt nothing.{END}"
+   "en": "{NAME} felt{BR}nothing.{END}"
   },
   {
    "id": "LABEL_B12_B431",
@@ -4917,7 +4917,7 @@
    "us": "{NAME} IS STILL{BR}ALIVE.{TIMED}",
    "jp_addr": "02:B064",
    "jp": "{NAME}ハ　マダ　イキテイル。{TIMED}",
-   "en": "{NAME} is still alive.{TIMED}"
+   "en": "{NAME} is still{BR}alive.{TIMED}"
   },
   {
    "id": "LABEL_B12_B71B",
@@ -5357,7 +5357,7 @@
    "us": "{NAME} NEEDS {NUMBER}{BR}EXPERIENCE POINTS.{END}",
    "jp_addr": "02:B363",
    "jp": "{NAME}ハ　{NUMBER}ポイント{BR}ヒツヨウデス。{END}",
-   "en": "{NAME} needs {NUMBER}{BR}more points.{END}"
+   "en": "{NAME} needs{BR}{NUMBER} more points.{END}"
   },
   {
    "id": "LABEL_B12_BA3C",
@@ -5797,7 +5797,7 @@
    "us": "{NAME} IS STRONG{BR}ENOUGH ALREADY.{END}",
    "jp_addr": "02:B6E7",
    "jp": "{NAME}ハ　モウ{BR}チカライッパイデス。{END}",
-   "en": "{NAME} is already at{BR}full strength.{END}"
+   "en": "{NAME} is already{BR}at full strength.{END}"
   },
   {
    "id": "LABEL_B12_BE1B",
