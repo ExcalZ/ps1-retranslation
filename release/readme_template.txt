@@ -97,8 +97,6 @@ window's width, and play-tested by the author.
   2. REQUIRED ROM
 --------------------------------------------------------------------------------
 
-Either of the last two US/European releases of the cartridge works.
-
   Game:          Phantasy Star (USA, Europe), version 3
   Size:          @SRC_SIZE@ bytes  (512 KB / 4 Mbit)
   Header:        none - plain headerless .sms dump
@@ -107,23 +105,11 @@ Either of the last two US/European releases of the cartridge works.
   MD5:           @SRC_MD5@
   SHA-1:         @SRC_SHA1@
 
-  or the earlier release:
-
-  Game:          Phantasy Star (USA, Europe), version 2
-  Size:          @V2_SIZE@ bytes
-
-  CRC32:         @V2_CRC32@
-  MD5:           @V2_MD5@
-  SHA-1:         @V2_SHA1@
-
-The two releases differ in @V2DIFF@ bytes. Patcher.html accepts either and
-converts version 2 to version 3 before patching. With a conventional patcher, use
-the patch file that matches your ROM (section 3).
-
-The patch applies to these exact ROMs only. If your file has a different
-size or checksum, the patching tool will refuse it. The Japanese release
-is not supported. A dump with a 512-byte copier header holds the same ROM;
-Patcher.html removes the header, other patchers need a headerless file.
+The patch applies to this exact ROM only. If your file has a different
+size or checksum, the patching tool will refuse it. Earlier US/European
+releases and the Japanese release are not supported. A dump with a
+512-byte copier header holds the same ROM; Patcher.html removes the
+header, other patchers need a headerless file.
 
 No ROM is included with this patch and none will be provided. You must
 supply your own copy of the game.
@@ -138,7 +124,6 @@ supply your own copy of the game.
     1. Open Patcher.html from this archive in any web browser.
        It works offline; nothing is uploaded anywhere.
     2. Drop your Phantasy Star ROM onto the page, or click to choose it.
-       Either release is accepted.
     3. The page checks that your ROM is a supported one, applies the
        patch and offers the result for saving as an .sms file. Never
        overwrite your original ROM.
@@ -146,16 +131,13 @@ supply your own copy of the game.
   WITH A CONVENTIONAL PATCHER
 
   Patch format:  BPS
-  Patch files:   @PATCH@     for version 3 (CRC32 @SRC_CRC32@)
-                 @PATCH2@  for version 2 (CRC32 @V2_CRC32@)
-
-  Both produce the same patched ROM.
+  Patch file:    @PATCH@
 
   Recommended tool: Floating IPS (Flips)
                     https://www.romhacking.net/utilities/1040/
 
     1. Open Flips and choose "Apply Patch".
-    2. Select the patch file for your ROM's release from this archive.
+    2. Select @PATCH@ from this archive.
     3. Select your unmodified Phantasy Star ROM.
     4. Save the result under a new file name.
 
@@ -163,7 +145,7 @@ supply your own copy of the game.
   ROMhacking.net.
 
   BPS patches store a checksum of the source ROM. If the tool reports a
-  mismatch, your ROM is not the expected release - see section 2.
+  mismatch, your ROM is not the expected one - see section 2.
 
 
 --------------------------------------------------------------------------------

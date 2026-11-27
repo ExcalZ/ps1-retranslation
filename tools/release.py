@@ -5,17 +5,14 @@
 Produces, under release/ (both ignored by git):
 
     PS1_Retranslation_v1.0/PS1_Retranslation_v1.0.bps      (from US/EU v3)
-    PS1_Retranslation_v1.0/PS1_Retranslation_v1.0_V2.bps   (from US/EU v2)
     PS1_Retranslation_v1.0/Patcher.html
     PS1_Retranslation_v1.0/readme.txt
     PS1_Retranslation_v1.0.zip
 
 The disassembly reproduces US/EU v3 (CRC32 00BEF1D7, PSI_Disasm/ps1original.sms) with every
-option at 0, so the canonical patch is made against v3. US/EU v2 (CRC32 E4A65E79) is taken as
-well (the owner, 2026-11-26): a small BPS from v2 to v3 is embedded in Patcher.html, which
-applies it first when it recognises that dump, and a second full patch from v2 ships beside
-the canonical one for conventional patchers. The v2 dump is expected at
-work/ps1en_v2_stock.sms (game data: never committed).
+option at 0, and the patch is made against v3 only (the owner, 2026-11-26: v2, E4A65E79, is
+rarer and no dump of it is at hand). tools/webpatch.py can still embed alternates - a small BPS
+that turns another dump into v3 - should a v2 patch be wanted later.
 
 Patches are made with Flips when it is found (flips/flips.exe here or in a sibling
 ../ps4-translate or ../ps2-translate, all untracked) - its encoder finds more matches - and
@@ -30,7 +27,7 @@ the template, not the rendered readme.
 Refuses to package if:
   - the ROM being shipped differs from PSI_Disasm/ps1built.sms (a stale copy), unless
     --allow-stale is given
-  - a source ROM's CRC32 is wrong, or the v2 dump is missing
+  - the source ROM's CRC32 is wrong
   - the ROM's header checksum does not match the one stored at $7FFA
   - re-applying a patch does not reproduce its target
 """
@@ -53,8 +50,6 @@ import webpatch  # noqa: E402
 NAME = 'PS1_Retranslation'
 V3 = os.path.join(ROOT, 'PSI_Disasm', 'ps1original.sms')
 V3_CRC = 0x00BEF1D7
-V2 = os.path.join(ROOT, 'work', 'ps1en_v2_stock.sms')
-V2_CRC = 0xE4A65E79
 BUILT = os.path.join(ROOT, 'PSI_Disasm', 'ps1built.sms')
 TEMPLATE = os.path.join(ROOT, 'release', 'readme_template.txt')
 PATCHER = os.path.join(ROOT, 'tools', 'patcher_template.html')
@@ -112,7 +107,6 @@ def main(argv):
     rom_path = argv[argv.index('--rom') + 1] if '--rom' in argv else os.path.join(ROOT, 'ps1en.sms')
 
     v3 = load(V3, V3_CRC, 'Phantasy Star (USA, Europe) v3')
-    v2 = load(V2, V2_CRC, 'Phantasy Star (USA, Europe) v2')
     rom = open(rom_path, 'rb').read()
     if os.path.exists(BUILT) and open(BUILT, 'rb').read() != rom and '--allow-stale' not in argv:
         sys.exit('%s differs from %s - rebuild first, or pass --allow-stale' % (rom_path, BUILT))
@@ -125,16 +119,12 @@ def main(argv):
     os.makedirs(folder, exist_ok=True)
     label = '%s v%s' % (NAME.replace('_', ' '), version)
     patch = make_patch(v3, rom, label)
-    patch2 = make_patch(v2, rom, label + ' (v2)')
-    to_v3 = make_patch(v2, v3, 'v2 to v3', flips=False)
-    names = {'PATCH': stem + '.bps', 'PATCH2': stem + '_V2.bps'}
+    names = {'PATCH': stem + '.bps'}
     open(os.path.join(folder, names['PATCH']), 'wb').write(patch)
-    open(os.path.join(folder, names['PATCH2']), 'wb').write(patch2)
 
-    diff = sum(1 for a, b in zip(v2, v3) if a != b)
     tokens = dict(names, VERSION=version, DATE=datetime.date.today().strftime('%d.%m.%Y'),
-                  SMSCHK='%04X' % stored, V2DIFF='{:,}'.format(diff))
-    for prefix, data in (('SRC_', v3), ('V2_', v2), ('OUT_', rom)):
+                  SMSCHK='%04X' % stored)
+    for prefix, data in (('SRC_', v3), ('OUT_', rom)):
         for k, v in hashes(data).items():
             tokens[prefix + k] = v
     text = render(TEMPLATE, tokens)
@@ -151,18 +141,16 @@ def main(argv):
         'OUT_NAME': 'Phantasy Star - English Retranslation v%s' % version,   # + .sms
         'README_NOTE': ' See readme.txt.',
         'HINT': ' See readme.txt, section 2.',
-    }, alternates=[('US/EU v2', to_v3)])
+    })
 
     zip_path = os.path.join(OUTDIR, stem + '.zip')
     with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as z:
-        for n in (names['PATCH'], names['PATCH2'], 'Patcher.html', 'readme.txt'):
+        for n in (names['PATCH'], 'Patcher.html', 'readme.txt'):
             z.write(os.path.join(folder, n), n)
 
-    print('source  v3 %s  CRC32 %s; v2 CRC32 %s (%s bytes differ)'
-          % (tokens['SRC_SIZE'], tokens['SRC_CRC32'], tokens['V2_CRC32'], tokens['V2DIFF']))
+    print('source  v3 %s  CRC32 %s' % (tokens['SRC_SIZE'], tokens['SRC_CRC32']))
     print('target  %s  CRC32 %s  header checksum %s' % (tokens['OUT_SIZE'], tokens['OUT_CRC32'], tokens['SMSCHK']))
-    print('patches %d / %d bytes (%s), %d-byte v2 -> v3 in the patcher; all verified by re-applying'
-          % (len(patch), len(patch2), 'Flips' if FLIPS else 'tools/bps.py', len(to_v3)))
+    print('patch   %d bytes (%s), verified by re-applying' % (len(patch), 'Flips' if FLIPS else 'tools/bps.py'))
     print('wrote   %s' % folder)
     print('wrote   %s' % zip_path)
 

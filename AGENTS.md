@@ -20,9 +20,9 @@ options on are listed in `PSI_Disasm/ps1.options.asm` (`docs/pipeline.md` sectio
 `docs/engine-plan.md`).
 
 **Releases:** `python tools/release.py VERSION` after a build and the checks writes
-`release/PS1_Retranslation_vVERSION/` and its zip (ignored by git): BPS patches from US/EU v3
-(`00BEF1D7`) and v2 (`E4A65E79`, its dump at `work/ps1en_v2_stock.sms`), `Patcher.html` (takes
-either; a v2 -> v3 patch embedded) and `readme.txt`, rendered from
+`release/PS1_Retranslation_vVERSION/` and its zip (ignored by git): the BPS patch from US/EU v3
+(`00BEF1D7`; v3 only, the owner, 2026-11-26: v2 is rarer and no dump is at hand), `Patcher.html`
+and `readme.txt`, rendered from
 `release/readme_template.txt` (edit the template; add each version to its changelog). Patches
 are made with Flips when found, re-applied with `tools/bps.py` before they are written.
 

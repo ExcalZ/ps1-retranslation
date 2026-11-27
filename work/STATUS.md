@@ -465,17 +465,16 @@ waiting on the owner's decisions (`work/glossary.md`, questions 1-6).
   in the face from `$101`, no stock capitals; the build without the fix shows the owner's screen.
 
 * **Release packaging, v1.0 (2026-11-26).** The owner: "commit everything we have and prepare
-  a 1.0 release", the patch to take US/EU v2 as well as v3 (settling that open question).
-  `tools/release.py VERSION`, as PS II's: BPS from v3 and from v2 (`_V2.bps`), `Patcher.html`
+  a 1.0 release". The patch takes US/EU v3 only: the owner first chose v2 as well, then found
+  no dump of it ("apparently it's more rare anyway. Let's stick with the v3"), which settles
+  that open question. `tools/release.py VERSION`, as PS II's: the BPS from v3, `Patcher.html`
   (`tools/webpatch.py`, `tools/patcher_template.html`: PS II's page for `.sms`, a copier
-  header dropped, a v2 -> v3 BPS embedded as an alternate), `readme.txt` from
+  header dropped; alternates still possible), `readme.txt` from
   `release/readme_template.txt` (sizes and hashes filled from the files), and the zip. `tools/bps.py`
-  is PS II's. Dry run (v3 standing in for the missing v2 dump): Flips patches of 25,975
-  bytes, re-applied byte-exact; the page in a browser patched v3, plain and with a 512-byte
+  is PS II's. Flips patch, re-applied byte-exact; the page in a browser patched v3, plain and with a 512-byte
   header, to CRC32 `C1EAE68B` and refused the JP ROM. A save made on the stock v3 ROM loads in
   the patched one (`savegame` on `ps1original.sms`, its battery under a copy of the patched
-  ROM, `continue --keep-sram`). Waiting on the v2 dump (`work/ps1en_v2_stock.sms`) for the
-  real package.
+  ROM, `continue --keep-sram`).
 
 * **Out of tiles, safely (2026-11-26).** The owner asked for the fallback to be safe too. A run
   that runs out of pool tiles fell back to the stock capitals, which show only where the font's

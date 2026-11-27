@@ -8,8 +8,8 @@ the ROM - the same shape as the
 [IV](https://github.com/ExcalZ/ps4-retranslation) retranslations.
 
 **Players:** get the patch from the release zip (`python tools/release.py VERSION` builds it):
-an offline patcher (`Patcher.html`, which takes either of the US/European releases, version 3
-or 2), the BPS patches and the readme. Nothing else here is needed to play.
+an offline patcher (`Patcher.html`, for the US/European release, version 3), the BPS patch and
+the readme. Nothing else here is needed to play.
 
 **Status: v1.0.** The whole script is translated from the Japanese; the text engine is rebuilt
 (proportional text in the dialogue, the story scenes and every window, full-length names), with
@@ -60,8 +60,8 @@ python tools/release.py 1.0
 ```
 
 after a build and the checks: writes `release/PS1_Retranslation_v1.0/` and its zip (both ignored
-by git). It needs the US/EU v2 dump (CRC32 `E4A65E79`) at `work/ps1en_v2_stock.sms` besides the
-v3 one; the readme is rendered from `release/readme_template.txt`.
+by git), the patch made against US/EU v3; the readme is rendered from
+`release/readme_template.txt`.
 
 ## Editing the translation
 
