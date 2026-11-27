@@ -7,9 +7,14 @@ the ROM - the same shape as the
 [III](https://github.com/ExcalZ/ps3-retranslation) and
 [IV](https://github.com/ExcalZ/ps4-retranslation) retranslations.
 
-**Status: early.** The disassembly assembles the US/EU release byte for byte, and the whole
-script is extracted into JSON with the Japanese beside the 1987 English; nothing is translated
-yet. See `work/STATUS.md`.
+**Players:** get the patch from the release zip (`python tools/release.py VERSION` builds it):
+an offline patcher (`Patcher.html`, which takes either of the US/European releases, version 3
+or 2), the BPS patches and the readme. Nothing else here is needed to play.
+
+**Status: v1.0.** The whole script is translated from the Japanese; the text engine is rebuilt
+(proportional text in the dialogue, the story scenes and every window, full-length names), with
+battle macros, the hospital's Everyone and faster exploration as engine options. Every option
+at 0 still assembles the US/EU release byte for byte. See `work/STATUS.md`.
 
 No ROM is included here. To build you need WLA-DX 10.7 (`wla_dx_v10.7_Win64/` in the
 repository root, or `$WLADX`) and the stock US/EU v3 ROM (CRC32 `00BEF1D7`) at
@@ -34,6 +39,7 @@ PSI_Disasm/ext/          the new engine code and banks
 PSI_Disasm/ps1.options.asm  the engine options (1 MB ROM, far calls, relocated script)
 tools/                   the toolchain (Python 3.10+, standard library only)
 tools/ps1emu.py          runs the bounded emulator scenarios (work/scripts/) in Mesen 2
+tools/release.py         packages a release: BPS patches, Patcher.html, readme (release/)
 tools/diafont.py         the proportional face (from tools/vwfmixed.py, the series' face)
 ```
 
@@ -46,6 +52,16 @@ python tools/sourcebuild.py ps1en.sms
 writes the JSON into the source (`gentext.py`), assembles with WLA-DX, fixes the header
 checksum and copies the ROM. Checks: `checkbuild.py`, `linecheck.py`, `gentext.py --check`,
 `checkstock.py`, `test_text.py` (`AGENTS.md`).
+
+## Releasing
+
+```bash
+python tools/release.py 1.0
+```
+
+after a build and the checks: writes `release/PS1_Retranslation_v1.0/` and its zip (both ignored
+by git). It needs the US/EU v2 dump (CRC32 `E4A65E79`) at `work/ps1en_v2_stock.sms` besides the
+v3 one; the readme is rendered from `release/readme_template.txt`.
 
 ## Editing the translation
 

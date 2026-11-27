@@ -15,10 +15,16 @@ complete model: copy its structure and tool names when building the pipeline her
 Unlike the siblings this is a **Z80 / Master System** game: the Mega Drive tools
 (`tools/md/`, BlastEm, the 68000 interpreter) do not apply.
 
-**State:** see `work/STATUS.md`. The script is extracted (`work/dialogue.json`,
-`work/script.json`) and the generator writes it back bit-exact; nothing is translated yet.
-Engine options on: `expand_rom`, `far_calls`, `relocate_script` (`docs/pipeline.md` section 6;
-the plan for the rest in `docs/engine-plan.md`).
+**State:** v1.0 (2026-11-26); see `work/STATUS.md`. The script is translated; the engine
+options on are listed in `PSI_Disasm/ps1.options.asm` (`docs/pipeline.md` section 6; the plan in
+`docs/engine-plan.md`).
+
+**Releases:** `python tools/release.py VERSION` after a build and the checks writes
+`release/PS1_Retranslation_vVERSION/` and its zip (ignored by git): BPS patches from US/EU v3
+(`00BEF1D7`) and v2 (`E4A65E79`, its dump at `work/ps1en_v2_stock.sms`), `Patcher.html` (takes
+either; a v2 -> v3 patch embedded) and `readme.txt`, rendered from
+`release/readme_template.txt` (edit the template; add each version to its changelog). Patches
+are made with Flips when found, re-applied with `tools/bps.py` before they are written.
 
 ## Rebuild rule
 
@@ -138,5 +144,4 @@ quotes.
 ## Decisions that belong to the owner - do not settle them yourself
 
 * names not yet in `work/glossary.md` (most of PS I's);
-* whether the patch should also apply to US/EU v2 (`E4A65E79`);
 * which engine extras to take (see `work/STATUS.md`, Next 5).
