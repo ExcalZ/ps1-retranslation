@@ -492,7 +492,7 @@
      "hex": "5345435245545365",
      "us": "SECRETS",
      "jp": "ヒミツノモノ",
-     "en": "Secret Thing"
+     "en": "Secret Item"
     }
    ]
   },
@@ -2931,6 +2931,119 @@
        18
       ]
      ]
+    }
+   ]
+  },
+  "macro_words": {
+   "kind": "macro",
+   "file": "ext/macros_data.asm",
+   "about": "battle_macros (ext/macros.asm): words with no stock text, drawn in the face. The battle's first window is Command, Macro and battle_menu's Talk and Flee; Command then gives battle_menu's Fight, Magic and Item member by member. The field menu gets Macro before Save. cells: the run's width (8 px a cell).",
+   "runs": [
+    {
+     "id": 0,
+     "where": "battle: the round's first window, Command (the stock commands, member by member)",
+     "cells": 5,
+     "added": true,
+     "jp": "",
+     "us": "",
+     "en": "Command"
+    },
+    {
+     "id": 1,
+     "where": "battle: the round's first window, and the field menu's fifth entry: Macro",
+     "cells": 4,
+     "added": true,
+     "jp": "",
+     "us": "",
+     "en": "Macro"
+    },
+    {
+     "id": 2,
+     "where": "the macro slots: slot 1's letter",
+     "cells": 1,
+     "added": true,
+     "jp": "",
+     "us": "",
+     "en": "A"
+    },
+    {
+     "id": 3,
+     "where": "the macro slots: slot 2's letter",
+     "cells": 1,
+     "added": true,
+     "jp": "",
+     "us": "",
+     "en": "B"
+    },
+    {
+     "id": 4,
+     "where": "the macro slots: slot 3's letter",
+     "cells": 1,
+     "added": true,
+     "jp": "",
+     "us": "",
+     "en": "C"
+    },
+    {
+     "id": 5,
+     "where": "the macro slots: slot 4's letter",
+     "cells": 1,
+     "added": true,
+     "jp": "",
+     "us": "",
+     "en": "D"
+    },
+    {
+     "id": 6,
+     "where": "the macro slots: slot 5's letter",
+     "cells": 1,
+     "added": true,
+     "jp": "",
+     "us": "",
+     "en": "E"
+    },
+    {
+     "id": 7,
+     "where": "the macro slots: slot 6's letter",
+     "cells": 1,
+     "added": true,
+     "jp": "",
+     "us": "",
+     "en": "F"
+    },
+    {
+     "id": 8,
+     "where": "the macro slots: slot 7's letter",
+     "cells": 1,
+     "added": true,
+     "jp": "",
+     "us": "",
+     "en": "G"
+    },
+    {
+     "id": 9,
+     "where": "the macro slots: slot 8's letter",
+     "cells": 1,
+     "added": true,
+     "jp": "",
+     "us": "",
+     "en": "H"
+    }
+   ]
+  },
+  "hospital_words": {
+   "kind": "macro",
+   "file": "ext/longnames_data.asm",
+   "about": "hospital_everyone (ext/hospital.asm): a word with no stock text, drawn in the face. The hospital's party menu (\"Who needs treatment?\") ends in it, after the party's names: the members' fees summed and everyone healed. cells: the run's width (8 px a cell).",
+   "runs": [
+    {
+     "id": 0,
+     "where": "the hospital's party menu: the last entry, everyone at once",
+     "cells": 6,
+     "added": true,
+     "jp": "",
+     "us": "",
+     "en": "Everyone"
     }
    ]
   }

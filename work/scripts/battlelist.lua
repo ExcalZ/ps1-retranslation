@@ -7,7 +7,8 @@
 
 local ENEMY = tonumber(PS1.params.enemy or 39)
 local function battle_menu() return area_text(2, 10, 1, 6) end
-local function menu_up() return #battle_menu() >= 5 and not window_open() end
+-- the members' commands (with battle_macros Fight / Magic / Item, after Command)
+local function menu_up() return battle_menu_up() and not battle_top_up() and not window_open() end
 
 local function cells(tag, row, c0, c1)
   local t = {}
@@ -46,8 +47,14 @@ function scenario()
   for i = 0, 8 do poke(0xC4C0 + i, 0x21 + i) end
   poke(0xC4E2, 9)
   poke(0xC2E6, ENEMY) poke(0xC29D, 0xFF) poke(0xC202, 0x0C)
-  wait_until(menu_up, 600, "the battle menu")
+  wait_until(function() return battle_menu_up() and not window_open() end, 600, "the battle menu")
   wait(20)
+  if battle_top_up() then                -- battle_macros: Command
+    log("first window: " .. table.concat(area_text(2, 10, 1, 7), " / "))
+    dump_screen("first")
+    press("two", 4, 30)
+    wait_until(menu_up, 300, "the members' commands")
+  end
   log("battle menu: " .. table.concat(battle_menu(), " / "))
   if PS1.params.trace then cells("menu", 6, 1, 6) end
 
@@ -91,7 +98,7 @@ function scenario()
     elseif yes_no_shown() then
       wait(20)
       press("two", 4, 20)
-    elseif menu_up() then
+    elseif battle_menu_up() and not window_open() then
       rounds = rounds + 1
       if rounds > 40 then error("still fighting after 40 rounds") end
       press("two", 4, 20)

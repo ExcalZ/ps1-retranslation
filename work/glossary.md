@@ -274,6 +274,11 @@ The JP menu words, translated; each fits its stock cells in the face.
 | ホカノ モチモノ | More (the inventory's next page) | NEXT |
 | メセタ | Meseta (the money line, the owner) | MST |
 
+`battle_macros` (no JP text; the owner's words, 2026-11-02, after PS II's): the battle's first
+window **Command / Macro / Talk / Flee** (Command then asks each member Fight / Magic / Item);
+the field menu **Stats / Magic / Item / Search / Macro / Save**; the slots **A-H**; a macro line
+with no spell or item reads **Fight** (`script.json` `macro_words`, battle_menu's Fight).
+
 ## In script.json (2026-10-17)
 
 Every name field holds the forms above: the party (Alisa, Myau, Tyron, Lutz), the 64 items, the

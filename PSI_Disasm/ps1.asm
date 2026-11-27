@@ -2332,6 +2332,23 @@ LABEL_108A:
 	ld	a, (hl)
 	or	a
 	jr	nz, LABEL_1080
+.IF battle_macros == 1
+; battle_macros: the round's first window (Command, Macro, Talk, Flee) and the member's
+; commands (Fight, Magic, Item) are asked in bank 35 (ext/macros.asm). MacroResult: a
+; BattleMenu_OptionTbl index, $FF back a member, $FE every member's command set (a macro)
+	ld	a, :MacroAsk
+	ld	hl, MacroAsk
+	call	FarCall
+	ld	a, (MacroResult)
+	cp	$FF
+	jp	z, LABEL_1121
+	cp	$FE
+	jp	z, LABEL_10B7
+	ld	hl, BattleMenu_OptionTbl
+	call	GetPtrAndJump
+	call	LABEL_2ECD
+.ORGA $10B7
+.ELSE
 	call	LABEL_3105
 	call	LABEL_30D5
 	call	LABEL_2EAC
@@ -2345,6 +2362,7 @@ LABEL_108A:
 	ld	hl, BattleMenu_OptionTbl
 	call	GetPtrAndJump
 	call	LABEL_2ECD
+.ENDIF
 
 LABEL_10B7:
 	ld	a, ($C267)
@@ -4031,12 +4049,20 @@ LABEL_1BEE:
 	jr	nz, LABEL_1C15
 	ld	hl, $7882
 	ld	(Cursor_pos), hl
+.IF battle_macros == 1
+	ld	a, $05		; battle_macros: Macro before Save (MacroPlayerTbl)
+.ELSE
 	ld	a, $04
+.ENDIF
 	ld	(Option_total_num), a
 	call	CheckOptionSelect
 	bit	Button_1, c
 	jp	nz, LABEL_1C13	; jump if we pressed the 1 button (cancel)
+.IF battle_macros == 1
+	ld	hl, MacroPlayerTbl
+.ELSE
 	ld	hl, PlayerMenu_OptionTbl
+.ENDIF
 	call	GetPtrAndJump
 	call	LABEL_36EF
 	jp	LABEL_1BEE
@@ -5880,7 +5906,11 @@ LABEL_28C5:
 	jp LABEL_3464
 
 LABEL_28DB:
+.IF vwf_windows == 1
+	call	WinChestAsk	; vwf_windows: the chest's pictures back if window text took them
+.ELSE
 	ld	hl, LABEL_B12_B656
+.ENDIF
 	call	ShowDialogue_B12
 	call	LABEL_37A3
 	push	af
@@ -5982,6 +6012,23 @@ LABEL_2989:
 	call	WaitForButton1Or2
 	ret
 
+.IF hospital_everyone == 1
+; hospital_everyone: the hospital with Everyone in its party menu, in bank 35 (ext/hospital.asm)
+LABEL_298D:
+	ld	a, :Hospital
+	ld	hl, Hospital
+	jp	FarCall
+; ShowDialogue_B12 for code in slot 2: it pages the messages' bank there, so page the caller's
+; bank back after it
+HospMsg:
+	ld	a, ($FFFF)
+	push	af
+	call	ShowDialogue_B12
+	pop	af
+	ld	($FFFF), a
+	ret
+.ORGA $2A6D
+.ELSE
 LABEL_298D:
 	ld hl, LABEL_B12_B8C8
 	call ShowDialogue_B12
@@ -6081,6 +6128,7 @@ LABEL_2A5E:
 	call ShowDialogue_B12
 +:
 	jp LABEL_3464
+.ENDIF
 
 LABEL_2A6D:
 	ld bc, $04FF
@@ -6968,6 +7016,27 @@ LABEL_30B7:
 	ld bc, $0640
 	jp LABEL_3A57
 
+.IF battle_macros == 1
+; battle_macros: the round's windows (ext/macros.asm) save r1-r11 c1-c7 here and are drawn by
+; MacroAsk; LABEL_30D5's bytes hold the field menu's table and its Macro entry
+LABEL_30C3:
+	ld	a, :MacroMenuSave
+	ld	hl, MacroMenuSave
+	jp	FarCall
+MacroPlayerTbl:
+.dw	PlayerMenu_Stats, PlayerMenu_Magic, PlayerMenu_Item, PlayerMenu_Search, PlayerMenu_Macro
+.dw	PlayerMenu_Save
+PlayerMenu_Macro:
+	ld	a, :MacroEdit
+	ld	hl, MacroEdit
+	jp	FarCall
+.ORGA $30E1
+LABEL_30E1:
+	ld	a, :MacroMenuRestore
+	ld	hl, MacroMenuRestore
+	jp	FarCall
+.ORGA $30ED
+.ELSE
 LABEL_30C3:
 	ld	hl, $D8A4
 	ld	de, $7842
@@ -6988,6 +7057,7 @@ LABEL_30E1:
 	ld de, $7842
 	ld bc, $0B0C
 	jp LABEL_3A57
+.ENDIF
 
 .IF long_item_names == 1
 ; long_item_names: the screen under the wider name box and under the HP box
@@ -7410,6 +7480,17 @@ VwfMenuFont:
 	ld	a, (VwfCutDirty)
 	or	a
 	call	nz, VwfFontBack
+.IF vwf_windows == 1
+	ld	a, (WinFontDirty)	; vwf_windows: the letters lent, and no window on them
+	or	a			; now (the save list's names in stock capitals after a dungeon's
+	jr	z, +		; fight: no fade in between)
+	push	hl
+	ld	a, :WinLettersBack
+	ld	hl, WinLettersBack
+	call	FarCall
+	pop	hl
++:
+.ENDIF
 	ld	a, ($FFFF)	; the instruction the hook replaced
 	ret
 .ENDIF
@@ -7771,6 +7852,36 @@ LABEL_3478:
 	ld	a, :WinSpellList
 	ld	hl, WinSpellList
 	jp	FarCall
+; LABEL_28DB (a chest's "Open it?"): a dungeon chest declined stays on screen, and Search
+; (PlayerMenu_Search) or a spell (LABEL_2102) asks again without loading its pictures
+; (LABEL_16B2), which the windows' pool may have lent meanwhile (WinPoolChest): load them
+; again first, then the instruction the hook replaced
+WinChestAsk:
+	ld	a, (WinChestDirty)
+	or	a
+	jr	z, +
+	xor	a
+	ld	(WinChestDirty), a
+	ld	a, :LABEL_B20_8008
+	ld	($FFFF), a		; LABEL_16B2's way: ShowDialogue_B12 pages its own bank next
+	ld	hl, LABEL_B20_8008
+	ld	de, $6000
+	call	LABEL_3FA
++:	ld	hl, LABEL_B12_B656
+	ret
+; LABEL_617D (a person's pictures loaded, person a): the person kept for the windows' pool
+; (WinEnsurePool), then the instructions the hook replaced
+WinPersonHook:
+	ld	(WinShownPerson), a
+	or	a
+	jr	nz, +
+	inc	sp			; none: LABEL_617D returns at once, as its ret z (hl kept)
+	inc	sp
+	ret
++:
+	ld	hl, $FFFF
+	ld	(hl), :Bank03
+	ret
 .ORGA $34C9
 LABEL_34C9:
 	ld	a, :WinSpellRestore
@@ -8256,6 +8367,24 @@ LABEL_36CC:
 	jp LABEL_3A57
 .ENDIF
 
+.IF battle_macros == 1
+; battle_macros: the field menu 13 rows, Macro before Save (ext/macros.asm)
+LABEL_36DD:
+	ld	a, :MacroFieldOpen
+	ld	hl, MacroFieldOpen
+	jp	FarCall
+.ORGA $36EF
+LABEL_36EF:
+	ld	a, :MacroFieldDraw
+	ld	hl, MacroFieldDraw
+	jp	FarCall
+.ORGA $36FB
+LABEL_36FB:
+	ld	a, :MacroFieldClose
+	ld	hl, MacroFieldClose
+	jp	FarCall
+.ORGA $3707
+.ELSE
 LABEL_36DD:
 	ld	hl, $D8A4
 	ld	de, $7842
@@ -8276,6 +8405,7 @@ LABEL_36FB:
 	ld de, $7842
 	ld bc, $0B0C
 	jp LABEL_3A57
+.ENDIF
 
 .IF long_item_names == 1
 ; long_item_names: party member a's equipment, LONG_X cells wider
@@ -12832,7 +12962,11 @@ LABEL_5A98:
 	ld a, ($C265)
 	or a
 	jp z, LABEL_5AFC
+.IF fast_walk == 1
+	cp $07
+.ELSE
 	cp $0F
+.ENDIF
 	jp nz, LABEL_5B30
 	ld a, c
 	or a
@@ -12940,20 +13074,28 @@ LABEL_5B30:
 +:
 	cp $02
 	jp nc, ++
+.IF fast_walk == 1
+.include "ext\fast_follow_y.asm"
+.ELSE
 	or a
 	jr nz, +
 	dec a
 +:
 	add a, (iy+2)
+.ENDIF
 	ld (iy+2), a
 	ret
 
 ++:
 	sub $02
+.IF fast_walk == 1
+.include "ext\fast_follow_x.asm"
+.ELSE
 	jr nz, +
 	dec a
 +:
 	add a, (iy+4)
+.ENDIF
 	ld (iy+4), a
 	ret
 
@@ -13770,11 +13912,19 @@ LABEL_6176:
 	jp	LABEL_6167
 
 LABEL_617D:
+.IF vwf_windows == 1
+	call	WinPersonHook	; vwf_windows: which person the screen shows, none for 0 (a talk
+	nop			; may load one itself, as Dr. Luveno's, LABEL_51DC: $C2DC does not
+	nop			; say; a room without one, a razed house, passes 0)
+	nop
+	nop
+.ELSE
 	or	a
 	ret  z
 
 	ld	hl, $FFFF
 	ld	(hl), :Bank03
+.ENDIF
 	ld	hl, $C800
 	ld	de, $C801
 	ld	bc, $00FF
@@ -15060,6 +15210,9 @@ LABEL_6A58:
 	jp	-
 
 LABEL_6A76:
+.IF fast_walk == 1
+.include "ext\fast_dungeon_table.asm"
+.ELSE
 .db	$8A, $6A, $90, $6A, $97, $6A, $A0, $6A, $A9, $6A, $B2
 .db $6A, $BB, $6A, $C4, $6A, $CD, $6A, $D6, $6A, $01, $02, $03, $04, $05, $FF, $05
 .db $04, $03, $02, $01, $00, $FF, $07, $08, $09, $0A, $0B, $0C, $0D, $00, $FF, $17
@@ -15067,6 +15220,8 @@ LABEL_6A76:
 .db $FF, $0F, $10, $11, $12, $13, $14, $15, $00, $FF, $0D, $0C, $0B, $0A, $09, $08
 .db $07, $00, $FF, $25, $24, $23, $22, $21, $20, $1F, $00, $FF, $1D, $1C, $1B, $1A
 .db $19, $18, $17, $00, $FF, $15, $14, $13, $12, $11, $10, $0F, $00, $FF, $F0, $01
+
+.ENDIF
 
 LABEL_6AE1:
 .db $10, $FF, $F0, $01
@@ -15992,17 +16147,29 @@ LABEL_7143:
 	ld c, a
 	ld a, ($C30E)
 	or a
+.IF fast_walk == 1
+	ld a, $07
+.ELSE
 	ld a, $0F
+.ENDIF
 	jr z, +
 	ld a, $07
 +:
 	ld ($C265), a
 ++:
+.IF fast_walk == 1
+	ld de, $0002
+.ELSE
 	ld de, $0001
+.ENDIF
 	ld a, ($C30E)
 	or a
 	jr z, +
+.IF fast_walk == 1
+	nop
+.ELSE
 	inc e
+.ENDIF
 +:
 	ld a, ($C304)
 	ld d, a
@@ -17551,7 +17718,11 @@ LABEL_7B40:
 	ld hl, $C21D
 	dec (hl)
 	ret p
+.IF fast_transitions == 1
+	ld (hl), $01	; same nine colour steps, half the interval
+.ELSE
 	ld (hl), $03
+.ENDIF
 	ld hl, Fade_timer
 	ld a, (hl)
 	bit 7, a

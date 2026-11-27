@@ -116,12 +116,15 @@ def compose(name, scenario, params, frames):
         head.append('  { %s, %d, { %s } },' % (lua_str(ch), adv, ', '.join(str(c) for c in cols)))
     head += ['}', '']
     # the menu words the build shows (script.json, or --script=: a trial build's copy), so a
-    # scenario finds a translated menu: PS1_WORDS.attack (the battle menu's first), yes, no
+    # scenario finds a translated menu: PS1_WORDS.attack (the battle menu's first), yes, no, and
+    # with battle_macros command and macro (the round's first window: macro_words)
     words = json.load(open(SCRIPT_PATH or os.path.join(ROOT, 'work', 'script.json'), encoding='utf-8'))
     segs = words['segments']
-    head += ['PS1_WORDS = { attack = %s, yes = %s, no = %s }' % (
+    macro = [r['en'].strip() for r in segs['macro_words']['runs']] if 'macro_words' in segs else ['', '']
+    head += ['PS1_WORDS = { attack = %s, yes = %s, no = %s, command = %s, macro = %s }' % (
         lua_str(segs['battle_menu']['runs'][0]['en'].strip()),
-        lua_str(segs['yes_no']['runs'][0]['en'].strip()), lua_str(segs['yes_no']['runs'][1]['en'].strip())), '']
+        lua_str(segs['yes_no']['runs'][0]['en'].strip()), lua_str(segs['yes_no']['runs'][1]['en'].strip()),
+        lua_str(macro[0]), lua_str(macro[1])), '']
     lib = open(os.path.join(SCRIPTS, 'lib.lua'), encoding='utf-8').read()
     body = open(scenario, encoding='utf-8').read()
     return '\n'.join(head) + lib + '\n-- ---- scenario: %s\n' % os.path.basename(scenario) + body

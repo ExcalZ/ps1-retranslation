@@ -1,6 +1,6 @@
 """Write an edits file into work/dialogue.json and work/script.json (only the en fields).
 
-    python tools/applyedits.py EDITS.json [--force]
+    python tools/applyedits.py [EDITS.json] [--force]     (default work/EDITS.json)
 
 EDITS.json as tools/trybuild.py takes it: {"dialogue": {ID: en}, "script": {SEGMENT: {RUN_ID: en}}}.
 Try the edits first (trybuild.py, a scenario); then this makes them the script's. The JSON keeps
@@ -8,7 +8,8 @@ its layout (one-space indent, its own line endings); an unknown id stops it befo
 written.
 
 The proofreader (tools/proofread.html) adds two keys: "was", the same shape, the en each edit
-replaced - an edit whose en has changed in the JSON since stops it (--force writes it anyway) -
+replaced - an edit whose en has changed in the JSON since stops it (--force writes it anyway),
+unless the JSON already holds the edit's own en (an edit applied before: nothing to lose) -
 and "notes", the proofreader's notes, printed here and not written."""
 import json
 import os
@@ -32,7 +33,10 @@ def save(path, text, doc):
 
 def main():
     args = [a for a in sys.argv[1:] if a != '--force']
-    edits = json.load(open(args[0], encoding='utf-8'))
+    path = args[0] if args else os.path.join(WORK, 'EDITS.json')
+    if len(args) > 1 or not os.path.exists(path):
+        raise SystemExit('usage: python tools/applyedits.py [EDITS.json] [--force]  (no %s)' % path)
+    edits = json.load(open(path, encoding='utf-8'))
     was = edits.get('was', {})
     dpath, dtext, dialogue = load('dialogue.json')
     spath, stext, script = load('script.json')
@@ -42,7 +46,7 @@ def main():
         e = by_id.get(i) or by_id.get('LABEL_' + i)
         if e is None:
             raise SystemExit('no entry %s in dialogue.json' % i)
-        if i in was.get('dialogue', {}) and e['en'] != was['dialogue'][i]:
+        if i in was.get('dialogue', {}) and e['en'] not in (was['dialogue'][i], en):
             stale.append(i)
         e['en'] = en
     for seg, runs in edits.get('script', {}).items():
@@ -52,7 +56,7 @@ def main():
         for rid, en in runs.items():
             if str(rid) not in rs:
                 raise SystemExit('no run %s %s in script.json' % (seg, rid))
-            if str(rid) in was.get('script', {}).get(seg, {}) and rs[str(rid)]['en'] != was['script'][seg][str(rid)]:
+            if str(rid) in was.get('script', {}).get(seg, {}) and rs[str(rid)]['en'] not in (was['script'][seg][str(rid)], en):
                 stale.append('%s %s' % (seg, rid))
             rs[str(rid)]['en'] = en
     if stale and '--force' not in sys.argv:

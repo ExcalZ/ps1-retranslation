@@ -173,7 +173,11 @@ LongRowCells_Face:
 	ret
 .ENDIF
 
-; a border row at de: b cells between the corners; c = 0 the top, 1 the bottom
+; a border row at de: b cells between the corners; c = 0 the top, 1 the bottom. While the
+; screen is drawn the VDP takes a CPU write only at its next free access slot, and a second
+; write before then replaces the first (the stock keeps 26 cycles between them): each write
+; here waits 36 or more. The first middle cell's tile once came 18 cycles after the corner's
+; attribute, and on some frames the row lost a byte - every cell after it a backdrop tile
 LongBorder:
 	push	bc
 	push	hl
@@ -192,13 +196,17 @@ LongBorder:
 	pop	af
 	ld	a, c
 	out	(Port_VDPData), a
--:	ld	a, $F2
+-:	push	af
+	pop	af
+	ld	a, $F2
 	out	(Port_VDPData), a
 	push	af
 	pop	af
 	ld	a, c
 	out	(Port_VDPData), a
 	djnz	-
+	push	af
+	pop	af
 	ld	a, $F1
 	out	(Port_VDPData), a
 	push	af
@@ -222,6 +230,10 @@ LongRowEnd:
 ; LABEL_30ED: the screen under the name box (stock columns c14-c23 to $D928, the new c10-c13
 ; to LongEnemyBoxExtra, c8-c9 to LongEnemyBoxExtra2) and under the HP box ($D978)
 LongEnemyBoxSave:
+.IF vwf_windows == 1
+	ld	a, 1
+	ld	(WinBattleStart), a	; a battle, whatever $C29D says yet (WinEnsurePool)
+.ENDIF
 	ld	hl, $D928
 	ld	de, $781C
 	ld	bc, $0414
@@ -243,7 +255,11 @@ LongEnemyBoxSave:
 
 ; LABEL_3105: the name box, LONG_X cells wider than the stock's
 LongEnemyBox:
-	ld	de, $781C - 2 * LONG_X
+.IF vwf_windows == 1
+	ld	a, 1			; vwf_windows: the battle draws the box again after hits,
+	ld	(WinForceReuse), a	; items and turns, inside the region its round's windows
+.ENDIF					; saved: in place, so it keeps its first tiles (new ones
+	ld	de, $781C - 2 * LONG_X	; each time climbed the pool into the effects' tiles)
 	ld	bc, LONG_W * 256
 	call	LongBorder
 	push	de
@@ -253,6 +269,10 @@ LongEnemyBox:
 	call	LongRowName
 	ld	c, 1
 	call	LongRowName		; (keeps hl)
+.IF vwf_windows == 1
+	xor	a
+	ld	(WinForceReuse), a
+.ENDIF
 	ld	bc, LONG_W * 256 + 1
 	jp	LongBorder
 
@@ -290,12 +310,12 @@ LongEquipBox:
 	ld	de, $7A8C
 	ld	bc, $0814
 	call	LABEL_3AA6
-	ld	hl, LongSharedExtra
+	ld	hl, LongEquipExtra
 	ld	de, $7A8C - 2 * LONG_XA
 	ld	bc, $0800 + 2 * LONG_XA
 	call	LABEL_3AA6
 .IF LONG_XB > 0
-	ld	hl, LongSharedExtra2
+	ld	hl, LongEquipExtra2
 	ld	de, $7A8C - 2 * LONG_X
 	ld	bc, $0800 + 2 * LONG_XB
 	call	LABEL_3AA6
@@ -336,12 +356,12 @@ LongEquipBoxRestore:
 	ld	de, $7A8C
 	ld	bc, $0814
 	call	LABEL_3A57
-	ld	hl, LongSharedExtra
+	ld	hl, LongEquipExtra
 	ld	de, $7A8C - 2 * LONG_XA
 	ld	bc, $0800 + 2 * LONG_XA
 	call	LABEL_3A57
 .IF LONG_XB > 0
-	ld	hl, LongSharedExtra2
+	ld	hl, LongEquipExtra2
 	ld	de, $7A8C - 2 * LONG_X
 	ld	bc, $0800 + 2 * LONG_XB
 	call	LABEL_3A57
@@ -491,6 +511,8 @@ LongInventory:
 	ld	a, $11
 	out	(Port_VDPData), a
 	ld	b, LONG_X - 1
+	push	af			; the VDP's pace (LongBorder)
+	pop	af
 -:	ld	a, $C0
 	out	(Port_VDPData), a
 	push	af

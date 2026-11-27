@@ -102,6 +102,7 @@
 /* ---- the model: linecheck.py's rules over the JSON, no DOM (tools/proofsync.py embeds the data) ---- */
 const VWF=OPTIONS.vwf_dialogue===1, VWF_CUT=VWF&&OPTIONS.vwf_cutscene===1, WIN=OPTIONS.vwf_windows===1;
 const LONG_NAMES=OPTIONS.long_names===1, LONG_ITEMS=OPTIONS.long_item_names===1, DICT=OPTIONS.script_dictionary===1;
+const MACROS=OPTIONS.battle_macros===1;   // the macro preview gives a party name 5 cells (40 px)
 const FACE_KINDS={};   // the kinds drawn in the face: [line px, lines a wait] (stockwrap.window_kinds)
 if(VWF){FACE_KINDS.dialogue=[LINE_PX,2];FACE_KINDS.message=[LINE_PX,2];}
 if(VWF_CUT)FACE_KINDS.cutscene=[CUT_PX,CUT_LINES];
@@ -232,7 +233,7 @@ function dialogueProblems(e,text,ins,all){
     const n=page.length-(page.length>1&&!page[page.length-1]?1:0);
     if(perPage&&n>perPage)p.push(`${e.id}: ${n} lines on a page (${perPage})`);
   }
-  const want=e.falls_through?null:endCode(e.us), got=endCode(text);
+  const want=e.falls_through?null:e.added?e.end:endCode(e.us), got=endCode(text);
   if(got!==want)p.push(`${e.id}: ends in ${got===null?'None':got}, the stock entry in ${want===null?'None':want}`);
   return p;
 }
@@ -251,6 +252,7 @@ function nameRule(name){   // the name tables: [letters, the face's px or null]
 /* how a run is measured, for the picture: {mode:'face'|'cells'|'none', limit, unit, text} */
 function runRule(name,seg,r){
   if(seg.kind==='readonly')return {mode:'none'};
+  if(seg.kind==='macro')return {mode:'face',limit:8*r.cells,text:pyStrip(r.en),minus:1,what:`${r.cells} cells in the face (no stock text)`};
   if(seg.kind==='tilemap'||seg.kind==='naming'){
     if(WIN&&name==='money')return {mode:'face',limit:64,text:pyStrip(r.en)+' 65535',minus:1,what:"the money box's 8 cells, with the largest sum"};
     if(WIN&&name==='status_boxes')return {mode:'face',limit:null,text:pyStrip(r.en),minus:1,what:'vwf_windows draws the party names here (not checked)'};
@@ -258,6 +260,8 @@ function runRule(name,seg,r){
     return {mode:'cells',limit:r.cells,text:r.en,what:`${r.cells} cells in the stock font`+(r.upper?'':', no row above')};
   }
   const nr=nameRule(name);
+  if(nr.longParty&&name==='party'&&MACROS)return {mode:'face',limit:40,text:r.en,minus:1,letters:nr.width,
+    what:`${nr.width} letters, 40 px in the macro preview; in capitals in the stock menus`};
   if(nr.longParty)return {mode:'face',limit:nr.px,text:r.en,minus:1,letters:nr.width,
     what:`${nr.width} letters`+(nr.px?`, ${nr.px} px in the windows`:'')+'; in capitals in the stock menus'};
   return {mode:'cells',limit:seg.width,text:r.en,what:`${seg.width} cells`};
@@ -286,6 +290,15 @@ function scriptProblems(script,all){
       }
       continue;
     }
+    if(seg.kind==='macro'){   // linecheck: battle_macros' words, in the face within their cells
+      for(const r of seg.runs){
+        const text=pyStrip(r.en), err=encodeError(text,FACE_SET);
+        if(err){add(name,r,`${name} ${r.id}: ${err}`);continue;}
+        const px=text?facePx(text)-1:0;
+        if(px>8*r.cells)add(name,r,`${name} ${r.id} (${r.where}): ${pyRepr(text)} is ${px} px (${r.cells} cells, ${8*r.cells} px)`);
+      }
+      continue;
+    }
     if(seg.kind==='tilemap'||seg.kind==='naming'){
       for(const r of seg.runs)if(r.en!==r.us||all){const err=tileError(r.en,r.cells,r.upper);if(err)add(name,r,`${name} ${r.id} (${r.where}): ${err}`);}
       continue;
@@ -295,6 +308,7 @@ function scriptProblems(script,all){
       if(!(r.en!==r.us||all))continue;
       const n=[...r.en].length;
       if(n>width)add(name,r,`${name} ${r.id}: ${pyRepr(r.en)} is ${n} cells (${width})`);
+      if(name==='party'&&MACROS&&facePx(r.en)-1>40)add(name,r,`${name} ${r.id}: ${pyRepr(r.en)} is ${facePx(r.en)-1} px in the face (40)`);
       if(nr.longParty&&WIN&&(name==='items'||name==='enemies')&&facePx(r.en)-1>80)
         add(name,r,`${name} ${r.id}: ${pyRepr(r.en)} is ${facePx(r.en)-1} px in the face (80)`);
       const err=nr.longParty?(encodeError(r.en,FACE_SET)||encodeError(pyUpper(r.en),US_SET)):encodeError(r.en,US_SET);
@@ -619,7 +633,7 @@ function helpBox(){
    <li>Cut-scenes: ${k('cutscene')}; {PAGE} and {CLR} start a page.</li>
    <li>Inserts at their widest (blue): {NAME} the widest party name, {ITEM} and {ENEMY} the widest item and enemy name
      in <code>script.json</code> (as made: ${esc(Object.entries(INSERT_PX).map(([a,b])=>a+' '+b).join(', '))}${VWF?' px':''}), {NUMBER} as 99999.</li>
-   <li>Names: party ${LONG_NAMES?'6 letters':'4 cells'}; items and enemies ${LONG_ITEMS?'14 letters'+(WIN?' and 80 px in the face':''):'8 cells'}.
+   <li>Names: party ${LONG_NAMES?'6 letters'+(MACROS?' and 40 px in the face':''):'4 cells'}; items and enemies ${LONG_ITEMS?'14 letters'+(WIN?' and 80 px in the face':''):'8 cells'}.
      Menus${WIN?': each run in the face within its cells x 8 px (the spell lists a cell wider; the money label with 65535 in 64 px)':': a character a cell, the stock font'}.</li>
    <li>As linecheck does, only entries whose <code>en</code> differs from <code>us</code> are checked; tick <b>stock too</b> for <code>--all</code>.
      The bank sizes are left to linecheck.</li>

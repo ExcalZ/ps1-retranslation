@@ -2,7 +2,8 @@
 -- the title (down, button 1), "CONTINUE GAME- YES / DELETE GAME- NO" (button 2 on YES),
 -- "CONTINUE A GAME. / SELECT A NUMBER." with the slot list (slot 1
 -- must show the saved name), button 2 on slot 1, "CONTINUING GAME 1." and the field.
--- name=XXXXX: the name savegame used (default TEST).
+-- name=XXXXX: the name savegame used (default TEST). macros=1: the macros savegame macros=1
+-- wrote (battle_macros, $C3C0-$C3FF) must be back.
 -- Bounded: 900 frames to the title, 600 for the question, 3 tries at YES, 900 to the field.
 
 local NAME = PS1.params.name or "TEST"
@@ -34,4 +35,13 @@ function scenario()
   wait(60)
   shot("field")
   log(string.format("continued: game mode %d, Alisa HP %d", game_mode(), ram(0xC401)))
+  if PS1.params.macros == "1" then
+    local want = { [0] = 0x01, 0x00, 0x43, 0x00, [62] = 0x04, 0x24 }   -- savegame.lua's MACROS
+    for i = 0, 63 do
+      if ram(0xC3C0 + i) ~= (want[i] or 0) then
+        error(string.format("macro byte %d is $%02X, not $%02X", i, ram(0xC3C0 + i), want[i] or 0))
+      end
+    end
+    log("the macros are back ($C3C0-$C3FF)")
+  end
 end

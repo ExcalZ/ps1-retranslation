@@ -26,6 +26,16 @@ emu.addMemoryCallback(function(addr) if track_ram then ram_w[addr] = true end en
 emu.addMemoryCallback(function(addr) if track_ram then ram_r[addr] = true end end, emu.callbackType.read,
                       0xC000, 0xDFFF, emu.cpuType.sms, emu.memType.smsMemory)
 
+-- $C318-$C3FF, in the block a save copies: battle_macros keeps its macros in $C3C0-$C3FF, so no
+-- stock code may write there but the new game's clear and a load's copy. Every writer is logged.
+local c3_writers = {}
+emu.addMemoryCallback(function(addr)
+  if track_ram then
+    local pc = emu.getState()["cpu.pc"]
+    c3_writers[pc] = (c3_writers[pc] or 0) + 1
+  end
+end, emu.callbackType.write, 0xC318, 0xC3FF, emu.cpuType.sms, emu.memType.smsMemory)
+
 local function sample()
   for cell = 0, 32 * 24 - 1 do
     local lo, hi = vram(0x3800 + 2 * cell), vram(0x3801 + 2 * cell)
@@ -38,9 +48,25 @@ local function sample()
   end
 end
 
+-- the sprite palette's colours 17, 18, 21, 22 by phase, while the battle menu or the command
+-- menu is up: battle_macros draws its amber and red marks as window cells on the sprite palette
+-- (attribute bit 3): ink 6 is colour 22, ink 5 21
+local pal_seen = {}
+local function sample_palette()
+  if not (battle_menu_up() or command_menu_up()) then return end   -- where a macro window can be
+  local ok, s = pcall(function()
+    local t = {}
+    for _, i in ipairs({ 17, 18, 21, 22 }) do t[#t + 1] = string.format("%d:$%02X", i, emu.read(i, emu.memType.smsPaletteRam)) end
+    return table.concat(t, " ")
+  end)
+  if not ok then return end
+  pal_seen[phase] = pal_seen[phase] or {}
+  pal_seen[phase][s] = true
+end
+
 local sample_every = 10
 emu.addEventCallback(function()
-  if now() % sample_every == 0 then sample() end
+  if now() % sample_every == 0 then sample() sample_palette() end
 end, emu.eventType.endFrame)
 
 local function set_phase(p) phase = p log("phase " .. p) end
@@ -177,4 +203,8 @@ function scenario()
   f:write("}")
   f:close()
   log("wrote vramaudit.json")
+  for p, seen in pairs(pal_seen) do
+    for s in pairs(seen) do log(string.format("sprite palette in %s: %s", p, s)) end
+  end
+  for pc, n in pairs(c3_writers) do log(string.format("$C318-$C3FF written %d times at PC $%04X", n, pc)) end
 end

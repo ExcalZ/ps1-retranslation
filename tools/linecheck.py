@@ -18,7 +18,9 @@ Checks each `en` that differs from its `us` (--all: every entry, the stock text 
 * tilemap runs (menus, spell lists, status labels, save slots, spaceport, intro caption):
   each glyph in the font, at most the run's cells, and an upper tile (the US `"` and
   apostrophe) only where the run owns the row above; the party names in the name boxes, the
-  status boxes and the party menu the same as the party table's.
+  status boxes and the party menu the same as the party table's;
+* macro_words (battle_macros): in the face, at most the run's cells; party names at most 40 px
+  (the macro preview's 5 cells).
 
 An entry still in its stock English is measured as the build gives it (tools/stockwrap.py:
 with vwf_dialogue / vwf_cutscene, re-wrapped for the face).
@@ -115,7 +117,8 @@ def main():
             n = len(page) - (1 if len(page) > 1 and not page[-1] else 0)
             if per_page and n > per_page:
                 problems.append('%s: %d lines on a page (%d)' % (e['id'], n, per_page))
-        want = None if e.get('falls_through') else end_code(e['us'])
+        # an entry an option added has no stock one: its `end` is the code its caller expects
+        want = None if e.get('falls_through') else e['end'] if e.get('added') else end_code(e['us'])
         if end_code(text) != want:
             problems.append('%s: ends in %s, the stock entry in %s' % (e['id'], end_code(text), want))
     glyphs = M.us_glyph_table()
@@ -152,6 +155,20 @@ def main():
                         problems.append('%s %s (%s): %r is %d px (%d cells, %d px)' % (
                             name, r['id'], r['where'], text, px, cells, 8 * cells))
             continue
+        if seg.get('kind') == 'macro':
+            # battle_macros: words with no stock text, in the face within their cells
+            for r in seg['runs']:
+                text = r['en'].strip()
+                try:
+                    T.encode_us(text, dictionary=False, charset=T.vwf_charset())
+                except ValueError as x:
+                    problems.append('%s %s: %s' % (name, r['id'], x))
+                    continue
+                px = F.width(text) - 1 if text else 0
+                if px > 8 * r['cells']:
+                    problems.append('%s %s (%s): %r is %d px (%d cells, %d px)' % (
+                        name, r['id'], r['where'], text, px, r['cells'], 8 * r['cells']))
+            continue
         if seg.get('kind') in ('tilemap', 'naming'):
             for r in seg['runs']:
                 if r['en'] != r['us'] or check_all:
@@ -167,6 +184,9 @@ def main():
             if r['en'] != r['us'] or check_all:
                 if len(r['en']) > width:
                     problems.append('%s %s: %r is %d cells (%d)' % (name, r['id'], r['en'], len(r['en']), width))
+                if name == 'party' and opts.get('battle_macros') == 1 and F.width(r['en']) - 1 > 40:
+                    # battle_macros: the macro preview gives a name 5 cells (ext/macros.asm)
+                    problems.append('%s %s: %r is %d px in the face (40)' % (name, r['id'], r['en'], F.width(r['en']) - 1))
                 if long_party and win and name in ('items', 'enemies') and F.width(r['en']) - 1 > 80:
                     # vwf_windows: the windows list them in the face, 10 cells (ext/vwf_ram.asm LONG_W)
                     problems.append('%s %s: %r is %d px in the face (80)' % (name, r['id'], r['en'], F.width(r['en']) - 1))

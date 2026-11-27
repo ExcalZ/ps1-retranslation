@@ -5,7 +5,8 @@
 -- brings all four members in (the battle then shows each one's name box at its turn).
 --
 -- The battle menu (ATTK MAGC ITEM TALK RUN, rows 2-10, columns 1-6) and the enemy name box
--- (row 2, columns 15-22) are read back once; each round button 2 chooses ATTK. Every message
+-- (row 2, columns 15-22) are read back once; each round button 2 chooses ATTK. With
+-- battle_macros the round's first window is read, then Command's (button 2: Command, Fight). Every message
 -- is logged as a window page when the game waits on it, a button wait (button 1 is pressed)
 -- or a timed one ({TIMED}: it passes by itself), until the battle is over. A chest the enemy
 -- leaves is opened (YES; chest=no answers NO).
@@ -45,6 +46,13 @@ function scenario()
   log("enemy box: " .. text_line(2, 15, 22))
   dump_screen("battle")
   shot("battle")
+  if battle_top_up() then                -- battle_macros: Command, then the members' commands
+    press("two", 4, 20)
+    wait_until(function() return menu_up() and not battle_top_up() end, 300, "the members' commands")
+    wait(10)
+    log("commands: " .. table.concat(battle_menu(), " / "))
+    dump_screen("commands")
+  end
 
   local page, last, rounds = 0, nil, 0
   local start = now()
@@ -72,9 +80,11 @@ function scenario()
       if PS1.params.chest == "no" then press("down", 4, 10) end
       press("two", 4, 20)
     elseif menu_up() and window_open() == false then
-      rounds = rounds + 1
-      if rounds > 40 then error("still fighting after 40 rounds") end
-      press("two", 4, 20)                -- ATTK
+      if not battle_top_up() then          -- battle_macros: Command first, not a round
+        rounds = rounds + 1
+        if rounds > 40 then error("still fighting after 40 rounds") end
+      end
+      press("two", 4, 20)                -- ATTK (with battle_macros Command, then Fight)
     else
       wait(1)
     end

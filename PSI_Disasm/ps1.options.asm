@@ -16,3 +16,11 @@
 				; long_names, long_item_names; ext/vwfwin.asm)
 .define script_dictionary 1	; the 128 dictionary words chosen from the script as built (needs relocate_script,
 				; vwf_dialogue, vwf_cutscene; tools/scriptdict.py, text/words.asm)
+.define battle_macros 1	; the battle's first window Command / Macro / Talk / Flee, eight macros A-H set from
+				; the field menu and saved with the game (needs vwf_windows; ext/macros.asm)
+
+.define hospital_everyone 1	; the hospital's party menu ends in Everyone: the members' fees summed, all healed
+				; (needs long_names, vwf_windows; ext/hospital.asm)
+
+.define fast_transitions 1	; palette fades at two frames per step instead of four
+.define fast_walk 1		; twice the on-foot map speed; shorter dungeon step/turn animations

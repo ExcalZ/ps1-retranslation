@@ -4,10 +4,13 @@
 -- skips it and says "WELL, SAVING 1." / "COMPLETED." instead); the name must then be in the
 -- cartridge RAM. continue.lua, run after it with --keep-sram, loads the game. The window text
 -- at each step is logged.
--- name=XXXXX sets the slot's name (default TEST).
+-- name=XXXXX sets the slot's name (default TEST). macros=1 (battle_macros) writes two macros
+-- into $C3C0 first (MACROS below: slots A and H); continue.lua macros=1 checks them.
 -- Bounded: the new game to the field, every wait limited, the run's frame cap.
 
 local NAME = PS1.params.name or "TEST"
+-- battle_macros: slot A (Alisa Fight, Myau Cure for Alisa) and slot H (Lutz an item), 64 bytes
+MACROS = { [0] = 0x01, 0x00, 0x43, 0x00, [62] = 0x04, 0x24 }
 
 local function window_line(tag)
   wait(4)
@@ -18,8 +21,13 @@ local function slots() return area_text(3, 11, 23, 31) end
 
 function scenario()
   new_game_to_field(40)
+  if PS1.params.macros == "1" then
+    for i = 0, 63 do poke(0xC3C0 + i, MACROS[i] or 0) end
+  end
   open_command_menu()
-  for _ = 1, 4 do press("down", 4, 10) end
+  -- SAVE is the last entry: the fifth, or the sixth with battle_macros (Macro before it)
+  local last = #area_text(2, 12, 1, 6) >= 6 and 5 or 4
+  for _ = 1, last do press("down", 4, 10) end
   press("two", 4, 0)
   -- the stock's two pages wait for a button first; a one-page prompt opens the slot list at once
   wait_until(function() return at_button_wait() or #slots() >= 5 end, 300, "the save prompt")

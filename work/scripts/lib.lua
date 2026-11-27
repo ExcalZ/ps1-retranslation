@@ -97,8 +97,9 @@ local function cell(row, col)
 end
 
 -- vwf_windows draws a window's text in the face into tiles it borrows, each such cell's
--- attribute with bit 5 set: a run of them is read from the tiles' ink (plane 1), column by
--- column, and matched against the face (FACE, from tools/diafont.py; the longest glyph first)
+-- attribute with bit 5 set: a run of them is read from the tiles' ink (plane 1, or plane 2 for
+-- battle_macros' red and amber), column by column, and matched against the face (FACE, from
+-- tools/diafont.py; the longest glyph first)
 local face_cands
 local function face_text(tiles)
   if not face_cands then
@@ -111,7 +112,7 @@ local function face_text(tiles)
   local cols = {}
   for _, t in ipairs(tiles) do
     local rows = {}
-    for r = 0, 7 do rows[r] = vram(t * 32 + r * 4 + 1) end
+    for r = 0, 7 do rows[r] = vram(t * 32 + r * 4 + 1) | vram(t * 32 + r * 4 + 2) end
     for x = 0, 7 do
       local c = 0
       for r = 0, 7 do
@@ -154,6 +155,33 @@ end
 
 local function face_cell(row, col)
   return (vram(0x3800 + row * 64 + col * 2 + 1) & 0x20) ~= 0
+end
+
+-- the ink of a face cell (vwf_windows): "white" (the window's palette), or with battle_macros'
+-- marks on the sprite palette (attribute bit 3) "amber" (colour 6, planes 1 and 2) or "red"
+-- (colour 5, planes 0 and 2); nil for a cell not in the face or with no ink
+function cell_ink(row, col)
+  local a = 0x3800 + row * 64 + col * 2
+  local attr = vram(a + 1)
+  if attr & 0x20 == 0 then return nil end
+  local t = vram(a) + 256 * (attr & 1)
+  local p1, p2 = 0, 0
+  for r = 0, 7 do
+    p1 = p1 | vram(t * 32 + r * 4 + 1)
+    p2 = p2 | vram(t * 32 + r * 4 + 2)
+  end
+  if p1 == 0 and p2 == 0 then return nil end
+  if attr & 0x08 == 0 then return "white" end
+  return p1 ~= 0 and "amber" or "red"
+end
+
+-- the ink of a run of face cells: the first cell with ink in row, columns c0..c1
+function run_ink(row, c0, c1)
+  for c = c0, c1 do
+    local k = cell_ink(row, c)
+    if k then return k end
+  end
+  return nil
 end
 
 -- the characters of one text line: its lower tile row, with the upper row's marks
@@ -355,10 +383,18 @@ function yes_no_shown()
   return is_word(text_line(14, 21, 26), "YES", w.yes) and is_word(text_line(16, 21, 26), "NO", w.no)
 end
 
--- the battle menu is up: its first word (ATTK, or the translation's)
+-- the battle menu is up: its first word (ATTK, or the translation's); with battle_macros the
+-- round's first window too (Command: button 2 there gives the members' commands)
 function battle_menu_up()
-  local m = area_text(2, 10, 1, 6)[1]
-  return m ~= nil and is_word(m, "ATTK", (PS1_WORDS or {}).attack)
+  local m = area_text(2, 10, 1, 7)[1]
+  return m ~= nil and (is_word(m, "ATTK", (PS1_WORDS or {}).attack) or battle_top_up())
+end
+
+-- battle_macros: the round's first window is up (Command, Macro, Talk, Flee)
+function battle_top_up()
+  local m = area_text(2, 10, 1, 7)[1]
+  local w = (PS1_WORDS or {}).command
+  return m ~= nil and w ~= nil and w ~= "" and m:upper():find(w:upper(), 1, true) ~= nil
 end
 
 -- page through the dialogue window with button 1, logging and filming each page, until it
@@ -511,6 +547,28 @@ for _, w in ipairs({ { "LABEL_33D1", false }, { "LABEL_2D47", true }, { "LABEL_2
   end
 end
 
+-- state=PATH: start from a Mesen savestate (.mss; one the owner saved at a bug, say) instead of
+-- the power-on: it loads on the 30th frame, from an exec callback (Mesen allows it nowhere
+-- else), and the scenario starts once it has. The state must be of the same game; a state
+-- saved on an older build of ps1en.sms loads too, but anything it was doing in code that has
+-- moved since goes wrong.
+local state_data, state_loaded, state_hook
+if PS1.params.state then
+  local f = io.open(PS1.params.state, "rb")
+  if not f then error("no savestate at " .. PS1.params.state) end
+  state_data = f:read("a")
+  f:close()
+  state_hook = emu.addMemoryCallback(function()
+    if state_loaded or frame < 30 then return end
+    state_loaded = true
+    local ok, err = pcall(emu.loadSavestate, state_data)
+    if not ok or err == false then
+      log("FAIL the savestate did not load: " .. tostring(err))
+      state_loaded = "failed"
+    end
+  end, emu.callbackType.exec, 0x0000, 0xFFFF)
+end
+
 emu.addEventCallback(function()
   if finished then return end
   frame = frame + 1
@@ -518,7 +576,15 @@ emu.addEventCallback(function()
     finish(2, "FAIL frame cap " .. PS1.max_frames)
     return
   end
+  if state_data and state_loaded ~= true then
+    if state_loaded == "failed" or frame > 60 then finish(1, "FAIL no savestate loaded") end
+    return
+  end
   if not co then
+    if state_data then
+      emu.removeMemoryCallback(state_hook, emu.callbackType.exec, 0x0000, 0xFFFF)
+      log("savestate " .. PS1.params.state)
+    end
     co = coroutine.create(scenario)
   end
   local ok, err = coroutine.resume(co)

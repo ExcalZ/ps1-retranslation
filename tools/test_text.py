@@ -3,7 +3,8 @@
     python tools/test_text.py
 
 * the JP kana table matches the JP glyph table (02:8000);
-* every entry's `hex` is the stock ROM at its `addr`, and renders to its `us`;
+* every entry's `hex` is the stock ROM at its `addr`, and renders to its `us` (an entry `added`
+  by an option has none: its `us` and `hex` are empty);
 * every `jp` renders from the JP ROM at its `jp_addr`;
 * the name tables' `hex` and `jp` match both ROMs;
 * the tilemap runs: `hex` and `upper_hex` are the ROM at `addr` and the row above, at the
@@ -49,6 +50,9 @@ def test_glyphs():
 
 def test_dialogue(doc, words):
     for e in doc['entries']:
+        if e.get('added'):              # an option's new line: no stock text to test
+            check(not e['hex'] and not e['us'] and 'addr' not in e, '%s: added, with stock fields' % e['id'])
+            continue
         data = bytes.fromhex(e['hex'])
         off = at(US, e['addr'])
         check(US[off:off + len(data)] == data, '%s: hex is not the ROM at %s' % (e['id'], e['addr']))
@@ -77,7 +81,7 @@ def test_dialogue(doc, words):
 def test_fit(doc, words):
     used = {'02': 0, '0C': 0}
     stock = {'02': 0, '0C': 0}
-    for e in doc['entries']:
+    for e in (x for x in doc['entries'] if not x.get('added')):
         used[e['addr'][:2]] += len(T.encode_us(e['us'], words))
         stock[e['addr'][:2]] += len(e['hex']) // 2
     for bank, free in (('02', 183), ('0C', 40)):

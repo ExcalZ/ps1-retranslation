@@ -29,7 +29,12 @@ REPLACED = {'far_calls': ['_RST_10H', '_RST_18H', '_RST_20H', '_RST_28H', '_RST_
             'vwf_dialogue': ['LABEL_32A2', 'LABEL_32B2', 'LABEL_32C2', 'LABEL_32D0', 'LABEL_32E1',
                              'LABEL_32F5', 'LABEL_32FB', 'LABEL_3302'],
             # the equipment box's own loop
-            'long_item_names': ['LABEL_3735']}
+            'long_item_names': ['LABEL_3735'],
+            # the battle menu's redraw (MacroAsk draws the round's windows; its bytes hold the
+            # field menu's table)
+            'battle_macros': ['LABEL_30D5'],
+            # the hospital's insides (ext/hospital.asm has the routine; LABEL_298D stays put)
+            'hospital_everyone': ['LABEL_2999', 'LABEL_2A48', 'LABEL_2A52', 'LABEL_2A55', 'LABEL_2A5E']}
 
 
 def options():

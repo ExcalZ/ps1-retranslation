@@ -43,6 +43,17 @@ WinStrings:
 .dw WinString39
 .dw WinString40
 .dw WinString41
+.dw WinString42
+.dw WinString43
+.dw WinString44
+.dw WinString45
+.dw WinString46
+.dw WinString47
+.dw WinString48
+.dw WinString49
+.dw WinString50
+.dw WinString51
+.dw WinString52
 WinString1:	; Fight
 .db $46, $6E, $6C, $6D, $79, $65
 WinString2:	; Magic
@@ -125,6 +136,28 @@ WinString40:	; Uzo
 .db $55, $7F, $74, $65
 WinString41:	; Skure
 .db $53, $70, $7A, $77, $6A, $65
+WinString42:	; Command
+.db $43, $74, $72, $72, $66, $73, $69, $65
+WinString43:	; Macro
+.db $4D, $66, $68, $77, $74, $65
+WinString44:	; A
+.db $41, $65
+WinString45:	; B
+.db $42, $65
+WinString46:	; C
+.db $43, $65
+WinString47:	; D
+.db $44, $65
+WinString48:	; E
+.db $45, $65
+WinString49:	; F
+.db $46, $65
+WinString50:	; G
+.db $47, $65
+WinString51:	; H
+.db $48, $65
+WinString52:	; Everyone
+.db $45, $7B, $6A, $77, $7E, $74, $73, $6A, $65
 WinMoneyString:	; Meseta
 .db $4D, $6A, $78, $6A, $79, $66, $20, $65
 ; vwf_windows: the spell lists a cell wider (12 rows of 7 cells; from bank 27's maps)

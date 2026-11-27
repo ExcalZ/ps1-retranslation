@@ -85,7 +85,14 @@ failed build (chain commands with `&&` and `test ! -f PSI_Disasm/ps1.log`).
   capitals in the menus; the `status_boxes` runs must match them in capitals); with
   `long_item_names`: item and enemy names up to 14 characters (with `vwf_windows` also at most
   80 px in the face: the windows list them in 10 cells); with `vwf_windows` (on): the
-  menus too, mixed case, each run at most its cells x 8 px (`linecheck.py`). Without them:
+  menus too, mixed case, each run at most its cells x 8 px (`linecheck.py`); with
+  `battle_macros` (on: the battle's Command / Macro / Talk / Flee and eight macros, set from
+  the field menu's Macro and saved with the game, `ext/macros.asm`): its words in segment
+  `macro_words` (kind `macro`, no stock text), and party names at most 40 px; with
+  `hospital_everyone` (on: the hospital's party menu ends in Everyone, `ext/hospital.asm`): its
+  word in segment `hospital_words` (kind `macro`) and its two lines, `HospAllCost` and
+  `HospAllNone`, entries of `dialogue.json` marked `added` (no stock text: `us` empty, `end` the
+  end code to keep). Without them:
 * Budgets: dialogue and messages 18 cells a line (the window scrolls, no line limit);
   cut-scenes 20 cells, 4 lines a page; inserts count at their widest ({NAME} 4, {ENEMY} and
   {ITEM} 8, {NUMBER} 5). Names: party 4, items 8, enemies 8.
@@ -109,10 +116,14 @@ quotes.
   `work/scripts/` on top of `lib.lua`: `boot`, `opening`, `talk`, `forcetalk talk=N`, `fieldmenu`,
   `menus`, `savegame`, then `continue --keep-sram`, `shop shop=N`, `battle enemy=N`,
   `partymenu`, `healtarget`, `inventory`, `battlelist enemy=N`, `windows screen=hospital|church|sell|port|dungeon`,
+  `hospital [case=pay|none|short|one] [party=N] [dead=K]` (the hospital's Everyone),
   `myau`, `tyron`, `lutz`, `wings`, `ending [answer=no]` (the story scenes and the credits),
-  `vramdump enemy=N` (then `tools/vramsheet.py`: the
+  `macros` (a macro set in the field menu, then used in a battle; `savegame macros=1` then
+  `continue macros=1 --keep-sram` for the save), `vramdump enemy=N` (then `tools/vramsheet.py`: the
   battle's VRAM as a tile sheet, free tiles marked)
-  (`docs/pipeline.md` section 7 has the table and each one's check). To see a line in the game
+  (`docs/pipeline.md` section 7 has the table and each one's check). Any scenario takes
+  `state=PATH` to start from a Mesen savestate instead of the power-on (the owner saves one at a
+  bug: `Mesen_2.1.1/SaveStates/ps1en_N.mss`; game data, never committed). To see a line in the game
   before committing it: `python tools/trybuild.py EDITS.json OUT.sms`, then a scenario with
   `--rom=OUT.sms --dialogue=OUT.sms.dialogue.json --expect=...` (then `tools/applyedits.py EDITS.json`
   writes them into the JSON). Never run Mesen.exe directly without a
