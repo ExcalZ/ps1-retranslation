@@ -7,9 +7,9 @@ the ROM - the same shape as the
 [III](https://github.com/ExcalZ/ps3-retranslation) and
 [IV](https://github.com/ExcalZ/ps4-retranslation) retranslations.
 
-**Players:** get the patch from the release zip (`python tools/release.py VERSION` builds it):
-an offline patcher (`Patcher.html`, for the US/European release, version 3), the BPS patch and
-the readme. Nothing else here is needed to play.
+[![Latest release](https://img.shields.io/github/v/release/ExcalZ/ps1-retranslation?label=Download%20the%20patch)](https://github.com/ExcalZ/ps1-retranslation/releases/latest)
+
+**Players:** get the patch from the [Releases page](https://github.com/ExcalZ/ps1-retranslation/releases/latest) - the zip has an offline patcher (`Patcher.html`, for the US/European release, version 3), the BPS patch and the readme. Nothing else on this page is needed to play. No ROM is included here or there.
 
 **Status: v1.0.** The whole script is translated from the Japanese; the text engine is rebuilt
 (proportional text in the dialogue, the story scenes and every window, full-length names), with
